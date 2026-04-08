@@ -2,31 +2,29 @@
 layout: default
 title: Abstraction
 ---
+
 {% assign parent_categories = "English,Mathematics,Physics" | split: "," %}
 
 {% for parent in parent_categories %}
   <section style="margin-bottom: 40px;">
-    <h2 style="color: #000; padding-bottom: 10px; border-bottom: 2px solid #159957;">
+    <h2 style="color: #000; padding-bottom: 10px;">
       {{ parent }}
     </h2>
-
-    {% comment %} 1. 해당 대분류에 속하는 포스트만 필터링 {% endcomment %}
+    <hr>
+    {% comment %} 해당 부모 카테고리에 속한 모든 포스트 가져오기 {% endcomment %}
     {% assign posts = site.categories[parent] %}
-    
-    {% comment %} 2. 소분류(두 번째 카테고리)들을 중복 없이 추출 {% endcomment %}
-    {% assign sub_cats = "" | split: "" %}
-    {% for post in posts %}
-      {% assign current_sub = post.categories[1] | default: "General" %}
-      {% unless sub_cats contains current_sub %}
-        {% assign sub_cats = sub_cats | push: current_sub %}
-      {% endunless %}
-    {% endfor %}
-    {% assign sub_cats = sub_cats | sort %}
 
-    {% comment %} 3. 소분류별로 루프를 돌며 포스트 출력 {% endcomment %}
+    {% comment %} 1. 소분류들만 따로 모으기 (String 형태로 변환하여 처리) {% endcomment %}
+    {% capture sub_string %}{% for post in posts %}{{ post.categories[1] | default: "General" }}|{% endfor %}{% endcapture %}
+    {% assign sub_cats = sub_string | split: "|" | uniq | sort %}
+
+    {% comment %} 2. 추출된 소분류 순회 {% endcomment %}
     {% for sub in sub_cats %}
+      {% if sub == "" %}{% continue %}{% endif %}
+      
       <div style="margin-left: 20px; margin-top: 25px;">
         <h3 style="color: #444; font-size: 1.1rem; border-left: 4px solid #eee; padding-left: 12px; margin-bottom: 15px;">
+          {% comment %} Title Case 적용: 1. grammatical meaning -> 1. Grammatical Meaning {% endcomment %}
           {{ sub | split: " " | map: "capitalize" | join: " " }}
         </h3>
         
