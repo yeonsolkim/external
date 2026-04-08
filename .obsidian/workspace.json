@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyNotes/English/1. Grammatical Meaning/1.1. The Structure of Sentences.md",
+                "file": "MyNotes/LLM.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "1.1. The Structure of Sentences"
+              "title": "LLM"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyNotes/English/1. Grammatical Meaning/1.1. The Structure of Sentences.md",
+                "file": "MyNotes/LLM.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 1.1. The Structure of Sentences"
+              "title": "Backlinks for LLM"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyNotes/English/1. Grammatical Meaning/1.1. The Structure of Sentences.md",
+                "file": "MyNotes/LLM.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 1.1. The Structure of Sentences"
+              "title": "Outgoing links from LLM"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyNotes/English/1. Grammatical Meaning/1.1. The Structure of Sentences.md",
+                "file": "MyNotes/LLM.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1.1. The Structure of Sentences"
+              "title": "Outline of LLM"
             }
           }
         ]
@@ -185,6 +185,7 @@
   },
   "active": "ab6686bd7d1d1914",
   "lastOpenFiles": [
+    "MyNotes/English/1. Grammatical Meaning/1.1. The Structure of Sentences.md",
     "MyNotes/About Me.md",
     "MyNotes/Markdown.md",
     "MyNotes/Welcome.md",
@@ -209,7 +210,6 @@
     "MyNotes/English/3. Compositional Meaning/Auxiliary Verb.md",
     "MyNotes/English/3. Compositional Meaning/Tense Meaning.md",
     "MyNotes/English/3. Compositional Meaning/3.5. of-PP.md",
-    "MyNotes/English/1. Grammatical Meaning/1.1. The Structure of Sentences.md",
     "MyNotes/English/3. Compositional Meaning/3.4. Adjunct.md",
     "MyNotes/English/1. Grammatical Meaning/1.5. Relative Clauses.md",
     "MyNotes/English/1. Grammatical Meaning/1.8. Gerund-Participial Clause.md",
