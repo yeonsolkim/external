@@ -1,9 +1,8 @@
 ---
 layout: post
 title: "To-Infinitival Clause"
-date: 2026-04-07 23:00:00 +0900
+date: 2026-04-07 00:00:00 +0900
 categories: ["English", "1. Grammatical Meaning"]
-use_math: true
 ---
 
 ## 1. Complement로 기능하는 To-Infinitival Clause
