@@ -2,4 +2,3 @@ remote_theme: pages-themes/cayman@v0.2.0
 title: Abstraction
 baseurl: "/blog"
 url: "https://YeonsolKim.github.io"
-description: This is a space to record my learning.
