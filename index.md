@@ -1,20 +1,13 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2869
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+---
+layout: default
+---
 
-\f0\fs24 \cf0 ---\
-layout: default\
----\
-\
-## \uc0\u47784 \u46304  \u54252 \u49828 \u54021  \u47785 \u47197 \
-\
-<ul>\
-  \{% for post in site.posts %\}\
-    <li>\
-      <a href="\{\{ post.url \}\}">\{\{ post.title \}\}</a> - \{\{ post.date | date: "%Y-%m-%d" \}\}\
-    </li>\
-  \{% endfor %\}\
-</ul>}
+## 모든 포스팅 목록
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%Y-%m-%d" }}
+    </li>
+  {% endfor %}
+</ul>
