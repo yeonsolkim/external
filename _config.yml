@@ -5,3 +5,5 @@ url: "https://YeonsolKim.github.io"
 fixed_banner_title: "Abstraction"
 banner_color_start: "#000000" 
 banner_color_end: "#878787"   
+github:
+  is_project_page: true

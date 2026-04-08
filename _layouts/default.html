@@ -29,6 +29,18 @@
       margin: 0 auto;
       padding: 2rem 4rem;
     }
+
+    .page-header .btn {
+      color: #ffffff !important;
+      border-color: rgba(255, 255, 255, 0.4) !important;
+      background-color: rgba(255, 255, 255, 0.1) !important;
+      transition: all 0.2s ease;
+    }
+
+    .page-header .btn:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+     border-color: rgba(255, 255, 255, 0.6) !important;
+    }
   </style>
 </head>
 <body>
@@ -36,6 +48,7 @@
   <section class="page-header">
     <h1 class="project-name">{{ site.fixed_banner_title | default: site.title }}</h1>
     <h2 class="project-tagline">{{ site.description }}</h2>
+    <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
   </section>
 
   <main id="content" class="main-content" role="main">
