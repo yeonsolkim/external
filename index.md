@@ -6,6 +6,7 @@ title: Abstraction
 {% assign parent_categories = "English,Mathematics,Physics" | split: "," %}
 
 {% for parent in parent_categories %}
+<p style="color: red;">DEBUG: {{ site.categories | map: "first" | join: ", " }}</p>
   <section style="margin-bottom: 40px;">
     <h2 style="color: #000; padding-bottom: 10px;">
       {{ parent }}
@@ -36,7 +37,7 @@ title: Abstraction
             {% comment %} 대분류와 소분류가 모두 일치하는지 확인 {% endcomment %}
             {% if post.categories[0] == parent and post.categories[1] == sub %}
               <li>
-                <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration: none; color: #159957; font-weight: 500;">
+                <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration: none; color: #939393; font-weight: 500;">
                   {{ post.title }}
                 </a>
                 <span style="color: #999; font-size: 0.85em; margin-left: 8px;">
