@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyNotes/English/1. Grammatical Meaning/1.2. Tense and Aspect.md",
+                "file": "_posts/2026-04-03-naive-set-theory.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "1.2. Tense and Aspect"
+              "title": "2026-04-03-naive-set-theory"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyNotes/English/1. Grammatical Meaning/1.2. Tense and Aspect.md",
+                "file": "_posts/2026-04-03-naive-set-theory.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 1.2. Tense and Aspect"
+              "title": "Backlinks for 2026-04-03-naive-set-theory"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyNotes/English/1. Grammatical Meaning/1.2. Tense and Aspect.md",
+                "file": "_posts/2026-04-03-naive-set-theory.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 1.2. Tense and Aspect"
+              "title": "Outgoing links from 2026-04-03-naive-set-theory"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyNotes/English/1. Grammatical Meaning/1.2. Tense and Aspect.md",
+                "file": "_posts/2026-04-03-naive-set-theory.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1.2. Tense and Aspect"
+              "title": "Outline of 2026-04-03-naive-set-theory"
             }
           }
         ]
@@ -185,9 +185,9 @@
   },
   "active": "ab6686bd7d1d1914",
   "lastOpenFiles": [
-    "_posts/2026-04-03-naive-set-theory.md",
-    "MyNotes/English/1. Grammatical Meaning/1.2. Tense and Aspect.md",
     "_posts/2026-04-07-to-infinitival-clause.md",
+    "MyNotes/English/1. Grammatical Meaning/1.2. Tense and Aspect.md",
+    "_posts/2026-04-03-naive-set-theory.md",
     "MyNotes/Mathematics/Analysis.md",
     "MyNotes/Mathematics/Set Theory.md",
     "MyNotes/English/1. Grammatical Meaning/1.1. The Structure of Sentences.md",
