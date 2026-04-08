@@ -3,14 +3,14 @@ layout: default
 title: Abstraction
 ---
 
-# **Categories**
+<h1 style="color: #333;">Categories</h1>
 
 {% assign postsByCustom = site.posts | group_by: "categories" %}
 
 {% for category in postsByCustom %}
   {% assign category_name = category.name | replace: '[', '' | replace: ']', '' | replace: '"', '' %}
   
-  <h3 style="color: #000; padding-bottom: 5px; margin-top: 40px;">
+  <h3 style="color: #333; padding-bottom: 5px; margin-top: 40px;">
     {{ category_name | capitalize }}
   </h3>
   <hr>
