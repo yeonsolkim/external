@@ -18,3 +18,6 @@ social:
     - https://github.com/yeonsolkim
 image: "https://yeonsolkim.github.io/blog/assets/banner.jpg"
 incremental: true 
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
