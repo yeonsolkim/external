@@ -1,4 +1,4 @@
 # .gitignore 파일 끝에 추가
-MyNotes/         # 개인 메모 폴더명
-Private/         # 비공개 폴더명
-.obsidian/       # 옵시디언 설정 파일
+MyNotes/         
+Private/         
+.obsidian/       

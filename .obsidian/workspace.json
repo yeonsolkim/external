@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "MyNotes/English/1. Grammatical Meaning/1.1. The Structure of Sentences.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "1.1. The Structure of Sentences"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "MyNotes/English/1. Grammatical Meaning/1.1. The Structure of Sentences.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for index"
+              "title": "Backlinks for 1.1. The Structure of Sentences"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "MyNotes/English/1. Grammatical Meaning/1.1. The Structure of Sentences.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from index"
+              "title": "Outgoing links from 1.1. The Structure of Sentences"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md",
+                "file": "MyNotes/English/1. Grammatical Meaning/1.1. The Structure of Sentences.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of 1.1. The Structure of Sentences"
             }
           }
         ]
@@ -183,20 +183,24 @@
       "bases:Create new base": false
     }
   },
-  "active": "50f509463b6298a4",
+  "active": "ab6686bd7d1d1914",
   "lastOpenFiles": [
+    "MyNotes/About Me.md",
+    "MyNotes/Markdown.md",
+    "MyNotes/Welcome.md",
+    "MyNotes/Naive Set Theory.md",
+    "MyNotes/Mathematics/Naive Set Theory.md",
+    "MyNotes/LLM.md",
+    "MyNotes/Mar 22.md",
+    "MyNotes/Mathematics/Notes.md",
+    "MyNotes/Mathematics/Note.md",
+    "index.md",
     "gitignore",
     "README.md",
-    "index.md",
     "MyNotes",
-    "MyNotes/LLM.md",
-    "MyNotes/Naive Set Theory.md",
     "MyNotes/Natural Language/of Noun.md",
-    "MyNotes/Mathematics.md",
     "MyNotes/Natural Language/Categorization.md",
     "MyNotes/Natural Language/Relative Clauses.md",
-    "MyNotes/Welcome.md",
-    "MyNotes/Mar 22.md",
     "MyNotes/Natural Language",
     "MyNotes/English/1. Grammatical Meaning/1.6. To-Infinitival Clause.md",
     "MyNotes/English/1. Grammatical Meaning/The Structure of Sentences.md",
@@ -210,9 +214,6 @@
     "MyNotes/English/1. Grammatical Meaning/1.5. Relative Clauses.md",
     "MyNotes/English/1. Grammatical Meaning/1.8. Gerund-Participial Clause.md",
     "MyNotes/English/1. Grammatical Meaning/1.7. Bare Infinitival Clause.md",
-    "MyNotes/English/1. Grammatical Meaning/1.4. Clauses.md",
-    "MyNotes/English/1. Grammatical Meaning/1.3. Modifier.md",
-    "MyNotes/English/1. Grammatical Meaning/1.2. Tense and Aspect.md",
     "MyNotes/Pasted image 20260405213914.jpg",
     "MyNotes/English/3. Compositional Meaning",
     "MyNotes/English/1. Grammatical Meaning",
