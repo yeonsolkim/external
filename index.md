@@ -2,7 +2,7 @@
 layout: default
 ---
 
-## 모든 포스팅 목록
+## Abstraction
 
 <ul>
   {% for post in site.posts %}
