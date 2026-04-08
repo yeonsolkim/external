@@ -3,58 +3,34 @@ layout: default
 title: Abstraction
 ---
 
-{% assign parent_categories = "English,Mathematics,Physics" | split: "," %}
+{% comment %} 1. 모든 카테고리를 중복 없이 추출하여 부모 카테고리 리스트 생성 {% endcomment %}
+{% assign parent_categories = "English,Math,Physics" | split: "," %}
 
 {% for parent in parent_categories %}
-<p style="color: red;">DEBUG: {{ site.categories | map: "first" | join: ", " }}</p>
-  <section style="margin-bottom: 40px;">
+  <section style="margin-bottom: 50px;">
     <h2 style="color: #000; padding-bottom: 10px;">
       {{ parent }}
     </h2>
     <hr>
+    {% comment %} 2. 해당 부모 카테고리에 속한 글들을 가져와서 자식 카테고리로 그룹화 {% endcomment %}
+    {% assign posts = site.categories[parent] %}
+    {% assign grouped_sub = posts | group_by: "categories" %}
 
-    {% comment %} 1. 소분류(두 번째 카테고리) 목록 추출 (더 확실한 방식) {% endcomment %}
-    {% assign sub_cats = "" | split: "" %}
-    {% for post in site.posts %}
-      {% if post.categories contains parent %}
-        {% assign current_sub = post.categories[1] | default: "General" %}
-        {% unless sub_cats contains current_sub %}
-          {% assign sub_cats = sub_cats | push: current_sub %}
-        {% endunless %}
-      {% endif %}
-    {% endfor %}
-    {% assign sub_cats = sub_cats | sort %}
+    {% for group in grouped_sub %}
+      {% comment %} 3. 부모 카테고리 이름 자체를 제외한 나머지(자식) 이름만 추출 {% endcomment %}
+      {% assign sub_name = group.name | replace: parent, "" | replace: '[', '' | replace: ']', '' | replace: '"', '' | replace: ',', '' | strip %}
 
-    {% comment %} 2. 추출된 소분류 순회하며 포스트 출력 {% endcomment %}
-    {% for sub in sub_cats %}
-      <div style="margin-left: 20px; margin-top: 25px;">
-        <h3 style="color: #444; font-size: 1.1rem; border-left: 4px solid #eee; padding-left: 12px; margin-bottom: 15px;">
-          {{ sub | split: " " | map: "capitalize" | join: " " }}
+      <div style="margin-left: 20px; margin-top: 20px;">
+        <h3 style="color: #444; font-size: 1.2rem; border-left: 4px solid #eee;">
+          {% if sub_name == "" %} General {% else %} {{ sub_name | capitalize }} {% endif %}
         </h3>
         
         <ul class="custom-list">
-          {% for post in site.posts %}
-            {% comment %} 대분류와 소분류가 모두 일치하는지 확인 {% endcomment %}
-            {% if post.categories[0] == parent and post.categories[1] == sub %}
-              <li>
-                <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration: none; color: #939393; font-weight: 500;">
-                  {{ post.title }}
-                </a>
-                <span style="color: #999; font-size: 0.85em; margin-left: 8px;">
-                  - {{ post.date | date: "%B %d, %Y" }}
-                </span>
-              </li>
-            {% elsif post.categories[0] == parent and sub == "General" and post.categories.size == 1 %}
-              {% comment %} 소분류가 없는 General 케이스 처리 {% endcomment %}
-              <li>
-                <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration: none; color: #929292; font-weight: 500;">
-                  {{ post.title }}
-                </a>
-                <span style="color: #999; font-size: 0.85em; margin-left: 8px;">
-                  - {{ post.date | date: "%B %d, %Y" }}
-                </span>
-              </li>
-            {% endif %}
+          {% for post in group.items %}
+            <li>
+              <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+              <span style="color: #999; font-size: 0.85em;">- {{ post.date | date: "%B %d, %Y" }}</span>
+            </li>
           {% endfor %}
         </ul>
       </div>
@@ -63,8 +39,7 @@ title: Abstraction
 {% endfor %}
 
 <style>
-  .custom-list { list-style-type: disc !important; padding-left: 20px; margin-left: 10px; }
-  .custom-list li::marker { color: #00000064; font-size: 0.7em; }
-  .custom-list li { margin-bottom: 10px; }
-  .custom-list li a:hover { text-decoration: underline; }
+  .custom-list { list-style-type: disc !important; padding-left: 20px; }
+  .custom-list li::marker { color: #000; font-size: 0.8em; }
+  .custom-list li { margin-bottom: 8px; }
 </style>
