@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "index.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "index"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for README"
+              "title": "Backlinks for index"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from README"
+              "title": "Outgoing links from index"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md",
+                "file": "index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of README"
+              "title": "Outline of index"
             }
           }
         ]
@@ -183,41 +183,42 @@
       "bases:Create new base": false
     }
   },
-  "active": "ab6686bd7d1d1914",
+  "active": "50f509463b6298a4",
   "lastOpenFiles": [
-    "LLM.md",
-    "Naive Set Theory.md",
-    "Natural Language/of Noun.md",
-    "Mathematics.md",
-    "Natural Language/Categorization.md",
-    "Natural Language/Relative Clauses.md",
-    "Welcome.md",
-    "Mar 22.md",
-    "Natural Language",
-    "English/1. Grammatical Meaning/1.6. To-Infinitival Clause.md",
-    "English/1. Grammatical Meaning/The Structure of Sentences.md",
-    "English/3. Compositional Meaning/Idiomatic Expressions.md",
-    "English/3. Compositional Meaning/Present Perfect + Others.md",
-    "English/3. Compositional Meaning/Auxiliary Verb.md",
-    "English/3. Compositional Meaning/Tense Meaning.md",
-    "English/3. Compositional Meaning/3.5. of-PP.md",
-    "English/1. Grammatical Meaning/1.1. The Structure of Sentences.md",
-    "English/3. Compositional Meaning/3.4. Adjunct.md",
-    "English/1. Grammatical Meaning/1.5. Relative Clauses.md",
-    "English/1. Grammatical Meaning/1.8. Gerund-Participial Clause.md",
-    "English/1. Grammatical Meaning/1.7. Bare Infinitival Clause.md",
-    "English/1. Grammatical Meaning/1.4. Clauses.md",
-    "English/1. Grammatical Meaning/1.3. Modifier.md",
-    "English/1. Grammatical Meaning/1.2. Tense and Aspect.md",
-    "English/1. Grammatical Meaning/Extraposition, Hollow Clause, Auxiliary Verb.md",
-    "English/3. Compositional Meaning/3.7. Sentence.md",
-    "English/3. Compositional Meaning/3.6. Idiomatic Expressions.md",
-    "Pasted image 20260405213914.jpg",
-    "English/3. Compositional Meaning",
-    "English/1. Grammatical Meaning",
-    "English/4. Pragmatic Meaning",
-    "English/2. Lexical Meaning",
-    "English",
-    "Mathematics"
+    "gitignore",
+    "README.md",
+    "index.md",
+    "MyNotes",
+    "MyNotes/LLM.md",
+    "MyNotes/Naive Set Theory.md",
+    "MyNotes/Natural Language/of Noun.md",
+    "MyNotes/Mathematics.md",
+    "MyNotes/Natural Language/Categorization.md",
+    "MyNotes/Natural Language/Relative Clauses.md",
+    "MyNotes/Welcome.md",
+    "MyNotes/Mar 22.md",
+    "MyNotes/Natural Language",
+    "MyNotes/English/1. Grammatical Meaning/1.6. To-Infinitival Clause.md",
+    "MyNotes/English/1. Grammatical Meaning/The Structure of Sentences.md",
+    "MyNotes/English/3. Compositional Meaning/Idiomatic Expressions.md",
+    "MyNotes/English/3. Compositional Meaning/Present Perfect + Others.md",
+    "MyNotes/English/3. Compositional Meaning/Auxiliary Verb.md",
+    "MyNotes/English/3. Compositional Meaning/Tense Meaning.md",
+    "MyNotes/English/3. Compositional Meaning/3.5. of-PP.md",
+    "MyNotes/English/1. Grammatical Meaning/1.1. The Structure of Sentences.md",
+    "MyNotes/English/3. Compositional Meaning/3.4. Adjunct.md",
+    "MyNotes/English/1. Grammatical Meaning/1.5. Relative Clauses.md",
+    "MyNotes/English/1. Grammatical Meaning/1.8. Gerund-Participial Clause.md",
+    "MyNotes/English/1. Grammatical Meaning/1.7. Bare Infinitival Clause.md",
+    "MyNotes/English/1. Grammatical Meaning/1.4. Clauses.md",
+    "MyNotes/English/1. Grammatical Meaning/1.3. Modifier.md",
+    "MyNotes/English/1. Grammatical Meaning/1.2. Tense and Aspect.md",
+    "MyNotes/Pasted image 20260405213914.jpg",
+    "MyNotes/English/3. Compositional Meaning",
+    "MyNotes/English/1. Grammatical Meaning",
+    "MyNotes/English/4. Pragmatic Meaning",
+    "MyNotes/English/2. Lexical Meaning",
+    "MyNotes/English",
+    "MyNotes/Mathematics"
   ]
 }
