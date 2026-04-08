@@ -4,7 +4,7 @@ title: Abstraction
 ---
 
 
-{% assign parent_categories = "English,Math,Physics" | split: "," %}
+{% assign parent_categories = "English,Mathematics,Physics" | split: "," %}
 
 {% for parent in parent_categories %}
   <section style="margin-bottom: 40px;">
