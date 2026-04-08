@@ -8,4 +8,13 @@
 \f0\fs24 \cf0 ---\
 layout: default\
 ---\
-# \uc0\u50668 \u44592 \u49436 \u48512 \u53552  \u44544  \u45236 \u50857  \u49884 \u51089 }
+\
+## \uc0\u47784 \u46304  \u54252 \u49828 \u54021  \u47785 \u47197 \
+\
+<ul>\
+  \{% for post in site.posts %\}\
+    <li>\
+      <a href="\{\{ post.url \}\}">\{\{ post.title \}\}</a> - \{\{ post.date | date: "%Y-%m-%d" \}\}\
+    </li>\
+  \{% endfor %\}\
+</ul>}
