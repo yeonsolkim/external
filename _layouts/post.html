@@ -5,17 +5,17 @@ title: Abstraction
 
 <article class="main-content">
   <nav style="margin-bottom: 25px;">
-    <a href="{{ site.baseurl }}/" style="text-decoration: none; color: #666; font-size: small;">back</a>
+    <a href="{{ site.baseurl }}/" style="text-decoration: none; color: #666; font-size:medium;">back</a>
   </nav>
 
   <header style="text-align: center;">
     <h1 style="margin-top: 0; color:#000000">{{ page.title }}</h1>
     <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
     <img src="https://github.com/yeonsolkim.png" alt="yeonsolkim" 
-         style="width: 15px; height: 15px; border-radius: 50%; border: 1px solid #eee;">
-    <span style="font-weight: lighter; color: #444343; font-size: small;">Yeonjun</span>
+         style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid #eee;">
+    <span style="font-weight: lighter; color: #444343; font-size: medium;">Yeonjun</span>
     </div>
-    <p style="color: #666; margin-bottom: 40px; font-weight: lighter; font-size: smaller;">{{ page.date | date: "%B %d, %Y" }}</p>
+    <p style="color: #666; margin-bottom: 40px; font-weight: lighter; font-size: small;">{{ page.date | date: "%B %d, %Y" }}</p>
   </header>
 
   <hr>
@@ -68,7 +68,18 @@ title: Abstraction
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
+  
+  .post-body ul {
+    list-style-type: disc !important; /* 항상 꽉 찬 원형 점 사용 */
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+  }
 
+  .post-body ul li::marker {
+    color: #333; /* 점 색상을 완전한 검정색으로 */
+    font-size: 0.85em; /* 점 크기를 글자보다 약간 작게 조절 */
+  }
+  
   .post-body {
     text-align: justify;
   }
