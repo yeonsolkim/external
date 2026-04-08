@@ -17,6 +17,4 @@ social:
   links:
     - https://github.com/yeonsolkim
 image: "https://yeonsolkim.github.io/blog/assets/banner.jpg"
-# _config.yml
-future: true      # 미래 날짜 포스트도 강제로 빌드
-incremental: true # (선택) 변경된 파일만 빠르게 빌드
+incremental: true 
