@@ -15,7 +15,7 @@ title: Abstraction
          style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid #eee;">
     </div>
     <span style="font-weight:500; color: #373737; font-size: medium;">YeonsolKim</span>
-    <p style="color: #666; margin-bottom: 50px; font-weight: lighter; font-size: small;">{{ page.date | date: "%B %d, %Y" }}</p>
+    <p style="color: #666; margin-top: 0; margin-bottom: 50px; font-weight: lighter; font-size: small;">{{ page.date | date: "%B %d, %Y" }}</p>
   </header>
 
   <hr>
@@ -63,38 +63,36 @@ title: Abstraction
   .post-body h4, 
   .post-body h5, 
   .post-body h6 {
-    color: #333 !important; /* 강제로 검정색 적용 */
+    color: #333 !important; 
     font-weight: bold;
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
   
   .post-body ul {
-    list-style-type: disc !important; /* 항상 꽉 찬 원형 점 사용 */
+    list-style-type: disc !important; 
     padding-left: 2rem;
     margin-bottom: 1.5rem;
   }
 
   .post-body ul li::marker {
-    color: #00000064; /* 점 색상을 완전한 검정색으로 */
-    font-size: 0.85em; /* 점 크기를 글자보다 약간 작게 조절 */
+    color: #00000064; 
+    font-size: 0.85em;
   }
   
-  /* 리스트 내부의 p 태그 마진 제거 */
 .post-body ul li p {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
-  display: inline; /* 단락이 아닌 일반 텍스트처럼 취급 */
+  display: inline; 
 }
 
-/* 리스트 항목 자체의 간격을 일정하게 고정 */
+
 .post-body ul li {
-  margin-top: 5px !important;    /* 항목 사이의 미세한 간격 조절 */
+  margin-top: 5px !important;    
   margin-bottom: 5px !important;
   line-height: 1.6;
 }
 
-/* 중첩된 리스트(상하위 리스트) 사이의 마진도 정리 */
 .post-body ul ul, 
 .post-body ul ol {
   margin-top: 0 !important;
@@ -105,7 +103,6 @@ title: Abstraction
   text-align: justify;
 }
 
-  /* 수식이나 코드가 넘칠 경우를 대비 */
 .post-body img, .post-body canvas, .post-body svg {
   max-width: 100%;
 }

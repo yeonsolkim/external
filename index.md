@@ -25,9 +25,8 @@ title: Abstraction
 {% endfor %}
 
 <style>
-  /* 3. Unordered list의 심볼을 작은 점으로 설정 */
   .custom-list {
-    list-style-type: disc; /* 기본 점 모양 */
+    list-style-type: disc; 
     padding-left: 20px;
     margin-top: 10px;
   }
@@ -37,9 +36,8 @@ title: Abstraction
     font-size: 1.05rem;
   }
 
-  /* 점의 크기를 더 미세하게 조정하고 싶을 때 */
   .custom-list li::marker {
-    font-size: 0.8em; /* 점 크기를 글자보다 약간 작게 */
-    color: #666;    /* 점 색상을 살짝 연하게 */
+    font-size: 0.8em; 
+    color: #666;    
   }
 </style>

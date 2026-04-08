@@ -3,5 +3,5 @@ baseurl: "/blog"
 description: "Mathematics, Physics, and Liguistics"
 url: "https://YeonsolKim.github.io"
 fixed_banner_title: "Abstraction"
-banner_color_start: "#000000" # 상단 검정색
-banner_color_end: "#ffffff"   # 하단 흰색
+banner_color_start: "#0c0a0c" 
+banner_color_end: "#f1e4f1"   
