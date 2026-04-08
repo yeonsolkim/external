@@ -1,0 +1,12 @@
+{
+  "theme": "moonstone",
+  "accentColor": "#7a43f9",
+  "interfaceFontFamily": "",
+  "textFontFamily": "",
+  "showRibbon": false,
+  "baseFontSize": 16,
+  "cssTheme": "Cupertino",
+  "enabledCssSnippets": [
+    "center-img"
+  ]
+}

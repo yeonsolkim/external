@@ -1,0 +1,6 @@
+/* 리스트 기호를 시스템 기본이 아닌 특정 스타일로 고정 */
+.markdown-rendered ul > li::marker,
+.markdown-source-view.mod-cm6 .cm-formatting-list-ul {
+    content: "• "; /* 원하는 기호로 변경 가능 (예: -, ○, ●) */
+    color: var(--text-accent); /* 테마 색상 유지 */
+}

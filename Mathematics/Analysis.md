@@ -1,0 +1,31 @@
+
+**1.1 Definition.** Let $S$ be a set. An *order* on $S$ is a relation, denoted by $<$ with the following two properties
+(1) For all $x,y\in S$, one and only one of the statements $$x<y,\ x=y,\ y<x$$is true.
+(2) $\forall x,y,z\in S (x<y\wedge y<z \Rightarrow x<z)$
+
+**1.2 Definition.** Suppose $S$ is an ordered set, and $E\subset S$. If there exists a $\beta \in S$ such that $\forall x\in E, x\leq \beta$, we say that $E$ is *bounded above*, and call $\beta$ an *upper bound* of $E$.
+
+**1.3 Definition.** Suppose $S$ is an ordered set, and $E\subset S$, and $E$ is bounded above. Suppose there exists an $\alpha\in S$ with the following properties: 
+(1) $\alpha$ is an upper bound of $E$.
+(2) If $\gamma <\alpha$ then $\gamma$ is not an upper bound of $E$.
+Then $\alpha$ is called the *supremum* of $E$, an we write $$\alpha =\sup E.$$Also, the statement $$\alpha =\inf E$$means that $\alpha$ is a *infimum* of $E$.
+
+**1.4 Definition.** An ordered set $S$ is said to have the *least-upper-bound property(LUB)* if the following is true:$$\forall E\subset S(E\neq \emptyset\wedge E \text{ is bounded above} \Rightarrow \exists u \in S(u=\sup E))$$
+**1.5 Theorem.** *Suppose $S$ is an ordered set with the LUB, $B\subset S, B\neq \emptyset, B$ is bounded below. Let $L$ be the set of all lower bounds of $B$. Then, $$\exists u\in S(u=\sup L),\ \inf B=\sup L.$$*
+**1.6 Definition.** A *field* is a set $F$ with two operations, which satisfy the followings: 
+(A) Addition
+(A1) $\forall x,y\in F, x+y\in F$
+(A2) $\forall x,y\in F, \,x+y=y+x$
+(A3) $\forall x,y,z\in F, \,(x+y)+z=x+(y+z)$
+(A4) $\exists y\in F\,(\forall x\in F,\,x+y=x)$ and we write $y=0$
+(A5) $\forall x\in F, \exists y\in F\,(x+y=0)$ and we write $y=-x$
+
+(M) Multiplication
+(M1) $\forall x,y\in F,\,x\cdot y\in F$
+(M2) $\forall x,y\in F,\,x\cdot y=y\cdot x$
+(M3) $\forall x,y,z\in F,\,(x\cdot y)\cdot z=x\cdot (y\cdot z)$
+(M4) $\exists y\in F\,((\forall x\in F,\,x\cdot y=x)\wedge(y\neq 0))$ and we write $y=1$
+(M5) $\forall x\in F\,(x\neq 0),\,\exists y\in F\,(x\cdot y=1)$ and we write $y=1/x$
+
+(D) Distribution$$\forall x,y,z\in F,\,x\cdot (y+z)=x\cdot y+y\cdot z$$
+

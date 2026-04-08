@@ -1,0 +1,223 @@
+{
+  "main": {
+    "id": "c5e66f1392e86aa9",
+    "type": "split",
+    "children": [
+      {
+        "id": "d635d8338667acc3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ab6686bd7d1d1914",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9f02e74fde099b88",
+    "type": "split",
+    "children": [
+      {
+        "id": "61314c5d08045e7e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "50f509463b6298a4",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "25cbe2b9d3c838b4",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "28b2323e5dee3851",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "891ef434f683c723",
+    "type": "split",
+    "children": [
+      {
+        "id": "01d2b6873b7bedd1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8938165c9dd6bcb5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for README"
+            }
+          },
+          {
+            "id": "19d91b8f23300ab7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "README.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from README"
+            }
+          },
+          {
+            "id": "31516f22b452447e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "647be0049942f9e5",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "7be46cca5db15a7c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "README.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of README"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "ab6686bd7d1d1914",
+  "lastOpenFiles": [
+    "LLM.md",
+    "Naive Set Theory.md",
+    "Natural Language/of Noun.md",
+    "Mathematics.md",
+    "Natural Language/Categorization.md",
+    "Natural Language/Relative Clauses.md",
+    "Welcome.md",
+    "Mar 22.md",
+    "Natural Language",
+    "English/1. Grammatical Meaning/1.6. To-Infinitival Clause.md",
+    "English/1. Grammatical Meaning/The Structure of Sentences.md",
+    "English/3. Compositional Meaning/Idiomatic Expressions.md",
+    "English/3. Compositional Meaning/Present Perfect + Others.md",
+    "English/3. Compositional Meaning/Auxiliary Verb.md",
+    "English/3. Compositional Meaning/Tense Meaning.md",
+    "English/3. Compositional Meaning/3.5. of-PP.md",
+    "English/1. Grammatical Meaning/1.1. The Structure of Sentences.md",
+    "English/3. Compositional Meaning/3.4. Adjunct.md",
+    "English/1. Grammatical Meaning/1.5. Relative Clauses.md",
+    "English/1. Grammatical Meaning/1.8. Gerund-Participial Clause.md",
+    "English/1. Grammatical Meaning/1.7. Bare Infinitival Clause.md",
+    "English/1. Grammatical Meaning/1.4. Clauses.md",
+    "English/1. Grammatical Meaning/1.3. Modifier.md",
+    "English/1. Grammatical Meaning/1.2. Tense and Aspect.md",
+    "English/1. Grammatical Meaning/Extraposition, Hollow Clause, Auxiliary Verb.md",
+    "English/3. Compositional Meaning/3.7. Sentence.md",
+    "English/3. Compositional Meaning/3.6. Idiomatic Expressions.md",
+    "Pasted image 20260405213914.jpg",
+    "English/3. Compositional Meaning",
+    "English/1. Grammatical Meaning",
+    "English/4. Pragmatic Meaning",
+    "English/2. Lexical Meaning",
+    "English",
+    "Mathematics"
+  ]
+}

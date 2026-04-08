@@ -2,42 +2,43 @@
 layout: default
 title: Abstraction
 ---
+{% comment %} 1. 모든 카테고리를 중복 없이 추출하여 부모 카테고리 리스트 생성 {% endcomment %}
+{% assign parent_categories = "English,Mathematics,Physics" | split: "," %}
 
-<h1 style="color: #333;">Categories</h1>
+{% for parent in parent_categories %}
+  <section style="margin-bottom: 50px;">
+    <h2 style="color: #000; padding-bottom: 10px;">
+      {{ parent }}
+    </h2>
+    <hr>
+    {% comment %} 2. 해당 부모 카테고리에 속한 글들을 가져와서 자식 카테고리로 그룹화 {% endcomment %}
+    {% assign posts = site.categories[parent] %}
+    {% assign grouped_sub = posts | group_by: "categories" %}
 
-{% assign postsByCustom = site.posts | group_by: "categories" %}
+    {% for group in grouped_sub %}
+      {% comment %} 3. 부모 카테고리 이름 자체를 제외한 나머지(자식) 이름만 추출 {% endcomment %}
+      {% assign sub_name = group.name | replace: parent, "" | replace: '[', '' | replace: ']', '' | replace: '"', '' | replace: ',', '' | strip %}
 
-{% for category in postsByCustom %}
-  {% assign category_name = category.name | replace: '[', '' | replace: ']', '' | replace: '"', '' %}
-  
-  <h3 style="color: #333; padding-bottom: 5px; margin-top: 40px;">
-    {{ category_name | capitalize }}
-  </h3>
-  <hr>
-  <ul class="custom-list">
-    {% for post in category.items %}
-      <li>
-        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> 
-        <span style="color: #999; font-size: 0.85em;">- {{ post.date | date: "%B %d, %Y" }}</span>
-      </li>
+      <div style="margin-left: 20px; margin-top: 20px;">
+        <h3 style="color: #444; font-size: 1.2rem; border-left: 4px solid #eee; padding-left: 10px;">
+          {% if sub_name == "" %} General {% else %} {{ sub_name | capitalize }} {% endif %}
+        </h3>
+        
+        <ul class="custom-list">
+          {% for post in group.items %}
+            <li>
+              <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+              <span style="color: #999; font-size: 0.85em;">- {{ post.date | date: "%B %d, %Y" }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
     {% endfor %}
-  </ul>
+  </section>
 {% endfor %}
 
 <style>
-  .custom-list {
-    list-style-type: disc; 
-    padding-left: 20px;
-    margin-top: 10px;
-  }
-
-  .custom-list li {
-    margin-bottom: 8px;
-    font-size: 1.05rem;
-  }
-
-  .custom-list li::marker {
-    font-size: 0.8em; 
-    color: #666;    
-  }
+  .custom-list { list-style-type: disc !important; padding-left: 20px; }
+  .custom-list li::marker { color: #000; font-size: 0.8em; }
+  .custom-list li { margin-bottom: 8px; }
 </style>

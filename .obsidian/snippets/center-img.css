@@ -1,0 +1,21 @@
+/* 1. Live Preview(편집 모드) 대응 */
+.markdown-source-view.mod-cm6 .cm-content > * .internal-embed[alt*="center"] {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+/* 2. Reading Mode(읽기 모드) 대응 */
+.markdown-rendered .internal-embed[alt*="center"] {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
+
+/* 3. 이미지 자체의 정렬 유지 */
+.internal-embed[alt*="center"] img {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
