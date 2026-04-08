@@ -4,6 +4,11 @@ description: "Mathematics, Physics, and Liguistics"
 url: "https://YeonsolKim.github.io"
 fixed_banner_title: "Abstraction"
 banner_color_start: "#000000" 
-banner_color_end: "#878787"   
+banner_color_end: "#878787" 
+author: YeonsolKim  
 github:
   is_project_page: true
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
