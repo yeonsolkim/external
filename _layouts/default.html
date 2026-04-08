@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  {% seo %}
+
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+  <style>
+    /* 1. 배너 그라데이션 고정 설정 */
+    .page-header {
+      background-color: {{ site.banner_color_start | default: "#000000" }} !important;
+      background-image: linear-gradient(to bottom, 
+        {{ site.banner_color_start | default: "#000000" }}, 
+        {{ site.banner_color_end | default: "#ffffff" }}
+      ) !important;
+      padding: 5rem 6rem !important;
+      text-align: center;
+    }
+
+    .project-name, .project-tagline {
+      color: #ffffff !important;
+      text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    /* 2. 뷰 버튼 숨기기 */
+    .page-header .btn { display: none !important; }
+
+    /* 3. 메인 콘텐츠 스타일 */
+    .main-content {
+      max-width: 75rem;
+      margin: 0 auto;
+      padding: 2rem 4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="page-header">
+    <h1 class="project-name">{{ site.fixed_banner_title | default: site.title }}</h1>
+    <h2 class="project-tagline">{{ site.description }}</h2>
+  </section>
+
+  <main id="content" class="main-content" role="main">
+    {{ content }}
+
+    <footer class="site-footer">
+      <p>&copy; {{ "now" | date: "%Y" }} {{ site.github.owner_name | default: "yeonsolkim" }}. All rights reserved.</p>
+    </footer>
+  </main>
+
+</body>
+</html>
