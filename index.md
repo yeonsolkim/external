@@ -3,17 +3,17 @@ layout: default
 title: Abstraction
 ---
 
-# Categories
+# **Categories**
 
 {% assign postsByCustom = site.posts | group_by: "categories" %}
 
 {% for category in postsByCustom %}
   {% assign category_name = category.name | replace: '[', '' | replace: ']', '' | replace: '"', '' %}
   
-  <h2 style="color: #000; border-bottom: 1px solid #159957; padding-bottom: 5px; margin-top: 40px;">
+  <h3 style="color: #000; padding-bottom: 5px; margin-top: 40px;">
     {{ category_name | capitalize }}
-  </h2>
-
+  </h3>
+  <hr>
   <ul class="custom-list">
     {% for post in category.items %}
       <li>
