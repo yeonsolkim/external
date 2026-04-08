@@ -1,13 +1,27 @@
 ---
 layout: default
 ---
-<article class="main-content">
-  <h1>{{ page.title }}</h1>
-  <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}</p>
 
-  {{ content }}
+<article class="main-content">
+  <nav style="margin-bottom: 20px;">
+    <a href="{{ site.baseurl }}/" style="text-decoration: none; color: #159957;">← 목록으로 돌아가기</a>
+  </nav>
+
+  <header>
+    <h1 style="margin-top: 0;">{{ page.title }}</h1>
+    <p style="color: #666;">{{ page.date | date: "%Y년 %m월 %d일" }}</p>
+  </header>
+
   <hr>
-  <script src="https://giscus.app/client.js"
+
+  <div class="post-body">
+    {{ content }}
+  </div>
+
+  <hr style="margin-top: 50px;">
+
+  <div id="comment-section">
+    <script src="https://giscus.app/client.js"
         data-repo="yeonsolkim/blog"
         data-repo-id="R_kgDOR8ku5Q"
         data-category="Announcements"
@@ -21,16 +35,35 @@ layout: default
         data-lang="en"
         crossorigin="anonymous"
         async>
-  </script>
-
+    </script>
+  </div>
 </article>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <style>
   .main-content {
-    max-width: 64rem;
-    padding: 2rem 6rem;
+    max-width: 75rem; 
+    padding: 2rem 4rem;
     margin: 0 auto;
-    font-size: 1.1rem;
-    line-height: 1.5;
+    word-wrap: break-word;
+    line-height: 1.7;
+    color: #333;
+  }
+
+  .post-body {
+    text-align: justify;
+  }
+
+  /* 수식이나 코드가 넘칠 경우를 대비 */
+  .post-body img, .post-body canvas, .post-body svg {
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: 600px) {
+    .main-content {
+      padding: 1.5rem;
+    }
   }
 </style>
