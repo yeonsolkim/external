@@ -7,7 +7,6 @@ categories:
   - 4. Compositional Meaning
 ---
 
-<% tp.file.cursor() %>
 ## Degree of Adj/Adv
 #### 1. too ... to-infinitive
 V가 가능한 maximum에 대해 "degree > maximum"

@@ -7,7 +7,6 @@ categories:
   - 3. Lexical Meaning
 ---
 
-<% tp.file.cursor() %>
 한 lexeme이 여러 카테고리에 중복 포함 가능
 1. Verb (Lexical Verb/Auxiliary Verb)
 2. Noun 

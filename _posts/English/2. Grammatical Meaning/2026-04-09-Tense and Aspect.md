@@ -7,7 +7,6 @@ categories:
   - 2. Grammatical Meaning
 ---
 
-<% tp.file.cursor() %>
 ## 1. Klein's Three-Time Model
 1. $UT$ (Utterance Time): 말하는 시간
 2. $TT$ (Topic Time): 이야기하는 대상 시간 (화제가 되는 시간)

@@ -7,7 +7,6 @@ categories:
   - 2. Grammatical Meaning
 ---
 
-<% tp.file.cursor() %>
 ### She made the boys stay after school.
 * Predicate: 
   * Head: made

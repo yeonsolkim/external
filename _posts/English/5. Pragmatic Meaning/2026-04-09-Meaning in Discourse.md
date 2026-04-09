@@ -7,7 +7,6 @@ categories:
   - 5. Pragmatic Meaning
 ---
 
-<% tp.file.cursor() %>
 ## 1. Discourse
 - **elaboration**: 부연
 - **explanation**: 설명

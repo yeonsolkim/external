@@ -7,17 +7,16 @@ categories:
   - 2. Grammatical Meaning
 ---
 
-<% tp.file.cursor() %>
 ## 1. Extraposition
 ### It's good to get up early.
-* Extraposed Subject(To-Infinitival Clause): to get up early
-    * Predicand: we
-    * Predicate: get up early
-      * Head(VP): get up
-      * Modifier(AdvP): early
 * Predicate(VP): is good
   * Head(Auxiliary Verb): is
   * Predicative Complement(AdjP): good
+* Predicand(To-Infinitival Clause): to get up early
+    * Predicate: get up early
+      * Head(VP): get up
+      * Modifier(AdvP): early
+    * Predicand: we
 ---
 ## 2. Hollow Non-Finite Clause
 *Gap의 해석이 matrix clause 전체와 관련이 있기 때문에 hollow는 predicate의 성질보다는 matrix clause의 성질로 본다고 한다. 

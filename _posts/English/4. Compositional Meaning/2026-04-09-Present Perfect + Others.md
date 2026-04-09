@@ -7,7 +7,6 @@ categories:
   - 4. Compositional Meaning
 ---
 
-<% tp.file.cursor() %>
 사건에 따라, 부사에 따라 최종적으로 compositional meaning에 기여하는 바가 다르다. 
 
 ## 1. 결과의 현재성

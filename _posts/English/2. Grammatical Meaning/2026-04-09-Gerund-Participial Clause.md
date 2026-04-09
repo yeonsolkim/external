@@ -7,8 +7,6 @@ categories:
   - 2. Grammatical Meaning
 ---
 
-<% tp.file.cursor() %>
-
 ## 1. Subject로 기능하는 Gerund-Participial Clause
 ### Learning Chinese is easy.
 * Subject(Gerund-Participial Clause): learning Chinese
@@ -56,16 +54,16 @@ categories:
             * Complement(AdjP): late
 
 ### It's nice seeing him again. (의미: situation 평가)
-* Extraposed Subject(Gerund-Participial Clause): seeing him again
-  * Predicand: I
-      * Predicate: seeing him again
-        * Head(V): seeing
-        * Direct Object: him
-        * Modifier(AdjP): again
 * Predicate
   * Head(Auxiliary Verb): is
   * Complement(AdjP): nice seeing him again
     * Head(Adj): nice
+* Predicand(Gerund-Participial Clause): seeing him again
+    * Predicate: seeing him again
+        * Head(V): seeing
+        * Direct Object: him
+        * Modifier(AdjP): again
+    * Predicand: I
 ## 3. Supplement로 기능하는 Gerund-Participial Clause
 ### Smiling brightly, the girl turned toward him.
 * Supplement(Gerund-Participial Clause): smiling brightly

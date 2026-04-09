@@ -7,8 +7,7 @@ categories:
   - 4. Compositional Meaning
 ---
 
-<% tp.file.cursor() %>
-# 1. can
+### 1. can
 1. 능력
 2. 허락
 3. **가능성**
@@ -20,11 +19,11 @@ categories:
 >3. Even expert drivers can make mistakes.
 >4. She can't be tired now. 
 
-# 2. may
+### 2. may
 1. 허락
 2. 추측
 
-# 3. must, have to
+### 3. must, have to
 1. 의무
 2. **필요**
 3. 강한 추측
@@ -34,7 +33,7 @@ categories:
 >2. I have to call my mom.
 >3. He must be hungry.
 
-# 4. will
+### 4. will
 1. **의지**
 2. **cooperativeness**
 3. **disposition(경향)**
@@ -48,6 +47,6 @@ categories:
 >4. I would sometimes travel alone. (나는 때로 혼자 여행을 하곤 했다.)
 >5. He will be a doctor.
 
-# 5. should, ought to
+### 5. should, ought to
 1. 의무
 2. **합리적 추측**

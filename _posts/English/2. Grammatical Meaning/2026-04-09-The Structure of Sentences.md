@@ -7,7 +7,6 @@ categories:
   - 2. Grammatical Meaning
 ---
 
-<% tp.file.cursor() %>
 ## 1. Overview
 * sentence의 parts를 constituents라고 하자
 * constituents는 categorize할 수 있다. 
