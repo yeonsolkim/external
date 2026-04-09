@@ -38,6 +38,6 @@ title: Abstraction
 
 <style>
   .custom-list { list-style-type: disc !important; padding-left: 35px; }
-  .custom-list li::marker { color: #000; font-size: 0.8em; }
+  .custom-list li::marker { color: #00000064; font-size: 0.8em; }
   .custom-list li { margin-bottom: 8px; }
 </style>

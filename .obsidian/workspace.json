@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ab6686bd7d1d1914",
+            "id": "3440a54b35b19f7b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2026-3-20-analysis.md",
+                "file": "MyNotes/English/1. Grammatical Meaning/1.4. Clauses.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-3-20-analysis"
+              "title": "1.4. Clauses"
             }
           },
           {
@@ -27,16 +27,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2026-04-03-naive-set-theory.md",
+                "file": "MyNotes/English/1. Grammatical Meaning/1.1. The Structure of Sentences.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "1.1. The Structure of Sentences"
+            }
+          },
+          {
+            "id": "ab6686bd7d1d1914",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MyNotes/English/1. Grammatical Meaning/1.8. Gerund-Participial Clause.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-03-naive-set-theory"
+              "title": "1.8. Gerund-Participial Clause"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -93,7 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 348.5
   },
   "right": {
     "id": "891ef434f683c723",
@@ -109,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2026-04-03-naive-set-theory.md",
+                "file": "MyNotes/English/1. Grammatical Meaning/1.8. Gerund-Participial Clause.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2026-04-03-naive-set-theory"
+              "title": "Backlinks for 1.8. Gerund-Participial Clause"
             }
           },
           {
@@ -128,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2026-04-03-naive-set-theory.md",
+                "file": "MyNotes/English/1. Grammatical Meaning/1.8. Gerund-Participial Clause.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 2026-04-03-naive-set-theory"
+              "title": "Outgoing links from 1.8. Gerund-Participial Clause"
             }
           },
           {
@@ -171,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2026-04-03-naive-set-theory.md",
+                "file": "MyNotes/English/1. Grammatical Meaning/1.8. Gerund-Participial Clause.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2026-04-03-naive-set-theory"
+              "title": "Outline of 1.8. Gerund-Participial Clause"
             }
           }
         ]
@@ -198,15 +212,20 @@
       "bases:Create new base": false
     }
   },
-  "active": "faa924c9c3e5392e",
+  "active": "ab6686bd7d1d1914",
   "lastOpenFiles": [
-    "_posts/2026-3-20-analysis.md",
-    "_posts/2026-04-03-naive-set-theory.md",
-    "_posts/2026-04-07-to-infinitival-clause.md",
+    "MyNotes/English/1. Grammatical Meaning/1.1. The Structure of Sentences.md",
+    "MyNotes/English/1. Grammatical Meaning/1.8. Gerund-Participial Clause.md",
+    "MyNotes/English/1. Grammatical Meaning/1.4. Clauses.md",
+    "_posts/Mathematics/2026-3-20-analysis.md",
+    "_posts/English/1. Grammatical Meaning",
+    "_posts/Mathematics/2026-04-03-naive-set-theory.md",
+    "_posts/Mathematics",
+    "_posts/English",
+    "_posts/English/2026-04-07-to-infinitival-clause.md",
     "MyNotes/Mathematics/Set Theory.md",
     "MyNotes/LLM.md",
     "MyNotes/English/1. Grammatical Meaning/1.2. Tense and Aspect.md",
-    "MyNotes/English/1. Grammatical Meaning/1.1. The Structure of Sentences.md",
     "MyNotes/About Me.md",
     "MyNotes/Markdown.md",
     "MyNotes/Welcome.md",
@@ -227,14 +246,10 @@
     "MyNotes/English/3. Compositional Meaning/Idiomatic Expressions.md",
     "MyNotes/English/3. Compositional Meaning/Present Perfect + Others.md",
     "MyNotes/English/3. Compositional Meaning/Auxiliary Verb.md",
-    "MyNotes/English/3. Compositional Meaning/Tense Meaning.md",
-    "MyNotes/English/3. Compositional Meaning/3.5. of-PP.md",
     "MyNotes/Pasted image 20260405213914.jpg",
     "MyNotes/English/3. Compositional Meaning",
     "MyNotes/English/1. Grammatical Meaning",
     "MyNotes/English/4. Pragmatic Meaning",
-    "MyNotes/English/2. Lexical Meaning",
-    "MyNotes/English",
-    "MyNotes/Mathematics"
+    "MyNotes/English/2. Lexical Meaning"
   ]
 }

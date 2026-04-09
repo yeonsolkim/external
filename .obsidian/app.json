@@ -9,5 +9,6 @@
   "promptDelete": false,
   "showIndentGuide": false,
   "livePreview": false,
-  "defaultViewMode": "preview"
+  "defaultViewMode": "preview",
+  "autoPairMarkdown": false
 }
