@@ -1,0 +1,48 @@
+---
+layout: post
+title: Tense and Aspect
+date: 2026-04-09 13:40:30 +0900
+categories:
+  - English
+  - 2. Grammatical Meaning
+---
+
+<% tp.file.cursor() %>
+## 1. Klein's Three-Time Model
+1. $UT$ (Utterance Time): 말하는 시간
+2. $TT$ (Topic Time): 이야기하는 대상 시간 (화제가 되는 시간)
+3. $ET$ (Event Time): 사건이 일어나는 시간
+
+
+## 2. Definition of Relation
+ 1. Precedence: $I < J \iff \forall t \in I\ \forall t' \in J\ t < t'$
+ 2. Inclusion: $I\subset J \iff \forall t\,(t\in I \rightarrow t\in J)$
+
+
+## 3. Tense
+| **Category** | **Relation**        |
+| ------------ | ------------------- |
+| **Past**     | **$TT < UT$**       |
+| **Present**  | **$UT \subset TT$** |
+| **Future**   | **$UT < TT$**       |
+
+
+## 4. Aspect
+
+| **Category**    | **Relation**             |
+| --------------- | ------------------------ |
+| **Perfective**  | **$ET \subset TT$     ** |
+| **Progressive** | **$TT \subset ET$**      |
+| **Perfect**     | **$ET < TT$**            |
+
+
+## 5. 주요 조합
+
+| **Category**                 | **Relation**                            | Expression             |
+| ---------------------------- | --------------------------------------- | ---------------------- |
+| **Past Perfective**          | $(TT < UT) \land (ET \subset TT)$       | preterite            |
+| **Present Progressive     ** | $(UT \subset TT) \land (TT \subset ET)$ | be + gerund participle    |
+| **Present Perfect**          | $(UT \subset TT) \land (ET < TT)$       | have + past participle |
+| **Future perfective**        | $(UT < TT) \land (ET \subset TT)$       | will + plain present  |
+
+

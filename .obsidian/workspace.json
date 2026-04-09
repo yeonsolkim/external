@@ -8,26 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "3440a54b35b19f7b",
+            "id": "fba9fc305e3b57ff",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyNotes/English/1. Grammatical Meaning/1.4. Clauses.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "1.4. Clauses"
-            }
-          },
-          {
-            "id": "faa924c9c3e5392e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MyNotes/English/1. Grammatical Meaning/1.1. The Structure of Sentences.md",
+                "file": "_posts/English/1. Grammatical Meaning/1.1. The Structure of Sentences.md",
                 "mode": "preview",
                 "source": true
               },
@@ -36,21 +22,35 @@
             }
           },
           {
+            "id": "3440a54b35b19f7b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-09-Dependent in NP.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "2026-04-09-Dependent in NP"
+            }
+          },
+          {
             "id": "ab6686bd7d1d1914",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyNotes/English/1. Grammatical Meaning/1.8. Gerund-Participial Clause.md",
-                "mode": "source",
+                "file": "templates/Jekyll-Post.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "1.8. Gerund-Participial Clause"
+              "title": "Jekyll-Post"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -107,7 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 348.5
+    "width": 334.5
   },
   "right": {
     "id": "891ef434f683c723",
@@ -123,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyNotes/English/1. Grammatical Meaning/1.8. Gerund-Participial Clause.md",
+                "file": "_templates/Jekyll-Post.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 1.8. Gerund-Participial Clause"
+              "title": "Backlinks for Jekyll-Post"
             }
           },
           {
@@ -142,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyNotes/English/1. Grammatical Meaning/1.8. Gerund-Participial Clause.md",
+                "file": "_templates/Jekyll-Post.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 1.8. Gerund-Participial Clause"
+              "title": "Outgoing links from Jekyll-Post"
             }
           },
           {
@@ -185,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyNotes/English/1. Grammatical Meaning/1.8. Gerund-Participial Clause.md",
+                "file": "_templates/Jekyll-Post.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1.8. Gerund-Participial Clause"
+              "title": "Outline of Jekyll-Post"
             }
           }
         ]
@@ -209,47 +209,48 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "ab6686bd7d1d1914",
+  "active": "3440a54b35b19f7b",
   "lastOpenFiles": [
-    "MyNotes/English/1. Grammatical Meaning/1.1. The Structure of Sentences.md",
-    "MyNotes/English/1. Grammatical Meaning/1.8. Gerund-Participial Clause.md",
-    "MyNotes/English/1. Grammatical Meaning/1.4. Clauses.md",
-    "_posts/Mathematics/2026-3-20-analysis.md",
-    "_posts/English/1. Grammatical Meaning",
-    "_posts/Mathematics/2026-04-03-naive-set-theory.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-09-Extraposition, Hollow Clause, Auxiliary Verb.md",
+    "_posts/Mathematics/2. Analysis/2026-3-20-PMU.md",
+    "MyNotes/Note.md",
+    "_posts/Mathematics/1. Set Theory/2026-04-03-naive-set-theory.md",
+    "_posts/Mathematics/1. Set Theory",
+    "_posts/Mathematics/2. Analysis",
+    "_posts/English/1. Overview/2026-04-09-Dimensions of Meaning.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-02-of-pp.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-07-to-infinitival-clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-09-Bare Infinitival Clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-09-Clauses.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-09-Dependent in NP.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-09-Gerund-Participial Clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-09-Modifier.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-09-Relative Clauses.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-09-Tense and Aspect.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-09-The Structure of Sentences.md",
+    "_posts/English/3. Lexical Meaning/2026-04-09-Lexical Category.md",
+    "_posts/English/4. Compositional Meaning/2026-04-09-Adjunct.md",
+    "_posts/English/4. Compositional Meaning/2026-04-09-Auxiliary Verb.md",
+    "_posts/English/4. Compositional Meaning/2026-04-09-Idiomatic Expressions.md",
+    "_posts/English/4. Compositional Meaning/2026-04-09-Present Perfect + Others.md",
+    "_posts/English/4. Compositional Meaning/2026-04-09-Sentences.md",
+    "_posts/English/4. Compositional Meaning/2026-04-09-Time.md",
+    "_posts/English/5. Pragmatic Meaning/2026-04-09-Meaning in Discourse.md",
+    "_posts/English/1. Overview",
+    "_posts/English/3. Compositional Meaning/Tense Meaning.md",
+    "_posts/English/3. Compositional Meaning/Present Perfect + Others.md",
+    "_posts/English/3. Compositional Meaning/Idiomatic Expressions.md",
+    "_posts/English/2. Grammatical Meaning/Pasted image 20260405213914.jpg",
+    "templates",
+    "_posts/English/2. Grammatical Meaning",
     "_posts/Mathematics",
     "_posts/English",
-    "_posts/English/2026-04-07-to-infinitival-clause.md",
-    "MyNotes/Mathematics/Set Theory.md",
-    "MyNotes/LLM.md",
-    "MyNotes/English/1. Grammatical Meaning/1.2. Tense and Aspect.md",
-    "MyNotes/About Me.md",
-    "MyNotes/Markdown.md",
-    "MyNotes/Welcome.md",
-    "MyNotes/Naive Set Theory.md",
-    "MyNotes/Mar 22.md",
-    "MyNotes/Mathematics/Notes.md",
-    "MyNotes/Mathematics/Note.md",
-    "index.md",
     "gitignore",
-    "README.md",
     "MyNotes",
-    "MyNotes/Natural Language/of Noun.md",
-    "MyNotes/Natural Language/Categorization.md",
-    "MyNotes/Natural Language/Relative Clauses.md",
-    "MyNotes/Natural Language",
-    "MyNotes/English/1. Grammatical Meaning/1.6. To-Infinitival Clause.md",
-    "MyNotes/English/1. Grammatical Meaning/The Structure of Sentences.md",
-    "MyNotes/English/3. Compositional Meaning/Idiomatic Expressions.md",
-    "MyNotes/English/3. Compositional Meaning/Present Perfect + Others.md",
-    "MyNotes/English/3. Compositional Meaning/Auxiliary Verb.md",
-    "MyNotes/Pasted image 20260405213914.jpg",
-    "MyNotes/English/3. Compositional Meaning",
-    "MyNotes/English/1. Grammatical Meaning",
-    "MyNotes/English/4. Pragmatic Meaning",
-    "MyNotes/English/2. Lexical Meaning"
+    "MyNotes/Natural Language"
   ]
 }
