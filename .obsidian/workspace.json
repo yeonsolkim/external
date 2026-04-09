@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2026-3-20-analysis.md",
-                "mode": "source",
+                "file": "_posts/2026-04-03-naive-set-theory.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-3-20-analysis"
+              "title": "2026-04-03-naive-set-theory"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2026-3-20-analysis.md",
+                "file": "_posts/2026-04-03-naive-set-theory.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2026-3-20-analysis"
+              "title": "Backlinks for 2026-04-03-naive-set-theory"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2026-3-20-analysis.md",
+                "file": "_posts/2026-04-03-naive-set-theory.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 2026-3-20-analysis"
+              "title": "Outgoing links from 2026-04-03-naive-set-theory"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2026-3-20-analysis.md",
+                "file": "_posts/2026-04-03-naive-set-theory.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2026-3-20-analysis"
+              "title": "Outline of 2026-04-03-naive-set-theory"
             }
           }
         ]
@@ -185,9 +185,9 @@
   },
   "active": "ab6686bd7d1d1914",
   "lastOpenFiles": [
+    "_posts/2026-3-20-analysis.md",
     "_posts/2026-04-03-naive-set-theory.md",
     "_posts/2026-04-07-to-infinitival-clause.md",
-    "_posts/2026-3-20-analysis.md",
     "MyNotes/Mathematics/Set Theory.md",
     "MyNotes/LLM.md",
     "MyNotes/English/1. Grammatical Meaning/1.2. Tense and Aspect.md",
