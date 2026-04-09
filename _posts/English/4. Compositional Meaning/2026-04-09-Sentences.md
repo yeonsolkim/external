@@ -7,7 +7,7 @@ categories:
   - 4. Compositional Meaning
 ---
 
-<% tp.file.cursor() %>
+
 ## 1. Action
 1. $\langle\text{Agent},\text{Act}, \text{Theme}\rangle$ *$\text{Agent}$는 의지를 가지고 동작을 수행하는 주체
 2. $\langle\text{Agent},\text{Act},\text{Patient}\rangle$ *$\text{Patient}$는 단순 대상이 아니라 내부적으로 상태가 변화하는 대상
