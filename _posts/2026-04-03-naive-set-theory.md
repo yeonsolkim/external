@@ -10,6 +10,7 @@ categories: ["Mathematics", "1. Set Theory"]
 **1. Axiom of Extension.**
 
 $$\forall x\,(x\in A\leftrightarrow x\in B)\leftrightarrow A=B$$
+
 <br><br>
 
 **2. Belonging.** a binary "relation" $\in$.

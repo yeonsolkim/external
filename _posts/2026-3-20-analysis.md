@@ -38,8 +38,7 @@ $$\forall E\subset S(E\neq \emptyset\wedge E \text{ is bounded above} \Rightarro
 
 **1.5 Theorem.** *Suppose $S$ is an ordered set with the LUB, $B\subset S, B\neq \emptyset, B$ is bounded below. Let $L$ be the set of all lower bounds of $B$. Then,*
 
-$$\exists u\in S(u=\sup L),\ \inf B=\sup L.$$
-
+$$\exists u\in S(u=\sup L),\ \inf B=\sup L.$$ 
 <br><br>
 
 **1.6 Definition.** A *field* is a set $F$ with two operations, which satisfy the followings: <br>
@@ -48,7 +47,7 @@ $$\exists u\in S(u=\sup L),\ \inf B=\sup L.$$
 (A2) $\forall x,y\in F, \,x+y=y+x$<br>
 (A3) $\forall x,y,z\in F, \,(x+y)+z=x+(y+z)$<br>
 (A4) $\exists y\in F\,(\forall x\in F,\,x+y=x)$ and we write $y=0$<br>
-(A5) $\forall x\in F, \exists y\in F\,(x+y=0)$ and we write $y=-x$<br>
+(A5) $\forall x\in F, \exists y\in F\,(x+y=0)$ and we write $y=-x$
 <br><br>
 
 (M) Multiplication<br>

@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2026-04-03-naive-set-theory.md",
+                "file": "_posts/2026-3-20-analysis.md",
                 "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "2026-3-20-analysis"
+            }
+          },
+          {
+            "id": "faa924c9c3e5392e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/2026-04-03-naive-set-theory.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
               "title": "2026-04-03-naive-set-theory"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -183,7 +198,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "ab6686bd7d1d1914",
+  "active": "faa924c9c3e5392e",
   "lastOpenFiles": [
     "_posts/2026-3-20-analysis.md",
     "_posts/2026-04-03-naive-set-theory.md",
