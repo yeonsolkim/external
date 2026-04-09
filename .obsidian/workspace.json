@@ -215,6 +215,8 @@
   },
   "active": "3440a54b35b19f7b",
   "lastOpenFiles": [
+    "_includes/head.html",
+    "_includes",
     "_posts/English/2. Grammatical Meaning/2026-04-09-Extraposition, Hollow Clause, Auxiliary Verb.md",
     "_posts/Mathematics/2. Analysis/2026-3-20-PMU.md",
     "MyNotes/Note.md",
@@ -243,14 +245,12 @@
     "_posts/English/1. Overview",
     "_posts/English/3. Compositional Meaning/Tense Meaning.md",
     "_posts/English/3. Compositional Meaning/Present Perfect + Others.md",
-    "_posts/English/3. Compositional Meaning/Idiomatic Expressions.md",
     "_posts/English/2. Grammatical Meaning/Pasted image 20260405213914.jpg",
     "templates",
     "_posts/English/2. Grammatical Meaning",
     "_posts/Mathematics",
     "_posts/English",
     "gitignore",
-    "MyNotes",
-    "MyNotes/Natural Language"
+    "MyNotes"
   ]
 }
