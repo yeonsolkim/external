@@ -7,7 +7,7 @@ categories:
   - 2. Grammatical Meaning
 ---
 
-<% tp.file.cursor() %>
+
 기본적으로 modifier이고, head noun이 특별히 license하는 경우 complement일 수도 있다. 
 
 ## 1. Modifier

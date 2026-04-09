@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-09-Dependent in NP.md",
-                "mode": "source",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-09-Bare Infinitival Clause.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-09-Dependent in NP"
+              "title": "2026-04-09-Bare Infinitival Clause"
             }
           },
           {
@@ -107,7 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 334.5
+    "width": 358.5
   },
   "right": {
     "id": "891ef434f683c723",
@@ -215,6 +215,8 @@
   },
   "active": "3440a54b35b19f7b",
   "lastOpenFiles": [
+    "_posts/English/2. Grammatical Meaning/2026-04-09-Clauses.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-09-Dependent in NP.md",
     "_includes/head.html",
     "_includes",
     "_posts/English/2. Grammatical Meaning/2026-04-09-Extraposition, Hollow Clause, Auxiliary Verb.md",
@@ -227,8 +229,6 @@
     "_posts/English/2. Grammatical Meaning/2026-04-02-of-pp.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-to-infinitival-clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-09-Bare Infinitival Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-09-Clauses.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-09-Dependent in NP.md",
     "_posts/English/2. Grammatical Meaning/2026-04-09-Gerund-Participial Clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-09-Modifier.md",
     "_posts/English/2. Grammatical Meaning/2026-04-09-Relative Clauses.md",
@@ -250,7 +250,6 @@
     "_posts/English/2. Grammatical Meaning",
     "_posts/Mathematics",
     "_posts/English",
-    "gitignore",
-    "MyNotes"
+    "gitignore"
   ]
 }

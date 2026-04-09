@@ -31,17 +31,18 @@ title: Abstraction
         </h3>
         
         <ul class="custom-list">
-        {% for post in site.posts %}
-          {% assign p_sub = post.categories[1] | default: "General" %}
-          {% if post.categories[0] == parent and p_sub == sub %}
-            <li>
-              <a href="{{ site.baseurl }}{{ post.url }}" class="post-link">
-               {{ post.title }}
-              </a>
-              <span class="post-date">- {{ post.date | date: "%B %d, %Y" }}</span>
-            </li>
-          {% endif %}
-        {% endfor %}
+         {% assign sorted_posts = site.posts | sort: "title" %}
+
+          {% for post in sorted_posts %}
+           {% assign p_sub = post.categories[1] | default: "General" %}
+            {% if post.categories[0] == parent and p_sub == sub %}
+              <li>
+                <a href="{{ site.baseurl }}{{ post.url }}" class="post-link">
+                {{ post.title }}
+                </a>
+              </li>
+            {% endif %}
+           {% endfor %}
         </ul>
       </div>
     {% endfor %}
