@@ -88,15 +88,23 @@
      <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
      <a href="{{ '/feed.xml' | relative_url }}" class="btn">RSS Feed</a>
     </div>
-    <div style="font-size: 0.9rem; color: #eee; margin-top: 10px;">
-      <span id="busuanzi_container_site_pv" style="display:none;">
-    Total Views: <span id="busuanzi_value_site_pv"></span>
-      </span>
-      <span style="margin: 0 10px;">|</span>
-      <span id="busuanzi_container_site_uv" style="display:none;">
-        Visitors: <span id="busuanzi_value_site_uv"></span>
-      </span>
+    <div id="busuanzi_container_site" style="display:none; margin-top: 15px; font-size: 0.85rem; color: rgba(255,255,255,0.7);">
+      <span>Total Views: </span>
+      <span id="busuanzi_value_site_pv" style="font-weight: bold;"></span>
+      <span style="margin: 0 8px; opacity: 0.5;">|</span>
+      <span>Visitors: </span>
+      <span id="busuanzi_value_site_uv" style="font-weight: bold;"></span>
     </div>
+
+    <script>
+      var checkBusuanzi = setInterval(function() {
+        var pv = document.getElementById('busuanzi_value_site_pv');
+        if (pv && pv.innerText !== "") {
+          document.getElementById('busuanzi_container_site').style.display = 'block';
+          clearInterval(checkBusuanzi);
+        }
+      }, 500); // 0.5초마다 체크
+    </script>
   </section>
 
   <main id="content" class="main-content" role="main">
