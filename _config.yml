@@ -1,6 +1,6 @@
 remote_theme: pages-themes/cayman@v0.2.0
 baseurl: "/blog"
-description: "Mathematics, Physics, and Liguistics"
+description: "Mathematics and Physics"
 url: "https://YeonsolKim.github.io"
 fixed_banner_title: "Abstraction"
 banner_color_start: "#000000" 
