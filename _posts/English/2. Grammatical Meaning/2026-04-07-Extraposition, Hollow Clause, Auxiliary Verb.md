@@ -1,11 +1,12 @@
 ---
 layout: post
 title: Extraposition, Hollow Clause, Auxiliary Verb
-date: 2026-04-09 13:41:07 +0900
+date: 2026-04-07 11:59:18 +0900
 categories:
   - English
   - 2. Grammatical Meaning
 ---
+
 
 ## 1. Extraposition
 ### It's good to get up early.
@@ -17,7 +18,8 @@ categories:
       * Head(VP): get up
       * Modifier(AdvP): early
     * Predicand: we
----
+
+
 ## 2. Hollow Non-Finite Clause
 *Gap의 해석이 matrix clause 전체와 관련이 있기 때문에 hollow는 predicate의 성질보다는 matrix clause의 성질로 본다고 한다. 
 ### Here is a new book for you to read.
@@ -49,7 +51,8 @@ categories:
       * Predicate(VP): teach
         * Head(V): teach
         * Direct Object Gap(NP): these students
----
+
+
 ## 3. Auxiliary Verb의 Complement로 기능하는 Bare Infinitival Clause
 ### For Mike to succeed, he must improve his study habit.
 * Adjunct(To-Infinitival Clause): For mike to succeed

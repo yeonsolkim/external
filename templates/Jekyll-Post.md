@@ -1,12 +1,14 @@
 <%*
-  // 1. 파일명 날짜 자동 추가
+  // 1. 파일의 실제 생성 날짜를 가져옴
+  let cDate = tp.file.creation_date("YYYY-MM-DD");
   let title = tp.file.title;
-  let dateNow = tp.date.now("YYYY-MM-DD");
-  if (!title.startsWith(dateNow)) {
-      await tp.file.rename(`${dateNow}-${title}`);
+
+  // 2. 파일 이름이 생성 날짜로 시작하지 않으면 강제 변경
+  if (!title.startsWith(cDate)) {
+      await tp.file.rename(`${cDate}-${title}`);
   }
 
-  // 2. 경로에서 카테고리 추출 및 정제
+  // 3. 경로에서 카테고리 추출 및 정제
   let folderPath = tp.file.folder(true);
   let cleanPath = folderPath.replace("_posts/", "").replace("_posts", "");
   
@@ -20,8 +22,6 @@
 ---
 layout: post
 title: "<% tp.file.title.replace(/\d{4}-\d{2}-\d{2}-/, "") %>"
-date: <% tp.date.now("YYYY-MM-DD HH:mm:ss") %> +0900
+date: <% tp.file.creation_date("YYYY-MM-DD HH:mm:ss") %> +0900
 categories: <% categoriesResult %>
 ---
-
-<% tp.file.cursor() %>

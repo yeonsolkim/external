@@ -1,11 +1,12 @@
 ---
 layout: post
 title: Lexical Category
-date: 2026-04-09 13:41:25 +0900
+date: 2026-04-03 13:46:13 +0900
 categories:
   - English
   - 3. Lexical Meaning
 ---
+
 
 한 lexeme이 여러 카테고리에 중복 포함 가능
 1. Verb (Lexical Verb/Auxiliary Verb)

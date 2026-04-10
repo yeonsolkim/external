@@ -1,11 +1,12 @@
 ---
 layout: post
 title: Sentences
-date: 2026-04-09 13:42:17 +0900
+date: 2026-04-06 14:03:28 +0900
 categories:
   - English
   - 4. Compositional Meaning
 ---
+
 
 
 ## 1. Action

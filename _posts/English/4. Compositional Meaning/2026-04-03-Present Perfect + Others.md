@@ -1,11 +1,12 @@
 ---
 layout: post
 title: Present Perfect + Others
-date: 2026-04-09 13:41:39 +0900
+date: 2026-04-03 16:13:37 +0900
 categories:
   - English
   - 4. Compositional Meaning
 ---
+
 
 사건에 따라, 부사에 따라 최종적으로 compositional meaning에 기여하는 바가 다르다. 
 

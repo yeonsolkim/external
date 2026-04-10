@@ -1,11 +1,12 @@
 ---
 layout: post
 title: Meaning in Discourse
-date: 2026-04-09 13:43:26 +0900
+date: 2026-04-04 11:45:36 +0900
 categories:
   - English
   - 5. Pragmatic Meaning
 ---
+
 
 ## 1. Discourse
 - **elaboration**: 부연

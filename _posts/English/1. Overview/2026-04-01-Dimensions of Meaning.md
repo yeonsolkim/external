@@ -1,13 +1,12 @@
 ---
 layout: post
 title: Dimensions of Meaning
-date: 2026-04-09 13:47:00 +0900
+date: 2026-04-01 13:46:14 +0900
 categories:
   - English
   - 1. Overview
 ---
 
-<% tp.file.cursor() %>
 ## 1. Encoded Meaning
 
 **정의:** 언어 표현 자체에 코드화되어 있는 의미이다. 즉, 특정 단어와 문법 형식이 언어 체계 안에서 관습적으로 지니는 의미를 가리킨다. Encoded Meaning은 두 가지로 나눌 수 있다.

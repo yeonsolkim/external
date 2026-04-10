@@ -1,11 +1,12 @@
 ---
 layout: post
 title: Idiomatic Expressions
-date: 2026-04-09 13:42:29 +0900
+date: 2026-04-05 13:47:54 +0900
 categories:
   - English
   - 4. Compositional Meaning
 ---
+
 
 ## Degree of Adj/Adv
 #### 1. too ... to-infinitive

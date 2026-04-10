@@ -1,13 +1,12 @@
 ---
 layout: post
 title: Relative Clauses
-date: 2026-04-09 13:40:13 +0900
+date: 2026-04-03 14:35:15 +0900
 categories:
   - English
   - 2. Grammatical Meaning
 ---
 
-<% tp.file.cursor() %>
 ## Property
 1. relative clauses는 subordinate이다. 
 

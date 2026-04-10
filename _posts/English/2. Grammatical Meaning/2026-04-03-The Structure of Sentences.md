@@ -1,11 +1,12 @@
 ---
 layout: post
 title: The Structure of Sentences
-date: 2026-04-09 13:40:45 +0900
+date: 2026-04-03 13:41:56 +0900
 categories:
   - English
   - 2. Grammatical Meaning
 ---
+
 
 ## 1. Overview
 * sentence의 parts를 constituents라고 하자

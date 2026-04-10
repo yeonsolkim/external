@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Tense and Aspect
-date: 2026-04-09 13:40:30 +0900
+date: 2026-04-03 16:35:00 +0900
 categories:
   - English
   - 2. Grammatical Meaning

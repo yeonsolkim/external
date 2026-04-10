@@ -1,11 +1,12 @@
 ---
 layout: post
 title: Dependent in NP
-date: 2026-04-09 13:40:56 +0900
+date: 2026-04-09 10:57:25 +0900
 categories:
   - English
   - 2. Grammatical Meaning
 ---
+
 
 
 기본적으로 modifier이고, head noun이 특별히 license하는 경우 complement일 수도 있다. 

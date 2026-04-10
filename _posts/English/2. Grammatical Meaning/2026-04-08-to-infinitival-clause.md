@@ -1,9 +1,13 @@
 ---
 layout: post
-title: "To-Infinitival Clause"
-date: 2026-04-07 00:00:00 +0900
-categories: ["English", "2. Grammatical Meaning"]
+title: to-infinitival-clause
+date: 2026-04-08 10:34:08 +0900
+categories:
+  - English
+  - 2. Grammatical Meaning
 ---
+
+
 
 ## 1. Complement로 기능하는 To-Infinitival Clause
 ### I want to drink cold water. 

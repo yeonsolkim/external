@@ -1,11 +1,12 @@
 ---
 layout: post
 title: Bare Infinitival Clause
-date: 2026-04-09 13:40:03 +0900
+date: 2026-04-07 17:02:31 +0900
 categories:
   - English
   - 2. Grammatical Meaning
 ---
+
 
 ### She made the boys stay after school.
 * Predicate: 

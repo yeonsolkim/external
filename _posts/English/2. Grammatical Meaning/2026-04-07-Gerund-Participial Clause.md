@@ -1,11 +1,12 @@
 ---
 layout: post
 title: Gerund-Participial Clause
-date: 2026-04-09 13:39:40 +0900
+date: 2026-04-07 17:01:42 +0900
 categories:
   - English
   - 2. Grammatical Meaning
 ---
+
 
 ## 1. Subject로 기능하는 Gerund-Participial Clause
 ### Learning Chinese is easy.
@@ -14,6 +15,7 @@ categories:
   * Predicate: learning Chinese
     * Head: learning
     * Direct Object: Chinese
+
 ## 2. Complement로 기능하는 Gerund-Participial Clause
 ### She likes dancing.
 * Subject: she
@@ -64,6 +66,7 @@ categories:
         * Direct Object: him
         * Modifier(AdjP): again
     * Predicand: I
+
 ## 3. Supplement로 기능하는 Gerund-Participial Clause
 ### Smiling brightly, the girl turned toward him.
 * Supplement(Gerund-Participial Clause): smiling brightly
