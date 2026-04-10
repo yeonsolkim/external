@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/4. Compositional Meaning/2026-04-06-Sentences.md",
-                "mode": "source",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-02-2.7. of-pp.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-06-Sentences"
+              "title": "2026-04-02-2.7. of-pp"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-02-2.12. of-pp.md",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-07-2.3.1. Clauses.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-02-2.12. of-pp"
+              "title": "2026-04-07-2.3.1. Clauses"
             }
           },
           {
@@ -214,13 +214,22 @@
   },
   "active": "fba9fc305e3b57ff",
   "lastOpenFiles": [
-    "_posts/English/2. Grammatical Meaning/2026-04-10-2.11. Supplement.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-10-2.8. Past-Participial Clauses.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-09-2.9. Dependent in NP.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-2.7. Gerund-Participial Clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-10-2.6. Supplement.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-02-2.5. Modifier.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-09-2.4. Dependent in NP.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-08-2.3.3. To-Infinitival-Clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-10-2.3.6. Past-Participial Clauses.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-07-2.3.5 Gerund-Participial Clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-03-2.3.2. Relative Clauses.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-07-2.13. Extraposition, Hollow Clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-07-2.3.1. Clauses.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-07-2.3.4. Bare Infinitival Clause.md",
+    "_posts/English/2. Grammatical Meaning/Complement.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. The Structure of Sentences.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-02-2.7. of-pp.md",
+    "_posts/English/4. Compositional Meaning/2026-04-06-Sentences.md",
     "_posts/Mathematics/1. Set Theory/2026-04-03-naive-set-theory.md",
     "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-02-2.10. Modifier.md",
     "_site/english/5. pragmatic meaning/2026/04/04/Meaning-in-Discourse.html",
     "_site/english/4. compositional meaning/2026/04/06/Sentences.html",
     "_site/english/4. compositional meaning/2026/04/05/Idiomatic-Expressions.html",
@@ -236,18 +245,10 @@
     "_site/MyNotes/Markdown.md",
     "_site/MyNotes/LLM.md",
     "_site/MyNotes/About Me.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-08-2.5. To-Infinitival-Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-2.6. Bare Infinitival Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-2.13. Extraposition, Hollow Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-2.3. Clauses.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-02-2.12. of-pp.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. The Structure of Sentences.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-2.4. Relative Clauses.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Tense and Aspect.md",
     "_posts/Mathematics/2. Analysis/2026-3-20-PMU.md",
     "_posts/English/5. Pragmatic Meaning/2026-04-04-Meaning in Discourse.md",
     "_posts/English/4. Compositional Meaning/2026-04-03-Time.md",
-    "_posts/English/4. Compositional Meaning/2026-04-06-Sentences.md",
     "_posts/English/4. Compositional Meaning/2026-04-03-Present Perfect + Others.md",
     "_posts/English/2. Grammatical Meaning/Pasted image 20260405213914.jpg"
   ]
