@@ -50,8 +50,8 @@ title: Abstraction
 {% endfor %}
 
 <style>
-  .custom-list { list-style-type: disc !important; padding-left: 20px; margin-left: 30px; }
-  .custom-list li::marker { color: #00000064; font-size: 0.7em; }
+  .custom-list { list-style-type: disc !important; padding-left: 20px; margin-left: 20px; }
+  .custom-list li::marker { color: #00000000; font-size: 0.7em; }
   .custom-list li { margin-bottom: 10px; }
   .custom-list li a:hover { text-decoration: underline; color: #000 !important; }
   .post-link {
