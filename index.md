@@ -26,7 +26,7 @@ title: Abstraction
 
     {% for sub in sub_cats %}
       <div style="margin-left: 20px; margin-top: 25px;">
-        <h3 style="color: #444; font-size: 1.1rem; border-left: 4px solid #0000001a; padding-left: 12px; margin-bottom: 15px;">
+        <h3 style="color: #222222; font-size: 1.1rem; border-left: 4px solid #0000001a; padding-left: 12px; margin-bottom: 15px;">
           {{ sub }}
         </h3>
         
