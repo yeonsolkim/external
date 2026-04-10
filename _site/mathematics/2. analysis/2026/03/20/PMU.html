@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      enableMenu: false 
+    },
+    svg: {
+      fontCache: 'global',
+      scale: 0.89,
+      exFactor: 0.5,
+      displayAlign: 'center'
+    }
+  };
+  </script>
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+  <style>
+    .MathJax svg {
+    vertical-align: middle !important;
+    margin-bottom: 0.1ex !important;
+    }
+  </style>
+
+   <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>PMU</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="PMU" />
+<meta name="author" content="YeonsolKim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1.1 Definition. Let $S$ be a set. An order on $S$ is a relation, denoted by $&lt;$ with the following two properties. (1) For all $x,y\in S$, one and only one of the statements" />
+<meta property="og:description" content="1.1 Definition. Let $S$ be a set. An order on $S$ is a relation, denoted by $&lt;$ with the following two properties. (1) For all $x,y\in S$, one and only one of the statements" />
+<link rel="canonical" href="http://localhost:4000/blog/mathematics/2.%20analysis/2026/03/20/PMU.html" />
+<meta property="og:url" content="http://localhost:4000/blog/mathematics/2.%20analysis/2026/03/20/PMU.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-03-20T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="PMU" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"YeonsolKim"},"dateModified":"2026-03-20T00:00:00+09:00","datePublished":"2026-03-20T00:00:00+09:00","description":"1.1 Definition. Let $S$ be a set. An order on $S$ is a relation, denoted by $&lt;$ with the following two properties. (1) For all $x,y\\in S$, one and only one of the statements","headline":"PMU","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/mathematics/2.%20analysis/2026/03/20/PMU.html"},"url":"http://localhost:4000/blog/mathematics/2.%20analysis/2026/03/20/PMU.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/blog/assets/css/style.css">
+
+  <style>
+    .page-header {
+      background-color: #000000 !important;
+      background-image: linear-gradient(to bottom, 
+        #000000, 
+        #878787
+      ) !important;
+      padding: 5rem 6rem !important;
+      text-align: center;
+    }
+
+    .project-name, .project-tagline {
+      color: #ffffff !important;
+    }
+
+
+    .main-content {
+      max-width: 54rem;
+      margin: 0 auto;
+      padding: 2rem 4rem;
+    }
+
+    .page-header .btn {
+      color: #ffffffa2 !important;
+      border-color: rgba(255, 255, 255, 0.4) !important;
+      background-color: rgba(255, 255, 255, 0.1) !important;
+      transition: all 0.2s ease;
+    }
+
+    .page-header .btn:hover {
+     background-color: rgba(255, 255, 255, 0.2) !important;
+     border-color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    .header-buttons {
+     display: flex;
+     justify-content: center;
+     gap: 10px;
+     flex-wrap: wrap;
+    }
+
+    @media screen and (max-width: 64rem) {
+      .main-content {
+      font-size: 16px !important; 
+      line-height: 1.5 !important;
+      padding: 1.5rem 1.2rem !important;
+      }
+
+      h1 { font-size: 1.8rem !important; }
+      h2 { font-size: 1.5rem !important; }
+      h3 { font-size: 1.2rem !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="page-header">
+    <h1 class="project-name">Abstraction</h1>
+    <h2 class="project-tagline">Mathematics and Physics</h2>
+    <div class="header-buttons">
+     <a href="" class="btn">View on GitHub</a>
+     <a href="/blog/feed.xml" class="btn">RSS Feed</a>
+    </div>
+    <div id="busuanzi_container_site" style="display:none; margin-top: 15px; font-size: 0.85rem; color: rgba(255,255,255,0.7);">
+      <span>Total Views: </span>
+      <span id="busuanzi_value_site_pv" style="font-weight: bold;"></span>
+      <span style="margin: 0 8px; opacity: 0.5;">|</span>
+      <span>Visitors: </span>
+      <span id="busuanzi_value_site_uv" style="font-weight: bold;"></span>
+    </div>
+
+    <script>
+      var checkBusuanzi = setInterval(function() {
+        var pv = document.getElementById('busuanzi_value_site_pv');
+        if (pv && pv.innerText !== "") {
+          document.getElementById('busuanzi_container_site').style.display = 'block';
+          clearInterval(checkBusuanzi);
+        }
+      }, 500); 
+    </script>
+  </section>
+
+  <main id="content" class="main-content" role="main">
+    <article class="main-content">
+  <nav style="margin-bottom: 25px;">
+    <a href="/blog/" style="text-decoration: none; color: #666; font-size:medium;">back</a>
+  </nav>
+
+  <header style="text-align: center;">
+    <h1 style="margin-top: 0; color:#000000">PMU</h1>
+    <div style="display: flex; align-items: center; justify-content: center;">
+    <img src="https://github.com/yeonsolkim.png" alt="yeonsolkim" 
+         style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid #eee;">
+    </div>
+    <span style="font-weight:500; color: #373737; font-size: medium;">YeonsolKim</span>
+    <p style="color: #666; margin-top: 0; margin-bottom: 50px; font-weight: lighter; font-size: small;">March 20, 2026</p>
+  </header>
+
+  <hr>
+
+  <div class="post-body">
+    <p><strong>1.1 Definition.</strong> Let $S$ be a set. An <em>order</em> on $S$ is a relation, denoted by $&lt;$ with the following two properties.<br />
+(1) For all $x,y\in S$, one and only one of the statements</p>
+
+\[x&lt;y,\ x=y,\ y&lt;x\]
+
+<p>is true.<br />
+(2) $\forall x,y,z\in S (x&lt;y\wedge y&lt;z \Rightarrow x&lt;z)$<br />
+<br /><br /></p>
+
+<p><strong>1.2 Definition.</strong> Suppose $S$ is an ordered set, and $E\subset S$. If there exists a $\beta \in S$ such that $\forall x\in E, x\leq \beta$, we say that $E$ is <em>bounded above</em>, and call $\beta$ an <em>upper bound</em> of $E$.
+<br /><br /></p>
+
+<p><strong>1.3 Definition.</strong> Suppose $S$ is an ordered set, and $E\subset S$, and $E$ is bounded above. Suppose there exists an $\alpha\in S$ with the following properties:<br />
+(1) $\alpha$ is an upper bound of $E$.<br />
+(2) If $\gamma &lt;\alpha$ then $\gamma$ is not an upper bound of $E$.
+Then $\alpha$ is called the <em>supremum</em> of $E$, an we write</p>
+
+\[\alpha =\sup E.\]
+
+<p>Also, the statement</p>
+
+\[\alpha =\inf E\]
+
+<p>means that $\alpha$ is a <em>infimum</em> of $E$. 
+<br /><br /></p>
+
+<p><strong>1.4 Definition.</strong> An ordered set $S$ is said to have the <em>least-upper-bound property(LUB)</em> if the following is true:</p>
+
+\[\forall E\subset S(E\neq \emptyset\wedge E \text{ is bounded above} \Rightarrow \exists u \in S(u=\sup E))\]
+
+<p><br /><br /></p>
+
+<p><strong>1.5 Theorem.</strong> <em>Suppose $S$ is an ordered set with the LUB, $B\subset S, B\neq \emptyset, B$ is bounded below. Let $L$ be the set of all lower bounds of $B$. Then,</em></p>
+
+\[\exists u\in S(u=\sup L),\ \inf B=\sup L.\]
+
+<p><br /><br /></p>
+
+<p><strong>1.6 Definition.</strong> A <em>field</em> is a set $F$ with two operations, which satisfy the followings: <br />
+(A) Addition<br />
+(A1) $\forall x,y\in F, x+y\in F$<br />
+(A2) $\forall x,y\in F, \,x+y=y+x$<br />
+(A3) $\forall x,y,z\in F, \,(x+y)+z=x+(y+z)$<br />
+(A4) $\exists y\in F\,(\forall x\in F,\,x+y=x)$ and we write $y=0$<br />
+(A5) $\forall x\in F, \exists y\in F\,(x+y=0)$ and we write $y=-x$
+<br /><br /></p>
+
+<p>(M) Multiplication<br />
+(M1) $\forall x,y\in F,\,x\cdot y\in F$<br />
+(M2) $\forall x,y\in F,\,x\cdot y=y\cdot x$<br />
+(M3) $\forall x,y,z\in F,\,(x\cdot y)\cdot z=x\cdot (y\cdot z)$<br />
+(M4) $\exists y\in F\,((\forall x\in F,\,x\cdot y=x)\wedge(y\neq 0))$ and we write $y=1$<br />
+(M5) $\forall x\in F\,(x\neq 0),\,\exists y\in F\,(x\cdot y=1)$ and we write $y=1/x$<br />
+<br /><br />
+(D) Distribution</p>
+
+\[\forall x,y,z\in F,\,x\cdot (y+z)=x\cdot y+y\cdot z\]
+
+
+  </div>
+
+  <hr style="margin-top: 50px;">
+
+  <div id="comment-section">
+    <script src="https://giscus.app/client.js"
+        data-repo="yeonsolkim/blog"
+        data-repo-id="R_kgDOR8ku5Q"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOR8ku5c4C6V6d"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+    </script>
+  </div>
+</article>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+  .main-content {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    max-width: 65rem; 
+    padding: 2rem 4rem;
+    margin: 0 auto;
+    word-wrap: break-word;
+    line-height: 1.7;
+    color: #333;
+  }
+  .post-body h1, 
+  .post-body h2, 
+  .post-body h3, 
+  .post-body h4, 
+  .post-body h5, 
+  .post-body h6 {
+    color: #333 !important; 
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .post-body ul {
+    list-style-type: disc !important; 
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .post-body ul li::marker {
+    color: #00000064; 
+    font-size: 0.85em;
+  }
+  
+.post-body ul li p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  display: inline; 
+}
+
+
+.post-body ul li {
+  margin-top: 5px !important;    
+  margin-bottom: 5px !important;
+  line-height: 1.6;
+}
+
+.post-body ul ul, 
+.post-body ul ol {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.post-body img, .post-body canvas, .post-body svg {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .main-content {
+    padding: 1.5rem;
+  }
+}
+</style>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 yeonsolkim. All rights reserved.</p>
+    </footer>
+  </main>
+
+</body>
+</html>

@@ -23,21 +23,14 @@ categories:
 
 ### 1.3 Compositional Meaning
 
-**정의:** lexical meaning과 grammatical meaning를 기반으로 형성되는 문장 차원의 언어적 의미이다. 
+**정의:** lexical meaning과 grammatical meaning를 기반으로 형성되는 문장 차원의 언어적 의미이다.<br>
 **설명:** encoded meaning의 최종 산출물이라고 볼 수 있다.
 
 ---
 
 ## 2. Pragmatic Meaning
 
-**정의:** 문장이 실제 발화 상황에서 사용될 때, 맥락, 화자의 의도, 청자의 추론에 의해 형성되는 의미이다.
-**예시:**
-
-- “날씨가 덥네요.”
-    - semantic meaning: 기온이 높다는 진술
-    - pragmatic meaning: 창문을 열어 달라는 요청 / 에어컨을 켜 달라는 암시
-        
-
+**정의:** 문장이 실제 발화 상황에서 사용될 때, 맥락, 화자의 의도, 청자의 추론에 의해 형성되는 의미이다.<br>
 **설명:** Pragmatic meaning은 문장 자체의 언어적 의미를 넘어서, 그 문장이 실제 상황에서 무엇을 하고 있는가를 다룬다. 따라서 이는 단순한 문장 의미가 아니라, 발화의 기능과 해석의 결과를 포함한다.
 
 ---

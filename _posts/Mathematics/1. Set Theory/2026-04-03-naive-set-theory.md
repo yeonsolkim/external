@@ -11,7 +11,7 @@ categories: ["Mathematics", "1. Set Theory"]
 
 $$\forall x\,(x\in A\leftrightarrow x\in B)\leftrightarrow A=B$$
 
-<br><br>
+<br> 
 
 **2. Belonging.** a binary "relation" $\in$.
 hierarchical한 느낌이다: e.g., $(\text{(n)-dimensional)}\in(\text{(n+1)-dimensional})$.
@@ -60,7 +60,8 @@ denoted by $B=\bigcup A$; *the union of* $A$.
 > Goal: To explicate that a sentence is trivial. <br>
 > Strategy 1: If a sentence has disjunction, then split into the cases.
 
-<br><br>
+
+<br>
 
 **7.1. Definition of Complement.** *Relative complement* of $B$ in $A$ is the set $A-B$ defined by 
 

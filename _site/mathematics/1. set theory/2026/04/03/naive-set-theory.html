@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      enableMenu: false 
+    },
+    svg: {
+      fontCache: 'global',
+      scale: 0.89,
+      exFactor: 0.5,
+      displayAlign: 'center'
+    }
+  };
+  </script>
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+  <style>
+    .MathJax svg {
+    vertical-align: middle !important;
+    margin-bottom: 0.1ex !important;
+    }
+  </style>
+
+   <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Naive Set Theory</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Naive Set Theory" />
+<meta name="author" content="YeonsolKim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="수학적으로 set이 어떤 개념인지 파악해보자." />
+<meta property="og:description" content="수학적으로 set이 어떤 개념인지 파악해보자." />
+<link rel="canonical" href="http://localhost:4000/blog/mathematics/1.%20set%20theory/2026/04/03/naive-set-theory.html" />
+<meta property="og:url" content="http://localhost:4000/blog/mathematics/1.%20set%20theory/2026/04/03/naive-set-theory.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-04-03T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Naive Set Theory" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"YeonsolKim"},"dateModified":"2026-04-03T00:00:00+09:00","datePublished":"2026-04-03T00:00:00+09:00","description":"수학적으로 set이 어떤 개념인지 파악해보자.","headline":"Naive Set Theory","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/mathematics/1.%20set%20theory/2026/04/03/naive-set-theory.html"},"url":"http://localhost:4000/blog/mathematics/1.%20set%20theory/2026/04/03/naive-set-theory.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/blog/assets/css/style.css">
+
+  <style>
+    .page-header {
+      background-color: #000000 !important;
+      background-image: linear-gradient(to bottom, 
+        #000000, 
+        #878787
+      ) !important;
+      padding: 5rem 6rem !important;
+      text-align: center;
+    }
+
+    .project-name, .project-tagline {
+      color: #ffffff !important;
+    }
+
+
+    .main-content {
+      max-width: 54rem;
+      margin: 0 auto;
+      padding: 2rem 4rem;
+    }
+
+    .page-header .btn {
+      color: #ffffffa2 !important;
+      border-color: rgba(255, 255, 255, 0.4) !important;
+      background-color: rgba(255, 255, 255, 0.1) !important;
+      transition: all 0.2s ease;
+    }
+
+    .page-header .btn:hover {
+     background-color: rgba(255, 255, 255, 0.2) !important;
+     border-color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    .header-buttons {
+     display: flex;
+     justify-content: center;
+     gap: 10px;
+     flex-wrap: wrap;
+    }
+
+    @media screen and (max-width: 64rem) {
+      .main-content {
+      font-size: 16px !important; 
+      line-height: 1.5 !important;
+      padding: 1.5rem 1.2rem !important;
+      }
+
+      h1 { font-size: 1.8rem !important; }
+      h2 { font-size: 1.5rem !important; }
+      h3 { font-size: 1.2rem !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="page-header">
+    <h1 class="project-name">Abstraction</h1>
+    <h2 class="project-tagline">Mathematics and Physics</h2>
+    <div class="header-buttons">
+     <a href="" class="btn">View on GitHub</a>
+     <a href="/blog/feed.xml" class="btn">RSS Feed</a>
+    </div>
+    <div id="busuanzi_container_site" style="display:none; margin-top: 15px; font-size: 0.85rem; color: rgba(255,255,255,0.7);">
+      <span>Total Views: </span>
+      <span id="busuanzi_value_site_pv" style="font-weight: bold;"></span>
+      <span style="margin: 0 8px; opacity: 0.5;">|</span>
+      <span>Visitors: </span>
+      <span id="busuanzi_value_site_uv" style="font-weight: bold;"></span>
+    </div>
+
+    <script>
+      var checkBusuanzi = setInterval(function() {
+        var pv = document.getElementById('busuanzi_value_site_pv');
+        if (pv && pv.innerText !== "") {
+          document.getElementById('busuanzi_container_site').style.display = 'block';
+          clearInterval(checkBusuanzi);
+        }
+      }, 500); 
+    </script>
+  </section>
+
+  <main id="content" class="main-content" role="main">
+    <article class="main-content">
+  <nav style="margin-bottom: 25px;">
+    <a href="/blog/" style="text-decoration: none; color: #666; font-size:medium;">back</a>
+  </nav>
+
+  <header style="text-align: center;">
+    <h1 style="margin-top: 0; color:#000000">Naive Set Theory</h1>
+    <div style="display: flex; align-items: center; justify-content: center;">
+    <img src="https://github.com/yeonsolkim.png" alt="yeonsolkim" 
+         style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid #eee;">
+    </div>
+    <span style="font-weight:500; color: #373737; font-size: medium;">YeonsolKim</span>
+    <p style="color: #666; margin-top: 0; margin-bottom: 50px; font-weight: lighter; font-size: small;">April 03, 2026</p>
+  </header>
+
+  <hr>
+
+  <div class="post-body">
+    <p>수학적으로 set이 어떤 개념인지 파악해보자.</p>
+
+<p><strong>1. Axiom of Extension.</strong></p>
+
+\[\forall x\,(x\in A\leftrightarrow x\in B)\leftrightarrow A=B\]
+
+<p><br /></p>
+
+<p><strong>2. Belonging.</strong> a binary “relation” $\in$.
+hierarchical한 느낌이다: e.g., $(\text{(n)-dimensional)}\in(\text{(n+1)-dimensional})$.
+<br /><br /></p>
+
+<p><strong>3. Inclusion.</strong></p>
+
+\[A\subset B \leftrightarrow \forall x\,(x\in A \rightarrow x\in B).\]
+
+<p>여기서 두 set은 same-dimensional로 보여진다. 
+$A\subset B\wedge B\subset C \rightarrow A\subset C\ (transitive)$
+<br /><br /></p>
+
+<p><strong>4. Axiom of Specification.</strong></p>
+
+\[\forall A\,\forall p\,\exists B \,\forall x\,(x\in B\leftrightarrow x\in A\wedge \varphi (x,p)),\]
+
+<p>denoted by $B={x\in A:\varphi(x,p)}.$
+given set이 있어야 carve out하여 new one을 만들 수 있다.
+<br /><br /></p>
+
+<p><strong>5.1. Axiom of Pairing.</strong></p>
+
+\[\forall a\,\forall b\,\exists B\,\forall x\,(x\in B\leftrightarrow \varphi(x,a,b)) \text{ where } \varphi(x,a,b):x=a\lor x=b,\]
+
+<p>denoted by $B={a,b}$; the set is called the <em>unordered pair</em>.
+We may refer to the axiom as a pseudo-special cases of axiom of specification in the sense that if there were a universe, then the axiom would follow as a special case. 
+<br /><br /></p>
+
+<p><strong>5.2. Notation.</strong> 앞으로 이런 generating axiom들이 추가될 예정이므로 이쯤에서 새 notation을 도입하자: If $\varphi(x,p)$ is a condition such that $x$’s that $\varphi(x,p)$ specifies constitute a set, then we denote that set by ${x:\varphi(x,p)}.$
+<br /><br /></p>
+
+<p><strong>6.1. Axiom of Unions.</strong> $\forall A\,\exists B\,\forall x\,(x\in B\rightarrow \exists y\,(y\in A\wedge x\in y)).$ There exists a comprehensive set. And, applying axiom of specification, we get</p>
+
+\[\forall A\,\exists B\,\forall x\,(x\in B\leftrightarrow \exists y\,(y\in A\wedge x\in y)),\]
+
+<p>denoted by $B=\bigcup A$; <em>the union of</em> $A$.
+<br /><br /></p>
+
+<p><strong>6.2. Notation.</strong> We introduce special notation for a pair: $X\cup Y=\bigcup{X,Y}$. It follows that $X\cup Y={x:x\in X\lor x\in Y}$ by general definition. 
+<br /><br /></p>
+
+<p><strong>6.3. Definition.</strong> Now we can generalize pairs: ${a,b,c}={a}\cup {b}\cup {c}, \text{etc.}$</p>
+
+<blockquote>
+  <p>*Proving Strategy<br />
+Goal: To explicate that a sentence is trivial. <br />
+Strategy 1: If a sentence has disjunction, then split into the cases.</p>
+</blockquote>
+
+<p><br /></p>
+
+<p><strong>7.1. Definition of Complement.</strong> <em>Relative complement</em> of $B$ in $A$ is the set $A-B$ defined by</p>
+
+\[A-B=\{x\in A:x\notin B\}.\]
+
+<p>Dealing with sets which are subsets of $E$, we can define <em>absolute complement</em>. Often used symbol for absolute complement of $A$ is $A’$. 
+<br /><br /></p>
+
+<p><strong>7.2. Theorem(<em>De Morgan Laws</em>).</strong> Basically, they are about unions and intersections:</p>
+
+\[(A\cup B)'=A'\cap B',\ (A\cap B)'=A'\cup B'.\]
+
+  </div>
+
+  <hr style="margin-top: 50px;">
+
+  <div id="comment-section">
+    <script src="https://giscus.app/client.js"
+        data-repo="yeonsolkim/blog"
+        data-repo-id="R_kgDOR8ku5Q"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOR8ku5c4C6V6d"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+    </script>
+  </div>
+</article>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+  .main-content {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    max-width: 65rem; 
+    padding: 2rem 4rem;
+    margin: 0 auto;
+    word-wrap: break-word;
+    line-height: 1.7;
+    color: #333;
+  }
+  .post-body h1, 
+  .post-body h2, 
+  .post-body h3, 
+  .post-body h4, 
+  .post-body h5, 
+  .post-body h6 {
+    color: #333 !important; 
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .post-body ul {
+    list-style-type: disc !important; 
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .post-body ul li::marker {
+    color: #00000064; 
+    font-size: 0.85em;
+  }
+  
+.post-body ul li p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  display: inline; 
+}
+
+
+.post-body ul li {
+  margin-top: 5px !important;    
+  margin-bottom: 5px !important;
+  line-height: 1.6;
+}
+
+.post-body ul ul, 
+.post-body ul ol {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.post-body img, .post-body canvas, .post-body svg {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .main-content {
+    padding: 1.5rem;
+  }
+}
+</style>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 yeonsolkim. All rights reserved.</p>
+    </footer>
+  </main>
+
+</body>
+</html>

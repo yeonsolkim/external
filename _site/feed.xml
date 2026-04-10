@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2026-04-10T17:57:32+09:00</updated><id>http://localhost:4000/blog/feed.xml</id><subtitle>Mathematics and Physics</subtitle><author><name>YeonsolKim</name></author><entry><title type="html">2.11. Supplement</title><link href="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/10/2.11.-Supplement.html" rel="alternate" type="text/html" title="2.11. Supplement" /><published>2026-04-10T15:58:43+09:00</published><updated>2026-04-10T15:58:43+09:00</updated><id>http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/10/2.11.%20Supplement</id><content type="html" xml:base="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/10/2.11.-Supplement.html"><![CDATA[Non-restrictive
+### The Strange Situation Experiment, conducted by psychologist Mary Ainsworth in 1970s, determined the attachment behavior of infants toward their caregivers.
+* Subject
+  * Head: The Strange Situation Experiment
+  * Supplement(Past-Participial Clause): conducted by psychologist Mary Ainsworth in 1970s
+    * Head: conducted
+    * Complement(PP): by psychologist Mary Ainsworth
+    * Modifier(PP): in 1970s
+* Predicate
+  * Head: determined
+  * Complement: the attachment behavior of infants toward their caregivers
+    * Determiner: the
+    * Modifier(NP): attachment
+    * Head: behavior
+    * Subject Corresponding Complement(PP): of infants
+    * Modifier(PP): toward their caregivers
+
+
+> Simplification: The Strange Situation Experiment, conducted / by psychologist Mary Ainsworth / in 1970s, determined / the attachment behavior / of infants / toward their caregivers.]]></content><author><name>YeonsolKim</name></author><category term="English" /><category term="2. Grammatical Meaning" /><summary type="html"><![CDATA[Non-restrictive The Strange Situation Experiment, conducted by psychologist Mary Ainsworth in 1970s, determined the attachment behavior of infants toward their caregivers. Subject Head: The Strange Situation Experiment Supplement(Past-Participial Clause): conducted by psychologist Mary Ainsworth in 1970s Head: conducted Complement(PP): by psychologist Mary Ainsworth Modifier(PP): in 1970s Predicate Head: determined Complement: the attachment behavior of infants toward their caregivers Determiner: the Modifier(NP): attachment Head: behavior Subject Corresponding Complement(PP): of infants Modifier(PP): toward their caregivers]]></summary></entry><entry><title type="html">2.8. Past-Participial Clauses</title><link href="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/10/2.8.-Past-Participial-Clauses.html" rel="alternate" type="text/html" title="2.8. Past-Participial Clauses" /><published>2026-04-10T15:55:26+09:00</published><updated>2026-04-10T15:55:26+09:00</updated><id>http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/10/2.8.%20Past-Participial%20Clauses</id><content type="html" xml:base="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/10/2.8.-Past-Participial-Clauses.html"><![CDATA[]]></content><author><name>YeonsolKim</name></author><category term="English" /><category term="2. Grammatical Meaning" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">2.9. Dependent in NP</title><link href="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/09/2.9.-Dependent-in-NP.html" rel="alternate" type="text/html" title="2.9. Dependent in NP" /><published>2026-04-09T10:57:25+09:00</published><updated>2026-04-09T10:57:25+09:00</updated><id>http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/09/2.9.%20Dependent%20in%20NP</id><content type="html" xml:base="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/09/2.9.-Dependent-in-NP.html"><![CDATA[기본적으로 modifier이고, head noun이 특별히 license하는 경우 complement일 수도 있다. 
+
+## 1. Modifier
+
+
+## 2. Complement
+대체로 verb와의 파생 관계(derivational relation)를 반영한다. 따라서 대부분의 경우 object corresponding이다. 
+### 2.1. Object Corresponding Complement
+#### the construction of the dam
+#### abandonment of his ship
+#### criticism of her decision
+#### abandonment of his ship
+
+### 2.2. Subject Corresponding Complement
+#### the rise of the sun
+* Determiner(D): the
+* Head(N): rise
+* Subject Corresponding Complement(PP): of the sun
+  * Head: of
+  * Complement: the sun]]></content><author><name>YeonsolKim</name></author><category term="English" /><category term="2. Grammatical Meaning" /><summary type="html"><![CDATA[기본적으로 modifier이고, head noun이 특별히 license하는 경우 complement일 수도 있다.]]></summary></entry><entry><title type="html">2.5. To-Infinitival Clause</title><link href="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/08/2.5.-To-Infinitival-Clause.html" rel="alternate" type="text/html" title="2.5. To-Infinitival Clause" /><published>2026-04-08T10:34:08+09:00</published><updated>2026-04-08T10:34:08+09:00</updated><id>http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/08/2.5.%20To-Infinitival-Clause</id><content type="html" xml:base="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/08/2.5.-To-Infinitival-Clause.html"><![CDATA[## 1. Complement로 기능하는 To-Infinitival Clause
+### I want to drink cold water. 
+* Subject(NP): I
+  * Head(N): I
+* Predicate(VP): want to drink cold water
+  * Head(Lexical Verb): want
+  * Complement(to-infinitival Clause): to drink cold water
+    * Predicand: I
+    * Predicate(VP): drink cold water
+      * Head(Lexical Verb): drink
+      * Direct Object(NP): cold water
+        * Modifier(AdjP): cold
+          * Head(Attributive Adj): cold
+        * Head(N): water
+
+
+> Simplification: I / want / to drink cold water.
+
+
+### He seems to be incorrect.
+* Raised Subject(NP): He
+  * Head(N): He
+* Predicate(VP): seems to be incorrect
+  * Head(Lexical Verb): seems
+  * Complement(to-infinitival Clause): to be incorrect
+    * Predicand: he
+    * Predicate(VP): be incorrect
+      * Head(Auxiliary Verb): be
+      * Complement(AdjP): incorrect
+        * Head(Predicative Adj): incorrect
+
+
+> Simplification: seems / he to be incorrect.
+
+
+### I expect him to pass the exam. 
+* Subject(NP): I
+  * Head(N): I
+* Predicate: expect him to pass the exam
+  * Head(Auxiliary Verb): expect
+  * Complement(to-infinitival Clause): him to pass the exam
+    * Subject(NP): him
+      * Head(N): him
+    * Predicate(VP): pass the exam
+      * Head(Lexical Verb): pass
+      * Direct Object(NP): the exam
+        * Determiner(DP): the
+          * Head(D): the
+        * Head(N): exam
+
+### I was glad to be invited.
+* Subject(NP): I
+  * Head(N): I
+* Predicate(VP): was glad to be invited
+  * Head(Auxiliary Verb): was
+  * Predicative Complement(AdjP): glad to be invited
+    * Head(Predicative Adj): glad
+    * Complement(to-infinitival clause): to be invited
+        * Predicand: I
+        * Head(Auxiliary Verb): be
+        * Complement(subjectless non-finite clause): invited
+            * Predicand: I
+            * Predicate(VP): invited
+               * Head(Lexical Verb): invited
+
+
+> I / was / glad / to be invited.
+
+
+### I want you to stay. 
+* Subject: I
+* Predicate: want you to stay
+  * Head: want
+  * Raised Object: you
+  * Complement(To-Infinitival Clause): to stay
+    * Subject: you
+    * Predicate: to stay
+
+
+> I / want / you to stay.
+
+
+---
+
+
+## 2. Modifier로 기능하는 To-Infinitival Clause
+### We have little time to waste.
+* Subject: We
+  * Head: We
+* Predicate: have little time to waste.
+  * Head: have
+  * Direct Object(NP): little time to waste
+    * Determiner(DP): little
+    * Head(NP): time to waste
+      * Head: time
+        * Modifier(To-Infinitival Clause): to waste
+          * Predicand: we
+          * Head: waste
+
+
+> Simplification: We / have / little time to waste.
+
+
+---
+
+
+## 3. Adjunct로 기능하는 To-Infinitival Clause
+### For Mike to succeed, he must improve his study habit.
+* Adjunct(To-Infinitival Clause): For mike to succeed
+  * Subject: Mike
+  * Predicate: to succeed
+* Subject: he
+* Predicate(VP): must improve his study habit
+  * Head(VP): must
+    * Head(Auxiliary Verb): must
+  * Complement(Bare Infinitival Clause): improve his study habit
+    * Predicand: he
+    * Predicate(VP): improve his study habit
+      * Head(V): improve
+      * Direct Object(NP): his study habit
+        * Determiner(Genitive NP): his
+        * Head(Nominal): study habit
+          * Modifier(NP): study
+          * Head(N): habit
+
+
+> Simplification: For Mike / to succeed, he / must / improve his study habit.]]></content><author><name>YeonsolKim</name></author><category term="English" /><category term="2. Grammatical Meaning" /><summary type="html"><![CDATA[1. Complement로 기능하는 To-Infinitival Clause I want to drink cold water. Subject(NP): I Head(N): I Predicate(VP): want to drink cold water Head(Lexical Verb): want Complement(to-infinitival Clause): to drink cold water Predicand: I Predicate(VP): drink cold water Head(Lexical Verb): drink Direct Object(NP): cold water Modifier(AdjP): cold Head(Attributive Adj): cold Head(N): water]]></summary></entry><entry><title type="html">2.6. Bare Infinitival Clause</title><link href="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/07/2.6.-Bare-Infinitival-Clause.html" rel="alternate" type="text/html" title="2.6. Bare Infinitival Clause" /><published>2026-04-07T17:02:31+09:00</published><updated>2026-04-07T17:02:31+09:00</updated><id>http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/07/2.6.%20Bare%20Infinitival%20Clause</id><content type="html" xml:base="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/07/2.6.-Bare-Infinitival-Clause.html"><![CDATA[## 1. Lexical Verb의 Complement로 기능하는 Bare Infinitival Clause
+### She made the boys stay after school.
+* Subject: She
+* Predicate: 
+  * Head: made
+  * Raised Object: the boys
+  * Complement(Bare Infinitival Clause): stay after school
+    * Predicand: the boys
+    * Head: stay
+    * Adjunct(PP): after school
+
+
+> Simplification: She / made / the boys stay after school.
+
+
+### I didn't see you come in.
+* Predicate: 
+  * Head: didn't
+  * Complement(VP): see you come in
+    * Head: see
+    * Raised Object: 
+    * Complement(Bare Infinitival Clause): (you) come in
+      * Predicand: you
+      * Predicate: come in
+
+
+> Simplification: I / didn't / see / you come in.
+
+--- 
+## 2. Auxiliary Verb의 Complement로 기능하는 Bare Infinitival Clause
+### For Mike to succeed, he must improve his study habit.
+* Adjunct(To-Infinitival Clause): For mike to succeed
+  * Subject: Mike
+  * Predicate(VP): succeed
+* Subject: he
+* Predicate(VP): must improve his study habit
+  * Head(VP): must
+    * Head(Auxiliary Verb): must
+  * Complement(Bare Infinitival Clause): improve his study habit
+    * Predicand: he
+    * Predicate(VP): improve his study habit
+      * Head(V): improve
+      * Direct Object(NP): his study habit
+        * Determiner(Genitive NP): his
+        * Head(Nominal): study habit
+          * Modifier(NP): study
+          * Head(N): habit]]></content><author><name>YeonsolKim</name></author><category term="English" /><category term="2. Grammatical Meaning" /><summary type="html"><![CDATA[1. Lexical Verb의 Complement로 기능하는 Bare Infinitival Clause She made the boys stay after school. Subject: She Predicate: Head: made Raised Object: the boys Complement(Bare Infinitival Clause): stay after school Predicand: the boys Head: stay Adjunct(PP): after school]]></summary></entry><entry><title type="html">2.7. Gerund-Participial Clause</title><link href="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/07/2.7.-Gerund-Participial-Clause.html" rel="alternate" type="text/html" title="2.7. Gerund-Participial Clause" /><published>2026-04-07T17:01:42+09:00</published><updated>2026-04-07T17:01:42+09:00</updated><id>http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/07/2.7.%20Gerund-Participial%20Clause</id><content type="html" xml:base="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/07/2.7.-Gerund-Participial-Clause.html"><![CDATA[## 1. Subject로 기능하는 Gerund-Participial Clause
+### Learning Chinese is easy.
+* Subject(Gerund-Participial Clause): learning Chinese
+  * Predicand: we
+  * Predicate: learning Chinese
+    * Head: learning
+    * Direct Object: Chinese
+* Predicate: is easy
+  * Head: is
+  * Complement: easy
+
+
+> Simplification: Learning Chinese / is / easy
+
+--- 
+
+
+## 2. Complement로 기능하는 Gerund-Participial Clause
+### She likes dancing.
+* Subject: she
+* Predicate
+  * Head: likes
+  * Complement(Gerund-Participial Clause): dancing
+    * Predicand: she
+    * Predicate: dancing
+
+
+> Simplification: She / likes / dancing.
+
+
+### I'm sorry for giving you trouble.
+* Subject: I
+* Predicate
+  * Head(Auxiliary Verb): am
+  * Complement(AdjP): sorry for giving you trouble
+    * Head(Adj): sorry
+    * Complement(PP): for giving you trouble
+      * Head(P): for
+      * Complement(Gerund-Participial Clause): giving you trouble
+        * Predicand: I 
+        * Predicae: giving you trouble
+          * Head: giving
+          * Indirect Object: you
+          * Direct Object: trouble
+
+
+> Simplification: I / am / sorry / for giving you trouble.
+
+
+### She is tired of Lucy's being late.
+* Subject: she
+* Predicate
+  * Head(Auxiliary Verb): is
+  * Complement(AdjP): tired of Lucy's being late
+    * Head: tired
+    * Complement(PP): of Lucy's being late
+      * Head(P): of
+      * Complement(Gerund-Participial Clause): Lucy's being late
+        * Subject(NP)
+          * Head(Genitive N): Lucy's
+        * Predicate: being late
+            * Head(Auxiliary Verb): being
+            * Complement(AdjP): late
+
+
+> Simplification: She / is / tired / of Lucy's being late.
+
+
+### It's nice seeing him again. 
+* Predicate
+  * Head(Auxiliary Verb): is
+  * Complement(AdjP): nice seeing him again
+    * Head(Adj): nice
+* Predicand(Gerund-Participial Clause): seeing him again
+    * Predicate: seeing him again
+        * Head(V): seeing
+        * Direct Object: him
+        * Modifier(AdjP): again
+    * Predicand: I
+
+
+> Simplification: It is / nice / seeing him again. (의미: situation 평가)
+
+
+## 3. Supplement로 기능하는 Gerund-Participial Clause
+### Smiling brightly, the girl turned toward him.
+* Supplement(Gerund-Participial Clause): smiling brightly
+  * Predicand: the girl
+  * Predicate: smiling brightly 
+    * Head: smiling
+    * Modifier(AdvP): brightly
+* Matrix Clause: the girl turned toward him
+  * Subject: the girl
+  * Predicate: turned toward him
+    * Head: turned
+    * Complement(PP): toward him
+      * Head(P): toward
+      * Object(NP): him
+
+> Simplification: Smiling brightly, the girl / turned toward him.]]></content><author><name>YeonsolKim</name></author><category term="English" /><category term="2. Grammatical Meaning" /><summary type="html"><![CDATA[1. Subject로 기능하는 Gerund-Participial Clause Learning Chinese is easy. Subject(Gerund-Participial Clause): learning Chinese Predicand: we Predicate: learning Chinese Head: learning Direct Object: Chinese Predicate: is easy Head: is Complement: easy]]></summary></entry><entry><title type="html">2.3. Clauses</title><link href="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/07/2.3.-Clauses.html" rel="alternate" type="text/html" title="2.3. Clauses" /><published>2026-04-07T16:18:10+09:00</published><updated>2026-04-07T16:18:10+09:00</updated><id>http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/07/2.3.%20Clauses</id><content type="html" xml:base="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/07/2.3.-Clauses.html"><![CDATA[# 1. Clause
+## 1. Finite Clause
+* Property
+  * 대체로 subject, tense, agreement를 갖는다.  
+  * 특정 시공간의 상황을 가리킬 수 있다. 
+
+## 2. Non-Finite Clause
+* Property
+  * non-finite clause는 항상 subordinate이다. 
+  * tense나 agreement 정보를 보이지 않는다.
+  * subjectless인 경우가 많다. (hollow인 경우도 있다.)
+
+--- 
+
+# 2. Non-Finite Clauses
+## 특징적 구조
+1. Subjectless
+   predicate뿐 아니라 subjectless non-finite clauses도 predicand를 가져야 한다. 
+2. Hollow
+
+## Categories
+1. To-Infinitival
+2. Bare Infinitival 
+3. Gerund-Participial
+4. Past-Participial
+5. Verbless]]></content><author><name>YeonsolKim</name></author><category term="English" /><category term="2. Grammatical Meaning" /><summary type="html"><![CDATA[1. Clause 1. Finite Clause Property 대체로 subject, tense, agreement를 갖는다. 특정 시공간의 상황을 가리킬 수 있다.]]></summary></entry><entry><title type="html">2.13. Extraposition, Hollow Clause</title><link href="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/07/2.13.-Extraposition,-Hollow-Clause.html" rel="alternate" type="text/html" title="2.13. Extraposition, Hollow Clause" /><published>2026-04-07T11:59:18+09:00</published><updated>2026-04-07T11:59:18+09:00</updated><id>http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/07/2.13.%20Extraposition,%20Hollow%20Clause</id><content type="html" xml:base="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/07/2.13.-Extraposition,-Hollow-Clause.html"><![CDATA[## 1. Extraposition
+### It's good to get up early.
+* Predicate(VP): is good
+  * Head(Auxiliary Verb): is
+  * Predicative Complement(AdjP): good
+* Predicand(To-Infinitival Clause): to get up early
+    * Predicate: get up early
+      * Head(VP): get up
+      * Modifier(AdvP): early
+    * Predicand: we
+
+--- 
+## 2. Hollow Non-Finite Clause
+*Gap의 해석이 matrix clause 전체와 관련이 있기 때문에 hollow는 predicate의 성질보다는 matrix clause의 성질로 본다고 한다. 
+### Here is a new book for you to read.
+* Predicate: Here is
+  * Head: is 
+  * Locative Complement(AdvP): Here
+* Subject(NP): a new book for you to read.
+  * Determiner(DP): a
+  * Head(NP): new book for you to read
+    * Head(N): book
+    * Modifier(AdjP): new
+    * Modifier(Hollow To-Infinitival Clause): for you to read
+      * Subject: you
+      * Predicate(VP): read
+        * Head: read
+        * Direct Object Gap: book
+
+
+> Simplification: Here / is / a new book / for you to read.
+### These students are very difficult for us to teach.
+* Subject(NP): These students
+  * Determiner(DP): These
+  * Head(N): students
+* Predicate(VP): are very difficult for us to teach
+  * Head(Auxiliary Verb): are
+  * Predicative Complement(AdjP): very difficult for us to teach
+    * Modifier(AdvP): very
+    * Head(Adj): difficult
+    * Complement(Hollow To-Infinitival Clause): for us to teach
+      * Subject: us
+      * Predicate(VP): teach
+        * Head(V): teach
+        * Direct Object Gap(NP): these students
+
+
+> Simplification: These students / are / very difficult [for us to teach].]]></content><author><name>YeonsolKim</name></author><category term="English" /><category term="2. Grammatical Meaning" /><summary type="html"><![CDATA[1. Extraposition It’s good to get up early. Predicate(VP): is good Head(Auxiliary Verb): is Predicative Complement(AdjP): good Predicand(To-Infinitival Clause): to get up early Predicate: get up early Head(VP): get up Modifier(AdvP): early Predicand: we]]></summary></entry><entry><title type="html">Sentences</title><link href="http://localhost:4000/blog/english/4.%20compositional%20meaning/2026/04/06/Sentences.html" rel="alternate" type="text/html" title="Sentences" /><published>2026-04-06T14:03:28+09:00</published><updated>2026-04-06T14:03:28+09:00</updated><id>http://localhost:4000/blog/english/4.%20compositional%20meaning/2026/04/06/Sentences</id><content type="html" xml:base="http://localhost:4000/blog/english/4.%20compositional%20meaning/2026/04/06/Sentences.html"><![CDATA[## 1. Action
+1. $\langle\text{Agent},\text{Act}, \text{Theme}\rangle$ *$\text{Agent}$는 의지를 가지고 동작을 수행하는 주체
+2. $\langle\text{Agent},\text{Act},\text{Patient}\rangle$ *$\text{Patient}$는 단순 대상이 아니라 내부적으로 상태가 변화하는 대상
+3. $\langle\text{Agent},\text{Act},\text{Proposition}\rangle$
+
+> Examples.
+> 1. The company exported rice to Japan.
+> 2. He ate the apple.
+   She painted the wall.
+> 3. The teacher recommended that she be sent home.
+
+## 2. Experience
+1. $\langle\text{Experiencer},\text{Experience},\text{Stimulus}\rangle$ *의지적 작용이 아니라 심리적, 감각적 인지를 경험하는 주체
+2. $\langle\text{Experiencer},\text{Experience},\text{Proposition}\rangle$
+
+>Examples.
+>1. I feel cold.
+   She loves music.
+>2. I believe she will come home.
+
+## 3. Attribution
+1. $\langle\text{Object}, \text{Function}\rangle$
+2. $\langle\text{Object}, \text{State}\rangle$
+
+>Examples.
+>1. This key opens the back door.
+>2. I was hospitalized.
+   English is spoken in many countries.
+   The data is being processed.
+   The road leads to the city center.
+
+## 4. Deontic
+1. $\langle\text{Rule}, \text{Constraint},\text{Situation}\rangle$
+
+>Examples.
+>1. The law forbids smoking in this area.
+
+## 5. Causation
+1. $\langle\text{Cause}, \text{Effect}\rangle$
+
+>Examples. 
+>1. The cold froze the river.
+   The music makes me happy.
+
+## 6. Indication
+1. $\langle\text{Evidence}, \text{Indication}, \text{Proposition}\rangle$
+
+>Examples.
+>1. The study suggests that caffeine improves memory.
+
+## 7. Conceptual
+1. $\langle\text{Term}, \text{Definition}\rangle$
+2. $\langle\text{Term}, \text{Classification}\rangle$
+3. $\langle\text{Term}, \text{Property}\rangle$
+
+>Examples.
+>1. A square is a rectangle with four sides of equal length.
+>2. Mammalia belongs to the phylum Chordata.
+>3. Mercury has a very high surface tension.]]></content><author><name>YeonsolKim</name></author><category term="English" /><category term="4. Compositional Meaning" /><summary type="html"><![CDATA[1. Action $\langle\text{Agent},\text{Act}, \text{Theme}\rangle$ *$\text{Agent}$는 의지를 가지고 동작을 수행하는 주체 $\langle\text{Agent},\text{Act},\text{Patient}\rangle$ *$\text{Patient}$는 단순 대상이 아니라 내부적으로 상태가 변화하는 대상 $\langle\text{Agent},\text{Act},\text{Proposition}\rangle$]]></summary></entry><entry><title type="html">Auxiliary Verb</title><link href="http://localhost:4000/blog/english/4.%20compositional%20meaning/2026/04/05/Auxiliary-Verb.html" rel="alternate" type="text/html" title="Auxiliary Verb" /><published>2026-04-05T16:09:47+09:00</published><updated>2026-04-05T16:09:47+09:00</updated><id>http://localhost:4000/blog/english/4.%20compositional%20meaning/2026/04/05/Auxiliary%20Verb</id><content type="html" xml:base="http://localhost:4000/blog/english/4.%20compositional%20meaning/2026/04/05/Auxiliary-Verb.html"><![CDATA[### 1. can
+1. 능력
+2. 허락
+3. **가능성**
+4. **추측**
+
+>Examples.
+>1. He can lift 500N.
+>2. You can go home now.
+>3. Even expert drivers can make mistakes.
+>4. She can't be tired now. 
+
+### 2. may
+1. 허락
+2. 추측
+
+### 3. must, have to
+1. 의무
+2. **필요**
+3. 강한 추측
+
+>Examples. 
+>1. You must do military service.
+>2. I have to call my mom.
+>3. He must be hungry.
+
+### 4. will
+1. **의지**
+2. **cooperativeness**
+3. **disposition(경향)**
+4. **습성(습관적)**
+5. **확실한 추측**
+
+>Examples. 
+>1. I will lose weight.
+>2. The door won't open.
+>3. After sad things, happy things will happen. (슬픈 일 뒤에는 행복한일이 생기기 마련이다.)
+>4. I would sometimes travel alone. (나는 때로 혼자 여행을 하곤 했다.)
+>5. He will be a doctor.
+
+### 5. should, ought to
+1. 의무
+2. **합리적 추측**]]></content><author><name>YeonsolKim</name></author><category term="English" /><category term="4. Compositional Meaning" /><summary type="html"><![CDATA[1. can 능력 허락 가능성 추측]]></summary></entry></feed>
