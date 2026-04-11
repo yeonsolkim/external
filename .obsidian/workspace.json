@@ -13,26 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "2026-04-05-Auxiliary Verb"
+            }
+          },
+          {
+            "id": "89c1b83078c5c2d7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "_posts/English/2. Grammatical Meaning/2026-04-07-2.8. Extraposition, Hollow Clause.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
               "title": "2026-04-07-2.8. Extraposition, Hollow Clause"
-            }
-          },
-          {
-            "id": "3440a54b35b19f7b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-07-2.3.1. Clauses.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "2026-04-07-2.3.1. Clauses"
             }
           },
           {
@@ -49,7 +49,8 @@
               "title": "Markdown"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -212,16 +213,36 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "fba9fc305e3b57ff",
+  "active": "89c1b83078c5c2d7",
   "lastOpenFiles": [
+    "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
+    "_posts/English/4. Compositional Meaning/2026-04-03-Adjunct.md",
+    "_posts/English/4. Compositional Meaning/2026-04-03-Present Perfect + Others.md",
+    "_posts/English/2. Grammatical Meaning/Passive.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-07-2.8. Extraposition, Hollow Clause.md",
+    "MyNotes/Markdown.md",
+    "_posts/English/4. Compositional Meaning/2026-04-05-Idiomatic Expressions.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-10-2.6. Supplement.md",
     "_posts/English/2. Grammatical Meaning/2026-04-02-2.5. Modifier.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-02-2.7. of-pp.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-10-2.3.6. Past-Participial Clauses.md",
+    "_posts/English/2. Grammatical Meaning/Raised Subject.md",
+    "index.md",
+    "README.md",
+    "MyNotes/Note.md",
+    "_posts/English/2. Grammatical Meaning/Complement.md",
+    "_posts/English/2. Grammatical Meaning/Coordinator.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. The Structure of Sentences.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-08-2.3.3. To-Infinitival-Clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-07-2.3.1. Clauses.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-07-2.3.5 Gerund-Participial Clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-09-2.4. Dependent in NP.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Tense and Aspect.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-03-2.3.2. Relative Clauses.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-07-2.3.4. Bare Infinitival Clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-02-2.7. of-pp.md",
     "_posts/English/3. Lexical Meaning/2026-04-03-Lexical Category.md",
     "_site/assets/images/banner.jpg",
     "_site/assets/images/image1.jpg",
-    "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
     "assets/images/image1.jpg",
     "_site/assets/images",
     "assets/images",
@@ -229,31 +250,11 @@
     "assets",
     "_assets/images/image1.jpg",
     "_assets/images",
-    "MyNotes/Markdown.md",
-    "templates/Jekyll-Post.md",
-    "_posts/Mathematics/1. Set Theory/2026-04-03-naive-set-theory.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-08-2.3.3. To-Infinitival-Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-2.3.5 Gerund-Participial Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-2.3.4. Bare Infinitival Clause.md",
-    "_posts/English/4. Compositional Meaning/2026-04-06-Sentences.md",
     "_site/english/2. grammatical meaning/2026/04/10/2.6.-Supplement.html",
     "_site/english/2. grammatical meaning/2026/04/10/2.3.6.-Past-Participial-Clauses.html",
     "_site/english/2. grammatical meaning/2026/04/09/2.4.-Dependent-in-NP.html",
     "_site/english/2. grammatical meaning/2026/04/08/2.3.3.-To-Infinitival-Clause.html",
     "_site/english/2. grammatical meaning/2026/04/07/2.3.4.-Bare-Infinitival-Clause.html",
-    "_site/english/2. grammatical meaning/2026/04/07/2.3.5-Gerund-Participial-Clause.html",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-2.8. Extraposition, Hollow Clause.md",
-    "_posts/Mathematics/2. Analysis/2026-3-20-PMU.md",
-    "_posts/Mathematics/2. Analysis/2026-3-20-PMA.md",
-    "_posts/English/2. Grammatical Meaning/Passive.md",
-    "_posts/English/2. Grammatical Meaning/Raised Subject.md",
-    "_posts/English/2. Grammatical Meaning/Raising.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-10-2.6. Supplement.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-09-2.4. Dependent in NP.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-10-2.3.6. Past-Participial Clauses.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-2.3.2. Relative Clauses.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-2.3.1. Clauses.md",
-    "_posts/English/2. Grammatical Meaning/Complement.md",
-    "_site/templates/Jekyll-Post.md"
+    "_site/english/2. grammatical meaning/2026/04/07/2.3.5-Gerund-Participial-Clause.html"
   ]
 }

@@ -8,10 +8,10 @@ categories:
 ---
 
 ### 1. can
-1. 능력
-2. 허락
-3. **가능성**
-4. **추측**
+1. dynamic ability
+2. permission
+3. **circumstantial possibility**
+4. **conjecture**
 
 >Examples.
 >1. He can lift 500N.
@@ -20,13 +20,13 @@ categories:
 >4. She can't be tired now. 
 
 ### 2. may
-1. 허락
-2. 추측
+1. permission
+2. conjecture
 
 ### 3. must, have to
-1. 의무
-2. **필요**
-3. 강한 추측
+1. duty
+2. **necessity**
+3. strong conjecture
 
 >Examples. 
 >1. You must do military service.
@@ -34,11 +34,11 @@ categories:
 >3. He must be hungry.
 
 ### 4. will
-1. **의지**
+1. **will(의지)**
 2. **cooperativeness**
 3. **disposition(경향)**
 4. **습성(습관적)**
-5. **확실한 추측**
+5. **definite conjecture(확실한 추측)**
 
 >Examples. 
 >1. I will lose weight.
@@ -48,5 +48,5 @@ categories:
 >5. He will be a doctor.
 
 ### 5. should, ought to
-1. 의무
-2. **합리적 추측**
+1. duty
+2. **reasonable conjecture**
