@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/Mathematics/1. Set Theory/2026-04-03-naive-set-theory.md",
-                "mode": "source",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. The Structure of Sentences.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-03-naive-set-theory"
+              "title": "2026-04-03-2.1. The Structure of Sentences"
             }
           },
           {
@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "templates/Jekyll-Post.md",
-                "mode": "preview",
+                "file": "MyNotes/Markdown.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Jekyll-Post"
+              "title": "Markdown"
             }
           }
         ]
@@ -214,6 +214,10 @@
   },
   "active": "fba9fc305e3b57ff",
   "lastOpenFiles": [
+    "MyNotes/Markdown.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. The Structure of Sentences.md",
+    "templates/Jekyll-Post.md",
+    "_posts/Mathematics/1. Set Theory/2026-04-03-naive-set-theory.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Tense and Aspect.md",
     "_posts/English/2. Grammatical Meaning/2026-04-08-2.3.3. To-Infinitival-Clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2.3.5 Gerund-Participial Clause.md",
@@ -221,7 +225,6 @@
     "_posts/English/2. Grammatical Meaning/2026-04-02-2.5. Modifier.md",
     "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
     "_posts/English/4. Compositional Meaning/2026-04-06-Sentences.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. The Structure of Sentences.md",
     "_site/english/2. grammatical meaning/2026/04/10/2.6.-Supplement.html",
     "_site/english/2. grammatical meaning/2026/04/10/2.3.6.-Past-Participial-Clauses.html",
     "_site/english/2. grammatical meaning/2026/04/09/2.4.-Dependent-in-NP.html",
@@ -236,7 +239,6 @@
     "_posts/English/2. Grammatical Meaning/2026-04-07-2.8. Extraposition, Hollow Clause.md",
     "_posts/Mathematics/2. Analysis/2026-3-20-PMU.md",
     "_posts/Mathematics/2. Analysis/2026-3-20-PMA.md",
-    "_posts/Mathematics/1. Set Theory/2026-04-03-naive-set-theory.md",
     "_posts/English/2. Grammatical Meaning/Passive.md",
     "_posts/English/2. Grammatical Meaning/Raised Subject.md",
     "_posts/English/2. Grammatical Meaning/Raising.md",
@@ -248,7 +250,6 @@
     "_posts/English/2. Grammatical Meaning/Complement.md",
     "_site/templates/Jekyll-Post.md",
     "_site/MyNotes/Note.md",
-    "_site/MyNotes/Markdown.md",
     "_posts/English/2. Grammatical Meaning/Pasted image 20260405213914.jpg"
   ]
 }
