@@ -63,21 +63,29 @@
     }
 
     .project-name, .project-tagline {
-      color: #ffffff !important;
+      color: #ffffffd7 !important;
     }
 
+    .project-name { font-size: 2.6rem !important; margin-top: 0.8rem !important;}
+    .project-tagline { font-size: 1.1rem !important; margin-top: 0.8rem !important;}
 
     .main-content {
       max-width: 54rem;
       margin: 0 auto;
       padding: 2rem 4rem;
+      font-size: 1.05rem !important;
     }
+    h1 { font-size: 2.0rem !important; margin-bottom: 0rem; margin-top: 5rem !important;}
+    h2 { font-size: 1.2rem !important; margin-bottom: 0rem; margin-top: 3rem !important;}
+    h3 { font-size: 1.1rem !important; margin-bottom: 0rem; }
 
     .page-header .btn {
       color: #ffffffa2 !important;
-      border-color: rgba(255, 255, 255, 0.4) !important;
+      border-color: rgba(255, 255, 255, 0.258) !important;
       background-color: rgba(255, 255, 255, 0.1) !important;
       transition: all 0.2s ease;
+      padding: 0.6rem 0.9rem !important;
+      font-size: 0.85rem !important;
     }
 
     .page-header .btn:hover {
@@ -91,17 +99,18 @@
      gap: 10px;
      flex-wrap: wrap;
     }
-
+    
     @media screen and (max-width: 64rem) {
       .main-content {
       font-size: 16px !important; 
       line-height: 1.5 !important;
       padding: 1.5rem 1.2rem !important;
+      font-size: 1rem !important;
       }
 
-      h1 { font-size: 1.8rem !important; }
-      h2 { font-size: 1.5rem !important; }
-      h3 { font-size: 1.2rem !important; }
+      h1 { font-size: 1.6rem !important; }
+      h2 { font-size: 1.18rem !important; }
+      h3 { font-size: 1.1rem !important; }
     }
   </style>
 </head>
@@ -140,13 +149,13 @@
   </nav>
 
   <header style="text-align: center;">
-    <h1 style="margin-top: 0; color:#000000">Present Perfect + Others</h1>
+    <h1 style="margin-top: 0 !important; color:#000000">Present Perfect + Others</h1>
     <div style="display: flex; align-items: center; justify-content: center;">
     <img src="https://github.com/yeonsolkim.png" alt="yeonsolkim" 
-         style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid #eee;">
+         style="width: 35px; height: 35px; border-radius: 50%; border: 1px solid #eee;">
     </div>
-    <span style="font-weight:500; color: #373737; font-size: medium;">YeonsolKim</span>
-    <p style="color: #666; margin-top: 0; margin-bottom: 50px; font-weight: lighter; font-size: small;">April 03, 2026</p>
+    <span style="font-weight:500; color: #373737; font-size: 1rem;">Yeonsol Kim</span>
+    <p style="color: #666; margin-top: 0; margin-bottom: 50px; font-weight: lighter; font-size: 0.8rem; ">April 03, 2026</p>
   </header>
 
   <hr>
@@ -197,6 +206,7 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <style>
+  .main-content a:hover { text-decoration: underline !important; color: #000 !important; }
   .main-content {
     width: 100% !important;
     box-sizing: border-box !important;
@@ -204,7 +214,7 @@
     padding: 2rem 4rem;
     margin: 0 auto;
     word-wrap: break-word;
-    line-height: 1.7;
+    line-height: 1.6;
     color: #333;
   }
   .post-body h1, 
@@ -216,13 +226,13 @@
     color: #333 !important; 
     font-weight: bold;
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0 rem;
   }
   
   .post-body ul {
     list-style-type: disc !important; 
     padding-left: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.45rem;
   }
 
   .post-body ul li::marker {
@@ -230,40 +240,133 @@
     font-size: 0.85em;
   }
   
-.post-body ul li p {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  display: inline; 
-}
+  .post-body ul li p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    display: inline; 
+  }
+ 
 
+  .post-body ul li {
+    margin-top: 5px !important;    
+    margin-bottom: 5px !important;
+    line-height: 1.5;
+  }
 
-.post-body ul li {
-  margin-top: 5px !important;    
-  margin-bottom: 5px !important;
-  line-height: 1.6;
-}
+  .post-body ul ul, 
+  .post-body ul ol {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
 
-.post-body ul ul, 
-.post-body ul ol {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-.post-body img, .post-body canvas, .post-body svg {
-  max-width: 100%;
-}
-
-@media screen and (max-width: 600px) {
+  .post-body img, .post-body canvas, .post-body svg {
+    max-width: 100%;
+  }
+  
+ @media screen and (max-width: 600px) {
   .main-content {
     padding: 1.5rem;
+   }
   }
-}
+</style>
+
+<style>
+  ol {
+    list-style: none;
+    counter-reset: line-counter;
+    padding-left: 2.35rem;
+  }
+
+  /* ol 바로 밑의 li만 숫자를 매깁니다 */
+  ol > li {
+    counter-increment: line-counter;
+    position: relative;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  /* 숫자 스타일 역시 직계 자식 li의 앞부분에만 붙입니다 */
+  ol > li::before {
+    content: counter(line-counter) ".";
+    position: absolute;
+    color: #00000046; 
+    font-weight:normal;
+    left: -1.5rem;
+  }
+
+  /* 2. 중첩된 ul(하위 목록) 스타일 복구 */
+  /* ol 안의 ul 안에 있는 li들은 기본 점(disc) 모양으로 되돌립니다 */
+  ol ul {
+    list-style: disc; /* 또는 원하시는 모양 */
+    padding-left: 0rem;
+    margin-top: 5px;
+    margin-bottom: 0px !important;
+  }
+
+  ol ul li {
+    /* 숫자를 매기지 않도록 가상 요소 초기화 */
+    position: static; 
+  }
+
+  ol ul li::before {
+    content: none; /* 하위 리스트에서 숫자가 나타나는 것을 방지 */
+  }
+  
 </style>
 
     <footer class="site-footer">
       <p>&copy; 2026 yeonsolkim. All rights reserved.</p>
     </footer>
   </main>
+  <style>
+    blockquote {
+      background-color: #a4a4a422 !important; 
+      color: #333333b7 !important;              
+      margin: 1.5rem 0 !important;
+      margin: 1.5rem 0 !important;
+      padding: 1rem 1.5rem !important;
+      border-radius: 10px !important; 
+      overflow: hidden; 
+      border-left: #28569200 !important;
+    }
 
+    blockquote mjx-container {
+      color: inherit !important;
+    }
+
+    table {
+      width: 100% !important;
+      display: table !important;
+      border-collapse: separate !important;
+      border-spacing: 0 !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      border: 0.5px solid #00000010 !important;
+      border-radius: 15px !important;
+      overflow: hidden !important;
+      table-layout: auto !important; 
+    }
+
+    thead, tbody, tr {
+      width: 100% !important;
+    }
+
+    th, td {
+      padding: 6px 7px !important; 
+      white-space: nowrap !important;
+      border-bottom: 0.5px solid #00000010 !important;
+      border-right: 0.5px solid #00000010 !important;
+      font-size: 1rem;
+      text-align: left;
+    }
+
+    tbody { background-color: #bdbdbd0d; }
+    thead th {
+    background-color: #bdbdbd32;
+    }
+  </style>
 </body>
 </html>
+

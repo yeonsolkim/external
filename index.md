@@ -50,6 +50,7 @@ title: Abstraction
 {% endfor %}
 
 <style>
+  h2 { font-size: 1.8rem !important; }
   .custom-list { list-style-type: disc !important; padding-left: 20px; margin-left: 20px; }
   .custom-list li::marker { color: #00000000; font-size: 0.7em; }
   .custom-list li { margin-bottom: 10px; }

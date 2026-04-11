@@ -56,7 +56,7 @@ denoted by $B=\bigcup A$; *the union of* $A$.
 
 **6.3. Definition.** Now we can generalize pairs: $\{a,b,c\}=\{a\}\cup \{b\}\cup \{c\}, \text{etc.}$ 
 
-> *Proving Strategy<br>
+> **Proving Strategy**<br>
 > Goal: To explicate that a sentence is trivial. <br>
 > Strategy 1: If a sentence has disjunction, then split into the cases.
 

@@ -46,9 +46,11 @@
     }
 
     .project-name, .project-tagline {
-      color: #ffffff !important;
+      color: #ffffffd7 !important;
     }
 
+    .project-name { font-size: 2.6rem !important; margin-top: 0.8rem !important;}
+    .project-tagline { font-size: 1.1rem !important; margin-top: 0.8rem !important;}
 
     .main-content {
       max-width: 54rem;
@@ -56,15 +58,17 @@
       padding: 2rem 4rem;
       font-size: 1.05rem !important;
     }
-    h1 { font-size: 1.5rem !important; margin-bottom: 0rem;}
-    h2 { font-size: 1.3rem !important; margin-bottom: 0rem;}
-    h3 { font-size: 1.1rem !important; margin-bottom: 0rem;}
+    h1 { font-size: 2.0rem !important; margin-bottom: 0rem; margin-top: 5rem !important;}
+    h2 { font-size: 1.2rem !important; margin-bottom: 0rem; margin-top: 3rem !important;}
+    h3 { font-size: 1.1rem !important; margin-bottom: 0rem; }
 
     .page-header .btn {
       color: #ffffffa2 !important;
-      border-color: rgba(255, 255, 255, 0.4) !important;
+      border-color: rgba(255, 255, 255, 0.258) !important;
       background-color: rgba(255, 255, 255, 0.1) !important;
       transition: all 0.2s ease;
+      padding: 0.6rem 0.9rem !important;
+      font-size: 0.85rem !important;
     }
 
     .page-header .btn:hover {
@@ -78,7 +82,7 @@
      gap: 10px;
      flex-wrap: wrap;
     }
-
+    
     @media screen and (max-width: 64rem) {
       .main-content {
       font-size: 16px !important; 
@@ -87,7 +91,7 @@
       font-size: 1rem !important;
       }
 
-      h1 { font-size: 1.3rem !important; }
+      h1 { font-size: 1.6rem !important; }
       h2 { font-size: 1.18rem !important; }
       h3 { font-size: 1.1rem !important; }
     }
@@ -128,6 +132,55 @@
       <p>&copy; {{ "now" | date: "%Y" }} {{ site.github.owner_name | default: "yeonsolkim" }}. All rights reserved.</p>
     </footer>
   </main>
+  <style>
+    blockquote {
+      background-color: #a4a4a422 !important; 
+      color: #333333b7 !important;              
+      margin: 1.5rem 0 !important;
+      margin: 1.5rem 0 !important;
+      padding: 1rem 1.5rem !important;
+      border-radius: 10px !important; 
+      overflow: hidden; 
+      border-left: #28569200 !important;
+    }
 
+    blockquote mjx-container {
+      color: inherit !important;
+    }
+
+    table {
+      width: 100% !important;
+      display: table !important;
+      border-collapse: separate !important;
+      border-spacing: 0 !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      border: 0.5px solid #00000010 !important;
+      border-radius: 15px !important;
+      overflow: hidden !important;
+      table-layout: auto !important; 
+    }
+
+    thead, tbody, tr {
+      width: 100% !important;
+    }
+
+    th, td {
+      padding: 6px 7px !important; 
+      white-space: nowrap !important;
+      border-bottom: 0.5px solid #00000010 !important;
+      border-right: 0.5px solid #00000010 !important;
+      font-size: 1rem;
+      text-align: left;
+    }
+
+    tbody { background-color: #bdbdbd0d; }
+    thead th {
+    background-color: #bdbdbd32;
+    }
+  </style>
 </body>
 </html>
+
