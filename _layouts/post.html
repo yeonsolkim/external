@@ -14,8 +14,8 @@ title: Abstraction
     <img src="https://github.com/yeonsolkim.png" alt="yeonsolkim" 
          style="width: 35px; height: 35px; border-radius: 50%; border: 1px solid #eee;">
     </div>
-    <span style="font-weight:500; color: #373737; font-size:small;">Yeonsol Kim</span>
-    <p style="color: #666; margin-top: 0; margin-bottom: 50px; font-weight: lighter; font-size:x-small;">{{ page.date | date: "%B %d, %Y" }}</p>
+    <span style="font-weight:500; color: #373737; font-size:medium;">Yeonsol Kim</span>
+    <p style="color: #666; margin-top: 0; margin-bottom: 50px; font-weight: lighter; font-size:smaller;">{{ page.date | date: "%B %d, %Y" }}</p>
   </header>
 
   <hr>
@@ -101,13 +101,36 @@ title: Abstraction
     margin-bottom: 0 !important;
   }
 
- .post-body img, .post-body canvas, .post-body svg {
+  .post-body img, .post-body canvas, .post-body svg {
     max-width: 100%;
   }
-
+  
  @media screen and (max-width: 600px) {
   .main-content {
     padding: 1.5rem;
    }
+  }
+</style>
+
+<style>
+  ol {
+    list-style: none;
+    counter-reset: line-counter; 
+    padding-left: 1.5rem;
+  }
+
+  ol li {
+    counter-increment: line-counter; 
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  ol li::before {
+    content: counter(line-counter) "."; 
+    position: absolute;
+    left: -1.5rem; 
+    color: #0000003e; 
+    font-weight: 400;
+    font-size: 0.9em;  
   }
 </style>
