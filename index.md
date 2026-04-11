@@ -7,7 +7,7 @@ title: Abstraction
 
 {% for parent in parent_categories %}
   <section style="margin-bottom: 40px;">
-    <h2 style="color: #000; padding-bottom: 10px; border-bottom: 2px solid #eee;">
+    <h2 style="color: #000; padding-bottom: 9px; border-bottom: 2px solid #eee;">
       {{ parent }}
     </h2>
 
@@ -25,7 +25,7 @@ title: Abstraction
     {% assign sub_cats = sub_cats | sort %}
 
     {% for sub in sub_cats %}
-      <div style="margin-left: 20px; margin-top: 25px;">
+      <div style="margin-left: 20px; margin-top: 20px;">
         <h3 style="color: #222222; font-size: 1.1rem; border-left: 4px solid #0000001a; padding-left: 12px; margin-bottom: 15px;">
           {{ sub }}
         </h3>
