@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
+                "file": "_posts/English/4. Compositional Meaning/2026-04-11-Complement.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-01-Dimensions of Meaning"
+              "title": "2026-04-11-Complement"
             }
           },
           {
@@ -215,6 +215,8 @@
   },
   "active": "89c1b83078c5c2d7",
   "lastOpenFiles": [
+    "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
+    "_posts/English/4. Compositional Meaning/2026-04-11-Complement.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-2.3.6. Passive vs. Adjectival.md",
     "_posts/English/2. Grammatical Meaning/2026-04-09-2.4. Dependent in NP.md",
     "_posts/English/2. Grammatical Meaning/2026-04-02-2.7. of-pp.md",
@@ -239,8 +241,6 @@
     "index.md",
     "README.md",
     "MyNotes/Note.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. The Structure of Sentences.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Tense and Aspect.md",
     "_site/assets/images/banner.jpg",
     "_site/assets/images/image1.jpg",
     "assets/images/image1.jpg",
