@@ -23,6 +23,7 @@ complement가 head에 대해 가질 수 있는 의미는 매우 다양하다.
 
 
 ### 2. Content
+head가 어떤 판단, 인식, 지식 등을 나타낼 때, complement가 그 content을 줌.
 - I know [that he left]
 - She said [that it was wrong]
 - I was glad [to be invited]
