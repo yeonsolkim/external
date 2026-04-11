@@ -16,7 +16,7 @@ social:
   name: YeonsolKim
   links:
     - https://github.com/yeonsolkim
-image: "https://yeonsolkim.github.io/blog/assets/banner.jpg"
+image: "https://yeonsolkim.github.io/blog/assets/images/banner.jpg"
 incremental: true 
 markdown: kramdown
 kramdown:

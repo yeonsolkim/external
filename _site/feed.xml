@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2026-04-11T12:15:59+09:00</updated><id>http://localhost:4000/blog/feed.xml</id><subtitle>Mathematics and Physics</subtitle><author><name>YeonsolKim</name></author><entry><title type="html">2.6. Supplement</title><link href="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/10/2.6.-Supplement.html" rel="alternate" type="text/html" title="2.6. Supplement" /><published>2026-04-10T15:58:43+09:00</published><updated>2026-04-10T15:58:43+09:00</updated><id>http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/10/2.6.%20Supplement</id><content type="html" xml:base="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/10/2.6.-Supplement.html"><![CDATA[Non-restrictive
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2026-04-11T13:16:48+09:00</updated><id>http://localhost:4000/blog/feed.xml</id><subtitle>Mathematics and Physics</subtitle><author><name>YeonsolKim</name></author><entry><title type="html">2.6. Supplement</title><link href="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/10/2.6.-Supplement.html" rel="alternate" type="text/html" title="2.6. Supplement" /><published>2026-04-10T15:58:43+09:00</published><updated>2026-04-10T15:58:43+09:00</updated><id>http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/10/2.6.%20Supplement</id><content type="html" xml:base="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/10/2.6.-Supplement.html"><![CDATA[Non-restrictive
 ### The Strange Situation Experiment, conducted by psychologist Mary Ainsworth in 1970s, determined the attachment behavior of infants toward their caregivers.
 * Subject
   * Head: The Strange Situation Experiment
@@ -318,54 +318,102 @@ Definition: "VP"를 head로 하는 special kind of phrase.
 2. Bare Infinitival 
 3. Gerund-Participial
 4. Past-Participial
-5. Verbless]]></content><author><name>YeonsolKim</name></author><category term="English" /><category term="2. Grammatical Meaning" /><summary type="html"><![CDATA[1. Clause Definition: “VP”를 head로 하는 special kind of phrase.]]></summary></entry><entry><title type="html">2.8. Extraposition, Hollow Clause</title><link href="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/07/2.8.-Extraposition,-Hollow-Clause.html" rel="alternate" type="text/html" title="2.8. Extraposition, Hollow Clause" /><published>2026-04-07T11:59:18+09:00</published><updated>2026-04-07T11:59:18+09:00</updated><id>http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/07/2.8.%20Extraposition,%20Hollow%20Clause</id><content type="html" xml:base="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/07/2.8.-Extraposition,-Hollow-Clause.html"><![CDATA[## 1. Extraposition
-### It's good to get up early.
-* Predicate(VP): is good
-  * Head(Auxiliary Verb): is
-  * Predicative Complement(AdjP): good
-* Predicand(To-Infinitival Clause): to get up early
-    * Predicate: get up early
-      * Head(VP): get up
-      * Modifier(AdvP): early
-    * Predicand: we
+5. Verbless]]></content><author><name>YeonsolKim</name></author><category term="English" /><category term="2. Grammatical Meaning" /><summary type="html"><![CDATA[1. Clause Definition: “VP”를 head로 하는 special kind of phrase.]]></summary></entry><entry><title type="html">2.8. Extraposition, Hollow Clause</title><link href="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/07/2.8.-Extraposition,-Hollow-Clause.html" rel="alternate" type="text/html" title="2.8. Extraposition, Hollow Clause" /><published>2026-04-07T11:59:18+09:00</published><updated>2026-04-07T11:59:18+09:00</updated><id>http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/07/2.8.%20Extraposition,%20Hollow%20Clause</id><content type="html" xml:base="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/04/07/2.8.-Extraposition,-Hollow-Clause.html"><![CDATA[<h2 id="1-extraposition">1. Extraposition</h2>
+<h3 id="its-good-to-get-up-early">It’s good to get up early.</h3>
+<ul>
+  <li>Predicate(VP): is good
+    <ul>
+      <li>Head(Auxiliary Verb): is</li>
+      <li>Predicative Complement(AdjP): good</li>
+    </ul>
+  </li>
+  <li>Predicand(To-Infinitival Clause): to get up early
+    <ul>
+      <li>Predicate: get up early
+        <ul>
+          <li>Head(VP): get up</li>
+          <li>Modifier(AdvP): early</li>
+        </ul>
+      </li>
+      <li>Predicand: we</li>
+    </ul>
+  </li>
+</ul>
 
---- 
-## 2. Hollow Non-Finite Clause
-*Gap의 해석이 matrix clause 전체와 관련이 있기 때문에 hollow는 predicate의 성질보다는 matrix clause의 성질로 본다고 한다. 
-### Here is a new book for you to read.
-* Predicate: Here is
-  * Head: is 
-  * Locative Complement(AdvP): Here
-* Subject(NP): a new book for you to read.
-  * Determiner(DP): a
-  * Head(NP): new book for you to read
-    * Head(N): book
-    * Modifier(AdjP): new
-    * Modifier(Hollow To-Infinitival Clause): for you to read
-      * Subject: you
-      * Predicate(VP): read
-        * Head: read
-        * Direct Object Gap: book
+<hr />
+<h2 id="2-hollow-non-finite-clause">2. Hollow Non-Finite Clause</h2>
+<p>*Gap의 해석이 matrix clause 전체와 관련이 있기 때문에 hollow는 predicate의 성질보다는 matrix clause의 성질로 본다고 한다.</p>
+<h3 id="here-is-a-new-book-for-you-to-read">Here is a new book for you to read.</h3>
+<ul>
+  <li>Predicate: Here is
+    <ul>
+      <li>Head: is</li>
+      <li>Locative Complement(AdvP): Here</li>
+    </ul>
+  </li>
+  <li>Subject(NP): a new book for you to read.
+    <ul>
+      <li>Determiner(DP): a</li>
+      <li>Head(NP): new book for you to read
+        <ul>
+          <li>Head(N): book</li>
+          <li>Modifier(AdjP): new</li>
+          <li>Modifier(Hollow To-Infinitival Clause): for you to read
+            <ul>
+              <li>Subject: you</li>
+              <li>Predicate(VP): read
+                <ul>
+                  <li>Head: read</li>
+                  <li>Direct Object Gap: book</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
+<blockquote>
+  <p>Simplification: Here / is / a new book / for you to read.</p>
+</blockquote>
 
-> Simplification: Here / is / a new book / for you to read.
-### These students are very difficult for us to teach.
-* Subject(NP): These students
-  * Determiner(DP): These
-  * Head(N): students
-* Predicate(VP): are very difficult for us to teach
-  * Head(Auxiliary Verb): are
-  * Predicative Complement(AdjP): very difficult for us to teach
-    * Modifier(AdvP): very
-    * Head(Adj): difficult
-    * Complement(Hollow To-Infinitival Clause): for us to teach
-      * Subject: us
-      * Predicate(VP): teach
-        * Head(V): teach
-        * Direct Object Gap(NP): these students
+<h3 id="these-students-are-very-difficult-for-us-to-teach">These students are very difficult for us to teach.</h3>
+<ul>
+  <li>Subject(NP): These students
+    <ul>
+      <li>Determiner(DP): These</li>
+      <li>Head(N): students</li>
+    </ul>
+  </li>
+  <li>Predicate(VP): are very difficult for us to teach
+    <ul>
+      <li>Head(Auxiliary Verb): are</li>
+      <li>Predicative Complement(AdjP): very difficult for us to teach
+        <ul>
+          <li>Modifier(AdvP): very</li>
+          <li>Head(Adj): difficult</li>
+          <li>Complement(Hollow To-Infinitival Clause): for us to teach
+            <ul>
+              <li>Subject: us</li>
+              <li>Predicate(VP): teach
+                <ul>
+                  <li>Head(V): teach</li>
+                  <li>Direct Object Gap(NP): these students</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-
-> Simplification: These students / are / very difficult [for us to teach].]]></content><author><name>YeonsolKim</name></author><category term="English" /><category term="2. Grammatical Meaning" /><summary type="html"><![CDATA[1. Extraposition It’s good to get up early. Predicate(VP): is good Head(Auxiliary Verb): is Predicative Complement(AdjP): good Predicand(To-Infinitival Clause): to get up early Predicate: get up early Head(VP): get up Modifier(AdvP): early Predicand: we]]></summary></entry><entry><title type="html">Sentences</title><link href="http://localhost:4000/blog/english/4.%20compositional%20meaning/2026/04/06/Sentences.html" rel="alternate" type="text/html" title="Sentences" /><published>2026-04-06T14:03:28+09:00</published><updated>2026-04-06T14:03:28+09:00</updated><id>http://localhost:4000/blog/english/4.%20compositional%20meaning/2026/04/06/Sentences</id><content type="html" xml:base="http://localhost:4000/blog/english/4.%20compositional%20meaning/2026/04/06/Sentences.html"><![CDATA[## 1. Action
+<blockquote>
+  <p>Simplification: These students / are / very difficult [for us to teach].</p>
+</blockquote>]]></content><author><name>YeonsolKim</name></author><category term="English" /><category term="2. Grammatical Meaning" /><summary type="html"><![CDATA[1. Extraposition It’s good to get up early. Predicate(VP): is good Head(Auxiliary Verb): is Predicative Complement(AdjP): good Predicand(To-Infinitival Clause): to get up early Predicate: get up early Head(VP): get up Modifier(AdvP): early Predicand: we]]></summary></entry><entry><title type="html">Sentences</title><link href="http://localhost:4000/blog/english/4.%20compositional%20meaning/2026/04/06/Sentences.html" rel="alternate" type="text/html" title="Sentences" /><published>2026-04-06T14:03:28+09:00</published><updated>2026-04-06T14:03:28+09:00</updated><id>http://localhost:4000/blog/english/4.%20compositional%20meaning/2026/04/06/Sentences</id><content type="html" xml:base="http://localhost:4000/blog/english/4.%20compositional%20meaning/2026/04/06/Sentences.html"><![CDATA[## 1. Action
 1. $\langle\text{Agent},\text{Act}, \text{Theme}\rangle$ *$\text{Agent}$는 의지를 가지고 동작을 수행하는 주체
 2. $\langle\text{Agent},\text{Act},\text{Patient}\rangle$ *$\text{Patient}$는 단순 대상이 아니라 내부적으로 상태가 변화하는 대상
 3. $\langle\text{Agent},\text{Act},\text{Proposition}\rangle$

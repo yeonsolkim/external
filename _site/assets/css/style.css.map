@@ -3,10 +3,10 @@
 	"file": "style.css",
 	"sources": [
 		"style.scss",
-		"../../../private/var/folders/6g/2yk8256s4_1712bw4hqq5k140000gn/T/jekyll-remote-theme-20260411-91030-5gf1wy/_sass/jekyll-theme-cayman.scss",
-		"../../../private/var/folders/6g/2yk8256s4_1712bw4hqq5k140000gn/T/jekyll-remote-theme-20260411-91030-5gf1wy/_sass/normalize.scss",
-		"../../../private/var/folders/6g/2yk8256s4_1712bw4hqq5k140000gn/T/jekyll-remote-theme-20260411-91030-5gf1wy/_sass/rouge-github.scss",
-		"../../../private/var/folders/6g/2yk8256s4_1712bw4hqq5k140000gn/T/jekyll-remote-theme-20260411-91030-5gf1wy/_sass/variables.scss"
+		"../../../private/var/folders/6g/2yk8256s4_1712bw4hqq5k140000gn/T/jekyll-remote-theme-20260411-92149-kj2wms/_sass/jekyll-theme-cayman.scss",
+		"../../../private/var/folders/6g/2yk8256s4_1712bw4hqq5k140000gn/T/jekyll-remote-theme-20260411-92149-kj2wms/_sass/normalize.scss",
+		"../../../private/var/folders/6g/2yk8256s4_1712bw4hqq5k140000gn/T/jekyll-remote-theme-20260411-92149-kj2wms/_sass/rouge-github.scss",
+		"../../../private/var/folders/6g/2yk8256s4_1712bw4hqq5k140000gn/T/jekyll-remote-theme-20260411-92149-kj2wms/_sass/variables.scss"
 	],
 	"sourcesContent": [
 		"@import 'jekyll-theme-cayman';\n",
