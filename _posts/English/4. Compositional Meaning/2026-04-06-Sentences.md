@@ -25,7 +25,7 @@ categories:
 2. $\langle\text{Experiencer},\text{Experience},\text{Proposition}\rangle$
 
 >Examples.
->1. I feel cold.
+>1. I feel cold.<br>
    She loves music.
 >2. I believe she will come home.
 
@@ -36,8 +36,8 @@ categories:
 >Examples.
 >1. This key opens the back door.
 >2. I was hospitalized.
-   English is spoken in many countries.
-   The data is being processed.
+   English is spoken in many countries.<br>
+   The data is being processed.<br>
    The road leads to the city center.
 
 ## 4. Deontic
@@ -47,11 +47,13 @@ categories:
 >1. The law forbids smoking in this area.
 
 ## 5. Causation
-1. $\langle\text{Cause}, \text{Effect}\rangle$
+1. $\langle\text{Cause}, \text{Physical Effect}\rangle$
+2. $\langle\text{Cause}, \text{Perceptual Effect}\rangle$
 
 >Examples. 
 >1. The cold froze the river.
-   The music makes me happy.
+>2. The music makes me happy.<br>
+>   The simple interface disguises the system’s complexity.
 
 ## 6. Indication
 1. $\langle\text{Evidence}, \text{Indication}, \text{Proposition}\rangle$

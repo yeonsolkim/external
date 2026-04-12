@@ -16,7 +16,9 @@ categories:
 >Examples.
 >1. He can lift 500N.
 >2. You can go home now.
->3. Even expert drivers can make mistakes.
+>3. Even expert drivers  / can [ ~ make mistakes].<br>
+>   Water / can [ ~ boil].<br>
+>   The absence of legs / cannot [ ~ disguise their affinities with mammals].<br>
 >4. She can't be tired now. 
 
 ### 2. may
@@ -24,7 +26,7 @@ categories:
 2. conjecture
 
 ### 3. must, have to
-1. duty
+1. duty: 어떤 주체가 해야할 의무
 2. **necessity**
 3. strong conjecture
 
@@ -49,4 +51,9 @@ categories:
 
 ### 5. should, ought to
 1. duty
-2. **reasonable conjecture**
+2. **expectation**: normality와 상식을 기반으로 한 일반적 expectation
+
+
+> Examples.
+> 2. It should be obvious that humans walk on two feet.
+>    
