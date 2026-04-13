@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Present Perfect + Others
+title: Present Perfect + ...
 date: 2026-04-03 16:13:37 +0900
 categories:
   - English
