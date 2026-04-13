@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sentences
+title: Extended Semantic Roles
 date: 2026-04-06 14:03:28 +0900
 categories:
   - English
