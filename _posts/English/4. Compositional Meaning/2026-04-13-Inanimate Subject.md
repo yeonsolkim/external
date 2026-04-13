@@ -50,9 +50,16 @@ categories:
 
 
 
-## 6. Enablement 
-$\text{Enabler}$: event가 성립할 수 있는 상황적 여건을 마련하는 요소. 
+## 6. Establishing The Conditions
+$\text{Enabler}$: event가 성립할 수 있는 상황적 조건을 마련하는 요소. <br>
 $\langle\text{Enabler},\text{Event}\rangle$
->Examples.
+>Examples.<br>
 >This technology allows users to share files instantly.<br>
 >The road gives access to the village.
+
+
+## 7. Formation
+$\langle\text{Source of Formation},\text{Formed Result}\rangle$
+>Examples.<br>
+>The environment I grew up in made me who I am today. <br>
+>The river formed these deposits. 
