@@ -19,6 +19,7 @@ categories:
 >3. Even expert drivers  / can [ ~ make mistakes].<br>
 >   Water / can [ ~ boil].<br>
 >   The absence of legs / cannot [ ~ disguise their affinities with mammals].<br>
+>   I can't believe that we are faced with that sort of choice. (화자의 epistemic state에 의해 제한된 possibility) <br>
 >4. She can't be tired now. 
 
 ### 2. may
