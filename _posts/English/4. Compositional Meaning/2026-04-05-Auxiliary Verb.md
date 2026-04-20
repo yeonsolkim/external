@@ -8,7 +8,7 @@ categories:
 ---
 
 ### 1. can
-1. dynamic ability
+1. ability
 2. permission
 3. **circumstantial possibility**
 4. **conjecture**
