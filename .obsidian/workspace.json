@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
+                "file": "_posts/English/4. Compositional Meaning/2026-04-21-Supplement.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-03-1. The Structure of Sentence"
+              "title": "2026-04-21-Supplement"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-02-1.4. Preposition Phrase.md",
+                "file": "_posts/English/4. Compositional Meaning/2026-04-21-in-PP.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-02-1.4. Preposition Phrase"
+              "title": "2026-04-21-in-PP"
             }
           },
           {
@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-02-1.5. Modifier.md",
+                "file": "_posts/English/4. Compositional Meaning/2026-04-21-to-Infinitival Clause.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-02-1.5. Modifier"
+              "title": "2026-04-21-to-Infinitival Clause"
             }
           },
           {
@@ -55,16 +55,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyNotes/Q&A.md",
+                "file": "_posts/English/4. Compositional Meaning/2026-04-21-in-PP.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Q&A"
+              "title": "2026-04-21-in-PP"
+            }
+          },
+          {
+            "id": "fee37e6d2cb41858",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/English/4. Compositional Meaning/2026-04-13-of PP.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "2026-04-13-of PP"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -227,37 +241,37 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b316e855b0c5800e",
+  "active": "50f509463b6298a4",
   "lastOpenFiles": [
-    "_posts/English/2. Grammatical Meaning/2026-04-02-1.5. Modifier.md",
+    "_posts/English/4. Compositional Meaning/2026-04-21-in-PP.md",
+    "_posts/English/4. Compositional Meaning/2026-04-21-to-Infinitival Clause.md",
+    "_posts/English/4. Compositional Meaning/2026-04-21-Supplement.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
+    "_posts/English/4. Compositional Meaning/2026-04-03-Other PP.md",
+    "_posts/English/4. Compositional Meaning/2026-04-13-of PP.md",
+    "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
+    "_posts/English/4. Compositional Meaning/2026-04-05-Idiomatic Expressions.md",
+    "_posts/English/4. Compositional Meaning/2026-04-11-VP.md",
+    "_posts/English/4. Compositional Meaning/2026-04-13-Inanimate Subject.md",
     "_posts/English/2. Grammatical Meaning/2026-04-02-1.4. Preposition Phrase.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-08-2.3. to-Infinitival-Clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-10-3.1. Past-Participial Form.md",
+    "MyNotes/Q&A.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-02-1.5. Modifier.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-3.3. Dummy Element.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2. Clause.md",
-    "_posts/English/4. Compositional Meaning/in-PP.md",
-    "_posts/English/4. Compositional Meaning/2026-04-13-of-PP.md",
     "MyNotes/Markdown.md",
     "_posts/English/5. Pragmatic Meaning/2026-04-04-Schema.md",
     "assets/images/IMG_0332.jpeg",
     "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. Tense and Aspect.md",
     "assets/images/banner.jpg",
     "assets/images/image1.jpg",
-    "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
     "MyNotes/About Me.md",
     "MyNotes/LLM.md",
     "MyNotes/Writing An Email.md",
     "_posts/English/3. Lexical Meaning/2026-04-14-Dictionary.md",
     "_posts/English/4. Compositional Meaning/2026-04-03-Time.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-2.6. Past-Participial Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-08-2.3. To-Infinitival-Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-11-2.7. Hollow Non-Finite Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-2.5. Gerund-Participial Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-2.4. Bare Infinitival Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-10-3.2. Raised Subject.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-10-3.1. Past-Participial Form.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-10-1.6. Supplement.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-13-1.6. Wh-Phrase.md",
     "_posts/English/5. Pragmatic Meaning/Untitled",
     "_site/assets/images/banner.jpg",
     "_site/assets/images/image1.jpg",
