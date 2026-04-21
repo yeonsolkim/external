@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/4. Compositional Meaning/2026-04-21-in-PP.md",
+                "file": "_posts/English/4. Compositional Meaning/2026-04-03-Other PP.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-21-in-PP"
+              "title": "2026-04-03-Other PP"
             }
           },
           {
@@ -78,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -241,15 +241,16 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "50f509463b6298a4",
+  "active": "b316e855b0c5800e",
   "lastOpenFiles": [
+    "_posts/English/4. Compositional Meaning/2026-04-03-Other PP.md",
     "_posts/English/4. Compositional Meaning/2026-04-21-in-PP.md",
+    "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
     "_posts/English/4. Compositional Meaning/2026-04-21-to-Infinitival Clause.md",
     "_posts/English/4. Compositional Meaning/2026-04-21-Supplement.md",
+    "_posts/English/2. Grammatical Meaning/Untitled.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
-    "_posts/English/4. Compositional Meaning/2026-04-03-Other PP.md",
     "_posts/English/4. Compositional Meaning/2026-04-13-of PP.md",
-    "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
     "_posts/English/4. Compositional Meaning/2026-04-05-Idiomatic Expressions.md",
     "_posts/English/4. Compositional Meaning/2026-04-11-VP.md",
     "_posts/English/4. Compositional Meaning/2026-04-13-Inanimate Subject.md",
@@ -271,7 +272,6 @@
     "MyNotes/Writing An Email.md",
     "_posts/English/3. Lexical Meaning/2026-04-14-Dictionary.md",
     "_posts/English/4. Compositional Meaning/2026-04-03-Time.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-10-2.6. Past-Participial Clause.md",
     "_posts/English/5. Pragmatic Meaning/Untitled",
     "_site/assets/images/banner.jpg",
     "_site/assets/images/image1.jpg",
