@@ -1,3 +1,11 @@
+---
+layout: post
+title: Lexical Meaning
+date: 2026-04-22 09:05:25 +0900
+categories:
+  - English
+  - 3. Lexical Meaning
+---
 
 <style>
   .custom-table {
