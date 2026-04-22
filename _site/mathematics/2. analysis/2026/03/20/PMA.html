@@ -52,6 +52,8 @@
   <link rel="stylesheet" href="/blog/assets/css/style.css">
 
   <style>
+    hr { border: 1px !important;}
+
     .page-header {
       background-color: #000000 !important;
       background-image: linear-gradient(to bottom, 
@@ -70,7 +72,7 @@
     .project-tagline { font-size: 1.1rem !important; margin-top: 0.8rem !important;}
 
     .main-content {
-      max-width: 54rem;
+      max-width: 57.5rem !important;
       margin: 0 auto;
       padding: 2rem 4rem;
       font-size: 1.05rem !important;
@@ -114,7 +116,29 @@
       h3 { font-size: 1.1rem !important; }
     }
   </style>
+
+  <style>
+    html {
+      background-color: white !important; 
+    }
+    
+    body {
+      opacity: 0;
+      transition: opacity 0.2s ease-in; 
+    }
+
+    body.loaded {
+      opacity: 1 !important;
+    }
+  </style>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      document.body.classList.add('loaded');
+    });
+  </script>
 </head>
+
 <body>
 
   <section class="page-header">
@@ -252,7 +276,7 @@ Then $\alpha$ is called the <em>supremum</em> of $E$, an we write</p>
   .main-content {
     width: 100% !important;
     box-sizing: border-box !important;
-    max-width: 65rem; 
+    max-width: 65rem !important; 
     padding: 2rem 4rem;
     margin: 0 auto;
     word-wrap: break-word;
@@ -276,7 +300,7 @@ Then $\alpha$ is called the <em>supremum</em> of $E$, an we write</p>
     padding-left: 2rem;
     margin-bottom: 1.45rem;
   }
-
+  
   .post-body ul li::marker {
     color: #00000041; 
     font-size: 0.85em;
@@ -304,7 +328,7 @@ Then $\alpha$ is called the <em>supremum</em> of $E$, an we write</p>
   .post-body img, .post-body canvas, .post-body svg {
     max-width: 100%;
   }
-  
+
  @media screen and (max-width: 600px) {
   .main-content {
     padding: 1.5rem;
@@ -319,7 +343,6 @@ Then $\alpha$ is called the <em>supremum</em> of $E$, an we write</p>
     padding-left: 2.35rem;
   }
 
-  /* ol 바로 밑의 li만 숫자를 매깁니다 */
   ol > li {
     counter-increment: line-counter;
     position: relative;
@@ -327,7 +350,6 @@ Then $\alpha$ is called the <em>supremum</em> of $E$, an we write</p>
     line-height: 1.2;
   }
 
-  /* 숫자 스타일 역시 직계 자식 li의 앞부분에만 붙입니다 */
   ol > li::before {
     content: counter(line-counter) ".";
     position: absolute;
@@ -336,22 +358,24 @@ Then $\alpha$ is called the <em>supremum</em> of $E$, an we write</p>
     left: -1.5rem;
   }
 
-  /* 2. 중첩된 ul(하위 목록) 스타일 복구 */
-  /* ol 안의 ul 안에 있는 li들은 기본 점(disc) 모양으로 되돌립니다 */
   ol ul {
-    list-style: disc; /* 또는 원하시는 모양 */
+    list-style: disc; 
     padding-left: 0rem;
     margin-top: 5px;
     margin-bottom: 0px !important;
   }
 
   ol ul li {
-    /* 숫자를 매기지 않도록 가상 요소 초기화 */
     position: static; 
   }
 
   ol ul li::before {
-    content: none; /* 하위 리스트에서 숫자가 나타나는 것을 방지 */
+    content: none; 
+  }
+
+  .site-footer {
+    max-width: 784px;   
+    margin: 0 auto;     
   }
   
 </style>
@@ -361,6 +385,9 @@ Then $\alpha$ is called the <em>supremum</em> of $E$, an we write</p>
     </footer>
   </main>
   <style>
+
+    .site-footer { color: #57575790 !important; }
+
     blockquote {
       background-color: #a4a4a422 !important; 
       color: #333333b7 !important;              
