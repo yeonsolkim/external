@@ -1,3 +1,16 @@
+---
+layout: post
+title: Lexical Meaning
+date: 2026-04-22 09:05:25 +0900
+categories:
+  - English
+  - 3. Lexical Meaning
+---
+
+
+#### abate
+<p style="font-weight: bold; color: #0000004D;">verb</p> <p style="font-style: italic; color: #0000004D;">[no object]</p> (of something hostile/negative) become less intense or widespread.
+
 |**Word**|**POS**|**Definition**|
 |---|---|---|
 |**abate**|v.|<p style="font-weight: bold; color: #0000004D;">verb</p> <p style="font-style: italic; color: #0000004D;">[no object]</p> (of something hostile/negative) become less intense or widespread.|
