@@ -22,7 +22,6 @@ categories:
   .custom-table {
     width: 100%;
     border-collapse: collapse; /* 선을 하나로 합침 */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 20px 0;
   }
 
@@ -36,9 +35,7 @@ categories:
   /* 표제어(Word) 스타일 */
   .word-cell {
     width: 25%;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #2c3e50;
+    font-weight: bold;
     letter-spacing: -0.5px;
   }
 
@@ -47,15 +44,12 @@ categories:
     font-weight: bold;
     color: #a0a0a0; /* 연하게 */
     margin-right: 6px;
-    font-size: 0.85rem;
-    text-transform: uppercase;
   }
 
   .usage-tag {
     font-style: italic;
     color: #a0a0a0; /* 연하게 */
     margin-right: 10px;
-    font-size: 0.9rem;
   }
 
   .definition {
