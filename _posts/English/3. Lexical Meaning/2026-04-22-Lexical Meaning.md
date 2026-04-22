@@ -6,22 +6,7 @@ categories:
   - English
   - 3. Lexical Meaning
 ---
-<table border="1">
-  <tr>
-    <td><span style="font-weight: bold;">abate</span></td>
-    <td>
-      <span style="font-weight: bold; color: #0000004D;">verb</span><span style="font-style: italic; color: #0000004D;">[no object]</span> (of something hostile/negative) become less intense or widespread.
-    </td>
-  </tr>
-<tr>
-    <td><span style="font-weight: bold;">abet</span></td>
-    <td>
-      <span style="font-weight: bold; color: #0000004D;">verb</span><span style="font-style: italic; color: #0000004D;">[no object]</span> encourage or assist (someone) to do something wrong (a crime).
-    </td>
-  </tr>
-</table>
-
-
+<table class="custom-table"> <tr> <td class="word-cell">abate</td> <td> <span class="pos-tag">verb</span> <span class="usage-tag">[no object]</span> <span class="definition">(of something hostile/negative) become less intense or widespread.</span> </td> </tr> </table>
 
 <style>
   /* 표 전체 디자인 */
@@ -48,7 +33,7 @@ categories:
   /* 품사 및 설명 스타일 */
   .pos-tag {
     color: #0000004D; /* 연하게 */
-    margin-right: 3px;
+    margin-right: 5px;
   }
 
   .usage-tag {
