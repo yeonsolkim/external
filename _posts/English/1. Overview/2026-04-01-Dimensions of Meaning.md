@@ -9,34 +9,41 @@ categories:
 
 ## 1. Encoded Meaning
 
-**정의:** 언어 표현 자체에 코드화되어 있는 의미이다. 즉, 특정 단어와 문법 형식이 언어 체계 안에서 관습적으로 지니는 의미를 가리킨다. Encoded Meaning은 두 가지로 나눌 수 있다.
+**정의:** language에 코드화되어 있는 의미이다. 
 
-### 1.1 Lexical Meaning
+#### 1.1. Lexical Meaning
 
 **정의:** 개별 어휘 항목이 자체적으로 지니는 개념적 의미이다.  
-**설명:** Lexical meaning은 단어가 문장에 들어가기 전에도 기본적으로 갖고 있는 의미이다. 여기에는 보통 denotation(지시적 의미)가 포함되며, 경우에 따라 connotation(연상적 의미)도 함께 논의될 수 있다.
+**설명:** lexical meaning은 단어가 문장에 들어가기 전에도 기본적으로 갖고 있는 의미이다. 여기에는 보통 denotation(지시적 의미)가 포함되며, 경우에 따라 connotation(연상적 의미)도 함께 논의될 수 있다.
 
-### 1.2 Grammatical Meaning
+#### 1.2. Grammatical Meaning
 
 **정의:** 형태 변화, 기능어, 통사 구조를 통해 표현되는 문법적 의미이다.   
 **설명:** 단어들이 문법적으로 조직되는 방식에서 발생하는 의미이다.
 
-### 1.3 Compositional Meaning
+#### 1.3. Compositional Meaning
 
 **정의:** lexical meaning과 grammatical meaning를 기반으로 형성되는 문장 차원의 언어적 의미이다.<br>
 **설명:** encoded meaning의 최종 산출물이라고 볼 수 있다.
 
 ---
 
-## 2. Pragmatic Meaning
+## 2. Contextually-Licensed Meaning
 
-**정의:** 문장이 실제 발화 상황에서 사용될 때, 맥락, 화자의 의도, 청자의 추론에 의해 형성되는 의미이다.<br>
-**설명:** Pragmatic meaning은 문장 자체의 언어적 의미를 넘어서, 그 문장이 실제 상황에서 무엇을 하고 있는가를 다룬다. 따라서 이는 단순한 문장 의미가 아니라, 발화의 기능과 해석의 결과를 포함한다.
+**정의:** discourse 속에서, 맥락에 의해 형성되는 의미이다.
+**설명:** 객관적이라고까지 하면 too much겠지만, 적어도 intersubjective, 즉 여러 해석자 사이에서 공유 가능하고 논증 가능한 meaning이라고 생각된다. 
 
 ---
 
+## 3. Personally Enriched Meaning
+**정의:** 독자의 기억, 정서, 배경지식이 덧붙이는 해석
+
+
+--- 
+
+
 ## Structural Summary
 
-이 구조를 한 줄로 요약하면 다음과 같다.
-
-Lexical Meaning + Grammatical Meaning → Semantic Meaning → Pragmatic Meaning
+Sentence Level: Lexical Meaning + Grammatical Meaning → Compositional Meaning 
++Discourse Level: Contextually-Licensed Meaning
++Enrichment
