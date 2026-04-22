@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/3. Lexical Meaning/2026-04-22-Lexical Meaning.md",
-                "mode": "source",
+                "file": "_posts/English/3. Lexical Meaning/Lexical Meaning.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-22-Lexical Meaning"
+              "title": "Lexical Meaning"
             }
           },
           {
@@ -245,7 +245,7 @@
   "lastOpenFiles": [
     "MyNotes/Lexeme.md",
     "MyNotes/LLM.md",
-    "_posts/English/3. Lexical Meaning/2026-04-22-Lexical Meaning.md",
+    "_posts/English/3. Lexical Meaning/Lexical Meaning.md",
     "MyNotes/Markdown.md",
     "MyNotes/Q&A.md",
     "MyNotes/Writing An Email.md",
