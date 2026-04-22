@@ -35,10 +35,10 @@ categories:
   }
   .definition {
     color: #444444;
+    margin-right: 3px;
     line-height: 1.5;
   }
   .example {
-  margin-right: 3px;
   color: #0000004D; 
   }
 </style>
