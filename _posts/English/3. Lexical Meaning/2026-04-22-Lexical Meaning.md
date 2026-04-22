@@ -6,14 +6,92 @@ categories:
   - English
   - 3. Lexical Meaning
 ---
+<table border="1">
+  <tr>
+    <td><span style="font-weight: bold;">abate</span></td>
+    <td>
+      <span style="font-weight: bold; color: #0000004D;">verb</span><span style="font-style: italic; color: #0000004D;">[no object]</span> (of something hostile/negative) become less intense or widespread.
+    </td>
+  </tr>
+</table>
 
 
-#### abate
-<p style="font-weight: bold; color: #0000004D;">verb</p> <p style="font-style: italic; color: #0000004D;">[no object]</p> (of something hostile/negative) become less intense or widespread.
+
+<style>
+  /* 표 전체 디자인 */
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse; /* 선을 하나로 합침 */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px 0;
+  }
+
+  /* 셀 공통 스타일 */
+  .custom-table td {
+    padding: 16px;
+    border-bottom: 1px solid #eeeeee; /* 아래쪽에만 아주 연한 선 */
+    vertical-align: top;
+  }
+
+  /* 표제어(Word) 스타일 */
+  .word-cell {
+    width: 25%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    letter-spacing: -0.5px;
+  }
+
+  /* 품사 및 설명 스타일 */
+  .pos-tag {
+    font-weight: bold;
+    color: #a0a0a0; /* 연하게 */
+    margin-right: 6px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+  }
+
+  .usage-tag {
+    font-style: italic;
+    color: #a0a0a0; /* 연하게 */
+    margin-right: 10px;
+    font-size: 0.9rem;
+  }
+
+  .definition {
+    color: #444444;
+    line-height: 1.5;
+  }
+</style>
+
+<table class="custom-table">
+  <tr>
+    <td class="word-cell">abate</td>
+    <td>
+      <span class="pos-tag">verb</span>
+      <span class="usage-tag">[no object]</span>
+      <span class="definition">(of something hostile/negative) become less intense or widespread.</span>
+    </td>
+  </tr>
+</table>
+
+
+
+<span style="font-weight: bold;">abate</span>
+<p style="display: inline; font-weight: bold; color: #0000004D;">verb</p> 
+<span style="font-style: italic; color: #0000004D;">[no object]</span> 
+(of something hostile/negative) become less intense or widespread.
+
+**abet** 
+<p style="display: inline; font-weight: bold; color: #0000004D;">verb</p> 
+<p style="display: inline; font-style: italic; color: #0000004D;">[no object]</p> 
+(of something hostile/negative) encourage or assist (someone) to do something wrong (a crime).
 
 |**Word**|**POS**|**Definition**|
 |---|---|---|
-|**abate**|v.|<p style="font-weight: bold; color: #0000004D;">verb</p> <p style="font-style: italic; color: #0000004D;">[no object]</p> (of something hostile/negative) become less intense or widespread.|
+|**abate**|v.|<p style="display: inline; font-weight: bold; color: #0000004D;">verb</p> 
+<p style="display: inline; font-style: italic; color: #0000004D;">[no object]</p> 
+(of something hostile/negative) become less intense or widespread.|
 |**abet**|v.|encourage or assist (someone) to do something wrong (a crime).|
 |**abhor**|v.|regard with disgust and hatred.|
 |**ability**|n.|possession of the means or skill to do something.|
