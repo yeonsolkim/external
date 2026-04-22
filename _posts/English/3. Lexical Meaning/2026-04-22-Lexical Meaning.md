@@ -46,7 +46,7 @@ categories:
 <body>
 
 <table class="custom-table">
-  <tr><td class="word-cell">abate</td><td><span class="pos-tag">verb</span><span class="usage-tag">[no object]</span><span class="definition">(of something hostile/negative) become less intense or widespread.</span><br>
+  <tr><td class="word-cell">abate</td><td><span class="pos-tag">verb</span><span class="usage-tag">[no object]</span><span class="definition">(of something hostile/negative) become less intense or widespread:</span>
   <span class="example">the storm suddenly abated.</span></td></tr>
   <tr><td class="word-cell">abet</td><td><span class="pos-tag">verb</span><span class="usage-tag">[with object]</span><span class="definition">encourage or assist (someone) to do something wrong.</span></td></tr>
   <tr><td class="word-cell">abhor</td><td><span class="pos-tag">verb</span><span class="usage-tag">[with object]</span><span class="definition">regard with disgust and hatred.</span></td></tr>
