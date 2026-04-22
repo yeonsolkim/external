@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/4. Compositional Meaning/2026-04-21-to-Infinitival Clause.md",
+                "file": "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-21-to-Infinitival Clause"
+              "title": "2026-04-05-Auxiliary Verb"
             }
           },
           {
@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/4. Compositional Meaning/2026-04-03-Other PP.md",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clause.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-03-Other PP"
+              "title": "2026-04-03-2.2. Relative Clause"
             }
           },
           {
@@ -78,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -241,13 +241,19 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b316e855b0c5800e",
+  "active": "ab6686bd7d1d1914",
   "lastOpenFiles": [
     "_posts/English/4. Compositional Meaning/2026-04-21-to-Infinitival Clause.md",
-    "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clause.md",
     "_posts/English/4. Compositional Meaning/2026-04-03-Other PP.md",
-    "_posts/English/4. Compositional Meaning/2026-04-11-Complement In VP.md",
+    "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
     "_posts/English/3. Lexical Meaning/2026-04-22-Lexical Meaning.md",
+    "_posts/English/4. Compositional Meaning/2026-04-13-of PP.md",
+    "MyNotes/Lexeme.md",
+    "MyNotes/LLM.md",
+    "MyNotes/Q&A.md",
+    "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
+    "_posts/English/4. Compositional Meaning/2026-04-11-Complement In VP.md",
     "_posts/English/3. Lexical Meaning/2026-04-03-Lexical Category.md",
     "_site/english/3. lexical meaning/2026/04/22/Lexical-Meaning.html",
     "_site/english/3. lexical meaning/2026/04/22",
@@ -264,23 +270,17 @@
     "_site/MyNotes/Writing An Email.md",
     "_site/MyNotes/Q&A.md",
     "_site/MyNotes/Lexeme.md",
-    "MyNotes/Lexeme.md",
-    "MyNotes/LLM.md",
     "MyNotes/Markdown.md",
-    "MyNotes/Q&A.md",
     "MyNotes/Writing An Email.md",
     "MyNotes/About Me.md",
     "MyNotes/Note.md",
     "_posts/English/4. Compositional Meaning/2026-04-21-in-PP.md",
-    "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
     "_posts/English/4. Compositional Meaning/2026-04-21-Supplement.md",
     "_posts/English/2. Grammatical Meaning/Untitled.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
-    "_posts/English/4. Compositional Meaning/2026-04-13-of PP.md",
     "_posts/English/4. Compositional Meaning/2026-04-05-Idiomatic Expressions.md",
     "_posts/English/4. Compositional Meaning/2026-04-13-Inanimate Subject.md",
     "_posts/English/2. Grammatical Meaning/2026-04-02-1.4. Preposition Phrase.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-08-2.3. to-Infinitival-Clause.md",
     "assets/images/IMG_0332.jpeg",
     "assets/images/banner.jpg",
     "assets/images/image1.jpg",

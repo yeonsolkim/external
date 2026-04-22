@@ -30,13 +30,13 @@ categories:
 
 ## 2. Contextually-Licensed Meaning
 
-**정의:** discourse 속에서, 맥락에 의해 형성되는 의미이다.
+**정의:** discourse 안의 맥락에 의해 형성되는 의미이다.
 **설명:** 객관적이라고까지 하면 too much겠지만, 적어도 intersubjective, 즉 여러 해석자 사이에서 공유 가능하고 논증 가능한 meaning이라고 생각된다. 
 
 ---
 
 ## 3. Personally Enriched Meaning
-**정의:** 독자의 기억, 정서, 배경지식이 덧붙이는 해석
+**정의:** discourse 밖의 요소에 의해 형성되는 의미이다. 독자의 기억, 정서, 배경지식 등이 그 요소에 해당한다. 
 
 
 --- 

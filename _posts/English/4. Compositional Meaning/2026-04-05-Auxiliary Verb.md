@@ -25,6 +25,7 @@ categories:
 ### 2. may
 1. permission
 2. conjecture
+3. **circumstantial possibility**
 
 ### 3. must, have to
 1. duty: 어떤 주체가 해야할 의무
