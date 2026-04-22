@@ -39,7 +39,8 @@ categories:
     line-height: 1.5;
   }
   .example {
-  color: #0000004D; 
+  font-style: italic;
+  color: #2e2e2e; 
   }
 </style>
 
