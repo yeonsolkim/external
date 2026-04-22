@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/4. Compositional Meaning/2026-04-21-in-PP.md",
+                "file": "_posts/English/3. Lexical Meaning/Lexical Meaning.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-21-in-PP"
+              "title": "Lexical Meaning"
             }
           },
           {
@@ -241,12 +241,20 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b316e855b0c5800e",
+  "active": "50f509463b6298a4",
   "lastOpenFiles": [
-    "_posts/English/4. Compositional Meaning/2026-04-03-Other PP.md",
+    "MyNotes/Lexeme.md",
+    "MyNotes/LLM.md",
+    "_posts/English/3. Lexical Meaning/Lexical Meaning.md",
+    "MyNotes/Markdown.md",
+    "MyNotes/Q&A.md",
+    "MyNotes/Writing An Email.md",
+    "MyNotes/About Me.md",
+    "MyNotes/Note.md",
     "_posts/English/4. Compositional Meaning/2026-04-21-in-PP.md",
-    "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
     "_posts/English/4. Compositional Meaning/2026-04-21-to-Infinitival Clause.md",
+    "_posts/English/4. Compositional Meaning/2026-04-03-Other PP.md",
+    "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
     "_posts/English/4. Compositional Meaning/2026-04-21-Supplement.md",
     "_posts/English/2. Grammatical Meaning/Untitled.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
@@ -257,21 +265,13 @@
     "_posts/English/2. Grammatical Meaning/2026-04-02-1.4. Preposition Phrase.md",
     "_posts/English/2. Grammatical Meaning/2026-04-08-2.3. to-Infinitival-Clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-3.1. Past-Participial Form.md",
-    "MyNotes/Q&A.md",
     "_posts/English/2. Grammatical Meaning/2026-04-02-1.5. Modifier.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-3.3. Dummy Element.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2. Clause.md",
-    "MyNotes/Markdown.md",
     "_posts/English/5. Pragmatic Meaning/2026-04-04-Schema.md",
     "assets/images/IMG_0332.jpeg",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. Tense and Aspect.md",
     "assets/images/banner.jpg",
     "assets/images/image1.jpg",
-    "MyNotes/About Me.md",
-    "MyNotes/LLM.md",
-    "MyNotes/Writing An Email.md",
-    "_posts/English/3. Lexical Meaning/2026-04-14-Dictionary.md",
-    "_posts/English/4. Compositional Meaning/2026-04-03-Time.md",
     "_posts/English/5. Pragmatic Meaning/Untitled",
     "_site/assets/images/banner.jpg",
     "_site/assets/images/image1.jpg",
