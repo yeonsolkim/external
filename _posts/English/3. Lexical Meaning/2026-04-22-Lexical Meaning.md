@@ -16,7 +16,7 @@ categories:
 <tr>
     <td><span style="font-weight: bold;">abet</span></td>
     <td>
-      <span style="font-weight: bold; color: #0000004D;">verb</span><span style="font-style: italic; color: #0000004D;">[no object]</span> (of something hostile/negative) encourage or assist (someone) to do something wrong (a crime).
+      <span style="font-weight: bold; color: #0000004D;">verb</span><span style="font-style: italic; color: #0000004D;">[no object]</span> encourage or assist (someone) to do something wrong (a crime).
     </td>
   </tr>
 </table>
