@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/4. Compositional Meaning/2026-04-21-Supplement.md",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. Tense and Aspect.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-21-Supplement"
+              "title": "2026-04-03-2.1. Tense and Aspect"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-10-3.2. Raised Subject.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-01-Dimensions of Meaning"
+              "title": "2026-04-10-3.2. Raised Subject"
             }
           },
           {
@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
-                "mode": "preview",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-07-2.5. Gerund-Participial Clause.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-05-Auxiliary Verb"
+              "title": "2026-04-07-2.5. Gerund-Participial Clause"
             }
           },
           {
@@ -77,8 +77,7 @@
               "title": "2026-04-13-of PP"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -241,18 +240,26 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "ab6686bd7d1d1914",
+  "active": "fba9fc305e3b57ff",
   "lastOpenFiles": [
-    "_posts/English/4. Compositional Meaning/2026-04-21-to-Infinitival Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clause.md",
-    "_posts/English/4. Compositional Meaning/2026-04-03-Other PP.md",
-    "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
-    "_posts/English/3. Lexical Meaning/2026-04-22-Lexical Meaning.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-07-2.5. Gerund-Participial Clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. Tense and Aspect.md",
+    "_posts/English/4. Compositional Meaning/2026-04-21-Supplement.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-10-3.2. Raised Subject.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-02-1.5. Modifier.md",
+    "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-07-2. Clause.md",
     "_posts/English/4. Compositional Meaning/2026-04-13-of PP.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-07-2.4. Bare Infinitival Clause.md",
+    "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
+    "_posts/English/4. Compositional Meaning/2026-04-21-to-Infinitival Clause.md",
+    "_posts/English/4. Compositional Meaning/2026-04-03-Other PP.md",
+    "_posts/English/3. Lexical Meaning/2026-04-22-Lexical Meaning.md",
     "MyNotes/Lexeme.md",
     "MyNotes/LLM.md",
     "MyNotes/Q&A.md",
-    "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
     "_posts/English/4. Compositional Meaning/2026-04-11-Complement In VP.md",
     "_posts/English/3. Lexical Meaning/2026-04-03-Lexical Category.md",
     "_site/english/3. lexical meaning/2026/04/22/Lexical-Meaning.html",
@@ -273,14 +280,6 @@
     "MyNotes/Markdown.md",
     "MyNotes/Writing An Email.md",
     "MyNotes/About Me.md",
-    "MyNotes/Note.md",
-    "_posts/English/4. Compositional Meaning/2026-04-21-in-PP.md",
-    "_posts/English/4. Compositional Meaning/2026-04-21-Supplement.md",
-    "_posts/English/2. Grammatical Meaning/Untitled.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
-    "_posts/English/4. Compositional Meaning/2026-04-05-Idiomatic Expressions.md",
-    "_posts/English/4. Compositional Meaning/2026-04-13-Inanimate Subject.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-02-1.4. Preposition Phrase.md",
     "assets/images/IMG_0332.jpeg",
     "assets/images/banner.jpg",
     "assets/images/image1.jpg",
