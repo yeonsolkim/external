@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. Tense and Aspect.md",
+                "file": "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-03-2.1. Tense and Aspect"
+              "title": "2026-04-03-Other PPs"
             }
           },
           {
@@ -42,7 +42,7 @@
               "type": "markdown",
               "state": {
                 "file": "_posts/English/2. Grammatical Meaning/2026-04-07-2.5. Gerund-Participial Clause.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clause.md",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. Tense and Aspect.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-03-2.2. Relative Clause"
+              "title": "2026-04-03-2.1. Tense and Aspect"
             }
           },
           {
@@ -69,15 +69,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/4. Compositional Meaning/2026-04-13-of PP.md",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-10-2.6. Past-Participial Clause.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-13-of PP"
+              "title": "2026-04-10-2.6. Past-Participial Clause"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -240,22 +241,25 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "fba9fc305e3b57ff",
+  "active": "5dd3f63da367a057",
   "lastOpenFiles": [
+    "_posts/English/2. Grammatical Meaning/2026-04-10-2.6. Past-Participial Clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-10-3.1. Past-Participial Form.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2.5. Gerund-Participial Clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. Tense and Aspect.md",
-    "_posts/English/4. Compositional Meaning/2026-04-21-Supplement.md",
+    "_posts/English/4. Compositional Meaning/2026-04-03-Present Perfect + ....md",
+    "_posts/English/4. Compositional Meaning/2026-04-13-of PP.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-3.2. Raised Subject.md",
+    "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clause.md",
+    "_posts/English/4. Compositional Meaning/2026-04-21-Supplement.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
     "_posts/English/2. Grammatical Meaning/2026-04-02-1.5. Modifier.md",
     "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2. Clause.md",
-    "_posts/English/4. Compositional Meaning/2026-04-13-of PP.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2.4. Bare Infinitival Clause.md",
     "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
     "_posts/English/4. Compositional Meaning/2026-04-21-to-Infinitival Clause.md",
-    "_posts/English/4. Compositional Meaning/2026-04-03-Other PP.md",
     "_posts/English/3. Lexical Meaning/2026-04-22-Lexical Meaning.md",
     "MyNotes/Lexeme.md",
     "MyNotes/LLM.md",
@@ -277,9 +281,6 @@
     "_site/MyNotes/Writing An Email.md",
     "_site/MyNotes/Q&A.md",
     "_site/MyNotes/Lexeme.md",
-    "MyNotes/Markdown.md",
-    "MyNotes/Writing An Email.md",
-    "MyNotes/About Me.md",
     "assets/images/IMG_0332.jpeg",
     "assets/images/banner.jpg",
     "assets/images/image1.jpg",
