@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
-                "mode": "preview",
+                "file": "_posts/English/6. Writing/Comparison.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-03-Other PPs"
+              "title": "Comparison"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-10-3.2. Raised Subject.md",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-07-2.4. Bare Infinitival Clause.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-10-3.2. Raised Subject"
+              "title": "2026-04-07-2.4. Bare Infinitival Clause"
             }
           },
           {
@@ -69,16 +69,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-10-2.6. Past-Participial Clause.md",
+                "file": "_posts/English/3. Lexical Meaning/2026-04-22-Lexical Meaning.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-10-2.6. Past-Participial Clause"
+              "title": "2026-04-22-Lexical Meaning"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -241,23 +241,26 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "5dd3f63da367a057",
+  "active": "fee37e6d2cb41858",
   "lastOpenFiles": [
+    "_posts/English/4. Compositional Meaning/2026-04-03-Present Perfect + ....md",
+    "_posts/English/6. Writing/Comparison.md",
+    "_posts/English/4. Compositional Meaning/2026-04-21-in-PP.md",
+    "_posts/English/6. Writing",
+    "_posts/English/4. Compositional Meaning/2026-04-21-Supplement.md",
+    "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. Tense and Aspect.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-07-2.4. Bare Infinitival Clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-10-3.2. Raised Subject.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-2.6. Past-Participial Clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-3.1. Past-Participial Form.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2.5. Gerund-Participial Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. Tense and Aspect.md",
-    "_posts/English/4. Compositional Meaning/2026-04-03-Present Perfect + ....md",
     "_posts/English/4. Compositional Meaning/2026-04-13-of PP.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-10-3.2. Raised Subject.md",
-    "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clause.md",
-    "_posts/English/4. Compositional Meaning/2026-04-21-Supplement.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
     "_posts/English/2. Grammatical Meaning/2026-04-02-1.5. Modifier.md",
     "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2. Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-2.4. Bare Infinitival Clause.md",
     "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
     "_posts/English/4. Compositional Meaning/2026-04-21-to-Infinitival Clause.md",
     "_posts/English/3. Lexical Meaning/2026-04-22-Lexical Meaning.md",
@@ -275,12 +278,9 @@
     "_site/english/4. compositional meaning/2026/04/13/of-PP.html",
     "_site/english/4. compositional meaning/2026/04/13/Inanimate-Subject.html",
     "_site/english/4. compositional meaning/2026/04/13",
-    "_site/english/2. grammatical meaning/2026/04/13/1.6.-Wh-Phrase.html",
     "_site/assets/images/banner.jpg",
     "_site/assets/images/IMG_0332.jpeg",
     "_site/MyNotes/Writing An Email.md",
-    "_site/MyNotes/Q&A.md",
-    "_site/MyNotes/Lexeme.md",
     "assets/images/IMG_0332.jpeg",
     "assets/images/banner.jpg",
     "assets/images/image1.jpg",
