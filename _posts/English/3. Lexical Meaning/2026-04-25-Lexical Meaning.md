@@ -13,7 +13,7 @@ categories:
 <b>look into</b>: explore the facts about something<br>
 <br>
 
-<b>method</b> (noun): a particular form of procedure for accomplishing something<br>
+<b>method</b>: a particular form of procedure for accomplishing something<br>
 <b>style</b>: a way that is "characteristic of particular period or person, etc.<br>
 <br>
 
@@ -65,7 +65,7 @@ categories:
 <b>distinct</b>: recognizably different and clearly seperate<br>
 <b>recognize</b> [rekəgnaiz]: identify someone or something as already known<br>
 <b>perceive</b>: become aware of something through the senses<br>
-<b>resemble</b> [rizembəl]
+<b>resemble</b> [rizembəl]<br>
 <br>
 
 <b>ascertain</b> [æsərtein]: ditermine<sup>2</sup> somethiing with certainty<br>
@@ -112,6 +112,7 @@ categories:
 <b>liberal</b><sup>1</sup>: willing to respect opinion new and different from one's own<br>
 <b>liberal</b><sup>2</sup>: relating to a political and social philosophy that promotes individual right<br>
 <b>conservative</b>: favoring socially traditional ideas (contrasted with liberal<sup>1</sup>)<br>
+<br>
 
 <b>primarily</b> [praimerəli]: as the chief or central thing rather than a secondary one<br>
 <b>mostly</b>: to a great extent<br>
