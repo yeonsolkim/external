@@ -7,7 +7,8 @@ categories:
   - 3. Lexical Meaning
 ---
 
-**determine**: ascertain exactly, as a result of research or calculation
+**determine**: ascertain exactly, as a result of research or calculation<br>
+<br>
 **examine**: inspect "in detail"; investigate "thoroughly"
 
 
