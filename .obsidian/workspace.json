@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-07-2.4. Bare Infinitival Clause.md",
+                "file": "_posts/English/3. Lexical Meaning/2026-04-25-Lexical Meaning.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-07-2.4. Bare Infinitival Clause"
+              "title": "2026-04-25-Lexical Meaning"
             }
           },
           {
@@ -41,16 +41,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/3. Lexical Meaning/2026-04-25-Lexical Meaning.md",
-                "mode": "source",
+                "file": "MyNotes/Experiments.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-25-Lexical Meaning"
+              "title": "Experiments"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -213,11 +213,13 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "ab6686bd7d1d1914",
+  "active": "b316e855b0c5800e",
   "lastOpenFiles": [
+    "MyNotes/Experiments.md",
+    "_posts/English/3. Lexical Meaning/2026-04-25-Lexical Meaning.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-07-2.4. Bare Infinitival Clause.md",
     "_posts/English/3. Lexical Meaning/2026-04-22-Tier 2 Words.md",
     "_posts/English/3. Lexical Meaning/2026-04-22-Lexical Meaning.md",
-    "_posts/English/3. Lexical Meaning/2026-04-25-Lexical Meaning.md",
     "_posts/English/4. Compositional Meaning/2026-04-21-in-PP.md",
     "MyNotes/dictionary",
     "_posts/English/5. Pragmatic Meaning/2026-04-04-Schema.md",
@@ -229,7 +231,6 @@
     "_posts/English/6. Writing",
     "_posts/English/4. Compositional Meaning/2026-04-21-Supplement.md",
     "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-2.4. Bare Infinitival Clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-3.2. Raised Subject.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-2.6. Past-Participial Clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-3.1. Past-Participial Form.md",
@@ -243,7 +244,6 @@
     "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
     "_posts/English/4. Compositional Meaning/2026-04-21-to-Infinitival Clause.md",
     "MyNotes/Lexeme.md",
-    "MyNotes/LLM.md",
     "_site/english/3. lexical meaning/2026/04/22/Lexical-Meaning.html",
     "_site/english/3. lexical meaning/2026/04/22",
     "_site/english/4. compositional meaning/2026/04/21/to-Infinitival-Clause.html",

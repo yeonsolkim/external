@@ -65,10 +65,10 @@ categories:
 <b>distinct</b>: recognizably different and clearly seperate<br>
 <b>recognize</b> [rekəgnaiz]: identify someone or something as already known<br>
 <b>perceive</b>: become aware of something through the senses<br>
-<b>resemble</b> [rizembəl]<br>
+<b>resemble</b> [rizembl]<br>
 <br>
 
-<b>ascertain</b> [æsərtein]: ditermine<sup>2</sup> somethiing with certainty<br>
+<b>ascertain</b> [esərtein]: ditermine<sup>2</sup> somethiing with certainty<br>
 <b>confirm</b>: establish correctness of something previously suspected to be the case<br>
 <br>
 
@@ -128,3 +128,17 @@ categories:
 <b>set</b>: a group of things that belongs together<br>
 <b>class</b><sup>2</sup>: a set of things "having some property in common"<br>
 <br>
+
+<b>get rid of</b> (v.): take action so as to be free of a troublesome or unwanted person or thing<br>
+<b>so as (to-infinitival clause)</b> (crd.): in order (to-infinitival clause)<br>
+<b>according to</b> (p.): as stated by or in<br>
+<b>with respect to </b>: concerning<br>
+<b>by means of</b>: with the help of<br>
+<b>in accordance with</b>: in a manner conforming with<br>
+<b>apart from</b>: except for<br>
+<br>
+
+<b>leading</b> (adj.): most important<br>
+<br>
+
+<b>only</b> (adv.): merely (implying that more was expected)<br>
