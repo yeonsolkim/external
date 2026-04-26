@@ -136,6 +136,9 @@ categories:
 <b>by means of</b>: with the help of<br>
 <b>in accordance with</b>: in a manner conforming with<br>
 <b>apart from</b>: except for<br>
+<b>more or less</b> (adv.): almost or roughly, with small differences<br>
+<b>measurement</b><sup>2</sup>:  the amount of something, as established by measuring<br>
+<b>approximately</b>: nearly, but not exactly; "used to give an estimated number or measurement<sup>2</sup>"<br>
 <br>
 
 <b>leading</b> (adj.): most important<br>
@@ -146,3 +149,18 @@ categories:
 
 <b>have</b><sup>1</sup>: own<br>
 <b>have</b><sup>2</sup>: possesses something as a feature<br>
+<br>
+
+<b>fall</b><sup>2</sup>: pass into a specified state or position<br>
+<br> 
+
+<b>climate</b><sup>2</sup>: the prevailing trend in something of particular era<br>
+<b>reflection</b><sup>1</sup>: an image seen in a mirror or shiny surface<br>
+<b>reflection</b><sup>2</sup>: serious thought, especially deep retrospective one<br>
+<b>consideration</b>: serious thought over a period of time, especially in order to make a decision<br>
+<br>
+
+<b>intelligent</b>: having intelligence, especially of a high level<br>
+<b>clever</b>: having quick ingenuity<br>
+<b>brilliant</b><sup>2</sup>: extremely intelligent; talented<br>
+<br>
