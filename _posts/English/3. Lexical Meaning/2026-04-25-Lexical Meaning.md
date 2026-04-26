@@ -142,3 +142,7 @@ categories:
 <br>
 
 <b>only</b> (adv.): merely (implying that more was expected)<br>
+<br>
+
+<b>have</b><sup>1</sup>: own<br>
+<b>have</b><sup>2</sup>: possesses something as a feature<br>

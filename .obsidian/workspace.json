@@ -41,16 +41,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyNotes/Experiments.md",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-10-1.6. Supplement.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Experiments"
+              "title": "2026-04-10-1.6. Supplement"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -213,8 +213,9 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b316e855b0c5800e",
+  "active": "ab6686bd7d1d1914",
   "lastOpenFiles": [
+    "_posts/English/2. Grammatical Meaning/2026-04-07-3.3. Dummy Element.md",
     "MyNotes/Experiments.md",
     "_posts/English/3. Lexical Meaning/2026-04-25-Lexical Meaning.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2.4. Bare Infinitival Clause.md",
@@ -243,7 +244,6 @@
     "_posts/English/2. Grammatical Meaning/2026-04-07-2. Clause.md",
     "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
     "_posts/English/4. Compositional Meaning/2026-04-21-to-Infinitival Clause.md",
-    "MyNotes/Lexeme.md",
     "_site/english/3. lexical meaning/2026/04/22/Lexical-Meaning.html",
     "_site/english/3. lexical meaning/2026/04/22",
     "_site/english/4. compositional meaning/2026/04/21/to-Infinitival-Clause.html",
