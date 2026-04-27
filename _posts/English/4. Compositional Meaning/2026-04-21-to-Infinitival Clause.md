@@ -13,10 +13,11 @@ categories:
 
 
 2. Result
-> The boy grew up to be a famous singer.
+> The boy grew up to be a famous singer.<br>
+> We will not be around to find out whether we were wrong.
 
 3. Stimuli
->I'm pleased to see you again.
+>I'm pleased to see you again.<br>
 >She smiled to see such a beautiful sight.
 
 4. Evidence

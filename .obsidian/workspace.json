@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/6. Writing/Comparison.md",
-                "mode": "source",
+                "file": "_posts/English/2. Grammatical Meaning/2.8. Interrogative Content Clause.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Comparison"
+              "title": "2.8. Interrogative Content Clause"
             }
           },
           {
@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyNotes/LLM.md",
-                "mode": "preview",
+                "file": "MyNotes/Experiments.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "LLM"
+              "title": "Experiments"
             }
           }
         ],
@@ -229,11 +229,15 @@
   },
   "active": "b316e855b0c5800e",
   "lastOpenFiles": [
-    "MyNotes/LLM.md",
-    "_posts/English/3. Lexical Meaning/2026-04-25-Lexical Meaning.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-1.6. Supplement.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-3.3. Dummy Element.md",
     "MyNotes/Experiments.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-07-3.3. Dummy Element.md",
+    "_posts/English/3. Lexical Meaning/2026-04-25-Lexical Meaning.md",
+    "_posts/English/2. Grammatical Meaning/2.8. Interrogative Content Clause.md",
+    "_posts/English/4. Compositional Meaning/2026-04-21-to-Infinitival Clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-10-1.2. Complement.md",
+    "_posts/English/6. Writing/Comparison.md",
+    "MyNotes/LLM.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2.4. Bare Infinitival Clause.md",
     "_posts/English/3. Lexical Meaning/2026-04-22-Tier 2 Words.md",
     "_posts/English/3. Lexical Meaning/2026-04-22-Lexical Meaning.md",
@@ -244,7 +248,6 @@
     "assets/images/IMG_0332.jpeg",
     "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. Tense and Aspect.md",
     "_posts/English/4. Compositional Meaning/2026-04-03-Present Perfect + ....md",
-    "_posts/English/6. Writing/Comparison.md",
     "_posts/English/6. Writing",
     "_posts/English/4. Compositional Meaning/2026-04-21-Supplement.md",
     "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
@@ -255,9 +258,6 @@
     "_posts/English/4. Compositional Meaning/2026-04-13-of PP.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-02-1.5. Modifier.md",
-    "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-2. Clause.md",
     "_site/english/3. lexical meaning/2026/04/22/Lexical-Meaning.html",
     "_site/english/3. lexical meaning/2026/04/22",
     "_site/english/4. compositional meaning/2026/04/21/to-Infinitival-Clause.html",

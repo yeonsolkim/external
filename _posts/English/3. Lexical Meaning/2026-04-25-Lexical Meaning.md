@@ -144,7 +144,9 @@ categories:
 <b>class</b><sup>2</sup>: a set of things "having some property in common"<br>
 <br>
 
-<b>get rid of</b> (v.): take action so as to be free of a troublesome or unwanted person or thing<br>
+<b>pick out</b> (v.): choose someone or something from a number of alternatives<br>
+<b>alternative</b> [əlˈtər.nə.t̬iv] <br>
+<b>get rid of</b>: take action so as to be free of a troublesome or unwanted person or thing<br>
 <b>so as (to-infinitival clause)</b> (crd.): in order (to-infinitival clause)<br>
 <b>according to</b> (p.): as stated by or in<br>
 <b>with respect to </b>: concerning<br>
@@ -222,6 +224,7 @@ categories:
 <b>workspace</b>: the area in which "a person" works<br>
 <br>
 
+
 <b>refer to</b>: direct attention to someone or something in relation to what is being said or written<br>
 <b>mention</b>: speak or write about someone or something "briefly, especially in a incidental way"<br>
 <b>incidental</b>: accompanying in connection with something major<br>
@@ -285,3 +288,16 @@ categories:
 <b>soft</b>: easy to mold<br>
 <b>smooth</b>: having an even surface<br>
 <br>
+
+
+<b>remark</b><sup>1</sup> (v.): regard with attention<br>
+<b>remark</b><sup>2</sup> (n.): something said, usually briefly<br>
+<b>comment</b> (n.): something said or written that expresses an opinion or explanation "about a particular subject"<br>
+<br>
+
+<b>what</b><sup>1</sup> (interrogative pronoun)<br>
+<b>what</b><sup>2</sup> (relative pronoun)<br>
+<br>
+
+<b>passage</b><sup>1</sup> [pesidʒ]: the act or process of moving through, under, or over something on the way from one place to another<br>
+<b>passage</b><sup>2</sup>: a short extract from a book or other printed material<br>
