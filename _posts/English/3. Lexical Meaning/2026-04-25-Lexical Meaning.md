@@ -98,9 +98,11 @@ categories:
 <b>uprising</b> (n.): an act of resistance<br>
 <br>
 
-<b>revoke</b>: put an end to the "validity" of<br>
-<b>repeal</b>: revoke a law<br>
-<b>abrogate</b> [ˈebrəgeit]: repeal or do away with<br>
+<b>established</b>: having been in existence for a long time, and generally accepted<br>
+<b>institution</b><sup>2</sup>: an "established" law or custom<br>
+<b>repeal</b>: put an end to a law<br>
+<b>abolish</b>: officially put an end to an institution<sup>2</sup><br>
+<b>revoke</b>: put an end to a permission or license<br>
 <br>
 
 <b>practice</b><sup>2</sup>: the "actual" application of an idea<br>
@@ -117,7 +119,6 @@ categories:
 <b>abscond</b> [əbˈskənd]: leave hurriedly and secretly<br>
 <b>accentuate</b> [ekˈsentʃueit]: make more noticeable<br>
 <b>access</b> [ˈekses] (n.): the right or opportunity to use or approach something<br>
-<b>abundant</b> [əˈbəndənt]<br>
 <b>abuse</b> [əbjus]: use something to bad effect<br>
 <br>
 
@@ -301,3 +302,27 @@ categories:
 
 <b>passage</b><sup>1</sup> [pesidʒ]: the act or process of moving through, under, or over something on the way from one place to another<br>
 <b>passage</b><sup>2</sup>: a short extract from a book or other printed material<br>
+
+<b>abate</b> [əˈbeit]: become less intense<br>
+<br>
+
+<b>abet</b> [əˈbet]: encourage or assist someone, in particular, to commit crime<br>
+<b>abettor</b><br>
+<br>
+
+<b>hate</b>: dislike very strongly<br>
+<b>abhor</b> [ebˈhɔl] (v.): hate something because it's unacceptable<br>
+<br>
+
+<b>abundant</b> [əˈbəndənt]: existing in large quantities<br>
+<b>bountiful</b> [ˈbaʊntifl]: giving generously<br>
+<br> 
+
+<b>famine</b> [ˈfemin]: extreme scarcity of food, causing widespread starvation<br>
+<br>
+
+<b>ease</b>: make something less severe<br>
+<b>relieve</b>: cause pain or distress to become less severe<br>
+<br>
+
+<b>handy</b>: useful in a convenient, practical, or easy-to-use way<br>
