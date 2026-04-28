@@ -33,8 +33,8 @@ categories:
 <b>hallmark</b>: a distinctive feature of a particular type<br>
 <br>
 
-<b>modest</b><sup>1</sup>: unassuming in the estimation of one's abilities or achievments<br>
-<b>moderate</b>: average in amout or intensity, etc.<br>
+<b>modest</b><sup>1</sup>: unassuming in the estimation of one's abilities or achievements<br>
+<b>moderate</b>: average in amount or intensity, etc.<br>
 <b>modest</b><sup>2</sup>: subjectively moderate; small<br>
 <br>
 
@@ -68,7 +68,12 @@ categories:
 
 <b>imply</b><sup>1</sup>: "intend" to communicate something without saying it explicitly<br>
 <b>suggest</b><sup>2</sup>: make someone think that something is possibly true<br>
+<b>smack of</b>: suggest<sup>2</sup> the presence or effect of something wrong<br>
 <b>imply</b><sup>2</sup>: suggest<sup>2</sup> as a logical consequence<br>
+<br>
+
+<b>reason</b><sup>2</sup> (n.): the power of the mind to think and form judgments by a process of logic<br>
+<b>argument</b>: a reason<sup>1</sup> given with the aim of persuading others that an idea is right or wrong<br>
 <br>
 
 <b>argue</b><sup>2</sup>: exchange diverging views<br>
@@ -76,14 +81,14 @@ categories:
 <b>authority</b><sup>2</sup>: a person or organization having power<br>
 <b>official</b>: relating to an authority or public body<br>
 <b>formal</b><sup>1</sup>: done in accordance with rules of conventions or etiquette<br>
-<b>formal</b><sup>2</sup>: conccerned with outward form or appearance, as distinct from content<br>
-<b>distinct</b>: recognizably different and clearly seperate<br>
+<b>formal</b><sup>2</sup>: concerned with outward form or appearance, as distinct from content<br>
+<b>distinct</b>: recognizably different and clearly separate<br>
 <b>recognize</b> [rekəgnaiz]: identify someone or something as already known<br>
 <b>perceive</b>: become aware of something through the senses<br>
 <b>resemble</b> [rizembl]<br>
 <br>
 
-<b>ascertain</b> [esərˈtein]: ditermine<sup>2</sup> somethiing with certainty<br>
+<b>ascertain</b> [esərˈtein]: ditermine<sup>2</sup> something with certainty<br>
 <b>confirm</b>: establish correctness of something previously suspected to be the case<br>
 <br>
 
@@ -326,3 +331,5 @@ categories:
 <br>
 
 <b>handy</b>: useful in a convenient, practical, or easy-to-use way<br>
+<br>
+
