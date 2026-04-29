@@ -15,7 +15,5 @@ categories:
 4. Adjective 
 5. Adverb 
 6. Preposition 
-7. Subordinator
-8. Coordinator
-9. Interjection
+7. Conjunction
 

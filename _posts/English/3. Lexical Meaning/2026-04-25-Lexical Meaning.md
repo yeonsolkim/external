@@ -10,6 +10,7 @@ categories:
 <b>determine</b><sup>2</sup>: ascertain exactly, as a result of research or calculation<br>
 <b>examine</b>: inspect "in detail"; investigate "thoroughly"<br>
 <b>investigate</b>: carry out a systematic inquiry "to discover the facts of an incident"<br>
+<b>research</b>: study carefully to discover information or knowledge about it<br>
 <b>look into</b>: explore the facts about something<br>
 <br>
 
@@ -19,13 +20,16 @@ categories:
 
 <b>religion</b>: "the belief and worship" of superhuman powers or gods<br>
 <b>religious</b>: relating to religion<br>
+<br>
+
 <b>custom</b>: a way of doing something that is specific to a particular society<br>
-<b>tradition</b>: a "long-established" custom that has been passed on from one generation to another<br>
+<b>tradition</b>: a "long-established custom" that has been passed on from one generation to another<br>
 <b>traditional</b>: existing as a part of tradition<br>
-<b>society</b>: the aggregate of people living together<br>
+<b>folk</b> [foʊk]: relating to the traditional art of a society<br>
+<b>society</b> [səˈsaiət̬i]: the aggregate of people living together<br>
 <b>traditional society</b>: long-established society concerned with tradition<br>
 <b>movement</b><sup>2</sup>: a campaign undertaken by a broad group of people working together to advance their social or political ideas<br>
-<b>campaign</b>: organized actions carried out to achive a particular goal<br>
+<b>campaign</b>: organized actions carried out to achieve a particular goal<br>
 <br>
 
 <b>typical</b>: having the distinctive qualities "of a particular type"<br>
@@ -148,6 +152,7 @@ categories:
 
 <b>set</b>: a group of things that belongs together<br>
 <b>class</b><sup>2</sup>: a set of things "having some property in common"<br>
+<b>community</b>: a group of people having a characteristic in common<br>
 <br>
 
 <b>pick out</b> (v.): choose someone or something from a number of alternatives<br>
@@ -333,3 +338,60 @@ categories:
 <b>handy</b>: useful in a convenient, practical, or easy-to-use way<br>
 <br>
 
+<b>essay</b>: a short piece of writing on a particular subject.<br>
+<br>
+
+<b>severely</b>: to a great or intense “degree”<br>
+<b>seriously</b>: in a way that is important<br>
+<br>
+
+<b>treat</b> (v.): behave toward in a particular way<br>
+<b>deal with</b>: take action "to handle a problem, situation, or person"<br>
+<br>
+
+<b>interest</b><sup>1</sup> (n.): the "state" of wanting to know about something<br>
+<b>interest</b><sup>2</sup> (n.): a "subject" about which one is concerned or enthusiastic <br><br>
+
+<b>center</b>: the exact point that is equidistant from every point on the circumference<br>
+<b>middle</b>: the position between two ends or sides<br>
+<br>
+
+<b>take care of</b><sup>1</sup>: take responsibility for handling a problem<br>
+<b>take care of</b><sup>2</sup>: keep someone or something safe<br>
+<b>care for</b>: provide care for someone, especially they are sick, old, or young<br>
+<br>
+
+<b>vocation</b>: a strong feeling of “suitability”  for a particular career or occupation<br>
+<b>calling</b> (n.): "a strong inner feeling" that a particular life purpose is what one is meant to do<br>
+<b>mission</b><sup>2</sup>: "an important task or purpose" that someone feels a strong sense of duty to carry out<br>
+<br>
+
+<b>conclusion</b><sup>2</sup>: the summing-up of a text<br>
+<br>
+
+<b>careful</b>: giving close attention to behavior<br>
+<b>cautious</b>: paying close attention to assessing risk<br>
+<b>prudent</b>: making sensible and well-judged decisions<br>
+<br>
+
+<b>appoint</b>: officially place someone in a role<br>
+<b>assign</b>: give someone specific task or duty<br>
+<br>
+
+<b>document</b>: a piece of written or printed material that contains information<br>
+<b>paperwork</b>: routine documents involved in an administrative process<br>
+<b>text</b><sup>1</sup>: written or printed words considered as "language content"<br>
+<b>text</b><sup>2</sup>: the main body of a piece of writing, as distinct from other material such as illustrations<br>
+<br>
+
+<b>count</b><sup>1</sup> (v.): determine the total number of<br>
+<b>count</b><sup>2</sup> (v.): recite numbers in ascending order<br>
+<b>count</b><sup>3</sup> (v.): be significant<sup>2</sup><br>
+<b>significant</b><sup>2</sup> [siɡˈnifikənt]: having a particular meaning<br>
+<b>count on</b>: regard someone or something as certain for what is expected<br>
+<b>rely on</b>: depend on someone or something for support<br>
+<br>
+
+<b>freedom</b>: the right or power to act or think as one wants<br>
+<b>autonomy</b> [ɑˈtənəmi]: the right of self-government (of a particular resource)<br>
+<b>independence</b>: the state of not relying on another person or group<br>
