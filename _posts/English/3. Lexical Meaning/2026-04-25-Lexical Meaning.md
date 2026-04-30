@@ -416,8 +416,7 @@ categories:
 
 <b>anxiety</b>: a feeling of worry<br>
 <b>insecurity</b>: anxiety about oneself; lack of confidence<br>
-
-enjoy
+<br>
 
 <b>integrate</b>: combine one thing with another so that they become a whole<br>
 <b>incorporate</b>: include something as part of a whole<br>
@@ -459,5 +458,20 @@ enjoy
 
 <b>relationship</b>: "the way" in which people or things are connected: <i>romantic relationship, working relationship</i><br>
 <b>connection</b>: a link between two people or things: <i>connection between stress and sleep problems</i><br>
-<b>relevance</b>: the quality of being closely connected or appropriate: <i>relevance to the topic</i><br>
+<b>relevance</b>: the quality of being closely connected or appropriate: <i>its relevance to the topic</i><br>
 <b>involvement</b>: the fact of being involved with something: <i>his involvement in the crime</i><br>
+<br>
+
+<b>area</b><sup>1</sup> [ˈeriə]: a part of a place, space, or surface<br>
+<b>area</b><sup>2</sup>: a place allocated for a specific purpose<br>
+<b>region</b>: a part of a country or the world having definable characteristic<br> 
+<br>
+
+<b>subject</b><sup>1</sup>: a branch of knowledge<br>
+<b>subject</b><sup>2</sup>: the area or matter that something is about<br>
+<b>topic</b>: a specific matter dealt with in a text, discourse, or conversation<br>
+<br>
+
+<b>theme</b>: the main message of a speech or a piece of writing: <i>the theme of the novel</i><br> 
+<b>thesis</b> [ˈθisis]: a statement that is put forward as a premise to be maintained or proved<br>
+<b>premise</b> [ˈpremis]
