@@ -29,7 +29,7 @@ categories:
 <b>society</b> [səˈsaiət̬i]: the aggregate of people living together<br>
 <b>traditional society</b>: long-established society concerned with tradition<br>
 <b>movement</b><sup>2</sup>: a campaign undertaken by a broad group of people working together to advance their social or political ideas<br>
-<b>campaign</b>: organized actions carried out to achieve a particular goal<br>
+<b>campaign</b>: organized actions carried out to achieve a particular goals<br>
 <br>
 
 <b>typical</b>: having the distinctive qualities "of a particular type"<br>
@@ -46,7 +46,7 @@ categories:
 <br>
 
 <b>conflict</b><sup>1</sup>: a protracted argument<br>
-<b>conflict</b><sup>2</sup>: a condition in which a person experiences a clash of opposing wishes<br>
+<b>conflict</b><sup>2</sup>: a condition in which "a person" experiences a clash of opposing wishes<br>
 <b>conflict</b><sup>3</sup>: a prolonged "armed struggle"<br>
 <br>
 
@@ -99,7 +99,7 @@ categories:
 <b>moral</b>: concerned with the principles of right and wrong of human<br>
 <b>just</b><sup>1</sup> (adj.): "behaving" according to what is morally right<br>
 <b>justice</b>: just behavior or treatment<br>
-<b>treatment</b>: the manner in which someone deals with someone or something<br>
+<b>treatment</b>: the manner in which someone behaves toward someone or something<br>
 <br>
 
 <b>abominable</b>: causing moral revulsion<br>
@@ -158,9 +158,9 @@ categories:
 <b>pick out</b> (v.): choose someone or something from a number of alternatives<br>
 <b>alternative</b> [əlˈtər.nə.t̬iv] <br>
 <b>get rid of</b>: take action so as to be free of a troublesome or unwanted person or thing<br>
-<b>so as (to-infinitival clause)</b> (crd.): in order (to-infinitival clause)<br>
+<b>so as (to-infinitival clause)</b> (conj.): in order (to-infinitival clause)<br>
 <b>according to</b> (p.): as stated by or in<br>
-<b>with respect to </b>: concerning<br>
+<b>with respect to</b>: concerning<br>
 <b>by means of</b>: with the help of<br>
 <b>in accordance with</b>: in a manner conforming with<br>
 <b>apart from</b>: except for<br>
@@ -345,8 +345,9 @@ categories:
 <b>seriously</b>: in a way that is important<br>
 <br>
 
-<b>treat</b> (v.): behave toward in a particular way<br>
+<b>treat</b><sup>1</sup> (v.): behave toward in a particular way<br>
 <b>deal with</b>: take action "to handle a problem, situation, or person"<br>
+<b>treat</b><sup>2</sup> (n.): an event that is out of the ordinary and gives great pleasure<br>
 <br>
 
 <b>interest</b><sup>1</sup> (n.): the "state" of wanting to know about something<br>
@@ -367,6 +368,7 @@ categories:
 <br>
 
 <b>conclusion</b><sup>2</sup>: the summing-up of a text<br>
+<b>closing</b>: the end of an event or activity<br>
 <br>
 
 <b>careful</b>: giving close attention to behavior<br>
@@ -395,3 +397,67 @@ categories:
 <b>freedom</b>: the right or power to act or think as one wants<br>
 <b>autonomy</b> [ɑˈtənəmi]: the right of self-government (of a particular resource)<br>
 <b>independence</b>: the state of not relying on another person or group<br>
+<br>
+
+<b>psychological</b> [sai.kəˈlɑː.dʒi.kəl]: affecting or arising in the mind<br>
+<br>
+
+<b>attribute</b>: regard something as being caused by someone or something<br>
+<br>
+
+<b>thought</b> (n.): something that passes through the mind as a mental event<br>
+<b>idea</b>: a thought concerning a possible course of action<br>
+<b>course of action</b>: a procedure adopted to deal with a situation<br>
+<b>self-image</b>: the opinion one has of one's ability, appearance, and personality<br>
+<br>
+
+<b>allow</b><sup>2</sup>: give the opportunity for<br>
+<br>
+
+<b>anxiety</b>: a feeling of worry<br>
+<b>insecurity</b>: anxiety about oneself; lack of confidence<br>
+
+enjoy
+
+<b>integrate</b>: combine one thing with another so that they become a whole<br>
+<b>incorporate</b>: include something as part of a whole<br>
+<br>
+
+<b>strive</b>: make great effort to achieve something<br>
+<b>endeavor</b> (n.): an attempt to achieve something<br>
+<br>
+
+<b>a sense (of-PP)</b>: someone's awareness or sensitivity to the importance of something<br>
+<b>awareness</b>: knowledge or perception<sup>2</sup> of something<br>
+<b>perception</b><sup>1</sup>: the ability to become aware of something<br>
+<b>perception</b><sup>2</sup>: the state of being aware of something<br>
+<b>sensitive</b>: quick to detect or respond to slight changes or signals<br>
+<b>sensitivity</b>: the quality<sup>2</sup> of being sensitive<br>
+<b>quality</b><sup>2</sup>: the degree of excellence of something<br>
+<br>
+
+<b>collaborate</b>: work jointly on an activity, especially "to produce something"<br>
+<b>cooperate</b>: work jointly toward the same end<br>
+<b>cooperate with</b>: assist someone or comply with their requests<br>
+<br>
+
+<b>suddenly</b>: unexpectedly and quickly<br>
+<b>dramatically</b>: to a strikingly large extent<br>
+<b>sharply</b>: with a sudden and dramatical change<br>
+<br>
+
+<b>tip</b>: a small but useful piece of "advice"<br>
+<b>secret</b>: a valid but not commonly known "method"<br>
+<br>
+
+<b>modern</b>: relating to the present "as opposed to the past" (implying relative comparison)<br>
+<b>contemporary</b>: occurring in the present (implying periodization)<br>
+<br>
+
+<b>better</b><sup>2</sup> (adv.): to a greater degree<br>
+<br>
+
+<b>relationship</b>: "the way" in which people or things are connected: <i>romantic relationship, working relationship</i><br>
+<b>connection</b>: a link between two people or things: <i>connection between stress and sleep problems</i><br>
+<b>relevance</b>: the quality of being closely connected or appropriate: <i>relevance to the topic</i><br>
+<b>involvement</b>: the fact of being involved with something: <i>his involvement in the crime</i><br>
