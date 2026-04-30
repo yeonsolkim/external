@@ -28,7 +28,7 @@
               "type": "markdown",
               "state": {
                 "file": "_posts/English/3. Lexical Meaning/2026-04-25-Lexical Meaning.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
@@ -55,16 +55,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyNotes/LLM.md",
+                "file": "_posts/Mathematics/2. Analysis/2026-04-01-LLM.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "LLM"
+              "title": "2026-04-01-LLM"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -227,9 +227,11 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b316e855b0c5800e",
+  "active": "481db13bf135a749",
   "lastOpenFiles": [
-    "MyNotes/LLM.md",
+    "MyNotes/Experiments.md",
+    "MyNotes/Markdown.md",
+    "_posts/Mathematics/2. Analysis/2026-04-01-LLM.md",
     "_posts/English/3. Lexical Meaning/2026-04-25-Lexical Meaning.md",
     "_posts/English/4. Compositional Meaning/2026-04-03-Present Perfect + ....md",
     "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
@@ -238,7 +240,6 @@
     "_posts/English/5. Pragmatic Meaning/2026-04-04-Schema.md",
     "_posts/English/5. Pragmatic Meaning/2026-04-12-Discourse Markers.md",
     "MyNotes/2026-04-13-Inanimate Subject.md",
-    "MyNotes/Experiments.md",
     "_posts/English/3. Lexical Meaning/2026-04-22-Tier 2 Words.md",
     "_posts/English/3. Lexical Meaning/2026-04-03-Lexical Category.md",
     "_posts/English/2. Grammatical Meaning/2026-04-08-2.3.2. To-Infinitival-Clause.md",
@@ -254,7 +255,6 @@
     "_posts/English/2. Grammatical Meaning/2026-04-07-2.3.1. Clauses.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-2.3.6. Past-Participial Form.md",
     "_posts/English/2. Grammatical Meaning/2026-04-02-2.7. of-pp.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-10-2.1.2. Raised Subject.md",
     "MyNotes/dictionary",
     "assets/images/IMG_0332.jpeg",
     "_posts/English/6. Writing",
