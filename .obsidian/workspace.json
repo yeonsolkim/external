@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyNotes/Experiments.md",
-                "mode": "preview",
+                "file": "MyNotes/LLM.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Experiments"
+              "title": "LLM"
             }
           }
         ],
@@ -229,8 +229,17 @@
   },
   "active": "b316e855b0c5800e",
   "lastOpenFiles": [
-    "_posts/English/3. Lexical Meaning/2026-04-22-Tier 2 Words.md",
+    "MyNotes/LLM.md",
     "_posts/English/3. Lexical Meaning/2026-04-25-Lexical Meaning.md",
+    "_posts/English/4. Compositional Meaning/2026-04-03-Present Perfect + ....md",
+    "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
+    "_posts/English/4. Compositional Meaning/2026-04-03-Time.md",
+    "_posts/English/4. Compositional Meaning/2026-04-05-Idiomatic Expressions.md",
+    "_posts/English/5. Pragmatic Meaning/2026-04-04-Schema.md",
+    "_posts/English/5. Pragmatic Meaning/2026-04-12-Discourse Markers.md",
+    "MyNotes/2026-04-13-Inanimate Subject.md",
+    "MyNotes/Experiments.md",
+    "_posts/English/3. Lexical Meaning/2026-04-22-Tier 2 Words.md",
     "_posts/English/3. Lexical Meaning/2026-04-03-Lexical Category.md",
     "_posts/English/2. Grammatical Meaning/2026-04-08-2.3.2. To-Infinitival-Clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2.3.4. Gerund-Participial Clause.md",
@@ -246,15 +255,6 @@
     "_posts/English/2. Grammatical Meaning/2026-04-10-2.3.6. Past-Participial Form.md",
     "_posts/English/2. Grammatical Meaning/2026-04-02-2.7. of-pp.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-2.1.2. Raised Subject.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-10-2.3.5. Past-Participial Clauses.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-10-2.1.1. Complement.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-2.3.1. Relative Clauses.md",
-    "_posts/English/5. Pragmatic Meaning/2026-04-04-Pragmatic Meaning.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-11-2.1.3. Coordinator.md",
-    "_posts/English/2. Grammatical Meaning/Wh-Phrase.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-10-1.6. Supplement.md",
-    "MyNotes/Experiments.md",
-    "_posts/English/2. Grammatical Meaning/2.8. Interrogative Content Clause.md",
     "MyNotes/dictionary",
     "assets/images/IMG_0332.jpeg",
     "_posts/English/6. Writing",

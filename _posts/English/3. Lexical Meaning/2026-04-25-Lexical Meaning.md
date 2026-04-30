@@ -93,7 +93,7 @@ categories:
 <br>
 
 <b>ascertain</b> [esərˈtein]: ditermine<sup>2</sup> something with certainty<br>
-<b>confirm</b>: establish correctness of something previously suspected to be the case<br>
+<b>confirm</b>: establish correctness of something previously suspected<br>
 <br>
 
 <b>moral</b>: concerned with the principles of right and wrong of human<br>
@@ -281,7 +281,7 @@ categories:
 <br>
 
 <b>intrude</b>: put oneself deliberately into a place or situation where one is unwelcome or uninvited<br>
-<b>break in</b>: force entry to a building<br>
+<b>break in</b>: force entry to (a building)<br>
 <b>invade</b>: (of an armed force) enter a region so as to subjugate it<br>
 <br>
 
@@ -475,3 +475,13 @@ categories:
 <b>theme</b>: the main message of a speech or a piece of writing: <i>the theme of the novel</i><br> 
 <b>thesis</b> [ˈθisis]: a statement that is put forward as a premise to be maintained or proved<br>
 <b>premise</b> [ˈpremis]
+<br>
+
+<b>emerge</b><sup>2</sup>: become apparent or important<br>
+<br>
+
+<b>utility</b><sup>1</sup> (n.): the state of being beneficial<br>
+ <b>utility</b><sup>2</sup> (adj.): being able to perform several functions<br>
+ <br>
+
+<b>explain</b><sup>2</sup>: serve as a satisfactory explanation for<br>
