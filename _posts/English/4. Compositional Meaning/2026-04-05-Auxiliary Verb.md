@@ -23,10 +23,7 @@ categories:
 >4. She can't be tired now. 
 
 ### 2. could 
-1. **tentative conjecture**
-
->Examples.
->1. This result could be explained by Einstein’s hypothesis
+1. tentative conjecture
 
 
 ### 3. may
