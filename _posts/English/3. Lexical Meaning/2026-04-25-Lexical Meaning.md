@@ -482,10 +482,11 @@ categories:
 <br>
 
 <b>utility</b><sup>1</sup> (n.): the state of being beneficial<br>
- <b>utility</b><sup>2</sup> (adj.): being able to perform several functions<br>
- <br>
+<b>utility</b><sup>2</sup> (adj.): being able to perform several functions<br>
+<br>
 
 <b>explain</b><sup>2</sup>: serve as a satisfactory explanation for<br>
+<b>explained</b> (adj.): intelligible or clear by an explanation<br>
 <br>
 
 <b>landscape</b>: all the visible features of an area of land: <i>a desert landscape, the urban landscape</i><br>
