@@ -486,7 +486,7 @@ categories:
 <br>
 
 <b>explain</b><sup>2</sup>: serve as a satisfactory explanation for<br>
-<b>explained</b> (adj.): intelligible or clear by an explanation<br>
+<b>explained</b> (adj.): intelligible or clear in terms of an explanation<br>
 <br>
 
 <b>landscape</b>: all the visible features of an area of land: <i>a desert landscape, the urban landscape</i><br>
