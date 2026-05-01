@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-10-1.6. Supplement.md",
+                "file": "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-10-1.6. Supplement"
+              "title": "2026-04-05-Auxiliary Verb"
             }
           },
           {
@@ -64,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -227,10 +227,11 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b316e855b0c5800e",
+  "active": "ab6686bd7d1d1914",
   "lastOpenFiles": [
-    "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-10-1.6. Supplement.md",
     "_posts/English/4. Compositional Meaning/2026-04-10-Past-Participial Form.md",
+    "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-2.6. Past-Participial Clause.md",
     "_posts/English/3. Lexical Meaning/2026-04-25-Lexical Meaning.md",
     "MyNotes/2026-04-01-LLM.md",
@@ -254,7 +255,6 @@
     "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. The Structure of Sentences.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-2.6. Supplement.md",
     "_posts/English/4. Compositional Meaning/2026-04-11-Complement.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-2.3.1. Clauses.md",
     "MyNotes/dictionary",
     "assets/images/IMG_0332.jpeg",
     "_posts/English/6. Writing",

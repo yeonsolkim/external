@@ -22,12 +22,19 @@ categories:
 >   I can't believe that we are faced with that sort of choice. (화자의 epistemic state에 의해 제한된 possibility) <br>
 >4. She can't be tired now. 
 
-### 2. may
+### 2. could 
+1. **tentative conjecture**
+
+>Examples.
+>1. This result could be explained by Einstein’s hypothesis
+
+
+### 3. may
 1. permission
 2. conjecture
 3. **circumstantial possibility**
 
-### 3. must, have to
+### 4. must, have to
 1. duty: 어떤 주체가 해야할 의무
 2. **necessity**
 3. strong conjecture
@@ -37,7 +44,7 @@ categories:
 >2. I have to call my mom.
 >3. He must be hungry.
 
-### 4. will
+### 5. will
 1. **will(의지)**
 2. **cooperativeness**
 3. **disposition(경향)**
@@ -51,7 +58,7 @@ categories:
 >4. I would sometimes travel alone. (나는 때로 혼자 여행을 하곤 했다.)
 >5. He will be a doctor.
 
-### 5. should, ought to
+### 6. should, ought to
 1. duty
 2. **expectation**: normality와 상식을 기반으로 한 일반적 expectation
 
