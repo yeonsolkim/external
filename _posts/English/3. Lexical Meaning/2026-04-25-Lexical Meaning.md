@@ -161,6 +161,7 @@ categories:
 <b>so as (to-infinitival clause)</b> (conj.): in order (to-infinitival clause)<br>
 <b>according to</b> (p.): as stated by or in<br>
 <b>with respect to</b>: concerning<br>
+<b>in terms of</b>: from the point of view of a particular aspect<br>
 <b>by means of</b>: with the help of<br>
 <b>in accordance with</b>: in a manner conforming with<br>
 <b>apart from</b>: except for<br>
@@ -446,7 +447,7 @@ categories:
 <br>
 
 <b>tip</b>: a small but useful piece of "advice"<br>
-<b>secret</b>: a valid but not commonly known "method"<br>
+<b>secret</b>: a valid but not commonly known method<br>
 <br>
 
 <b>modern</b>: relating to the present "as opposed to the past" (implying relative comparison)<br>
@@ -485,3 +486,7 @@ categories:
  <br>
 
 <b>explain</b><sup>2</sup>: serve as a satisfactory explanation for<br>
+<br>
+
+<b>landscape</b>: all the visible features of an area of land: <i>a desert landscape, the urban landscape</i><br>
+<b>scenery</b>: the natural features of a landscape considered in terms of their appearance, "especially when picturesque"<br>
