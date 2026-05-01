@@ -27,5 +27,8 @@ categories:
   * Head(Lexical Verb): was
   * Complement(AdjP): broken
 
+<br>
 
-**That result is explained by the theory.**
+*dictionary entry에 adj로 등재되어 있지 않더라도 adjectival interpretation을 갖는 경우도 많으니 주의하자. 
+**That result was explained by the theory.**
+> Simplification: That result / was / explained / by the theory.
