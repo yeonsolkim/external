@@ -347,8 +347,9 @@ categories:
 <br>
 
 <b>treat</b><sup>1</sup> (v.): behave toward in a particular way<br>
-<b>deal with</b>: take action "to handle a problem, situation, or person"<br>
 <b>treat</b><sup>2</sup> (n.): an event that is out of the ordinary and gives great pleasure<br>
+<b>deal with</b><sup>1</sup>: take action "to handle a problem, situation, or person"<br>
+<b>deal with</b><sup>2</sup>: take as a subject<sup>2</sup><br>
 <br>
 
 <b>interest</b><sup>1</sup> (n.): the "state" of wanting to know about something<br>
@@ -491,3 +492,41 @@ categories:
 
 <b>landscape</b>: all the visible features of an area of land: <i>a desert landscape, the urban landscape</i><br>
 <b>scenery</b>: the natural features of a landscape considered in terms of their appearance, "especially when picturesque"<br>
+<br>
+
+<b>shortage</b>: a situation in which something is not supplied sufficiently "for a demand"<br>
+<b>scarcity</b>: the state of being rare, often "as a structural condition"<br>
+<br>
+
+<b>refill</b>: fill a specific container again<br>
+<b>replenish</b>: restore a depleted resource<br>
+<br>
+
+<b>estimate</b>: roughly calculate<br>
+<b>assess</b>: examine the state or degree of something<br>
+<b>evaluate</b>: judge whether something is effective, successful, or valuable, often according to particular standards<br>
+<br>
+
+<b>unique</b>: unlike anything else<br>
+<b>unique to</b>: belonging or connected to one particular place or person<br>
+<br>
+
+<b>bad</b><sup>2</sup>: failing to conform to standards of moral virtue or acceptable conduct<br>
+<b>virtue</b>: a quality considered morally good<br>
+<b>conduct</b> (n.): the manner in which a person behaves<br>
+<br>
+
+<b>extensive</b>: affecting a large area<br>
+<b>widespread</b>: found over a large area or number of people<br>
+<br>
+
+<b>learning</b> (n.): the acquisition of knowledge<br>
+<b>study</b> (n.): "the devotion of time and attention" to acquiring knowledge<br>
+<b>studies</b>: study as pursued by one person<br>
+<br>
+
+<b>illustrate</b><sup>2</sup>: explain<sup>1</sup> something clear by using pictures, examples, etc.<br>
+<br>
+
+<b>instruction</b>: information that tells someone how to do<br>
+<b>direction</b>: guidance or command about what to do or where to go<br>
