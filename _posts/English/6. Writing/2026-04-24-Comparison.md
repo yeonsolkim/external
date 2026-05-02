@@ -1,3 +1,12 @@
+---
+layout: post
+title: Comparison
+date: 2026-04-24 14:12:37 +0900
+categories:
+  - English
+  - 6. Writing
+---
+
 ## 1. Parity
 positive degree를 사용.
 >1. Today is as cold as yesterday was.<br>
