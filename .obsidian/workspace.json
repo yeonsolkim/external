@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/3. Lexical Meaning/2026-04-03-Lexical Category.md",
+                "file": "_posts/English/4. Compositional Meaning/2026-04-03-Perfect.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-03-Lexical Category"
+              "title": "2026-04-03-Perfect"
             }
           },
           {
@@ -55,16 +55,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyNotes/2026-04-01-LLM.md",
-                "mode": "source",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Tense and Aspect.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-01-LLM"
+              "title": "2026-04-03-2.2. Tense and Aspect"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -227,30 +226,30 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b316e855b0c5800e",
+  "active": "fba9fc305e3b57ff",
   "lastOpenFiles": [
-    "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Tense and Aspect.md",
+    "_posts/English/4. Compositional Meaning/2026-04-03-Perfect.md",
+    "MyNotes/2026-04-01-LLM.md",
+    "_posts/English/3. Lexical Meaning/2026-04-03-Lexical Category.md",
     "_posts/English/3. Lexical Meaning/2026-04-25-Lexical Meaning.md",
+    "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary Verb.md",
     "_posts/English/4. Compositional Meaning/2026-04-10-Past-Participial Form.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-1.6. Supplement.md",
     "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-2.6. Past-Participial Clause.md",
-    "MyNotes/2026-04-01-LLM.md",
     "MyNotes/Experiments.md",
     "MyNotes/Markdown.md",
-    "_posts/English/4. Compositional Meaning/2026-04-03-Present Perfect + ....md",
     "_posts/English/4. Compositional Meaning/2026-04-03-Time.md",
     "_posts/English/4. Compositional Meaning/2026-04-05-Idiomatic Expressions.md",
     "_posts/English/5. Pragmatic Meaning/2026-04-04-Schema.md",
     "_posts/English/5. Pragmatic Meaning/2026-04-12-Discourse Markers.md",
     "MyNotes/2026-04-13-Inanimate Subject.md",
     "_posts/English/3. Lexical Meaning/2026-04-22-Tier 2 Words.md",
-    "_posts/English/3. Lexical Meaning/2026-04-03-Lexical Category.md",
     "_posts/English/2. Grammatical Meaning/2026-04-08-2.3.2. To-Infinitival-Clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2.3.4. Gerund-Participial Clause.md",
     "_posts/English/4. Compositional Meaning/2026-04-06-Sentences.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2.3.3. Bare Infinitival Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Tense and Aspect.md",
     "_posts/English/2. Grammatical Meaning/2026-04-11-2.3.7. Hollow Non-Finite Clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2.8. Extraposition.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. The Structure of Sentences.md",
