@@ -487,7 +487,6 @@ categories:
 <br>
 
 <b>explain</b><sup>2</sup>: serve as a satisfactory explanation for<br>
-<b>explained</b> (adj.): intelligible or clear in terms of an explanation<br>
 <br>
 
 <b>landscape</b>: all the visible features of an area of land: <i>a desert landscape, the urban landscape</i><br>
@@ -530,3 +529,6 @@ categories:
 
 <b>instruction</b>: information that tells someone how to do<br>
 <b>direction</b>: guidance or command about what to do or where to go<br>
+<br>
+
+<b>the sun</b><sup>2</sup>: the light or warmth received from the earth's sun<br>
