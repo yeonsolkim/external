@@ -385,7 +385,7 @@ categories:
 <b>document</b>: a piece of written or printed material that contains information<br>
 <b>paperwork</b>: routine documents involved in an administrative process<br>
 <b>text</b><sup>1</sup>: written or printed words considered as "language content"<br>
-<b>text</b><sup>2</sup>: the main body of a piece of writing, as distinct from other material such as illustrations<br>
+<b>text</b><sup>2</sup>: the main body of a piece of writing, as "distinct from other material such as illustrations"<br>
 <br>
 
 <b>count</b><sup>1</sup> (v.): determine the total number of<br>
@@ -538,3 +538,23 @@ categories:
 <b>development</b>: the process of developing<br>
 <b>growth</b>: the process of "increasing in physical size" such as amount, number, etc.<br>
 <br>
+
+<b>in spite of that</b> (adv.): nevertheless<br>
+<br>
+
+<b>representative</b><sup>1</sup>: a person chosen or appointed to act or speak for others<br>
+<b>delegate</b>: a person sent to represent others<br>
+<b>ambassador</b><sup>1</sup> [emˈbeset̬ər]: an accredited diplomat sent by a country as its official representative to a foreign country
+<b>ambassador</b><sup>2</sup>: a person who acts as a representative or promoter of a particular body or activity<br>
+<b>representative</b><sup>2</sup>: an example of a class<sup>2</sup><br>
+<br>
+
+<b>idiomatic</b> [it̬iəˈmet̬ik]<br>
+<b>idiom</b> [ˈit̬iəm]<br>
+<br>
+
+<b>concise</b>: giving the necessary information clearly and in a few worlds<br>
+<b>brief</b>: of short duration<br>
+<br>
+
+<b>settle for</b>: accept or agree to something that one considers to be less than satisfactory<br>
