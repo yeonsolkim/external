@@ -486,9 +486,6 @@ categories:
 <b>utility</b><sup>2</sup> (adj.): being able to perform several functions<br>
 <br>
 
-<b>explain</b><sup>2</sup>: serve as a satisfactory explanation for<br>
-<br>
-
 <b>landscape</b>: all the visible features of an area of land: <i>a desert landscape, the urban landscape</i><br>
 <b>scenery</b>: the natural features of a landscape considered in terms of their appearance, "especially when picturesque"<br>
 <br>
@@ -524,7 +521,7 @@ categories:
 <b>studies</b>: study as pursued by one person<br>
 <br>
 
-<b>illustrate</b><sup>2</sup>: explain<sup>1</sup> something clear by using pictures, examples, etc.<br>
+<b>illustrate</b><sup>2</sup>: explain something clear by using pictures, examples, etc.<br>
 <br>
 
 <b>instruction</b>: information that tells someone how to do<br>
@@ -532,3 +529,12 @@ categories:
 <br>
 
 <b>the sun</b><sup>2</sup>: the light or warmth received from the earth's sun<br>
+<br>
+
+<b>assist</b>: help as a secondary supporter<br>
+<b>encourage</b>: motivate someone to do something<br>
+<b>foster</b>: help the development of something over time by creating the right conditions for it<br>
+<b>promote</b>: further the progress of something<br>
+<b>development</b>: the process of developing<br>
+<b>growth</b>: the process of "increasing in physical size" such as amount, number, etc.<br>
+<br>
