@@ -551,6 +551,7 @@ categories:
 
 <b>idiomatic</b> [it̬iəˈmet̬ik]<br>
 <b>idiom</b> [ˈit̬iəm]<br>
+<b>monetary</b> [ˈmɑnəteri]<br>
 <br>
 
 <b>concise</b>: giving the necessary information clearly and in a few worlds<br>
