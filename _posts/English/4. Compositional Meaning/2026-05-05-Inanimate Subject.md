@@ -13,7 +13,7 @@ antagonist: 그 성질에 영향을 주는 외부 요인 
 
 
 1. Recognize the feature which antagonist have influenced. 
-2. Recognize the agonist's absence of intentionality about the change on its feature, especially when it is a human.
+2. Recognize the agonist's absence of intention about its change, especially when it is a human.
 3. Think of a specific scene.
 4. 문장을 antagonist의 작용(action)을 말하는 것으로 이해.
 
@@ -25,7 +25,7 @@ antagonist: 그 성질에 영향을 주는 외부 요인 
 >3. The incident was mentioned only briefly in the official report.<br>  
 >   the incident의 관성이 꺾이고 상태가 변화했음을 말하는 것이다.
 >4. The mountain walk took us from Kreuth to Lake Achen.<br>
->   먼저 antagonist of absence of volition을 이해했어야 한다. us가 volition을 가지고 Kreuth에서 출발하여 목적지를 정하고 Lake Achen으로 갔다기 보다는 걷다보니 그곳에 도착한 것이다. 
+>   먼저 antagonist's absence of intention을 이해했어야 한다. us가 intention을 가지고 Kreuth에서 출발하여 목적지를 정하고 Lake Achen으로 갔다기 보다는 걷다보니 그곳에 도착한 것이다. 
 
 
 
@@ -33,4 +33,4 @@ antagonist: 그 성질에 영향을 주는 외부 요인 
 >1. his theory가 발표되면서 상태가 변함
 >2. 강물이 흐르며 particles가 한 곳에 모임
 >3. 사람의 발화로 인해 상태가 변함
->4. 자연 경관에 이끌렸거나 길을 잃어서 그곳에 도착했을 가능성 등을 생각해볼 수 있겠다.
+>4. 대화를 하다보니 그곳에 도착했을 가능성 등을 생각해볼 수 있겠다.
