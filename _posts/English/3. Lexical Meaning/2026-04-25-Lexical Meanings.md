@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Lexical Meaning
+title: Lexical Meanings
 date: 2026-04-25 12:00:38 +0900
 categories:
   - English
@@ -464,6 +464,9 @@ categories:
 <b>involvement</b>: the fact of being involved with something: <i>his involvement in the crime</i><br>
 <br>
 
+<b>setting</b>: the place, situation, and atmosphere in which something happens: <i>the movie's setting feels very romantic</i><br>
+<b>venue</b>: a place where an event is held: <i>the wedding venue</i><br>
+<b>site</b>: a place where something exists or happens<br>
 <b>area</b><sup>1</sup> [ˈeriə]: a part of a place, space, or surface<br>
 <b>area</b><sup>2</sup>: a place allocated for a specific purpose<br>
 <b>region</b>: a part of a country or the world having definable characteristic<br> 
@@ -559,3 +562,8 @@ categories:
 <br>
 
 <b>settle for</b>: accept or agree to something that one considers to be less than satisfactory<br>
+<br>
+
+<b>revenue</b> [ˈrevənu]<br>
+<b>defy</b> [diˈfai]<br>
+
