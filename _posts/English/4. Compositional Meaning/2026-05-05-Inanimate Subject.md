@@ -12,9 +12,9 @@ agonist: 고유한 성질을 갖는 것<br>
 antagonist: 그 성질에 영향을 주는 외부 요인 
 
 
-1. 먼저 antagonist가 영향을 준 그 성질이 뭔지 인식. 
-2. 그 성질의 변화에 있어 agonist의 volition이 없음을 인식.
-3. 구체적 상황을 생각. 
+1. Recognize the feature which antagonist have influenced. 
+2. Recognize the agonist's absence of intentionality about the change on its feature, especially when it is a human.
+3. Think of a specific scene.
 4. 문장을 antagonist의 작용(action)을 말하는 것으로 이해.
 
 

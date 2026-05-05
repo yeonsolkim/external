@@ -566,4 +566,15 @@ categories:
 
 <b>revenue</b> [ˈrevənu]<br>
 <b>defy</b> [diˈfai]<br>
+<br>
 
+<b>if</b><sup>2</sup> (conj.): whenever<br>
+<br>
+
+<b>walk</b> (n.): an act of traveling<br>
+<br>
+
+<b>desire</b>: a "feeling" of wanting something<br>
+<b>intention</b>: a "plan or purpose" that someone has in mind before acting<br>
+<b>volition</b>: a "faculty" of acting or deciding something by your own will, especially despite inner resistance or psychological obstacles<br>
+<b>faculty</b>: an inherent mental power<br>

@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/4. Compositional Meaning/2026-04-03-Perfect Aspect.md",
-                "mode": "preview",
+                "file": "_posts/English/4. Compositional Meaning/2026-05-05-Inanimate Subject.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-03-Perfect Aspect"
+              "title": "2026-05-05-Inanimate Subject"
             }
           },
           {
@@ -55,16 +55,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/4. Compositional Meaning/2026-05-05-Inanimate Subject.md",
+                "file": "_posts/English/2. Grammatical Meaning/2026-05-05-2.9. Clause-Like NP.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-05-05-Inanimate Subject"
+              "title": "2026-05-05-2.9. Clause-Like NP"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -227,16 +227,16 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "58066c0714869b37",
+  "active": "ab6686bd7d1d1914",
   "lastOpenFiles": [
+    "_posts/English/4. Compositional Meaning/2026-04-03-Perfect Aspect.md",
     "_posts/English/2. Grammatical Meaning/2026-05-05-2.9. Clause-Like NP.md",
+    "_posts/English/3. Lexical Meaning/2026-04-25-Lexical Meanings.md",
     "_posts/English/4. Compositional Meaning/2026-05-05-Inanimate Subject.md",
     "_posts/English/4. Compositional Meaning/2026-04-21-to-Infinitival Clause.md",
     "_posts/English/4. Compositional Meaning/2026-04-13-of PP.md",
-    "_posts/English/3. Lexical Meaning/2026-04-25-Lexical Meanings.md",
     "MyNotes/LLM.md",
     "MyNotes/Note.md",
-    "_posts/English/4. Compositional Meaning/2026-04-03-Perfect Aspect.md",
     "MyNotes/2026-04-06-Semantic Labels.md",
     "MyNotes/2026-04-13-Inanimate Subject.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2. Clause.md",
