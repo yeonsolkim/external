@@ -7,8 +7,8 @@ categories:
   - 4. Compositional Meaning
 ---
 
-### Force-Dynamics Roles Labeling
-agonist: 고유한 성질을 갖는 것 
+### Force-Dynamics Role Labeling
+agonist: 고유한 성질을 갖는 것<br>
 antagonist: 그 성질에 영향을 주는 외부 요인 
 
 
