@@ -583,3 +583,7 @@ categories:
 <b>intention</b>: a "plan or purpose" that someone has in mind before acting<br>
 <b>volition</b>: a "faculty" of acting or deciding something by your own will, especially despite inner resistance or psychological obstacles<br>
 <b>faculty</b>: an inherent mental power<br>
+<br>
+
+<b>find</b><sup>2</sup>: perceive by chance<br>
+<br>
