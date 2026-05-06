@@ -4,8 +4,9 @@ title: Pragmatic Meaning
 date: 2026-04-04 11:45:36 +0900
 categories:
   - English
-  - 5. Pragmatic Meaning
+  - 5. Contextually-Licensed Meaning
 ---
+
 
 - **elaboration(부연)**
 - **explanation**
