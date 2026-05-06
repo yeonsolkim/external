@@ -566,6 +566,11 @@ categories:
 
 <b>revenue</b> [ˈrevənu]<br>
 <b>defy</b> [diˈfai]<br>
+<b>retrospection</b> [ˌretrəˈspekʃən]<br>
+<b>quality</b> [ˈkwɑlət̬i]<br>
+<b>auxiliary</b> [əɡˈzileri]<br>
+<b>gerund</b> [ˈdʒerənd]<br>
+<b>preterite</b> [ˈpret̬ərit]<br>
 <br>
 
 <b>if</b><sup>2</sup> (conj.): whenever<br>
