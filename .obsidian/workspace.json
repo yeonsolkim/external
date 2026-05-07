@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clauses.md",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-03-2.2. Relative Clauses"
+              "title": "2026-04-03-1. The Structure of Sentence"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-10-1.6. Supplement.md",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clauses.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-10-1.6. Supplement"
+              "title": "2026-04-03-2.2. Relative Clauses"
             }
           },
           {
@@ -55,16 +55,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/4. Compositional Meaning/2026-04-13-of PP.md",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-08-2.3. to-Infinitival-Clause.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-13-of PP"
+              "title": "2026-04-08-2.3. to-Infinitival-Clause"
+            }
+          },
+          {
+            "id": "1182e67e69b5d65b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MyNotes/Experiments.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Experiments"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -227,20 +241,23 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "58066c0714869b37",
+  "active": "ab6686bd7d1d1914",
   "lastOpenFiles": [
-    "_posts/English/4. Compositional Meaning/2026-05-05-Clause-Like Interpretation.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-10-1.6. Supplement.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-08-2.3. to-Infinitival-Clause.md",
+    "_posts/English/4. Compositional Meaning/2026-04-13-of PP.md",
+    "_posts/English/3. Lexical Meaning/2026-04-25-Lexical Meanings.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clauses.md",
+    "MyNotes/Experiments.md",
+    "_posts/English/4. Compositional Meaning/2026-05-05-Clause-Like Interpretation.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-07-2. Clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-10-1.6. Supplement.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-1.2. Predicative Complement.md",
     "_posts/English/4. Compositional Meaning/2026-04-21-Supplement.md",
     "_posts/English/5. Contextually-Licensed Meaning/2026-04-12-Discourse Markers.md",
     "_posts/English/4. Compositional Meaning/Predicative Complement.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-2. Clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-02-1.5. Modifier.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. Tense and Aspect.md",
-    "_posts/English/3. Lexical Meaning/2026-04-25-Lexical Meanings.md",
     "_posts/English/5. Contextually-Licensed Meaning/2026-04-04-Schema.md",
     "_posts/English/5. Contextually-Licensed Meaning/2026-04-04-Pragmatic Meaning.md",
     "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
@@ -252,9 +269,6 @@
     "_posts/English/4. Compositional Meaning/2026-04-06-Semantic Types of Sentences.md",
     "MyNotes/2026-05-05-Inanimate Subject.md",
     "MyNotes/2026-04-13-Inanimate Subject.md",
-    "PET.md",
-    "_posts/English/4. Compositional Meaning/2026-04-13-of PP.md",
-    "MyNotes/LLM.md",
     "MyNotes/dictionary",
     "assets/images/IMG_0332.jpeg",
     "_posts/English/6. Writing",

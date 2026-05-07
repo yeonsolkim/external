@@ -22,6 +22,7 @@ categories:
 <b>religious</b>: relating to religion<br>
 <br>
 
+<b>civilization</b>: advanced human society with organized communities and develop systems such as government, law, religion, and culture.<br>
 <b>custom</b>: a way of doing something that is specific to a particular society<br>
 <b>tradition</b>: a "long-established custom" that has been passed on from one generation to another<br>
 <b>traditional</b>: existing as a part of tradition<br>
@@ -158,7 +159,7 @@ categories:
 <b>pick out</b> (v.): choose someone or something from a number of alternatives<br>
 <b>alternative</b> [əlˈtər.nə.t̬iv] <br>
 <b>get rid of</b>: take action so as to be free of a troublesome or unwanted person or thing<br>
-<b>so as (to-infinitival clause)</b> (conj.): in order (to-infinitival clause)<br>
+<b>so as (to-infinitival clause)</b> (p.): in order (to-infinitival clause)<br>
 <b>according to</b> (p.): as stated by or in<br>
 <b>with respect to</b>: concerning<br>
 <b>in terms of</b>: from the point of view of a particular aspect<br>
@@ -573,7 +574,11 @@ categories:
 <b>preterite</b> [ˈpret̬ərit]<br>
 <br>
 
-<b>if</b><sup>2</sup> (conj.): whenever<br>
+<b>if</b><sup>2</sup> (sbr.): whenever<br>
+<b>that</b> (sbr.)<br>
+<b>which</b> (pron.)<br>
+<b>what</b> (pron.)<br>
+<b>for</b> (sbr.): <i>For Mike to succeed, he must study</i><br>
 <br>
 
 <b>walk</b> (n.): an act of traveling<br>
@@ -587,3 +592,13 @@ categories:
 
 <b>find</b><sup>2</sup>: perceive by chance<br>
 <br>
+
+<b>general</b>: applying to most situations, people, or things, but not necessarily every single one<br>
+<b>universal</b>: applying to everyone or everything, without exception<br>
+<br>
+
+<b>arrange</b>: put things in a particular order<br>
+<b>align</b>: arrange in a straight line<br>
+<br>
+
+<b>help (to-infinitival clause)</b> (v.): play a part in causing something to happen<br>
