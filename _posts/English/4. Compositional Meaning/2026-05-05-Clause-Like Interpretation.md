@@ -10,22 +10,18 @@ categories:
 ## 1. NP
 verb의 argument structure가 genitive 형태로 실현된다.
 
-#### 1. Event Noun
-e.g., walk, trip, conversation, fight, arrival, destruction, meeting, decision<br>
+#### 1.1. Event Noun
+e.g., walk, trip, conversation, fight, arrival, meeting, decision, attempt<br>
 
 Example
 1. the enemy's destruction of the city<br>
    → The enemy destroyed the city.
 2. I always remember a mountain walk with some friends<br>
    → I walked in the mountains with some friends.
+3. my attempt to apply this scheme to the hydrogen atom
 
   
-주의: 결과물을 의미할 수도 있다<br>
-Examples.<br>
-The construction is impressive.
-
-  
-#### 2. State Noun
+#### 1.2. State Noun
 e.g., relationship, marriage, alliance, rivalry; anger, pleasure<br>
 Examples.
 1. John’s friendship with Mary surprised everyone<br>
