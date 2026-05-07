@@ -575,9 +575,6 @@ categories:
 <br>
 
 <b>if</b><sup>2</sup> (sbr.): whenever<br>
-<b>that</b> (sbr.)<br>
-<b>which</b> (pron.)<br>
-<b>what</b> (pron.)<br>
 <b>for</b> (sbr.): <i>For Mike to succeed, he must study</i><br>
 <br>
 
@@ -602,3 +599,4 @@ categories:
 <br>
 
 <b>help (to-infinitival clause)</b> (v.): play a part in causing something to happen<br>
+<br>

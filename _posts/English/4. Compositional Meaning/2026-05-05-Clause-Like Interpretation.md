@@ -34,4 +34,5 @@ Examples.
 Examples.
 1. I found myself in an impenetrable morass<br>
    → myself was in an impenetrable morass.
-2. 
+2. to put oneself back in the position<br> 
+   → oneself is in the position.
