@@ -31,7 +31,7 @@ discourse 밖의 요소에 의해 형성되는 의미이다. 독자의 기억, �
 
 
 
-
+---
 
 ## Structural Summary
 Sentence Level: Lexical Meaning + Grammatical Meaning → Compositional Meaning 
