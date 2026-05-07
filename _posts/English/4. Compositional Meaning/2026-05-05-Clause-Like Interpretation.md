@@ -18,7 +18,8 @@ Example
    → The enemy destroyed the city.
 2. I always remember a mountain walk with some friends<br>
    → I walked in the mountains with some friends.
-3. my attempt to apply this scheme to the hydrogen atom
+3. my attempt to apply this scheme to the hydrogen atom<br>
+   → I attempted to apply this scheme to the hydrogen atom.
 
   
 #### 1.2. State Noun
