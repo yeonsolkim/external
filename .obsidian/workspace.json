@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clause.md",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-27-2.8. Interrogative Content Clause.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-03-2.2. Relative Clause"
+              "title": "2026-04-27-2.8. Interrogative Content Clause"
             }
           }
         ]
@@ -226,13 +226,14 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "50f509463b6298a4",
+  "active": "fba9fc305e3b57ff",
   "lastOpenFiles": [
-    "_posts/English/3. Lexical Meaning/2026-04-03-Lexical Category.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
     "_posts/English/3. Lexical Meaning/2026-04-25-Lexical Meanings.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-27-2.8. Interrogative Content Clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-11-2.7. Hollow Clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clause.md",
+    "_posts/English/3. Lexical Meaning/2026-04-03-Lexical Category.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-1.6. Supplement.md",
     "_posts/English/4. Compositional Meaning/2026-05-05-Clause-Like Interpretation.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2.4. Bare Infinitival Clause.md",
@@ -253,7 +254,6 @@
     "_posts/English/2. Grammatical Meaning/2026-04-03-2.1. Tense and Aspect.md",
     "_posts/English/5. Contextually-Licensed Meaning/2026-04-04-Schema.md",
     "_posts/English/5. Contextually-Licensed Meaning/2026-04-04-Pragmatic Meaning.md",
-    "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
     "MyNotes/dictionary",
     "assets/images/IMG_0332.jpeg",
     "_posts/English/6. Writing",
