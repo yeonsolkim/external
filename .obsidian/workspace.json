@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-13-1.1. Wh-NP.md",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-07-3.1. Extraposition.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-13-1.1. Wh-NP"
+              "title": "2026-04-07-3.1. Extraposition"
             }
           },
           {
@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clause.md",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-03-2.2. Relative Clause"
+              "title": "2026-04-03-1. The Structure of Sentence"
             }
           },
           {
@@ -64,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -227,14 +227,15 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "58066c0714869b37",
+  "active": "1182e67e69b5d65b",
   "lastOpenFiles": [
+    "_posts/English/2. Grammatical Meaning/2026-04-07-3.1. Extraposition.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
     "_posts/English/3. Lexical Meaning/2026-04-25-Lexemes.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-13-1.1. Wh-NP.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clause.md",
-    "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
     "_posts/English/2. Grammatical Meaning/2026-04-02-1.4. Preposition Phrase.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-13-1.1. Wh-NP.md",
+    "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
     "_posts/English/2. Grammatical Meaning/2026-04-27-2.8. Interrogative Content Clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-11-2.7. Hollow Clause.md",
     "_posts/English/3. Lexical Meaning/2026-04-03-Lexical Category.md",
@@ -242,7 +243,6 @@
     "_posts/English/4. Compositional Meaning/2026-05-05-Clause-Like Interpretation.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2.4. Bare Infinitival Clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2.5. Gerund-Participial Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-3.1. Extraposition.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-3.3. Dummy Element.md",
     "_posts/English/2. Grammatical Meaning/2026-04-08-2.3. to-Infinitival-Clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-3.2. Raised Subject.md",
