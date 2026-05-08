@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clause.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-01-Dimensions of Meaning"
+              "title": "2026-04-03-2.2. Relative Clause"
             }
           },
           {
@@ -63,8 +63,7 @@
               "title": "2026-04-27-2.8. Interrogative Content Clause"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -227,13 +226,13 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "481db13bf135a749",
+  "active": "fba9fc305e3b57ff",
   "lastOpenFiles": [
+    "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
+    "_posts/English/3. Lexical Meaning/2026-04-25-Lexemes.md",
     "_posts/English/2. Grammatical Meaning/2026-04-02-1.4. Preposition Phrase.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clause.md",
-    "_posts/English/3. Lexical Meaning/2026-04-25-Lexemes.md",
-    "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
     "_posts/English/2. Grammatical Meaning/2026-04-27-2.8. Interrogative Content Clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-11-2.7. Hollow Clause.md",
     "_posts/English/3. Lexical Meaning/2026-04-03-Lexical Category.md",
