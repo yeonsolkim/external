@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-07-3.1. Extraposition.md",
+                "file": "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-07-3.1. Extraposition"
+              "title": "2026-04-03-Other PPs"
             }
           },
           {
@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
-                "mode": "preview",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-02-1.4. Preposition Phrase.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-03-1. The Structure of Sentence"
+              "title": "2026-04-02-1.4. Preposition Phrase"
             }
           },
           {
@@ -55,16 +55,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-27-2.8. Interrogative Content Clause.md",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-02-1.4. Preposition Phrase.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-27-2.8. Interrogative Content Clause"
+              "title": "2026-04-02-1.4. Preposition Phrase"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -227,19 +226,20 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "58066c0714869b37",
+  "active": "fba9fc305e3b57ff",
   "lastOpenFiles": [
-    "_posts/English/2. Grammatical Meaning/2026-04-27-2.8. Interrogative Content Clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-02-1.4. Preposition Phrase.md",
+    "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-3.1. Extraposition.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-10-1.6. Supplement.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
     "_posts/English/3. Lexical Meaning/2026-04-25-Lexemes.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-27-2.8. Interrogative Content Clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-2.2. Relative Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-02-1.4. Preposition Phrase.md",
     "_posts/English/2. Grammatical Meaning/2026-04-13-1.1. Wh-NP.md",
     "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
     "_posts/English/2. Grammatical Meaning/2026-04-11-2.7. Hollow Clause.md",
     "_posts/English/3. Lexical Meaning/2026-04-03-Lexical Category.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-10-1.6. Supplement.md",
     "_posts/English/4. Compositional Meaning/2026-05-05-Clause-Like Interpretation.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2.4. Bare Infinitival Clause.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2.5. Gerund-Participial Clause.md",
@@ -254,7 +254,6 @@
     "_posts/English/4. Compositional Meaning/2026-04-21-Supplement.md",
     "_posts/English/5. Contextually-Licensed Meaning/2026-04-12-Discourse Markers.md",
     "_posts/English/4. Compositional Meaning/Predicative Complement.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-02-1.5. Modifier.md",
     "MyNotes/dictionary",
     "assets/images/IMG_0332.jpeg",
     "_posts/English/6. Writing",
