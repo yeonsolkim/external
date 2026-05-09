@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Auxiliary verb
+title: Auxiliary verbs
 date: 2026-04-05 16:09:47 +0900
 categories:
   - English
