@@ -7,10 +7,10 @@ categories:
   - 4. Compositional Meaning
 ---
 
-## 1. NP
+## 1. NPs
 verb의 argument structure가 genitive 형태로 실현된다.
 
-#### 1.1. event noun
+#### 1.1. event nouns
 e.g., walk, trip, conversation, fight, arrival, meeting, decision, attempt<br>
 
 examples.
@@ -22,7 +22,7 @@ examples.
    → I attempted to apply this scheme to the hydrogen atom.
 
   
-#### 1.2. state noun
+#### 1.2. state nouns
 e.g., relationship, marriage, alliance, rivalry; anger, pleasure<br>
 examples.
 1. John’s friendship with Mary surprised everyone<br>
@@ -31,7 +31,7 @@ examples.
    → She was angry at the decision.
 
 
-## 2. Predicative complement
+## 2. Predicative complements
 examples.
 1. I found myself in an impenetrable morass<br>
    → myself was in an impenetrable morass.
