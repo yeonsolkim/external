@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Pragmatic Meaning
+title: Pragmatic meaning
 date: 2026-04-04 11:45:36 +0900
 categories:
   - English
@@ -17,9 +17,9 @@ categories:
 - **example / exemplification**
 - **restatement(재진술)**
 
-### 1. In Argumentative Discourse
-* Claim
-* Evidence
-* Premise
-* Conclusion
-* Inference
+### 1. In argumentative discourse
+* claim
+* evidence
+* premise
+* conclusion
+* inference

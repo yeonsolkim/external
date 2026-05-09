@@ -10,6 +10,6 @@ categories:
 1. 화자의 평가
 > Naturally, he was very angry.
 
-2. Level of Generality 
+2. level of generality 
 > Broadly speaking, there are two ways to fix the problem.
 

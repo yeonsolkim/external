@@ -22,31 +22,17 @@
             }
           },
           {
-            "id": "481db13bf135a749",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_posts/English/3. Lexical Meaning/2026-04-25-Lexemes.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "2026-04-25-Lexemes"
-            }
-          },
-          {
             "id": "58066c0714869b37",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-02-1.4. Preposition Phrase.md",
-                "mode": "preview",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-03-1. The structure of a sentence.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-02-1.4. Preposition Phrase"
+              "title": "2026-04-03-1. The structure of a sentence"
             }
           },
           {
@@ -55,16 +41,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-05-08-1.6. Complementation in VPs.md",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-02-1.4. Preposition phrases.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-05-08-1.6. Complementation in VPs"
+              "title": "2026-04-02-1.4. Preposition phrases"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -227,34 +213,34 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "1182e67e69b5d65b",
+  "active": "58066c0714869b37",
   "lastOpenFiles": [
-    "_posts/English/2. Grammatical Meaning/2026-04-02-1.4. Preposition Phrase.md",
-    "_posts/English/3. Lexical Meaning/2026-04-25-Lexemes.md",
-    "_posts/English/2. Grammatical Meaning/2026-05-08-1.6. Complementation in VPs.md",
-    "MyNotes/2026-04-11-Complement In VP.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-10-1.3. Supplement.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-08-2.7. to-Infinitival-Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-2.3. Relative Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-11-2.2. Hollow Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-27-2.1. Interrogative Content Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-3.4. Extraposition.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-3.1. Tense and Aspect.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-2. Clause.md",
-    "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-1. The Structure of Sentence.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-13-1.1. Wh-NP.md",
-    "_posts/English/1. Overview/2026-04-01-Dimensions of Meaning.md",
-    "_posts/English/3. Lexical Meaning/2026-04-03-Lexical Category.md",
-    "_posts/English/4. Compositional Meaning/2026-05-05-Clause-Like Interpretation.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-2.4. Bare Infinitival Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-2.5. Gerund-Participial Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-3.3. Dummy Element.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-10-3.2. Raised Subject.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-10-2.6. Past-Participial Clause.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-10-1.2. Predicative Complement.md",
-    "MyNotes/Experiments.md",
+    "_posts/English/5. Contextually-Licensed Meaning/2026-04-12-Discourse markers.md",
+    "_posts/English/5. Contextually-Licensed Meaning/2026-04-04-Schema.md",
+    "_posts/English/5. Contextually-Licensed Meaning/2026-04-04-Pragmatic meaning.md",
+    "_posts/English/4. Compositional Meaning/Common nouns.md",
+    "_posts/English/4. Compositional Meaning/2026-05-05-Clause-like interpretation.md",
+    "_posts/English/4. Compositional Meaning/2026-04-21-to-infinitival clause.md",
+    "_posts/English/4. Compositional Meaning/2026-04-21-Supplement.md",
     "_posts/English/4. Compositional Meaning/2026-04-13-of PP.md",
+    "_posts/English/4. Compositional Meaning/2026-04-06-Semantic types of sentences.md",
+    "_posts/English/4. Compositional Meaning/2026-04-05-Idiomatic expressions.md",
+    "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary verb.md",
+    "_posts/English/4. Compositional Meaning/2026-04-03-Perfect aspect.md",
+    "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
+    "_posts/English/3. Lexical Meaning/2026-04-25-Lexemes.md",
+    "_posts/English/3. Lexical Meaning/2026-04-22-Tier 2 words.md",
+    "_posts/English/1. Overview/2026-04-01-The meaning of a sentence.md",
+    "_posts/English/2. Grammatical Meaning/2026-05-08-1.6. Complementation in VPs.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-27-2.1. Interrogative content clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-13-1.1. Wh-NP.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-11-2.2. Hollow clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-10-3.2. Raised subject.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-10-2.6. Past-participial clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-10-1.3. Supplement.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-10-1.2. Predicative complement.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-08-2.7. To-infinitival clause.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-07-3.4. Extraposition.md",
     "MyNotes/dictionary",
     "assets/images/IMG_0332.jpeg",
     "_posts/English/6. Writing",
