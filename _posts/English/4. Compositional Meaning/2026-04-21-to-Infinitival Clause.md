@@ -7,7 +7,6 @@ categories:
   - 4. Compositional Meaning
 ---
 
-## 1. Complement
 1. purpose
 > She studied hard to pass the exam
 
@@ -23,6 +22,5 @@ categories:
 4. evidence
 >He must be crazy to behave like that.
 
-## 2. Supplement
-1. condition
+5. condition
 > To hear them talk, you would think they are old friends.
