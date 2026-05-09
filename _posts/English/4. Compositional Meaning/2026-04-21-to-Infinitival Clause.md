@@ -1,6 +1,6 @@
 ---
 layout: post
-title: to-Infinitival Clause
+title: To-infinitival clause
 date: 2026-04-21 15:42:54 +0900
 categories:
   - English
@@ -8,21 +8,21 @@ categories:
 ---
 
 ## 1. Complement
-1. Purpose
+1. purpose
 > She studied hard to pass the exam
 
 
-2. Result
+2. result
 > The boy grew up to be a famous singer.<br>
 > We will not be around to find out whether we were wrong.
 
-3. Stimuli
+3. stimuli
 >I'm pleased to see you again.<br>
 >She smiled to see such a beautiful sight.
 
-4. Evidence
+4. evidence
 >He must be crazy to behave like that.
 
 ## 2. Supplement
-1. Condition
+1. condition
 > To hear them talk, you would think they are old friends.
