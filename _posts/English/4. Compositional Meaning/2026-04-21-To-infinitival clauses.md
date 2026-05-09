@@ -1,6 +1,6 @@
 ---
 layout: post
-title: To-infinitival clause
+title: To-infinitival clauses
 date: 2026-04-21 15:42:54 +0900
 categories:
   - English

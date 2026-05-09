@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Supplement
+title: Supplements
 date: 2026-04-21 17:30:49 +0900
 categories:
   - English
