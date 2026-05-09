@@ -29,7 +29,7 @@ $A\subset B\wedge B\subset C \rightarrow A\subset C\ (transitive)$
 
 $$\forall A\,\forall p\,\exists B \,\forall x\,(x\in B\leftrightarrow x\in A\wedge \varphi (x,p)),$$
 
-denoted by $B=\{x\in A:\varphi(x,p)\}.$
+denoted by $B=\lbrace x\in A:\varphi(x,p)\rbrace.$
 given set이 있어야 carve out하여 new one을 만들 수 있다.
 <br><br>
 
@@ -37,11 +37,11 @@ given set이 있어야 carve out하여 new one을 만들 수 있다.
 
 $$\forall a\,\forall b\,\exists B\,\forall x\,(x\in B\leftrightarrow \varphi(x,a,b)) \text{ where } \varphi(x,a,b):x=a\lor x=b,$$
 
-denoted by $B=\{a,b\}$; the set is called the *unordered pair*.
+denoted by $B=\lbrace a,b\rbrace$; the set is called the *unordered pair*.
 We may refer to the axiom as a pseudo-special cases of axiom of specification in the sense that if there were a universe, then the axiom would follow as a special case. 
 <br><br>
 
-**5.2. Notation.** 앞으로 이런 generating axiom들이 추가될 예정이므로 이쯤에서 새 notation을 도입하자: If $\varphi(x,p)$ is a condition such that $x$'s that $\varphi(x,p)$ specifies constitute a set, then we denote that set by $\{x:\varphi(x,p)\}.$
+**5.2. Notation.** 앞으로 이런 generating axiom들이 추가될 예정이므로 이쯤에서 새 notation을 도입하자: If $\varphi(x,p)$ is a condition such that $x$'s that $\varphi(x,p)$ specifies constitute a set, then we denote that set by $\lbrace x:\varphi(x,p)\rbrace.$
 <br><br>
 
 **6.1. Axiom of Unions.** $\forall A\,\exists B\,\forall x\,(x\in B\rightarrow \exists y\,(y\in A\wedge x\in y)).$ There exists a comprehensive set. And, applying axiom of specification, we get 
@@ -51,10 +51,10 @@ $$\forall A\,\exists B\,\forall x\,(x\in B\leftrightarrow \exists y\,(y\in A\wed
 denoted by $B=\bigcup A$; *the union of* $A$.
 <br><br>
 
-**6.2. Notation.** We introduce special notation for a pair: $X\cup Y=\bigcup\{X,Y\}$. It follows that $X\cup Y=\{x:x\in X\lor x\in Y\}$ by general definition. 
+**6.2. Notation.** We introduce special notation for a pair: $X\cup Y=\bigcup\lbrace X,Y\rbrace$. It follows that $X\cup Y=\lbrace x:x\in X\lor x\in Y\rbrace$ by general definition. 
 <br><br>
 
-**6.3. Definition.** Now we can generalize pairs: $\{a,b,c\}=\{a\}\cup \{b\}\cup \{c\}, \text{etc.}$ 
+**6.3. Definition.** Now we can generalize pairs: $\lbrace a,b,c\rbrace =\lbrace a\rbrace \cup \lbrace b\rbrace \cup \lbrace c\rbrace , \text{etc.}$ 
 
 > **Proving Strategy**<br>
 > Goal: To explicate that a sentence is trivial. <br>
@@ -65,7 +65,7 @@ denoted by $B=\bigcup A$; *the union of* $A$.
 
 **7.1. Definition of Complement.** *Relative complement* of $B$ in $A$ is the set $A-B$ defined by 
 
-$$A-B=\{x\in A:x\notin B\}.$$
+$$A-B=\lbrace x\in A:x\notin B\rbrace.$$
 
 Dealing with sets which are subsets of $E$, we can define *absolute complement*. Often used symbol for absolute complement of $A$ is $A'$. 
 <br><br>
