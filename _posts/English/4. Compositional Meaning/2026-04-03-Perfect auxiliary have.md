@@ -7,6 +7,8 @@ categories:
   - 4. Compositional Meaning
 ---
 
+Perfect auxiliary have는 complement로 past-participial clause를 license한다.
+
 ## 1. Plain form
 $(UT \subset TT) \land (ET < TT)$: topic time은 현재, **event time은 과거**.<br>
 
