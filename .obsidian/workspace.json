@@ -8,6 +8,34 @@
         "type": "tabs",
         "children": [
           {
+            "id": "0744fac8a3049a50",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/English/2. Grammatical Meaning/2026-05-12-3.5. Conditional.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "2026-05-12-3.5. Conditional"
+            }
+          },
+          {
+            "id": "7950bb08524423ae",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/English/4. Compositional Meaning/2026-04-03-Perfect auxiliary have.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "2026-04-03-Perfect auxiliary have"
+            }
+          },
+          {
             "id": "fba9fc305e3b57ff",
             "type": "leaf",
             "state": {
@@ -19,20 +47,6 @@
               },
               "icon": "lucide-file",
               "title": "2026-04-25-Lexemes"
-            }
-          },
-          {
-            "id": "7950bb08524423ae",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_posts/English/4. Compositional Meaning/2026-04-21-in-PP.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "2026-04-21-in-PP"
             }
           },
           {
@@ -226,11 +240,17 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "fba9fc305e3b57ff",
+  "active": "0744fac8a3049a50",
   "lastOpenFiles": [
-    "_posts/English/2. Grammatical Meaning/2026-04-08-2.7. To-infinitival clauses.md",
-    "_posts/English/4. Compositional Meaning/2026-04-21-in-PP.md",
     "_posts/English/3. Lexical Meaning/2026-04-25-Lexemes.md",
+    "_posts/English/2. Grammatical Meaning/2026-05-12-3.5. Conditional.md",
+    "_posts/English/4. Compositional Meaning/2026-04-05-Modal auxiliaries.md",
+    "_posts/English/4. Compositional Meaning/2026-04-03-Perfect auxiliary have.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-07-2. Clauses.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-03-1. The structure of a sentence.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-03-3.1. Tenses and aspects.md",
+    "_posts/English/4. Compositional Meaning/2026-04-21-in-PP.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-08-2.7. To-infinitival clauses.md",
     "_posts/Mathematics/1. Set Theory/2026-04-03-Naive set theory.md",
     "_posts/Mathematics/Note.md",
     "_posts/English/2. Grammatical Meaning/2026-04-02-1.4. Preposition phrases.md",
@@ -242,18 +262,12 @@
     "_posts/English/2. Grammatical Meaning/2026-04-07-2.5. Gerund-participial clauses.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-3.3. Dummy elements.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-2.3. Relative clauses.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-1. The structure of a sentence.md",
     "_posts/English/2. Grammatical Meaning/2026-04-02-1.5. Modifiers.md",
     "_posts/English/4. Compositional Meaning/2026-04-21-Supplements.md",
     "_posts/English/4. Compositional Meaning/2026-04-13-of PP.md",
     "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
-    "_posts/English/4. Compositional Meaning/2026-04-03-Perfect aspect.md",
-    "_posts/English/4. Compositional Meaning/2026-04-05-Auxiliary verbs.md",
     "_posts/English/4. Compositional Meaning/2026-04-05-Idiomatic expressions.md",
     "_posts/English/4. Compositional Meaning/2026-04-06-Semantic types of sentences.md",
-    "_posts/English/4. Compositional Meaning/2026-05-05-Clause-like interpretation.md",
-    "_posts/English/4. Compositional Meaning/2026-04-21-To-infinitival clauses.md",
-    "_posts/English/2. Grammatical Meaning/2026-05-08-1.6. Complementation in VPs.md",
     "MyNotes/dictionary",
     "assets/images/IMG_0332.jpeg",
     "_posts/English/6. Writing",

@@ -1,14 +1,14 @@
 ---
 layout: post
-title: Perfect aspect
+title: Perfect auxiliary have
 date: 2026-04-03 16:13:37 +0900
 categories:
   - English
   - 4. Compositional Meaning
 ---
 
-## 1. Present perfect
-**event time은 과거**, topic time은 현재.<br>
+## 1. Plain form
+topic time은 현재, **event time은 과거**.<br>
 
 core message: 
 1. 과거 event의 importance of the present. e.g., He has broken his leg.
@@ -17,5 +17,5 @@ core message:
 4. 과거 event가 현재 바로 직전에 발생. e.g., I have just finished my homework.
 5. 과거에 수차례 반복. e.g., We have visited him several times.
 
-## 2. Past perfect
-**event time은 대과거**, topic time은 과거.<br>
+## 2. Preterite
+topic time은 과거, **event time은 대과거**.<br>
