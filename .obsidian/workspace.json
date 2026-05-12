@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-08-2.7. To-infinitival clauses.md",
+                "file": "_posts/English/3. Lexical Meaning/2026-04-25-Lexemes.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-08-2.7. To-infinitival clauses"
+              "title": "2026-04-25-Lexemes"
+            }
+          },
+          {
+            "id": "7950bb08524423ae",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/English/4. Compositional Meaning/2026-04-21-in-PP.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "2026-04-21-in-PP"
             }
           },
           {
@@ -36,20 +50,6 @@
             }
           },
           {
-            "id": "7950bb08524423ae",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_posts/English/3. Lexical Meaning/2026-04-25-Lexemes.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "2026-04-25-Lexemes"
-            }
-          },
-          {
             "id": "1182e67e69b5d65b",
             "type": "leaf",
             "state": {
@@ -63,8 +63,7 @@
               "title": "Note"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -227,13 +226,14 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "1182e67e69b5d65b",
+  "active": "fba9fc305e3b57ff",
   "lastOpenFiles": [
+    "_posts/English/2. Grammatical Meaning/2026-04-08-2.7. To-infinitival clauses.md",
+    "_posts/English/4. Compositional Meaning/2026-04-21-in-PP.md",
     "_posts/English/3. Lexical Meaning/2026-04-25-Lexemes.md",
     "_posts/Mathematics/1. Set Theory/2026-04-03-Naive set theory.md",
     "_posts/Mathematics/Note.md",
     "_posts/English/2. Grammatical Meaning/2026-04-02-1.4. Preposition phrases.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-08-2.7. To-infinitival clauses.md",
     "_posts/English/2. Grammatical Meaning/2026-05-09-1.7. Common nouns.md",
     "_posts/English/2. Grammatical Meaning/2026-04-27-2.1. Interrogative content clauses.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-1.3. Supplements.md",
@@ -245,7 +245,6 @@
     "_posts/English/2. Grammatical Meaning/2026-04-03-1. The structure of a sentence.md",
     "_posts/English/2. Grammatical Meaning/2026-04-02-1.5. Modifiers.md",
     "_posts/English/4. Compositional Meaning/2026-04-21-Supplements.md",
-    "_posts/English/4. Compositional Meaning/2026-04-21-in-PP.md",
     "_posts/English/4. Compositional Meaning/2026-04-13-of PP.md",
     "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
     "_posts/English/4. Compositional Meaning/2026-04-03-Perfect aspect.md",
