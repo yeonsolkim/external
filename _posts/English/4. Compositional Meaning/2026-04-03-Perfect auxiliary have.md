@@ -8,7 +8,7 @@ categories:
 ---
 
 ## 1. Plain form
-topic time은 현재, **event time은 과거**.<br>
+$(UT \subset TT) \land (ET < TT)$: topic time은 현재, **event time은 과거**.<br>
 
 core message: 
 1. 과거 event의 importance of the present. e.g., He has broken his leg.
@@ -18,4 +18,4 @@ core message:
 5. 과거에 수차례 반복. e.g., We have visited him several times.
 
 ## 2. Preterite
-topic time은 과거, **event time은 대과거**.<br>
+$ET < TT < UT$: topic time은 과거, **event time은 대과거**.<br>
