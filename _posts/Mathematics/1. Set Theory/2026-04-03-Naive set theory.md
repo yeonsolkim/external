@@ -7,7 +7,7 @@ categories: ["Mathematics", "1. Set Theory"]
 
 수학적으로 set이 어떤 개념인지 파악해보자. 
 
-**1. Axiom of Extension.**
+**1. Axiom of extension.**
 
 $$\forall x\,(x\in A\leftrightarrow x\in B)\leftrightarrow A=B$$
 
@@ -25,28 +25,28 @@ $$A\subset B \leftrightarrow \forall x\,(x\in A \rightarrow x\in B).$$
 $A\subset B\wedge B\subset C \rightarrow A\subset C\ (transitive)$
 <br><br>
 
-**4. Axiom of Specification.**
+**4. Axiom of specification.**
 
 $$\forall A\,\forall p\,\exists B \,\forall x\,(x\in B\leftrightarrow x\in A\wedge \varphi (x,p)),$$
 
 denoted by $B=\lbrace x\in A:\varphi(x,p)\rbrace.$
-given set이 있어야 carve out하여 new one을 만들 수 있다.
-<br><br>
+given set이 있어야 carve out하여 new one을 만들 수 있다.<br>
+<br>
 
-**5.1. Axiom of Pairing.**
+**5.1. Axiom of pairing.**
 
 $$\forall a\,\forall b\,\exists B\,\forall x\,(x\in B\leftrightarrow \varphi(x,a,b)) \text{ where } \varphi(x,a,b):x=a\lor x=b,$$
 
 denoted by $B=\lbrace a,b\rbrace$; the set is called the *unordered pair*.
-We may refer to the axiom as a pseudo-special cases of axiom of specification in the sense that if there were a universe, then the axiom would follow as a special case. 
+We may refer to the axiom as a pseudo-special case of axiom of specification in the sense that if there were a universe, then the axiom would follow as a special case. <br>
+<br>
+
+**5.2. Notation.** 앞으로 이런 generating axiom들이 추가될 예정이므로 이쯤에서 새 notation을 도입하자: If $\varphi(x,p)$ is a condition such that $x$s that $\varphi(x,p)$ specifies constitute a set, then we denote that set by $\lbrace x:\varphi(x,p)\rbrace.$
 <br><br>
 
-**5.2. Notation.** 앞으로 이런 generating axiom들이 추가될 예정이므로 이쯤에서 새 notation을 도입하자: If $\varphi(x,p)$ is a condition such that $x$'s that $\varphi(x,p)$ specifies constitute a set, then we denote that set by $\lbrace x:\varphi(x,p)\rbrace.$
-<br><br>
+**6.1. Axiom of unions.** $\forall A\,\exists B\,\forall x\,( \exists y\,(y\in A\wedge x\in y)\rightarrow x\in B).$ There exists a comprehensive set. And, applying axiom of specification, we get 
 
-**6.1. Axiom of Unions.** $\forall A\,\exists B\,\forall x\,(x\in B\rightarrow \exists y\,(y\in A\wedge x\in y)).$ There exists a comprehensive set. And, applying axiom of specification, we get 
-
-$$\forall A\,\exists B\,\forall x\,(x\in B\leftrightarrow \exists y\,(y\in A\wedge x\in y)),$$
+$$\forall A\,\exists B\,\forall x\,( \exists y\,(y\in A\wedge x\in y)\leftrightarrow x\in B),$$
 
 denoted by $B=\bigcup A$; *the union of* $A$.
 <br><br>
@@ -56,20 +56,27 @@ denoted by $B=\bigcup A$; *the union of* $A$.
 
 **6.3. Definition.** Now we can generalize pairs: $\lbrace a,b,c\rbrace =\lbrace a\rbrace \cup \lbrace b\rbrace \cup \lbrace c\rbrace , \text{etc.}$ 
 
-> **Proving Strategy**<br>
+> **Proving strategy**<br>
 > Goal: To explicate that a sentence is trivial. <br>
 > Strategy 1: If a sentence has disjunction, then split into the cases.
 
 
 <br>
 
-**7.1. Definition of Complement.** *Relative complement* of $B$ in $A$ is the set $A-B$ defined by 
+**7.1. Definition of complement.** *Relative complement* of $B$ in $A$ is the set $A-B$ defined by 
 
 $$A-B=\lbrace x\in A:x\notin B\rbrace.$$
 
 Dealing with sets which are subsets of $E$, we can define *absolute complement*. Often used symbol for absolute complement of $A$ is $A'$. 
 <br><br>
 
-**7.2. Theorem(*De Morgan Laws*).** Basically, they are about unions and intersections: 
+**7.2. Theorem(*De Morgan laws*).** Basically, they are about unions and intersections: 
 
-$$(A\cup B)'=A'\cap B',\ (A\cap B)'=A'\cup B'.$$
+$$(A\cup B)'=A'\cap B',\ (A\cap B)'=A'\cup B'.$$<br>
+<br>
+
+**8. Axiom of powers.** $\forall E\, \exists \mathcal{P}\, \forall x\, (x\subset E\rightarrow x\in \mathcal{P})$. And, applying axiom of specification, we get 
+
+$$\forall E\, \exists \mathcal{P}\, \forall x\, (x\subset E\leftrightarrow x\in \mathcal{P}).$$
+
+The set $\mathcal{P}$ is called the *power set* of $E$; the dependence of $\mathcal{P}$ on $E$ is denoted by $\mathcal{P}(E)$. 

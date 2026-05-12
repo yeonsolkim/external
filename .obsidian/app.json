@@ -10,5 +10,6 @@
   "showIndentGuide": false,
   "livePreview": false,
   "defaultViewMode": "preview",
-  "autoPairMarkdown": false
+  "autoPairMarkdown": false,
+  "autoPairBrackets": false
 }
