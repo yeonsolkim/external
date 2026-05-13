@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/4. Compositional Meaning/2026-04-05-Modal auxiliaries.md",
+                "file": "_posts/English/4. Compositional Meaning/2026-04-21-In-PP.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-05-Modal auxiliaries"
+              "title": "2026-04-21-In-PP"
             }
           },
           {
@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/3. Lexical Meaning/2026-04-25-Lexemes.md",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-03-1. The structure of a sentence.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-25-Lexemes"
+              "title": "2026-04-03-1. The structure of a sentence"
             }
           },
           {
@@ -77,7 +77,8 @@
               "title": "Note"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -240,20 +241,27 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "0744fac8a3049a50",
+  "active": "7950bb08524423ae",
   "lastOpenFiles": [
-    "_posts/English/2. Grammatical Meaning/2026-05-12-3.5. Conditional.md",
-    "_posts/English/4. Compositional Meaning/2026-04-05-Modal auxiliaries.md",
-    "_posts/English/2. Grammatical Meaning/2026-05-13-Pro-VP.md",
-    "_posts/English/4. Compositional Meaning/2026-04-13-Of PP.md",
+    "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
+    "_posts/English/4. Compositional Meaning/2026-05-05-Clause-like interpretation.md",
     "_posts/English/4. Compositional Meaning/2026-04-21-In-PP.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-13-3.6. Fused relative.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-02-1.4. Preposition phrases.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-07-2.5. Gerund-participial clauses.md",
+    "MyNotes/Experiments.md",
     "_posts/English/3. Lexical Meaning/2026-04-25-Lexemes.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-13-3.6. Fused relative.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-03-1. The structure of a sentence.md",
+    "_posts/English/4. Compositional Meaning/2026-04-05-Modal auxiliaries.md",
+    "_posts/English/4. Compositional Meaning/2026-04-05-Idiomatic expressions.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-27-2.1. Interrogative content clauses.md",
+    "_posts/English/2. Grammatical Meaning/2026-05-13-3.7. Pro-VP.md",
+    "_posts/English/2. Grammatical Meaning/2026-05-12-3.5. Conditional.md",
+    "_posts/English/4. Compositional Meaning/2026-04-13-Of PP.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-2.3. Relative clauses.md",
     "_posts/English/2. Grammatical Meaning/2026-04-11-2.2. Hollow clauses.md",
     "_posts/English/2. Grammatical Meaning/2026-04-03-3.1. Tenses and aspects.md",
     "_posts/English/1. Overview/2026-04-01-The meaning of a sentence.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-1. The structure of a sentence.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2. Clauses.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2.4. Bare infinitival clauses.md",
     "_posts/English/2. Grammatical Meaning/2026-05-08-1.1. Complementation in VPs.md",
@@ -261,15 +269,9 @@
     "_site/english/2. grammatical meaning/2026/04/13/3.6.-Fused-relative.html",
     "_site/english/2. grammatical meaning/2026/04/13/1.1.-Fused-relative.html",
     "_posts/English/2. Grammatical Meaning/2026-05-09-1.7. Common nouns.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-27-2.1. Interrogative content clauses.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-3.2. Raised subjects.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-2.6. Past-participial clauses.md",
     "_posts/English/2. Grammatical Meaning/2026-04-10-1.3. Supplements.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-10-1.2. Predicative complements.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-08-2.7. To-infinitival clauses.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-3.4. Extraposition.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-3.3. Dummy elements.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-07-2.5. Gerund-participial clauses.md",
     "_site/MyNotes/2026/05/09/1.7.-Common-nouns.html",
     "_site/MyNotes/2026/05/09",
     "_site/MyNotes/2026/05",
@@ -277,7 +279,6 @@
     "_site/english/2. grammatical meaning/2026/05/12/3.5.-Conditional.html",
     "_site/english/2. grammatical meaning/2026/05/08/1.6.-Complementation-in-VPs.html",
     "_site/english/2. grammatical meaning/2026/05/12",
-    "_site/PET.md",
     "assets/images/IMG_0332.jpeg",
     "_site/assets/images/banner.jpg",
     "_site/assets/images/IMG_0332.jpeg",

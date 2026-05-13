@@ -27,7 +27,7 @@ categories:
 2. conjecture
 3. **circumstantial possibility**
 
-### 3. must, have to
+### 3. must, have 
 1. duty: 어떤 주체가 해야할 의무
 2. **necessity**
 3. strong conjecture
@@ -52,7 +52,7 @@ categories:
 >5. He will be a doctor.
 
 
-### 5. should, ought to
+### 5. should, ought
 1. duty
 2. **expectation**: normality와 상식을 기반으로 한 일반적 expectation
 

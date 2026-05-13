@@ -17,11 +17,11 @@ V가 가능한 minimum에 대해 "degree > minimum"
 V가 가능한 minimum에 대해 "degree $\gg$ minimum"
 
 ## Control, inhibition, inevitability
-#### 1. cannot help + gerund-participial clause, cannot but + bare-infinitival clause
+#### 1. cannot help gerund-participial clause, cannot but bare-infinitival clause
 low control, failed inhibition, inevitability
-#### 2. be bound + to-infinitival clause
+#### 2. be bound to-infinitival clause
 situational inevitability
-#### 3. burst out + gerund-participial clause
+#### 3. burst out gerund-participial clause
 failed inhibition
 
 
