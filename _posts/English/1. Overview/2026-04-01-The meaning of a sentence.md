@@ -6,7 +6,6 @@ categories:
   - English
   - 1. Overview
 ---
-
 ## 1. Encoded meaning
 encoded meaning은 an expression에 코드화되어 있는 의미이다. 
 
