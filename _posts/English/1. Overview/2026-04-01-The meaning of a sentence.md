@@ -12,10 +12,8 @@ encoded meaning은 an expression에 코드화되어 있는 의미이다.
 
 1. **Lexical meaning**<br>
 lexical meaning은 a lexeme이 문장에 들어가기 전에도 기본적으로 갖고 있는 의미이다. 
-
 2. **Grammatical meaning**<br>
 grammatical meaning은 문법적으로, 즉, 형태 변화, 기능어, 통사 구조 등을 통해 표현되는 의미이다.   
-
 3. **Compositional meaning**<br>
 compositional meaning은 a lexical meaning과 a grammatical meaning를 기반으로 형성되는 문장 차원의 언어적 의미이다. 이것은 encoded meaning 차원의 최종 산출물이라고 볼 수 있다.
 

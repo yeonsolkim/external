@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2026-05-13T10:10:18+09:00</updated><id>http://localhost:4000/blog/feed.xml</id><subtitle>Mathematics and Physics</subtitle><author><name>YeonsolKim</name></author><entry><title type="html">3.5. Conditional</title><link href="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/05/12/3.5.-Conditional.html" rel="alternate" type="text/html" title="3.5. Conditional" /><published>2026-05-12T15:40:58+09:00</published><updated>2026-05-12T15:40:58+09:00</updated><id>http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/05/12/3.5.%20Conditional</id><content type="html" xml:base="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/05/12/3.5.-Conditional.html"><![CDATA[<h3 id="1-open-conditional">1. Open conditional</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2026-05-13T10:55:15+09:00</updated><id>http://localhost:4000/blog/feed.xml</id><subtitle>Mathematics and Physics</subtitle><author><name>YeonsolKim</name></author><entry><title type="html">3.5. Conditional</title><link href="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/05/12/3.5.-Conditional.html" rel="alternate" type="text/html" title="3.5. Conditional" /><published>2026-05-12T15:40:58+09:00</published><updated>2026-05-12T15:40:58+09:00</updated><id>http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/05/12/3.5.%20Conditional</id><content type="html" xml:base="http://localhost:4000/blog/english/2.%20grammatical%20meaning/2026/05/12/3.5.-Conditional.html"><![CDATA[<h3 id="1-open-conditional">1. Open conditional</h3>
 <p>조건 충족 여부가 열려있는 conditional.</p>
 <blockquote>
   <p>Examples.<br />
@@ -94,14 +94,14 @@ examples.</p>
           <li>head: to put</li>
           <li>direct object: oneself</li>
           <li>adjunct: back</li>
-          <li>object-oriented predicative complement(pp): in the position of what it was like in 1900 to be a mathematician
+          <li>object-oriented predicative complement(PP): in the position of what it was like in 1900 to be a mathematician
             <ul>
               <li>head: in</li>
-              <li>complement(np): the position of what it was like in 1900 to be a mathematician
+              <li>complement(NP): the position of what it was like in 1900 to be a mathematician
                 <ul>
                   <li>determiner: the</li>
                   <li>head: position</li>
-                  <li>complement(pp): of what it was like in 1900 to be a mathematician
+                  <li>complement(PP): of what it was like in 1900 to be a mathematician
                     <ul>
                       <li>head: of</li>
                       <li>complement(interrogative content clause): it was like what in 1900 to be a mathematician
@@ -110,7 +110,7 @@ examples.</p>
                           <li>predicate: was like what in 1900 to be a mathematician
                             <ul>
                               <li>head: was</li>
-                              <li>complement(pp): like what in 1900 to be a mathematician
+                              <li>complement(PP): like what in 1900 to be a mathematician
                                 <ul>
                                   <li>head: like</li>
                                   <li>complement(to-infinitival clause): what in 1900 to be a mathematician
@@ -148,7 +148,7 @@ examples.</p>
           <li>predicate: wrote what books
             <ul>
               <li>head: wrote</li>
-              <li>object(np): what books
+              <li>object(NP): what books
                 <ul>
                   <li>determiner(interrogative determinative): what</li>
                   <li>head: books</li>
@@ -200,7 +200,7 @@ examples.</p>
       </li>
     </ul>
   </li>
-</ul>]]></content><author><name>YeonsolKim</name></author><category term="English" /><category term="2. Grammatical Meaning" /><summary type="html"><![CDATA[to put oneself back in the position of [what it was like in 1900 to be a mathematician] (to-infinitival clause) predicand: i predicate head: to put direct object: oneself adjunct: back object-oriented predicative complement(pp): in the position of what it was like in 1900 to be a mathematician head: in complement(np): the position of what it was like in 1900 to be a mathematician determiner: the head: position complement(pp): of what it was like in 1900 to be a mathematician head: of complement(interrogative content clause): it was like what in 1900 to be a mathematician subject: it predicate: was like what in 1900 to be a mathematician head: was complement(pp): like what in 1900 to be a mathematician head: like complement(to-infinitival clause): what in 1900 to be a mathematician subject(interrogative pronoun): what predicate: in 1900 to be a mathematician]]></summary></entry><entry><title type="html">Lexemes</title><link href="http://localhost:4000/blog/english/3.%20lexical%20meaning/2026/04/25/Lexemes.html" rel="alternate" type="text/html" title="Lexemes" /><published>2026-04-25T12:00:38+09:00</published><updated>2026-04-25T12:00:38+09:00</updated><id>http://localhost:4000/blog/english/3.%20lexical%20meaning/2026/04/25/Lexemes</id><content type="html" xml:base="http://localhost:4000/blog/english/3.%20lexical%20meaning/2026/04/25/Lexemes.html"><![CDATA[<p><b>determine</b><sup>2</sup>: ascertain exactly, as a result of research or calculation<br />
+</ul>]]></content><author><name>YeonsolKim</name></author><category term="English" /><category term="2. Grammatical Meaning" /><summary type="html"><![CDATA[to put oneself back in the position of [what it was like in 1900 to be a mathematician] (to-infinitival clause) predicand: i predicate head: to put direct object: oneself adjunct: back object-oriented predicative complement(PP): in the position of what it was like in 1900 to be a mathematician head: in complement(NP): the position of what it was like in 1900 to be a mathematician determiner: the head: position complement(PP): of what it was like in 1900 to be a mathematician head: of complement(interrogative content clause): it was like what in 1900 to be a mathematician subject: it predicate: was like what in 1900 to be a mathematician head: was complement(PP): like what in 1900 to be a mathematician head: like complement(to-infinitival clause): what in 1900 to be a mathematician subject(interrogative pronoun): what predicate: in 1900 to be a mathematician]]></summary></entry><entry><title type="html">Lexemes</title><link href="http://localhost:4000/blog/english/3.%20lexical%20meaning/2026/04/25/Lexemes.html" rel="alternate" type="text/html" title="Lexemes" /><published>2026-04-25T12:00:38+09:00</published><updated>2026-04-25T12:00:38+09:00</updated><id>http://localhost:4000/blog/english/3.%20lexical%20meaning/2026/04/25/Lexemes</id><content type="html" xml:base="http://localhost:4000/blog/english/3.%20lexical%20meaning/2026/04/25/Lexemes.html"><![CDATA[<p><b>determine</b><sup>2</sup>: ascertain exactly, as a result of research or calculation<br />
 <b>examine</b>: inspect “in detail”; investigate “thoroughly”<br />
 <b>investigate</b>: carry out a systematic inquiry “to discover the facts of an incident”<br />
 <b>research</b>: study carefully to discover information or knowledge about it<br />
