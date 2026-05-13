@@ -172,8 +172,8 @@
   <main id="content" class="main-content" role="main">
     <article class="main-content">
 
-  <nav style="margin-bottom: 25px;">
-    <a href="/blog/" style="text-decoration: none; color: blue; font-size: 0.9rem; font-weight: 300;">← Table of Contents</a>
+  <nav style="margin-bottom: 33px;">
+    <a href="/blog/" style="text-decoration: none; color: #666; font-size: 0.9rem; font-weight: 350;">← Back</a>
   </nav>
 
 
@@ -187,7 +187,7 @@
     <p style="color: #666; margin-top: 0; margin-bottom: 50px; font-weight: lighter; font-size: 0.8rem; ">April 10, 2026</p>
   </header>
 
-  <hr>
+  <hr style="margin-bottom: 25px;">
 
   <div class="post-body">
     <p>clause의 VP가 그 subject에 해당하는 constituent에 의미역을 주지 않을 때 raising이 일어났다고 보고, 그 constituent를 raised subject라고 한다. appear, seem, begin 같은 일부 lexical verb와 대부분의 auxiliary verb는 transparent verb이다.</p>
@@ -274,7 +274,11 @@
     margin-top: 2.5rem;
     margin-bottom: 0 rem;
   }
-  
+
+  .post-body h1:first-child, 
+  .post-body h2:first-child, 
+  .post-body h3:first-child { margin-top: 0 !important;}
+
   .post-body ul {
     list-style-type: disc !important; 
     padding-left: 2rem;
