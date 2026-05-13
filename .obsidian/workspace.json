@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/4. Compositional Meaning/2026-04-03-Perfect auxiliary have.md",
+                "file": "_posts/English/2. Grammatical Meaning/2026-04-03-3.1. Tenses and aspects.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-03-Perfect auxiliary have"
+              "title": "2026-04-03-3.1. Tenses and aspects"
             }
           },
           {
@@ -77,7 +77,8 @@
               "title": "Note"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -240,11 +241,24 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "0744fac8a3049a50",
+  "active": "7950bb08524423ae",
   "lastOpenFiles": [
+    "_site/MyNotes/2026/05/09/1.7.-Common-nouns.html",
+    "_site/MyNotes/2026/05/09",
+    "_site/MyNotes/2026/05",
+    "_site/MyNotes/2026",
+    "_site/english/2. grammatical meaning/2026/05/12/3.5.-Conditional.html",
+    "_site/english/2. grammatical meaning/2026/05/08/1.6.-Complementation-in-VPs.html",
+    "_site/english/2. grammatical meaning/2026/05/12",
+    "_site/english/2. grammatical meaning/2026/05/08",
+    "_site/english/2. grammatical meaning/2026/05",
+    "_site/english/4. compositional meaning/2026/05/05/Clause-like-interpretation.html",
+    "_site/english/4. compositional meaning/2026/05/05",
+    "_site/PET.md",
+    "_site/MyNotes/Experiments.md",
     "_posts/English/4. Compositional Meaning/2026-04-03-Perfect auxiliary have.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-3.1. Tenses and aspects.md",
     "_posts/English/2. Grammatical Meaning/2026-05-12-3.5. Conditional.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-03-3.1. Tenses and aspects.md",
     "_posts/English/4. Compositional Meaning/2026-04-05-Modal auxiliaries.md",
     "_posts/English/3. Lexical Meaning/2026-04-25-Lexemes.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2. Clauses.md",
@@ -265,20 +279,7 @@
     "_posts/English/2. Grammatical Meaning/2026-04-02-1.5. Modifiers.md",
     "_posts/English/4. Compositional Meaning/2026-04-21-Supplements.md",
     "_posts/English/4. Compositional Meaning/2026-04-13-of PP.md",
-    "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
-    "_posts/English/4. Compositional Meaning/2026-04-05-Idiomatic expressions.md",
-    "_posts/English/4. Compositional Meaning/2026-04-06-Semantic types of sentences.md",
-    "MyNotes/dictionary",
     "assets/images/IMG_0332.jpeg",
-    "_posts/English/6. Writing",
-    "_site/english/3. lexical meaning/2026/04/22/Lexical-Meaning.html",
-    "_site/english/3. lexical meaning/2026/04/22",
-    "_site/english/4. compositional meaning/2026/04/21/to-Infinitival-Clause.html",
-    "_site/english/4. compositional meaning/2026/04/21/in-PP.html",
-    "_site/english/4. compositional meaning/2026/04/21/Supplement.html",
-    "_site/english/4. compositional meaning/2026/04/21",
-    "_site/english/4. compositional meaning/2026/04/13/of-PP.html",
-    "_site/english/4. compositional meaning/2026/04/13/Inanimate-Subject.html",
     "_site/assets/images/banner.jpg",
     "_site/assets/images/IMG_0332.jpeg",
     "assets/images/banner.jpg",
