@@ -1,0 +1,54 @@
+---
+layout: post
+title: Dummy elements
+date: 2026-04-07 11:59:18 +0900
+category_path:
+  - English
+  - II. Grammatical Meaning
+  - 5. Information Packaging & Special Structures
+---
+
+## 1. Dummy subjects
+어떤 subject에 대응하는 referent가 없을 때, 이를 dummy subject라고 한다.<br>
+**It's 7 o'clock.**<br>
+
+**It's snowing.**
+
+## 2. Characteristic structures accompanying a dummy-it
+### 2.1. extraposition
+basic counterpart에서 matrix subject를 뒤로 보내면서 syntactic requirement를 충족시키기 위한 it. 
+**It's good to get up early.**
+* subject: it
+* predicate(vp): is good to get up early
+  * head(auxiliary verb): is
+  * predicative complement(adjp): good to get up early
+    * head(adj): good
+    * complement(to-infinitival clause): to get up early
+      * predicand: we
+      * predicate: get up early
+
+
+> Simplification: is / good / to get up early.
+
+
+**It should be obvious that cetaceans are mammals.**
+* subject: it
+* predicate
+  * head: should
+  * complement(bare infinitival clause): be obvious that cetaceans are mammals
+    * predicand: that cetaceans are mammals
+    * predicate: be obvious that cetaceans are mammals
+      * head: be
+      * complement(adjp): obvious that cetaceans are mammals
+        * head: obvious 
+        * complement(finite clause): that cetaceans are mammals
+          * subject: cetaceans
+          * predicate: are mammals
+
+
+> Simplification: should [ ~ be obvious] / [that cetaceans / are / mammals].
+
+
+
+### 2.2. it-cleft
+**It was Ann who introduced Bob to Cal.**

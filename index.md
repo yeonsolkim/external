@@ -6,61 +6,75 @@ title: Abstraction
 {% assign parent_categories = "English,Mathematics,Physics" | split: "," %}
 
 {% for parent in parent_categories %}
-  <section style="margin-bottom: 40px;">
-    <h2 style="color: #000; padding-bottom: 9px; border-bottom: 2px solid #eee;">
-      {{ parent }}
+  <section class="category-section">
+    <h2 class="category-root">
+      {{ parent | escape }}
     </h2>
 
-    
-    {% assign sub_cats = "" | split: "" %}
-    {% for post in site.posts %}
-      {% if post.categories contains parent %}
-        {% assign current_sub = post.categories[1] | default: "General" %}
-        {% unless sub_cats contains current_sub %}
-          {% assign sub_cats = sub_cats | push: current_sub %}
-        {% endunless %}
-      {% endif %}
-    {% endfor %}
-    
-    {% assign sub_cats = sub_cats | sort %}
-
-    {% for sub in sub_cats %}
-      <div style="margin-left: 10px; margin-top: 20px;">
-        <h3 style="color: #222222; font-size: 1.1rem; padding-left: 12px; margin-bottom: 15px;">
-          {{ sub }}
-        </h3>
-        
-        <ul class="custom-list">
-         {% assign sorted_posts = site.posts | sort: "title" %}
-
-          {% for post in sorted_posts %}
-           {% assign p_sub = post.categories[1] | default: "General" %}
-            {% if post.categories[0] == parent and p_sub == sub %}
-              <li>
-                <a href="{{ site.baseurl }}{{ post.url }}" class="post-link">
-                {{ post.title }}
-                </a>
-              </li>
-            {% endif %}
-           {% endfor %}
-        </ul>
-      </div>
-    {% endfor %}
+    {% include category_tree.html posts=site.posts path=parent depth=1 %}
   </section>
 {% endfor %}
 
 <style>
-  h2 { font-size: 1.8rem !important; }
-  .custom-list { list-style-type: disc !important; padding-left: 10px; margin-left: 20px; }
-  .custom-list li::marker { color: #00000000; font-size: 0.7em; }
-  .custom-list li { margin-bottom: 10px; }
-  .custom-list li a:hover { text-decoration: underline; }
-  .post-link {
-    text-decoration: none !important; 
-    color: #414141d3 !important; 
-    transition: color 0.2s ease;
+  .category-section {
+    margin-bottom: 48px;
   }
-  .post-link:hover { 
-    text-decoration: underline !important; 
+
+  .category-root {
+    color: #000 !important;
+    font-size: 1.8rem !important;
+    padding-bottom: 9px;
+    border-bottom: 2px solid #c5c5c57b;
+  }
+
+  .category-heading {
+    margin-top: 18px;
+    color: #222 !important ;
+    font-weight: 500;
+  }
+
+  .category-heading.depth-1 {
+    margin-top: 40px;
+    font-size: 1.3rem;
+  }
+
+  .category-section > .category-block.depth-1:first-of-type .category-heading.depth-1 {
+    margin-top: 0;
+  }
+
+
+  .category-heading.depth-2 {
+    font-size: 1.1rem;
+  }
+
+  .category-heading.depth-3,
+  .category-heading.depth-4,
+  .category-heading.depth-5,
+  .category-heading.depth-6 {
+    display: inline-block;
+    font-size: 1.1rem;
+  }
+
+  .post-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: -10px !important ;
+    margin-bottom: 12px;
+    margin-left: 22px;
+  }
+
+  .post-list li {
+    margin-bottom: 8px;
+  }
+
+  .post-link {
+    text-decoration: none !important;
+    color: blue !important;
+    transition: color 0.2s ease;
+    font-size: 0.95rem; 
+  }
+
+  .post-link:hover {
+    text-decoration: underline !important;
   }
 </style>
