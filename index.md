@@ -25,7 +25,7 @@ title: Abstraction
     {% assign sub_cats = sub_cats | sort %}
 
     {% for sub in sub_cats %}
-      <div style="margin-left: 20px; margin-top: 20px;">
+      <div style="margin-left: 10px; margin-top: 20px;">
         <h3 style="color: #222222; font-size: 1.1rem; padding-left: 12px; margin-bottom: 15px;">
           {{ sub }}
         </h3>
@@ -51,17 +51,16 @@ title: Abstraction
 
 <style>
   h2 { font-size: 1.8rem !important; }
-  .custom-list { list-style-type: disc !important; padding-left: 20px; margin-left: 20px; }
+  .custom-list { list-style-type: disc !important; padding-left: 10px; margin-left: 20px; }
   .custom-list li::marker { color: #00000000; font-size: 0.7em; }
   .custom-list li { margin-bottom: 10px; }
-  .custom-list li a:hover { text-decoration: underline; color: #000 !important; }
+  .custom-list li a:hover { text-decoration: underline; }
   .post-link {
     text-decoration: none !important; 
-    color: #666 !important; 
+    color: Blue !important; 
     transition: color 0.2s ease;
   }
   .post-link:hover { 
     text-decoration: underline !important; 
-    color: #000 !important; 
   }
 </style>
