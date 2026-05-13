@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 3.3. Dummy elements
+title: Dummy elements
 date: 2026-04-07 11:59:18 +0900
 categories:
   - English

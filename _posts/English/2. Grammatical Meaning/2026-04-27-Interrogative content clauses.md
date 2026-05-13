@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2.1. Interrogative content clauses
+title: Interrogative content clauses
 date: 2026-04-27 14:19:31 +0900
 categories:
   - English

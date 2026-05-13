@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 1.4. Preposition phrases
+title: Preposition phrases
 date: 2026-04-02 00:00:00 +0900
 categories:
   - English

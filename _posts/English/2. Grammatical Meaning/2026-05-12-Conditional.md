@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 3.5. Conditional
+title: Conditional
 date: 2026-05-12 15:40:58 +0900
 categories:
   - English

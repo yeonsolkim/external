@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 1. The structure of a sentence
+title: The structure of a sentence
 date: 2026-04-03 13:41:56 +0900
 categories:
   - English

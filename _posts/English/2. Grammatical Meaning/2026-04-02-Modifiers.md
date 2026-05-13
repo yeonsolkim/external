@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 1.5. Modifiers
+title: Modifiers
 date: 2026-04-02 17:41:50 +0900
 categories:
   - English

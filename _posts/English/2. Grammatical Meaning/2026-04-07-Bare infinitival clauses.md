@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2.4. Bare infinitival clauses
+title: Bare infinitival clauses
 date: 2026-04-07 17:02:31 +0900
 categories:
   - English

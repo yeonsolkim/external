@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 1.7. Common nouns
+title: Common nouns
 date: 2026-05-09 10:31:25 +0900
 categories:
   - MyNotes
