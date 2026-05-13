@@ -25,11 +25,9 @@ contextually-licensed meaning은 the discourse 안의 맥락에 의해 형성되
 
 ## 3. Personally enriched meaning
 personally enriched meaning은 the discourse 밖의 요소에 의해 형성되는 의미이다. 독자의 기억, 정서, 배경지식 등이 그것의 요소에 해당한다.<br>
-<br>
 
 
 ---
-
 ## The structural summary
 1. Sentence Level: Lexical Meanings + Grammatical Meanings → Compositional Meanings 
 2. Discourse Level: + Contextually-Licensed Meanings

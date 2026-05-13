@@ -172,19 +172,19 @@
   <main id="content" class="main-content" role="main">
     <article class="main-content">
 
-  <nav style="margin-bottom: 33px;">
+  <nav style="margin-bottom: 27px;">
     <a href="/blog/" style="text-decoration: none; color: #666; font-size: 0.9rem; font-weight: 350;">← Back</a>
   </nav>
 
 
   <header style="text-align: center;">
-    <h1 style="margin-top: 0 !important; margin-bottom: 1.9rem; color:#000000cc">2.3. Relative clauses</h1>
+    <h1 style="margin-top: 0 !important; margin-bottom: 1.6rem; color:#000000cc">2.3. Relative clauses</h1>
     <div style="display: flex; align-items: center; justify-content: center;">
     <img src="https://github.com/yeonsolkim.png" alt="yeonsolkim" 
          style="width: 35px; height: 35px; border-radius: 50%;">
     </div>
     <span style="font-weight:300; color: #4c4c4c; font-size: 1rem;">Yeonsol Kim</span>
-    <p style="color: #666; margin-top: 0; margin-bottom: 50px; font-weight: lighter; font-size: 0.8rem; ">April 03, 2026</p>
+    <p style="color: #666; margin-top: 0; margin-bottom: 36px; font-weight: lighter; font-size: 0.8rem; ">April 03, 2026</p>
   </header>
 
   <hr style="margin-bottom: 25px;">
@@ -289,7 +289,21 @@
 
   .post-body h1:first-child, 
   .post-body h2:first-child, 
-  .post-body h3:first-child { margin-top: 0 !important;}
+  .post-body h3:first-child { 
+    margin-top: 0 !important;
+  }
+
+  .post-body h2 + h3 {
+    margin-top: 0 !important;
+  }
+
+  .post-body hr + h2 {
+    margin-top: 1.5rem !important;
+  }
+
+  .post-body hr {
+    margin-top: 3.5rem !important;
+  }
 
   .post-body ul {
     list-style-type: disc !important; 
