@@ -58,7 +58,6 @@ title: Abstraction
   .post-link {
     text-decoration: none !important; 
     color: #666 !important; 
-    font-weight: 500;
     transition: color 0.2s ease;
   }
   .post-link:hover { 
