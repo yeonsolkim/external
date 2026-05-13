@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2.5. Gerund-participial clauses
+title: Gerund-participial clauses
 date: 2026-04-07 17:01:42 +0900
 categories:
   - English

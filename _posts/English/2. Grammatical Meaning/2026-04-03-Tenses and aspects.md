@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 3.1. Tenses and aspects
+title: Tenses and aspects
 date: 2026-04-03 16:35:00 +0900
 categories:
   - English

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 1.1. Complementation in VPs
+title: Complementation in VPs
 date: 2026-05-08 14:41:13 +0900
 categories:
   - English

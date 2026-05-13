@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 3.6. Fused relative
+title: Fused relative
 date: 2026-04-13 10:51:37 +0900
 categories:
   - English
