@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/4. Compositional Meaning/2026-04-21-In-PP.md",
+                "file": "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-21-In-PP"
+              "title": "2026-04-03-Other PPs"
             }
           },
           {
@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/2. Grammatical Meaning/2026-04-03-1. The structure of a sentence.md",
+                "file": "_posts/English/3. Lexical Meaning/2026-04-25-Lexemes.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-03-1. The structure of a sentence"
+              "title": "2026-04-25-Lexemes"
             }
           },
           {
@@ -78,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -241,17 +241,17 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "7950bb08524423ae",
+  "active": "fba9fc305e3b57ff",
   "lastOpenFiles": [
     "_posts/English/4. Compositional Meaning/2026-04-03-Other PPs.md",
-    "_posts/English/4. Compositional Meaning/2026-05-05-Clause-like interpretation.md",
+    "_posts/English/3. Lexical Meaning/2026-04-25-Lexemes.md",
+    "_posts/English/2. Grammatical Meaning/2026-04-03-1. The structure of a sentence.md",
     "_posts/English/4. Compositional Meaning/2026-04-21-In-PP.md",
+    "_posts/English/4. Compositional Meaning/2026-05-05-Clause-like interpretation.md",
     "_posts/English/2. Grammatical Meaning/2026-04-02-1.4. Preposition phrases.md",
     "_posts/English/2. Grammatical Meaning/2026-04-07-2.5. Gerund-participial clauses.md",
     "MyNotes/Experiments.md",
-    "_posts/English/3. Lexical Meaning/2026-04-25-Lexemes.md",
     "_posts/English/2. Grammatical Meaning/2026-04-13-3.6. Fused relative.md",
-    "_posts/English/2. Grammatical Meaning/2026-04-03-1. The structure of a sentence.md",
     "_posts/English/4. Compositional Meaning/2026-04-05-Modal auxiliaries.md",
     "_posts/English/4. Compositional Meaning/2026-04-05-Idiomatic expressions.md",
     "_posts/English/2. Grammatical Meaning/2026-04-27-2.1. Interrogative content clauses.md",
