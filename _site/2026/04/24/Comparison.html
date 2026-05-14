@@ -112,10 +112,6 @@
         line-height: 1.55 !important;
         padding: 1.5rem 1.2rem !important;
       }
-
-      h1 { font-size: 1.7rem !important; }
-      h2 { font-size: 1.25rem !important; }
-      h3 { font-size: 1.12rem !important; }
     }
   </style>
 
@@ -251,7 +247,6 @@
   .main-content {
     width: 100% !important;
     box-sizing: border-box !important;
-    max-width: 65rem !important; 
     padding: 2rem 4rem;
     margin: 0 auto;
     word-wrap: break-word;
@@ -269,6 +264,7 @@
     margin-top: 2.5rem;
     margin-bottom: 0 rem;
   }
+  .post-body { max-width: none !important ;}
 
   .post-body h1:first-child, 
   .post-body h2:first-child, 
@@ -364,9 +360,31 @@
     content: none; 
   }
 
-  .site-footer {
-    max-width: 784px;   
-    margin: 0 auto;     
+  main.main-content > article.main-content {
+  max-width: none !important;
+  }
+
+  main.main-content {
+    max-width: 57.5rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 2rem 4rem !important;
+  }
+
+  main.main-content > article.main-content {
+    max-width: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .post-body {
+    max-width: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   
 </style>
