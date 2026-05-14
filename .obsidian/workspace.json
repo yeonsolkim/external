@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/IV. Compositional Meaning/2026-04-05-Idiomatic expressions.md",
+                "file": "_posts/English/II. Grammatical Meaning/5. Information Packaging & Special Structures/2026-04-10-Raised subjects.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-05-Idiomatic expressions"
+              "title": "2026-04-10-Raised subjects"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/English/IV. Compositional Meaning/2026-04-03-Other PPs.md",
+                "file": "_posts/English/II. Grammatical Meaning/2. VP & Predication/2026-05-08-2. Complementation in VPs.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-04-03-Other PPs"
+              "title": "2026-05-08-2. Complementation in VPs"
             }
           },
           {
@@ -77,8 +77,7 @@
               "title": "Note"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -228,10 +227,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "_posts/English/III. Lexical Meaning/2026-04-25-Lexemes.md"
+                "file": "_posts/English/II. Grammatical Meaning/5. Information Packaging & Special Structures/2026-04-10-Raised subjects.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for 2026-04-25-Lexemes"
+              "title": "File properties for 2026-04-10-Raised subjects"
             }
           }
         ],
@@ -254,16 +253,24 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "fba9fc305e3b57ff",
+  "active": "0744fac8a3049a50",
   "lastOpenFiles": [
-    "_posts/English/IV. Compositional Meaning/2026-04-21-Non-finite clauses.md",
+    "_posts/English/II. Grammatical Meaning/5. Information Packaging & Special Structures/2026-04-07-Extraposition.md",
+    "_posts/English/II. Grammatical Meaning/5. Information Packaging & Special Structures/2026-04-10-Raised subjects.md",
+    "_posts/English/II. Grammatical Meaning/2. VP & Predication/2026-05-08-2. Complementation in VPs.md",
+    "_posts/English/II. Grammatical Meaning/2. VP & Predication/2026-04-03-1. Tenses and aspects.md",
+    "_posts/English/II. Grammatical Meaning/2. VP & Predication/2026-05-13-4. Pro-VP.md",
+    "_posts/English/II. Grammatical Meaning/2. VP & Predication/2026-04-10-3. Predicative complements.md",
+    "_posts/English/IV. Compositional Meaning/2026-04-05-Idiomatic expressions.md",
+    "_posts/English/II. Grammatical Meaning/1. Foundations/2026-05-09-6. Common nouns.md",
+    "_posts/English/IV. Compositional Meaning/2026-04-03-Other PPs.md",
     "_posts/English/III. Lexical Meaning/2026-04-25-Lexemes.md",
+    "_posts/English/IV. Compositional Meaning/2026-04-21-Non-finite clauses.md",
     "_posts/English/II. Grammatical Meaning/1. Foundations/2026-04-02-3. Preposition phrases.md",
     "_posts/English/II. Grammatical Meaning/1. Foundations/2026-04-02-4. Modifiers.md",
     "_posts/English/II. Grammatical Meaning/1. Foundations/2026-04-03-1. The structure of a sentence.md",
     "_posts/English/II. Grammatical Meaning/1. Foundations/2026-04-07-2. Clauses.md",
     "_posts/English/II. Grammatical Meaning/1. Foundations/2026-04-10-5. Supplements.md",
-    "_posts/English/II. Grammatical Meaning/1. Foundations/2026-05-09-6. Common nouns.md",
     "_site/index.html",
     "_site/index.md",
     "_site/github_pages_fixed_v4/index.html",
@@ -284,14 +291,6 @@
     "_site/MyNotes/Q&A.md",
     "_site/MyNotes/Markdown.md",
     "_site/MyNotes/Experiments.md",
-    "_posts/English/I. Overview/2026-04-01-The meaning of a sentence.md",
-    "_site/templates/2Jekyll-Post.md",
-    "_posts/English/VI. Writing/2026-04-24-Comparison.md",
-    "_posts/English/V. Contextually-Licensed Meaning/2026-04-12-Discourse markers.md",
-    "_posts/English/V. Contextually-Licensed Meaning/2026-04-04-Schema.md",
-    "_posts/English/V. Contextually-Licensed Meaning/2026-04-04-Pragmatic meaning.md",
-    "_posts/English/IV. Compositional Meaning/2026-05-05-Clause-like interpretation.md",
-    "_posts/English/IV. Compositional Meaning/2026-04-21-Supplements.md",
     "assets/images/IMG_0332.jpeg",
     "_site/assets/images/banner.jpg",
     "_site/assets/images/IMG_0332.jpeg",
