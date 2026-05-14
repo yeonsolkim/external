@@ -1,12 +1,13 @@
 ---
 layout: post
-title: Transparent verbs
+title: Raised subjects
 date: 2026-04-10 21:30:53 +0900
 category_path:
   - English
   - II. Grammatical Meaning
-  - 2. VP & Predication
+  - 5. Information Packaging & Special Structures
 ---
+
 
 
 Clause의 VP가 그 subject에 해당하는 constituent에 의미역을 주지 않을 때 raising이 일어났다고 보며, 그 constituent를 raised subject라고 한다. Appear, seem, begin 같은 일부 lexical verbs는 transparent verbs이다. 
