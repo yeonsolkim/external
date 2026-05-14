@@ -24,7 +24,7 @@ title: Abstraction
     color: #000 !important;
     font-size: 1.8rem !important;
     padding-bottom: 9px;
-    border-bottom: 2px solid #c5c5c57b;
+    border-bottom: 0.6px solid #959595;
   }
 
   .category-heading {
