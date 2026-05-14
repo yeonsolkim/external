@@ -35,16 +35,20 @@ title: Abstraction
 
   .category-heading.depth-1 {
     margin-top: 40px;
-    font-size: 1.3rem;
+    font-size: 1.3rem !important;
   }
 
   .category-section > .category-block.depth-1:first-of-type .category-heading.depth-1 {
     margin-top: 0;
   }
 
+  .category-block.depth-1 > .category-block.depth-2:first-of-type > .category-heading.depth-2 {
+    margin-top: -0.7rem !important;
+  }
 
   .category-heading.depth-2 {
-    font-size: 1.1rem;
+    margin-left: 22px;
+    margin-top: 15px;
   }
 
   .category-heading.depth-3,
