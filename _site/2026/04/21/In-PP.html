@@ -102,7 +102,7 @@
       flex-wrap: wrap;
     }
     
-    @media screen and (max-width: 64rem) {
+    @media screen and (max-width: 1024px) {
       html {
         font-size: 16px !important;
       }
@@ -110,9 +110,16 @@
       .main-content {
         font-size: 1rem !important;
         line-height: 1.55 !important;
-        padding: 1.5rem 2.5rem !important;
+        padding: 1.5rem 4rem !important;
       }
     }
+
+    @media (max-width: 767px) {
+      .main-content {
+        padding: 1.5rem 1rem !important;
+      }
+    }
+
   </style>
 
   <style>

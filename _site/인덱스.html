@@ -39,13 +39,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Mathematics and Physics" />
 <meta property="og:description" content="Mathematics and Physics" />
-<link rel="canonical" href="http://localhost:4000/blog/github_pages_fixed_v4/" />
-<meta property="og:url" content="http://localhost:4000/blog/github_pages_fixed_v4/" />
+<link rel="canonical" href="http://localhost:4000/blog/%EC%9D%B8%EB%8D%B1%EC%8A%A4.html" />
+<meta property="og:url" content="http://localhost:4000/blog/%EC%9D%B8%EB%8D%B1%EC%8A%A4.html" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Abstraction" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"YeonsolKim"},"description":"Mathematics and Physics","headline":"Abstraction","url":"http://localhost:4000/blog/github_pages_fixed_v4/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"YeonsolKim"},"description":"Mathematics and Physics","headline":"Abstraction","url":"http://localhost:4000/blog/%EC%9D%B8%EB%8D%B1%EC%8A%A4.html"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/blog/assets/css/style.css">
@@ -363,52 +363,42 @@
   }
 
   .category-root {
-    color: #000;
+    color: #000 !important;
     font-size: 1.8rem !important;
+    font-style: bold;
     padding-bottom: 9px;
-    border-bottom: 2px solid #eee;
-  }
-
-  .category-block {
-    margin-top: 18px;
-  }
-
-  .category-block.depth-1 {
-    margin-left: 10px;
-  }
-
-  .category-block.depth-2 {
-    margin-left: 22px;
-  }
-
-  .category-block.depth-3 {
-    margin-left: 34px;
-  }
-
-  .category-block.depth-4,
-  .category-block.depth-5,
-  .category-block.depth-6 {
-    margin-left: 42px;
+    border-bottom: 0.6px solid #959595;
   }
 
   .category-heading {
     margin-top: 18px;
-    margin-bottom: 10px;
-    color: #222;
+    color: #222 !important ;
     font-weight: 500;
   }
 
   .category-heading.depth-1 {
-    font-size: 1.1rem;
-    padding-left: 12px;
-    border-left: 3px solid #ddd;
+    margin-top: 30px;
+    font-size: 1.3rem !important;
+  }
+
+  .category-section > .category-block.depth-1:first-of-type .category-heading.depth-1 {
+    margin-top: 0;
+  }
+
+  .category-block.depth-1 > .category-block.depth-2:first-of-type > .category-heading.depth-2 {
+    margin-top: -20px !important;
+  }
+
+  .category-block.depth-2,
+  .category-block.depth-3,
+  .category-block.depth-4,
+  .category-block.depth-5 {
+    margin-left: 22px;
   }
 
   .category-heading.depth-2 {
-    font-size: 0.95rem;
-    color: #555;
-    padding-left: 10px;
-    border-left: 2px solid #eee;
+    font-size: 1rem;
+    margin-top: -10px;
   }
 
   .category-heading.depth-3,
@@ -416,43 +406,28 @@
   .category-heading.depth-5,
   .category-heading.depth-6 {
     display: inline-block;
-    font-size: 0.85rem;
-    color: #666;
-    background: #f6f6f6;
-    border-radius: 6px;
-    padding: 3px 8px;
+    font-size: 1rem;
+    margin-left: 22px;
   }
 
   .post-list {
     list-style-type: none;
     padding-left: 0;
-    margin-top: 8px;
+    margin-top: -17px !important ;
     margin-bottom: 12px;
-  }
-
-  .post-list.depth-1 {
-    margin-left: 24px;
-  }
-
-  .post-list.depth-2 {
-    margin-left: 32px;
-  }
-
-  .post-list.depth-3,
-  .post-list.depth-4,
-  .post-list.depth-5,
-  .post-list.depth-6 {
-    margin-left: 38px;
+    margin-left: 22px;
   }
 
   .post-list li {
     margin-bottom: 8px;
+    margin-top: -0.5rem !important ;
   }
 
   .post-link {
     text-decoration: none !important;
-    color: #414141d3 !important;
+    color: blue !important;
     transition: color 0.2s ease;
+    font-size: 1rem; 
   }
 
   .post-link:hover {
