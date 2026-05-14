@@ -1,6 +1,6 @@
 ---
 layout: post
-title: To-infinitival clauses
+title: Non-finite clauses
 date: 2026-04-21 15:42:54 +0900
 category_path:
   - English
@@ -9,7 +9,8 @@ category_path:
 
 
 1. purpose
-> She studied hard to pass the exam
+> She studied hard to pass the exam.<br>
+> I will go [get dressed].
 
 
 2. result
