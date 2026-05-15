@@ -69,15 +69,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/Mathematics/Note.md",
+                "file": "_posts/MyNotes/Inanimate Subject.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Note"
+              "title": "Inanimate Subject"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -227,10 +228,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "_posts/English/IV. Compositional Meaning/2026-04-13-Of-PP.md"
+                "file": "_posts/MyNotes/Inanimate Subject.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for 2026-04-13-Of-PP"
+              "title": "File properties for Inanimate Subject"
             }
           }
         ],
@@ -253,8 +254,24 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "0744fac8a3049a50",
+  "active": "1182e67e69b5d65b",
   "lastOpenFiles": [
+    "_posts/MyNotes/Force-Dynamics Role Labeling.md",
+    "_posts/MyNotes/Inanimate Subject.md",
+    "_posts/MyNotes/Past-Participial Form.md",
+    "_posts/MyNotes/Complement In VP.md",
+    "_site/2026/04/11/Complement-In-VP.html",
+    "_site/2026/04/10/Past-Participial-Form.html",
+    "_posts/Mathematics/Note.md",
+    "_site/english/4. compositional meaning/2026/05/05/Inanimate-Subject.html",
+    "_site/english/4. compositional meaning/2026/04/13/Inanimate-Subject.html",
+    "_site/english/4. compositional meaning/2026/04/11/Complement-In-VP.html",
+    "_site/english/4. compositional meaning/2026/04/10/Past-Participial-Form.html",
+    "_site/english/4. compositional meaning/2026/05/05",
+    "_site/english/4. compositional meaning/2026/04/13",
+    "_site/english/4. compositional meaning/2026/04/11",
+    "_site/english/4. compositional meaning/2026/04/10",
+    "_posts/English/IV. Compositional Meaning/2026-04-13-Of-PP.md",
     "_posts/English/IV. Compositional Meaning/2026-04-03-Perfect auxiliary have.md",
     "_posts/English/IV. Compositional Meaning/2026-04-05-Idiomatic expressions.md",
     "_posts/English/IV. Compositional Meaning/2026-04-05-Modal auxiliaries.md",
@@ -263,18 +280,8 @@
     "_posts/English/II. Grammatical Meaning/3. Nonfinite Clauses/2026-04-10-4. Past-participial clauses.md",
     "_posts/English/II. Grammatical Meaning/3. Nonfinite Clauses/2026-04-08-1. To-infinitival clauses.md",
     "_posts/English/IV. Compositional Meaning/2026-04-06-Semantic types of sentences.md",
-    "_site/2index.html",
     "index.md",
     "2index.md",
-    "2index.html",
-    "_site/assets/js/knowledge-map.js",
-    "_site/assets/js",
-    "_site/assets/css/knowledge-map.css",
-    "assets/js/knowledge-map.js",
-    "assets/css/knowledge-map.css",
-    "index.html",
-    "assets/js",
-    "assets/css",
     "_site/index.md",
     "인덱스.md",
     "_posts/English/II. Grammatical Meaning/5. Information Packaging & Special Structures/2026-04-10-Raised subjects.md",
@@ -285,12 +292,6 @@
     "_posts/English/II. Grammatical Meaning/2. VP & Predication/2026-04-10-3. Predicative complements.md",
     "_posts/English/II. Grammatical Meaning/1. Foundations/2026-05-09-6. Common nouns.md",
     "_posts/English/IV. Compositional Meaning/2026-04-03-Other PPs.md",
-    "_posts/English/III. Lexical Meaning/2026-04-25-Lexemes.md",
-    "_posts/English/IV. Compositional Meaning/2026-04-21-Non-finite clauses.md",
-    "_posts/English/II. Grammatical Meaning/1. Foundations/2026-04-02-3. Preposition phrases.md",
-    "_posts/English/II. Grammatical Meaning/1. Foundations/2026-04-02-4. Modifiers.md",
-    "_posts/English/II. Grammatical Meaning/1. Foundations/2026-04-03-1. The structure of a sentence.md",
-    "_posts/English/II. Grammatical Meaning/1. Foundations/2026-04-07-2. Clauses.md",
     "assets/images/IMG_0332.jpeg",
     "_site/assets/images/banner.jpg",
     "_site/assets/images/IMG_0332.jpeg",
