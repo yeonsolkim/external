@@ -30,6 +30,6 @@ interrogative clauses 중에서 semantically하게 questions를 정의하자.
 >Examples.
 >1. closed question
 >   * polar question
->     * positive: Did I tell you Tomo was leaving? 
->     * negative: Didn't I tell you Tomo was leaving? 
->   * alternative question: Is the meeting  today, tomorrow, or Friday?
+>       * positive: Did I tell you Tomo was leaving? 
+>       * negative: Didn't I tell you Tomo was leaving? 
+>    * alternative question: Is the meeting  today, tomorrow, or Friday?
