@@ -14,6 +14,7 @@ category_path:
    * lexical verb만 있는 경우 dummy auxiliary를 도입하고 subject–auxiliary inversion.
 1. open interrogative clause
    * interrogative phrase가 non-subject라면 fronting이 일어나고, 이로 인해 subject–auxiliary inversion까지 발생한다.
+
 >Examples.
 >1. closed interrogative clause
 >2. open interrogative clause<br>
