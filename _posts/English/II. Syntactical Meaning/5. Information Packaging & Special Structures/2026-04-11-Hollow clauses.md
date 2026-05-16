@@ -4,7 +4,7 @@ title: Hollow clauses
 date: 2026-04-11 16:38:17 +0900
 category_path:
   - English
-  - II. Grammatical Meaning
+  - II. Syntactical Meaning
   - 5. Information Packaging & Special Structures
 ---
 

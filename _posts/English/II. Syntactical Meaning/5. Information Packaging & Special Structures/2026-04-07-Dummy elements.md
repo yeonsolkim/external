@@ -4,7 +4,7 @@ title: Dummy elements
 date: 2026-04-07 11:59:18 +0900
 category_path:
   - English
-  - II. Grammatical Meaning
+  - II. Syntactical Meaning
   - 5. Information Packaging & Special Structures
 ---
 

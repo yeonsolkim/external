@@ -4,7 +4,7 @@ title: Raised subjects
 date: 2026-04-10 21:30:53 +0900
 category_path:
   - English
-  - II. Grammatical Meaning
+  - II. Syntactical Meaning
   - 5. Information Packaging & Special Structures
 ---
 
