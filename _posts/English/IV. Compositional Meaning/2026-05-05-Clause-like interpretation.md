@@ -32,7 +32,7 @@ examples.
    → She was angry at the decision.
 
 
-## 2. Predicative complements
+## 2. Object-oriented predicative complements
 examples.
 1. I found myself in an impenetrable morass<br>
    → myself was in an impenetrable morass.
