@@ -15,12 +15,6 @@ category_path:
 1. open interrogative clause
    * interrogative phrase가 non-subject라면 fronting이 일어나고, 이로 인해 subject–auxiliary inversion까지 발생한다.
 
->Examples.
->1. closed interrogative clause
->2. open interrogative clause<br>
->   subject: Who called the police?<br>
->   non-subject: Which one did they picked?
-
 ## 2. Questions
 interrogative clauses 중에서 semantically하게 questions를 정의하자. 
 1. closed question
@@ -39,14 +33,20 @@ interrogative clauses 중에서 semantically하게 questions를 정의하자.
         <li>
           polar question
           <ul>
-            <li>positive: Did I tell you Tomo was leaving?</li>
-            <li>negative: Didn't I tell you Tomo was leaving?</li>
+            <li>positive: "Did I tell you Tomo was leaving?"</li>
+            <li>negative: "Didn't I tell you Tomo was leaving?"</li>
           </ul>
         </li>
         <li>
-          alternative question: Is the meeting today, tomorrow, or Friday?
+          alternative question: "Is the meeting today, tomorrow, or Friday?"
         </li>
       </ul>
     </li>
-  </ol>
+	  <li>open question
+		  <ul>
+		  <li>subject: "Who called the police?"</li>
+		  <li>non-subject: "Which one did they pick?"</li>
+		  </ul>
+	</li>
+	</ol>
 </blockquote>
