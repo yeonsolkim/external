@@ -148,12 +148,13 @@ title: Abstraction
     counter-increment: line-counter;
     position: relative;
   }
-
+  
   ol > li::before {
     content: counter(line-counter) ".";
     position: absolute;
     font-weight:normal;
     left: -1.2rem;
+    color: #00000081; 
   }
 
   ol ul {
