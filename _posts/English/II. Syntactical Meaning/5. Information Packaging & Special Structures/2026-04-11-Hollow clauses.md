@@ -27,7 +27,7 @@ category_path:
         * direct object gap: book
 
 
-> Simplification: Here / is / a new book / for you to read.
+> Semantics: (Here) is ((a) (new) book) →  (for (you) to read)
 
 
 **These students are very difficult for us to teach.**
@@ -46,7 +46,7 @@ category_path:
         * direct object gap(np): these students
 
 
-> Simplification: These students / are / very difficult [for us to teach].
+> Semantics: (These students) are ((very) difficult) → (for (us) to teach)
 
 
 **Ed isn’t ready, but I am**

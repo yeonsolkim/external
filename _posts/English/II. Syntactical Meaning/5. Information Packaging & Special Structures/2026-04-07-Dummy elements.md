@@ -28,7 +28,7 @@ basic counterpart에서 matrix subject를 뒤로 보내면서 syntactic requirem
       * predicate: get up early
 
 
-> Simplification: is (good) / to get up (early).
+> Semantics: It is (good) (to get up (early))
 
 
 **It should be obvious that cetaceans are mammals.**
@@ -46,7 +46,7 @@ basic counterpart에서 matrix subject를 뒤로 보내면서 syntactic requirem
           * predicate: are mammals
 
 
-> Simplification: should be (obvious) / that cetaceans are mammals.
+> Semantics: It should be (obvious) (that (cetaceans) are (mammals))
 
 
 
