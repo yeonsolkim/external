@@ -26,13 +26,13 @@ title: Abstraction
     margin-bottom: 0 !important;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-bottom: 0.6px solid #d0d0d0;
+    border-bottom: 0.6px solid #c6c6c6;
   }
 
   .category-root {
     color: #000 !important;
     font-size: 1rem !important;
-    border-bottom-color: #6e6e6e;
+    border-bottom-color: #6e6e6e !important;
     font-weight: 600 !important;
   }
 
