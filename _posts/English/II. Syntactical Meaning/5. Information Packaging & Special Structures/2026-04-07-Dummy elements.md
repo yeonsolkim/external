@@ -15,8 +15,8 @@ category_path:
 **It's snowing.**
 
 ## 2. Characteristic structures accompanying a dummy-it
-### 2.1. extraposition
-basic counterpart에서 matrix subject를 뒤로 보내면서 syntactic requirement를 충족시키기 위한 it. 
+### 2.1. Extraposition
+basic counterpart에서 matrix subject를 뒤로 보내면서 syntactic requirement를 충족시키기 위한 it.<br>
 **It's good to get up early.**
 * subject: it
 * predicate(vp): is good to get up early
@@ -50,5 +50,6 @@ basic counterpart에서 matrix subject를 뒤로 보내면서 syntactic requirem
 
 
 
-### 2.2. it-cleft
-**It was Ann who introduced Bob to Cal.**
+### 2.2. It-cleft
+**It was she who introduced Bob to Cal.**
+> Semantics: It was (she) (who) → (introduced (Bob) (to Cal))
