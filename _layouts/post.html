@@ -34,13 +34,13 @@ title: Abstraction
     </p>
   </header>
 
-  <hr style="height: 0.4px; margin-bottom: 25px; background-color: #b7b7b7;">
+  <hr style="margin-bottom: 25px;">
 
   <div class="post-body">
     {{ content }}
   </div>
 
-  <hr style="margin-top: 50px; height: 0.4px; background-color: #b7b7b7;">
+  <hr style="margin-top: 50px;">
 
   <div id="comment-section">
     <script src="https://giscus.app/client.js"
@@ -111,8 +111,6 @@ title: Abstraction
   }
 
   .post-body hr {
-    height: 0.4px !important; 
-    background-color: #b7b7b7 !important;
     margin-top: 3.5rem !important;
   }
 
@@ -151,6 +149,11 @@ title: Abstraction
 </style>
 
 <style>
+  hr { 
+    border-top: 0.4px solid #b7b7b7ca !important;
+    background-color: #ffffff00 !important;
+  }
+  
   ol {
     list-style: none;
     margin-top: -0.5rem !important;
