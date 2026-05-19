@@ -10,14 +10,28 @@ title: Abstraction
   </nav>
 
 
+  {% assign clean_title = page.title %}
+
+  {% for i in (1..99) %}
+    {% assign prefix = i | append: ". " %}
+    {% assign clean_title = clean_title | remove_first: prefix %}
+  {% endfor %}
+
   <header style="text-align: center;">
-    <h1 style="margin-top: 0 !important; margin-bottom: 1.6rem; color:#000000cc">{{ page.title }}</h1>
+    <h1 style="margin-top: 0 !important; margin-bottom: 1.6rem; color:#000000cc">
+      {{ clean_title }}
+    </h1>
+
     <div style="display: flex; align-items: center; justify-content: center;">
-    <img src="https://github.com/yeonsolkim.png" alt="yeonsolkim" 
-         style="width: 35px; height: 35px; border-radius: 50%;">
+      <img src="https://github.com/yeonsolkim.png" alt="yeonsolkim" 
+          style="width: 35px; height: 35px; border-radius: 50%;">
     </div>
+
     <span style="font-weight:300; color: #4c4c4c; font-size: 1rem;">Yeonsol Kim</span>
-    <p style="color: #666; margin-top: 0; margin-bottom: 36px; font-weight: lighter; font-size: 0.8rem;">{{ page.date | date: "%B %d, %Y" }}</p>
+
+    <p style="color: #666; margin-top: 0; margin-bottom: 36px; font-weight: lighter; font-size: 0.8rem;">
+      {{ page.date | date: "%B %d, %Y" }}
+    </p>
   </header>
 
   <hr style="height: 0.4px; margin-bottom: 25px; background-color: #b7b7b7;">
@@ -148,7 +162,7 @@ title: Abstraction
     counter-increment: line-counter;
     position: relative;
   }
-  
+
   ol > li::before {
     content: counter(line-counter) ".";
     position: absolute;

@@ -16,7 +16,7 @@ category_path:
 
 ## 2. Characteristic structures accompanying a dummy-it
 ### 2.1. Extraposition
-basic counterpart에서 matrix subject를 뒤로 보내면서 syntactic requirement를 충족시키기 위한 it.<br>
+subject를 뒤로 보내면서 syntactic requirement를 충족시키기 위한 it.<br>
 **It's good to get up early.**
 * subject: it
 * predicate(vp): is good to get up early
