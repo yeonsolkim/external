@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Abstraction
+title: External hard drive
 ---
 
 {% assign parent_categories = "English,Mathematics,Physics" | split: "," %}

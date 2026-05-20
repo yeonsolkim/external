@@ -38,21 +38,32 @@
     hr { border: 1px !important;}
 
     .page-header {
-      background-color: {{ site.banner_color_start | default: "#000000" }} !important;
       background-image: linear-gradient(to bottom, 
         {{ site.banner_color_start | default: "#000000" }}, 
         {{ site.banner_color_end | default: "#ffffff" }}
       ) !important;
-      padding: 5rem 6rem !important;
-      text-align: center;
+      min-height: 0 !important;
+      padding: 0.8rem 1rem;
+      justify-content: center !important;
+      align-items: center !important;
+      display: flex;
+    }
+
+    .header-title-row {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      width: 792px !important;
     }
 
     .project-name, .project-tagline {
-      color: #ffffffd7 !important;
+      color: #ffffffd2 !important;
+      margin-right: 2rem;
+      text-align: left !important;
     }
 
-    .project-name { font-size: 2.6rem !important; margin-top: 0.8rem !important;}
-    .project-tagline { font-size: 1.1rem !important; margin-top: 0.8rem !important;}
+    .project-name { font-size: 1.5rem !important; }
+    .project-tagline { font-size: 1rem !important; }
 
     .main-content {
       max-width: 57.5rem !important;
@@ -60,31 +71,11 @@
       padding: 2rem 4rem;
       font-size: 1.05rem !important;
     }
-    h1 { font-size: 2.0rem !important; margin-bottom: 0rem; margin-top: 5rem !important;}
-    h2 { font-size: 1.2rem !important; margin-bottom: 0rem; margin-top: 3rem !important;}
-    h3 { font-size: 1.1rem !important; margin-bottom: 0rem; }
-
-    .page-header .btn {
-      color: #ffffffa2 !important;
-      border-color: rgba(255, 255, 255, 0.258) !important;
-      background-color: rgba(255, 255, 255, 0.1) !important;
-      transition: all 0.2s ease;
-      padding: 0.6rem 0.9rem !important;
-      font-size: 0.85rem !important;
-    }
-
-    .page-header .btn:hover {
-      background-color: rgba(255, 255, 255, 0.2) !important;
-      border-color: rgba(255, 255, 255, 0.6) !important;
-    }
-
-    .header-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+    .main-content h1 { font-size: 2.0rem !important; margin: 0 auto !important; }
+    .main-content h2 { font-size: 1.2rem !important; margin: 0 auto !important; }
+    .main-content h3 { font-size: 1.1rem !important; margin-bottom: 0rem; }
     
+
     @media screen and (max-width: 1024px) {
       html {
         font-size: 16px !important;
@@ -130,29 +121,14 @@
 <body>
 
   <section class="page-header">
-    <h1 class="project-name">{{ site.fixed_banner_title | default: site.title }}</h1>
-    <h2 class="project-tagline">{{ site.description }}</h2>
-    <div class="header-buttons">
-     <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
-     <a href="{{ '/feed.xml' | relative_url }}" class="btn">RSS Feed</a>
+    <div class="header-title-row">
+      <h1 class="project-name">{{ site.fixed_banner_title | default: site.title }}</h1>
+        <div class="header-links">
+          <a href="{{ site.baseurl }}/">Back</a>
+          <a href="{{ site.github_url }}">Go to GitHub</a><br>
+          <a href="{{ '/feed.xml' | relative_url }}">RSS Feed</a>
+        </div>
     </div>
-    <div id="busuanzi_container_site" style="display:none; margin-top: 15px; font-size: 0.85rem; color: rgba(255,255,255,0.7);">
-      <span>Total Views: </span>
-      <span id="busuanzi_value_site_pv" style="font-weight: bold;"></span>
-      <span style="margin: 0 8px; opacity: 0.5;">|</span>
-      <span>Visitors: </span>
-      <span id="busuanzi_value_site_uv" style="font-weight: bold;"></span>
-    </div>
-
-    <script>
-      var checkBusuanzi = setInterval(function() {
-        var pv = document.getElementById('busuanzi_value_site_pv');
-        if (pv && pv.innerText !== "") {
-          document.getElementById('busuanzi_container_site').style.display = 'block';
-          clearInterval(checkBusuanzi);
-        }
-      }, 500); 
-    </script>
   </section>
 
   <main id="content" class="main-content" role="main">
@@ -168,7 +144,10 @@
                   "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
                   "Helvetica Neue", Arial, sans-serif;
     }
+    .header-links a  {text-decoration: underline; color: #ffffff90; font-size: 0.9rem; font-weight: 350; }
 
+    .header-links { text-align: center; display: flex; gap: 1.5rem; }
+}
     .site-footer { 
       color: #575757c2 !important; 
       font-size: 0.9rem !important;
