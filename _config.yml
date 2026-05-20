@@ -3,8 +3,8 @@ baseurl: "/blog"
 description: "a backup for major data files"
 url: "https://YeonsolKim.github.io"
 fixed_banner_title: "External hard drive"
-banner_color_start: "#000000" 
-banner_color_end: "#878787" 
+banner_color_start: "#ffffff" 
+banner_color_end: "#ffffff" 
 author: YeonsolKim  
 github:
   is_project_page: true
