@@ -9,20 +9,20 @@ category_path:
 
 
 1. purpose
-> She studied hard to pass the exam.<br>
-> I will go [get dressed].
-
-
 2. result
-> The boy grew up to be a famous singer.<br>
-> We will not be around to find out whether we were wrong.
-
 3. stimuli
->I'm pleased to see you again.<br>
->She smiled to see such a beautiful sight.
-
 4. evidence
->He must be crazy to behave like that.
-
 5. condition
-> To hear them talk, you would think they are old friends.
+
+
+> Examples.
+> 1. She studied hard to pass the exam.<br>
+>    I will go [get dressed].
+> 2. The boy grew up to be a famous singer.<br>
+>    We will not be around to find out whether we were wrong.
+> 3. I'm pleased to see you again.<br>
+>    She smiled to see such a beautiful sight.
+> 4. He must be crazy to behave like that.
+> 5. To hear them talk, you would think they are old friends.
+
+
