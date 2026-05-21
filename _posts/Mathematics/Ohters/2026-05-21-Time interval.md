@@ -18,7 +18,11 @@ In everyday life, we would say "the meeting is one May 21, 2026." And when we wr
 
 ## 4. Approximated length
 Since we use approximated time, time intervals' lengths are bound to be approximated in consequence. We can calculate the elapsed time between to events like this: 
-$$\begin{align} \text{event}_1\in I_1, \text{event}_2\in I_2 \ \ \text{where their order is respectively } O_1, O_2 \\ \Leftrightarrow \text{the time elapsed}\in (O_2-O_1-1, O_2-O_1). \end{align}$$
+
+$$
+\begin{align} \text{event}_1\in I_1, \text{event}_2\in I_2 \ \ \text{where their order is respectively } O_1, O_2 \\ 
+\Rightarrow \text{the time elapsed}\in (O_2-O_1-1, O_2-O_1). \end{align}
+$$
 
 One way to explain this result is to think that a date also represents the start point of the time interval. 
 
