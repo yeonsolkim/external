@@ -4,7 +4,7 @@ title: Naive set theory
 date: 2026-04-03 00:00:00 +0900
 category_path:
   - Mathematics
-  - Set Theory
+  - I. Set Theory
 ---
 
 
