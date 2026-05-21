@@ -1,8 +1,8 @@
 remote_theme: pages-themes/cayman@v0.2.0
 baseurl: "/blog"
-description: "A backup for major data files"
+description: "A backup for some data files"
 url: "https://YeonsolKim.github.io"
-fixed_banner_title: "External"
+fixed_banner_title: "External Memory"
 banner_color_start: "#000000" 
 banner_color_end: "#878787" 
 author: YeonsolKim  
