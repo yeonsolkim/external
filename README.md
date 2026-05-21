@@ -1,2 +1,2 @@
-This is a space to record my learning. The subjects will primarily be mathematics and physics.
-[blog](https://yeonsolkim.github.io/blog/)
+This is an external hard drive; a backup for my major data files.<br>
+[Go to page](https://yeonsolkim.github.io/blog/)
