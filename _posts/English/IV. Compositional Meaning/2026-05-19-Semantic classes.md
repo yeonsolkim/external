@@ -1,3 +1,12 @@
+---
+layout: post
+title: Semantic classes
+date: 2026-05-19 10:14:27 +0900
+category_path:
+  - English
+  - IV. Compositional Meaning
+---
+
 ## 1. Predicate types
 1. event-related predicates
 2. static predicates: state, relation, etc.
