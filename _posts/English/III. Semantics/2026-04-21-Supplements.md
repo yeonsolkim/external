@@ -1,0 +1,16 @@
+---
+layout: post
+title: Supplements
+date: 2026-04-21 17:30:49 +0900
+category_path:
+  - English
+  - III. Semantics
+---
+
+
+1. 화자의 평가
+> Naturally, he was very angry.
+
+2. level of generality 
+> Broadly speaking, there are two ways to fix the problem.
+
