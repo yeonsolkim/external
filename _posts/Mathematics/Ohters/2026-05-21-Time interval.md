@@ -11,7 +11,7 @@ category_path:
 
 &emsp; We can evaluate the length of any interval on time. It can be expressed in particular units. For examples, on a yearly basis, 2 years, 3 years, etc., or on a monthly basis, 3 months, 1 year and 2 months, etc.<br>
 
-&emsp; In everyday life, we would say "the meeting is on May 21, 2026." And when we write the time interval which the order indicate as $I$, the content to which that utterance mostly corresponds can be expressed as "$\text{the meeting start time}\in I.$" We don't specify as the exact time but suggest the neighborhood which it belongs to.<br>
+&emsp; In everyday life, we would say "the meeting is on May 21, 2026." When we write the time interval which the order indicate as $I$, the content to which that utterance mostly corresponds can be expressed as "$\text{the meeting start time}\in I.$" We don't specify as the exact time but suggest the neighborhood which it belongs to.<br>
 
 &emsp; Since we use approximated time, time intervals' lengths are bound to be approximated in consequence. We can calculate the elapsed time between to events like this: 
 
