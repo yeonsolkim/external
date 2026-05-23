@@ -4,8 +4,8 @@ title: Interrogative clauses
 date: 2026-05-16 16:59:40 +0900
 category_path:
   - English
-  - 1. Foundations
   - I. Grammar
+  - 1. Foundations
 ---
 
 ## 1. Interrogative clauses

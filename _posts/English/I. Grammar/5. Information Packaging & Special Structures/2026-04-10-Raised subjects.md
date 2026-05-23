@@ -4,8 +4,8 @@ title: Raised subjects
 date: 2026-04-10 21:30:53 +0900
 category_path:
   - English
-  - 5. Information Packaging & Special Structures
   - I. Grammar
+  - 5. Information Packaging & Special Structures
 ---
 
 

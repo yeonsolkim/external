@@ -4,8 +4,8 @@ title: Dummy elements
 date: 2026-04-07 11:59:18 +0900
 category_path:
   - English
-  - 5. Information Packaging & Special Structures
   - I. Grammar
+  - 5. Information Packaging & Special Structures
 ---
 
 ## 1. Dummy subjects
