@@ -20,4 +20,4 @@ $$
 \Rightarrow \text{the time elapsed}\in (O_2-O_1-1, O_2-O_1). \end{aligned}
 $$
 
-One way to explain this result is to think that a date also represents the start point of the time interval. For an example, from the fact that Albert Einstein was born in 1879 and dead in 1955, we can determine his age as follows: $\text{the exact age}\in (75, 76).$
+For an example, from the fact that Albert Einstein was born in 1879 and dead in 1955, we can determine his age as follows: $\text{the exact age}\in (75, 76).$ One way to explain this result is to think that a date also represents the start point of the time interval. 
