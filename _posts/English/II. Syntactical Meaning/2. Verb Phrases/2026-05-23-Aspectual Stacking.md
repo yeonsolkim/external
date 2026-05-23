@@ -1,0 +1,19 @@
+---
+layout: post
+title: Aspectual Stacking
+date: 2026-05-23 09:06:49 +0900
+category_path:
+  - English
+  - II. Syntactical Meaning
+  - 2. Verb Phrases
+---
+
+앞서 Klein's Three Time Model로 tense, aspect 개념을 수학적으로 정립할 수 있었다. sentence에 tense, aspect가 각각 1개씩 존재한다면 간단하게 해석할 수 있지만, 2개 이상의 aspect가 존재한다면 앞에서 정리한 내용만으로는 부족하다. 대표적으로 perfect progressive가 있는데, 'He has been writing a book'이 그 예 중 하나이다.<br>
+<br>
+형식적으로 명확히하여 그 한계가 어디서 드러나는지 보자. sentence(free variable이 없는 formula) 변수 $p$에 대해서 $ET(p)$를 $p$의 event time으로 정의하자. 비슷하게 sentence의 topic time $TT(p)$ 도 정의하자. 그리고 두 개의 predicate를 정의하자: $$\begin{cases} PROG(p):\,TT(p)\subset ET(p) \\ PERF(p):\, ET(p) < TT(p).\end{cases}$$
+이제 어떤 sentence $p$에 대해서 합성된 sentence $PERF(PROG(p))$를 생각해보자. 정의에 의해 외부 statement는 $ET(PROG(p))<TT(PROG(p))$, 내부는 $TT(p)\subset ET(p)$이겠다. 4개의 time interval이 있으며 두 식은 관계를 맺지 않고 있다; 그저 독립된 두 개의 sentence로 보일 뿐이다. 그런데 $ET(PROG(p))=TT(p)$라면 어떨까?<br>
+<br>
+aspect operator는 event description을 입력으로 받아 시간 구간에 대한 명제를 출력하는 함수로서, 내부의 $PROG(p)$는 $ET(p)$라는 거대한 사건 내부에서 특정 조망 구간 $TT(p)$를 추출하여, "이 구간 동안 사건이 진행 중이다"라는 새로운 상태를 만들어낸다. 그렇다면 이 '진행 중인 상태'라는 파생된 상황이 존재하는 시간$ET(PROG(p))$은 방금 조망했던 바로 그 구간 $TT(p)$ 자체일 수밖에 없는 것이다. 즉 의미론적으로 $ET(PROG(p))=TT(p)$가 성립하는 것이다.<br>
+<br>
+$ET(PROG(p))=TT(p)=S, ET(p)=ET, TT(PROG(p))=TT$로 표기를 단순화하면 위 합성 문장은 간단하게 정리된다: 
+$$\begin{cases} S \subset ET \\ S < TT.\end{cases}$$
