@@ -4,8 +4,8 @@ title: Hollow clauses
 date: 2026-04-11 16:38:17 +0900
 category_path:
   - English
-  - 5. Information Packaging & Special Structures
   - I. Grammar
+  - 5. Information Packaging & Special Structures
 ---
 
 
