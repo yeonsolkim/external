@@ -17,7 +17,7 @@ category_path:
 
 > Examples.
 > 1. She studied hard to pass the exam.<br>
->    I will go [get dressed].
+>    I will go get dressed.
 > 2. The boy grew up to be a famous singer.<br>
 >    We will not be around to find out whether we were wrong.
 > 3. I'm pleased to see you again.<br>
