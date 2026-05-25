@@ -7,10 +7,12 @@ category_path:
   - III. Semantics
 ---
 
+1. 보충 설명(not restrictive)
+2. 화자의 평가
+3. level of generality 
 
-1. 화자의 평가
-> Naturally, he was very angry.
-
-2. level of generality 
-> Broadly speaking, there are two ways to fix the problem.
+> Examples.
+> 1. It celebrates science in the making, featuring the people who make the discoveries that redefine our place in the universe.
+> 2. Naturally, he was very angry.
+> 3. Broadly speaking, there are two ways to fix the problem.
 
