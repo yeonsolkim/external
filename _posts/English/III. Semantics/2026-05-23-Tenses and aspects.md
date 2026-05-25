@@ -7,7 +7,7 @@ category_path:
   - III. Semantics
 ---
 
-   * have → now에 영향을 미친 과거의 (event) <br>have been  → now에 영향을 미친 과거 순간에 진행중이던 (event) <br>had → 과거에 영향을 미친 대과거의 (event) <br>had been → 과거에 영향을 미친 과거 순간에 진행중이던 (event)
+   * have → now에 영향을 미친 과거의 (event) <br>had → 과거에 영향을 미친 대과거의 (event) <br>have been  → now에 영향을 미친 과거 순간에 진행중이던 (event) <br>had been → 과거에 영향을 미친 과거 순간에 진행중이던 (event)
      <br>
    * is → now에 진행중인 (event)<br>
      was → 과거에 진행중이던 (event)
