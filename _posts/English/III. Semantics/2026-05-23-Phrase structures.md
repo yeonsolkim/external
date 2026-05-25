@@ -19,8 +19,8 @@ category_path:
 >2. (Discrepancies (that might appear at the cosmological level)) are ((extremely) difficult (to probe experimentally)).
 >3. (Lord Kevin) talked (about two clouds).
 >4. (He) congratulated (her) (on her promotion).<br>
->   (He) persuaded (her) (to change the tactics).<br>
->   (He) expected (her to change the tactics).
+>   (He) persuaded (her) (to change the tactics).
+>5. (He) expected (her to change the tactics).
 
 
 ## 2. NP
