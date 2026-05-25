@@ -1,0 +1,12 @@
+---
+layout: post
+title: Degree modifying construction
+date: 2026-05-25 14:04:49 +0900
+category_path:
+  - English
+  - III. Semantics
+---
+
+1. (too) Adj/Adv (to-infinitival clause)<br> clause가 가능한 maximum을 초과한 정도
+2. (so) Adj/Adv (as $+$ to-infinitival clause)<br>clause가 가능한 minimum을 넘은 정도
+3. (so) Adj/Adv (that clause)<br>clause가 결과적으로 일어날 정도
