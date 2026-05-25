@@ -55,13 +55,12 @@ category_path:
 
 
 ### 5. Should, ought
-1. duty
-2. **expectation**: normality와 상식을 기반으로 한 일반적 expectation
+1. **expectation**: normality와 상식을 기반으로 한 일반적 expectation
+2. duty
 
 
 > Examples.
-> 1. 
-> 2. It should be obvious that humans walk on two feet.
+> 1. It should be obvious that humans walk on two feet.
 
 ### 6. Have
 1. 경험
