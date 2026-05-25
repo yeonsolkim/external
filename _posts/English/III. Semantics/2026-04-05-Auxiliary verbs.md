@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Modal auxiliaries
+title: Auxiliary verbs
 date: 2026-04-05 16:09:47 +0900
 category_path:
   - English
@@ -8,7 +8,7 @@ category_path:
 ---
 
 
-### 1. can
+### 1. Can
 1. ability
 2. permission
 3. **circumstantial possibility**
@@ -17,18 +17,18 @@ category_path:
 >Examples.
 >1. He can lift 500N.
 >2. You can go home now.
->3. Even expert drivers  / can [ ~ make mistakes].<br>
->   Water / can [ ~ boil].<br>
->   The absence of legs / cannot [ ~ disguise their affinities with mammals].<br>
+>3. Even expert drivers can make mistakes.<br>
+>   Water can boil.<br>
+>   The absence of legs cannot disguise their affinities with mammals.<br>
 >   I can't believe that we are faced with that sort of choice. (화자의 epistemic state에 의해 제한된 possibility) <br>
 >4. She can't be tired now. 
 
-### 2. may
+### 2. May
 1. permission
 2. conjecture
 3. **circumstantial possibility**
 
-### 3. must, have 
+### 3. Must, have 
 1. duty: 어떤 주체가 해야할 의무
 2. **necessity**
 3. strong conjecture
@@ -38,12 +38,13 @@ category_path:
 >2. I have to call my mom.
 >3. He must be hungry.
 
-### 4. will
+### 4. Will
 1. **will(의지)**
 2. **cooperativeness**
 3. **disposition(경향)**
 4. **습성(습관적)**
 5. **definite conjecture(확실한 추측)**
+6. topic time이 future
 
 >Examples. 
 >1. I will lose weight.
@@ -53,11 +54,23 @@ category_path:
 >5. He will be a doctor.
 
 
-### 5. should, ought
+### 5. Should, ought
 1. duty
 2. **expectation**: normality와 상식을 기반으로 한 일반적 expectation
 
 
 > Examples.
+> 1. 
 > 2. It should be obvious that humans walk on two feet.
 
+### 6. Have
+1. 경험
+2. 과거 event인데 현재도 동일
+3. 과거 event가 현재 바로 직전에 발생
+4. 과거에 수차례 반복
+
+>Examples. 
+>1. I have been to Japan.
+>2. She has lived here for ten years.
+>3. I have just finished my homework.
+>4. We have visited him several times.
