@@ -39,12 +39,11 @@ category_path:
 >3. He must be hungry.
 
 ### 4. Will
-1. **will(의지)**
+1. **will** (의지)
 2. **cooperativeness**
-3. **disposition(경향)**
-4. **습성(습관적)**
-5. **definite conjecture(확실한 추측)**
-6. topic time이 future
+3. **disposition** (경향)
+4. 습성 (습관적)
+5. definite conjecture
 
 >Examples. 
 >1. I will lose weight.
@@ -61,15 +60,3 @@ category_path:
 
 > Examples.
 > 1. It should be obvious that humans walk on two feet.
-
-### 6. Have
-1. 경험
-2. 과거 event인데 현재도 동일
-3. 과거 event가 현재 바로 직전에 발생
-4. 과거에 수차례 반복
-
->Examples. 
->1. I have been to Japan.
->2. She has lived here for ten years.
->3. I have just finished my homework.
->4. We have visited him several times.
