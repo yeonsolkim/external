@@ -10,7 +10,7 @@ category_path:
 **1. Definition.** A $language\,\mathcal{L}$ is given by the following data: 
 1. a set of function symbols $\mathcal{F}$ and positive integer $n_f$ for each $f\in {\mathcal{F}}$;
 2. a set of relation symbols $\mathcal{R}$ and positive integer $n_R$ for each $R\in {\mathcal{R}}$;
-3. a set of constant symbols $\mathcal{C}$.
+3. a set of constant symbols $\mathcal{C}$.<br>
 <br>
 
 **2. Definition.** An $\mathcal{L}$-$structure\,\mathcal{M}$ is given by the following data:
