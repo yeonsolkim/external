@@ -1,3 +1,12 @@
+---
+layout: post
+title: Model theory
+date: 2026-05-27 10:37:14 +0900
+category_path:
+  - Mathematics
+  - Ohters
+---
+
 **1. Definition.** A $language\,\mathcal{L}$ is given by the following data: 
 1. a set of function symbols $\mathcal{F}$ and positive integer $n_f$ for each $f\in {\mathcal{F}}$;
 2. a set of relation symbols $\mathcal{R}$ and positive integer $n_R$ for each $R\in {\mathcal{R}}$;
