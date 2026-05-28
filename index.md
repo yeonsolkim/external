@@ -74,7 +74,7 @@ title: External
 <style>
   .post-edited-time {
     margin-left: 8px;
-    color: #767676;
+    color: #767676af;
     font-size: 0.85rem;
     white-space: nowrap;
   }
@@ -129,6 +129,9 @@ title: External
   }
 
   .post-link:hover {
-    text-decoration: underline !important;
+    text-decoration: underline;
+  }
+  .post-edited-time:hover {
+    text-decoration: none !important;
   }
 </style>
