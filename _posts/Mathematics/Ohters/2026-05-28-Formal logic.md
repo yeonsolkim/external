@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Logic
+title: Foral logic
 date: 2026-05-28 09:19:08 +0900
 category_path:
   - Mathematics
