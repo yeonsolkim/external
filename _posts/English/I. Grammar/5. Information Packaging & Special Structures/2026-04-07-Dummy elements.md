@@ -6,6 +6,7 @@ category_path:
   - English
   - I. Grammar
   - 5. Information Packaging & Special Structures
+last_modified_at: 2026-05-23 17:17:12 +0900
 ---
 
 ## 1. Dummy subjects
