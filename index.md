@@ -74,7 +74,7 @@ title: External
 <style>
   .post-edited-time {
     margin-left: 8px;
-    color: #767676af;
+    color: #76767697;
     font-size: 0.85rem;
     white-space: nowrap;
   }
