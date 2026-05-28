@@ -5,6 +5,7 @@ date: 2026-05-28 09:19:08 +0900
 category_path:
   - Mathematics
   - Ohters
+last_modified_at: 2026-05-28 16:35:56 +0900
 ---
 
 **1. Formal logic.** formal system은 다음 4가지로 구성된다:

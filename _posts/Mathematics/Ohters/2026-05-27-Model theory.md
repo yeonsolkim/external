@@ -5,7 +5,7 @@ date: 2026-05-27 10:37:14 +0900
 category_path:
   - Mathematics
   - Ohters
-last_modified_at: 2026-05-28 17:12:59 +0900
+last_modified_at: 2026-05-28 17:16:36 +0900
 ---
 
 **1.1 Definition.** A $language\,\mathcal{L}$ is given by the following data: 
