@@ -39,11 +39,12 @@ For example, $\cdot(v_1, -(v_3,1))$ and $+1(1, +(1, 1))$ are $\mathcal L_r$-term
 1. $t_1=t_2$, where $t_1$ and $t_2$ are terms, or
 2. $R(t_1,\dots, t_{n_R})$, where $R\in \mathcal R$ and $t_1,\dots,t_{n_R}$ are terms.
 
-We call a formula a $sentence$ if it has no free variables.<br>
 The set of $\mathcal L$-$formulas$ is the smallest set $\mathcal W$ containing the atomic formulas such that
 1. if $\phi$ is in $\mathcal W$, then $\neg \phi$ is in $\mathcal W$,
 2. if $\phi$ and $\psi$ are in $\mathcal W$, then $(\phi \wedge \psi)$ and $(\phi \lor \psi)$ are in $\mathcal W$, and 
 3. if $\phi$ is in $\mathcal W$, then $\exists v_i\ \phi$ and $\forall v_i\ \phi$ in $\mathcal W$.<br>
+
+We call a formula a $sentence$ if it has no free variables.<br>
 <br>
 
 **1.6 Definition.** Let $\phi$ be a formula with free variables from $\bar v=(v_{i_1},\dots,v_{i_m})$, and let $\bar a=(a_{i_1},\dots,a_{i_m})\in M^m$. We can inductively define $\mathcal M \vDash \phi (\bar a)$. If $\mathcal M \vDash \phi (\bar a)$ we say that $\phi (\bar a)$ is $true$ in $\mathcal M$.<br>
