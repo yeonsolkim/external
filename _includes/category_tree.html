@@ -64,7 +64,7 @@
 
       <li>
         <a href="{{ post.url | relative_url }}" class="post-link">
-          {{ visible_title | escape }}
+          {{ visible_title | escape }}{% if post.last_modified_at %} <span class="post-edited-time" data-edited-at="{{ post.last_modified_at | date_to_xmlschema }}">edited {{ post.last_modified_at | date: "%b %-d, %Y" }}</span>{% endif %}
         </a>
       </li>
     {%- endfor -%}
