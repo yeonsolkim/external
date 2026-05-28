@@ -74,10 +74,12 @@ title: External
 <style>
   .post-edited-time {
     margin-left: 8px;
-    color: #76767697;
-    font-size: 0.85rem;
+    color: #767676a8;
+    font-size: 0.8rem;
+    font-weight: 300 !important;
     white-space: nowrap;
   }
+
   .category-root,
   .category-heading,
   .post-list li {
@@ -99,7 +101,7 @@ title: External
   }
 
   .category-heading {
-    color: #000000ab !important;
+    color: #000000c0 !important;
     font-size: 1rem !important;
   }
 
@@ -124,14 +126,10 @@ title: External
     text-decoration: none !important;
     color: blue !important;
     font-size: 1rem;
-    font-weight: 400;
     line-height: 1.4;
   }
 
-  .post-link:hover {
+  .post-link:hover .post-title {
     text-decoration: underline;
-  }
-  .post-edited-time:hover {
-    text-decoration: none !important;
   }
 </style>
