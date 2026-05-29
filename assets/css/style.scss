@@ -1,6 +1,8 @@
 ---
 ---
 
+@import "jekyll-theme-cayman";
+
 .page-header {
   background-color: {{ site.banner_color_start | default: "#000000" }} !important;
   background-image: linear-gradient(
