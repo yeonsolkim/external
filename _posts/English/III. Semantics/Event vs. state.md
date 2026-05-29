@@ -1,0 +1,24 @@
+---
+layout: post
+title: "Event vs. state"
+date: 2026-05-29 11:03:04 +0900
+category_path:
+  - English
+  - III. Semantics
+last_modified_at: 2026-05-29 11:03:04 +0900
+---
+
+### 1. Eventive interpretation
+**I was invited.**
+* Raised Subject: I
+* Predicate
+  * Head(Auxiliary Verb): was
+  * Complement(Past-Participial Clause): invited
+
+
+### 2. Stative interpretation 
+**Her phone was broken.**
+* Subject: Her phone
+* Predicate
+  * Head(Lexical Verb): was
+  * Complement(AdjP): broken
