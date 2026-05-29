@@ -1,14 +1,13 @@
 ---
 layout: post
 title: "Semantic types of sentences"
-date: 2026-05-29 10:55:56 +0900
+date: 2026-05-29 00:00:00 +0900
 category_path:
   - English
   - III. Semantics
-last_modified_at: 2026-05-29 10:55:56 +0900
+created_at: 2026-05-29 10:55:43 +0900
+last_modified_at: 2026-05-29 11:08:17 +0900
 ---
-
-
 
 
 subject와 predicate의 의미를 기준으로 몇가지 type을 만들었다. 구체적 예시를 보고 가장 적합한 type을 만드는 top-down 방식으로 했기에, 각 type들은 대등하지 않을 수 있다: 어떤 것은 다른 것의 하위 type 또는 상위 type일 수 있다. 
