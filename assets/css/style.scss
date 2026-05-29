@@ -9,3 +9,133 @@
     {{ site.banner_color_end | default: "#ffffff" }}
   ) !important;
 }
+
+hr { border: 1px !important;}
+
+.project-name, .project-tagline {
+  color: #ffffffd7 !important;
+}
+
+.project-name { font-size: 2.6rem !important; margin-top: 0.8rem !important;}
+.project-tagline { font-size: 1.1rem !important; margin-top: 0.8rem !important;}
+
+.main-content {
+  max-width: 57.5rem !important;
+  margin: 0 auto;
+  padding: 2rem 4rem;
+  font-size: 1.05rem !important;
+}
+h1 { font-size: 2.0rem !important; margin-bottom: 0rem; margin-top: 5rem !important;}
+h2 { font-size: 1.2rem !important; margin-bottom: 0rem; margin-top: 3rem !important;}
+h3 { font-size: 1.1rem !important; margin-bottom: 0rem; }
+
+.page-header .btn {
+  color: #ffffffa2 !important;
+  border-color: rgba(255, 255, 255, 0.258) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.2s ease;
+  padding: 0.6rem 0.9rem !important;
+  font-size: 0.85rem !important;
+}
+
+.page-header .btn:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 16px !important;
+  }
+
+  .main-content {
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+    padding: 1.5rem 4rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-content {
+    padding: 1.5rem 1rem !important;
+  }
+}
+
+html {
+  background-color: white !important; 
+}
+
+body {
+  opacity: 0;
+  transition: opacity 0.2s ease-in; 
+}
+
+body.loaded {
+  opacity: 1 !important;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+              "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+              "Helvetica Neue", Arial, sans-serif;
+}
+
+.site-footer { 
+  color: #575757c2 !important; 
+  font-size: 0.9rem !important;
+  border-top: #ffffff00 !important;
+}
+
+blockquote {
+  background-color: #a4a4a422 !important; 
+  color: #333 !important;            
+  margin: 1.5rem 0 !important;
+  margin: 1.5rem 0 !important;
+  padding: 1rem 1.5rem !important;
+  border-radius: 10px !important; 
+  overflow: hidden; 
+  border-left: #28569200 !important;
+}
+
+blockquote mjx-container {
+  color: inherit !important;
+}
+
+table {
+  width: 100% !important;
+  display: table !important;
+  border-spacing: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #dfdfdf !important;
+  border-radius: 15px !important;
+  overflow: hidden !important;
+  table-layout: auto !important; 
+}
+
+thead, tbody, tr {
+  width: 100% !important;
+}
+
+th, td {
+  padding: 5px 13px !important; 
+  white-space: nowrap !important;
+  font-size: 1rem;
+  text-align: left;
+  border-bottom: 0.4px #c4c4c4 !important;
+  border-right: 0.4px #c4c4c4 !important;
+}
+
+tbody { background-color: #f6f6f678; }
+thead th {
+background-color: #a4a4a422;
+}

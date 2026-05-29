@@ -14,5 +14,3 @@ title: External
     {% include category_tree.html posts=site.posts path=parent depth=1 %}
   </section>
 {% endfor %}
-
-<script src="{{ '/assets/js/edited-time.js' | relative_url }}" defer></script>
