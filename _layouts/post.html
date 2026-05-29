@@ -5,9 +5,7 @@ title: Representations
 
 <article class="main-content">
 
-
   {% assign clean_title = page.title %}
-
   {% for i in (1..99) %}
     {% assign prefix = i | append: ". " %}
     {% assign clean_title = clean_title | remove_first: prefix %}
@@ -39,170 +37,12 @@ title: Representations
   <hr style="margin-top: 50px;">
 
   <div id="comment-section">
-    <script src="https://giscus.app/client.js"
-        data-repo="yeonsolkim/blog"
-        data-repo-id="R_kgDOR8ku5Q"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOR8ku5c4C6V6d"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
-    </script>
+    {% include comments.html %}
   </div>
 </article>
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-<style>
-  .main-content a:hover { text-decoration: underline !important; }
-  .main-content {
-    width: 100% !important;
-    box-sizing: border-box !important;
-    padding: 2rem 4rem;
-    margin: 0 auto;
-    word-wrap: break-word;
-    line-height: 1.6;
-    color: #333;
-  }
-  .post-body h1, 
-  .post-body h2, 
-  .post-body h3, 
-  .post-body h4, 
-  .post-body h5, 
-  .post-body h6 {
-    color: #333 !important; 
-    font-weight: bold;
-    margin-top: 2.5rem;
-    margin-bottom: 0 rem;
-  }
-  .post-body { max-width: none !important ;}
-
-  .post-body h1:first-child, 
-  .post-body h2:first-child, 
-  .post-body h3:first-child { 
-    margin-top: 0 !important;
-  }
-
-  .post-body h2 + h3,
-  .post-body h3 + h4,
-  .post-body h2 + h4 {
-    margin-top: 0 !important;
-  }
-
-  .post-body hr + h2 {
-    margin-top: 1.5rem !important;
-  }
-
-  .post-body hr {
-    margin-top: 3.5rem !important;
-  }
-
-  .post-body ul {
-    list-style-type: disc !important; 
-    padding-left: 2rem;
-    margin-top: -0.5rem !important;
-  }
-  
-  .post-body ul li::marker {
-    color: #00000081; 
-    font-size: 0.85em;
-  }
-  
-  .post-body ul li p {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    display: inline; 
-  }
- 
-
-  .post-body ul li {
-    line-height: 1.6;
-  }
-
-  .post-body ul ul, 
-  .post-body ul ol {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-  }
-
-  .post-body img, .post-body canvas, .post-body svg {
-    max-width: 100%;
-  }
-
-  hr { 
-    border-top: 0.4px solid #b7b7b7ca !important;
-    background-color: #ffffff00 !important;
-  }
-  
-  ol {
-    list-style: none;
-    margin-top: -0.5rem !important;
-    counter-reset: line-counter;
-    padding-left: 2rem;
-  }
-
-  ol > li {
-    counter-increment: line-counter;
-    position: relative;
-  }
-
-  ol > li::before {
-    content: counter(line-counter) ".";
-    position: absolute;
-    font-weight:normal;
-    left: -1.2rem;
-    color: #00000081; 
-  }
-
-  ol ul {
-    list-style: disc; 
-    padding-left: 0rem;
-    margin-bottom: 0px !important;
-  }
-
-  ol > li > ul:first-child { 
-    margin-top: 0px !important;
-  }
-
-  ol ul li {
-    position: static; 
-  }
-
-  ol ul li::before {
-    content: none; 
-  }
-
-  main.main-content > article.main-content {
-  max-width: none !important;
-  }
-
-  main.main-content {
-    max-width: 57.5rem !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  main.main-content > article.main-content {
-    max-width: none !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  .post-body {
-    max-width: none !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  
-</style>
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/post.css' | relative_url }}">
+<script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/mathjax-config.js' | relative_url }}"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>

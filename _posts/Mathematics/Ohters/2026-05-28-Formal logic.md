@@ -5,7 +5,7 @@ date: 2026-05-28 09:19:08 +0900
 category_path:
   - Mathematics
   - Ohters
-last_modified_at: 2026-05-28 16:35:56 +0900
+last_modified_at: 2026-05-28 18:31:51 +0900
 ---
 
 **1. Formal logic.** formal system은 다음 4가지로 구성된다:
@@ -37,7 +37,7 @@ if $v(\phi)=\mathrm T$ for all valuation $v$ such that $v(\sigma)=\mathrm T$ for
 <br>
 
 **3.1 First-order logic.** 
-1. language $\mathcal L$
+1. language $\mathcal L$  
    * unique symbols: function symbols, relation symbols, constant symbols, 
    * common symbols: variables, connectives, equality, quantifiers, parentheses, comma
 1. $\mathcal L$-terms, atomic $\mathcal L$-formulas, $\mathcal L$-formulas
@@ -45,7 +45,7 @@ if $v(\phi)=\mathrm T$ for all valuation $v$ such that $v(\sigma)=\mathrm T$ for
 3. rules of inference
 
 
-> 1. Conjunction introduction
+>1. Conjunction introduction
 >
 >    $$
 >    \frac{A \qquad B}{A \land B} 
