@@ -6,6 +6,7 @@ category_path:
   - English
   - III. Semantics
 last_modified_at: 2026-05-26 17:55:08 +0900
+created_at: 2026-05-23 14:56:28 +0900
 ---
 
 

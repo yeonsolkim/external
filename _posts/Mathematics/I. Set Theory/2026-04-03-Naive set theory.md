@@ -6,6 +6,7 @@ category_path:
   - Mathematics
   - I. Set Theory
 last_modified_at: 2026-05-21 14:56:50 +0900
+created_at: 1984-01-24 17:00:00 +0900
 ---
 
 
