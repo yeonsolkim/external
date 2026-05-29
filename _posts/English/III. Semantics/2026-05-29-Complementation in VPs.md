@@ -6,7 +6,7 @@ category_path:
   - English
   - III. Semantics
 created_at: 2026-05-29 11:11:12 +0900
-last_modified_at: 2026-05-29 11:14:52 +0900
+last_modified_at: 2026-05-29 11:29:10 +0900
 ---
 
 1. intransitive verb
@@ -17,7 +17,8 @@ last_modified_at: 2026-05-29 11:14:52 +0900
 
 >Examples.
 >1. Physics has been treading.
->2. Discrepancies that might appear at the cosmological level are (extremely difficult to probe experimentally).
+>2. Discrepancies that might appear at the cosmological level are (extremely difficult to probe experimentally).<br>
+>   It is getting (pretty boring)
 >3. Lord Kevin talked (about two clouds).
 >4. He congratulated (her) (on her promotion).
 >5. He expected (her to change the tactics).
