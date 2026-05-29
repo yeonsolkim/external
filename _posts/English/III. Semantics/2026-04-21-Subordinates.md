@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Non-finite clauses
+title: Subordinates
 date: 2026-04-21 15:42:54 +0900
 category_path:
   - English
   - III. Semantics
-last_modified_at: 2026-05-25 18:17:19 +0900
+last_modified_at: 2026-05-29 11:22:22 +0900
 created_at: 2026-04-21 15:42:54 +0900
 ---
 
