@@ -1,6 +1,6 @@
 ---
 layout: default
-title: External
+title: Representations
 ---
 
 {% assign parent_categories = "English,Mathematics,Physics" | split: "," %}
