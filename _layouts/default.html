@@ -1,41 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
    {% seo %}
 
-  <style>
-    html.loading body {
-      visibility: hidden;
-    }
-
-    html.ready body {
-      visibility: visible;
-    }
-  </style>
-
   <script>
-    document.documentElement.classList.add("loading");
+    window.addEventListener('DOMContentLoaded', (event) => {
+      document.body.classList.add('loaded');
+    });
   </script>
 </head>
-
-<script>
-  window.addEventListener("load", () => {
-    document.documentElement.classList.remove("loading");
-    document.documentElement.classList.add("ready");
-  });
-</script>
-
-<noscript>
-  <style>
-    body {
-      visibility: visible;
-    }
-  </style>
-</noscript>
 
 <body>
 
