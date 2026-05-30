@@ -9,15 +9,9 @@ html {
 }
 
 body {
-  opacity: 0;
-  transition: opacity 0.2s ease-in;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
     "Helvetica Neue", Arial, sans-serif;
-}
-
-body.loaded {
-  opacity: 1 !important;
 }
 
 /* Header */
