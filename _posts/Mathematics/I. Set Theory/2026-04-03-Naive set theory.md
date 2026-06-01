@@ -5,7 +5,7 @@ date: 2026-04-03 00:00:00 +0900
 category_path:
   - Mathematics
   - I. Set Theory
-last_modified_at: 2026-05-31 15:23:55 +0900
+last_modified_at: 2026-06-01 13:30:35 +0900
 created_at: 1984-01-24 17:00:00 +0900
 ---
 
@@ -75,7 +75,7 @@ $$A-B=\lbrace x\in A:x\notin B\rbrace.$$
 Dealing with sets which are subsets of $E$, we can define *absolute complement*. Often used symbol for absolute complement of $A$ is $A'$. 
 <br><br>
 
-**7.2. Theorem(*De Morgan laws*).** Basically, they are about unions and intersections: 
+**7.2. Theorem (*De Morgan laws*).** Basically, they are about unions and intersections: 
 
 $$(A\cup B)'=A'\cap B',\ (A\cap B)'=A'\cup B'.$$<br>
 <br>
