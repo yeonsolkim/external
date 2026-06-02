@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "Does one have to be a genius to do maths?"
+title: Does one have to be a genius to do maths?
 date: 2026-06-02 00:00:00 +0900
 category_path:
-  - Mathematics
-  - Ohters
+  - Reading
 created_at: 2026-06-02 10:46:42 +0900
-last_modified_at: 2026-06-02 10:55:18 +0900
+last_modified_at: 2026-06-02 10:58:04 +0900
 ---
 
 1. **The answer is an emphatic NO** <br>

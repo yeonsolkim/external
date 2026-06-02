@@ -3,7 +3,7 @@ layout: default
 title: Representations
 ---
 
-{% assign parent_categories = "English,Mathematics,Physics" | split: "," %}
+{% assign parent_categories = "Mathematics,Physics,English,Reading" | split: "," %}
 
 {% for parent in parent_categories %}
   <section class="category-section">
