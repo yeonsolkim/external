@@ -142,3 +142,23 @@ max-width: none !important;
 width: 100% !important;
 box-sizing: border-box !important;
 }
+
+.math-scroll {
+max-width: 100%;
+}
+
+.math-scroll mjx-container[display="true"],
+.math-scroll .MathJax_Display {
+display: block;
+max-width: 100%;
+overflow-x: auto;
+overflow-y: hidden;
+-webkit-overflow-scrolling: touch;
+padding: 0.25rem 0;
+box-sizing: border-box;
+}
+
+.math-scroll mjx-container[display="true"] > *,
+.math-scroll .MathJax_Display > * {
+min-width: max-content;
+}
