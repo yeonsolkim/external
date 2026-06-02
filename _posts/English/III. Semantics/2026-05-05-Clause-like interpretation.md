@@ -5,12 +5,12 @@ date: 2026-05-05 14:52:18 +0900
 category_path:
   - English
   - III. Semantics
-last_modified_at: 2026-05-23 17:08:15 +0900
+last_modified_at: 2026-06-02 13:43:14 +0900
 created_at: 2026-05-05 14:52:18 +0900
 ---
 
 
-## 1. NPs
+### 1. NPs
 verb의 argument structure가 genitive 형태로 실현된다.
 
 #### 1.1. event nouns
@@ -34,7 +34,7 @@ examples.
    → She was angry at the decision.
 
 
-## 2. Object-oriented predicative complements
+### 2. Object-oriented predicative complements
 examples.
 1. I found myself in an impenetrable morass<br>
    → myself was in an impenetrable morass.

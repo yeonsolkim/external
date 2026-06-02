@@ -6,18 +6,18 @@ category_path:
   - English
   - I. Grammar
   - 5. Information Packaging & Special Structures
-last_modified_at: 2026-05-23 17:17:12 +0900
+last_modified_at: 2026-06-02 13:42:38 +0900
 created_at: 2026-04-07 11:59:18 +0900
 ---
 
-## 1. Dummy subjects
+### 1. Dummy subjects
 어떤 subject에 대응하는 referent가 없을 때, 이를 dummy subject라고 한다.<br>
 **It's 7 o'clock.**<br>
 
 **It's snowing.**
 
-## 2. Characteristic structures accompanying a dummy-it
-### 2.1. Extraposition
+### 2. Characteristic structures accompanying a dummy-it
+#### 2.1. Extraposition
 subject를 뒤로 보내면서 syntactic requirement를 충족시키기 위한 it.<br>
 **It's good to get up early.**
 * subject: it
@@ -52,6 +52,6 @@ subject를 뒤로 보내면서 syntactic requirement를 충족시키기 위한 i
 
 
 
-### 2.2. It-cleft
+#### 2.2. It-cleft
 **It was she who introduced Bob to Cal.**
 > Semantics: It was (she) (who) → (introduced (Bob) (to Cal))
