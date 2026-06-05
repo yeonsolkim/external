@@ -5,7 +5,7 @@ date: 2026-05-21 12:28:23 +0900
 category_path:
   - Mathematics
   - Ohters
-last_modified_at: 2026-06-04 09:32:43 +0900
+last_modified_at: 2026-06-05 13:35:40 +0900
 created_at: 2026-05-21 12:28:23 +0900
 ---
 
