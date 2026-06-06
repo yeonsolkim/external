@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Representations
+title: Languages and Meanings
 ---
 
 {% assign parent_categories = "Mathematics,Physics,English,Reading" | split: "," %}
