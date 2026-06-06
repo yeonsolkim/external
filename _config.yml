@@ -2,7 +2,7 @@ remote_theme: pages-themes/cayman@v0.2.0
 baseurl: "/blog"
 description: "A backup external memory containing several data files"
 url: "https://YeonsolKim.github.io"
-fixed_banner_title: "Representations"
+fixed_banner_title: "Languages and Meanings"
 banner_color_start: "#000000" 
 banner_color_end: "#878787" 
 author: YeonsolKim  
