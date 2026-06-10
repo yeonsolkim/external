@@ -17,7 +17,7 @@ body {
 
 /* Header */
 .page-header {
-  padding: 4rem 1rem 3.25rem !important;
+  padding: 6rem 1rem 5.25rem !important;
   text-align: center;
   background-color: {{ site.banner_color_start | default: "#000000" }} !important;
   background-image: linear-gradient(
@@ -60,7 +60,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 1.4rem;
-  gap: 0.625rem;
+  gap: 2rem;
 }
 
 .page-header .btn {

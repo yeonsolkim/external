@@ -5,7 +5,7 @@ date: 2026-04-03 00:00:00 +0900
 category_path:
   - Mathematics
   - I. Set Theory
-last_modified_at: 2026-06-10 10:21:48 +0900
+last_modified_at: 2026-06-10 10:46:32 +0900
 created_at: 1984-01-24 17:00:00 +0900
 ---
 
@@ -19,7 +19,7 @@ $$\forall x\,(x\in A\leftrightarrow x\in B)\leftrightarrow A=B$$
 <br> 
 
 **2. Belonging.** a binary "relation" $\in$.
-hierarchical한 느낌이다: e.g., $(\text{(n)-dimensional)}\in(\text{(n+1)-dimensional})$.
+hierarchical한 느낌이다: [$n$-dimension] $\in$ [($n+1$)-dimension].
 <br><br>
 
 **3. Inclusion.**
