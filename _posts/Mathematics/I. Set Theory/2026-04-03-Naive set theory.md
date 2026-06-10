@@ -5,7 +5,7 @@ date: 2026-04-03 00:00:00 +0900
 category_path:
   - Mathematics
   - I. Set Theory
-last_modified_at: 2026-06-01 13:30:35 +0900
+last_modified_at: 2026-06-10 10:21:48 +0900
 created_at: 1984-01-24 17:00:00 +0900
 ---
 
@@ -77,7 +77,8 @@ Dealing with sets which are subsets of $E$, we can define *absolute complement*.
 
 **7.2. Theorem (*De Morgan laws*).** Basically, they are about unions and intersections: 
 
-$$(A\cup B)'=A'\cap B',\ (A\cap B)'=A'\cup B'.$$<br>
+$$(A\cup B)'=A'\cap B',\ (A\cap B)'=A'\cup B'.$$
+
 <br>
 
 **8. Axiom of powers.** $\forall E\, \exists \mathcal{P}\, \forall x\, (x\subset E\rightarrow x\in \mathcal{P})$. And, applying axiom of specification, we get 

@@ -6,28 +6,32 @@
 
   {% seo %}
 
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% assign asset_version = site.time | date: "%s" %}
+
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ asset_version }}">
 
   {% if page.layout == "post" %}
-    <link rel="stylesheet" href="{{ '/assets/css/post.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/post.css' | relative_url }}?v={{ asset_version }}">
   {% endif %}
 
   {% if page.name == "index.md" %}
-    <link rel="stylesheet" href="{{ '/assets/css/index.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/index.css' | relative_url }}?v={{ asset_version }}">
   {% endif %}
 
-  <script src="{{ '/assets/js/mathjax-config.js' | relative_url }}"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+  <script src="{{ '/assets/js/mathjax-config.js' | relative_url }}?v={{ asset_version }}" defer></script>
+  <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-svg.js"></script>
 </head>
 
 <body>
   <section class="page-header">
-    <h1 class="project-name">{{ site.fixed_banner_title | default: site.title }}</h1>
-    <h2 class="project-tagline">{{ site.description }}</h2>
+    <div class="header-inner">
+      <h1 class="project-name">{{ site.fixed_banner_title | default: site.title }}</h1>
+      <h2 class="project-tagline">{{ site.description }}</h2>
 
-    <div class="header-buttons">
-      <a href="{{ site.baseurl }}/" class="btn">Go to Home</a>
-      <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+      <div class="header-buttons">
+        <a href="{{ site.baseurl }}/" class="btn">Go to Home</a>
+        <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+      </div>
     </div>
   </section>
 
