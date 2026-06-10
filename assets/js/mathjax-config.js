@@ -21,6 +21,7 @@ window.MathJax = {
     }
   },
   output: {
+    font: 'mathjax-tex',
     displayOverflow: 'linebreak',
     linebreaks: {
       inline: true,
