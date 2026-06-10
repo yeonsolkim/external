@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Languages and Meanings
+title: Semantics
 ---
 
 {% assign parent_categories = "Mathematics,Physics,English,Reading" | split: "," %}
