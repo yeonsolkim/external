@@ -7,6 +7,19 @@ window.MathJax = {
   options: {
     enableMenu: false
   },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(
+        () => {
+          document.documentElement.classList.remove('mathjax-loading');
+        },
+        (error) => {
+          document.documentElement.classList.remove('mathjax-loading');
+          throw error;
+        }
+      );
+    }
+  },
   output: {
     displayOverflow: 'linebreak',
     linebreaks: {

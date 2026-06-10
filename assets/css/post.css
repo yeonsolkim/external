@@ -182,6 +182,10 @@ width: 100% !important;
 box-sizing: border-box !important;
 }
 
+html.mathjax-loading .post-body {
+visibility: hidden;
+}
+
 .post-body p {
 text-align: justify;
 text-align-last: left;
