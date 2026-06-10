@@ -58,7 +58,10 @@ font-weight: bold;
 margin-top: 2.5rem;
 margin-bottom: 0 rem;
 }
-.post-body { max-width: none !important ;}
+.post-body { 
+  max-width: none !important ;
+  font-weight: 350;
+}
 
 .post-body h1:first-child, 
 .post-body h2:first-child, 
