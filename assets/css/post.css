@@ -199,6 +199,11 @@ overflow-wrap: break-word;
 word-break: normal;
 }
 
+.post-body .qed {
+float: right;
+margin-left: 1rem;
+}
+
 .math-scroll {
 max-width: 100%;
 }
