@@ -5,7 +5,7 @@ date: 2026-04-21 15:42:54 +0900
 category_path:
   - English
   - III. Semantics
-last_modified_at: 2026-05-29 11:22:22 +0900
+last_modified_at: 2026-06-13 13:23:10 +0900
 created_at: 2026-04-21 15:42:54 +0900
 ---
 
@@ -18,13 +18,13 @@ created_at: 2026-04-21 15:42:54 +0900
 
 
 > Examples.
-> 1. She studied hard to pass the exam.<br>
->    I will go get dressed.
-> 2. The boy grew up to be a famous singer.<br>
->    We will not be around to find out whether we were wrong.
-> 3. I'm pleased to see you again.<br>
->    She smiled to see such a beautiful sight.
-> 4. He must be crazy to behave like that.
-> 5. To hear them talk, you would think they are old friends.
+> 1. I will go <u>get dressed</u>.
+> 2. The boy grew up <u>to be a famous singer</u>.<br>
+>    We will not be around <u>to find out whether we were wrong</u>.<br>
+>    We introduce Aristotle, an AI system that combines formal verification with informal reasoning, <u>achieving gold-medal-equivalent performance on the 2025 IMO problems</u>.
+> 3. I'm pleased <u>to see you again</u>.<br>
+>    She smiled <u>to see such a beautiful sight</u>.
+> 4. He must be crazy <u>to behave like that</u>.
+> 5. <u>To hear them talk</u>, you would think they are old friends.
 
 
