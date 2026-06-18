@@ -179,7 +179,8 @@
       }
     },
     svg: {
-      fontCache: 'global',
+      blacker: 5,
+      fontCache: 'local',
       scale: 0.89,
       exFactor: 0.5,
       displayAlign: 'center',
