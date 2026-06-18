@@ -120,42 +120,40 @@ border-top: 0.4px solid #b7b7b7ca !important;
 background-color: #ffffff00 !important;
 }
 
-ol {
-list-style: none;
+.post-body ol {
+list-style: decimal;
 margin-top: -0.5rem !important;
-counter-reset: line-counter;
 padding-left: 2rem;
 }
 
-ol > li {
-counter-increment: line-counter;
-position: relative;
+.post-body ol > li {
+line-height: 1.6;
 }
 
-ol > li::before {
-content: counter(line-counter) ".";
-position: absolute;
-font-weight: normal;
-color: #0000004b; 
-right: 100%;         
-margin-right: 0.2rem; 
+.post-body ol > li::marker {
+color: #0000004b;
+font-size: 0.95em;
 }
 
-ol ul {
+.post-body ol > li::before {
+content: none;
+}
+
+.post-body ol ul {
 list-style: disc; 
 padding-left: 0rem;
 margin-bottom: 0px !important;
 }
 
-ol > li > ul:first-child { 
+.post-body ol > li > ul:first-child { 
 margin-top: 0px !important;
 }
 
-ol ul li {
+.post-body ol ul li {
 position: static; 
 }
 
-ol ul li::before {
+.post-body ol ul li::before {
 content: none; 
 }
 
