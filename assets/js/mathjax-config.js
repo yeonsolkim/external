@@ -179,9 +179,9 @@
       }
     },
     svg: {
-      blacker: 5,
-      fontCache: 'local',
-      scale: 0.89,
+      blacker: 11,
+      fontCache: 'none',
+      scale: 0.85,
       exFactor: 0.5,
       displayAlign: 'center',
       displayOverflow: 'linebreak',
