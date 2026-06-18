@@ -222,6 +222,22 @@ box-sizing: border-box;
 max-width: 100%;
 }
 
+@media (max-width: 768px), (pointer: coarse) {
+  .math-scroll mjx-container[display="true"],
+  .math-scroll .MathJax_Display {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+  }
+
+  .math-scroll mjx-container[display="true"] > svg,
+  .math-scroll .MathJax_Display > svg {
+    width: auto;
+    max-width: none !important;
+  }
+}
+
 figure {
   text-align: center;
   margin: 1.5rem auto;
