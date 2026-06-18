@@ -142,8 +142,40 @@
     return Promise.resolve();
   }
 
+  function isIOSTouchDevice() {
+    var userAgent = navigator.userAgent || '';
+    var platform = navigator.platform || '';
+
+    return /iPad|iPhone|iPod/.test(userAgent) ||
+      (platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  }
+
+  function shouldScrollDisplayMath() {
+    if (typeof window.matchMedia !== 'function') {
+      return isIOSTouchDevice();
+    }
+
+    return isIOSTouchDevice() ||
+      window.matchMedia('(max-width: 768px)').matches ||
+      window.matchMedia('(pointer: coarse)').matches;
+  }
+
+  function shouldUseTouchMathWeight() {
+    if (typeof window.matchMedia !== 'function') {
+      return isIOSTouchDevice();
+    }
+
+    return isIOSTouchDevice() ||
+      window.matchMedia('(max-width: 768px)').matches ||
+      window.matchMedia('(pointer: coarse)').matches;
+  }
+
   window.normalizeInlineMathDelimiters = normalizeInlineMathDelimiters;
   normalizeInlineMathWhenReady();
+
+  var iOSTouchDevice = isIOSTouchDevice();
+  var scrollDisplayMath = shouldScrollDisplayMath();
+  var touchMathWeight = shouldUseTouchMathWeight();
 
   window.MathJax = {
     tex: {
@@ -171,7 +203,7 @@
     },
     output: {
       font: 'mathjax-tex',
-      displayOverflow: 'linebreak',
+      displayOverflow: scrollDisplayMath ? 'scroll' : 'linebreak',
       linebreaks: {
         inline: true,
         width: '100%',
@@ -179,12 +211,12 @@
       }
     },
     svg: {
-      blacker: 11,
+      blacker: touchMathWeight ? 7 : 11,
       fontCache: 'none',
       scale: 0.85,
       exFactor: 0.5,
       displayAlign: 'center',
-      displayOverflow: 'linebreak',
+      displayOverflow: scrollDisplayMath ? 'scroll' : 'linebreak',
       linebreaks: {
         inline: true,
         width: '100%',
