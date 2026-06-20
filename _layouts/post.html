@@ -3,7 +3,14 @@ layout: default
 title: Semantics
 ---
 
-<article class="main-content">
+{% assign reference_scope = "" %}
+{% if page.category_path contains "II. Calculus" %}
+  {% assign reference_scope = "calculus" %}
+{% elsif page.category_path contains "III. Linear Algebra" %}
+  {% assign reference_scope = "linear-algebra" %}
+{% endif %}
+
+<article class="main-content"{% if reference_scope != "" %} data-reference-scope="{{ reference_scope }}"{% endif %}>
 
   {% assign clean_title = page.title %}
   {% for i in (1..99) %}
