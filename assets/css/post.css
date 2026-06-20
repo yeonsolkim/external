@@ -202,6 +202,20 @@ float: right;
 margin-left: 1rem;
 }
 
+.post-body .math-label-anchor {
+scroll-margin-top: 1.25rem;
+}
+
+.post-body a.math-ref-link {
+color: rgba(0, 0, 255, 0.6);
+text-underline-offset: 0.14em;
+text-decoration-thickness: 0.08em;
+}
+
+.post-body a.math-ref-link:visited {
+color: rgba(0, 0, 255, 0.6);
+}
+
 .math-scroll {
 max-width: 100%;
 }

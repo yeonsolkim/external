@@ -55,7 +55,7 @@
     </footer>
   </main>
 
-  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}?v={{ asset_version }}" defer></script>
 
   {% if page.name == "index.md" %}
     <script src="{{ '/assets/js/edited-time.js' | relative_url }}" defer></script>
