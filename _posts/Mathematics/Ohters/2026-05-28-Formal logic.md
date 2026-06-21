@@ -5,7 +5,7 @@ date: 2026-05-28 09:19:08 +0900
 category_path:
   - Mathematics
   - Ohters
-last_modified_at: 2026-05-28 18:31:51 +0900
+last_modified_at: 2026-06-21 12:35:05 +0900
 created_at: 2026-05-28 09:19:08 +0900
 ---
 
@@ -34,7 +34,7 @@ Let $\sum$ be a set of formulas. We say that a formula $\phi$ is a logical conse
 
 $$\sum \vDash \phi$$ 
 
-if $v(\phi)=\mathrm T$ for all valuation $v$ such that $v(\sigma)=\mathrm T$ for all $\sigma\in \sum$.<br>
+if $v(\phi)=\mathrm T$ for all valuation $v$ such that $v(\sigma)=\mathrm T$ for all $\sigma\in \sum.$<br>
 <br>
 
 **3.1 First-order logic.** 

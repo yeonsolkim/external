@@ -5,7 +5,7 @@ date: 2026-04-03 00:00:00 +0900
 category_path:
   - Mathematics
   - I. Set Theory
-last_modified_at: 2026-06-20 12:30:58 +0900
+last_modified_at: 2026-06-21 12:35:05 +0900
 created_at: 1984-01-24 17:00:00 +0900
 ---
 
@@ -15,7 +15,7 @@ $$\forall x\,(x\in A\leftrightarrow x\in B)\leftrightarrow A=B$$
 
 <br> 
 
-**2. Belonging.** a binary "relation" $\in$.
+**2. Belonging.** a binary "relation" $\in.$
 hierarchical한 느낌이다: [$n$-dimension] $\in$ [($n+1$)-dimension].
 <br><br>
 
@@ -39,7 +39,7 @@ given set이 있어야 carve out하여 new one을 만들 수 있다.<br>
 
 $$\forall a\,\forall b\,\exists B\,\forall x\,(x\in B\leftrightarrow \varphi(x,a,b)) \text{ where } \varphi(x,a,b):x=a\lor x=b,$$
 
-denoted by $B=\lbrace a,b\rbrace$; the set is called the *unordered pair*.
+denoted by $B=\lbrace a,b\rbrace;$ the set is called the *unordered pair*.
 We may refer to the axiom as a pseudo-special case of axiom of specification in the sense that if there were a universe, then the axiom would follow as a special case. <br>
 <br>
 
@@ -50,10 +50,10 @@ We may refer to the axiom as a pseudo-special case of axiom of specification in 
 
 $$\forall A\,\exists B\,\forall x\,( \exists y\,(y\in A\wedge x\in y)\leftrightarrow x\in B),$$
 
-denoted by $B=\bigcup A$; *the union of* $A$.
+denoted by $B=\bigcup A;$ *the union of* $A.$
 <br><br>
 
-**6.2. Notation.** We introduce special notation for a pair: $X\cup Y=\bigcup\lbrace X,Y\rbrace$. It follows that $X\cup Y=\lbrace x:x\in X\lor x\in Y\rbrace$ by general definition. 
+**6.2. Notation.** We introduce special notation for a pair: $X\cup Y=\bigcup\lbrace X,Y\rbrace.$ It follows that $X\cup Y=\lbrace x:x\in X\lor x\in Y\rbrace$ by general definition. 
 <br><br>
 
 **6.3. Definition.** Now we can generalize pairs: $\lbrace a,b,c\rbrace =\lbrace a\rbrace \cup \lbrace b\rbrace \cup \lbrace c\rbrace , \text{etc.}$ 
@@ -69,7 +69,7 @@ denoted by $B=\bigcup A$; *the union of* $A$.
 
 $$A-B=\lbrace x\in A:x\notin B\rbrace.$$
 
-Dealing with sets which are subsets of $E$, we can define *absolute complement*. Often used symbol for absolute complement of $A$ is $A'$. 
+Dealing with sets which are subsets of $E,$ we can define *absolute complement*. Often used symbol for absolute complement of $A$ is $A'.$ 
 <br><br>
 
 **7.2. Theorem (*De Morgan laws*).** Basically, they are about unions and intersections: 
@@ -78,8 +78,8 @@ $$(A\cup B)'=A'\cap B',\ (A\cap B)'=A'\cup B'.$$
 
 <br>
 
-**8. Axiom of powers.** $\forall E\, \exists \mathcal{P}\, \forall x\, (x\subset E\rightarrow x\in \mathcal{P})$. And, applying axiom of specification, we get 
+**8. Axiom of powers.** $\forall E\, \exists \mathcal{P}\, \forall x\, (x\subset E\rightarrow x\in \mathcal{P}).$ And, applying axiom of specification, we get 
 
 $$\forall E\, \exists \mathcal{P}\, \forall x\, (x\subset E\leftrightarrow x\in \mathcal{P}).$$
 
-The set $\mathcal{P}$ is called the *power set* of $E$; the dependence of $\mathcal{P}$ on $E$ is denoted by $\mathcal{P}(E)$. 
+The set $\mathcal{P}$ is called the *power set* of $E;$ the dependence of $\mathcal{P}$ on $E$ is denoted by $\mathcal{P}(E).$ 

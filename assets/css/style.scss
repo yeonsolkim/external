@@ -3,6 +3,16 @@
 
 @import "jekyll-theme-cayman";
 
+@font-face {
+  font-family: "Latex Punctuation";
+  font-style: normal;
+  font-weight: 100 900;
+  src: local("STIX Two Text"), local("STIXTwoText"),
+    local("STIXGeneral-Regular"), local("STIXGeneral");
+  unicode-range: U+0022, U+0027, U+002C, U+003B, U+2018, U+2019,
+    U+201C, U+201D;
+}
+
 /* Base */
 html {
   font-size: 15.5px;
@@ -10,9 +20,9 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
-    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: "Latex Punctuation", -apple-system, BlinkMacSystemFont,
+    "SF Pro Text", "SF Pro Display", "Apple SD Gothic Neo", "Noto Sans KR",
+    "Malgun Gothic", "Helvetica Neue", Arial, sans-serif;
 }
 
 /* Header */

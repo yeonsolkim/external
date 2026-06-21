@@ -4,7 +4,7 @@
   'use strict';
 
   var labelPattern = /^(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example)\s+(\d+(?:\.\d+)+)\.?/;
-  var markdownLabelPattern = /\*\*(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example)\s+(\d+(?:\.\d+)+)\.?(?=\s|\*|\))/g;
+  var sourceLabelPattern = /(?:\*\*|<(?:strong|b)\b[^>]*>)\s*(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example)\s+(\d+(?:\.\d+)+)\.?(?=\s|\*|\)|<\/(?:strong|b)>)/g;
   var referencePattern = /\b(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example)\s+(\d+(?:\.\d+)+)\b/g;
   var labelSources = {
     "calculus": [
@@ -143,15 +143,15 @@
     sources.forEach(function (source) {
       var match;
 
-      markdownLabelPattern.lastIndex = 0;
+      sourceLabelPattern.lastIndex = 0;
 
-      while ((match = markdownLabelPattern.exec(source.content))) {
+      while ((match = sourceLabelPattern.exec(source.content))) {
         var label = makeLabel(match[1], match[2]);
         targets[label] = source.url + '#' + makeAnchorId(match[1], match[2]);
       }
     });
 
-    markdownLabelPattern.lastIndex = 0;
+    sourceLabelPattern.lastIndex = 0;
 
     return targets;
   }
