@@ -207,13 +207,34 @@ scroll-margin-top: 1.25rem;
 }
 
 .post-body a.math-ref-link {
-color: rgba(0, 0, 255, 0.6);
-text-underline-offset: 0.14em;
-text-decoration-thickness: 0.08em;
+color: inherit;
+text-decoration: none !important;
 }
 
 .post-body a.math-ref-link:visited {
-color: rgba(0, 0, 255, 0.6);
+color: inherit;
+}
+
+.post-body a.math-ref-link:hover {
+text-decoration: none !important;
+}
+
+.post-body a.math-ref-link .math-ref-number {
+display: inline-block;
+position: relative;
+padding: 0 0.12em;
+line-height: 1.08;
+}
+
+.post-body a.math-ref-link .math-ref-number::after {
+content: "";
+position: absolute;
+top: -0.09em;
+right: 0;
+bottom: 0.09em;
+left: 0;
+border: 0.7px solid red;
+pointer-events: none;
 }
 
 .math-scroll {
