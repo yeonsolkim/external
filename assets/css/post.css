@@ -1,4 +1,4 @@
-.main-content a:hover { text-decoration: underline !important; }
+.main-content a:hover { text-decoration: none !important; }
 .main-content {
 width: 100% !important;
 box-sizing: border-box !important;
