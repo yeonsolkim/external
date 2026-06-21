@@ -217,6 +217,7 @@
       var label = makeLabel(match[1], match[2]);
       var href = targets[label];
       var link;
+      var number;
 
       if (!href) {
         continue;
@@ -227,7 +228,14 @@
       link = document.createElement('a');
       link.className = 'math-ref-link';
       link.href = href;
-      link.textContent = match[0];
+      link.setAttribute('aria-label', match[0]);
+      link.appendChild(document.createTextNode(match[1] + ' '));
+
+      number = document.createElement('span');
+      number.className = 'math-ref-number';
+      number.textContent = match[2];
+      link.appendChild(number);
+
       fragment.appendChild(link);
 
       lastIndex = match.index + match[0].length;
