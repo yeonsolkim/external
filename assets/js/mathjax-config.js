@@ -1,6 +1,7 @@
 (function () {
   function promoteListItemDisplayMath() {
-    var elements = document.querySelectorAll('.post-body li > p');
+    var elements = document.querySelectorAll('.post-body li > p, .post-body li');
+    var trailingDisplayCandidate = /(?:\s*<br\s*\/?>\s*|\s*\n\s*)\\\(([\s\S]*?)\\\)\s*$/i;
 
     elements.forEach(function (element) {
       if (element.closest('pre, code, script, style, textarea, noscript, mjx-container')) {
@@ -9,12 +10,12 @@
 
       var html = element.innerHTML;
 
-      if (html.indexOf('\\(') === -1 || !/<br\s*\/?>/i.test(html)) {
+      if (html.indexOf('\\(') === -1 || !trailingDisplayCandidate.test(html)) {
         return;
       }
 
       element.innerHTML = html.replace(
-        /\s*<br\s*\/?>\s*\\\(([\s\S]*?)\\\)\s*$/i,
+        trailingDisplayCandidate,
         function (_match, math) {
           return '\n\\[' + math.trim() + '\\]';
         }
@@ -22,8 +23,32 @@
     });
   }
 
+  function markListItemsWithDisplayMath() {
+    var listItems = document.querySelectorAll('.post-body li');
+
+    listItems.forEach(function (listItem) {
+      if (listItem.closest('pre, code, script, style, textarea, noscript, mjx-container')) {
+        return;
+      }
+
+      if (listItem.innerHTML.indexOf('\\[') !== -1) {
+        listItem.classList.add('list-item-display-math');
+
+        var content = listItem.innerHTML.trim()
+          .replace(/^<p>\s*/i, '')
+          .replace(/\s*<\/p>$/i, '')
+          .trim();
+
+        if (/^\\\[[\s\S]*\\\]$/.test(content)) {
+          listItem.classList.add('list-item-display-math-only');
+        }
+      }
+    });
+  }
+
   function prepareMathDelimiters() {
     promoteListItemDisplayMath();
+    markListItemsWithDisplayMath();
     normalizeInlineMathDelimiters();
   }
 
@@ -200,6 +225,7 @@
 
   window.normalizeInlineMathDelimiters = normalizeInlineMathDelimiters;
   window.promoteListItemDisplayMath = promoteListItemDisplayMath;
+  window.markListItemsWithDisplayMath = markListItemsWithDisplayMath;
   window.prepareMathDelimiters = prepareMathDelimiters;
   normalizeInlineMathWhenReady();
 
