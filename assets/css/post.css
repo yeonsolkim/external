@@ -135,8 +135,50 @@ color: #0000004b;
 font-size: 0.95em;
 }
 
+.post-body ol > li.list-item-display-math::marker {
+color: #0000004b;
+font-size: 0.95em;
+}
+
 .post-body ol > li::before {
 content: none;
+}
+
+.post-body li.list-item-display-math {
+margin-top: 0.35rem;
+margin-bottom: 0.55rem;
+}
+
+.post-body li.list-item-display-math > p {
+margin-top: 0;
+margin-bottom: 0.25rem;
+}
+
+.post-body li.list-item-display-math mjx-container[display="true"] {
+margin-top: 0.2rem !important;
+margin-bottom: 0.2rem !important;
+}
+
+.post-body li.list-item-display-math mjx-container[display="true"] > svg {
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+.post-body li.list-item-display-math-only mjx-container[display="true"] {
+display: inline-block;
+width: 100%;
+max-width: 100%;
+margin: 0 !important;
+padding: 0;
+box-sizing: border-box;
+text-align: center;
+vertical-align: middle;
+}
+
+.post-body li.list-item-display-math-only mjx-container[display="true"] > svg {
+margin-left: auto;
+margin-right: auto;
 }
 
 .post-body ol ul {

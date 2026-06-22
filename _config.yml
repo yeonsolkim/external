@@ -18,7 +18,6 @@ social:
   links:
     - https://github.com/yeonsolkim
 image: "https://yeonsolkim.github.io/external/assets/images/banner.jpg"
-incremental: true 
 markdown: kramdown
 kramdown:
   math_engine: mathjax
