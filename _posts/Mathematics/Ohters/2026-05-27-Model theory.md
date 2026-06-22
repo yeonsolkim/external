@@ -5,7 +5,7 @@ date: 2026-05-27 10:37:14 +0900
 category_path:
   - Mathematics
   - Ohters
-last_modified_at: 2026-06-21 12:35:05 +0900
+last_modified_at: 2026-06-22 13:14:21 +0900
 created_at: 2026-05-27 10:37:14 +0900
 ---
 
@@ -64,3 +64,7 @@ We let $\text{Th}(\mathcal M),$ the $full\ theory\ of\ \mathcal M,$ be the set o
 <br>
 
 **Definition 9.** We say that a class of $\mathcal L$ structures $\mathcal K$ is an $elementary\ class$ if there is an $\mathcal L$-theory such that $\mathcal K=\lbrace \mathcal M: \mathcal M\vDash T\rbrace.$ The elementary class of models of $\text{Th}(\mathcal M)$ is exactly the class of $\mathcal L$-structures elementarily equivalent to $\mathcal M.$
+
+
+## References
+- David Marker, *Model theory : an introduction,* Springer, ISBN 0387987606
