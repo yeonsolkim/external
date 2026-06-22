@@ -224,12 +224,12 @@
       }
 
       fragment.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+      fragment.appendChild(document.createTextNode(match[1] + ' '));
 
       link = document.createElement('a');
       link.className = 'math-ref-link';
       link.href = href;
       link.setAttribute('aria-label', match[0]);
-      link.appendChild(document.createTextNode(match[1] + ' '));
 
       number = document.createElement('span');
       number.className = 'math-ref-number';
