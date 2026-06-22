@@ -1,4 +1,32 @@
 (function () {
+  function promoteListItemDisplayMath() {
+    var elements = document.querySelectorAll('.post-body li > p');
+
+    elements.forEach(function (element) {
+      if (element.closest('pre, code, script, style, textarea, noscript, mjx-container')) {
+        return;
+      }
+
+      var html = element.innerHTML;
+
+      if (html.indexOf('\\(') === -1 || !/<br\s*\/?>/i.test(html)) {
+        return;
+      }
+
+      element.innerHTML = html.replace(
+        /\s*<br\s*\/?>\s*\\\(([\s\S]*?)\\\)\s*$/i,
+        function (_match, math) {
+          return '\n\\[' + math.trim() + '\\]';
+        }
+      );
+    });
+  }
+
+  function prepareMathDelimiters() {
+    promoteListItemDisplayMath();
+    normalizeInlineMathDelimiters();
+  }
+
   function normalizeInlineMathDelimiters() {
     function isEscaped(text, index) {
       var backslashes = 0;
@@ -132,13 +160,13 @@
     if (document.readyState === 'loading') {
       return new Promise(function (resolve) {
         document.addEventListener('DOMContentLoaded', function () {
-          normalizeInlineMathDelimiters();
+          prepareMathDelimiters();
           resolve();
         }, { once: true });
       });
     }
 
-    normalizeInlineMathDelimiters();
+    prepareMathDelimiters();
     return Promise.resolve();
   }
 
@@ -171,6 +199,8 @@
   }
 
   window.normalizeInlineMathDelimiters = normalizeInlineMathDelimiters;
+  window.promoteListItemDisplayMath = promoteListItemDisplayMath;
+  window.prepareMathDelimiters = prepareMathDelimiters;
   normalizeInlineMathWhenReady();
 
   var iOSTouchDevice = isIOSTouchDevice();
