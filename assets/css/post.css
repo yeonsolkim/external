@@ -123,27 +123,35 @@ background-color: #ffffff00 !important;
 }
 
 .post-body ol {
-list-style: decimal;
+--ol-left-indent: 1em;
+--ol-marker-gap: 0.8rem;
+--ol-marker-width: 2rem;
+list-style: none;
 margin-top: -0.5rem !important;
-padding-left: 2rem;
+padding-left: calc(var(--ol-left-indent) + var(--ol-marker-width) + var(--ol-marker-gap));
 }
 
 .post-body ol > li {
+position: relative;
 line-height: 1.6;
 }
 
 .post-body ol > li::marker {
-color: #333;
-font-size: 0.95em;
+content: "";
 }
 
 .post-body ol > li.list-item-display-math::marker {
-color: #333;
-font-size: 0.95em;
+content: "";
 }
 
 .post-body ol > li::before {
-content: none;
+content: attr(data-marker-text);
+position: absolute;
+left: calc(-1 * (var(--ol-marker-width) + var(--ol-marker-gap)));
+width: var(--ol-marker-width);
+color: #333;
+font-size: 0.95em;
+text-align: left;
 }
 
 .post-body li.list-item-display-math {
@@ -395,4 +403,3 @@ padding-bottom: 0.8rem !important;
 .main-content .post-body table tbody tr:first-child > td {
 padding-top: 0.8rem !important;
 }
-

@@ -46,9 +46,83 @@
     });
   }
 
+  function applyOrderedListMarkerPrefixes() {
+    var orderedLists = document.querySelectorAll('.post-body ol');
+
+    function measureMarkerWidth(orderedList, listItems) {
+      if (listItems.length === 0) {
+        orderedList.style.removeProperty('--ol-marker-width');
+        return;
+      }
+
+      var markerStyle = window.getComputedStyle(listItems[0], '::before');
+      var measurer = document.createElement('span');
+      measurer.style.position = 'absolute';
+      measurer.style.visibility = 'hidden';
+      measurer.style.whiteSpace = 'nowrap';
+      measurer.style.fontFamily = markerStyle.fontFamily;
+      measurer.style.fontSize = markerStyle.fontSize;
+      measurer.style.fontStyle = markerStyle.fontStyle;
+      measurer.style.fontWeight = markerStyle.fontWeight;
+      measurer.style.letterSpacing = markerStyle.letterSpacing;
+      document.body.appendChild(measurer);
+
+      var maxWidth = 0;
+      listItems.forEach(function (listItem) {
+        measurer.textContent = listItem.getAttribute('data-marker-text') || '';
+        maxWidth = Math.max(maxWidth, measurer.getBoundingClientRect().width);
+      });
+
+      document.body.removeChild(measurer);
+      orderedList.style.setProperty('--ol-marker-width', Math.ceil(maxWidth) + 'px');
+    }
+
+    orderedLists.forEach(function (orderedList) {
+      var prefix = orderedList.getAttribute('data-marker-prefix') ||
+        orderedList.getAttribute('marker-prefix') ||
+        '';
+      var reversed = orderedList.hasAttribute('reversed');
+      var start = parseInt(
+        orderedList.getAttribute('start') ||
+          orderedList.getAttribute('data-start') ||
+          orderedList.getAttribute(':start'),
+        10
+      );
+      var listItems = Array.prototype.filter.call(orderedList.children, function (child) {
+        return child.tagName === 'LI';
+      });
+      var number = Number.isNaN(start) ? (reversed ? listItems.length : 1) : start;
+      prefix = prefix.trim();
+
+      listItems.forEach(function (listItem) {
+        var itemNumber = parseInt(listItem.getAttribute('value'), 10);
+
+        if (!Number.isNaN(itemNumber)) {
+          number = itemNumber;
+        }
+
+        if (prefix) {
+          listItem.setAttribute('data-marker-prefix', prefix);
+        } else {
+          listItem.removeAttribute('data-marker-prefix');
+        }
+
+        listItem.setAttribute(
+          'data-marker-text',
+          '(' + (prefix || '') + number + ')'
+        );
+
+        number += reversed ? -1 : 1;
+      });
+
+      measureMarkerWidth(orderedList, listItems);
+    });
+  }
+
   function prepareMathDelimiters() {
     promoteListItemDisplayMath();
     markListItemsWithDisplayMath();
+    applyOrderedListMarkerPrefixes();
     normalizeInlineMathDelimiters();
   }
 
@@ -226,6 +300,7 @@
   window.normalizeInlineMathDelimiters = normalizeInlineMathDelimiters;
   window.promoteListItemDisplayMath = promoteListItemDisplayMath;
   window.markListItemsWithDisplayMath = markListItemsWithDisplayMath;
+  window.applyOrderedListMarkerPrefixes = applyOrderedListMarkerPrefixes;
   window.prepareMathDelimiters = prepareMathDelimiters;
   normalizeInlineMathWhenReady();
 
