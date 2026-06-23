@@ -163,13 +163,27 @@
       return ranges;
     }
 
+    function getAttributeValue(rawTag, attributeName) {
+      var pattern = new RegExp("\\s" + attributeName + "\\s*=\\s*(\"([^\"]*)\"|'([^']*)'|([^\\s>]+))", 'i');
+      var match = rawTag.match(pattern);
+
+      if (!match) {
+        return '';
+      }
+
+      return match[2] || match[3] || match[4] || '';
+    }
+
     function tokenizeHtml(html) {
       var tokens = [];
-      var pattern = /<\/?em\b[^>]*>/gi;
+      var pattern = /<a\b[^>]*>[\s\S]*?<\/a>|<\/?em\b[^>]*>/gi;
       var lastIndex = 0;
       var match;
 
       while ((match = pattern.exec(html))) {
+        var raw = match[0];
+        var synthetic = '_';
+
         if (match.index > lastIndex) {
           tokens.push({
             raw: html.slice(lastIndex, match.index),
@@ -179,9 +193,18 @@
           });
         }
 
+        if (/^<a\b/i.test(raw)) {
+          synthetic = raw.replace(
+            /^<a\b[^>]*>([\s\S]*?)<\/a>$/i,
+            function (_anchor, label) {
+              return '[' + label + '](' + getAttributeValue(raw, 'href') + ')';
+            }
+          );
+        }
+
         tokens.push({
-          raw: match[0],
-          synthetic: '_',
+          raw: raw,
+          synthetic: synthetic,
           rawStart: match.index,
           rawEnd: pattern.lastIndex
         });
