@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Tenses and aspects
-date: 2026-05-23 14:56:28 +0900
+title: "Tenses and aspects"
+date: 2026-05-23 00:00:00 +0900
 category_path:
   - English
   - III. Semantics
-last_modified_at: 2026-06-21 12:35:05 +0900
 created_at: 2026-05-23 14:56:28 +0900
+last_modified_at: 2026-06-21 12:35:05 +0900
 ---
 
 

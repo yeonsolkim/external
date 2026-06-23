@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Does one have to be a genius to do maths?
+title: "Does one have to be a genius to do maths?"
 date: 2026-06-02 00:00:00 +0900
 category_path:
   - Reading

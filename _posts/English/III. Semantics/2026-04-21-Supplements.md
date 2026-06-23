@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Supplements
-date: 2026-04-21 17:30:49 +0900
+title: "Supplements"
+date: 2026-04-21 00:00:00 +0900
 category_path:
   - English
   - III. Semantics
-last_modified_at: 2026-05-26 18:58:00 +0900
 created_at: 2026-04-21 17:30:49 +0900
+last_modified_at: 2026-05-26 18:58:00 +0900
 ---
 
 1. 보충 설명(not restrictive)
