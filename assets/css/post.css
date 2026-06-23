@@ -92,7 +92,7 @@ margin-top: -0.5rem !important;
 }
 
 .post-body ul li::marker {
-color: #0000004b; 
+color: #333; 
 font-size: 0.85em;
 }
 
@@ -133,12 +133,12 @@ line-height: 1.6;
 }
 
 .post-body ol > li::marker {
-color: #0000004b;
+color: #333;
 font-size: 0.95em;
 }
 
 .post-body ol > li.list-item-display-math::marker {
-color: #0000004b;
+color: #333;
 font-size: 0.95em;
 }
 
