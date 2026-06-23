@@ -166,7 +166,7 @@
       return html;
     }
 
-    var elements = document.querySelectorAll('.post-body p, .post-body li');
+    var elements = document.querySelectorAll('.post-body p, .post-body li, .post-body th, .post-body td');
 
     elements.forEach(function (element) {
       if (element.closest('pre, code, script, style, textarea, noscript, mjx-container')) {
