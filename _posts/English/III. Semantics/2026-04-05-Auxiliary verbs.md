@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Auxiliary verbs
-date: 2026-04-05 16:09:47 +0900
+title: "Auxiliary verbs"
+date: 2026-04-05 00:00:00 +0900
 category_path:
   - English
   - III. Semantics
-last_modified_at: 2026-05-26 14:57:08 +0900
 created_at: 2026-04-05 16:09:47 +0900
+last_modified_at: 2026-05-26 14:57:08 +0900
 ---
 
 

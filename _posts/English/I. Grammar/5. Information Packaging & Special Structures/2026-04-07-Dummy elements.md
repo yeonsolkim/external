@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Dummy elements
-date: 2026-04-07 11:59:18 +0900
+title: "Dummy elements"
+date: 2026-04-07 00:00:00 +0900
 category_path:
   - English
   - I. Grammar
   - 5. Information Packaging & Special Structures
-last_modified_at: 2026-06-02 13:42:38 +0900
 created_at: 2026-04-07 11:59:18 +0900
+last_modified_at: 2026-06-02 13:42:38 +0900
 ---
 
 ### 1. Dummy subjects

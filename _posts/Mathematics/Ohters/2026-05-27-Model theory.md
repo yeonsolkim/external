@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Model theory
-date: 2026-05-27 10:37:14 +0900
+title: "Model theory"
+date: 2026-05-27 00:00:00 +0900
 category_path:
   - Mathematics
   - Ohters
-last_modified_at: 2026-06-22 13:14:21 +0900
 created_at: 2026-05-27 10:37:14 +0900
+last_modified_at: 2026-06-22 13:14:21 +0900
 ---
 
 **Definition 1.** A $language\,\mathcal{L}$ is given by the following data: 

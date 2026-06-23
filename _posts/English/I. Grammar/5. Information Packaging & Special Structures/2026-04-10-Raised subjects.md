@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Raised subjects
-date: 2026-04-10 21:30:53 +0900
+title: "Raised subjects"
+date: 2026-04-10 00:00:00 +0900
 category_path:
   - English
   - I. Grammar
   - 5. Information Packaging & Special Structures
-last_modified_at: 2026-05-23 17:17:15 +0900
 created_at: 2026-04-10 21:30:53 +0900
+last_modified_at: 2026-05-23 17:17:15 +0900
 ---
 
 
