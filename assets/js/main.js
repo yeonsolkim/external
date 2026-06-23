@@ -341,9 +341,229 @@
     settleHashScroll();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initMathReferenceLinks, { once: true });
-  } else {
+  var tableBalanceFrame = 0;
+  var tableBalanceEventsBound = false;
+
+  function readPixelValue(value) {
+    var number = parseFloat(value);
+    return Number.isFinite(number) ? number : 0;
+  }
+
+  function getTableColumnCount(table) {
+    var rows = table.rows;
+    var maxColumns = 0;
+
+    Array.prototype.forEach.call(rows, function (row) {
+      var count = 0;
+
+      Array.prototype.forEach.call(row.cells, function (cell) {
+        count += Math.max(1, cell.colSpan || 1);
+      });
+
+      maxColumns = Math.max(maxColumns, count);
+    });
+
+    return maxColumns;
+  }
+
+  function measureCellWidth(cell, measurer) {
+    var style = window.getComputedStyle(cell);
+    var clone = document.createElement('div');
+    var width;
+
+    clone.innerHTML = cell.innerHTML;
+    clone.style.boxSizing = 'border-box';
+    clone.style.display = 'inline-block';
+    clone.style.font = style.font;
+    clone.style.fontFamily = style.fontFamily;
+    clone.style.fontSize = style.fontSize;
+    clone.style.fontStyle = style.fontStyle;
+    clone.style.fontWeight = style.fontWeight;
+    clone.style.letterSpacing = style.letterSpacing;
+    clone.style.lineHeight = style.lineHeight;
+    clone.style.paddingLeft = style.paddingLeft;
+    clone.style.paddingRight = style.paddingRight;
+    clone.style.textTransform = style.textTransform;
+    clone.style.whiteSpace = 'nowrap';
+
+    measurer.appendChild(clone);
+    width = clone.getBoundingClientRect().width;
+    measurer.removeChild(clone);
+
+    return width;
+  }
+
+  function collectColumnMetrics(table, columnCount) {
+    var preferredWidths = Array(columnCount).fill(0);
+    var floorWidths = Array(columnCount).fill(0);
+    var measurer = document.createElement('div');
+
+    measurer.setAttribute('aria-hidden', 'true');
+    measurer.style.position = 'absolute';
+    measurer.style.left = '-10000px';
+    measurer.style.top = '0';
+    measurer.style.visibility = 'hidden';
+    measurer.style.pointerEvents = 'none';
+    measurer.style.whiteSpace = 'nowrap';
+    document.body.appendChild(measurer);
+
+    Array.prototype.forEach.call(table.rows, function (row) {
+      var columnIndex = 0;
+
+      Array.prototype.forEach.call(row.cells, function (cell) {
+        var style = window.getComputedStyle(cell);
+        var span = Math.max(1, Math.min(cell.colSpan || 1, columnCount - columnIndex));
+        var horizontalPadding = readPixelValue(style.paddingLeft) + readPixelValue(style.paddingRight);
+        var measuredWidth = measureCellWidth(cell, measurer) / span;
+        var floorWidth = (horizontalPadding / span) + 24;
+        var index;
+
+        for (index = columnIndex; index < columnIndex + span && index < columnCount; index += 1) {
+          preferredWidths[index] = Math.max(preferredWidths[index], measuredWidth);
+          floorWidths[index] = Math.max(floorWidths[index], floorWidth);
+        }
+
+        columnIndex += span;
+      });
+    });
+
+    document.body.removeChild(measurer);
+
+    return {
+      preferredWidths: preferredWidths,
+      floorWidths: floorWidths
+    };
+  }
+
+  function calculateColumnWidths(totalWidth, preferredWidths, floorWidths) {
+    var columnCount = preferredWidths.length;
+    var equalWidth = totalWidth / columnCount;
+    var widths = Array(columnCount).fill(equalWidth);
+    var needs = Array(columnCount).fill(0);
+    var available = Array(columnCount).fill(0);
+    var totalNeed = 0;
+    var totalAvailable = 0;
+    var grantedWidth;
+    var index;
+
+    for (index = 0; index < columnCount; index += 1) {
+      if (preferredWidths[index] > equalWidth) {
+        needs[index] = preferredWidths[index] - equalWidth;
+        totalNeed += needs[index];
+      } else {
+        available[index] = Math.max(0, equalWidth - floorWidths[index]);
+        totalAvailable += available[index];
+      }
+    }
+
+    if (totalNeed === 0 || totalAvailable === 0) {
+      return widths;
+    }
+
+    grantedWidth = Math.min(totalNeed, totalAvailable);
+
+    for (index = 0; index < columnCount; index += 1) {
+      if (needs[index] > 0) {
+        widths[index] += grantedWidth * (needs[index] / totalNeed);
+      } else if (available[index] > 0) {
+        widths[index] -= grantedWidth * (available[index] / totalAvailable);
+      }
+    }
+
+    return widths;
+  }
+
+  function applyColumnWidths(table, widths, totalWidth) {
+    var oldColGroup = table.querySelector('colgroup[data-balanced-columns]');
+    var colGroup = document.createElement('colgroup');
+
+    if (oldColGroup) {
+      oldColGroup.remove();
+    }
+
+    colGroup.setAttribute('data-balanced-columns', 'true');
+
+    widths.forEach(function (width) {
+      var col = document.createElement('col');
+      col.style.width = ((width / totalWidth) * 100).toFixed(4) + '%';
+      colGroup.appendChild(col);
+    });
+
+    table.insertBefore(colGroup, table.firstChild);
+    table.setAttribute('data-balanced-columns', 'true');
+    table.style.setProperty('table-layout', 'fixed', 'important');
+  }
+
+  function balancePostTable(table) {
+    var columnCount;
+    var tableWidth;
+    var metrics;
+    var widths;
+
+    if (table.closest('.highlight')) {
+      return;
+    }
+
+    columnCount = getTableColumnCount(table);
+    tableWidth = table.getBoundingClientRect().width;
+
+    if (columnCount < 2 || tableWidth <= 0) {
+      return;
+    }
+
+    metrics = collectColumnMetrics(table, columnCount);
+    widths = calculateColumnWidths(tableWidth, metrics.preferredWidths, metrics.floorWidths);
+    applyColumnWidths(table, widths, tableWidth);
+  }
+
+  function balancePostTables() {
+    var postBody = getPostBody();
+
+    if (!postBody) {
+      return;
+    }
+
+    postBody.querySelectorAll('table').forEach(balancePostTable);
+  }
+
+  function schedulePostTableBalance() {
+    if (tableBalanceFrame) {
+      window.cancelAnimationFrame(tableBalanceFrame);
+    }
+
+    tableBalanceFrame = window.requestAnimationFrame(function () {
+      tableBalanceFrame = 0;
+      balancePostTables();
+    });
+  }
+
+  function initPostTableBalance() {
+    schedulePostTableBalance();
+
+    if (!tableBalanceEventsBound) {
+      tableBalanceEventsBound = true;
+      window.addEventListener('resize', schedulePostTableBalance);
+    }
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(schedulePostTableBalance);
+    }
+
+    if (window.MathJax && window.MathJax.startup && window.MathJax.startup.promise) {
+      window.MathJax.startup.promise.then(schedulePostTableBalance);
+    }
+  }
+
+  function initPageEnhancements() {
     initMathReferenceLinks();
+    initPostTableBalance();
+  }
+
+  window.balancePostTables = balancePostTables;
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPageEnhancements, { once: true });
+  } else {
+    initPageEnhancements();
   }
 }());
