@@ -11,7 +11,7 @@
       {%- assign first_source = true -%}
       {%- for post in site.posts -%}
         {%- assign category_path = post.category_path | join: "/" -%}
-        {%- if category_path contains "II. Calculus" -%}
+        {%- if category_path contains "Calculus" -%}
           {%- unless first_source -%},{%- endunless -%}
           {
             url: {{ post.url | relative_url | jsonify }},
@@ -25,7 +25,7 @@
       {%- assign first_source = true -%}
       {%- for post in site.posts -%}
         {%- assign category_path = post.category_path | join: "/" -%}
-        {%- if category_path contains "III. Linear Algebra" -%}
+        {%- if category_path contains "Linear Algebra" -%}
           {%- unless first_source -%},{%- endunless -%}
           {
             url: {{ post.url | relative_url | jsonify }},

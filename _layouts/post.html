@@ -4,9 +4,10 @@ title: Semantics
 ---
 
 {% assign reference_scope = "" %}
-{% if page.category_path contains "II. Calculus" %}
+{% assign category_path = page.category_path | join: "/" %}
+{% if category_path contains "Calculus" %}
   {% assign reference_scope = "calculus" %}
-{% elsif page.category_path contains "III. Linear Algebra" %}
+{% elsif category_path contains "Linear Algebra" %}
   {% assign reference_scope = "linear-algebra" %}
 {% endif %}
 
