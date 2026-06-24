@@ -4,10 +4,10 @@ title: Semantics
 ---
 
 {% assign reference_scope = "" %}
-{% assign category_path = page.category_path | join: "/" %}
-{% if category_path contains "Calculus" %}
+{% assign category_path_text = page.category_path | join: "/" %}
+{% if category_path_text contains "Calculus" %}
   {% assign reference_scope = "calculus" %}
-{% elsif category_path contains "Linear Algebra" %}
+{% elsif category_path_text contains "Linear Algebra" %}
   {% assign reference_scope = "linear-algebra" %}
 {% endif %}
 
@@ -19,7 +19,27 @@ title: Semantics
     {% assign clean_title = clean_title | remove_first: prefix %}
   {% endfor %}
 
+  {% assign category_label = "" %}
+  {% for category_item in page.category_path %}
+    {% if forloop.index0 == 1 %}
+      {% assign category_label = category_item %}
+    {% endif %}
+  {% endfor %}
+  {% assign category_label_parts = category_label | split: ". " %}
+  {% assign category_label_prefix = category_label_parts[0] %}
+  {% assign roman_numerals = "I|II|III|IV|V|VI|VII|VIII|IX|X" | split: "|" %}
+  {% if category_label_parts.size > 1 %}
+    {% if roman_numerals contains category_label_prefix %}
+      {% assign prefix_with_space = category_label_prefix | append: ". " %}
+      {% assign category_label = category_label | remove_first: prefix_with_space %}
+    {% endif %}
+  {% endif %}
+
   <header class="post-header">
+    {% if category_label != "" %}
+      <span class="post-author-name post-category-path">{{ category_label }}</span>
+    {% endif %}
+
     <h1 class="post-title">
       {{ clean_title }}
     </h1>
@@ -31,7 +51,7 @@ title: Semantics
     <span class="post-author-name">Yeonsol Kim</span>
 
     <p class="post-date">
-      {{ page.date | date: "%B %d, %Y" }}
+      {{ page.date | date: "%B %-d, %Y" }}
     </p>
   </header>
 
