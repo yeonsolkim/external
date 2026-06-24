@@ -1,16 +1,18 @@
 # frozen_string_literal: true
 
 module ExternalInlineMathPreprocessor
+  DATA_KEY = "inline_math_placeholders"
   MARKDOWN_EXTENSIONS = [".md", ".markdown"].freeze
 
   module_function
 
-  def normalize(content)
+  def protect(content)
     return content unless content&.include?("$")
 
     output = +""
     fence = nil
     math_block = false
+    placeholders = []
 
     content.each_line do |line|
       if math_block
@@ -32,14 +34,14 @@ module ExternalInlineMathPreprocessor
         output << line
         math_block = true unless closing_math_block?(line, 2)
       else
-        output << normalize_inline_code_segments(line)
+        output << protect_inline_code_segments(line, placeholders)
       end
     end
 
-    output
+    [output, placeholders]
   end
 
-  def normalize_inline_code_segments(line)
+  def protect_inline_code_segments(line, placeholders)
     output = +""
     index = 0
 
@@ -56,10 +58,7 @@ module ExternalInlineMathPreprocessor
         end
       else
         next_code_index = line.index("`", index) || line.length
-        output << normalize_dollar_segment(
-          line[index...next_code_index],
-          block_content_start: block_content_start?(line, index)
-        )
+        output << protect_dollar_segment(line[index...next_code_index], placeholders)
         index = next_code_index
       end
     end
@@ -67,7 +66,7 @@ module ExternalInlineMathPreprocessor
     output
   end
 
-  def normalize_dollar_segment(text, block_content_start: false)
+  def protect_dollar_segment(text, placeholders)
     output = +""
     index = 0
 
@@ -87,8 +86,7 @@ module ExternalInlineMathPreprocessor
         close_index = closing_dollar_index(text, index + 1)
 
         if close_index
-          output << (block_content_start && block_content_prefix?(text, index) ? "\\$$" : "$$")
-          output << text[(index + 1)...close_index] << "$$"
+          output << placeholder_for(text[(index + 1)...close_index], placeholders)
           index = close_index + 1
           next
         end
@@ -101,14 +99,34 @@ module ExternalInlineMathPreprocessor
     output
   end
 
-  def block_content_start?(line, index)
-    prefix = line[0...index]
-    prefix.match?(/\A\s*(?:>\s*)*(?:(?:[-+*]|\d+[.)])\s+)?\z/)
+  def placeholder_for(math, placeholders)
+    index = placeholders.length
+    placeholders << math
+    "@@codex-inline-math-#{index}@@"
   end
 
-  def block_content_prefix?(text, index)
-    prefix = text[0...index]
-    prefix.match?(/\A\s*(?:>\s*)*(?:(?:[-+*]|\d+[.)])\s+)?\z/)
+  def restore(output, placeholders)
+    return output if placeholders.nil? || placeholders.empty?
+
+    placeholders.each_with_index do |math, index|
+      output = output.gsub(
+        "@@codex-inline-math-#{index}@@",
+        inline_math_html(math)
+      )
+    end
+
+    output
+  end
+
+  def inline_math_html(math)
+    '<span class="math-inline">\(' + escape_html(math) + '\)</span>'
+  end
+
+  def escape_html(text)
+    text
+      .gsub("&", "&amp;")
+      .gsub("<", "&lt;")
+      .gsub(">", "&gt;")
   end
 
   def opening_fence(line)
@@ -221,31 +239,32 @@ module ExternalInlineMathPreprocessor
     options["enabled"] != false
   end
 
-  def normalize_item(item, site)
+  def protect_item(item, site)
     return unless enabled?(site)
     return unless markdown_item?(item)
 
-    item.content = normalize(item.content)
+    protected_content, placeholders = protect(item.content)
+    item.content = protected_content
+    item.data[DATA_KEY] = placeholders
+  end
+
+  def restore_item(item, site)
+    return unless enabled?(site)
+    return unless markdown_item?(item)
+
+    item.output = restore(item.output, item.data[DATA_KEY])
+    item.data.delete(DATA_KEY)
   end
 end
 
 if defined?(Jekyll)
-  Jekyll::Hooks.register :site, :post_read do |site|
-    next unless ExternalInlineMathPreprocessor.enabled?(site)
-
-    site.pages.each do |page|
-      ExternalInlineMathPreprocessor.normalize_item(page, site)
-    end
-
-    site.collections.each_value do |collection|
-      collection.docs.each do |document|
-        ExternalInlineMathPreprocessor.normalize_item(document, site)
-      end
-    end
-  end
-
   Jekyll::Hooks.register [:pages, :documents], :pre_render do |item|
     site = item.respond_to?(:site) ? item.site : nil
-    ExternalInlineMathPreprocessor.normalize_item(item, site) if site
+    ExternalInlineMathPreprocessor.protect_item(item, site) if site
+  end
+
+  Jekyll::Hooks.register [:pages, :documents], :post_render do |item|
+    site = item.respond_to?(:site) ? item.site : nil
+    ExternalInlineMathPreprocessor.restore_item(item, site) if site
   end
 end
