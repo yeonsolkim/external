@@ -6,36 +6,22 @@
   var labelPattern = /^(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example)\s+(\d+(?:\.\d+)+)\.?/;
   var sourceLabelPattern = /(?:\*\*|<(?:strong|b)\b[^>]*>)\s*(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example)\s+(\d+(?:\.\d+)+)\.?(?=\s|\*|\)|<\/(?:strong|b)>)/g;
   var referencePattern = /\b(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example)\s+(\d+(?:\.\d+)+)\b/g;
-  var labelSources = {
-    "calculus": [
-      {%- assign first_source = true -%}
-      {%- for post in site.posts -%}
-        {%- assign category_path = post.category_path | join: "/" -%}
-        {%- if category_path contains "Calculus" -%}
-          {%- unless first_source -%},{%- endunless -%}
-          {
-            url: {{ post.url | relative_url | jsonify }},
-            content: {{ post.content | jsonify }}
-          }
-          {%- assign first_source = false -%}
-        {%- endif -%}
-      {%- endfor -%}
-    ],
-    "linear-algebra": [
-      {%- assign first_source = true -%}
-      {%- for post in site.posts -%}
-        {%- assign category_path = post.category_path | join: "/" -%}
-        {%- if category_path contains "Linear Algebra" -%}
-          {%- unless first_source -%},{%- endunless -%}
-          {
-            url: {{ post.url | relative_url | jsonify }},
-            content: {{ post.content | jsonify }}
-          }
-          {%- assign first_source = false -%}
-        {%- endif -%}
-      {%- endfor -%}
-    ]
-  };
+  var labelSources = [
+    {%- assign first_source = true -%}
+    {%- for post in site.posts -%}
+      {%- assign reference_scope_source = post.category_path[1] | default: "" -%}
+      {%- assign reference_scope = reference_scope_source | slugify -%}
+      {%- if reference_scope != "" -%}
+        {%- unless first_source -%},{%- endunless -%}
+        {
+          scope: {{ reference_scope | jsonify }},
+          url: {{ post.url | relative_url | jsonify }},
+          content: {{ post.content | jsonify }}
+        }
+        {%- assign first_source = false -%}
+      {%- endif -%}
+    {%- endfor -%}
+  ];
 
   function getPostBody() {
     return document.querySelector('.post-body.math-scroll') || document.querySelector('.post-body');
@@ -329,9 +315,11 @@
   function initMathReferenceLinks() {
     var postBody = getPostBody();
     var scope = getReferenceScope();
-    var sources = labelSources[scope];
+    var sources = labelSources.filter(function (source) {
+      return source.scope === scope;
+    });
 
-    if (!postBody || !sources) {
+    if (!postBody || !scope || !sources.length) {
       return;
     }
 

@@ -3,13 +3,8 @@ layout: default
 title: Semantics
 ---
 
-{% assign reference_scope = "" %}
-{% assign category_path_text = page.category_path | join: "/" %}
-{% if category_path_text contains "Calculus" %}
-  {% assign reference_scope = "calculus" %}
-{% elsif category_path_text contains "Linear Algebra" %}
-  {% assign reference_scope = "linear-algebra" %}
-{% endif %}
+{% assign reference_scope_source = page.category_path[1] | default: "" %}
+{% assign reference_scope = reference_scope_source | slugify %}
 
 <article class="main-content"{% if reference_scope != "" %} data-reference-scope="{{ reference_scope }}"{% endif %}>
 

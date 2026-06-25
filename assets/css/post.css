@@ -243,6 +243,13 @@ padding: 0 !important;
 max-width: none !important;
 width: 100% !important;
 box-sizing: border-box !important;
+overflow-x: clip;
+}
+
+@supports not (overflow: clip) {
+  .post-body {
+    overflow-x: hidden;
+  }
 }
 
 html.mathjax-loading .post-body {
@@ -301,6 +308,22 @@ pointer-events: none;
 
 .math-scroll {
 max-width: 100%;
+}
+
+.post-body mjx-container {
+contain: paint;
+overflow: clip;
+}
+
+.post-body mjx-assistive-mml {
+-webkit-user-select: none;
+user-select: none;
+}
+
+@supports not (overflow: clip) {
+  .post-body mjx-container {
+    overflow: hidden;
+  }
 }
 
 .math-scroll mjx-container[display="true"],
