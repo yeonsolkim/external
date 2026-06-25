@@ -5,8 +5,8 @@ date: 2026-06-23 00:00:00 +0900
 category_path:
   - Mathematics
   - Ohters
-created_at: 2026-06-23 16:11:23 +0900
-last_modified_at: 2026-06-24 12:23:12 +0900
+created_at: 2026-06-25 12:36:39 +0900
+last_modified_at: 2026-06-25 12:36:39 +0900
 ---
 
 **Belonging.** a binary "relation" $\in.$ hierarchical한 느낌이다: [$n$-dimension] $\in$ [($n+1$)-dimension].<br>
@@ -14,9 +14,9 @@ last_modified_at: 2026-06-24 12:23:12 +0900
 
 **Inclusion.**
 
-$$A\subset B \iff \forall x\,(x\in A \Rightarrow x\in B).$$
+$$A\subseteq B \iff \forall x\,(x\in A \Rightarrow x\in B).$$
 
-여기서 두 set은 same-dimensional로 보여진다. $A\subset B\wedge B\subset C \Rightarrow A\subset C\ (transitive)$<br>
+여기서 두 set은 same-dimensional로 보여진다. $A\subseteq B\wedge B\subseteq C \Rightarrow A\subseteq C\ (transitive)$<br>
 <br>
 
 **Axiom of Extension.**
@@ -71,10 +71,10 @@ $$(A\cup B)'=A'\cap B',\ (A\cap B)'=A'\cup B'.$$
 
 **Axiom of powers.** 
 
-$$\forall E\, \exists \mathcal{P}\, \forall x\ (x\subset E\Rightarrow x\in \mathcal{P}).$$ 
+$$\forall E\, \exists \mathcal{P}\, \forall x\ (x\subseteq E\Rightarrow x\in \mathcal{P}).$$ 
 
 And, applying axiom of specification, we get 
 
-$$\forall E\, \exists \mathcal{P}\, \forall x\ (x\subset E\Leftrightarrow x\in \mathcal{P}).$$
+$$\forall E\, \exists \mathcal{P}\, \forall x\ (x\subseteq E\Leftrightarrow x\in \mathcal{P}).$$
 
 The set $\mathcal{P}$ is called the *power set* of $E;$ the dependence of $\mathcal{P}$ on $E$ is denoted by $\mathcal{P}(E).$ 
