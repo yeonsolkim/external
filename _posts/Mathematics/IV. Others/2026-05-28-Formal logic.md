@@ -4,7 +4,7 @@ title: "Formal logic"
 date: 2026-05-28 00:00:00 +0900
 category_path:
   - Mathematics
-  - Ohters
+  - IV. Others
 created_at: 2026-05-28 09:19:08 +0900
 last_modified_at: 2026-06-21 12:35:05 +0900
 ---
