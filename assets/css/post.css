@@ -356,6 +356,10 @@ max-width: 100%;
     width: auto;
     max-width: none !important;
   }
+
+  .post-title {
+  line-height: 1.4rem !important;
+  }
 }
 
 figure {
