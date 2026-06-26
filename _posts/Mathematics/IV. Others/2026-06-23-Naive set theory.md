@@ -4,7 +4,7 @@ title: "Naive set theory"
 date: 2026-06-23 00:00:00 +0900
 category_path:
   - Mathematics
-  - Ohters
+  - IV. Others
 created_at: 2026-06-25 12:36:39 +0900
 last_modified_at: 2026-06-25 12:36:39 +0900
 ---
