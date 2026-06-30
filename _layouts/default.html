@@ -4,20 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  {% assign social_image = site.image | default: '/assets/images/banner.jpg' %}
-  {% unless social_image contains '://' %}
-    {% assign social_image = social_image | absolute_url %}
-  {% endunless %}
-
-  <meta property="og:image" content="{{ social_image }}">
-  <meta property="og:image:secure_url" content="{{ social_image }}">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:width" content="1179">
-  <meta property="og:image:height" content="1172">
-  <meta property="og:image:alt" content="{{ site.title | default: site.fixed_banner_title | default: site.social.name }}">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="{{ social_image }}">
-
   {% seo %}
 
   {% assign asset_version = site.github.build_revision %}
@@ -25,9 +11,6 @@
     {% assign asset_version = site.time | date: "%s" %}
   {% endunless %}
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ asset_version }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon-32x32.png' | relative_url }}?v={{ asset_version }}">
-  <link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/images/favicon-192x192.png' | relative_url }}?v={{ asset_version }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}?v={{ asset_version }}">
 
   {% if page.layout == "post" %}
     <link rel="stylesheet" href="{{ '/assets/css/post.css' | relative_url }}?v={{ asset_version }}">
