@@ -18,6 +18,7 @@ social:
   links:
     - https://github.com/yeonsolkim
 image: "https://yeonsolkim.github.io/external/assets/images/banner.jpg"
+logo: "/assets/images/favicon-192x192.png"
 markdown: kramdown
 kramdown:
   math_engine: mathjax
