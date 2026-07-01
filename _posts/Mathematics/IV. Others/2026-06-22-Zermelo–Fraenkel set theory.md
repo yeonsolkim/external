@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "ZFC"
+title: "Zermelo–Fraenkel set theory"
 date: 2026-06-22 00:00:00 +0900
 category_path:
   - Mathematics
   - IV. Others
 created_at: 2026-06-22 09:09:51 +0900
-last_modified_at: 2026-06-23 15:21:25 +0900
+last_modified_at: 2026-07-01 09:50:02 +0900
 ---
 
 **Definition 1.1.1.** Let $\mathcal L_{\in}$ be the first order language $\mathcal L_{\in}=\lbrace \in \rbrace,$ where $\in$ is a relation symbol.<br>
