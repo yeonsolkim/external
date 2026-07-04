@@ -334,11 +334,22 @@ user-select: none;
 .math-scroll .MathJax_Display {
 display: block;
 max-width: 100%;
-overflow-x: auto;
+overflow-x: hidden;
 overflow-y: hidden;
--webkit-overflow-scrolling: touch;
 padding: 0.25rem 0;
 box-sizing: border-box;
+}
+
+.math-scroll mjx-container[display="true"].math-overflowing,
+.math-scroll .MathJax_Display.math-overflowing {
+overflow-x: auto;
+-webkit-overflow-scrolling: touch;
+}
+
+.math-scroll mjx-container[display="true"][width="full"] {
+width: 100%;
+min-width: 0 !important;
+justify-content: flex-start;
 }
 
 .math-scroll mjx-container[display="true"] > *,
@@ -351,7 +362,6 @@ max-width: 100%;
   .math-scroll .MathJax_Display {
     width: 100%;
     max-width: 100%;
-    overflow-x: auto !important;
     overflow-y: hidden;
   }
 
@@ -359,6 +369,10 @@ max-width: 100%;
   .math-scroll .MathJax_Display > svg {
     width: auto;
     max-width: none !important;
+  }
+
+  .math-scroll mjx-container[display="true"][width="full"] > svg {
+    width: 100% !important;
   }
 
   .post-title {

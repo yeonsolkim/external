@@ -320,12 +320,44 @@
       window.matchMedia('(pointer: coarse)').matches;
   }
 
+  var displayMathOverflowFrame = 0;
+
+  function updateDisplayMathOverflow() {
+    displayMathOverflowFrame = 0;
+
+    var elements = document.querySelectorAll(
+      '.math-scroll mjx-container[display="true"], .math-scroll .MathJax_Display'
+    );
+
+    elements.forEach(function (element) {
+      var isOverflowing = element.scrollWidth - element.clientWidth > 1;
+
+      if (isOverflowing) {
+        element.classList.add('math-overflowing');
+      } else {
+        element.classList.remove('math-overflowing');
+      }
+    });
+  }
+
+  function scheduleDisplayMathOverflowCheck() {
+    if (displayMathOverflowFrame) {
+      return;
+    }
+
+    displayMathOverflowFrame = window.requestAnimationFrame(updateDisplayMathOverflow);
+  }
+
   window.normalizeInlineMathDelimiters = normalizeInlineMathDelimiters;
   window.promoteListItemDisplayMath = promoteListItemDisplayMath;
   window.markListItemsWithDisplayMath = markListItemsWithDisplayMath;
   window.applyOrderedListMarkerPrefixes = applyOrderedListMarkerPrefixes;
   window.prepareMathDelimiters = prepareMathDelimiters;
+  window.updateDisplayMathOverflow = updateDisplayMathOverflow;
   normalizeInlineMathWhenReady();
+
+  window.addEventListener('resize', scheduleDisplayMathOverflowCheck);
+  window.addEventListener('orientationchange', scheduleDisplayMathOverflowCheck);
 
   var iOSTouchDevice = isIOSTouchDevice();
   var scrollDisplayMath = shouldScrollDisplayMath();
@@ -346,6 +378,8 @@
           return MathJax.startup.defaultPageReady();
         }).then(
           () => {
+            updateDisplayMathOverflow();
+            window.setTimeout(updateDisplayMathOverflow, 100);
             document.documentElement.classList.remove('mathjax-loading');
           },
           (error) => {
@@ -357,7 +391,7 @@
     },
     output: {
       font: 'mathjax-tex',
-      displayOverflow: scrollDisplayMath ? 'scroll' : 'linebreak',
+      displayOverflow: scrollDisplayMath ? 'overflow' : 'linebreak',
       linebreaks: {
         inline: true,
         width: '100%',
@@ -370,7 +404,7 @@
       scale: 0.85,
       exFactor: 0.5,
       displayAlign: 'center',
-      displayOverflow: scrollDisplayMath ? 'scroll' : 'linebreak',
+      displayOverflow: scrollDisplayMath ? 'overflow' : 'linebreak',
       linebreaks: {
         inline: true,
         width: '100%',
