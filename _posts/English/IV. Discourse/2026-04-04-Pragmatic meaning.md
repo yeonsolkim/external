@@ -5,8 +5,8 @@ date: 2026-04-04 00:00:00 +0900
 category_path:
   - English
   - IV. Discourse
-created_at: 2026-04-04 11:45:36 +0900
-last_modified_at: 2026-05-23 17:07:16 +0900
+created_at: 2026-07-05 12:00:01 +0900
+last_modified_at: 2026-07-05 12:00:01 +0900
 ---
 
 

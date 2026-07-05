@@ -5,8 +5,8 @@ date: 2026-04-21 00:00:00 +0900
 category_path:
   - English
   - III. Semantics
-created_at: 2026-04-21 15:42:54 +0900
-last_modified_at: 2026-06-13 13:23:10 +0900
+created_at: 2026-07-05 12:00:01 +0900
+last_modified_at: 2026-07-05 12:00:01 +0900
 ---
 
 
