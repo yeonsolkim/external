@@ -5,8 +5,8 @@ date: 2026-05-25 00:00:00 +0900
 category_path:
   - English
   - III. Semantics
-created_at: 2026-05-25 14:04:49 +0900
-last_modified_at: 2026-05-25 14:18:59 +0900
+created_at: 2026-07-05 12:00:01 +0900
+last_modified_at: 2026-07-05 12:00:01 +0900
 ---
 
 1. (too) Adj/Adv (to-infinitival clause)<br> clause가 가능한 maximum을 초과한 정도
