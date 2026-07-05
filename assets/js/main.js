@@ -3,9 +3,9 @@
 (function () {
   'use strict';
 
-  var labelPattern = /^(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example)\s+(\d+(?:\.\d+)+)\.?/;
-  var sourceLabelPattern = /(?:\*\*|<(?:strong|b)\b[^>]*>)\s*(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example)\s+(\d+(?:\.\d+)+)\.?(?=\s|\*|\)|<\/(?:strong|b)>)/g;
-  var referencePattern = /\b(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example)\s+(\d+(?:\.\d+)+)\b/g;
+  var labelPattern = /^(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle)\s+(\d+(?:\.\d+)+)\.?/;
+  var sourceLabelPattern = /(?:\*\*|<(?:strong|b)\b[^>]*>)\s*(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle)\s+(\d+(?:\.\d+)+)\.?(?=\s|\*|\)|<\/(?:strong|b)>)/g;
+  var referencePattern = /\b(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle)\s+(\d+(?:\.\d+)+)\b/g;
   var labelSources = [
     {%- assign first_source = true -%}
     {%- for post in site.posts -%}
