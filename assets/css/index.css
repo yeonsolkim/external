@@ -1,10 +1,9 @@
 /* Post metadata */
-.post-edited-time {
+.post-date-meta {
   margin-left: 0.5rem;
   color: #767676a8;
   font-size: 0.8rem;
   font-weight: 300 !important;
-  white-space: nowrap;
 }
 
 /* Shared category and post row styles */

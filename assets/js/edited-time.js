@@ -1,50 +1,63 @@
 (function () {
-  function formatEditedTime(dateString) {
-    const edited = new Date(dateString);
+  function formatUpdatedTime(dateString, absoluteDate) {
+    const updated = new Date(dateString);
     const now = new Date();
 
-    if (Number.isNaN(edited.getTime())) {
+    if (Number.isNaN(updated.getTime())) {
       return null;
     }
 
-    const diffMs = now - edited;
+    const diffMs = now - updated;
     const minute = 60 * 1000;
     const hour = 60 * minute;
     const day = 24 * hour;
 
     if (diffMs < 0) {
-      return "edited just now";
+      return "updated just now";
     }
 
     if (diffMs < minute) {
-      return "edited just now";
+      return "updated just now";
     }
 
     const minutes = Math.floor(diffMs / minute);
     if (minutes < 60) {
-      return "edited " + minutes + " " + (minutes === 1 ? "minute" : "minutes") + " ago";
+      return "updated " + minutes + " " + (minutes === 1 ? "minute" : "minutes") + " ago";
     }
 
     const hours = Math.floor(diffMs / hour);
     if (hours < 24) {
-      return "edited " + hours + " " + (hours === 1 ? "hour" : "hours") + " ago";
+      return "updated " + hours + " " + (hours === 1 ? "hour" : "hours") + " ago";
     }
 
     const days = Math.floor(diffMs / day);
     if (days < 7) {
-      return "edited " + days + " " + (days === 1 ? "day" : "days") + " ago";
+      return "updated " + days + " " + (days === 1 ? "day" : "days") + " ago";
     }
 
-    return "edited on " + edited.toLocaleDateString("en-US", {
-      month: "short",
-      day: "numeric",
-      year: "numeric"
-    });
+    return "updated " + absoluteDate;
   }
 
-  document.querySelectorAll(".post-edited-time").forEach(function (el) {
-    const editedAt = el.getAttribute("data-edited-at");
-    const text = formatEditedTime(editedAt);
+  document.querySelectorAll(".post-date-meta").forEach(function (el) {
+    const createdText = el.getAttribute("data-created-display");
+    const createdDay = el.getAttribute("data-created-day");
+    const updatedAt = el.getAttribute("data-updated-at");
+    const updatedDay = el.getAttribute("data-updated-day");
+    const updatedText = el.getAttribute("data-updated-display");
+
+    if (!createdText) {
+      return;
+    }
+
+    if (!updatedAt || !updatedText || createdDay === updatedDay) {
+      el.textContent = createdText;
+      return;
+    }
+
+    const relativeUpdatedText = formatUpdatedTime(updatedAt, updatedText);
+    const text = relativeUpdatedText
+      ? createdText + " (" + relativeUpdatedText + ")"
+      : createdText + " (updated " + updatedText + ")";
 
     if (text) {
       el.textContent = text;

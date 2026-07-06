@@ -45,8 +45,24 @@ title: Semantics
 
     <span class="post-author-name">Yeonsol Kim</span>
 
-    <p class="post-date">
-      {{ page.date | date: "%B %-d, %Y" }}
+    {% assign page_date_day = page.date | date: "%Y-%m-%d" %}
+    {% assign page_date_display = page.date | date: "%B %-d, %Y" %}
+    {% if page.last_modified_at %}
+      {% assign page_updated_day = page.last_modified_at | date: "%Y-%m-%d" %}
+      {% assign page_updated_display = page.last_modified_at | date: "%B %-d, %Y" %}
+    {% endif %}
+
+    <p
+      class="post-date post-date-meta"
+      data-created-day="{{ page_date_day }}"
+      data-created-display="{{ page_date_display }}"
+      {% if page.last_modified_at %}
+        data-updated-at="{{ page.last_modified_at | date_to_xmlschema }}"
+        data-updated-day="{{ page_updated_day }}"
+        data-updated-display="{{ page_updated_display }}"
+      {% endif %}
+    >
+      {{ page_date_display }}{% if page.last_modified_at and page_updated_day != page_date_day %} (updated {{ page_updated_display }}){% endif %}
     </p>
   </header>
 

@@ -68,4 +68,4 @@ We let $\text{Th}(\mathcal M),$ the $full\ theory\ of\ \mathcal M,$ be the set o
 
 
 ## References
-- Marker, D. (2002). Model theory: An introduction. Springer. [https://doi.org/10.1007/b98860](https://doi.org/10.1007/b98860)
+- Marker, D. (2002). *Model theory: An introduction*. Springer. [https://doi.org/10.1007/b98860](https://doi.org/10.1007/b98860)

@@ -66,11 +66,24 @@
         <a href="{{ post.url | relative_url }}" class="post-link">
           <span class="post-title">{{ visible_title | escape }}</span>
         </a>
-        {% if post.last_modified_at %} 
-          <span class="post-edited-time" data-edited-at="{{ post.last_modified_at | date_to_xmlschema }}">
-            edited {{ post.last_modified_at | date: "%b %-d, %Y" }}
-          </span>
+        {% assign post_date_day = post.date | date: "%Y-%m-%d" %}
+        {% assign post_date_display = post.date | date: "%B %-d, %Y" %}
+        {% if post.last_modified_at %}
+          {% assign post_updated_day = post.last_modified_at | date: "%Y-%m-%d" %}
+          {% assign post_updated_display = post.last_modified_at | date: "%B %-d, %Y" %}
         {% endif %}
+        <span
+          class="post-date-meta"
+          data-created-day="{{ post_date_day }}"
+          data-created-display="{{ post_date_display }}"
+          {% if post.last_modified_at %}
+            data-updated-at="{{ post.last_modified_at | date_to_xmlschema }}"
+            data-updated-day="{{ post_updated_day }}"
+            data-updated-display="{{ post_updated_display }}"
+          {% endif %}
+        >
+          {{ post_date_display }}{% if post.last_modified_at and post_updated_day != post_date_day %} (updated {{ post_updated_display }}){% endif %}
+        </span>
       </li>
     {%- endfor -%}
   </ul>
