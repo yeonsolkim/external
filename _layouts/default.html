@@ -49,11 +49,13 @@
   </section>
 
   <main id="content" class="main-content" role="main">
-    {{ content }}
+    <div class="content-inner">
+      {{ content }}
 
-    <footer class="site-footer">
-      <p>&copy; {{ "now" | date: "%Y" }} Yeonsol Kim. All rights reserved.</p>
-    </footer>
+      <footer class="site-footer">
+        <p>&copy; {{ "now" | date: "%Y" }} Yeonsol Kim. All rights reserved.</p>
+      </footer>
+    </div>
   </main>
 
   <script src="{{ '/assets/js/main.js' | relative_url }}?v={{ asset_version }}" defer></script>
