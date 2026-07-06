@@ -40,7 +40,7 @@ body::before {
 
 /* Header */
 .page-header {
-  padding: 6rem 1rem 5.25rem !important;
+  padding: calc(6rem + env(safe-area-inset-top)) 1rem 5.25rem !important;
   text-align: center;
   background-color: {{ site.banner_color_start | default: "#000000" }} !important;
   background-image: linear-gradient(
@@ -229,7 +229,7 @@ blockquote mjx-container {
 
 @media screen and (max-width: 47.9375rem) {
   .page-header {
-    padding: 2.35rem 0.75rem 2rem !important;
+    padding: calc(2.35rem + env(safe-area-inset-top)) 0.75rem 2rem !important;
   }
 
   .header-inner {
