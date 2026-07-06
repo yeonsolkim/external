@@ -127,7 +127,7 @@ body main#content.main-content {
   background-color: #ffffff !important;
 }
 
-body main#content.main-content > .content-inner:has(> article.main-content) {
+body main#content.main-content > .content-inner.post-content-inner {
   max-width: none !important;
   margin: 0 !important;
   padding: 0 !important;
