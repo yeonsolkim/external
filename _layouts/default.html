@@ -22,34 +22,6 @@
     <link rel="stylesheet" href="{{ '/assets/css/index.css' | relative_url }}?v={{ asset_version }}">
   {% endif %}
 
-  <style>
-    html {
-      background-color: #ffffff !important;
-    }
-
-    body {
-      position: relative;
-      background-color: #ffffff !important;
-    }
-
-    .top-overscroll-canvas {
-      position: absolute;
-      z-index: 0;
-      top: -100vh;
-      right: 0;
-      left: 0;
-      height: 100vh;
-      background: #000000;
-      pointer-events: none;
-    }
-
-    body > .page-header,
-    body > main.main-content {
-      position: relative;
-      z-index: 1;
-    }
-  </style>
-
   {% if page.layout == "post" %}
     <script>
       document.documentElement.classList.add('mathjax-loading');
@@ -64,8 +36,6 @@
 </head>
 
 <body>
-  <div class="top-overscroll-canvas" aria-hidden="true"></div>
-
   <section class="page-header">
     <div class="header-inner">
       <h1 class="project-name">{{ site.fixed_banner_title | default: site.title }}</h1>
