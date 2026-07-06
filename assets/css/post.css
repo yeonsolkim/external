@@ -18,13 +18,13 @@ margin-top: 2rem !important;
 margin-bottom: 1.1rem !important;
 color: #000000e3 !important;
 font-size: 2em !important;
-line-height: 2rem;
+line-height: 2rem !important;
 font-weight: bolder !important;
 }
 
 .post-category-path {
 display: block;
-margin-top: 2rem !important;
+margin-top: 0rem !important;
 margin-bottom: 1.5rem;
 }
 
@@ -52,12 +52,13 @@ background-size: cover;
 
 .post-author-name {
 color: #4c4c4c;
-font-size: 1.2rem;
+font-size: 1rem;
 }
 
 .post-header .post-date {
 margin-top: 0.1rem;
-margin-bottom: 2rem;
+margin-bottom: 2.5rem;
+font-size: 0.85rem;
 color: #878787;
 }
 
