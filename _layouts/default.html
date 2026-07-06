@@ -58,6 +58,24 @@
     </div>
   </main>
 
+  <script>
+    (function () {
+      function updatePageCanvas() {
+        var header = document.querySelector('.page-header');
+
+        if (!header) {
+          return;
+        }
+
+        document.documentElement.classList.toggle('banner-passed', header.getBoundingClientRect().bottom <= 0);
+      }
+
+      window.addEventListener('scroll', updatePageCanvas, { passive: true });
+      window.addEventListener('resize', updatePageCanvas);
+      window.addEventListener('pageshow', updatePageCanvas);
+      updatePageCanvas();
+    }());
+  </script>
   <script src="{{ '/assets/js/main.js' | relative_url }}?v={{ asset_version }}" defer></script>
 
   {% if page.name == "index.md" or page.layout == "post" %}
