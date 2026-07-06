@@ -15,17 +15,17 @@ text-align: left;
 
 .post-title {
 margin-top: 2rem !important;
-margin-bottom: 1.1rem !important;
+margin-bottom: 0.5rem !important;
 color: #000000e3 !important;
 font-size: 2em !important;
 line-height: 1.45 !important;
-font-weight: 700 !important;
+font-weight: 600 !important;
 }
 
 .post-category-path {
 display: block;
 margin-top: 1.5rem !important;
-margin-bottom: 1rem;
+margin-bottom: 0.5rem;
 }
 
 .post-category-path + .post-title {
