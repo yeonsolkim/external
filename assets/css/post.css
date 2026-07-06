@@ -18,13 +18,13 @@ margin-top: 2rem !important;
 margin-bottom: 1.1rem !important;
 color: #000000e3 !important;
 font-size: 2em !important;
-line-height: 2 !important;
+line-height: 1.35 !important;
 font-weight: 800 !important;
 }
 
 .post-category-path {
 display: block;
-margin-top: 0rem !important;
+margin-top: 0.5rem !important;
 margin-bottom: 1.5rem;
 }
 
@@ -390,7 +390,7 @@ max-width: 100%;
   }
 
   .post-title {
-  line-height: 1.4rem !important;
+  line-height: 1.35 !important;
   }
 }
 
