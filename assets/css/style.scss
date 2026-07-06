@@ -16,13 +16,29 @@
 /* Base */
 html {
   font-size: 15.5px;
-  background-color: #000000 !important;
+  background-color: #ffffff !important;
+  background-image: linear-gradient(
+    to bottom,
+    #000000 0,
+    #000000 18rem,
+    #ffffff 18rem,
+    #ffffff 100%
+  ) !important;
+  background-repeat: no-repeat;
 }
 
 body {
   min-height: 100vh;
   margin: 0;
-  background-color: #000000;
+  background-color: #ffffff;
+  background-image: linear-gradient(
+    to bottom,
+    #000000 0,
+    #000000 18rem,
+    #ffffff 18rem,
+    #ffffff 100%
+  );
+  background-repeat: no-repeat;
   font-family: "Latex Punctuation", -apple-system, BlinkMacSystemFont,
     "SF Pro Text", "SF Pro Display", "Apple SD Gothic Neo", "Noto Sans KR",
     "Malgun Gothic", "Helvetica Neue", Arial, sans-serif;
@@ -122,6 +138,7 @@ body main#content.main-content {
   box-sizing: border-box !important;
   width: 100% !important;
   max-width: none !important;
+  min-height: 100vh;
   margin: 0 !important;
   padding: 0 !important;
   background-color: #ffffff !important;
@@ -243,6 +260,15 @@ blockquote mjx-container {
   border-top: 0 !important;
 }
 
+.post-content-inner > .site-footer {
+  box-sizing: border-box;
+  max-width: 57.5rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 4rem;
+  padding-left: 4rem;
+}
+
 /* Responsive */
 @media screen and (max-width: 64rem) {
   .content-inner {
@@ -255,6 +281,11 @@ blockquote mjx-container {
     padding: 1.5rem 4rem !important;
     font-size: 1rem !important;
     line-height: 1.55 !important;
+  }
+
+  .post-content-inner > .site-footer {
+    padding-right: 4rem;
+    padding-left: 4rem;
   }
 }
 
@@ -294,5 +325,10 @@ blockquote mjx-container {
 
   body main#content.main-content > .content-inner > article.main-content {
     padding: 1.5rem 1rem !important;
+  }
+
+  .post-content-inner > .site-footer {
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 }
