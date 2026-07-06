@@ -21,7 +21,8 @@ html {
 
 body {
   min-height: 100vh;
-  background-color: #ffffff;
+  margin: 0;
+  background-color: #000000;
   font-family: "Latex Punctuation", -apple-system, BlinkMacSystemFont,
     "SF Pro Text", "SF Pro Display", "Apple SD Gothic Neo", "Noto Sans KR",
     "Malgun Gothic", "Helvetica Neue", Arial, sans-serif;
@@ -112,9 +113,12 @@ body::before {
 
 /* Main content */
 .main-content {
-  max-width: 57.5rem !important;
-  margin: 0 auto;
-  padding: 2rem 4rem;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none !important;
+  margin: 0;
+  padding: 2rem max(4rem, calc((100vw - 57.5rem) / 2));
+  background-color: #ffffff;
   font-size: 1.05rem !important;
 }
 
