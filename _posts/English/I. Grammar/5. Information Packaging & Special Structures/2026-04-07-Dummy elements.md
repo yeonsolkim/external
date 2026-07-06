@@ -55,4 +55,4 @@ subject를 뒤로 보내면서 syntactic requirement를 충족시키기 위한 i
 
 
 ## References
-- Huddleston, R., Pullum, G. K., & Reynolds, B. (2021). A student’s introduction to English grammar (2nd ed.). Cambridge University Press. [https://doi.org/10.1017/9781009085748](https://doi.org/10.1017/9781009085748)
+- Huddleston, R., Pullum, G. K., & Reynolds, B. (2021). *A student’s introduction to English grammar* (2nd ed.). Cambridge University Press. [https://doi.org/10.1017/9781009085748](https://doi.org/10.1017/9781009085748)
