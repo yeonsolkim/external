@@ -7,7 +7,7 @@ category_path:
   - I. Foundations
   - 2. Logic
 created_at: 2026-05-27 10:37:14 +0900
-last_modified_at: 2026-07-05 16:31:49 +0900
+last_modified_at: 2026-07-06 10:36:00 +0900
 ---
 
 **Definition 2.1.1.** A $language\,\mathcal{L}$ is given by the following data: 
@@ -68,4 +68,4 @@ We let $\text{Th}(\mathcal M),$ the $full\ theory\ of\ \mathcal M,$ be the set o
 
 
 ## References
-- David Marker, *Model theory : an introduction,* Springer, ISBN 0387987606
+- Marker, D. (2002). Model theory: An introduction. Springer. [https://doi.org/10.1007/b98860](https://doi.org/10.1007/b98860)

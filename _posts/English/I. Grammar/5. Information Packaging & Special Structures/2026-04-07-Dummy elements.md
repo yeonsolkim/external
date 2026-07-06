@@ -7,7 +7,7 @@ category_path:
   - I. Grammar
   - 5. Information Packaging & Special Structures
 created_at: 2026-07-05 12:00:01 +0900
-last_modified_at: 2026-07-05 12:00:01 +0900
+last_modified_at: 2026-07-06 11:31:29 +0900
 ---
 
 ### 1. Dummy subjects
@@ -30,7 +30,6 @@ subject를 뒤로 보내면서 syntactic requirement를 충족시키기 위한 i
       * predicate: get up early
 
 
-> Semantics: It is (good) (to get up (early))
 
 
 **It should be obvious that cetaceans are mammals.**
@@ -48,10 +47,12 @@ subject를 뒤로 보내면서 syntactic requirement를 충족시키기 위한 i
           * predicate: are mammals
 
 
-> Semantics: It should be (obvious) (that (cetaceans) are (mammals))
 
 
 
 #### 2.2. It-cleft
 **It was she who introduced Bob to Cal.**
-> Semantics: It was (she) (who) → (introduced (Bob) (to Cal))
+
+
+## References
+- Huddleston, R., Pullum, G. K., & Reynolds, B. (2021). A student’s introduction to English grammar (2nd ed.). Cambridge University Press. [https://doi.org/10.1017/9781009085748](https://doi.org/10.1017/9781009085748)

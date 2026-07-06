@@ -7,7 +7,7 @@ category_path:
   - I. Grammar
   - 5. Information Packaging & Special Structures
 created_at: 2026-07-05 12:00:01 +0900
-last_modified_at: 2026-07-05 12:00:01 +0900
+last_modified_at: 2026-07-06 10:36:00 +0900
 ---
 
 
@@ -52,3 +52,7 @@ last_modified_at: 2026-07-05 12:00:01 +0900
 
 
 **Ed isn’t ready, but I am**
+
+
+## References
+- Huddleston, R., Pullum, G. K., & Reynolds, B. (2021). A student’s introduction to English grammar (2nd ed.). Cambridge University Press. [https://doi.org/10.1017/9781009085748](https://doi.org/10.1017/9781009085748)

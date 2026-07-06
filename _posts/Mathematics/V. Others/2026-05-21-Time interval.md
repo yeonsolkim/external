@@ -6,7 +6,7 @@ category_path:
   - Mathematics
   - V. Others
 created_at: 2026-07-05 12:00:01 +0900
-last_modified_at: 2026-07-05 12:19:14 +0900
+last_modified_at: 2026-07-06 10:36:00 +0900
 ---
 
 Intuitively, we can think time as the number line, and divide it into intervals whose length are all same; the unit chosen can be an year, month, day, hour, minute, second, and so on. Then, we can order the intervals and put numbers on them in a particular way, and we call the label a *date*. For examples, on a yearly basis, 2026, 2027, and so on, or on a monthly basis, May 2026, June 2026, and so on.<br>

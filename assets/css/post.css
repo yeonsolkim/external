@@ -100,14 +100,18 @@ margin-top: 3.5rem !important;
 }
 
 .post-body ul {
-list-style-type: disc !important; 
-padding-left: 1em;
+--ul-marker-gap-adjust: 0.1rem;
+list-style-position: outside;
+list-style-type: disc !important;
+padding-left: 1em ;
 margin-top: -0.5rem !important;
+margin-left: calc(var(--ul-marker-gap-adjust) + 1em);
 }
 
-.post-body ul li::marker {
-color: #333; 
+.post-body ul > li::marker {
+color: #333;
 font-size: 0.85em;
+line-height: 1;
 }
 
 .post-body ul li p {
@@ -117,14 +121,23 @@ display: inline;
 }
 
 
-.post-body ul li {
+.post-body ul > li {
+padding-left: var(--ul-marker-gap-adjust);
 line-height: 1.6;
+}
+
+.post-body ul > li::before {
+content: none;
 }
 
 .post-body ul ul, 
 .post-body ul ol {
 margin-top: 0 !important;
 margin-bottom: 0 !important;
+}
+
+.post-body ul ul {
+  margin-left: 0;
 }
 
 .post-body img, .post-body canvas, .post-body svg {
@@ -206,21 +219,23 @@ margin-right: auto;
 }
 
 .post-body ol ul {
-list-style: disc; 
-padding-left: 0rem;
+list-style-position: outside;
+list-style-type: disc !important;
+padding-left: 1em;
 margin-bottom: 0px !important;
+margin-left: 0;
 }
 
 .post-body ol > li > ul:first-child { 
 margin-top: 0px !important;
 }
 
-.post-body ol ul li {
-position: static; 
+.post-body ol ul > li {
+position: static;
 }
 
-.post-body ol ul li::before {
-content: none; 
+.post-body ol ul > li::before {
+content: none;
 }
 
 main.main-content > article.main-content {
@@ -394,67 +409,4 @@ figcaption {
   margin-top: 0.4rem;
   font-size: 0.9rem;
   font-weight: bold;
-}
-
-.post-body table,
-.main-content .post-body table {
-box-sizing: border-box;
-width: 100% !important;
-max-width: 100% !important;
-margin: 1.5rem auto;
-overflow: hidden !important;
-table-layout: auto !important;
-border: 0 !important;
-border-collapse: separate !important;
-border-spacing: 0 !important;
-border-radius: 0.625rem !important;
-outline: 0 !important;
-box-shadow: none !important;
-}
-
-.post-body table thead,
-.post-body table tbody,
-.post-body table tr,
-.main-content .post-body table thead,
-.main-content .post-body table tbody,
-.main-content .post-body table tr {
-border: 0 !important;
-outline: 0 !important;
-box-shadow: none !important;
-}
-
-.post-body table th,
-.post-body table td,
-.main-content .post-body table th,
-.main-content .post-body table td {
-box-sizing: border-box;
-padding: 0.375rem 1.4rem !important;
-white-space: normal !important;
-overflow-wrap: break-word;
-text-align: left;
-vertical-align: top;
-border: 0 !important;
-outline: 0 !important;
-box-shadow: none !important;
-}
-
-.post-body table th,
-.main-content .post-body table th {
-  padding: 0.8rem 1.4rem 0.375rem !important;
-}
-
-.post-body table thead tr:last-child > th,
-.main-content .post-body table thead tr:last-child > th {
-border-bottom: 1px solid #c4c4c4 !important;
-}
-
-
-.post-body table tbody tr:last-child > td,
-.main-content .post-body table tbody tr:last-child > td {
-padding-bottom: 0.8rem !important;
-}
-
-.post-body table tbody tr:first-child > td,
-.main-content .post-body table tbody tr:first-child > td {
-padding-top: 0.8rem !important;
 }
