@@ -129,12 +129,10 @@ hr {
 
 /* Blockquote */
 blockquote {
-  margin: 1.5rem 0 !important;
-  padding: 1rem 1.5rem !important;
+  margin: -0.5rem 0 1rem 1em !important;
+  padding: 0 !important;
   color: #333333 !important;
-  background-color: #a4a4a422 !important;
   border-left: 0 !important;
-  border-radius: 0.625rem !important;
   overflow: hidden;
 }
 
@@ -143,49 +141,61 @@ blockquote mjx-container {
 }
 
 /* Table */
-table,
 .main-content table {
   display: table !important;
   box-sizing: border-box;
   width: 100% !important;
-  max-width: 100% !important;
+  max-width: 80% !important;
   margin: 1.5rem auto;
-  overflow: hidden !important;
   table-layout: auto !important;
+  line-height: inherit !important;
+  border-collapse: collapse !important;
+  border-top: 1px solid #c4c4c4 !important;
+  border-right: 0 !important;
+  border-bottom: 1px solid #c4c4c4 !important;
+  border-left: 0 !important;
+}
+
+.main-content table thead,
+.main-content table tbody,
+.main-content table tr {
   border: 0 !important;
-  border-collapse: separate !important;
-  border-spacing: 0 !important;
-  border-radius: 0.625rem !important;
-  outline: 0 !important;
-  box-shadow: none !important;
+  line-height: inherit !important;
 }
 
-tbody {
-  background-color: #f6f6f678;
-}
-
-thead th,
-.main-content table thead th {
-  background-color: #a4a4a422;
-}
-
-table th,
-table td,
 .main-content table th,
 .main-content table td {
   box-sizing: border-box;
-  padding: 0.375rem 1rem !important;
+  padding: 0 1.4rem !important;
   white-space: normal !important;
   overflow-wrap: break-word;
   font-size: 1rem;
+  line-height: inherit !important;
   text-align: left;
   vertical-align: top;
   border: 0 !important;
 }
 
-table thead tr:last-child > th,
 .main-content table thead tr:last-child > th {
   border-bottom: 1px solid #c4c4c4 !important;
+  padding-top: 0.2rem !important;
+}
+
+.main-content table th {
+  font-weight: inherit !important;
+}
+
+.main-content table th strong,
+.main-content table th b {
+  font-weight: inherit !important;
+}
+
+.main-content table tbody tr:first-child td {
+  padding-top: 0.2rem !important;
+}
+
+.main-content table tbody tr:last-child td {
+  padding-bottom: 0.2rem !important;
 }
 
 /* Footer */
