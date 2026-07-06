@@ -28,17 +28,6 @@ body {
     "Malgun Gothic", "Helvetica Neue", Arial, sans-serif;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: -100vh;
-  left: 0;
-  right: 0;
-  height: 100vh;
-  background: #000000;
-  z-index: -1;
-}
-
 /* Header */
 .page-header {
   padding: calc(6rem + env(safe-area-inset-top)) 1rem 5.25rem !important;
@@ -117,8 +106,15 @@ body::before {
   width: 100%;
   max-width: none !important;
   margin: 0;
-  padding: 2rem max(4rem, calc((100vw - 57.5rem) / 2));
+  padding: 0;
   background-color: #ffffff;
+}
+
+.content-inner {
+  box-sizing: border-box;
+  max-width: 57.5rem;
+  margin: 0 auto;
+  padding: 2rem 4rem;
   font-size: 1.05rem !important;
 }
 
@@ -224,7 +220,7 @@ blockquote mjx-container {
 
 /* Responsive */
 @media screen and (max-width: 64rem) {
-  .main-content {
+  .content-inner {
     padding: 1.5rem 4rem !important;
     font-size: 1rem !important;
     line-height: 1.55 !important;
@@ -261,7 +257,7 @@ blockquote mjx-container {
     font-size: 0.8rem !important;
   }
 
-  .main-content {
+  .content-inner {
     padding: 1.5rem 1rem !important;
   }
 }
