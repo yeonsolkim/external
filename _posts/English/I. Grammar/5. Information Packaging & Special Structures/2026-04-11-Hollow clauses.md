@@ -6,8 +6,8 @@ category_path:
   - English
   - I. Grammar
   - 5. Information Packaging & Special Structures
-created_at: 2026-07-05 12:00:01 +0900
-last_modified_at: 2026-07-06 10:36:00 +0900
+created_at: 2026-05-23 17:17:19 +0900
+last_modified_at: 2026-05-23 17:17:19 +0900
 ---
 
 
