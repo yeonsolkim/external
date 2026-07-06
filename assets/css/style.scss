@@ -35,7 +35,7 @@ body {
   position: relative;
   overflow: visible;
   padding: calc(6rem + env(safe-area-inset-top)) 1rem 5.25rem !important;
-  text-align: center;
+  text-align: left;
   background-color: {{ site.banner_color_start | default: "#000000" }} !important;
   background-image: linear-gradient(
     to bottom,
@@ -88,9 +88,9 @@ body {
 .header-buttons {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex start;
   margin-top: 1.4rem;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .page-header .btn {
