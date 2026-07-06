@@ -23,7 +23,7 @@ line-height: 1.2rem;
 
 .post-category-path {
 display: block;
-margin-top: 3rem !important;
+margin-top: 2rem !important;
 margin-bottom: 1.5rem;
 }
 
@@ -56,11 +56,11 @@ font-weight: 300;
 }
 
 .post-header .post-date {
-margin-top: 0;
+margin-top: 0.1rem;
 margin-bottom: 2rem;
-color: #666;
-font-size: 0.8rem;
-font-weight: lighter;
+color: #a0a0a0;
+font-size: 0.75rem;
+font-weight: 200;
 }
 
 .post-body h1, 
