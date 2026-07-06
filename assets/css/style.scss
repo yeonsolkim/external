@@ -66,7 +66,7 @@ body {
 
 .project-name,
 .project-tagline {
-  color: #ffffffd7 !important;
+  color: #ffffff !important;
 }
 
 .project-name {
@@ -103,7 +103,7 @@ body {
   min-height: 2.35rem;
   margin: 0 !important;
   padding: 0.6rem 0.9rem !important;
-  color: #ffffffa2 !important;
+  color: #ffffff !important;
   font-size: 0.85rem !important;
   line-height: 1.2;
   white-space: nowrap;
@@ -292,7 +292,7 @@ blockquote mjx-container {
 
 @media screen and (max-width: 47.9375rem) {
   .page-header {
-    padding: calc(2.35rem + env(safe-area-inset-top)) 0.75rem 2rem !important;
+    padding: calc(2.35rem + env(safe-area-inset-top)) 1.5rem 2rem !important;
   }
 
   .header-inner {
