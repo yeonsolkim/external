@@ -32,16 +32,15 @@
       background-color: #ffffff !important;
     }
 
-    .page-canvas {
-      position: fixed;
+    .top-overscroll-canvas {
+      position: absolute;
       z-index: 0;
-      inset: 0;
+      top: -100vh;
+      right: 0;
+      left: 0;
+      height: 100vh;
       background: #000000;
       pointer-events: none;
-    }
-
-    html.banner-passed .page-canvas {
-      background: #ffffff;
     }
 
     body > .page-header,
@@ -65,7 +64,7 @@
 </head>
 
 <body>
-  <div class="page-canvas" aria-hidden="true"></div>
+  <div class="top-overscroll-canvas" aria-hidden="true"></div>
 
   <section class="page-header">
     <div class="header-inner">
@@ -91,33 +90,23 @@
 
   <script>
     (function () {
-      var canvas = document.querySelector('.page-canvas');
       var themeColor = document.querySelector('meta[name="theme-color"]');
       var scheduled = false;
-
-      function setCanvasColor(color) {
-        if (canvas) {
-          canvas.style.backgroundColor = color;
-        }
-
-        if (themeColor) {
-          themeColor.setAttribute('content', color);
-        }
-      }
 
       function updatePageCanvas() {
         var header = document.querySelector('.page-header');
         var bannerPassed;
-        var color;
 
         if (!header) {
           return;
         }
 
         bannerPassed = header.getBoundingClientRect().bottom <= 0;
-        color = bannerPassed ? '#ffffff' : '#000000';
         document.documentElement.classList.toggle('banner-passed', bannerPassed);
-        setCanvasColor(color);
+
+        if (themeColor) {
+          themeColor.setAttribute('content', bannerPassed ? '#ffffff' : '#000000');
+        }
       }
 
       function schedulePageCanvasUpdate() {
