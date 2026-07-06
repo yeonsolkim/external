@@ -10,15 +10,16 @@ color: #333;
 }
 
 .post-header {
-text-align: center;
+text-align: left;
 }
 
 .post-title {
-margin-top: 4rem !important;
+margin-top: 2rem !important;
 margin-bottom: 1.1rem !important;
 color: #000000e3 !important;
-font-size: clamp(1.65rem, 5.4vw, 1.8rem) !important;
-line-height: 1.2rem;
+font-size: 2em !important;
+line-height: 2rem;
+font-weight: bold;
 }
 
 .post-category-path {
@@ -51,16 +52,13 @@ background-size: cover;
 
 .post-author-name {
 color: #4c4c4c;
-font-size: 0.9rem;
-font-weight: 300;
+font-size: 1.2rem;
 }
 
 .post-header .post-date {
 margin-top: 0.1rem;
 margin-bottom: 2rem;
 color: #878787;
-font-size: 0.75rem;
-font-weight: 200;
 }
 
 .post-body h1, 
