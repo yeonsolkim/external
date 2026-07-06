@@ -16,28 +16,24 @@
 /* Base */
 html {
   font-size: 15.5px;
-  background-color: #000000 !important;
+  background-color: #ffffff !important;
   background-image: none !important;
 }
 
 body {
   min-height: 100vh;
   margin: 0;
-  background-color: #000000;
+  background-color: #ffffff;
   background-image: none;
   font-family: "Latex Punctuation", -apple-system, BlinkMacSystemFont,
     "SF Pro Text", "SF Pro Display", "Apple SD Gothic Neo", "Noto Sans KR",
     "Malgun Gothic", "Helvetica Neue", Arial, sans-serif;
 }
 
-html.banner-passed,
-html.banner-passed body {
-  background-color: #ffffff !important;
-  background-image: none !important;
-}
-
 /* Header */
 .page-header {
+  position: relative;
+  overflow: visible;
   padding: calc(6rem + env(safe-area-inset-top)) 1rem 5.25rem !important;
   text-align: center;
   background-color: {{ site.banner_color_start | default: "#000000" }} !important;
@@ -48,7 +44,20 @@ html.banner-passed body {
   ) !important;
 }
 
+.page-header::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+  height: 100vh;
+  background: {{ site.banner_color_start | default: "#000000" }};
+  pointer-events: none;
+}
+
 .header-inner {
+  position: relative;
+  z-index: 1;
   box-sizing: border-box;
   max-width: 57.5rem;
   margin: 0 auto;
