@@ -60,18 +60,39 @@
 
   <script>
     (function () {
+      var themeColor = document.querySelector('meta[name="theme-color"]');
+      var scheduled = false;
+
       function updatePageCanvas() {
         var header = document.querySelector('.page-header');
+        var bannerPassed;
 
         if (!header) {
           return;
         }
 
-        document.documentElement.classList.toggle('banner-passed', header.getBoundingClientRect().bottom <= 0);
+        bannerPassed = header.getBoundingClientRect().bottom <= 0;
+        document.documentElement.classList.toggle('banner-passed', bannerPassed);
+
+        if (themeColor) {
+          themeColor.setAttribute('content', bannerPassed ? '#ffffff' : '#000000');
+        }
       }
 
-      window.addEventListener('scroll', updatePageCanvas, { passive: true });
-      window.addEventListener('resize', updatePageCanvas);
+      function schedulePageCanvasUpdate() {
+        if (scheduled) {
+          return;
+        }
+
+        scheduled = true;
+        window.requestAnimationFrame(function () {
+          scheduled = false;
+          updatePageCanvas();
+        });
+      }
+
+      window.addEventListener('scroll', schedulePageCanvasUpdate, { passive: true });
+      window.addEventListener('resize', schedulePageCanvasUpdate);
       window.addEventListener('pageshow', updatePageCanvas);
       updatePageCanvas();
     }());
