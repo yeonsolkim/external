@@ -428,7 +428,7 @@
     svg: {
       blacker: touchMathWeight ? 7 : 11,
       fontCache: 'none',
-      scale: 0.88,
+      scale: 0.9,
       exFactor: 0.5,
       displayAlign: 'center',
       displayOverflow: scrollDisplayMath ? 'overflow' : 'linebreak',

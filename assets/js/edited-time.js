@@ -35,7 +35,7 @@
       return "updated " + days + " " + (days === 1 ? "day" : "days") + " ago";
     }
 
-    return "last updated on" + absoluteDate;
+    return "updated on " + absoluteDate;
   }
 
   document.querySelectorAll(".post-date-meta").forEach(function (el) {
