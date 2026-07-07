@@ -95,6 +95,10 @@ structure.
   raw `$...$` fallback normalization, list items containing display math,
   ordered-list marker prefixes, mobile math scrolling, and MathJax startup
   visibility.
+- For bibliography-style lists under `## References`, use an ordered list and
+  put `{:reference}` directly below it. The preprocessor maps that tag to
+  `class="reference"`, and ordered-list markers render as `[1]` instead of
+  `(1)`.
 - `assets/css/post.css` is paired with `mathjax-config.js`. It styles custom
   ordered-list markers, display math scrolling, reference-link boxes, QED
   markers, and hides the post body while MathJax is loading.

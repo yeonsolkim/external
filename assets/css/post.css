@@ -16,9 +16,10 @@ text-align: center;
 .post-title {
 margin-top: 4rem !important;
 margin-bottom: 1.1rem !important;
-color: #000000e3 !important;
+color: #333333 !important;
 font-size: clamp(1.65rem, 5.4vw, 1.8rem) !important;
-line-height: 1.2rem;
+line-height: 1.4;
+font-weight: 400 !important;
 }
 
 .post-category-path {
@@ -51,7 +52,7 @@ background-size: cover;
 
 .post-author-name {
 color: #4c4c4c;
-font-size: 0.9rem;
+font-size: 0.95rem;
 font-weight: 300;
 }
 
@@ -59,7 +60,7 @@ font-weight: 300;
 margin-top: 0.1rem;
 margin-bottom: 2rem;
 color: #878787;
-font-size: 0.75rem;
+font-size: 0.8rem;
 font-weight: 200;
 }
 
@@ -391,7 +392,7 @@ max-width: 100%;
   }
 
   .post-title {
-  line-height: 1.4rem !important;
+  line-height: 1.4 !important;
   }
 }
 

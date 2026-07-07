@@ -49,6 +49,32 @@
   function applyOrderedListMarkerPrefixes() {
     var orderedLists = document.querySelectorAll('.post-body ol');
 
+    function readMarkerStyle(orderedList) {
+      var markerStyle = orderedList.getAttribute('data-marker-style') ||
+        orderedList.getAttribute('marker-style') ||
+        '';
+
+      markerStyle = markerStyle.trim().toLowerCase();
+
+      if (markerStyle) {
+        return markerStyle;
+      }
+
+      if (orderedList.classList.contains('reference') || orderedList.hasAttribute('reference')) {
+        return 'reference';
+      }
+
+      return '';
+    }
+
+    function formatMarkerText(markerStyle, markerText) {
+      if (markerStyle === 'reference') {
+        return '[' + markerText + ']';
+      }
+
+      return '(' + markerText + ')';
+    }
+
     function measureMarkerWidth(orderedList, listItems) {
       if (listItems.length === 0) {
         orderedList.style.removeProperty('--ol-marker-width');
@@ -81,6 +107,7 @@
       var prefix = orderedList.getAttribute('data-marker-prefix') ||
         orderedList.getAttribute('marker-prefix') ||
         '';
+      var markerStyle = readMarkerStyle(orderedList);
       var reversed = orderedList.hasAttribute('reversed');
       var start = parseInt(
         orderedList.getAttribute('start') ||
@@ -109,7 +136,7 @@
 
         listItem.setAttribute(
           'data-marker-text',
-          '(' + (prefix || '') + number + ')'
+          formatMarkerText(markerStyle, (prefix || '') + number)
         );
 
         number += reversed ? -1 : 1;
