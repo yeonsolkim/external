@@ -3,6 +3,7 @@
 module ExternalInlineMathPreprocessor
   DATA_KEY = "inline_math_placeholders"
   MARKDOWN_EXTENSIONS = [".md", ".markdown"].freeze
+  REFERENCE_ATTRIBUTE_DEFINITION = "{:reference: .reference}\n\n"
 
   module_function
 
@@ -116,6 +117,13 @@ module ExternalInlineMathPreprocessor
     end
 
     output
+  end
+
+  def add_reference_attribute_definition(content)
+    return content unless content&.match?(/^\s*\{:reference\}\s*$/)
+    return content if content.match?(/^\s*\{:reference:/)
+
+    REFERENCE_ATTRIBUTE_DEFINITION + content
   end
 
   def inline_math_html(math)
@@ -244,7 +252,7 @@ module ExternalInlineMathPreprocessor
     return unless markdown_item?(item)
 
     protected_content, placeholders = protect(item.content)
-    item.content = protected_content
+    item.content = add_reference_attribute_definition(protected_content)
     item.data[DATA_KEY] = placeholders
   end
 

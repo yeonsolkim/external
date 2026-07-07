@@ -7,7 +7,7 @@ category_path:
   - I. Grammar
   - 5. Information Packaging & Special Structures
 created_at: 2026-05-23 17:17:15 +0900
-last_modified_at: 2026-05-23 17:17:15 +0900
+last_modified_at: 2026-07-07 08:56:54 +0900
 ---
 
 
@@ -35,4 +35,5 @@ Clause의 VP가 그 subject에 해당하는 constituent에 의미역을 주지 �
 
 
 ## References
-- Huddleston, R., Pullum, G. K., & Reynolds, B. (2021). *A student’s introduction to English grammar* (2nd ed.). Cambridge University Press. [https://doi.org/10.1017/9781009085748](https://doi.org/10.1017/9781009085748)
+1. Huddleston, R., Pullum, G. K., & Reynolds, B. (2021). *A student’s introduction to English grammar* (2nd ed.). Cambridge University Press. [https://doi.org/10.1017/9781009085748](https://doi.org/10.1017/9781009085748)
+{:reference}
