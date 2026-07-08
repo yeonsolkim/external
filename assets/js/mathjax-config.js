@@ -426,7 +426,7 @@
       }
     },
     svg: {
-      blacker: touchMathWeight ? 7 : 11,
+      blacker: touchMathWeight ? 7 : 9,
       fontCache: 'none',
       scale: 0.9,
       exFactor: 0.5,
