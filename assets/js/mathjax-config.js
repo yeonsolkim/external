@@ -327,6 +327,10 @@
       (platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   }
 
+  function isIPhoneDevice() {
+    return /iPhone|iPod/.test(navigator.userAgent || '');
+  }
+
   function shouldScrollDisplayMath() {
     if (typeof window.matchMedia !== 'function') {
       return isIOSTouchDevice();
@@ -387,8 +391,10 @@
   window.addEventListener('orientationchange', scheduleDisplayMathOverflowCheck);
 
   var iOSTouchDevice = isIOSTouchDevice();
+  var iPhoneDevice = isIPhoneDevice();
   var scrollDisplayMath = shouldScrollDisplayMath();
   var touchMathWeight = shouldUseTouchMathWeight();
+  var mathBlacker = iPhoneDevice ? 4 : (touchMathWeight ? 7 : 9);
 
   window.MathJax = {
     tex: {
@@ -426,7 +432,7 @@
       }
     },
     svg: {
-      blacker: touchMathWeight ? 7 : 9,
+      blacker: mathBlacker,
       fontCache: 'none',
       scale: 0.9,
       exFactor: 0.5,
