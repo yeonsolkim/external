@@ -394,7 +394,7 @@
   var iPhoneDevice = isIPhoneDevice();
   var scrollDisplayMath = shouldScrollDisplayMath();
   var touchMathWeight = shouldUseTouchMathWeight();
-  var mathBlacker = iPhoneDevice ? 4 : (touchMathWeight ? 7 : 9);
+  var mathBlacker = iPhoneDevice ? 0 : (touchMathWeight ? 7 : 9);
 
   window.MathJax = {
     tex: {
