@@ -6,9 +6,12 @@ require "open3"
 require "tmpdir"
 
 module ExternalTikzcdRenderer
-  CACHE_VERSION = "3"
+  CACHE_VERSION = "4"
   DEFAULT_CACHE_DIR = ".jekyll-cache/tikzcd"
   SVG_SCALE = 1.28
+  CSS_PIXELS_PER_POINT = 4.0 / 3.0
+  # assets/css/main.css: 15.5px root size times the desktop content scale.
+  REFERENCE_FONT_SIZE_PX = 15.5 * 1.05
   DISPLAY_MATH_PATTERN = /\$\$(?<body>.*?)\$\$/m
   TIKZCD_ENVIRONMENT_PATTERN = /\A\s*(?<environment>\\begin\s*\{tikzcd\}(?:\[[^\]\r\n]*\])?.*?\\end\s*\{tikzcd\})\s*\z/m
 
@@ -141,7 +144,7 @@ module ExternalTikzcdRenderer
           "LaTeX"
         )
         run_command(
-          ["dvisvgm", "--no-fonts", "--exact-bbox", "--output=diagram.svg", "diagram.dvi"],
+          ["dvisvgm", "--no-fonts", "--bbox=papersize", "--exact-bbox", "--output=diagram.svg", "diagram.dvi"],
           directory,
           "dvisvgm"
         )
@@ -164,8 +167,16 @@ module ExternalTikzcdRenderer
     def latex_document(environment)
       <<~LATEX
         \\def\\pgfsysdriver{pgfsys-dvisvgm.def}
-        \\documentclass[tikz,border=2pt]{standalone}
+        \\documentclass[tikz,border=0pt]{standalone}
         \\usepackage{tikz-cd}
+        \\makeatletter
+        \\def\\pgfsys@papersize#1#2{}
+        \\let\\tikzcd@typesetpicturebox\\pgfsys@typesetpicturebox
+        \\def\\pgfsys@typesetpicturebox#1{%
+          \\pgf@sys@svg@inpicturetrue
+          \\tikzcd@typesetpicturebox#1%
+        }
+        \\makeatother
         \\begin{document}
         #{environment}
         \\end{document}
@@ -181,7 +192,7 @@ module ExternalTikzcdRenderer
       title_id = "#{id_prefix}title"
 
       svg.sub(/<svg\b([^>]*)>/m) do
-        attributes = scale_svg_dimensions(Regexp.last_match(1))
+        attributes = normalize_svg_dimensions(Regexp.last_match(1))
 
         <<~SVG.chomp
           <svg class="commutative-diagram__svg" role="img" aria-labelledby="#{title_id}"#{attributes}>
@@ -190,18 +201,26 @@ module ExternalTikzcdRenderer
       end.strip
     end
 
-    def scale_svg_dimensions(attributes)
+    def normalize_svg_dimensions(attributes)
       attributes.gsub(/\b(?<name>width|height)=(?<quote>["'])(?<value>\d+(?:\.\d+)?)(?<unit>[a-zA-Z%]*)\k<quote>/) do
         name = Regexp.last_match(:name)
         quote = Regexp.last_match(:quote)
-        value = Regexp.last_match(:value)
+        value = Regexp.last_match(:value).to_f
         unit = Regexp.last_match(:unit)
-        scaled_value = format("%.6f", value.to_f * SVG_SCALE)
-                       .sub(/0+\z/, "")
-                       .sub(/\.\z/, "")
 
-        "#{name}=#{quote}#{scaled_value}#{unit}#{quote}"
+        if unit.casecmp("pt").zero?
+          em_value = value * SVG_SCALE * CSS_PIXELS_PER_POINT / REFERENCE_FONT_SIZE_PX
+          "#{name}=#{quote}#{format_number(em_value)}em#{quote}"
+        else
+          "#{name}=#{quote}#{format_number(value * SVG_SCALE)}#{unit}#{quote}"
+        end
       end
+    end
+
+    def format_number(value)
+      format("%.6f", value)
+        .sub(/0+\z/, "")
+        .sub(/\.\z/, "")
     end
 
     def namespace_svg_ids(svg, prefix)
