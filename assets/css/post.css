@@ -352,8 +352,19 @@ display: block;
 max-width: 100%;
 overflow-x: hidden;
 overflow-y: hidden;
-padding: 0.25rem 0;
+margin: 0.4em 0;
+padding: 0.15rem 0;
 box-sizing: border-box;
+}
+
+.post-body > p:has(+ mjx-container[display="true"]),
+.post-body > p:has(+ .MathJax_Display) {
+margin-bottom: 0.75em;
+}
+
+.post-body > mjx-container[display="true"] + p,
+.post-body > .MathJax_Display + p {
+margin-top: 0.75em;
 }
 
 .math-scroll mjx-container[display="true"].math-overflowing,
