@@ -145,6 +145,44 @@ margin-bottom: 0 !important;
 max-width: 100%;
 }
 
+.post-body .commutative-diagram {
+--tikzcd-math-scale: 1.28;
+display: block;
+max-width: 100%;
+margin: -0.3rem 0;
+padding: 0;
+overflow-x: auto;
+overflow-y: hidden;
+text-align: center;
+}
+
+.post-body .commutative-diagram__svg {
+display: block;
+width: auto;
+max-width: none;
+height: auto;
+margin: 0 auto;
+zoom: var(--tikzcd-math-scale);
+}
+
+/* dvisvgm turns TeX glyphs into paths, so CSS font-weight cannot affect them. */
+.post-body .commutative-diagram__svg use {
+fill: currentColor;
+stroke: currentColor;
+stroke-width: 0.25px;
+paint-order: stroke fill;
+}
+
+.post-body .commutative-diagram__svg path[fill="none"] {
+stroke-width: 0.33px;
+}
+
+@media (max-width: 768px), (pointer: coarse) {
+  .post-body .commutative-diagram__svg use {
+  stroke-width: 0.08px;
+  }
+}
+
 hr { 
 border-top: 0.4px solid #b7b7b7ca !important;
 background-color: #ffffff00 !important;

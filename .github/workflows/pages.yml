@@ -33,6 +33,15 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
+      - name: Install TikZ renderer
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends \
+            dvisvgm \
+            texlive-latex-base \
+            texlive-latex-extra \
+            texlive-pictures
+
       - name: Build with Jekyll
         run: bundle exec jekyll build
         env:

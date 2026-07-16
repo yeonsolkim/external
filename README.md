@@ -2,6 +2,36 @@
 
 ## Development Notes
 
+### Commutative Diagrams
+
+Posts can use a `tikzcd` environment inside display-math delimiters. Do not add
+a document class, package imports, or a `document` environment to the post:
+
+````markdown
+$$
+\begin{tikzcd}
+A \arrow{r}{f} \arrow[swap]{dr}{g\circ f} & B \arrow{d}{g} \\
+ & C
+\end{tikzcd}
+$$
+````
+
+The concise ```` ```tikzcd ```` fenced form remains supported for existing
+posts.
+
+`_plugins/tikzcd_renderer.rb` wraps each block in a standalone LaTeX document,
+compiles it with `latex`, converts the DVI output to inline SVG with `dvisvgm`,
+and caches the undecorated SVG under `.jekyll-cache/tikzcd`. The generated SVG
+IDs are namespaced before insertion so multiple diagrams can safely appear in
+one post.
+
+For Obsidian preview, enable the tracked `TikZ-cd Preview` plugin and install a
+TeX distribution that provides `latex`, `dvisvgm`, and `tikz-cd`. The plugin
+runs before the normal Markdown post-processors, diverts display-math `tikzcd`
+environments to the same TeX-to-SVG pipeline used by the site, and leaves all
+other display math for MathJax. Its SVG output is scaled to match the
+surrounding MathJax typography.
+
 This site contains many Markdown posts with inline LaTeX math written as
 `$...$`. Plain GitHub Pages/Jekyll rendering can confuse characters inside
 math, especially `_` and `*`, with Markdown emphasis syntax. Typical symptoms

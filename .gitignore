@@ -1,6 +1,12 @@
 MyNotes/         
 Private/         
-.obsidian/      
+.obsidian/
+!_posts/.obsidian/
+_posts/.obsidian/*
+!_posts/.obsidian/plugins/
+_posts/.obsidian/plugins/*
+!_posts/.obsidian/plugins/tikzcd-preview/
+!_posts/.obsidian/plugins/tikzcd-preview/**
 _site/
 .jekyll-cache/
 .jekyll-metadata

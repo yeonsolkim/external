@@ -1,0 +1,54 @@
+.tikzcd-preview {
+  --tikzcd-math-scale: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  margin: var(--p-spacing, 1rem) 0;
+  padding: 0.15em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-align: center;
+  color: var(--text-normal);
+  line-height: normal;
+}
+
+.tikzcd-preview__viewport {
+  flex: 0 0 auto;
+}
+
+.tikzcd-preview__status {
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+}
+
+.tikzcd-preview__svg {
+  display: block;
+  width: auto;
+  max-width: none;
+  height: auto;
+  margin: 0 auto;
+  zoom: var(--tikzcd-math-scale);
+}
+
+.tikzcd-preview__svg path:not([fill]),
+.tikzcd-preview__svg use:not([fill]) {
+  fill: currentColor;
+}
+
+.tikzcd-preview__svg use {
+  stroke: currentColor;
+  stroke-width: 0.25px;
+  paint-order: stroke fill;
+}
+
+.tikzcd-preview__svg path[fill="none"] {
+  stroke-width: 0.4px;
+}
+
+.tikzcd-preview__error {
+  padding: 0.75rem 1rem;
+  color: var(--text-error);
+  background: var(--background-secondary);
+  border-radius: var(--radius-s);
+}
