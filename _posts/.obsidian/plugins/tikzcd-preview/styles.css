@@ -1,5 +1,4 @@
 .tikzcd-preview {
-  --tikzcd-math-scale: 1.2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +27,6 @@
   max-width: none;
   height: auto;
   margin: 0 auto;
-  zoom: var(--tikzcd-math-scale);
 }
 
 .tikzcd-preview__svg path:not([fill]),

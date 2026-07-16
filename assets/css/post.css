@@ -146,7 +146,6 @@ max-width: 100%;
 }
 
 .post-body .commutative-diagram {
---tikzcd-math-scale: 1.28;
 display: block;
 max-width: 100%;
 margin: -0.3rem 0;
@@ -162,7 +161,6 @@ width: auto;
 max-width: none;
 height: auto;
 margin: 0 auto;
-zoom: var(--tikzcd-math-scale);
 }
 
 /* dvisvgm turns TeX glyphs into paths, so CSS font-weight cannot affect them. */

@@ -8,6 +8,7 @@ const { promisify } = require("node:util");
 
 const execFileAsync = promisify(execFile);
 const CACHE_VERSION = "2";
+const SVG_SCALE = 1.2;
 
 module.exports = class TikzcdPreviewPlugin extends Plugin {
   async onload() {
@@ -327,6 +328,7 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
     const prefix = `tikzcd-${digest.slice(0, 10)}-${++this.diagramIndex}-`;
     this.namespaceSvgIds(svg, prefix);
     this.adaptSvgColors(svg);
+    this.scaleSvgDimensions(svg);
 
     svg.classList.add("tikzcd-preview__svg");
     svg.setAttribute("role", "img");
@@ -337,6 +339,19 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
     svg.setAttribute("aria-labelledby", title.id);
 
     return ownerDocument.importNode(svg, true);
+  }
+
+  scaleSvgDimensions(svg) {
+    for (const attribute of ["width", "height"]) {
+      const value = svg.getAttribute(attribute);
+      const match = value?.match(/^(\d+(?:\.\d+)?)([a-z%]*)$/i);
+      if (!match) continue;
+
+      const scaledValue = (Number.parseFloat(match[1]) * SVG_SCALE)
+        .toFixed(6)
+        .replace(/\.?0+$/, "");
+      svg.setAttribute(attribute, `${scaledValue}${match[2]}`);
+    }
   }
 
   adaptSvgColors(svg) {
