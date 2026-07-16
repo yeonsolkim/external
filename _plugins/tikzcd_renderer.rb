@@ -8,6 +8,7 @@ require "tmpdir"
 module ExternalTikzcdRenderer
   CACHE_VERSION = "3"
   DEFAULT_CACHE_DIR = ".jekyll-cache/tikzcd"
+  SVG_SCALE = 1.28
   DISPLAY_MATH_PATTERN = /\$\$(?<body>.*?)\$\$/m
   TIKZCD_ENVIRONMENT_PATTERN = /\A\s*(?<environment>\\begin\s*\{tikzcd\}(?:\[[^\]\r\n]*\])?.*?\\end\s*\{tikzcd\})\s*\z/m
 
@@ -180,11 +181,27 @@ module ExternalTikzcdRenderer
       title_id = "#{id_prefix}title"
 
       svg.sub(/<svg\b([^>]*)>/m) do
+        attributes = scale_svg_dimensions(Regexp.last_match(1))
+
         <<~SVG.chomp
-          <svg class="commutative-diagram__svg" role="img" aria-labelledby="#{title_id}"#{Regexp.last_match(1)}>
+          <svg class="commutative-diagram__svg" role="img" aria-labelledby="#{title_id}"#{attributes}>
           <title id="#{title_id}">Commutative diagram</title>
         SVG
       end.strip
+    end
+
+    def scale_svg_dimensions(attributes)
+      attributes.gsub(/\b(?<name>width|height)=(?<quote>["'])(?<value>\d+(?:\.\d+)?)(?<unit>[a-zA-Z%]*)\k<quote>/) do
+        name = Regexp.last_match(:name)
+        quote = Regexp.last_match(:quote)
+        value = Regexp.last_match(:value)
+        unit = Regexp.last_match(:unit)
+        scaled_value = format("%.6f", value.to_f * SVG_SCALE)
+                       .sub(/0+\z/, "")
+                       .sub(/\.\z/, "")
+
+        "#{name}=#{quote}#{scaled_value}#{unit}#{quote}"
+      end
     end
 
     def namespace_svg_ids(svg, prefix)
