@@ -33,7 +33,27 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
+      - name: Restore rendered TikZ diagrams
+        uses: actions/cache@v4
+        with:
+          path: .jekyll-cache/tikzcd
+          key: tikzcd-${{ runner.os }}-${{ hashFiles('_plugins/tikzcd_renderer.rb', '_posts/**/*.md', '*.md') }}
+          restore-keys: |
+            tikzcd-${{ runner.os }}-
+
+      - name: Try Jekyll build with cached TikZ diagrams
+        id: cached-build
+        run: |
+          if bundle exec jekyll build; then
+            echo "cache-complete=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "cache-complete=false" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          JEKYLL_ENV: production
+
       - name: Install TikZ renderer
+        if: steps.cached-build.outputs.cache-complete != 'true'
         run: |
           sudo apt-get update
           sudo apt-get install --yes --no-install-recommends \
@@ -43,6 +63,7 @@ jobs:
             texlive-pictures
 
       - name: Build with Jekyll
+        if: steps.cached-build.outputs.cache-complete != 'true'
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
