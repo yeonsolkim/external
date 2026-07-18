@@ -5,7 +5,7 @@ date: 2026-07-11 00:00:00 +0900
 category_path:
   - Mathematics
   - VI. Others
-created_at: 2026-07-11 11:35:21 +0900
+created_at: 2026-07-11 12:19:36 +0900
 last_modified_at: 2026-07-11 12:19:36 +0900
 ---
 
@@ -26,9 +26,9 @@ For instance, the event $A=\lbrace 2,4,6\rbrace$ can occur in three ways because
 
 **Definition 2.** Two events $A$ and $B$ are *mutually exclusive*, or *disjoint*, when they cannot occur in the same trial, which is denoted by
 
-$$A\cap B=\emptyset.$$
+$$A\cap B=\varnothing.$$
 
-If $|A|=m$, $|B|=n$, and $A\cap B=\emptyset$, then the event “$A$ *or* $B$ *occurs*” is denoted by $A\cup B$, and
+If $|A|=m$, $|B|=n$, and $A\cap B=\varnothing$, then the event “$A$ *or* $B$ *occurs*” is denoted by $A\cup B$, and
 
 $$|A\cup B|=|A|+|B|=m+n.$$
 
