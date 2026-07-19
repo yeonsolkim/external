@@ -99,8 +99,9 @@ structure.
 - `_layouts/subcategory.html` renders the selected second-level category and
   all posts and categories below it using `_includes/category_tree.html`.
 - `_includes/category_tree.html` recursively groups posts by `category_path`.
-  It also hides numeric prefixes in visible category and post labels while
-  preserving those prefixes in the real folder/title data for ordering.
+  It also hides numeric and roman-numeral ordering prefixes in visible category
+  and post labels while preserving those prefixes in the real folder/title data
+  for ordering.
 - `assets/js/edited-time.js` runs on the home page and generated category index
   pages, turning `last_modified_at` into relative edited-time labels.
 
@@ -109,8 +110,8 @@ structure.
 - `_layouts/post.html` removes numeric title prefixes from visible post titles.
   For example, `3. Relations` displays as `Relations`.
 - The post header shows the second item of `category_path` above the title and
-  strips roman prefixes there. For example, `III. Topology` displays as
-  `Topology`.
+  strips ordering prefixes there. For example, `III. Topology` displays as
+  `Topology` and links to that subcategory's generated index page.
 - The layout sets `data-reference-scope` from `category_path[1]`. This is what
   keeps theorem/definition links scoped by subject, such as Calculus, Linear
   Algebra, or Topology.

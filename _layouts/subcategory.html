@@ -6,7 +6,7 @@ layout: default
 
 <section class="category-section">
   <h2 class="category-root">
-    {{ page.subcategory | escape }}
+    {{ page.subcategory | strip_category_order_prefix | escape }}
   </h2>
 
   {% include category_tree.html posts=site.posts path=subcategory_path depth=2 heading_depth=1 %}
