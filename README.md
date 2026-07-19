@@ -159,6 +159,10 @@ GitHub Pages' default "Deploy from a branch" build does not run custom Jekyll
 plugins from `_plugins`. If the live site is built that way, inline math may
 remain as raw `$...$`, and Markdown emphasis can break again.
 
+Pull requests targeting `main` run `.github/workflows/pr-build.yml`. This
+workflow performs the complete Jekyll build with read-only repository
+permissions and does not upload or deploy a Pages artifact.
+
 Use the GitHub Actions workflow in `.github/workflows/pages.yml` instead. It
 runs:
 

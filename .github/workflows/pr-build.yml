@@ -1,0 +1,62 @@
+name: Validate Jekyll build
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: jekyll-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.4"
+          bundler-cache: true
+
+      - name: Restore rendered TikZ diagrams
+        uses: actions/cache@v4
+        with:
+          path: .jekyll-cache/tikzcd
+          key: tikzcd-v4-${{ runner.os }}-${{ hashFiles('_plugins/tikzcd_renderer.rb', '_posts/**/*.md', '*.md') }}
+          restore-keys: |
+            tikzcd-v4-${{ runner.os }}-
+
+      - name: Try Jekyll build with cached TikZ diagrams
+        id: cached-build
+        run: |
+          if bundle exec jekyll build; then
+            echo "cache-complete=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "cache-complete=false" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          JEKYLL_ENV: production
+
+      - name: Install TikZ renderer
+        if: steps.cached-build.outputs.cache-complete != 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends \
+            dvisvgm \
+            texlive-latex-base \
+            texlive-latex-extra \
+            texlive-pictures
+
+      - name: Build with Jekyll
+        if: steps.cached-build.outputs.cache-complete != 'true'
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
