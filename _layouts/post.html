@@ -14,25 +14,30 @@ title: Semantics
     {% assign clean_title = clean_title | remove_first: prefix %}
   {% endfor %}
 
-  {% assign category_label = "" %}
-  {% for category_item in page.category_path %}
-    {% if forloop.index0 == 1 %}
-      {% assign category_label = category_item %}
-    {% endif %}
-  {% endfor %}
-  {% assign category_label_parts = category_label | split: ". " %}
-  {% assign category_label_prefix = category_label_parts[0] %}
-  {% assign roman_numerals = "I|II|III|IV|V|VI|VII|VIII|IX|X" | split: "|" %}
-  {% if category_label_parts.size > 1 %}
-    {% if roman_numerals contains category_label_prefix %}
-      {% assign prefix_with_space = category_label_prefix | append: ". " %}
-      {% assign category_label = category_label | remove_first: prefix_with_space %}
-    {% endif %}
+  {% assign parent_category = page.category_path[0] | default: "" %}
+  {% assign raw_subcategory = page.category_path[1] | default: "" %}
+  {% assign category_label = raw_subcategory | strip_category_order_prefix %}
+  {% assign category_page_url = "" %}
+
+  {% if parent_category != "" and raw_subcategory != "" %}
+    {% for generated_page in site.data.generated_subcategory_pages %}
+      {% if generated_page.parent_category == parent_category and generated_page.subcategory == raw_subcategory %}
+        {% assign category_page_url = generated_page.url %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
   {% endif %}
 
   <header class="post-header">
     {% if category_label != "" %}
-      <span class="post-author-name post-category-path">{{ category_label }}</span>
+      {% if category_page_url != "" %}
+        <a
+          href="{{ category_page_url | relative_url }}"
+          class="post-author-name post-category-path post-category-link"
+        >{{ category_label | escape }}</a>
+      {% else %}
+        <span class="post-author-name post-category-path">{{ category_label | escape }}</span>
+      {% endif %}
     {% endif %}
 
     <h1 class="post-title">
