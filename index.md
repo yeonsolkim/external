@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Semantics
+index_page: true
 ---
 
 {% assign preferred_categories = "Mathematics,Physics,English,Reading" | split: "," %}
@@ -35,6 +36,6 @@ title: Semantics
       {{ parent | escape }}
     </h2>
 
-    {% include category_tree.html posts=site.posts path=parent depth=1 %}
+    {% include category_tree.html posts=site.posts path=parent depth=1 max_depth=1 link_subcategories=true %}
   </section>
 {% endfor %}

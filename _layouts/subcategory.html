@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+{% assign subcategory_path = page.parent_category | append: "|" | append: page.subcategory %}
+
+<section class="category-section">
+  <h2 class="category-root">
+    {{ page.subcategory | escape }}
+  </h2>
+
+  {% include category_tree.html posts=site.posts path=subcategory_path depth=2 heading_depth=1 %}
+</section>

@@ -88,13 +88,21 @@ structure.
 
 ### Home Page Category Tree
 
-- `index.md` discovers top-level categories from `site.posts`, then renders
-  them using `_includes/category_tree.html`.
+- `index.md` discovers top-level categories from `site.posts`. It keeps posts
+  whose `category_path` has only one item directly on the home page and links
+  each second-level category to its own generated index page.
+- `_plugins/subcategory_pages_generator.rb` creates one page for every distinct
+  pair formed by the first two items of `category_path`. Generated URLs use the
+  form `/categories/<top-category>/<subcategory>/`; ordering prefixes such as
+  `III.` are omitted from URL slugs so reordering categories does not break
+  links.
+- `_layouts/subcategory.html` renders the selected second-level category and
+  all posts and categories below it using `_includes/category_tree.html`.
 - `_includes/category_tree.html` recursively groups posts by `category_path`.
   It also hides numeric prefixes in visible category and post labels while
   preserving those prefixes in the real folder/title data for ordering.
-- `assets/js/edited-time.js` only runs on the home page and turns
-  `last_modified_at` into relative edited-time labels.
+- `assets/js/edited-time.js` runs on the home page and generated category index
+  pages, turning `last_modified_at` into relative edited-time labels.
 
 ### Post Layout
 
