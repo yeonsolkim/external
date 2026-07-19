@@ -33,6 +33,15 @@
   font-size: 1rem !important;
 }
 
+.subcategory-link {
+  color: blue !important;
+  text-decoration: none !important;
+}
+
+.subcategory-link:hover {
+  text-decoration: underline !important;
+}
+
 .category-block {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
