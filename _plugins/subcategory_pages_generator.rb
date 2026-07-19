@@ -21,8 +21,6 @@ module Jekyll
     safe true
     priority :high
 
-    ORDER_PREFIX = /\A(?:(?:[IVXLCDM]+)|(?:\d+))[.)]\s*/i
-
     def generate(site)
       pairs = site.posts.docs.filter_map do |post|
         path = normalized_category_path(post)
@@ -66,7 +64,7 @@ module Jekyll
     end
 
     def stable_slug(label)
-      unnumbered_label = label.sub(ORDER_PREFIX, "")
+      unnumbered_label = CategoryLabels.strip_order_prefix(label)
       slug = Jekyll::Utils.slugify(unnumbered_label, mode: "default", cased: false)
 
       return slug unless slug.empty?

@@ -32,6 +32,16 @@ margin-bottom: 1.5rem;
 margin-top: 0 !important;
 }
 
+.post-category-link {
+color: #4c4c4c !important;
+text-decoration: none !important;
+}
+
+.main-content .post-category-link:hover {
+color: blue !important;
+text-decoration: underline !important;
+}
+
 .post-author-avatar-wrap {
 display: flex;
 align-items: center;

@@ -96,25 +96,7 @@
   {%- assign next_heading_depth = current_heading_depth | plus: 1 -%}
   {%- assign heading_level = current_heading_depth | plus: 2 -%}
 
-  {%- assign visible_group = group | strip -%}
-  {%- assign first_group_char = visible_group | slice: 0, 1 -%}
-
-  {%- if digits contains first_group_char -%}
-    {%- assign group_cut_index = 0 -%}
-    {%- for i in (0..60) -%}
-      {%- assign ch = visible_group | slice: i, 1 -%}
-      {%- if ch == "" -%}
-        {%- break -%}
-      {%- endif -%}
-
-      {%- if hidden_prefix_chars contains ch -%}
-        {%- assign group_cut_index = i | plus: 1 -%}
-      {%- else -%}
-        {%- break -%}
-      {%- endif -%}
-    {%- endfor -%}
-    {%- assign visible_group = visible_group | slice: group_cut_index, 999 | strip -%}
-  {%- endif -%}
+  {%- assign visible_group = group | strip_category_order_prefix -%}
 
   {%- assign subcategory_page_url = "" -%}
   {%- if include.link_subcategories -%}
