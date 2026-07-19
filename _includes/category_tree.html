@@ -1,6 +1,7 @@
 {%- assign current_parts = include.path | split: "|" -%}
 {%- assign groups = "" | split: "" -%}
 {%- assign direct_posts = "" | split: "" -%}
+{%- assign current_heading_depth = include.heading_depth | default: include.depth -%}
 
 {%- for post in include.posts -%}
   {%- assign raw_path = post.category_path | default: post.categories -%}
@@ -92,7 +93,8 @@
 {%- for group in groups -%}
   {%- assign next_path = include.path | append: "|" | append: group -%}
   {%- assign next_depth = include.depth | plus: 1 -%}
-  {%- assign heading_level = include.depth | plus: 2 -%}
+  {%- assign next_heading_depth = current_heading_depth | plus: 1 -%}
+  {%- assign heading_level = current_heading_depth | plus: 2 -%}
 
   {%- assign visible_group = group | strip -%}
   {%- assign first_group_char = visible_group | slice: 0, 1 -%}
@@ -114,22 +116,47 @@
     {%- assign visible_group = visible_group | slice: group_cut_index, 999 | strip -%}
   {%- endif -%}
 
+  {%- assign subcategory_page_url = "" -%}
+  {%- if include.link_subcategories -%}
+    {%- for generated_page in site.data.generated_subcategory_pages -%}
+      {%- if generated_page.parent_category == include.path and generated_page.subcategory == group -%}
+        {%- assign subcategory_page_url = generated_page.url -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+
+  {%- capture group_label -%}
+    {%- if subcategory_page_url != "" -%}
+      <a href="{{ subcategory_page_url | relative_url }}" class="subcategory-link">{{ visible_group | escape }}</a>
+    {%- else -%}
+      {{ visible_group | escape }}
+    {%- endif -%}
+  {%- endcapture -%}
+
   <div class="category-block depth-{{ include.depth }}">
     {%- case heading_level -%}
       {%- when 2 -%}
-        <h2 class="category-heading depth-{{ include.depth }}">{{ visible_group | escape }}</h2>
+        <h2 class="category-heading depth-{{ include.depth }}">{{ group_label }}</h2>
       {%- when 3 -%}
-        <h3 class="category-heading depth-{{ include.depth }}">{{ visible_group | escape }}</h3>
+        <h3 class="category-heading depth-{{ include.depth }}">{{ group_label }}</h3>
       {%- when 4 -%}
-        <h4 class="category-heading depth-{{ include.depth }}">{{ visible_group | escape }}</h4>
+        <h4 class="category-heading depth-{{ include.depth }}">{{ group_label }}</h4>
       {%- when 5 -%}
-        <h5 class="category-heading depth-{{ include.depth }}">{{ visible_group | escape }}</h5>
+        <h5 class="category-heading depth-{{ include.depth }}">{{ group_label }}</h5>
       {%- when 6 -%}
-        <h6 class="category-heading depth-{{ include.depth }}">{{ visible_group | escape }}</h6>
+        <h6 class="category-heading depth-{{ include.depth }}">{{ group_label }}</h6>
       {%- else -%}
-        <div class="category-heading depth-{{ include.depth }}">{{ visible_group | escape }}</div>
+        <div class="category-heading depth-{{ include.depth }}">{{ group_label }}</div>
     {%- endcase -%}
 
-    {%- include category_tree.html posts=include.posts path=next_path depth=next_depth -%}
+    {%- assign reached_max_depth = false -%}
+    {%- if include.max_depth and include.depth >= include.max_depth -%}
+      {%- assign reached_max_depth = true -%}
+    {%- endif -%}
+
+    {%- unless reached_max_depth -%}
+      {%- include category_tree.html posts=include.posts path=next_path depth=next_depth heading_depth=next_heading_depth max_depth=include.max_depth link_subcategories=include.link_subcategories -%}
+    {%- endunless -%}
   </div>
 {%- endfor -%}
