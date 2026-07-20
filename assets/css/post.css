@@ -25,7 +25,7 @@ font-weight: 400 !important;
 .post-category-path {
 display: block;
 margin-top: 2rem !important;
-margin-bottom: 1.5rem;
+margin-bottom: 2rem;
 }
 
 .post-category-path + .post-title {
@@ -89,6 +89,16 @@ margin-bottom: 0 rem;
 .post-body { 
   max-width: none !important ;
   font-weight: 350;
+}
+
+.post-body a:not(.math-ref-link) {
+color: blue !important;
+text-decoration: none !important;
+}
+
+.post-body a:not(.math-ref-link):hover {
+color: blue !important;
+text-decoration: underline !important;
 }
 
 .post-body h1:first-child, 
