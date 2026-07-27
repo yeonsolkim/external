@@ -7,12 +7,13 @@ title: Semantics
 {% assign reference_scope = reference_scope_source | slugify %}
 
 <article class="main-content"{% if reference_scope != "" %} data-reference-scope="{{ reference_scope }}"{% endif %}>
-
+<!--
   {% assign clean_title = page.title %}
   {% for i in (1..99) %}
     {% assign prefix = i | append: ". " %}
     {% assign clean_title = clean_title | remove_first: prefix %}
   {% endfor %}
+-->
 
   {% assign parent_category = page.category_path[0] | default: "" %}
   {% assign raw_subcategory = page.category_path[1] | default: "" %}
@@ -29,26 +30,22 @@ title: Semantics
   {% endif %}
 
   <header class="post-header">
+    <!--
     {% if category_label != "" %}
       {% if category_page_url != "" %}
         <a
           href="{{ category_page_url | relative_url }}"
-          class="post-author-name post-category-path post-category-link"
+          class="post-category-path post-category-link"
         >{{ category_label | escape }}</a>
       {% else %}
-        <span class="post-author-name post-category-path">{{ category_label | escape }}</span>
+        <span class="post-category-path">{{ category_label | escape }}</span>
       {% endif %}
     {% endif %}
+    -->
 
     <h1 class="post-title">
-      {{ clean_title }}
+      {{ page.title | hierarchical_post_title: page.category_path }}
     </h1>
-
-    <div class="post-author-avatar-wrap">
-      <span class="post-author-avatar" aria-hidden="true"></span>
-    </div>
-
-    <span class="post-author-name">Yeonsol Kim</span>
 
     {% assign page_date_day = page.date | date: "%Y-%m-%d" %}
     {% assign page_date_display = page.date | date: "%B %-d, %Y" %}
@@ -57,21 +54,27 @@ title: Semantics
       {% assign page_updated_display = page.last_modified_at | date: "%B %-d, %Y" %}
     {% endif %}
 
-    <p
-      class="post-date post-date-meta"
-      data-created-day="{{ page_date_day }}"
-      data-created-display="{{ page_date_display }}"
-      {% if page.last_modified_at %}
-        data-updated-at="{{ page.last_modified_at | date_to_xmlschema }}"
-        data-updated-day="{{ page_updated_day }}"
-        data-updated-display="{{ page_updated_display }}"
-      {% endif %}
-    >
-      {{ page_date_display }}{% if page.last_modified_at and page_updated_day != page_date_day %} (updated {{ page_updated_display }}){% endif %}
-    </p>
+    <!--
+    <div class="post-meta">
+      <span class="post-author-name">Yeonsol Kim</span>
+      <span class="post-meta-separator" aria-hidden="true">·</span>
+      <p
+        class="post-date post-date-meta"
+        data-created-day="{{ page_date_day }}"
+        data-created-display="{{ page_date_display }}"
+        {% if page.last_modified_at %}
+          data-updated-at="{{ page.last_modified_at | date_to_xmlschema }}"
+          data-updated-day="{{ page_updated_day }}"
+          data-updated-display="{{ page_updated_display }}"
+        {% endif %}
+      >
+        {{ page_date_display }}{% if page.last_modified_at and page_updated_day != page_date_day %} (updated {{ page_updated_display }}){% endif %}
+      </p>
+    </div>
+    -->
   </header>
 
-  <hr style="margin-bottom: 25px;">
+  <hr class="post-header-divider">
 
   <div class="post-body">
     <div class="post-body math-scroll">
@@ -79,9 +82,9 @@ title: Semantics
     </div>
   </div>
 
-  {% if site.comments_enabled %}
-    <hr style="margin-top: 50px;">
+  <hr class="post-body-divider">
 
+  {% if site.comments_enabled %}
     <div id="comment-section">
       {% include comments.html %}
     </div>

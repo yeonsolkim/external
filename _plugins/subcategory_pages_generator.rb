@@ -2,17 +2,20 @@
 
 module Jekyll
   class SubcategoryIndexPage < PageWithoutAFile
-    def initialize(site, dir, parent_category, subcategory)
-      super(site, site.source, dir, "index.html")
+    def initialize(site, page_spec)
+      category_path = page_spec["category_path"]
+
+      super(site, site.source, page_spec["dir"], "index.html")
 
       self.content = ""
       self.data = {
         "layout" => "subcategory",
-        "title" => subcategory,
+        "title" => category_path.last,
         "index_page" => true,
         "generated_subcategory" => true,
-        "parent_category" => parent_category,
-        "subcategory" => subcategory
+        "category_path" => category_path,
+        "parent_category" => page_spec["parent_category"],
+        "subcategory" => page_spec["subcategory"]
       }
     end
   end
@@ -22,25 +25,20 @@ module Jekyll
     priority :high
 
     def generate(site)
-      pairs = site.posts.docs.filter_map do |post|
+      category_paths = site.posts.docs.filter_map do |post|
         path = normalized_category_path(post)
         path.first(2) if path.length >= 2
       end
 
-      pages = pairs.uniq.sort_by { |parent, subcategory| [parent, subcategory] }.map do |parent, subcategory|
-        build_page_spec(parent, subcategory)
+      pages = category_paths.uniq.sort.map do |category_path|
+        build_page_spec(category_path)
       end
 
       ensure_unique_urls!(pages)
       site.data["generated_subcategory_pages"] = pages
 
       pages.each do |page_spec|
-        site.pages << SubcategoryIndexPage.new(
-          site,
-          page_spec["dir"],
-          page_spec["parent_category"],
-          page_spec["subcategory"]
-        )
+        site.pages << SubcategoryIndexPage.new(site, page_spec)
       end
     end
 
@@ -52,12 +50,15 @@ module Jekyll
       raw_path.map { |part| part.to_s.strip }.reject(&:empty?)
     end
 
-    def build_page_spec(parent, subcategory)
-      dir = File.join("categories", stable_slug(parent), stable_slug(subcategory))
+    def build_page_spec(category_path)
+      dir = File.join("categories", *category_path.map { |part| stable_slug(part) })
 
       {
-        "parent_category" => parent,
-        "subcategory" => subcategory,
+        "category_path" => category_path,
+        "path_key" => category_path.join("|"),
+        "depth" => category_path.length,
+        "parent_category" => category_path[0...-1].join("|"),
+        "subcategory" => category_path.last,
         "dir" => dir,
         "url" => "/#{dir}/"
       }
@@ -76,7 +77,7 @@ module Jekyll
       owners_by_url = {}
 
       pages.each do |page|
-        owner = [page["parent_category"], page["subcategory"]]
+        owner = page["category_path"]
         existing_owner = owners_by_url[page["url"]]
 
         if existing_owner && existing_owner != owner

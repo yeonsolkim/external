@@ -34,17 +34,14 @@
 </head>
 
 <body>
-  <section class="page-header">
+  <header class="page-header">
     <div class="header-inner">
       <h1 class="project-name">{{ site.fixed_banner_title | default: site.title }}</h1>
-      <h2 class="project-tagline">{{ site.description }}</h2>
-
-      <div class="header-buttons">
-        <a href="{{ site.baseurl }}/" class="btn">Go to Home</a>
-        <a href="https://github.com/yeonsolkim/external" class="btn">View on GitHub</a>
-      </div>
+      <p class="project-tagline">{{ site.description }}</p>
     </div>
-  </section>
+  </header>
+
+  {% include breadcrumbs.html %}
 
   <main id="content" class="main-content" role="main">
     {{ content }}

@@ -3,33 +3,35 @@
 width: 100% !important;
 box-sizing: border-box !important;
 padding: 2rem 4rem;
-margin: 0 auto;
+margin: 2rem 0 0 auto;
 word-wrap: break-word;
 line-height: 1.5;
 color: #333;
 }
 
 .post-header {
-text-align: center;
+margin: -1rem 0 1.5rem !important;
+font-family: var(--reading-serif);
+text-align: left;
 }
 
 .post-title {
-margin-top: 4rem !important;
-margin-bottom: 1.1rem !important;
-color: #333333 !important;
-font-size: clamp(1.65rem, 5.4vw, 1.8rem) !important;
-line-height: 1.4;
-font-weight: 500 !important;
+max-width: 52rem;
+margin: 0 !important;
+color: #222226 !important;
+font-family: var(--reading-serif);
+font-size: 1.7rem !important;
+font-weight: bold !important;
+line-height: 1.1;
+text-wrap: balance;
 }
 
 .post-category-path {
-display: block;
-margin-top: 2rem !important;
-margin-bottom: 2rem;
-}
-
-.post-category-path + .post-title {
-margin-top: 0 !important;
+display: inline-block;
+margin: 0 0 0.95rem;
+font-size: 1rem;
+font-weight: 500;
+line-height: 1.2;
 }
 
 .post-category-link {
@@ -39,40 +41,54 @@ text-decoration: none !important;
 }
 
 .main-content .post-category-link:hover {
-color: blue !important;
+color: #405ee8 !important;
 text-decoration: underline !important;
+text-underline-offset: 0.18em;
 }
 
-.post-author-avatar-wrap {
+.post-meta {
 display: flex;
 align-items: center;
-justify-content: center;
-}
-
-.post-author-avatar {
-display: block;
-width: 35px;
-height: 35px;
-border-radius: 50%;
-margin-top: 1.5rem !important;
-margin-bottom: 0.3rem;
-background-image: url("https://github.com/yeonsolkim.png");
-background-position: center;
-background-size: cover;
+flex-wrap: wrap;
+gap: 0.35rem;
+margin: 0;
+color: #8b8b90;
+font-size: 1rem;
+font-weight: 400;
+line-height: 1.45;
 }
 
 .post-author-name {
-color: #4c4c4c;
-font-size: 0.95rem;
-font-weight: 300;
+color: #66666b;
+font-weight: 500;
 }
 
 .post-header .post-date {
-margin-top: 0.1rem;
-margin-bottom: 2rem;
-color: #878787;
-font-size: 0.8rem;
-font-weight: 200;
+margin: 0;
+color: inherit;
+font-size: inherit;
+font-weight: inherit;
+}
+
+.post-meta-separator {
+color: #b0b0b4;
+}
+
+.post-header-divider,
+.post-body-divider {
+border-top-color: #d2d2d4 !important;
+}
+
+.post-header-divider {
+margin: 0 0 2rem;
+}
+
+.post-body-divider {
+margin: 3rem 0 0 !important;
+}
+
+#comment-section {
+margin-top: 2.5rem;
 }
 
 .post-body h1, 
@@ -241,6 +257,7 @@ left: calc(-1 * (var(--ol-marker-width) + var(--ol-marker-gap)));
 width: var(--ol-marker-width);
 color: #333;
 font-size: 0.95em;
+font-style: normal;
 text-align: left;
 }
 
@@ -354,6 +371,7 @@ margin-left: 1rem;
 }
 
 .post-body .math-label-anchor {
+margin-right: 0.3em;
 scroll-margin-top: 1.25rem;
 }
 
@@ -475,7 +493,17 @@ max-width: 100%;
   }
 
   .post-title {
-  line-height: 1.4 !important;
+  font-size: clamp(2.05rem, 9.5vw, 2.7rem) !important;
+  line-height: 1.12 !important;
+  }
+
+  .post-header {
+  margin-top: 1.75rem;
+  margin-bottom: 2rem;
+  }
+
+  .post-category-path {
+  margin-bottom: 0.8rem;
   }
 }
 
