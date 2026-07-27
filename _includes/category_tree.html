@@ -37,31 +37,12 @@
 
 {%- assign groups = groups | sort -%}
 {%- assign direct_posts = direct_posts | sort: "title" -%}
-{%- assign digits = "0123456789" -%}
-{%- assign hidden_prefix_chars = "0123456789 .)-_:" -%}
 
 {%- if direct_posts.size > 0 -%}
   <ul class="post-list depth-{{ include.depth }}">
     {%- for post in direct_posts -%}
-      {%- assign visible_title = post.title | strip -%}
-      {%- assign first_title_char = visible_title | slice: 0, 1 -%}
-
-      {%- if digits contains first_title_char -%}
-        {%- assign title_cut_index = 0 -%}
-        {%- for i in (0..60) -%}
-          {%- assign ch = visible_title | slice: i, 1 -%}
-          {%- if ch == "" -%}
-            {%- break -%}
-          {%- endif -%}
-
-          {%- if hidden_prefix_chars contains ch -%}
-            {%- assign title_cut_index = i | plus: 1 -%}
-          {%- else -%}
-            {%- break -%}
-          {%- endif -%}
-        {%- endfor -%}
-        {%- assign visible_title = visible_title | slice: title_cut_index, 999 | strip -%}
-      {%- endif -%}
+      {%- assign post_path = post.category_path | default: post.categories -%}
+      {%- assign visible_title = post.title | hierarchical_post_title: post_path -%}
 
       <li>
         <a href="{{ post.url | relative_url }}" class="post-link">
@@ -96,7 +77,11 @@
   {%- assign next_heading_depth = current_heading_depth | plus: 1 -%}
   {%- assign heading_level = current_heading_depth | plus: 2 -%}
 
-  {%- assign visible_group = group | strip_category_order_prefix -%}
+  {%- if include.depth <= 1 -%}
+    {%- assign visible_group = group | strip_category_order_prefix -%}
+  {%- else -%}
+    {%- assign visible_group = group | strip -%}
+  {%- endif -%}
 
   {%- assign subcategory_page_url = "" -%}
   {%- if include.link_subcategories -%}

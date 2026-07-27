@@ -2,12 +2,13 @@
 layout: default
 ---
 
-{% assign subcategory_path = page.parent_category | append: "|" | append: page.subcategory %}
+{% assign category_path = page.category_path | join: "|" %}
+{% assign category_depth = page.category_path | size %}
 
 <section class="category-section">
   <h2 class="category-root">
-    {{ page.subcategory | strip_category_order_prefix | escape }}
+    {{ page.category_path | last | strip_category_order_prefix | escape }}
   </h2>
 
-  {% include category_tree.html posts=site.posts path=subcategory_path depth=2 heading_depth=1 %}
+  {% include category_tree.html posts=site.posts path=category_path depth=category_depth heading_depth=1 link_subcategories=true %}
 </section>

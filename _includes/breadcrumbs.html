@@ -1,0 +1,45 @@
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item">
+      <a href="{{ '/' | relative_url }}"{% unless page.category_path %} aria-current="page"{% endunless %}>Home</a>
+    </li>
+
+    {% assign breadcrumb_path_key = "" %}
+    {% if page.category_path %}
+      {% for category in page.category_path %}
+        {% if forloop.index <= 2 %}
+          {% assign visible_category = category | strip_category_order_prefix %}
+        {% else %}
+          {% assign visible_category = category | strip %}
+        {% endif %}
+
+        {% if breadcrumb_path_key == "" %}
+          {% assign breadcrumb_path_key = category %}
+        {% else %}
+          {% assign breadcrumb_path_key = breadcrumb_path_key | append: "|" | append: category %}
+        {% endif %}
+
+        {% assign breadcrumb_url = "" %}
+        {% for generated_page in site.data.generated_subcategory_pages %}
+          {% if generated_page.path_key == breadcrumb_path_key %}
+            {% assign breadcrumb_url = generated_page.url %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+
+        <li class="breadcrumb-item">
+          <span class="breadcrumb-separator" aria-hidden="true">›</span>
+          {% if breadcrumb_url != "" %}
+            <a href="{{ breadcrumb_url | relative_url }}"{% if forloop.last %} aria-current="page"{% endif %}>
+              {{ visible_category | escape }}
+            </a>
+          {% else %}
+            <span class="breadcrumb-label"{% if forloop.last %} aria-current="page"{% endif %}>
+              {{ visible_category | escape }}
+            </span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    {% endif %}
+  </ol>
+</nav>
