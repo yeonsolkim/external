@@ -5,6 +5,7 @@ url: "https://YeonsolKim.github.io"
 fixed_banner_title: "Semantics"
 banner_color_start: "#000000" 
 banner_color_end: "#878787" 
+comments_enabled: false
 author: YeonsolKim  
 github:
   is_project_page: true
