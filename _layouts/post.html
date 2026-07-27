@@ -79,9 +79,11 @@ title: Semantics
     </div>
   </div>
 
-  <hr style="margin-top: 50px;">
+  {% if site.comments_enabled %}
+    <hr style="margin-top: 50px;">
 
-  <div id="comment-section">
-    {% include comments.html %}
-  </div>
+    <div id="comment-section">
+      {% include comments.html %}
+    </div>
+  {% endif %}
 </article>
