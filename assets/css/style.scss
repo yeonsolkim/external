@@ -13,6 +13,32 @@
     U+201C, U+201D;
 }
 
+@font-face {
+  font-family: "STIX Two Text Web";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/stix-two/STIXTwoText-Variable.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "STIX Two Text Web";
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/stix-two/STIXTwoText-Italic-Variable.woff2")
+    format("woff2");
+}
+
+:root {
+  --reading-serif: "STIX Two Text Web", "STIX Two Text",
+    "Iowan Old Style", Georgia, serif;
+  --interface-sans: "Latex Punctuation", -apple-system, BlinkMacSystemFont,
+    "SF Pro Text", "SF Pro Display", "Apple SD Gothic Neo", "Noto Sans KR",
+    "Malgun Gothic", "Helvetica Neue", Arial, sans-serif;
+}
+
 /* Base */
 html {
   font-size: 15.5px;
@@ -20,13 +46,12 @@ html {
 }
 
 body {
-  font-family: "Latex Punctuation", -apple-system, BlinkMacSystemFont,
-    "SF Pro Text", "SF Pro Display", "Apple SD Gothic Neo", "Noto Sans KR",
-    "Malgun Gothic", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--reading-serif);
 }
 
 /* Header */
 .page-header {
+  font-family: var(--interface-sans);
   padding: 6rem 1rem 5.25rem !important;
   text-align: center;
   background-color: {{ site.banner_color_start | default: "#000000" }} !important;

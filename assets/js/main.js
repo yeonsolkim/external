@@ -6,6 +6,14 @@
   var labelPattern = /^(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle)\s+(\d+(?:\.\d+)+)\.?/;
   var sourceLabelPattern = /(?:\*\*|<(?:strong|b)\b[^>]*>)\s*(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle)\s+(\d+(?:\.\d+)+)\.?(?=\s|\*|\)|<\/(?:strong|b)>)/g;
   var referencePattern = /\b(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle)\s+(\d+(?:\.\d+)+)\b/g;
+  var statementBoundaryLabelPattern = /^(?:Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle|Notation|Axiom|Exercise)\b/;
+  var proofMarkerPattern = /^(?:Proof|Subproof|Solution)(?:\s+\d+)?\.?$/i;
+  var italicStatementKinds = {
+    Theorem: true,
+    Lemma: true,
+    Proposition: true,
+    Corollary: true
+  };
   var labelSources = [
     {%- assign first_source = true -%}
     {%- for post in site.posts -%}
@@ -175,6 +183,190 @@
     });
   }
 
+  function getTopLevelBlock(postBody, element) {
+    var block = element;
+
+    while (block && block.parentElement !== postBody) {
+      block = block.parentElement;
+    }
+
+    return block && block.parentElement === postBody ? block : null;
+  }
+
+  function getDirectChild(container, descendant) {
+    var child = descendant;
+
+    while (child && child.parentNode !== container) {
+      child = child.parentNode;
+    }
+
+    return child && child.parentNode === container ? child : null;
+  }
+
+  function getTextBeforeNode(container, node) {
+    var range = document.createRange();
+
+    range.selectNodeContents(container);
+    range.setEndBefore(node);
+
+    return normalizeSpace(range.toString());
+  }
+
+  function findProofMarker(element) {
+    var candidates = element.querySelectorAll('em, i');
+    var marker = null;
+
+    candidates.forEach(function (candidate) {
+      if (!marker && proofMarkerPattern.test(normalizeSpace(candidate.textContent || ''))) {
+        marker = candidate;
+      }
+    });
+
+    return marker;
+  }
+
+  function isStatementBoundary(element) {
+    var tagName = element.tagName;
+    var candidates;
+    var found = false;
+
+    if (/^H[1-6]$/.test(tagName) || tagName === 'HR') {
+      return true;
+    }
+
+    candidates = element.querySelectorAll('strong, b');
+    candidates.forEach(function (candidate) {
+      var labelText = normalizeSpace(candidate.textContent || '');
+
+      if (
+        !found &&
+        statementBoundaryLabelPattern.test(labelText) &&
+        getTextBeforeNode(element, candidate) === ''
+      ) {
+        found = true;
+      }
+    });
+
+    return found;
+  }
+
+  function wrapSiblingRange(parent, firstNode, stopNode) {
+    var nodes = [];
+    var node = firstNode;
+    var wrapper;
+
+    while (node && node !== stopNode) {
+      nodes.push(node);
+      node = node.nextSibling;
+    }
+
+    if (!nodes.length) {
+      return;
+    }
+
+    wrapper = document.createElement('span');
+    wrapper.className = 'math-statement-italic';
+    parent.insertBefore(wrapper, nodes[0]);
+
+    nodes.forEach(function (rangeNode) {
+      wrapper.appendChild(rangeNode);
+    });
+  }
+
+  function italicizeStartingBlock(block, labelElement) {
+    var proofMarker = findProofMarker(block);
+    var labelChild;
+    var proofChild;
+
+    if (!proofMarker) {
+      block.classList.add('math-statement-italic');
+      return false;
+    }
+
+    labelChild = getDirectChild(block, labelElement);
+    proofChild = getDirectChild(block, proofMarker);
+
+    if (labelChild && proofChild) {
+      wrapSiblingRange(block, labelChild.nextSibling, proofChild);
+    }
+
+    return true;
+  }
+
+  function italicizeContinuationBlock(block) {
+    var proofMarker = findProofMarker(block);
+    var proofChild;
+
+    if (!proofMarker) {
+      block.classList.add('math-statement-italic');
+      return false;
+    }
+
+    proofChild = getDirectChild(block, proofMarker);
+
+    if (proofChild && getTextBeforeNode(block, proofMarker) !== '') {
+      wrapSiblingRange(block, block.firstChild, proofChild);
+    }
+
+    return true;
+  }
+
+  function italicizeMathStatements(postBody) {
+    var labels;
+
+    if (postBody.getAttribute('data-math-statements-italicized') === 'true') {
+      return;
+    }
+
+    postBody.setAttribute('data-math-statements-italicized', 'true');
+    labels = postBody.querySelectorAll('.math-label-anchor');
+
+    labels.forEach(function (labelElement) {
+      var label = readLabel(labelElement.textContent || '');
+      var block;
+      var nextBlock;
+      var reachedProof;
+
+      if (!label || !italicStatementKinds[label.kind]) {
+        return;
+      }
+
+      block = getTopLevelBlock(postBody, labelElement);
+
+      if (!block) {
+        return;
+      }
+
+      reachedProof = italicizeStartingBlock(block, labelElement);
+      nextBlock = block.nextElementSibling;
+
+      while (!reachedProof && nextBlock && !isStatementBoundary(nextBlock)) {
+        reachedProof = italicizeContinuationBlock(nextBlock);
+        nextBlock = nextBlock.nextElementSibling;
+      }
+    });
+  }
+
+  function initMathStatementItalics() {
+    var postBody = getPostBody();
+    var applyItalics;
+
+    if (!postBody) {
+      return;
+    }
+
+    applyItalics = function () {
+      italicizeMathStatements(postBody);
+    };
+
+    if (window.MathJax && window.MathJax.startup && window.MathJax.startup.promise) {
+      window.MathJax.startup.promise.then(applyItalics, applyItalics);
+      return;
+    }
+
+    applyItalics();
+  }
+
   function shouldSkipTextNode(node) {
     if (!node.nodeValue || !referencePattern.test(node.nodeValue)) {
       referencePattern.lastIndex = 0;
@@ -319,11 +511,16 @@
       return source.scope === scope;
     });
 
-    if (!postBody || !scope || !sources.length) {
+    if (!postBody) {
       return;
     }
 
     addAnchorTargets(postBody);
+
+    if (!scope || !sources.length) {
+      return;
+    }
+
     linkReferences(postBody, buildLabelTargets(sources));
     bindReferenceLinkClicks(postBody);
     settleHashScroll();
@@ -544,6 +741,7 @@
 
   function initPageEnhancements() {
     initMathReferenceLinks();
+    initMathStatementItalics();
     initPostTableBalance();
   }
 

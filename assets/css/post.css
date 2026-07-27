@@ -19,7 +19,7 @@ margin-bottom: 1.1rem !important;
 color: #333333 !important;
 font-size: clamp(1.65rem, 5.4vw, 1.8rem) !important;
 line-height: 1.4;
-font-weight: 400 !important;
+font-weight: 500 !important;
 }
 
 .post-category-path {
@@ -88,7 +88,12 @@ margin-bottom: 0 rem;
 }
 .post-body { 
   max-width: none !important ;
-  font-weight: 350;
+  font-weight: 400;
+  line-height: 1.58;
+}
+
+.post-body.math-scroll {
+  font-size: 1.035em;
 }
 
 .post-body a:not(.math-ref-link) {
@@ -350,6 +355,16 @@ margin-left: 1rem;
 
 .post-body .math-label-anchor {
 scroll-margin-top: 1.25rem;
+}
+
+.post-body .math-statement-italic {
+font-style: italic;
+}
+
+.post-body .math-statement-italic .math-label-anchor,
+.post-body .math-statement-italic em,
+.post-body .math-statement-italic i {
+font-style: normal;
 }
 
 .post-body a.math-ref-link {
