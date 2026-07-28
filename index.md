@@ -4,7 +4,7 @@ title: Semantics
 index_page: true
 ---
 
-{% assign preferred_categories = "Mathematics,Physics,English,Reading" | split: "," %}
+{% assign preferred_categories = "Mathematics,Physics" | split: "," %}
 {% assign discovered_categories = "" | split: "" %}
 
 {% for post in site.posts %}

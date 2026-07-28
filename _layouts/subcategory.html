@@ -5,7 +5,7 @@ layout: default
 {% assign category_path = page.category_path | join: "|" %}
 {% assign category_depth = page.category_path | size %}
 
-<section class="category-section">
+<section class="category-section subcategory-section">
   <h2 class="category-root">
     {{ page.category_path | last | strip_category_order_prefix | escape }}
   </h2>
