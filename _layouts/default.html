@@ -36,7 +36,9 @@
 <body>
   <header class="page-header">
     <div class="header-inner">
-      <h1 class="project-name">{{ site.fixed_banner_title | default: site.title }}</h1>
+      <h1 class="project-name">
+        <a href="{{ '/' | relative_url }}">{{ site.fixed_banner_title | default: site.title }}</a>
+      </h1>
       <p class="project-tagline">{{ site.description }}</p>
     </div>
   </header>

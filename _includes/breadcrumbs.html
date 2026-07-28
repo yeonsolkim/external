@@ -28,7 +28,7 @@
         {% endfor %}
 
         <li class="breadcrumb-item">
-          <span class="breadcrumb-separator" aria-hidden="true"> › </span>
+          <span class="breadcrumb-separator" aria-hidden="true">›</span>
           {% if breadcrumb_url != "" %}
             <a href="{{ breadcrumb_url | relative_url }}"{% if forloop.last %} aria-current="page"{% endif %}>
               {{ visible_category | escape }}
