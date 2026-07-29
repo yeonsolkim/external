@@ -133,7 +133,14 @@ structure.
 - `assets/js/mathjax-config.js` prepares math before MathJax runs. It handles
   raw `$...$` fallback normalization, list items containing display math,
   ordered-list marker prefixes, mobile math scrolling, and MathJax startup
-  visibility.
+  visibility. It also defines `\lowparen{...}` for a lowered, fixed-size pair
+  of parentheses around large operators with lower limits.
+- `_posts/.obsidian/plugins/tikzcd-preview/main.js` registers the same
+  `\lowparen{...}` definition with Obsidian's MathJax instance when the vault
+  plugin loads.
+- Statement names written immediately after a numbered label, such as
+  `**Theorem 1.1.1.** (Example name).`, are kept upright even when theorem
+  text is italicized.
 - For bibliography-style lists under `## References`, use an ordered list and
   put `{:reference}` directly below it. The preprocessor maps that tag to
   `class="reference"`, and ordered-list markers render as `[1]` instead of

@@ -165,6 +165,55 @@
     };
   }
 
+  function wrapStatementNameTextNode(node) {
+    var match = (node.nodeValue || '').match(/^(\s*)(\([^)\n]+\)\.?)/);
+    var wrapper;
+
+    if (!match) {
+      return false;
+    }
+
+    wrapper = document.createElement('span');
+    wrapper.className = 'math-statement-name';
+    wrapper.textContent = match[2];
+
+    if (match[1]) {
+      node.parentNode.insertBefore(document.createTextNode(match[1]), node);
+    }
+
+    node.parentNode.insertBefore(wrapper, node);
+    node.nodeValue = node.nodeValue.slice(match[0].length);
+    return true;
+  }
+
+  function markStatementName(labelElement) {
+    var node = labelElement.nextSibling;
+    var text;
+
+    while (node && node.nodeType === Node.TEXT_NODE && normalizeSpace(node.nodeValue || '') === '') {
+      node = node.nextSibling;
+    }
+
+    if (!node) {
+      return;
+    }
+
+    if (node.nodeType === Node.TEXT_NODE) {
+      wrapStatementNameTextNode(node);
+      return;
+    }
+
+    if (node.nodeType !== Node.ELEMENT_NODE || !/^(EM|I)$/.test(node.tagName)) {
+      return;
+    }
+
+    text = normalizeSpace(node.textContent || '');
+
+    if (/^\([^)\n]+\)\.?$/.test(text)) {
+      node.classList.add('math-statement-name');
+    }
+  }
+
   function addAnchorTargets(postBody) {
     var labels = postBody.querySelectorAll('strong, b');
 
@@ -180,6 +229,7 @@
       }
 
       element.classList.add('math-label-anchor');
+      markStatementName(element);
     });
   }
 
