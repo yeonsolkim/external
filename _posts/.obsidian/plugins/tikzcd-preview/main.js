@@ -1,4 +1,4 @@
-const { Plugin } = require("obsidian");
+const { Plugin, loadMathJax } = require("obsidian");
 const { execFile } = require("node:child_process");
 const crypto = require("node:crypto");
 const fs = require("node:fs/promises");
@@ -9,11 +9,22 @@ const { promisify } = require("node:util");
 const execFileAsync = promisify(execFile);
 const CACHE_VERSION = "2";
 const SVG_SCALE = 1.2;
+const MATHJAX_PREAMBLE = String.raw`
+\def\lowparen#1{
+  \mathinner{
+    \mathopen{\lower .25em {\bigg(}}
+    #1
+    \mathclose{\lower .25em {\bigg)}}
+  }
+}
+`;
 
 module.exports = class TikzcdPreviewPlugin extends Plugin {
   async onload() {
     this.diagramIndex = 0;
     this.renderPromises = new Map();
+
+    await this.loadMathJaxPreamble();
 
     this.registerMarkdownPostProcessor(
       (el, ctx) => this.renderDisplayMathDiagrams(el, ctx),
@@ -29,6 +40,18 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
         ),
       -1000
     );
+  }
+
+  async loadMathJaxPreamble() {
+    await loadMathJax();
+
+    const mathJax = globalThis.MathJax;
+    if (typeof mathJax?.tex2chtml !== "function") {
+      console.warn("TikZ-cd Preview could not register MathJax macros.");
+      return;
+    }
+
+    mathJax.tex2chtml(MATHJAX_PREAMBLE);
   }
 
   renderDisplayMathDiagrams(el, ctx) {

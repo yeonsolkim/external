@@ -1,9 +1,9 @@
 {
   "id": "tikzcd-preview",
   "name": "TikZ-cd Preview",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "minAppVersion": "1.0.0",
-  "description": "Render tikzcd display-math environments and fenced blocks with local TeX.",
+  "description": "Render tikzcd diagrams with local TeX and register shared MathJax macros.",
   "author": "Yeonsol Kim",
   "isDesktopOnly": true
 }

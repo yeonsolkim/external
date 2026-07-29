@@ -400,7 +400,13 @@
     tex: {
       inlineMath: [['\\(', '\\)']],
       displayMath: [['$$', '$$'], ['\\[', '\\]']],
-      processEscapes: true
+      processEscapes: true,
+      macros: {
+        lowparen: [
+          '\\mathinner{\\mathopen{\\lower .25em {\\bigg(}}#1\\mathclose{\\lower .25em {\\bigg)}}}',
+          1
+        ]
+      }
     },
     options: {
       enableMenu: false

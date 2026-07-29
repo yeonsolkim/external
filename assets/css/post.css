@@ -380,6 +380,7 @@ font-style: italic;
 }
 
 .post-body .math-statement-italic .math-label-anchor,
+.post-body .math-statement-name,
 .post-body .math-statement-italic em,
 .post-body .math-statement-italic i {
 font-style: normal;
