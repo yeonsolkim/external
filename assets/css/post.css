@@ -277,7 +277,6 @@ margin-bottom: 0.2rem !important;
 }
 
 .post-body li.list-item-display-math mjx-container[display="true"] > svg {
-display: block;
 margin-left: auto;
 margin-right: auto;
 }
