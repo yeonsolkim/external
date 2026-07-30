@@ -396,7 +396,7 @@ text-decoration: none !important;
 display: inline-block;
 position: relative;
 padding: 0 0.12em;
-line-height: 0.9;
+line-height: 0.95;
 }
 
 .post-body a.math-ref-link .math-ref-number::after {
@@ -408,6 +408,8 @@ bottom: 0;
 left: 0;
 border: 0.7px solid red;
 pointer-events: none;
+top: 0.05em;
+bottom: -0.05em;
 }
 
 .math-scroll {

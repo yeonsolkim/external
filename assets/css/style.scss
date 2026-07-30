@@ -8,7 +8,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("../fonts/new-computer-modern/NewCM10-Regular.woff2")
+  src: url("../fonts/new-computer-modern/NewCM10-regular.woff2")
     format("woff2");
 }
 
@@ -24,7 +24,7 @@
 @font-face {
   font-family: "New Computer Modern Web";
   font-style: normal;
-  font-weight: 700;
+  font-weight: 800;
   font-display: swap;
   src: url("../fonts/new-computer-modern/NewCM10-Bold.woff2")
     format("woff2");
@@ -33,7 +33,7 @@
 @font-face {
   font-family: "New Computer Modern Web";
   font-style: italic;
-  font-weight: 700;
+  font-weight: 800;
   font-display: swap;
   src: url("../fonts/new-computer-modern/NewCM10-BoldItalic.woff2")
     format("woff2");
@@ -47,7 +47,7 @@
 
 /* Base */
 html {
-  font-size: 15.5px;
+  font-size: 16px;
   background-color: #ffffff !important;
 }
 
