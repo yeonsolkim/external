@@ -20,16 +20,21 @@ The concise ```` ```tikzcd ```` fenced form remains supported for existing
 posts.
 
 `_plugins/tikzcd_renderer.rb` wraps each block in a standalone LaTeX document,
-compiles it with `latex`, converts the DVI output to inline SVG with `dvisvgm`,
-and caches the undecorated SVG under `.jekyll-cache/tikzcd`. The generated SVG
-IDs are namespaced before insertion so multiple diagrams can safely appear in
-one post.
+loads the regular New Computer Modern text and math faces, compiles it with
+`dvilualatex`, converts the DVI output to inline SVG with `dvisvgm`, and caches
+the undecorated SVG under `.jekyll-cache/tikzcd`. The generated SVG IDs are
+namespaced before insertion so multiple diagrams can safely appear in one post.
 
 For Obsidian preview, enable the tracked `TikZ-cd Preview` plugin and install a
-TeX distribution that provides `latex`, `dvisvgm`, and `tikz-cd`. The plugin
-runs before the normal Markdown post-processors, diverts display-math `tikzcd`
-environments to the same TeX-to-SVG pipeline used by the site, and leaves all
-other display math for MathJax. Its SVG output is scaled to match the
+TeX distribution that provides `dvilualatex`, `dvisvgm`, `tikz-cd`, and the
+`newcomputermodern` package. The plugin runs before the normal Markdown
+post-processors, diverts display-math `tikzcd` environments to the same
+TeX-to-SVG pipeline used by the site, and leaves all other display math for
+MathJax. It sends the original TeX, with accessible MathML as a fallback,
+through an isolated copy of the same pinned MathJax 4 SVG renderer and
+`mathjax-newcm` font package used by the site. This keeps regular, bold,
+italic, calligraphic, fraktur, sans-serif, typewriter, and stretchy symbols in
+one New Computer Modern Math design. Its TikZ SVG output is scaled to match the
 surrounding MathJax typography.
 
 This site contains many Markdown posts with inline LaTeX math written as
@@ -130,6 +135,10 @@ structure.
 
 ### Math and Post Styling
 
+- MathJax uses the `mathjax-newcm` output font, while the site text uses the
+  matching New Computer Modern 10 regular, italic, bold, and bold-italic web
+  fonts under `assets/fonts/new-computer-modern`. Both the site and Obsidian
+  plugin pin MathJax 4.1.3 so their SVG glyphs and metrics stay in sync.
 - `assets/js/mathjax-config.js` prepares math before MathJax runs. It handles
   raw `$...$` fallback normalization, list items containing display math,
   ordered-list marker prefixes, mobile math scrolling, and MathJax startup

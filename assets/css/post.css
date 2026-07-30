@@ -259,6 +259,7 @@ color: #333;
 font-size: 0.95em;
 font-style: normal;
 text-align: left;
+white-space: nowrap;
 }
 
 .post-body li.list-item-display-math {
@@ -409,9 +410,9 @@ line-height: 1.08;
 .post-body a.math-ref-link .math-ref-number::after {
 content: "";
 position: absolute;
-top: -0.09em;
+top: 0;
 right: 0;
-bottom: 0.09em;
+bottom: 0;
 left: 0;
 border: 0.7px solid red;
 pointer-events: none;
