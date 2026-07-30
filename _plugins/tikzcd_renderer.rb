@@ -8,7 +8,7 @@ require "tmpdir"
 module ExternalTikzcdRenderer
   CACHE_VERSION = "5"
   DEFAULT_CACHE_DIR = ".jekyll-cache/tikzcd"
-  SVG_SCALE = 1.28
+  SVG_SCALE = 1.12
   CSS_PIXELS_PER_POINT = 4.0 / 3.0
   # assets/css/main.css: 15.5px root size times the desktop content scale.
   REFERENCE_FONT_SIZE_PX = 15.5 * 1.05
