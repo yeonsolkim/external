@@ -7,8 +7,16 @@ const path = require("node:path");
 const { promisify } = require("node:util");
 
 const execFileAsync = promisify(execFile);
-const CACHE_VERSION = "2";
+const CACHE_VERSION = "3";
 const SVG_SCALE = 1.2;
+const MATHJAX_VERSION = "4.1.3";
+const MATHJAX_COMPONENT_URL =
+  `https://cdn.jsdelivr.net/npm/mathjax@${MATHJAX_VERSION}/tex-mml-svg.js`;
+const MATHJAX_NEWCM_URL =
+  "https://cdn.jsdelivr.net/npm/@mathjax/" +
+  `mathjax-newcm-font@${MATHJAX_VERSION}`;
+const NEWCM_RENDER_ATTRIBUTE = "data-newcm-mathjax";
+const NEWCM_SOURCE_PROPERTY = Symbol("newcmMathSource");
 const MATHJAX_PREAMBLE = String.raw`
 \def\lowparen#1{
   \mathinner{
@@ -25,10 +33,26 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
     this.renderPromises = new Map();
 
     await this.loadMathJaxPreamble();
+    this.mathJax4Promise = this.loadMathJax4Renderer().catch((error) => {
+      console.warn(
+        "TikZ-cd Preview could not start the New Computer Modern renderer.",
+        error
+      );
+      return null;
+    });
+    this.register(() => this.mathJax4Frame?.remove());
 
     this.registerMarkdownPostProcessor(
-      (el, ctx) => this.renderDisplayMathDiagrams(el, ctx),
+      (el, ctx) => {
+        this.renderDisplayMathDiagrams(el, ctx);
+        this.captureObsidianMathSources(el);
+      },
       -1000
+    );
+
+    this.registerMarkdownPostProcessor(
+      (el) => this.watchAndRenderObsidianMath(el),
+      1000
     );
 
     this.registerMarkdownCodeBlockProcessor(
@@ -52,6 +76,263 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
     }
 
     mathJax.tex2chtml(MATHJAX_PREAMBLE);
+  }
+
+  async loadMathJax4Renderer() {
+    const frame = document.createElement("iframe");
+    frame.className = "tikzcd-preview__mathjax-frame";
+    frame.hidden = true;
+    frame.tabIndex = -1;
+    frame.setAttribute("aria-hidden", "true");
+    frame.srcdoc = [
+      "<!doctype html>",
+      '<html><head><meta charset="utf-8">',
+      "<script>",
+      `window.MathJax=${JSON.stringify({
+        loader: {
+          paths: {
+            "mathjax-newcm": MATHJAX_NEWCM_URL,
+          },
+        },
+        tex: {
+          macros: {
+            lowparen: [
+              "\\mathinner{\\mathopen{\\lower .25em {\\bigg(}}" +
+                "#1\\mathclose{\\lower .25em {\\bigg)}}}",
+              1,
+            ],
+          },
+        },
+        startup: {
+          typeset: false,
+        },
+        options: {
+          enableMenu: false,
+        },
+        output: {
+          font: "mathjax-newcm",
+        },
+        svg: {
+          blacker: 9,
+          fontCache: "none",
+          scale: 0.9,
+          exFactor: 0.5,
+          displayAlign: "center",
+        },
+      })};`,
+      "</script>",
+      `<script src="${MATHJAX_COMPONENT_URL}"></script>`,
+      "</head><body></body></html>",
+    ].join("");
+
+    const loaded = new Promise((resolve, reject) => {
+      const timeout = window.setTimeout(
+        () => reject(new Error("MathJax 4 took too long to load.")),
+        15000
+      );
+      frame.addEventListener(
+        "load",
+        () => {
+          window.clearTimeout(timeout);
+          resolve();
+        },
+        { once: true }
+      );
+      frame.addEventListener(
+        "error",
+        () => {
+          window.clearTimeout(timeout);
+          reject(new Error("MathJax 4 could not be loaded."));
+        },
+        { once: true }
+      );
+    });
+
+    document.body.appendChild(frame);
+    this.mathJax4Frame = frame;
+    await loaded;
+
+    const mathJax = frame.contentWindow?.MathJax;
+    if (!mathJax?.startup?.promise) {
+      throw new Error("MathJax 4 did not expose its startup promise.");
+    }
+
+    await mathJax.startup.promise;
+    if (
+      typeof mathJax.tex2svgPromise !== "function" ||
+      typeof mathJax.mathml2svgPromise !== "function"
+    ) {
+      throw new Error("MathJax 4 did not expose its SVG converters.");
+    }
+
+    return mathJax;
+  }
+
+  watchAndRenderObsidianMath(el) {
+    void this.renderObsidianMath(el);
+
+    const view = el.ownerDocument.defaultView;
+    if (!view?.MutationObserver) return;
+
+    const observer = new view.MutationObserver(() => {
+      void this.renderObsidianMath(el);
+    });
+    observer.observe(el, { childList: true, subtree: true });
+    view.setTimeout(() => observer.disconnect(), 2000);
+  }
+
+  captureObsidianMathSources(el) {
+    const selector = ".math-inline, .math-block";
+    const mathElements = [];
+
+    if (el.matches?.(selector)) mathElements.push(el);
+    mathElements.push(...el.querySelectorAll(selector));
+
+    mathElements.forEach((mathElement) => {
+      if (
+        mathElement[NEWCM_SOURCE_PROPERTY] ||
+        mathElement.querySelector("mjx-container") ||
+        mathElement.closest(".tikzcd-preview")
+      ) {
+        return;
+      }
+
+      const source =
+        mathElement.getAttribute("data-math") || mathElement.textContent || "";
+      if (!source.trim() || this.extractTikzcdEnvironment(source)) return;
+
+      mathElement[NEWCM_SOURCE_PROPERTY] = source.trim();
+    });
+  }
+
+  async renderObsidianMath(el) {
+    const containers = this.findObsidianMathContainers(el);
+    if (containers.length === 0) return;
+
+    containers.forEach((container) => {
+      container.setAttribute(NEWCM_RENDER_ATTRIBUTE, "pending");
+    });
+
+    const mathJax = await this.mathJax4Promise;
+    if (!mathJax) {
+      containers.forEach((container) => {
+        if (container.isConnected) {
+          container.setAttribute(NEWCM_RENDER_ATTRIBUTE, "unavailable");
+        }
+      });
+      return;
+    }
+
+    for (const container of containers) {
+      if (!container.isConnected || container.closest(".tikzcd-preview")) {
+        continue;
+      }
+
+      const input = this.extractMathInput(container);
+      if (!input) {
+        container.setAttribute(NEWCM_RENDER_ATTRIBUTE, "unavailable");
+        continue;
+      }
+
+      try {
+        const options = { display: input.display };
+        const converted =
+          input.kind === "tex"
+            ? await mathJax.tex2svgPromise(input.source, options)
+            : await mathJax.mathml2svgPromise(input.source, options);
+        if (!container.isConnected) continue;
+
+        const rendered = container.ownerDocument.importNode(converted, true);
+        rendered.classList.add("newcm-mathjax");
+        rendered.setAttribute(NEWCM_RENDER_ATTRIBUTE, "complete");
+
+        const label = container.getAttribute("aria-label");
+        if (label && !rendered.hasAttribute("aria-label")) {
+          rendered.setAttribute("aria-label", label);
+        }
+
+        const assistiveMathMl = container.querySelector("mjx-assistive-mml");
+        if (
+          assistiveMathMl &&
+          !rendered.querySelector("mjx-assistive-mml")
+        ) {
+          rendered.appendChild(
+            container.ownerDocument.importNode(assistiveMathMl, true)
+          );
+        }
+
+        container.replaceWith(rendered);
+      } catch (error) {
+        container.setAttribute(NEWCM_RENDER_ATTRIBUTE, "failed");
+        console.warn(
+          "TikZ-cd Preview could not render an equation with MathJax 4.",
+          error
+        );
+      }
+    }
+  }
+
+  findObsidianMathContainers(el) {
+    const selector =
+      `mjx-container[jax="CHTML"]:not([${NEWCM_RENDER_ATTRIBUTE}])`;
+    const containers = [];
+
+    if (el.matches?.(selector)) containers.push(el);
+    containers.push(...el.querySelectorAll(selector));
+
+    return containers.filter(
+      (container) => !container.closest(".tikzcd-preview")
+    );
+  }
+
+  extractMathInput(container) {
+    const wrapper = container.closest(".math-inline, .math-block");
+    const texSource = wrapper?.[NEWCM_SOURCE_PROPERTY];
+    if (texSource) {
+      return {
+        kind: "tex",
+        source: texSource,
+        display:
+          wrapper.classList.contains("math-block") ||
+          container.getAttribute("display") === "true",
+      };
+    }
+
+    const math = container.querySelector("mjx-assistive-mml math");
+    if (math) {
+      const Serializer =
+        container.ownerDocument.defaultView?.XMLSerializer || XMLSerializer;
+      return {
+        kind: "mathml",
+        source: new Serializer().serializeToString(math),
+        display:
+          math.getAttribute("display") === "block" ||
+          container.getAttribute("display") === "true" ||
+          Boolean(container.closest(".math-block")),
+      };
+    }
+
+    const mathJax = globalThis.MathJax;
+    const document = mathJax?.startup?.document;
+    const toMml = mathJax?.startup?.toMML;
+    if (
+      typeof document?.getMathItemsWithin !== "function" ||
+      typeof toMml !== "function"
+    ) {
+      return null;
+    }
+
+    const [item] = document.getMathItemsWithin([container]);
+    if (!item?.root) return null;
+
+    return {
+      kind: "mathml",
+      source: toMml(item.root),
+      display:
+        item.display ||
+        container.getAttribute("display") === "true" ||
+        Boolean(container.closest(".math-block")),
+    };
   }
 
   renderDisplayMathDiagrams(el, ctx) {
@@ -279,7 +560,7 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
       await fs.writeFile(texPath, this.latexDocument(environment), "utf8");
 
       await this.runTexTool(
-        "latex",
+        "dvilualatex",
         [
           "-interaction=nonstopmode",
           "-halt-on-error",
@@ -310,12 +591,11 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
 
     for (const executable of candidates) {
       try {
-        await execFileAsync(executable, args, {
+        return await execFileAsync(executable, args, {
           cwd,
           timeout: 30000,
           maxBuffer: 5 * 1024 * 1024,
         });
-        return;
       } catch (error) {
         lastError = error;
         if (error.code !== "ENOENT") throw error;
@@ -329,6 +609,7 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
     return [
       "\\def\\pgfsysdriver{pgfsys-dvisvgm.def}",
       "\\documentclass[tikz,border=2pt]{standalone}",
+      "\\usepackage[regular]{newcomputermodern}",
       "\\usepackage{tikz-cd}",
       "\\begin{document}",
       environment,
@@ -414,7 +695,8 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
   previewErrorMessage(error) {
     if (error?.code === "ENOENT") {
       return (
-        "TikZ-cd preview requires a TeX installation with latex and dvisvgm."
+        "TikZ-cd preview requires dvilualatex, dvisvgm, tikz-cd, " +
+        "and New Computer Modern."
       );
     }
 

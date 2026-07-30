@@ -4,36 +4,44 @@
 @import "jekyll-theme-cayman";
 
 @font-face {
-  font-family: "Latex Punctuation";
+  font-family: "New Computer Modern Web";
   font-style: normal;
-  font-weight: 100 900;
-  src: local("STIX Two Text"), local("STIXTwoText"),
-    local("STIXGeneral-Regular"), local("STIXGeneral");
-  unicode-range: U+0022, U+0027, U+002C, U+003B, U+2018, U+2019,
-    U+201C, U+201D;
-}
-
-@font-face {
-  font-family: "STIX Two Text Web";
-  font-style: normal;
-  font-weight: 400 700;
+  font-weight: 400;
   font-display: swap;
-  src: url("../fonts/stix-two/STIXTwoText-Variable.woff2")
+  src: url("../fonts/new-computer-modern/NewCM10-Regular.woff2")
     format("woff2");
 }
 
 @font-face {
-  font-family: "STIX Two Text Web";
+  font-family: "New Computer Modern Web";
   font-style: italic;
-  font-weight: 400 700;
+  font-weight: 400;
   font-display: swap;
-  src: url("../fonts/stix-two/STIXTwoText-Italic-Variable.woff2")
+  src: url("../fonts/new-computer-modern/NewCM10-Italic.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "New Computer Modern Web";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/new-computer-modern/NewCM10-Bold.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "New Computer Modern Web";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/new-computer-modern/NewCM10-BoldItalic.woff2")
     format("woff2");
 }
 
 :root {
-  --reading-serif: "STIX Two Text Web", "STIX Two Text",
-    "Iowan Old Style", Georgia, serif;
+  --reading-serif: "New Computer Modern Web", "New Computer Modern",
+    "Computer Modern", "Latin Modern Roman", serif;
   --interface-sans: var(--reading-serif);
 }
 
