@@ -12,14 +12,6 @@
   line-height: normal;
 }
 
-.tikzcd-preview__mathjax-frame {
-  display: none;
-}
-
-mjx-container.newcm-mathjax {
-  color: inherit;
-}
-
 .tikzcd-preview__viewport {
   flex: 0 0 auto;
 }
