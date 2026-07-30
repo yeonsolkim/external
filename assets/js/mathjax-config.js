@@ -151,10 +151,6 @@
     markListItemsWithDisplayMath();
     applyOrderedListMarkerPrefixes();
     normalizeInlineMathDelimiters();
-
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(applyOrderedListMarkerPrefixes);
-    }
   }
 
   function normalizeInlineMathDelimiters() {
@@ -433,7 +429,7 @@
       }
     },
     output: {
-      font: 'mathjax-newcm',
+      font: 'mathjax-tex',
       displayOverflow: scrollDisplayMath ? 'overflow' : 'linebreak',
       linebreaks: {
         inline: true,

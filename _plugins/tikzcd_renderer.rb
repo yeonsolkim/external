@@ -6,9 +6,9 @@ require "open3"
 require "tmpdir"
 
 module ExternalTikzcdRenderer
-  CACHE_VERSION = "5"
+  CACHE_VERSION = "4"
   DEFAULT_CACHE_DIR = ".jekyll-cache/tikzcd"
-  SVG_SCALE = 1.12
+  SVG_SCALE = 1.28
   CSS_PIXELS_PER_POINT = 4.0 / 3.0
   # assets/css/main.css: 15.5px root size times the desktop content scale.
   REFERENCE_FONT_SIZE_PX = 15.5 * 1.05
@@ -139,16 +139,9 @@ module ExternalTikzcdRenderer
         File.write(tex_path, latex_document(environment))
 
         run_command(
-          [
-            "dvilualatex",
-            "-interaction=nonstopmode",
-            "-halt-on-error",
-            "-file-line-error",
-            "-no-shell-escape",
-            "diagram.tex"
-          ],
+          ["latex", "-interaction=nonstopmode", "-halt-on-error", "-file-line-error", "-no-shell-escape", "diagram.tex"],
           directory,
-          "LuaLaTeX"
+          "LaTeX"
         )
         run_command(
           ["dvisvgm", "--no-fonts", "--bbox=papersize", "--exact-bbox", "--output=diagram.svg", "diagram.dvi"],
@@ -160,9 +153,7 @@ module ExternalTikzcdRenderer
       end
     rescue Errno::ENOENT => error
       raise RenderError,
-            "#{error.message}. Install a TeX distribution providing " \
-            "dvilualatex, dvisvgm, tikz-cd, and New Computer Modern " \
-            "to render tikzcd blocks."
+            "#{error.message}. Install a TeX distribution providing latex and dvisvgm to render tikzcd blocks."
     end
 
     def run_command(command, directory, label)
@@ -177,7 +168,6 @@ module ExternalTikzcdRenderer
       <<~LATEX
         \\def\\pgfsysdriver{pgfsys-dvisvgm.def}
         \\documentclass[tikz,border=0pt]{standalone}
-        \\usepackage[regular]{newcomputermodern}
         \\usepackage{tikz-cd}
         \\makeatletter
         \\def\\pgfsys@papersize#1#2{}

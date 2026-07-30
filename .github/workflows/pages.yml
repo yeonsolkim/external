@@ -37,9 +37,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .jekyll-cache/tikzcd
-          key: tikzcd-v5-${{ runner.os }}-${{ hashFiles('_plugins/tikzcd_renderer.rb', '_posts/**/*.md', '*.md') }}
+          key: tikzcd-v4-${{ runner.os }}-${{ hashFiles('_plugins/tikzcd_renderer.rb', '_posts/**/*.md', '*.md') }}
           restore-keys: |
-            tikzcd-v5-${{ runner.os }}-
+            tikzcd-v4-${{ runner.os }}-
 
       - name: Try Jekyll build with cached TikZ diagrams
         id: cached-build
@@ -58,10 +58,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install --yes --no-install-recommends \
             dvisvgm \
-            texlive-fonts-extra \
             texlive-latex-base \
             texlive-latex-extra \
-            texlive-luatex \
             texlive-pictures
 
       - name: Build with Jekyll
