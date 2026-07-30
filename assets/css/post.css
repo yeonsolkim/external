@@ -208,18 +208,12 @@ margin: 0 auto;
 .post-body .commutative-diagram__svg use {
 fill: currentColor;
 stroke: currentColor;
-stroke-width: 0.25px;
+stroke-width: 0.05px;
 paint-order: stroke fill;
 }
 
 .post-body .commutative-diagram__svg path[fill="none"] {
 stroke-width: 0.33px;
-}
-
-@media (max-width: 768px), (pointer: coarse) {
-  .post-body .commutative-diagram__svg use {
-  stroke-width: 0.08px;
-  }
 }
 
 hr { 
