@@ -1,9 +1,9 @@
 {
   "id": "tikzcd-preview",
   "name": "TikZ-cd Preview",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "minAppVersion": "1.0.0",
-  "description": "Render Obsidian math with MathJax NewCM and tikzcd diagrams with local TeX.",
+  "description": "Render tikzcd diagrams with local TeX and register shared MathJax macros.",
   "author": "Yeonsol Kim",
   "isDesktopOnly": true
 }

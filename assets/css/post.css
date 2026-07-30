@@ -143,11 +143,10 @@ margin-top: 3.5rem !important;
 }
 
 .post-body ul {
---ul-marker-gap-adjust: 0.1rem;
+--ul-marker-gap-adjust: 0.3rem;
 list-style-position: outside;
 list-style-type: disc !important;
 padding-left: 1em ;
-margin-top: -0.5rem !important;
 margin-left: calc(var(--ul-marker-gap-adjust) + 1em);
 }
 
@@ -278,7 +277,6 @@ margin-bottom: 0.2rem !important;
 }
 
 .post-body li.list-item-display-math mjx-container[display="true"] > svg {
-display: block;
 margin-left: auto;
 margin-right: auto;
 }
@@ -404,7 +402,7 @@ text-decoration: none !important;
 display: inline-block;
 position: relative;
 padding: 0 0.12em;
-line-height: 1.08;
+line-height: 0.9;
 }
 
 .post-body a.math-ref-link .math-ref-number::after {
