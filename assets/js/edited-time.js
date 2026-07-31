@@ -56,8 +56,8 @@
 
     const relativeUpdatedText = formatUpdatedTime(updatedAt, updatedText);
     const text = relativeUpdatedText
-      ? createdText + " (" + relativeUpdatedText + ")"
-      : createdText + " (updated " + updatedText + ")";
+      ? createdText + "⠀(" + relativeUpdatedText + ")"
+      : createdText + "⠀(updated " + updatedText + ")";
 
     if (text) {
       el.textContent = text;
