@@ -257,6 +257,7 @@ width: var(--ol-marker-width);
 color: #333;
 font-size: 0.95em;
 font-style: normal;
+white-space: nowrap;
 text-align: left;
 }
 
