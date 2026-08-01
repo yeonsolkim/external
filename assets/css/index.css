@@ -53,6 +53,40 @@
   margin-left: 0;
 }
 
+/* Give numbered subcategories a two-space gap and align their post links. */
+.subcategory-section .category-block.has-order-prefix {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 0.5rem;
+}
+
+.subcategory-section .category-block.has-order-prefix > .category-heading {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+}
+
+.subcategory-section .category-heading > .subcategory-link {
+  display: contents;
+}
+
+.subcategory-section .category-heading .category-order-prefix {
+  grid-column: 1;
+}
+
+.subcategory-section .category-heading .category-title {
+  grid-column: 2;
+}
+
+.subcategory-section .category-block.has-order-prefix > .post-list,
+.subcategory-section .category-block.has-order-prefix > .category-block {
+  grid-column: 2;
+}
+
+.subcategory-section .category-block.has-order-prefix > .post-list li {
+  margin-left: 0;
+}
+
 /* Post list */
 .post-list {
   margin-top: 0 !important;

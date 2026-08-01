@@ -83,6 +83,10 @@
     {%- assign visible_group = group | strip -%}
   {%- endif -%}
 
+  {%- assign visible_group_parts = visible_group | numbered_label_parts -%}
+  {%- assign visible_group_number = visible_group_parts[0] -%}
+  {%- assign visible_group_title = visible_group_parts[1] -%}
+
   {%- assign subcategory_page_url = "" -%}
   {%- if include.link_subcategories -%}
     {%- for generated_page in site.data.generated_subcategory_pages -%}
@@ -95,26 +99,40 @@
 
   {%- capture group_label -%}
     {%- if subcategory_page_url != "" -%}
-      <a href="{{ subcategory_page_url | relative_url }}" class="subcategory-link">{{ visible_group | escape }}</a>
+      <a href="{{ subcategory_page_url | relative_url }}" class="subcategory-link">
+        {%- if visible_group_number != "" -%}
+          <span class="category-order-prefix">{{ visible_group_number | escape }}</span>
+          <span class="category-title">{{ visible_group_title | escape }}</span>
+        {%- else -%}
+          {{ visible_group_title | escape }}
+        {%- endif -%}
+      </a>
+    {%- elsif visible_group_number != "" -%}
+      <span class="category-order-prefix">{{ visible_group_number | escape }}</span>
+      <span class="category-title">{{ visible_group_title | escape }}</span>
     {%- else -%}
-      {{ visible_group | escape }}
+      {{ visible_group_title | escape }}
     {%- endif -%}
   {%- endcapture -%}
 
-  <div class="category-block depth-{{ include.depth }}">
+  {%- capture category_heading_classes -%}
+    category-heading depth-{{ include.depth }}{% if visible_group_number != "" %} has-order-prefix{% endif %}
+  {%- endcapture -%}
+
+  <div class="category-block depth-{{ include.depth }}{% if visible_group_number != "" %} has-order-prefix{% endif %}">
     {%- case heading_level -%}
       {%- when 2 -%}
-        <h2 class="category-heading depth-{{ include.depth }}">{{ group_label }}</h2>
+        <h2 class="{{ category_heading_classes | strip }}">{{ group_label }}</h2>
       {%- when 3 -%}
-        <h3 class="category-heading depth-{{ include.depth }}">{{ group_label }}</h3>
+        <h3 class="{{ category_heading_classes | strip }}">{{ group_label }}</h3>
       {%- when 4 -%}
-        <h4 class="category-heading depth-{{ include.depth }}">{{ group_label }}</h4>
+        <h4 class="{{ category_heading_classes | strip }}">{{ group_label }}</h4>
       {%- when 5 -%}
-        <h5 class="category-heading depth-{{ include.depth }}">{{ group_label }}</h5>
+        <h5 class="{{ category_heading_classes | strip }}">{{ group_label }}</h5>
       {%- when 6 -%}
-        <h6 class="category-heading depth-{{ include.depth }}">{{ group_label }}</h6>
+        <h6 class="{{ category_heading_classes | strip }}">{{ group_label }}</h6>
       {%- else -%}
-        <div class="category-heading depth-{{ include.depth }}">{{ group_label }}</div>
+        <div class="{{ category_heading_classes | strip }}">{{ group_label }}</div>
     {%- endcase -%}
 
     {%- assign reached_max_depth = false -%}

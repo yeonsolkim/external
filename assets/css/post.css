@@ -84,7 +84,7 @@ margin: 0 0 2rem;
 }
 
 .post-body-divider {
-margin: 3rem 0 0 !important;
+margin: 2rem 0 -2rem !important;
 }
 
 #comment-section {
@@ -239,7 +239,6 @@ padding-left: calc(var(--ol-left-indent) + var(--ol-marker-width) + var(--ol-mar
 
 .post-body ol > li {
 position: relative;
-line-height: 1.6;
 }
 
 .post-body ol > li::marker {
@@ -315,6 +314,10 @@ position: static;
 
 .post-body ol ul > li::before {
 content: none;
+}
+
+.post-body ol.reference {
+padding-left: calc(var(--ol-marker-width) + var(--ol-marker-gap));
 }
 
 main.main-content > article.main-content {
@@ -402,7 +405,7 @@ text-decoration: none !important;
 display: inline-block;
 position: relative;
 padding: 0 0.12em;
-line-height: 1.08;
+line-height: 1;
 }
 
 .post-body a.math-ref-link .math-ref-number::after {

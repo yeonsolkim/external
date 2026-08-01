@@ -11,6 +11,15 @@ module Jekyll
       label.to_s.strip.sub(ORDER_PREFIX, "")
     end
 
+    def numbered_label_parts(label)
+      clean_label = label.to_s.strip
+      label_match = clean_label.match(NUMBERED_LABEL)
+      return ["", clean_label] unless label_match
+
+      visible_label = clean_label.sub(NUMBERED_LABEL, "")
+      ["#{label_match[1]}.", visible_label]
+    end
+
     def hierarchical_post_title(title, category_path)
       clean_title = title.to_s.strip
       title_match = clean_title.match(NUMBERED_LABEL)
@@ -39,6 +48,10 @@ module Jekyll
 
     def hierarchical_post_title(title, category_path)
       CategoryLabels.hierarchical_post_title(title, category_path)
+    end
+
+    def numbered_label_parts(label)
+      CategoryLabels.numbered_label_parts(label)
     end
   end
 end
