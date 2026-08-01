@@ -5,15 +5,15 @@ date: 2026-07-11 00:00:00 +0900
 category_path:
   - Mathematics
   - 6. Others
-created_at: 2026-07-11 12:19:36 +0900
-last_modified_at: 2026-07-11 12:19:36 +0900
+created_at: 2026-08-01 11:44:14 +0900
+last_modified_at: 2026-08-01 11:44:14 +0900
 ---
 
 **Definition 1.** An *outcome* is one particular possible result of the trial. When a die is rolled, the outcomes are $1,2,3,4,5,6.$ The *sample space*, usually denoted by $\Omega$, is the set of all possible outcomes:
 
 $$\Omega=\lbrace 1,2,3,4,5,6\rbrace. $$
 
-&emsp; An *event* is a collection of outcomes, so mathematically an event is a subset of the sample space. For example, if one die is rolled, the event that an even number appears is
+&emsp;An *event* is a collection of outcomes, so mathematically an event is a subset of the sample space. For example, if one die is rolled, the event that an even number appears is
 
 $$A=\lbrace 2,4,6\rbrace \subseteq \Omega.$$
 
