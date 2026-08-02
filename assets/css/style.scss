@@ -22,6 +22,8 @@
 }
 
 :root {
+  /* Adjust this value to resize every site-level content container at once. */
+  --site-max-width: 57rem;
   --reading-serif: "STIX Two Text Web", "STIX Two Text",
     "Iowan Old Style", Georgia, serif;
   --interface-sans: var(--reading-serif);
@@ -52,7 +54,7 @@ body {
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  max-width: 57.5rem;
+  max-width: var(--site-max-width);
   margin: 0 auto;
   padding: 0 4rem;
   gap: 0.85rem;
@@ -89,7 +91,7 @@ body {
 /* Breadcrumb */
 .breadcrumb-nav {
   box-sizing: border-box;
-  max-width: 57.5rem;
+  max-width: var(--site-max-width);
   margin: 0 auto;
   padding: 0.8rem 4rem;
   color: #72777d;
@@ -141,7 +143,7 @@ body {
 
 /* Main content */
 .main-content {
-  max-width: 57.5rem !important;
+  max-width: var(--site-max-width) !important;
   margin: 0 auto;
   padding: 2rem 4rem;
   font-size: 1.05rem !important;
@@ -250,7 +252,7 @@ blockquote mjx-container {
 /* Responsive */
 @media screen and (max-width: 64rem) {
   .main-content {
-    padding: 1.5rem 4rem !important;
+    padding: 1.5rem 4.5rem !important;
     font-size: 1rem !important;
     line-height: 1.55 !important;
   }

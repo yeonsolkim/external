@@ -16,7 +16,7 @@ text-align: left;
 }
 
 .post-title {
-max-width: 52rem;
+max-width: 100%;
 margin: 0 !important;
 color: #222226 !important;
 font-family: var(--reading-serif);
@@ -325,7 +325,7 @@ max-width: none !important;
 }
 
 main.main-content {
-max-width: 57.5rem !important;
+max-width: var(--site-max-width) !important;
 width: 100% !important;
 box-sizing: border-box !important;
 margin-left: auto !important;
