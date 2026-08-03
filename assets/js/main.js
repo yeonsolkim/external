@@ -6,6 +6,7 @@
   var labelPattern = /^(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle)\s+(\d+(?:\.\d+)+)\.?/;
   var sourceLabelPattern = /(?:\*\*|<(?:strong|b)\b[^>]*>)\s*(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle)\s+(\d+(?:\.\d+)+)\.?(?=\s|\*|\)|<\/(?:strong|b)>)/g;
   var referencePattern = /\b(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle)\s+(\d+(?:\.\d+)+)\b/g;
+  var entryLabelPattern = /^(?:Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle|Notation|Axiom|Exercise)\s+\d+(?:\.\d+)*\.?/;
   var statementBoundaryLabelPattern = /^(?:Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle|Notation|Axiom|Exercise)\b/;
   var proofMarkerPattern = /^(?:Proof|Subproof|Solution)(?:\s+\d+)?\.?$/i;
   var italicStatementKinds = {
@@ -273,6 +274,259 @@
     });
 
     return marker;
+  }
+
+  function isEntryLabel(element) {
+    return entryLabelPattern.test(normalizeSpace(element.textContent || ''));
+  }
+
+  function isSeparatorNode(node) {
+    return node.nodeType === Node.TEXT_NODE
+      ? normalizeSpace(node.nodeValue || '') === ''
+      : node.nodeType === Node.ELEMENT_NODE && node.tagName === 'BR';
+  }
+
+  function removeSeparatorsBeforeNode(node) {
+    var sibling = node.previousSibling;
+    var previous;
+
+    while (sibling && isSeparatorNode(sibling)) {
+      previous = sibling.previousSibling;
+      sibling.parentNode.removeChild(sibling);
+      sibling = previous;
+    }
+  }
+
+  function removeTrailingSeparators(element) {
+    var node = element.lastChild;
+    var previous;
+
+    while (node && isSeparatorNode(node)) {
+      previous = node.previousSibling;
+      element.removeChild(node);
+      node = previous;
+    }
+  }
+
+  function isSeparatorBlock(element) {
+    var child = element.firstChild;
+
+    if (normalizeSpace(element.textContent || '') !== '') {
+      return false;
+    }
+
+    while (child) {
+      if (!isSeparatorNode(child)) {
+        return false;
+      }
+
+      child = child.nextSibling;
+    }
+
+    return true;
+  }
+
+  function trimBoundaryBefore(block) {
+    var previous = block.previousElementSibling;
+
+    while (previous && isSeparatorBlock(previous)) {
+      previous.classList.add('math-boundary-spacer');
+      previous = previous.previousElementSibling;
+    }
+
+    if (previous) {
+      removeTrailingSeparators(previous);
+    }
+
+    return previous;
+  }
+
+  function getEntryStarts(postBody) {
+    var starts = [];
+
+    postBody.querySelectorAll('strong, b').forEach(function (labelElement) {
+      var block;
+      var labelChild;
+
+      if (!isEntryLabel(labelElement)) {
+        return;
+      }
+
+      block = getTopLevelBlock(postBody, labelElement);
+
+      if (!block || getTextBeforeNode(block, labelElement) !== '') {
+        return;
+      }
+
+      labelChild = getDirectChild(block, labelElement);
+
+      if (!labelChild) {
+        return;
+      }
+
+      removeSeparatorsBeforeNode(labelChild);
+      labelElement.classList.add('math-entry-label');
+      block.classList.add('math-entry-start');
+
+      if (!starts.length || starts[starts.length - 1].block !== block) {
+        starts.push({
+          block: block,
+          label: labelElement
+        });
+      }
+    });
+
+    return starts;
+  }
+
+  function getEntryBlocks(startBlock, nextStartBlock) {
+    var blocks = [];
+    var block = startBlock;
+
+    while (block && block !== nextStartBlock) {
+      if (block !== startBlock && (/^H[1-6]$/.test(block.tagName) || block.tagName === 'HR')) {
+        break;
+      }
+
+      blocks.push(block);
+      block = block.nextElementSibling;
+    }
+
+    return blocks;
+  }
+
+  function getLastContentBlock(blocks) {
+    var index;
+
+    for (index = blocks.length - 1; index >= 0; index -= 1) {
+      if (!isSeparatorBlock(blocks[index])) {
+        return blocks[index];
+      }
+    }
+
+    return null;
+  }
+
+  function markProofSpacing(postBody, blocks) {
+    var proofMarker = null;
+    var proofBlock;
+    var proofChild;
+    var previousBlock;
+    var gap;
+    var breakIndex;
+
+    blocks.some(function (block) {
+      proofMarker = findProofMarker(block);
+      return Boolean(proofMarker);
+    });
+
+    if (!proofMarker) {
+      return;
+    }
+
+    proofBlock = getTopLevelBlock(postBody, proofMarker);
+    proofChild = getDirectChild(proofBlock, proofMarker);
+
+    if (!proofBlock || !proofChild) {
+      return;
+    }
+
+    proofMarker.classList.add('math-proof-marker');
+
+    if (getTextBeforeNode(proofBlock, proofMarker) !== '') {
+      removeSeparatorsBeforeNode(proofChild);
+      gap = document.createElement('span');
+      gap.className = 'math-proof-gap';
+      gap.setAttribute('aria-hidden', 'true');
+
+      for (breakIndex = 0; breakIndex < 2; breakIndex += 1) {
+        gap.appendChild(document.createElement('br'));
+      }
+
+      proofBlock.insertBefore(gap, proofChild);
+      return;
+    }
+
+    removeSeparatorsBeforeNode(proofChild);
+    previousBlock = trimBoundaryBefore(proofBlock);
+    proofBlock.classList.add('math-proof-start');
+
+    if (previousBlock) {
+      previousBlock.classList.add('math-before-proof');
+    }
+  }
+
+  function markMathEntrySpacing(postBody) {
+    var starts;
+
+    if (postBody.getAttribute('data-math-entry-spacing') === 'true') {
+      return;
+    }
+
+    postBody.setAttribute('data-math-entry-spacing', 'true');
+    starts = getEntryStarts(postBody);
+
+    starts.forEach(function (entry, index) {
+      var nextEntry = starts[index + 1];
+      var blocks = getEntryBlocks(entry.block, nextEntry && nextEntry.block);
+      var lastBlock = getLastContentBlock(blocks);
+      var previousBlock;
+
+      markProofSpacing(postBody, blocks);
+
+      if (lastBlock) {
+        removeTrailingSeparators(lastBlock);
+        lastBlock.classList.add('math-entry-end');
+      }
+
+      if (!nextEntry || blocks[blocks.length - 1].nextElementSibling !== nextEntry.block) {
+        return;
+      }
+
+      previousBlock = trimBoundaryBefore(nextEntry.block);
+      nextEntry.block.classList.add('math-entry-after-entry');
+
+      if (previousBlock) {
+        previousBlock.classList.add('math-entry-end');
+      }
+    });
+  }
+
+  function initMathEntrySpacing() {
+    var postBody = getPostBody();
+    var applySpacing;
+    var updateSectionGap;
+
+    if (!postBody) {
+      return;
+    }
+
+    updateSectionGap = function () {
+      var lineHeight = parseFloat(window.getComputedStyle(postBody).lineHeight);
+
+      if (Number.isFinite(lineHeight)) {
+        postBody.style.setProperty('--math-section-gap', (lineHeight * 3) + 'px');
+      }
+    };
+
+    applySpacing = function () {
+      markMathEntrySpacing(postBody);
+      updateSectionGap();
+    };
+
+    updateSectionGap();
+    window.addEventListener('resize', updateSectionGap);
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(updateSectionGap);
+    }
+
+    if (window.MathJax && window.MathJax.startup && window.MathJax.startup.promise) {
+      window.MathJax.startup.promise.then(applySpacing, applySpacing);
+      return;
+    }
+
+    applySpacing();
   }
 
   function isStatementBoundary(element) {
@@ -791,6 +1045,7 @@
 
   function initPageEnhancements() {
     initMathReferenceLinks();
+    initMathEntrySpacing();
     initMathStatementItalics();
     initPostTableBalance();
   }
