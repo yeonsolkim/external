@@ -251,14 +251,21 @@ blockquote mjx-container {
 
 /* Responsive */
 @media screen and (max-width: 64rem) {
+  :root {
+  --site-max-width: 53rem;
+  }
+
   .main-content {
-    padding: 1.5rem 4.5rem !important;
     font-size: 1rem !important;
     line-height: 1.55 !important;
   }
 }
 
 @media screen and (max-width: 47.9375rem) {
+  :root {
+  --site-max-width: 57rem;
+  }
+
   .page-header {
     padding: 1.1rem 0 0.9rem !important;
   }
