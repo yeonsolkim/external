@@ -106,6 +106,7 @@ margin-bottom: 0 rem;
   max-width: none !important ;
   font-weight: 400;
   line-height: 1.5;
+  word-spacing: 0.05em;
 }
 
 .post-body.math-scroll {
@@ -152,7 +153,8 @@ margin-top: 3.5rem !important;
 list-style-position: outside;
 list-style-type: disc !important;
 padding-left: 1em ;
-margin-top: -0.2rem !important;
+margin-top: 0 !important;
+margin-bottom: 0 !important;
 margin-left: calc(var(--ul-marker-gap-adjust) + 1em);
 }
 
@@ -162,16 +164,15 @@ font-size: 1.1em;
 line-height: 1;
 }
 
-.post-body ul li p {
+.post-body li > p {
 margin-top: 0 !important;
 margin-bottom: 0 !important;
-display: inline; 
 }
 
 
 .post-body ul > li {
 padding-left: var(--ul-marker-gap-adjust);
-line-height: 1.6;
+line-height: inherit;
 }
 
 .post-body ul > li::before {
@@ -238,8 +239,18 @@ background-color: #ffffff00 !important;
 --ol-marker-gap: 0.8rem;
 --ol-marker-width: 2rem;
 list-style: none;
-margin-top: -0.5rem !important;
+margin-top: 0 !important;
+margin-bottom: 0 !important;
 padding-left: calc(var(--ol-left-indent) + var(--ol-marker-width) + var(--ol-marker-gap));
+}
+
+/* Keep list boundaries on the same baseline rhythm as adjacent text lines. */
+.post-body p:has(+ :is(ol, ul)) {
+margin-bottom: 0 !important;
+}
+
+.post-body :is(ol, ul) + p {
+margin-top: 0 !important;
 }
 
 .post-body ol > li {
@@ -260,7 +271,6 @@ position: absolute;
 left: calc(-1 * (var(--ol-marker-width) + var(--ol-marker-gap)));
 width: var(--ol-marker-width);
 color: #333;
-font-size: 0.95em;
 font-style: normal;
 white-space: nowrap;
 text-align: left;
@@ -379,7 +389,6 @@ margin-left: 1rem;
 }
 
 .post-body .math-label-anchor {
-margin-right: 0.3em;
 scroll-margin-top: 1.25rem;
 }
 
