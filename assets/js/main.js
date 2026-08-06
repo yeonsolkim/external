@@ -234,6 +234,155 @@
     });
   }
 
+  function shouldSkipTypographyTextNode(node) {
+    if (!node.parentElement) {
+      return true;
+    }
+
+    return Boolean(node.parentElement.closest(
+      'code, pre, script, style, textarea, noscript, mjx-container'
+    ));
+  }
+
+  function removeSpacesAfterEmSpaces(postBody) {
+    var walker = document.createTreeWalker(postBody, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (node) {
+        return shouldSkipTypographyTextNode(node)
+          ? NodeFilter.FILTER_REJECT
+          : NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var nodes = [];
+    var node;
+
+    while ((node = walker.nextNode())) {
+      nodes.push(node);
+    }
+
+    nodes.forEach(function (textNode) {
+      textNode.nodeValue = textNode.nodeValue.replace(/\u2003 /g, '\u2003');
+    });
+  }
+
+  function getNextVisibleSibling(node) {
+    var sibling = node.nextSibling;
+
+    while (sibling) {
+      if (sibling.nodeType === Node.COMMENT_NODE) {
+        sibling = sibling.nextSibling;
+        continue;
+      }
+
+      if (
+        sibling.nodeType === Node.TEXT_NODE &&
+        normalizeSpace(sibling.nodeValue || '') === ''
+      ) {
+        sibling = sibling.nextSibling;
+        continue;
+      }
+
+      return sibling;
+    }
+
+    return null;
+  }
+
+  function getStatementLabelEnd(labelElement) {
+    var statementName = getNextVisibleSibling(labelElement);
+
+    if (
+      statementName &&
+      statementName.nodeType === Node.ELEMENT_NODE &&
+      statementName.classList.contains('math-statement-name')
+    ) {
+      return statementName;
+    }
+
+    return labelElement;
+  }
+
+  function getLabelGapReference(labelEnd) {
+    var node = labelEnd.nextSibling;
+    var labelText = normalizeSpace(labelEnd.textContent || '');
+    var labelHasTerminalPunctuation = /[.!?:;]$/.test(labelText);
+
+    while (node) {
+      if (node.nodeType === Node.COMMENT_NODE) {
+        node = node.nextSibling;
+        continue;
+      }
+
+      if (node.nodeType === Node.TEXT_NODE) {
+        node.nodeValue = (node.nodeValue || '').replace(/^[\t\n\f\r ]+/, '');
+
+        if (!node.nodeValue) {
+          node = node.nextSibling;
+          continue;
+        }
+
+        if (!labelHasTerminalPunctuation && /^[.!?:;]/.test(node.nodeValue)) {
+          node = node.splitText(1);
+          labelHasTerminalPunctuation = true;
+          continue;
+        }
+
+        return node;
+      }
+
+      if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'BR') {
+        return null;
+      }
+
+      return node;
+    }
+
+    return null;
+  }
+
+  function addFixedLabelGap(labelEnd) {
+    var reference = getLabelGapReference(labelEnd);
+    var gap;
+
+    if (!reference || reference.parentNode !== labelEnd.parentNode) {
+      return;
+    }
+
+    gap = document.createElement('span');
+    gap.className = 'math-label-gap';
+    gap.setAttribute('aria-hidden', 'true');
+    labelEnd.parentNode.insertBefore(gap, reference);
+  }
+
+  function addMathLabelGaps(postBody) {
+    var labels = postBody.querySelectorAll('strong, b, em, i');
+
+    labels.forEach(function (labelElement) {
+      var labelText = normalizeSpace(labelElement.textContent || '');
+      var labelEnd = labelElement;
+
+      if (isEntryLabel(labelElement)) {
+        markStatementName(labelElement);
+        labelEnd = getStatementLabelEnd(labelElement);
+      } else if (!proofMarkerPattern.test(labelText)) {
+        return;
+      }
+
+      addFixedLabelGap(labelEnd);
+    });
+  }
+
+  function initPostTypographySpacing() {
+    var postBody = getPostBody();
+
+    if (!postBody || postBody.getAttribute('data-typography-spacing') === 'true') {
+      return;
+    }
+
+    postBody.setAttribute('data-typography-spacing', 'true');
+    removeSpacesAfterEmSpaces(postBody);
+    addMathLabelGaps(postBody);
+  }
+
   function getTopLevelBlock(postBody, element) {
     var block = element;
 
@@ -1045,6 +1194,7 @@
 
   function initPageEnhancements() {
     initMathReferenceLinks();
+    initPostTypographySpacing();
     initMathEntrySpacing();
     initMathStatementItalics();
     initPostTableBalance();

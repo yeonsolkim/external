@@ -233,7 +233,7 @@ background-color: #ffffff00 !important;
 }
 
 .post-body ol {
---ol-left-indent: 2em;
+--ol-left-indent: 1em;
 --ol-marker-gap: 0.8rem;
 --ol-marker-width: 2rem;
 list-style: none;
@@ -383,6 +383,11 @@ margin-left: 1rem;
 
 .post-body .math-label-anchor {
 scroll-margin-top: 1.25rem;
+}
+
+.post-body .math-label-gap {
+display: inline-block;
+width: 0.5em;
 }
 
 .post-body .math-statement-italic {
