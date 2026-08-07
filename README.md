@@ -1,5 +1,3 @@
-[Go to page](https://yeonsolkim.com/)
-
 ## Development Notes
 
 ### Commutative Diagrams
