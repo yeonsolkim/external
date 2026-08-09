@@ -4,7 +4,6 @@ title: Semantics
 index_page: true
 ---
 
-{% assign preferred_categories = "Mathematics,Physics" | split: "," %}
 {% assign discovered_categories = "" | split: "" %}
 
 {% for post in site.posts %}
@@ -20,20 +19,12 @@ index_page: true
   {% endif %}
 {% endfor %}
 
-{% assign extra_categories = "" | split: "" %}
-{% for category in discovered_categories %}
-  {% unless preferred_categories contains category %}
-    {% assign extra_categories = extra_categories | push: category %}
-  {% endunless %}
-{% endfor %}
-
-{% assign extra_categories = extra_categories | sort %}
-{% assign parent_categories = preferred_categories | concat: extra_categories %}
+{% assign parent_categories = discovered_categories | sort %}
 
 {% for parent in parent_categories %}
   <section class="category-section">
     <h2 class="category-root">
-      {{ parent | escape }}
+      {{ parent | strip_category_order_prefix | escape }}
     </h2>
 
     {% include category_tree.html posts=site.posts path=parent depth=1 max_depth=1 link_subcategories=true %}
