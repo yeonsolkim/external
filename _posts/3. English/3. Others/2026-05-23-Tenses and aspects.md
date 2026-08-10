@@ -1,0 +1,23 @@
+---
+layout: post
+title: "Tenses and Aspects"
+date: 2026-05-23 00:00:00 +0900
+category_path:
+  - 3. English
+  - 3. Others
+created_at: 2026-08-10 16:00:47 +0900
+last_modified_at: 2026-08-10 16:02:37 +0900
+---
+
+
+| Expression | Relation |
+| - | - |
+| had | $TT=$ past, $E<TT$ |
+| had been | $TT=$ past, $S<TT,$ $E=$ progressive |
+| was | $TT=$ past, $E=$ progressive |
+| have | $TT=$ present, $E<TT$ |
+| have been | $TT=$ present, $S<TT,$ $E=$ progressive |
+| is | $TT=$ present, $E=$ progressive |
+| will be | $TT=$ future, $E=$ progressive |
+| will have | $TT=$ future, $E<TT$ |
+| will have been | $TT=$ future, $S<TT,$ $E=$ progressive |

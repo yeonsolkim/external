@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Why \"HB + Kuru Toga KS\" May Be Preferable to \"2B + Kuru Toga ADVANCE\""
+title: "Kuru Toga KS vs. Kuru Toga ADVANCE"
 date: 2026-08-09 00:00:00 +0900
 category_path:
   - Others
+  - 1. Essays
 created_at: 2026-08-09 14:04:09 +0900
 last_modified_at: 2026-08-09 14:24:36 +0900
 ---

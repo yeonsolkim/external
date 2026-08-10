@@ -110,6 +110,13 @@ margin-bottom: 0 rem;
   font-size: 1.035em;
 }
 
+article.main-content[data-reference-scope="3-others"] .post-body em,
+article.main-content[data-reference-scope="3-others"] .post-body i,
+article.main-content[data-reference-scope="2-vocabulary"] .post-body em,
+article.main-content[data-reference-scope="2-vocabulary"] .post-body i {
+color: #9c9c9c;
+}
+
 .post-body a:not(.math-ref-link) {
 color: blue !important;
 text-decoration: none !important;
