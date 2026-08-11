@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "description": "Reasoned Stage 4 adjustments after boundary and sense-consistency review.",
+    "semantics": "Positive values add a penalty; negative values reduce automatic penalties."
+  },
+  "entries": {
+    "absorb--0--v": {
+      "adjustment": -6,
+      "reason": "general cross-context meaning; chemical and physical wording describes the mechanism rather than a narrow field"
+    },
+    "accident--0--n": {
+      "adjustment": 6,
+      "reason": "highly familiar everyday concept below the B2-C1 target despite broad frequency"
+    },
+    "act--1--v": {
+      "adjustment": 10,
+      "reason": "basic action verb; objective frequency and polysemy otherwise dominate the Tier 2 signal"
+    },
+    "agree--0--v": {
+      "adjustment": 6,
+      "reason": "foundational conversational verb rather than a distinctly Tier 2 item"
+    },
+    "believe--0--v": {
+      "adjustment": 6,
+      "reason": "foundational everyday cognition verb already well below the target learning level"
+    },
+    "bright--1--adj": {
+      "adjustment": 6,
+      "reason": "primary light-emission sense is basic; abstract later senses would be more Tier 2-like"
+    },
+    "build--1--v": {
+      "adjustment": 8,
+      "reason": "primary physical-construction sense is foundational vocabulary"
+    },
+    "burn--1--v": {
+      "adjustment": 10,
+      "reason": "primary fire sense is foundational concrete vocabulary"
+    },
+    "change--1--v": {
+      "adjustment": 8,
+      "reason": "primary make-different sense is foundational vocabulary"
+    },
+    "cover--1--v": {
+      "adjustment": 8,
+      "reason": "primary put-on-top sense is foundational concrete vocabulary"
+    },
+    "decay--1--v": {
+      "adjustment": -4,
+      "reason": "broad process verb across everyday and academic contexts; biological agents do not make the sense purely technical"
+    },
+    "flood--0--n": {
+      "adjustment": 4,
+      "reason": "common concrete natural-event noun rather than a high-leverage Tier 2 concept"
+    },
+    "fresh--1--adj": {
+      "adjustment": 6,
+      "reason": "primary recently-produced sense is familiar foundational vocabulary"
+    },
+    "repeat--1--v": {
+      "adjustment": 10,
+      "reason": "primary say-again sense is foundational classroom and everyday vocabulary"
+    },
+    "soil--0--n": {
+      "adjustment": 6,
+      "reason": "common concrete material noun rather than a cross-context Tier 2 concept"
+    },
+    "symbol--1--n": {
+      "adjustment": -6,
+      "reason": "general representational concept; chemical notation is only one example in the definition"
+    },
+    "weak--0--adj": {
+      "adjustment": 8,
+      "reason": "primary lack-of-physical-strength sense is foundational vocabulary"
+    }
+  }
+}
