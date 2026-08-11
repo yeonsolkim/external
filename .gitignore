@@ -14,3 +14,9 @@ _site/
 .DS_Store
 .bundle/
 vendor/
+
+# Local analysis/build artifacts
+/tmp/
+/.venv/
+**/__pycache__/
+*.py[cod]
