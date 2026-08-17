@@ -440,7 +440,7 @@
     svg: {
       blacker: mathBlacker,
       fontCache: 'none',
-      scale: 0.9,
+      scale: 0.92,
       exFactor: 0.5,
       displayAlign: 'center',
       displayOverflow: scrollDisplayMath ? 'overflow' : 'linebreak',
