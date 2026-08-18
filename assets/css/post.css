@@ -78,7 +78,7 @@ color: #b0b0b4;
 border-top-color: #d2d2d4 !important;
 }
 
-.post-header-divider {
+.main-content .post-header-divider {
 margin: 0 0 2rem;
 }
 
@@ -107,7 +107,12 @@ margin-bottom: 0 rem;
 }
 
 .post-body.math-scroll {
+  display: flow-root;
   font-size: 1.035em;
+}
+
+.post-body.math-scroll > :first-child {
+  margin-top: 0;
 }
 
 article.main-content[data-reference-scope="3-others"] .post-body em,
@@ -444,9 +449,9 @@ line-height: 1;
 .post-body a.math-ref-link .math-ref-number::after {
 content: "";
 position: absolute;
-top: -0.09em;
+top: -0.12em;
 right: 0;
-bottom: 0.09em;
+bottom: 0.12em;
 left: 0;
 border: 0.7px solid red;
 pointer-events: none;
@@ -459,6 +464,15 @@ max-width: 100%;
 .post-body mjx-container {
 contain: paint;
 overflow: clip;
+}
+
+/*
+ * Keep optical inline-math alignment independent of Cayman's block margins.
+ * MathJax's per-expression SVG vertical-align remains untouched.
+ */
+.post-body .math-inline > mjx-container {
+position: relative;
+top: -0.007em;
 }
 
 .post-body mjx-assistive-mml {
@@ -511,6 +525,10 @@ max-width: 100%;
 }
 
 @media (max-width: 768px), (pointer: coarse) {
+  .post-body .math-inline > mjx-container {
+  top: 0.015em;
+  }
+
   .math-scroll mjx-container[display="true"],
   .math-scroll .MathJax_Display {
     width: 100%;
