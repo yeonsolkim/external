@@ -148,6 +148,11 @@ margin-top: 0 !important;
 margin-top: 1.5rem !important;
 }
 
+.post-body h2#exercises,
+.post-body h2#references {
+margin-top: 2lh !important;
+}
+
 .post-body hr {
 margin-top: 3.5rem !important;
 }
@@ -253,20 +258,16 @@ padding-left: calc(var(--ol-left-indent) + var(--ol-marker-width) + var(--ol-mar
 margin-bottom: 0 !important;
 }
 
-.post-body.math-scroll > :is(ol, ul) + p {
-margin-top: 0 !important;
-}
-
-.post-body.math-scroll > :is(ol, ul) + p {
+.post-body > :is(ol, ul) + p {
 margin-top: 1lh !important;
 }
 
-/* A marker-prefixed axiom list and its following prose form one entity. */
-.post-body.math-scroll > ol[marker-prefix] + p {
+
+.post-body > ol[marker-prefix] + p {
 margin-top: 0 !important;
 }
 
-.post-body.math-scroll > ol[marker-prefix] + p:has(> strong:first-child, > b:first-child, > .math-proof-marker:first-child) {
+.post-body > ol[marker-prefix] + p:has(> strong:first-child, > b:first-child, > .math-proof-marker:first-child) {
 margin-top: 1lh !important;
 }
 
@@ -379,27 +380,24 @@ visibility: hidden;
 text-align: justify;
 text-align-last: left;
 text-justify: inter-word;
+white-space: pre-line;
 hyphens: auto;
 -webkit-hyphens: auto;
 overflow-wrap: break-word;
 word-break: normal;
 }
 
-.post-body.math-scroll p {
-white-space: pre-line;
-}
-
 /* A Markdown paragraph is an entity; a soft newline stays inside that entity. */
-.post-body.math-scroll > p {
+.post-body > p {
 margin-top: 0 !important;
 margin-bottom: 0 !important;
 }
 
-.post-body.math-scroll > p:not(:first-child) {
+.post-body > p:not(:first-child) {
 margin-top: 1lh !important;
 }
 
-.post-body.math-scroll > :is(h1, h2, h3, h4, h5, h6, hr) + p {
+.post-body > :is(h1, h2, h3, h4, h5, h6, hr) + p {
 margin-top: 0 !important;
 }
 
@@ -415,6 +413,11 @@ margin-left: 1rem;
 
 .post-body .math-label-anchor {
 scroll-margin-top: 1.25rem;
+}
+
+.post-body .math-label-anchor,
+.post-body .math-proof-marker {
+margin-left: 1em;
 }
 
 .post-body .math-label-gap {
@@ -515,8 +518,8 @@ margin-top: 0.75em !important;
 }
 
 /* A labeled statement or proof after display math still starts a new entity. */
-.post-body.math-scroll > mjx-container[display="true"] + p:has(> .math-label-anchor:first-child, > .math-proof-marker:first-child),
-.post-body.math-scroll > .MathJax_Display + p:has(> .math-label-anchor:first-child, > .math-proof-marker:first-child) {
+.post-body > mjx-container[display="true"] + p:has(> .math-label-anchor:first-child, > .math-proof-marker:first-child),
+.post-body > .MathJax_Display + p:has(> .math-label-anchor:first-child, > .math-proof-marker:first-child) {
 margin-top: 1lh !important;
 }
 
