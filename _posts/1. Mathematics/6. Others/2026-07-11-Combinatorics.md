@@ -6,14 +6,14 @@ category_path:
   - 1. Mathematics
   - 6. Others
 created_at: 2026-08-06 13:53:49 +0900
-last_modified_at: 2026-08-18 18:09:08 +0900
+last_modified_at: 2026-08-24 16:18:07 +0900
 ---
 
 **Definition 1.** An *outcome* is one particular possible result of the trial. When a die is rolled, the outcomes are $1,2,3,4,5,6.$ The *sample space*, usually denoted by $\Omega$, is the set of all possible outcomes:
 
 $$\Omega=\lbrace 1,2,3,4,5,6\rbrace. $$
 
-&emsp;An *event* is a collection of outcomes, so mathematically an event is a subset of the sample space. For example, if one die is rolled, the event that an even number appears is
+An *event* is a collection of outcomes, so mathematically an event is a subset of the sample space. For example, if one die is rolled, the event that an even number appears is
 
 $$A=\lbrace 2,4,6\rbrace \subseteq \Omega.$$
 
@@ -21,8 +21,7 @@ The statement “event $A$ *occurs*” means that the actual outcome of the tria
 
 $$|A|=m.$$
 
-For instance, the event $A=\lbrace 2,4,6\rbrace$ can occur in three ways because there are three outcomes that make $A$ occur.<br>
-<br>
+For instance, the event $A=\lbrace 2,4,6\rbrace$ can occur in three ways because there are three outcomes that make $A$ occur.
 
 **Definition 2.** Two events $A$ and $B$ are *mutually exclusive*, or *disjoint*, when they cannot occur in the same trial, which is denoted by
 
@@ -33,8 +32,6 @@ If $|A|=m$, $|B|=n$, and $A\cap B=\varnothing$, then the event “$A$ or $B$ occ
 $$|A\cup B|=|A|+|B|=m+n.$$
 
 This formula is often called the *addition rule*.
-
-<br>
 
 **Definition 3.** The *multiplication rule* concerns a process that is completed in successive stages. We let $A$ be the set of possible results of the first stage and $B$ the set of possible results of the second stage, with
 
