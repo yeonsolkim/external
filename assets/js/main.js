@@ -6,8 +6,7 @@
   var labelPattern = /^(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle)\s+(\d+(?:\.\d+)+)\.?/;
   var sourceLabelPattern = /(?:\*\*|<(?:strong|b)\b[^>]*>)\s*(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle)\s+(\d+(?:\.\d+)+)\.?(?=\s|\*|\)|<\/(?:strong|b)>)/g;
   var referencePattern = /\b(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle)\s+(\d+(?:\.\d+)+)\b/g;
-  var entryLabelPattern = /^(?:Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle|Notation|Axiom|Exercise)\s+\d+(?:\.\d+)*\.?/;
-  var statementBoundaryLabelPattern = /^(?:Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle|Notation|Axiom|Exercise)\b/;
+  var entryLabelPattern = /^(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle|Notation|Axiom|Exercise)\s+\d+(?:\.\d+)*\.?/;
   var proofMarkerPattern = /^(?:Proof|Subproof|Solution)(?:\s+\d+)?\.?$/i;
   var italicStatementKinds = {
     Theorem: true,
@@ -34,6 +33,10 @@
 
   function getPostBody() {
     return document.querySelector('.post-body.math-scroll') || document.querySelector('.post-body');
+  }
+
+  function usesLineIndent(postBody) {
+    return !postBody || postBody.getAttribute('data-line-indent') !== 'false';
   }
 
   function getReferenceScope() {
@@ -244,26 +247,6 @@
     ));
   }
 
-  function removeSpacesAfterEmSpaces(postBody) {
-    var walker = document.createTreeWalker(postBody, NodeFilter.SHOW_TEXT, {
-      acceptNode: function (node) {
-        return shouldSkipTypographyTextNode(node)
-          ? NodeFilter.FILTER_REJECT
-          : NodeFilter.FILTER_ACCEPT;
-      }
-    });
-    var nodes = [];
-    var node;
-
-    while ((node = walker.nextNode())) {
-      nodes.push(node);
-    }
-
-    nodes.forEach(function (textNode) {
-      textNode.nodeValue = textNode.nodeValue.replace(/\u2003 /g, '\u2003');
-    });
-  }
-
   function getNextVisibleSibling(node) {
     var sibling = node.nextSibling;
 
@@ -278,6 +261,29 @@
         normalizeSpace(sibling.nodeValue || '') === ''
       ) {
         sibling = sibling.nextSibling;
+        continue;
+      }
+
+      return sibling;
+    }
+
+    return null;
+  }
+
+  function getPreviousVisibleSibling(node) {
+    var sibling = node.previousSibling;
+
+    while (sibling) {
+      if (sibling.nodeType === Node.COMMENT_NODE) {
+        sibling = sibling.previousSibling;
+        continue;
+      }
+
+      if (
+        sibling.nodeType === Node.TEXT_NODE &&
+        normalizeSpace(sibling.nodeValue || '') === ''
+      ) {
+        sibling = sibling.previousSibling;
         continue;
       }
 
@@ -363,12 +369,84 @@
       if (isEntryLabel(labelElement)) {
         markStatementName(labelElement);
         labelEnd = getStatementLabelEnd(labelElement);
-      } else if (!proofMarkerPattern.test(labelText)) {
-        return;
+      } else {
+        if (!proofMarkerPattern.test(labelText)) {
+          return;
+        }
+
+        labelElement.classList.add('math-proof-marker');
       }
 
       addFixedLabelGap(labelEnd);
     });
+  }
+
+  function addSoftLineIndent(textNode) {
+    var text = textNode.nodeValue || '';
+    var parts = text.split('\n');
+    var fragment;
+    var hasFollowingContent = Boolean(getNextVisibleSibling(textNode));
+    var index;
+
+    if (parts.length < 2) {
+      return;
+    }
+
+    fragment = document.createDocumentFragment();
+    fragment.appendChild(document.createTextNode(parts[0]));
+
+    for (index = 1; index < parts.length; index += 1) {
+      var indent = document.createElement('span');
+
+      fragment.appendChild(document.createTextNode('\n'));
+
+      if (
+        parts[index].trim() !== '' ||
+        (index === parts.length - 1 && hasFollowingContent)
+      ) {
+        indent.className = 'post-soft-line-indent';
+        indent.setAttribute('aria-hidden', 'true');
+        fragment.appendChild(indent);
+      }
+
+      fragment.appendChild(document.createTextNode(parts[index]));
+    }
+
+    textNode.parentNode.replaceChild(fragment, textNode);
+  }
+
+  function addSoftLineIndents(postBody) {
+    var walker = document.createTreeWalker(postBody, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (node) {
+        var separatesInlineContent;
+
+        if (
+          shouldSkipTypographyTextNode(node) ||
+          !node.parentElement.closest('p') ||
+          !node.nodeValue.includes('\n')
+        ) {
+          return NodeFilter.FILTER_REJECT;
+        }
+
+        separatesInlineContent = node.nodeValue.trim() === '' &&
+          getPreviousVisibleSibling(node) &&
+          getNextVisibleSibling(node);
+
+        if (node.nodeValue.trim() === '' && !separatesInlineContent) {
+          return NodeFilter.FILTER_REJECT;
+        }
+
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var nodes = [];
+    var node;
+
+    while ((node = walker.nextNode())) {
+      nodes.push(node);
+    }
+
+    nodes.forEach(addSoftLineIndent);
   }
 
   function initPostTypographySpacing() {
@@ -379,8 +457,11 @@
     }
 
     postBody.setAttribute('data-typography-spacing', 'true');
-    removeSpacesAfterEmSpaces(postBody);
     addMathLabelGaps(postBody);
+
+    if (usesLineIndent(postBody)) {
+      addSoftLineIndents(postBody);
+    }
   }
 
   function getTopLevelBlock(postBody, element) {
@@ -429,278 +510,70 @@
     return entryLabelPattern.test(normalizeSpace(element.textContent || ''));
   }
 
-  function isSeparatorNode(node) {
-    return node.nodeType === Node.TEXT_NODE
-      ? normalizeSpace(node.nodeValue || '') === ''
-      : node.nodeType === Node.ELEMENT_NODE && node.tagName === 'BR';
+  function isDisplayMathBlock(element) {
+    return Boolean(element && (
+      (element.tagName === 'MJX-CONTAINER' && element.getAttribute('display') === 'true') ||
+      element.classList.contains('MathJax_Display')
+    ));
   }
 
-  function removeSeparatorsBeforeNode(node) {
-    var sibling = node.previousSibling;
-    var previous;
-
-    while (sibling && isSeparatorNode(sibling)) {
-      previous = sibling.previousSibling;
-      sibling.parentNode.removeChild(sibling);
-      sibling = previous;
-    }
+  function isMarkerPrefixedList(element) {
+    return Boolean(
+      element &&
+      element.tagName === 'OL' &&
+      element.hasAttribute('marker-prefix')
+    );
   }
 
-  function removeTrailingSeparators(element) {
-    var node = element.lastChild;
-    var previous;
+  function hasStartingBoldMarker(element) {
+    var marker = element.querySelector('strong, b');
 
-    while (node && isSeparatorNode(node)) {
-      previous = node.previousSibling;
-      element.removeChild(node);
-      node = previous;
-    }
+    return Boolean(marker && getTextBeforeNode(element, marker) === '');
   }
 
-  function isSeparatorBlock(element) {
-    var child = element.firstChild;
-
-    if (normalizeSpace(element.textContent || '') !== '') {
-      return false;
-    }
-
-    while (child) {
-      if (!isSeparatorNode(child)) {
-        return false;
-      }
-
-      child = child.nextSibling;
-    }
-
-    return true;
-  }
-
-  function trimBoundaryBefore(block) {
-    var previous = block.previousElementSibling;
-
-    while (previous && isSeparatorBlock(previous)) {
-      previous.classList.add('math-boundary-spacer');
-      previous = previous.previousElementSibling;
-    }
-
-    if (previous) {
-      removeTrailingSeparators(previous);
-    }
-
-    return previous;
-  }
-
-  function getEntryStarts(postBody) {
-    var starts = [];
-
-    postBody.querySelectorAll('strong, b').forEach(function (labelElement) {
-      var block;
-      var labelChild;
-
-      if (!isEntryLabel(labelElement)) {
-        return;
-      }
-
-      block = getTopLevelBlock(postBody, labelElement);
-
-      if (!block || getTextBeforeNode(block, labelElement) !== '') {
-        return;
-      }
-
-      labelChild = getDirectChild(block, labelElement);
-
-      if (!labelChild) {
-        return;
-      }
-
-      removeSeparatorsBeforeNode(labelChild);
-      labelElement.classList.add('math-entry-label');
-      block.classList.add('math-entry-start');
-
-      if (!starts.length || starts[starts.length - 1].block !== block) {
-        starts.push({
-          block: block,
-          label: labelElement
-        });
-      }
-    });
-
-    return starts;
-  }
-
-  function getEntryBlocks(startBlock, nextStartBlock) {
-    var blocks = [];
-    var block = startBlock;
-
-    while (block && block !== nextStartBlock) {
-      if (block !== startBlock && (/^H[1-6]$/.test(block.tagName) || block.tagName === 'HR')) {
-        break;
-      }
-
-      blocks.push(block);
-      block = block.nextElementSibling;
-    }
-
-    return blocks;
-  }
-
-  function getLastContentBlock(blocks) {
-    var index;
-
-    for (index = blocks.length - 1; index >= 0; index -= 1) {
-      if (!isSeparatorBlock(blocks[index])) {
-        return blocks[index];
-      }
-    }
-
-    return null;
-  }
-
-  function markProofSpacing(postBody, blocks) {
-    var proofMarker = null;
-    var proofBlock;
-    var proofChild;
-    var previousBlock;
-    var gap;
-    var breakIndex;
-
-    blocks.some(function (block) {
-      proofMarker = findProofMarker(block);
-      return Boolean(proofMarker);
-    });
-
-    if (!proofMarker) {
-      return;
-    }
-
-    proofBlock = getTopLevelBlock(postBody, proofMarker);
-    proofChild = getDirectChild(proofBlock, proofMarker);
-
-    if (!proofBlock || !proofChild) {
-      return;
-    }
-
-    proofMarker.classList.add('math-proof-marker');
-
-    if (getTextBeforeNode(proofBlock, proofMarker) !== '') {
-      removeSeparatorsBeforeNode(proofChild);
-      gap = document.createElement('span');
-      gap.className = 'math-proof-gap';
-      gap.setAttribute('aria-hidden', 'true');
-
-      for (breakIndex = 0; breakIndex < 2; breakIndex += 1) {
-        gap.appendChild(document.createElement('br'));
-      }
-
-      proofBlock.insertBefore(gap, proofChild);
-      return;
-    }
-
-    removeSeparatorsBeforeNode(proofChild);
-    previousBlock = trimBoundaryBefore(proofBlock);
-    proofBlock.classList.add('math-proof-start');
-
-    if (previousBlock) {
-      previousBlock.classList.add('math-before-proof');
-    }
-  }
-
-  function markMathEntrySpacing(postBody) {
-    var starts;
-
-    if (postBody.getAttribute('data-math-entry-spacing') === 'true') {
-      return;
-    }
-
-    postBody.setAttribute('data-math-entry-spacing', 'true');
-    starts = getEntryStarts(postBody);
-
-    starts.forEach(function (entry, index) {
-      var nextEntry = starts[index + 1];
-      var blocks = getEntryBlocks(entry.block, nextEntry && nextEntry.block);
-      var lastBlock = getLastContentBlock(blocks);
-      var previousBlock;
-
-      markProofSpacing(postBody, blocks);
-
-      if (lastBlock) {
-        removeTrailingSeparators(lastBlock);
-        lastBlock.classList.add('math-entry-end');
-      }
-
-      if (!nextEntry || blocks[blocks.length - 1].nextElementSibling !== nextEntry.block) {
-        return;
-      }
-
-      previousBlock = trimBoundaryBefore(nextEntry.block);
-      nextEntry.block.classList.add('math-entry-after-entry');
-
-      if (previousBlock) {
-        previousBlock.classList.add('math-entry-end');
-      }
-    });
-  }
-
-  function initMathEntrySpacing() {
-    var postBody = getPostBody();
-    var applySpacing;
-    var updateSectionGap;
-
-    if (!postBody) {
-      return;
-    }
-
-    updateSectionGap = function () {
-      var lineHeight = parseFloat(window.getComputedStyle(postBody).lineHeight);
-
-      if (Number.isFinite(lineHeight)) {
-        postBody.style.setProperty('--math-section-gap', (lineHeight * 3) + 'px');
-      }
-    };
-
-    applySpacing = function () {
-      markMathEntrySpacing(postBody);
-      updateSectionGap();
-    };
-
-    updateSectionGap();
-    window.addEventListener('resize', updateSectionGap);
-
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(updateSectionGap);
-    }
-
-    if (window.MathJax && window.MathJax.startup && window.MathJax.startup.promise) {
-      window.MathJax.startup.promise.then(applySpacing, applySpacing);
-      return;
-    }
-
-    applySpacing();
-  }
-
-  function isStatementBoundary(element) {
-    var tagName = element.tagName;
-    var candidates;
+  function hasStartingEntityMarker(element) {
+    var candidates = element.querySelectorAll('strong, b, em, i');
     var found = false;
 
-    if (/^H[1-6]$/.test(tagName) || tagName === 'HR') {
-      return true;
-    }
-
-    candidates = element.querySelectorAll('strong, b');
     candidates.forEach(function (candidate) {
-      var labelText = normalizeSpace(candidate.textContent || '');
-
       if (
         !found &&
-        statementBoundaryLabelPattern.test(labelText) &&
-        getTextBeforeNode(element, candidate) === ''
+        getTextBeforeNode(element, candidate) === '' &&
+        (
+          isEntryLabel(candidate) ||
+          proofMarkerPattern.test(normalizeSpace(candidate.textContent || ''))
+        )
       ) {
         found = true;
       }
     });
 
     return found;
+  }
+
+  function isStatementBoundary(element) {
+    var tagName = element.tagName;
+    var previousBlock;
+
+    if (/^H[1-6]$/.test(tagName) || tagName === 'HR') {
+      return true;
+    }
+
+    if (tagName !== 'P') {
+      return false;
+    }
+
+    previousBlock = element.previousElementSibling;
+
+    if (isDisplayMathBlock(previousBlock)) {
+      return hasStartingEntityMarker(element);
+    }
+
+    if (isMarkerPrefixedList(previousBlock)) {
+      return hasStartingEntityMarker(element) || hasStartingBoldMarker(element);
+    }
+
+    return true;
   }
 
   function wrapSiblingRange(parent, firstNode, stopNode) {
@@ -1195,7 +1068,6 @@
   function initPageEnhancements() {
     initMathReferenceLinks();
     initPostTypographySpacing();
-    initMathEntrySpacing();
     initMathStatementItalics();
     initPostTableBalance();
   }

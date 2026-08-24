@@ -6,24 +6,24 @@ category_path:
   - Others
   - 1. Essays
 created_at: 2026-08-06 13:53:49 +0900
-last_modified_at: 2026-08-09 14:02:11 +0900
+last_modified_at: 2026-08-24 16:19:04 +0900
 ---
 
-Intuitively, we can think time as the number line, and divide it into intervals whose length are all same; the unit chosen can be an year, month, day, hour, minute, second, and so on. Then, we can order the intervals and put numbers on them in a particular way, and we call the label a *date*. For examples, on a yearly basis, 2026, 2027, and so on, or on a monthly basis, May 2026, June 2026, and so on.<br>
+Intuitively, we can think time as the number line, and divide it into intervals whose length are all same; the unit chosen can be an year, month, day, hour, minute, second, and so on. Then, we can order the intervals and put numbers on them in a particular way, and we call the label a *date*. For examples, on a yearly basis, 2026, 2027, and so on, or on a monthly basis, May 2026, June 2026, and so on.
 
-&emsp;We can evaluate the length of any interval on time. It can be expressed in particular units. For examples, on a yearly basis, 2 years, 3 years, etc., or on a monthly basis, 3 months, 1 year and 2 months, etc.<br>
+We can evaluate the length of any interval on time. It can be expressed in particular units. For examples, on a yearly basis, 2 years, 3 years, etc., or on a monthly basis, 3 months, 1 year and 2 months, etc.
 
-&emsp;In everyday life, we would say "the meeting is on May 21, 2026." When we write the time interval which the order indicate as $I,$ the content to which that utterance mostly corresponds can be expressed as "$\text{the meeting start time}\in I.$" We don't specify as the exact time but suggest the neighborhood which it belongs to.<br>
+In everyday life, we would say "the meeting is on May 21, 2026." When we write the time interval which the order indicate as $I,$ the content to which that utterance mostly corresponds can be expressed as "$\text{the meeting start time}\in I.$" We don't specify as the exact time but suggest the neighborhood which it belongs to.
 
-&emsp;Since we use approximated time, time intervals' lengths are bound to be approximated in consequence. We can calculate the elapsed time between to events like this: 
+Since we use approximated time, time intervals' lengths are bound to be approximated in consequence. We can calculate the elapsed time between to events like this:
 
 $$
 \begin{gather} \text{event 1}\in I_1, \text{event 2}\in I_2, \qquad \text{where their order is respectively } O_1, O_2 \\ 
 \Longrightarrow \text{the time elapsed}\in (O_2-O_1-1, O_2-O_1). \end{gather}
 $$
 
-For an example, from the fact that Albert Einstein was born in 1879 and dead in 1955, we can determine his age as follows: 
+For an example, from the fact that Albert Einstein was born in 1879 and dead in 1955, we can determine his age as follows:
 
-$$\text{the exact age}\in (75, 76).$$ 
+$$\text{the exact age}\in (75, 76).$$
 
-One way to explain this result is to think that a date also represents the start point of the time interval. 
+One way to explain this result is to think that a date also represents the start point of the time interval.
