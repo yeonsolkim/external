@@ -396,6 +396,10 @@ margin-top: 1lh !important;
 margin-top: 0 !important;
 }
 
+.post-body .post-explicit-entry-break {
+display: none !important;
+}
+
 .post-body .post-soft-line-indent {
 display: inline-block;
 width: 1em;
