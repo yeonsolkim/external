@@ -258,16 +258,11 @@ padding-left: calc(var(--ol-left-indent) + var(--ol-marker-width) + var(--ol-mar
 margin-bottom: 0 !important;
 }
 
-.post-body > :is(ol, ul) + p {
-margin-top: 1lh !important;
-}
-
-
-.post-body > ol[marker-prefix] + p {
+.post-body > :is(ol, ul) + p:not(:first-child) {
 margin-top: 0 !important;
 }
 
-.post-body > ol[marker-prefix] + p:has(> strong:first-child, > b:first-child, > .math-proof-marker:first-child) {
+.post-body > :is(ol, ul) + p:not(:first-child):has(> strong:first-child, > b:first-child, > .math-proof-marker:first-child) {
 margin-top: 1lh !important;
 }
 
@@ -415,10 +410,12 @@ margin-left: 1rem;
 scroll-margin-top: 1.25rem;
 }
 
+/*
 .post-body .math-label-anchor,
 .post-body .math-proof-marker {
 margin-left: 1em;
 }
+*/
 
 .post-body .math-label-gap {
 display: inline-block;
@@ -483,6 +480,10 @@ overflow: clip;
 .post-body .math-inline > mjx-container {
 position: relative;
 top: -0.007em;
+}
+
+.post-body .math-inline-punctuated {
+white-space: nowrap;
 }
 
 .post-body mjx-assistive-mml {
