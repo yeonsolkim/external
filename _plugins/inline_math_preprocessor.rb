@@ -4,6 +4,7 @@ module ExternalInlineMathPreprocessor
   DATA_KEY = "inline_math_placeholders"
   MARKDOWN_EXTENSIONS = [".md", ".markdown"].freeze
   REFERENCE_ATTRIBUTE_DEFINITION = "{:reference: .reference}\n\n"
+  TRAILING_PUNCTUATION_PATTERN = /\p{P}+/.freeze
 
   module_function
 
@@ -110,8 +111,16 @@ module ExternalInlineMathPreprocessor
     return output if placeholders.nil? || placeholders.empty?
 
     placeholders.each_with_index do |math, index|
+      placeholder = "@@codex-inline-math-#{index}@@"
+
       output = output.gsub(
-        "@@codex-inline-math-#{index}@@",
+        /#{Regexp.escape(placeholder)}(#{TRAILING_PUNCTUATION_PATTERN})/
+      ) do
+        inline_math_html(math, Regexp.last_match(1))
+      end
+
+      output = output.gsub(
+        placeholder,
         inline_math_html(math)
       )
     end
@@ -126,8 +135,12 @@ module ExternalInlineMathPreprocessor
     REFERENCE_ATTRIBUTE_DEFINITION + content
   end
 
-  def inline_math_html(math)
-    '<span class="math-inline">\(' + escape_html(math) + '\)</span>'
+  def inline_math_html(math, trailing_punctuation = nil)
+    classes = ["math-inline"]
+    classes << "math-inline-punctuated" if trailing_punctuation
+
+    '<span class="' + classes.join(" ") + '">\(' + escape_html(math) + '\)' +
+      trailing_punctuation.to_s + '</span>'
   end
 
   def escape_html(text)

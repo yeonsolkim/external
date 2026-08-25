@@ -517,12 +517,8 @@
     ));
   }
 
-  function isMarkerPrefixedList(element) {
-    return Boolean(
-      element &&
-      element.tagName === 'OL' &&
-      element.hasAttribute('marker-prefix')
-    );
+  function isListBlock(element) {
+    return Boolean(element && /^(?:OL|UL)$/.test(element.tagName));
   }
 
   function hasStartingBoldMarker(element) {
@@ -569,7 +565,7 @@
       return hasStartingEntityMarker(element);
     }
 
-    if (isMarkerPrefixedList(previousBlock)) {
+    if (isListBlock(previousBlock)) {
       return hasStartingEntityMarker(element) || hasStartingBoldMarker(element);
     }
 

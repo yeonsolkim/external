@@ -50,6 +50,10 @@ before Markdown rendering and restores it afterward as:
 This means these math/emphasis issues should be fixed at the build layer, not by
 rewriting each post.
 
+When punctuation immediately follows inline math, the preprocessor moves that
+punctuation into the same wrapper and adds `math-inline-punctuated`. The paired
+CSS rule prevents a line break from leaving the punctuation on a line by itself.
+
 ## Repository Structure Notes
 
 The repo intentionally uses a few Jekyll-specific files that may look
