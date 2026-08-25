@@ -551,6 +551,10 @@
     var tagName = element.tagName;
     var previousBlock;
 
+    if (element.classList.contains('post-explicit-entry-break')) {
+      return true;
+    }
+
     if (/^H[1-6]$/.test(tagName) || tagName === 'HR') {
       return true;
     }
