@@ -17,8 +17,8 @@
   var labelSources = [
     {%- assign first_source = true -%}
     {%- for post in site.posts -%}
-      {%- assign reference_scope_source = post.category_path[1] | default: "" -%}
-      {%- assign reference_scope = reference_scope_source | slugify -%}
+      {%- assign reference_scope_source = post.category_path | textbook_category -%}
+      {%- assign reference_scope = reference_scope_source | strip_category_order_prefix | slugify -%}
       {%- if reference_scope != "" -%}
         {%- unless first_source -%},{%- endunless -%}
         {

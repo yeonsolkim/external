@@ -4,11 +4,13 @@ title: "Exercises"
 date: 2026-08-25 00:00:00 +0900
 category_path:
   - 1. Mathematics
-  - 2. Introduction to Analysis
+  - 3. Analysis
+  - 1. Introduction to Analysis
   - 2. Metric Spaces
 created_at: 2026-08-25 12:05:21 +0900
-last_modified_at: 2026-08-25 12:05:43 +0900
+last_modified_at: 2026-08-26 14:04:31 +0900
 ---
+$A$ is *perfect* if it contains all of its limit points, and every point of $A$ itself is a limit point, that is, $A=A'$. In other words, a perfect set is closed, and none of its own points is locally isolated from the rest of the set. Density answers how widely $A$ spreads throughout the ambient space $M$. If any point of $M$ cannot locally avoid $A$, then $A$ is said to be *dense* in $M$. Equivalently, $A$ is dense in $M$ if $M = \overline A$.
 
 **Exercise 1.** Let $(M,d)$ be a metric space, and let $A\subseteq M$.
 1. Prove that $A'$ is closed.

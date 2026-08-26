@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Synonyms"
+title: "Vocabularies"
 date: 2026-04-25 00:00:00 +0900
 category_path:
   - 3. English
-  - 2. Vocabulary
+  - 2. Dictionary
 created_at: 2026-08-10 15:41:50 +0900
-last_modified_at: 2026-08-24 16:44:00 +0900
+last_modified_at: 2026-08-26 09:54:33 +0900
 
 line_indent: false
 ---
@@ -50,6 +50,7 @@ line_indent: false
 <b>conflict</b><sup>3</sup>: a prolonged "armed struggle".
 
 <b>depart from</b>: deviate from a traditional course.
+**stray**: wander away from a group or from the right course or place: *I strayed a few blocks in the wrong direction \| let us not stray from the main topic.*
 
 <b>all the time</b>: continuously.
 <b>always</b>: on every occasion.
@@ -790,3 +791,8 @@ line_indent: false
 **foundational**: providing the base on which something else is built or developed.
 **essential**: absolutely necessary.
 **basic**: relating to the simplest or most elementary level of something.
+
+**prototype**: a first or preliminary model of something, from which other forms are developed: *the firm is testing a prototype of the machine \| the prototype of an $n$-dimensional manifold is $n$-dimensional Euclidean space $\mathbb R^n$.*
+
+**juxtaposition** [ˌdʒʌk.stə.pəˈziʃ.ən]: the fact of two things being seen or placed close together.
+**collocation**: *Linguistics* the habitual juxtaposition of a particular word with another word.

@@ -77,7 +77,19 @@
   {%- assign next_heading_depth = current_heading_depth | plus: 1 -%}
   {%- assign heading_level = current_heading_depth | plus: 2 -%}
 
-  {%- if include.depth <= 1 -%}
+  {%- assign subcategory_page_url = "" -%}
+  {%- assign subcategory_is_textbook = false -%}
+  {%- if include.link_subcategories -%}
+    {%- for generated_page in site.data.generated_subcategory_pages -%}
+      {%- if generated_page.parent_category == include.path and generated_page.subcategory == group -%}
+        {%- assign subcategory_page_url = generated_page.url -%}
+        {%- assign subcategory_is_textbook = generated_page.textbook_index -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+
+  {%- if include.depth <= 1 or subcategory_is_textbook -%}
     {%- assign visible_group = group | strip_category_order_prefix -%}
   {%- else -%}
     {%- assign visible_group = group | strip -%}
@@ -86,16 +98,6 @@
   {%- assign visible_group_parts = visible_group | numbered_label_parts -%}
   {%- assign visible_group_number = visible_group_parts[0] -%}
   {%- assign visible_group_title = visible_group_parts[1] -%}
-
-  {%- assign subcategory_page_url = "" -%}
-  {%- if include.link_subcategories -%}
-    {%- for generated_page in site.data.generated_subcategory_pages -%}
-      {%- if generated_page.parent_category == include.path and generated_page.subcategory == group -%}
-        {%- assign subcategory_page_url = generated_page.url -%}
-        {%- break -%}
-      {%- endif -%}
-    {%- endfor -%}
-  {%- endif -%}
 
   {%- capture group_label -%}
     {%- if subcategory_page_url != "" -%}

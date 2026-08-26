@@ -15,7 +15,8 @@ module Jekyll
         "generated_subcategory" => true,
         "category_path" => category_path,
         "parent_category" => page_spec["parent_category"],
-        "subcategory" => page_spec["subcategory"]
+        "subcategory" => page_spec["subcategory"],
+        "textbook_index" => page_spec["textbook_index"]
       }
     end
   end
@@ -25,13 +26,25 @@ module Jekyll
     priority :high
 
     def generate(site)
-      category_paths = site.posts.docs.filter_map do |post|
+      category_paths = []
+      textbook_path_keys = {}
+
+      site.posts.docs.each do |post|
         path = normalized_category_path(post)
-        path.first(2) if path.length >= 2
+
+        # The home page renders the first category level, and the last folder is
+        # a section within a textbook. Generate pages for the levels in between,
+        # including the textbook itself but excluding its final section folders.
+        last_index_depth = path.length >= 3 ? path.length - 1 : path.length
+        2.upto(last_index_depth) do |depth|
+          category_paths << path.first(depth)
+        end
+
+        textbook_path_keys[path.first(path.length - 1).join("|")] = true if path.length >= 3
       end
 
       pages = category_paths.uniq.sort.map do |category_path|
-        build_page_spec(category_path)
+        build_page_spec(category_path, textbook_path_keys.key?(category_path.join("|")))
       end
 
       ensure_unique_urls!(pages)
@@ -50,7 +63,7 @@ module Jekyll
       raw_path.map { |part| part.to_s.strip }.reject(&:empty?)
     end
 
-    def build_page_spec(category_path)
+    def build_page_spec(category_path, textbook_index)
       dir = File.join("categories", *category_path.map { |part| stable_slug(part) })
 
       {
@@ -59,6 +72,7 @@ module Jekyll
         "depth" => category_path.length,
         "parent_category" => category_path[0...-1].join("|"),
         "subcategory" => category_path.last,
+        "textbook_index" => textbook_index,
         "dir" => dir,
         "url" => "/#{dir}/"
       }
