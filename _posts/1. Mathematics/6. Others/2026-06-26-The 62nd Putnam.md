@@ -1,11 +1,10 @@
 ---
 layout: post
-title: "1. The 62nd Putnam"
+title: "The 62nd Putnam"
 date: 2026-06-26 00:00:00 +0900
 category_path:
   - 1. Mathematics
   - 6. Others
-  - 1. Putnam Competition
 created_at: 2026-06-26 12:26:40 +0900
 last_modified_at: 2026-08-24 16:11:17 +0900
 ---

@@ -93,13 +93,22 @@ structure.
 - `index.md` discovers top-level categories from `site.posts`. It keeps posts
   whose `category_path` has only one item directly on the home page and links
   each second-level category to its own generated index page.
-- `_plugins/subcategory_pages_generator.rb` creates one page for every distinct
-  pair formed by the first two items of `category_path`. Generated URLs use the
-  form `/categories/<top-category>/<subcategory>/`; ordering prefixes such as
-  `III.` are omitted from URL slugs so reordering categories does not break
-  links.
-- `_layouts/subcategory.html` renders the selected second-level category and
-  all posts and categories below it using `_includes/category_tree.html`.
+- The penultimate folder in a post's `category_path` represents its textbook;
+  the final folder represents a section within that textbook. A textbook's
+  ordering prefix is hidden in category entries and breadcrumbs.
+- `_plugins/subcategory_pages_generator.rb` creates an index page for every
+  distinct `category_path` prefix below the top level through the textbook. For
+  example, a post at `Mathematics / Algebra / Linear Algebra / Vector Spaces`
+  produces pages for `Algebra` and `Linear Algebra`, but not `Vector Spaces`.
+  Generated URLs mirror that hierarchy under `/categories/`; ordering prefixes
+  are omitted from URL slugs so reordering categories does not break links.
+- `_layouts/subcategory.html` normally renders direct posts and the immediately
+  nested categories for the selected path. When the selected path is the
+  textbook, it also expands each final folder's posts as a hierarchical contents
+  list. Final folders are headings rather than links because they do not have
+  separate index pages. The textbook is detected from the path rather than from
+  a fixed depth. Textbook pages receive their own contents-layout class; other
+  generated indexes use the same category-tree styling as the home page.
 - `_includes/category_tree.html` recursively groups posts by `category_path`.
   It also hides numeric and roman-numeral ordering prefixes in visible category
   and post labels while preserving those prefixes in the real folder/title data
@@ -109,14 +118,15 @@ structure.
 
 ### Post Layout
 
-- `_layouts/post.html` removes numeric title prefixes from visible post titles.
-  For example, `3. Relations` displays as `Relations`.
+- `_layouts/post.html` builds a visible post number from the final section
+  folder and the post title. A textbook's own ordering prefix is not included.
 - The post header shows the second item of `category_path` above the title and
   strips ordering prefixes there. For example, `III. Topology` displays as
   `Topology` and links to that subcategory's generated index page.
-- The layout sets `data-reference-scope` from `category_path[1]`. This is what
-  keeps theorem/definition links scoped by subject, such as Calculus, Linear
-  Algebra, or Topology.
+- The layout sets `data-reference-scope` from the penultimate, textbook folder.
+  This keeps theorem/definition links scoped to their textbook even when more
+  category layers are inserted before it. Its ordering prefix is stripped so
+  reordering textbooks does not change the reference scope.
 - Post dates use `"%B %-d, %Y"` so dates render as `June 2, 2026`, not
   `June 02, 2026`.
 
@@ -126,7 +136,7 @@ structure.
   front matter markers are intentional because Liquid is used inside the file.
 - It scans posts for labels such as `Definition 1.3.9` and links references to
   matching labels in the same `data-reference-scope`.
-- If theorem/definition links disappear, check that `category_path[1]`,
+- If theorem/definition links disappear, check the `textbook_category` filter,
   `_layouts/post.html`, and the Liquid-generated `labelSources` in
   `assets/js/main.js` still agree.
 

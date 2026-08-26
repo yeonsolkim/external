@@ -2,15 +2,13 @@
 .main-content {
 width: 100% !important;
 box-sizing: border-box !important;
-padding: 2rem 4rem;
-margin: 2rem 0 0 auto;
 word-wrap: break-word;
 line-height: 1.5;
 color: #333;
 }
 
 .post-header {
-margin: -1rem 0 1.5rem !important;
+margin: 0 0 1.5rem !important;
 font-family: var(--reading-serif);
 text-align: left;
 }
@@ -23,6 +21,7 @@ font-family: var(--reading-serif);
 font-size: 1.7rem !important;
 font-weight: bold !important;
 text-wrap: balance;
+padding-top: 1rem;
 }
 
 .post-category-path {
@@ -117,8 +116,8 @@ margin-bottom: 0 rem;
 
 article.main-content[data-reference-scope="3-others"] .post-body em,
 article.main-content[data-reference-scope="3-others"] .post-body i,
-article.main-content[data-reference-scope="2-vocabulary"] .post-body em,
-article.main-content[data-reference-scope="2-vocabulary"] .post-body i {
+article.main-content[data-reference-scope="2-dictionary"] .post-body em,
+article.main-content[data-reference-scope="2-dictionary"] .post-body i {
 color: #9c9c9c;
 }
 
@@ -414,12 +413,10 @@ margin-left: 1rem;
 scroll-margin-top: 1.25rem;
 }
 
-/*
 .post-body .math-label-anchor,
 .post-body .math-proof-marker {
 margin-left: 1em;
 }
-*/
 
 .post-body .math-label-gap {
 display: inline-block;

@@ -3,10 +3,10 @@ layout: default
 title: Semantics
 ---
 
-{% assign reference_scope_source = page.category_path[1] | default: "" %}
-{% assign reference_scope = reference_scope_source | slugify %}
+{% assign reference_scope_source = page.category_path | textbook_category %}
+{% assign reference_scope = reference_scope_source | strip_category_order_prefix | slugify %}
 
-<article class="main-content"{% if reference_scope != "" %} data-reference-scope="{{ reference_scope }}"{% endif %}>
+<article class="post"{% if reference_scope != "" %} data-reference-scope="{{ reference_scope }}"{% endif %}>
 <!--
   {% assign clean_title = page.title %}
   {% for i in (1..99) %}

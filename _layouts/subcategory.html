@@ -4,11 +4,15 @@ layout: default
 
 {% assign category_path = page.category_path | join: "|" %}
 {% assign category_depth = page.category_path | size %}
+{% assign tree_max_depth = category_depth %}
+{% if page.textbook_index %}
+  {% assign tree_max_depth = category_depth | plus: 1 %}
+{% endif %}
 
-<section class="category-section subcategory-section">
+<section class="category-section{% if page.textbook_index %} textbook-section{% endif %}">
   <h2 class="category-root">
     {{ page.category_path | last | strip_category_order_prefix | escape }}
   </h2>
 
-  {% include category_tree.html posts=site.posts path=category_path depth=category_depth heading_depth=1 link_subcategories=true %}
+  {% include category_tree.html posts=site.posts path=category_path depth=category_depth heading_depth=1 max_depth=tree_max_depth link_subcategories=true %}
 </section>

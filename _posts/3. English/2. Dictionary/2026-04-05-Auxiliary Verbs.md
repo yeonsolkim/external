@@ -4,7 +4,7 @@ title: "Auxiliary Verbs"
 date: 2026-04-05 00:00:00 +0900
 category_path:
   - 3. English
-  - 2. Vocabulary
+  - 2. Dictionary
 created_at: 2026-08-10 14:55:42 +0900
 last_modified_at: 2026-08-24 16:19:04 +0900
 ---

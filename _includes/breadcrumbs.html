@@ -7,12 +7,6 @@
     {% assign breadcrumb_path_key = "" %}
     {% if page.category_path %}
       {% for category in page.category_path %}
-        {% if forloop.index <= 2 %}
-          {% assign visible_category = category | strip_category_order_prefix %}
-        {% else %}
-          {% assign visible_category = category | strip %}
-        {% endif %}
-
         {% if breadcrumb_path_key == "" %}
           {% assign breadcrumb_path_key = category %}
         {% else %}
@@ -20,12 +14,20 @@
         {% endif %}
 
         {% assign breadcrumb_url = "" %}
+        {% assign breadcrumb_is_textbook = false %}
         {% for generated_page in site.data.generated_subcategory_pages %}
           {% if generated_page.path_key == breadcrumb_path_key %}
             {% assign breadcrumb_url = generated_page.url %}
+            {% assign breadcrumb_is_textbook = generated_page.textbook_index %}
             {% break %}
           {% endif %}
         {% endfor %}
+
+        {% if forloop.index <= 2 or breadcrumb_is_textbook %}
+          {% assign visible_category = category | strip_category_order_prefix %}
+        {% else %}
+          {% assign visible_category = category | strip %}
+        {% endif %}
 
         <li class="breadcrumb-item">
           <span class="breadcrumb-separator" aria-hidden="true">›</span>
