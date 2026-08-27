@@ -12,9 +12,9 @@ const SVG_SCALE = 1.2;
 const MATHJAX_PREAMBLE = String.raw`
 \def\lowparen#1{
   \mathinner{
-    \mathopen{\lower .25em {\bigg(}}
+    \mathopen{\lower .3em {\bigg(}}
     #1
-    \mathclose{\lower .25em {\bigg)}}
+    \mathclose{\lower .3em {\bigg)}}
   }
 }
 `;

@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import argparse
 from datetime import datetime, timedelta, timezone
-from pathlib import Path
 import os
+from pathlib import Path
 import re
 import sys
+import time
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,6 +16,9 @@ KST = timezone(timedelta(hours=9))
 DATE_PREFIX_RE = re.compile(r"^\d{4}-\d{2}-\d{2}-")
 FRONT_MATTER_RE = re.compile(r"\A---\r?\n(.*?)\r?\n---\r?\n", flags=re.DOTALL)
 MANAGED_KEYS = {"layout", "title", "date", "category_path", "created_at", "last_modified_at"}
+STABILITY_INTERVAL_SECONDS = 1.0
+REQUIRED_QUIET_CHECKS = 2
+MAX_STABILITY_CHECKS = 10
 
 
 def fmt_time(ts: float) -> str:
@@ -122,11 +127,7 @@ def sync_post(path: Path) -> tuple[Path, bool]:
     return path, True
 
 
-def main() -> int:
-    if not POSTS_ROOT.exists():
-        print("_posts directory does not exist.", file=sys.stderr)
-        return 1
-
+def sync_all_posts() -> bool:
     changed = False
 
     for path in sorted(POSTS_ROOT.rglob("*")):
@@ -140,6 +141,65 @@ def main() -> int:
         _, did_change = sync_post(path)
         changed = changed or did_change
 
+    return changed
+
+
+def stabilize_front_matter() -> int:
+    # Editors can write an older in-memory buffer back immediately after an
+    # external rewrite. Require a quiet window before the caller stages files.
+    sync_all_posts()
+    quiet_checks = 0
+
+    for check in range(1, MAX_STABILITY_CHECKS + 1):
+        time.sleep(STABILITY_INTERVAL_SECONDS)
+
+        if sync_all_posts():
+            quiet_checks = 0
+            print(
+                "Post front matter changed during stabilization; "
+                f"retrying ({check}/{MAX_STABILITY_CHECKS})."
+            )
+            continue
+
+        quiet_checks += 1
+        if quiet_checks >= REQUIRED_QUIET_CHECKS:
+            quiet_seconds = REQUIRED_QUIET_CHECKS * STABILITY_INTERVAL_SECONDS
+            print(
+                "Post front matter is stable; "
+                f"no editor writes detected for {quiet_seconds:g} seconds."
+            )
+            return 0
+
+    print(
+        "Post front matter did not stabilize. "
+        "Stop editing the open note and run Git Stage again.",
+        file=sys.stderr,
+    )
+    return 2
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Synchronize Jekyll post front matter with post paths."
+    )
+    parser.add_argument(
+        "--stabilize",
+        action="store_true",
+        help="wait for editor write-backs to stop before returning",
+    )
+    return parser.parse_args()
+
+
+def main() -> int:
+    if not POSTS_ROOT.exists():
+        print("_posts directory does not exist.", file=sys.stderr)
+        return 1
+
+    args = parse_args()
+    if args.stabilize:
+        return stabilize_front_matter()
+
+    changed = sync_all_posts()
     if not changed:
         print("No post front matter changes.")
 
