@@ -397,13 +397,17 @@
   var mathBlacker = iPhoneDevice ? 0 : (touchMathWeight ? 2 : 9);
 
   window.MathJax = {
+    loader: {
+      load: ['[tex]/mathtools']
+    },
     tex: {
+      packages: {'[+]': ['mathtools']},
       inlineMath: [['\\(', '\\)']],
       displayMath: [['$$', '$$'], ['\\[', '\\]']],
       processEscapes: true,
       macros: {
         lowparen: [
-          '\\mathinner{\\mathopen{\\lower .25em {\\bigg(}}#1\\mathclose{\\lower .25em {\\bigg)}}}',
+          '\\mathinner{\\mathopen{\\lower .3em {\\bigg(}}#1\\mathclose{\\lower .3em {\\bigg)}}}',
           1
         ]
       }
