@@ -511,12 +511,12 @@ box-sizing: border-box;
 
 .post-body > p:has(+ mjx-container[display="true"]),
 .post-body > p:has(+ .MathJax_Display) {
-margin-bottom: 0.75em !important;
+margin-bottom: 0.5em !important;
 }
 
 .post-body > mjx-container[display="true"] + p,
 .post-body > .MathJax_Display + p {
-margin-top: 0.75em !important;
+margin-top: 0.5em !important;
 }
 
 /* A labeled statement or proof after display math still starts a new entity. */
