@@ -6,7 +6,7 @@ category_path:
   - 3. English
   - 2. Dictionary
 created_at: 2026-08-10 15:41:50 +0900
-last_modified_at: 2026-08-26 09:54:33 +0900
+last_modified_at: 2026-08-28 21:52:04 +0900
 
 line_indent: false
 ---
@@ -796,3 +796,5 @@ line_indent: false
 
 **juxtaposition** [ˌdʒʌk.stə.pəˈziʃ.ən]: the fact of two things being seen or placed close together.
 **collocation**: *Linguistics* the habitual juxtaposition of a particular word with another word.
+
+**characterize**: 
