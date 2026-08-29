@@ -6,7 +6,7 @@ category_path:
   - 3. English
   - 2. Dictionary
 created_at: 2026-08-10 15:41:50 +0900
-last_modified_at: 2026-08-28 21:52:04 +0900
+last_modified_at: 2026-08-29 09:16:57 +0900
 
 line_indent: false
 ---
@@ -792,9 +792,9 @@ line_indent: false
 **essential**: absolutely necessary.
 **basic**: relating to the simplest or most elementary level of something.
 
-**prototype**: a first or preliminary model of something, from which other forms are developed: *the firm is testing a prototype of the machine \| the prototype of an $n$-dimensional manifold is $n$-dimensional Euclidean space $\mathbb R^n$.*
+**prototype**: a first or preliminary model of something, from which other forms are developed: *the prototype of an $n$-dimensional manifold is an $n$-dimensional Euclidean space.*
 
 **juxtaposition** [ˌdʒʌk.stə.pəˈziʃ.ən]: the fact of two things being seen or placed close together.
 **collocation**: *Linguistics* the habitual juxtaposition of a particular word with another word.
 
-**characterize**: 
+**characterize**: describe the distinctive nature of someone or something: *Heine–Borel theorem characterize compact subsets of a Euclidean space.*

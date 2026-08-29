@@ -247,6 +247,31 @@
     ));
   }
 
+  function removeSpaceAfterEmSpace(postBody) {
+    var walker = document.createTreeWalker(postBody, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (node) {
+        if (
+          shouldSkipTypographyTextNode(node) ||
+          !node.nodeValue.includes('\u2003 ')
+        ) {
+          return NodeFilter.FILTER_REJECT;
+        }
+
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var nodes = [];
+    var node;
+
+    while ((node = walker.nextNode())) {
+      nodes.push(node);
+    }
+
+    nodes.forEach(function (textNode) {
+      textNode.nodeValue = textNode.nodeValue.replace(/\u2003 /g, '\u2003');
+    });
+  }
+
   function getNextVisibleSibling(node) {
     var sibling = node.nextSibling;
 
@@ -457,6 +482,7 @@
     }
 
     postBody.setAttribute('data-typography-spacing', 'true');
+    removeSpaceAfterEmSpace(postBody);
     addMathLabelGaps(postBody);
 
     if (usesLineIndent(postBody)) {

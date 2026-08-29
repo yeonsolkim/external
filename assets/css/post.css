@@ -72,11 +72,6 @@ font-weight: inherit;
 color: #b0b0b4;
 }
 
-.post-header-divider,
-.post-body-divider {
-border-top-color: #d2d2d4 !important;
-}
-
 .main-content .post-header-divider {
 margin: 0 0 2rem;
 }
@@ -114,11 +109,9 @@ margin-bottom: 0 rem;
   margin-top: 0;
 }
 
-article.main-content[data-reference-scope="3-others"] .post-body em,
-article.main-content[data-reference-scope="3-others"] .post-body i,
-article.main-content[data-reference-scope="2-dictionary"] .post-body em,
-article.main-content[data-reference-scope="2-dictionary"] .post-body i {
-color: #9c9c9c;
+article.post[data-reference-scope="dictionary"] .post-body em,
+article.post[data-reference-scope="dictionary"] .post-body i {
+  color: #9c9c9c;
 }
 
 .post-body a:not(.math-ref-link) {
@@ -237,8 +230,10 @@ stroke-width: 0.33px;
   }
 }
 
-hr { 
-border-top: 0.4px solid #b7b7b7ca !important;
+.hr,
+.post-header-divider,
+.post-body-divider {
+border-top: 1px solid #d3d3d3bc !important;
 background-color: #ffffff00 !important;
 }
 
@@ -357,13 +352,6 @@ padding: 0 !important;
 max-width: none !important;
 width: 100% !important;
 box-sizing: border-box !important;
-overflow-x: clip;
-}
-
-@supports not (overflow: clip) {
-  .post-body {
-    overflow-x: hidden;
-  }
 }
 
 html.mathjax-loading .post-body {
