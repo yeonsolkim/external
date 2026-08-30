@@ -109,8 +109,7 @@ margin-bottom: 0 rem;
   margin-top: 0;
 }
 
-article.post[data-reference-scope="dictionary"] .post-body em,
-article.post[data-reference-scope="dictionary"] .post-body i {
+article.post[data-reference-scope="dictionary"] .post-body .dictionary-annotation {
   color: #9c9c9c;
 }
 
