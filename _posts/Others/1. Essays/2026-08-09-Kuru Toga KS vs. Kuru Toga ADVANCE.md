@@ -6,7 +6,7 @@ category_path:
   - Others
   - 1. Essays
 created_at: 2026-08-09 14:04:09 +0900
-last_modified_at: 2026-08-24 16:19:04 +0900
+last_modified_at: 2026-08-30 14:16:23 +0900
 ---
 
 The comparison can be understood as a trade-off between two different strategies for controlling stroke width. The Kuru Toga ADVANCE uses the W Speed Engine, which rotates the lead approximately once every 20 strokes, whereas the 2023 Kuru Toga KS uses a lower-stroke mechanism with a slower rotation rate of roughly one revolution per 40 strokes. Thus, ADVANCE compensates aggressively for asymmetric lead wear through rapid rotation, while KS prioritizes tip stability and reduced axial play. For a user who is sensitive to the slight looseness or vertical movement of the ADVANCE mechanism, the KS architecture therefore provides a substantial mechanical advantage even though its rotational correction is slower.
@@ -31,7 +31,7 @@ $$
 \left|\frac{\partial w}{\partial t}\right|_{\mathrm{2B}}.  
 $$
 
-Consequently, "HB + KS" and "2B + ADVANCE" solve essentially the same problem by different means: the former reduces the rate at which uneven wear develops, while the latter corrects uneven wear more frequently after it develops.
+Consequently, *HB + KS* and *2B + ADVANCE* solve essentially the same problem by different means: the former reduces the rate at which uneven wear develops, while the latter corrects uneven wear more frequently after it develops.
 
 A second possible advantage of HB is reduced sensitivity of stroke width to variations in writing pressure. Since HB is harder and less readily abraded than 2B, fluctuations in $F$ should cause smaller changes in the geometry of the contacting lead surface. In conceptual terms, one may expect
 
@@ -65,4 +65,4 @@ $$
 \text{mechanically stable tip}.  
 $$
 
-The first combination favors darkness, smoothness, and aggressive maintenance of a sharp tip. The second sacrifices some darkness and softness in exchange for lower lead consumption, lower clicking frequency, reduced tip play, slower development of asymmetric wear, and potentially lower sensitivity of stroke width to writing pressure. If the primary objective is not maximum darkness but rather predictable, fine, mechanically stable strokes for mathematical notation, subscripts, symbols, and dense technical writing, "HB + KS" is therefore a particularly coherent combination.
+The first combination favors darkness, smoothness, and aggressive maintenance of a sharp tip. The second sacrifices some darkness and softness in exchange for lower lead consumption, lower clicking frequency, reduced tip play, slower development of asymmetric wear, and potentially lower sensitivity of stroke width to writing pressure. If the primary objective is not maximum darkness but rather predictable, fine, mechanically stable strokes for mathematical notation, subscripts, symbols, and dense technical writing, *HB + KS* is therefore a particularly coherent combination.

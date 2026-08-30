@@ -153,6 +153,9 @@ structure.
 - Statement names written immediately after a numbered label, such as
   `**Theorem 1.1.1.** (Example name).`, are kept upright even when theorem
   text is italicized.
+- Dictionary posts mark usage labels and examples with
+  `.dictionary-annotation` during rendering. This keeps those annotations muted
+  without changing pronunciations, lexical categories, or ordinary emphasis.
 - For bibliography-style lists under `## References`, use an ordered list and
   put `{:reference}` directly below it. The preprocessor maps that tag to
   `class="reference"`, and ordered-list markers render as `[1]` instead of

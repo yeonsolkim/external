@@ -6,12 +6,12 @@ category_path:
   - 3. English
   - 2. Dictionary
 created_at: 2026-08-10 15:41:50 +0900
-last_modified_at: 2026-08-29 09:16:57 +0900
+last_modified_at: 2026-08-30 14:16:23 +0900
 
 line_indent: false
 ---
 
-<b>investigate</b>: carry out a systematic inquiry "to discover the facts of an incident".
+<b>investigate</b>: carry out a systematic inquiry *to discover the facts of an incident*.
 <b>examine</b>: investigate thoroughly.
 **scrutiny** (n.): critical observation: *the mayor’s spending came **under** public **scrutiny**.*
 <b>research</b>: study carefully to discover information or knowledge about it.
@@ -20,12 +20,12 @@ line_indent: false
 <b>method</b>: a particular form of procedure for accomplishing something.
 <b>style</b>: a way that is characteristic of particular period or person, etc.
 
-<b>religion</b>: "the belief and worship" of superhuman powers or gods.
+<b>religion</b>: *the belief and worship* of superhuman powers or gods.
 <b>religious</b>: relating to religion.
 
 <b>convention</b>: a way in which something is usually done.
 <b>custom</b>: a way of doing something that is specific to a particular society.
-<b>tradition</b>: a "long-established custom" that has been passed on from one generation to another.
+<b>tradition</b>: a *long-established custom* that has been passed on from one generation to another.
 <b>traditional</b>: existing as a part of tradition.
 
 <b>society</b> [səˈsaiət̬i]: the aggregate of people living together.
@@ -35,8 +35,8 @@ line_indent: false
 <b>campaign</b>: organized actions carried out to achieve a particular goals.
 <b>movement</b><sup>2</sup>: a campaign undertaken by a broad group of people working together to advance their social or political ideas.
 
-<b>typical</b>: having the distinctive qualities "of a particular type".
-<b>typically</b>: in a way that is characteristic "of a particular type".
+<b>typical</b>: having the distinctive qualities *of a particular type*.
+<b>typically</b>: in a way that is characteristic *of a particular type*.
 <b>hallmark</b>: a distinctive feature of a particular type.
 
 <b>modest</b><sup>1</sup>: unassuming in the estimation of one's abilities or achievements.
@@ -46,33 +46,33 @@ line_indent: false
 <b>remorse</b>: deep regret for a wrong committed.
 
 <b>conflict</b><sup>1</sup>: a protracted argument.
-<b>conflict</b><sup>2</sup>: a condition in which "a person" experiences a clash of opposing wishes.
-<b>conflict</b><sup>3</sup>: a prolonged "armed struggle".
+<b>conflict</b><sup>2</sup>: a condition in which *a person* experiences a clash of opposing wishes.
+<b>conflict</b><sup>3</sup>: a prolonged *armed struggle*.
 
 <b>depart from</b>: deviate from a traditional course.
 **stray**: wander away from a group or from the right course or place: *I strayed a few blocks in the wrong direction \| let us not stray from the main topic.*
 
 <b>all the time</b>: continuously.
 <b>always</b>: on every occasion.
-<b>usual</b>: "frequently" occurring or done.
+<b>usual</b>: *frequently* occurring or done.
 <b>normal</b>: conforming to a standard<sup>2</sup>.
 <b>standard</b><sup>1</sup>: a level of quality.
 <b>standard</b><sup>2</sup>: a required or agreed level of quality.
 <b>standard</b><sup>3</sup>: a thing or idea used as a measure in comparative evaluations.
 
 <b>abnormal</b>: deviating from what is normal.
-<b>bizarre</b>: very strange or unusual, "so as to cause interest or amusement".
+<b>bizarre</b>: very strange or unusual, *so as to cause interest or amusement*.
 <b>unreasonable</b>: not based on good sense.
 <b>wildly</b>: to an extreme degree; in an excessive and surprising way.
 <b>absurd</b><sup>1</sup>: wildly unreasonable and illogical.
-<b>outrageous</b>: extremely shocking, in a way that causes "anger".
+<b>outrageous</b>: extremely shocking, in a way that causes *anger*.
 
-<b>imply</b><sup>1</sup>: "intend" to communicate something without saying it explicitly.
+<b>imply</b><sup>1</sup>: *intend* to communicate something without saying it explicitly.
 <b>suggest</b><sup>2</sup>: make someone think that something is possibly true.
 <b>smack of</b>: suggest<sup>2</sup> the presence or effect of something wrong.
 <b>imply</b><sup>2</sup>: suggest<sup>2</sup> as a logical consequence.
 
-<b>reason</b><sup>1</sup> (n.): an "explanation" for why something happens or is true.
+<b>reason</b><sup>1</sup> (n.): an *explanation* for why something happens or is true.
 <b>reason</b><sup>2</sup> (n.): the power of the mind to think and form judgments by a process of logic.
 <b>argument</b><sup>1</sup>: a reason<sup>1</sup> given with the aim of persuading others that an idea is right or wrong.
 
@@ -91,7 +91,7 @@ line_indent: false
 
 <b>moral</b>: concerned with the principles of right and wrong of human.
 <b>ethics</b>: moral principles.
-<b>just</b><sup>1</sup> (adj.): "behaving" according to what is morally right.
+<b>just</b><sup>1</sup> (adj.): *behaving* according to what is morally right.
 <b>justice</b>: just behavior or treatment.
 <b>treatment</b>: the manner in which someone behaves toward someone or something.
 
@@ -103,12 +103,12 @@ line_indent: false
 <b>uprising</b> (n.): an act of resistance.
 
 <b>established</b>: having been in existence for a long time, and generally accepted.
-<b>institution</b><sup>2</sup>: an "established" law or custom.
+<b>institution</b><sup>2</sup>: an *established* law or custom.
 <b>repeal</b>: put an end to a law.
 <b>abolish</b>: officially put an end to an institution<sup>2</sup>.
 <b>revoke</b>: put an end to a permission or license.
 
-<b>practice</b><sup>2</sup>: the "actual" application of an idea.
+<b>practice</b><sup>2</sup>: the *actual* application of an idea.
 <b>discipline</b> [ˈdisəsplin]: the practice of training people to obey rules.
 <b>enforce</b>: compel<sup>2</sup> observance of a law or rule.
 <b>compel</b><sup>1</sup>: force someone to do something.
@@ -137,7 +137,7 @@ line_indent: false
 <b>class</b><sup>1</sup>: a division<sup>2</sup> in a system of classification: *this drug belongs to a class of antibiotics called macrolides.*
 <b>class</b><sup>2</sup>: a social division<sup>2</sup> based on social or economic status.
 
-**type**<sup>1</sup>: a kind of person or thing that has a "recognizable set of characteristics": *this type of heather grows better in a drier habitat.*
+**type**<sup>1</sup>: a kind of person or thing that has a *recognizable set of characteristics*: *this type of heather grows better in a drier habitat.*
 **type**<sup>2</sup>: a person or thing considered as a representative of a type<sup>1</sup>: *I'm an adventurous type.*
 
 <b>pick out</b> (v.): choose someone or something from a number of alternatives.
@@ -161,7 +161,7 @@ line_indent: false
 
 <b>leading</b>: top-ranked in a particular situation.
 <b>overriding</b>: more important than anything else.
-<b>imperative</b>: extremely important and "needing immediate attention".
+<b>imperative</b>: extremely important and *needing immediate attention*.
 <b>crucial</b>: decisive in the success or failure of something.
 
 **preliminary** [prɪˈlimineri] (adj.): denoting an event preceding for something more important.
@@ -188,19 +188,19 @@ line_indent: false
 <b>brilliant</b><sup>2</sup>: extremely intelligent; talented.
 
 <b>habitat</b>: the natural home or environment of an animal, plant, or other organism.
-<b>house</b>: a building for "people" to live in.
-<b>home</b>: the place where "one" lives permanently, especially as a member of a family.
+<b>house</b>: a building for *people* to live in.
+<b>home</b>: the place where *one* lives permanently, especially as a member of a family.
 <b>residence</b>: a place where someone lives, especially in a legal or official sense.
 
-<b>compromise</b> [ˈkɑmprəmaiz]: an agreement reached by "mutual concession".
-<b>settlement</b>: an agreement that "brings a dispute to an end".
+<b>compromise</b> [ˈkɑmprəmaiz]: an agreement reached by *mutual concession*.
+<b>settlement</b>: an agreement that *brings a dispute to an end*.
 
-<b>equal</b>: "being" the same in quantity or degree.
-<b>fair</b>: "treating" people without giving an unfair advantage to one side.
+<b>equal</b>: *being* the same in quantity or degree.
+<b>fair</b>: *treating* people without giving an unfair advantage to one side.
 
 <b>advantage</b><sup>1</sup> [ədˈvent̬idʒ]: a condition that makes someone or something more successful or effective than others: *she had an **advantage** **over** her mother's generation.*
 **advantage**<sup>2</sup>: the opportunity to gain something.
-<b>pro</b>: a consideration supporting "one choice".
+<b>pro</b>: a consideration supporting *one choice*.
 <b>benefit</b>: an actually good effect of gain from something.
 <b>merit</b>: a feature of something that gives it genuine worth or value.
 
@@ -211,21 +211,21 @@ line_indent: false
 
 <b>forecast</b>: predict future conditions or developments, especially by analyzing data.
 
-<b>item</b>: an individual unit<sup>1</sup> that is "a part of a list or collection".
+<b>item</b>: an individual unit<sup>1</sup> that is *a part of a list or collection*.
 <b>verify</b>: make sure that something is true, accurate, or justified.
 <b>justified</b>: marked by a good or legitimate reason.
 <b>unit</b><sup>2</sup>: a quantity chosen as a standard<sup>3</sup> in terms of which other quantities may be expressed.
 
-<b>memo</b>: a written message "within a business or organization".
+<b>memo</b>: a written message *within a business or organization*.
 
-<b>hire</b>: "engage" someone for work.
-<b>employ</b>: "make use of" a person or thing for a particular purpose.
-<b>workplace</b>: a place where "people" work.
-<b>workspace</b>: the area in which "a person" works.
+<b>hire</b>: *engage* someone for work.
+<b>employ</b>: *make use of* a person or thing for a particular purpose.
+<b>workplace</b>: a place where *people* work.
+<b>workspace</b>: the area in which *a person* works.
 
 <b>secondary</b>: not primary, but lower in importance.
 <b>incidental</b>: accompanying in connection with something major.
-<b>mention</b>: speak or write about someone or something "briefly, especially in a incidental way".
+<b>mention</b>: speak or write about someone or something *briefly, especially in a incidental way*.
 **allude to**: mention without discussing at length.
 **refer to**<sup>1</sup>: direct attention to someone or something in relation to what is being said or written: *the reports of the commission are often referred to in the media.*
 **refer to**<sup>2</sup>: describe or denote: *mathematical propositions do not refer to physical reality.*
@@ -244,12 +244,12 @@ line_indent: false
 
 <b>contend</b>: state a position while implying<sup>1</sup> opposition.
 <b>assert</b>: state something firmly and forcefully.
-<b>affirm</b>: state that "something previous" is correct.
+<b>affirm</b>: state that *something previous* is correct.
 <b>claim</b>: state that something is true, especially when it not yet be proven.
-<b>argue</b><sup>1</sup>: "give reason" in support of a position.
+<b>argue</b><sup>1</sup>: *give reason* in support of a position.
 <b>assure</b>: tell someone something confidently to dispel any doubts they may have.
 
-<b>mix</b>: mix things together so that they form "an uniform whole".
+<b>mix</b>: mix things together so that they form *an uniform whole*.
 
 <b>fail</b><sup>1</sup>: be unsuccessful in achieving one's goal.
 <b>fail</b><sup>2</sup>: judge not to have passed.
@@ -284,7 +284,7 @@ line_indent: false
 
 <b>remark</b><sup>1</sup> (v.): regard with attention.
 <b>remark</b><sup>2</sup> (n.): something said, usually briefly.
-<b>comment</b> (n.): something said or written that expresses an opinion or explanation "about a particular subject".
+<b>comment</b> (n.): something said or written that expresses an opinion or explanation *about a particular subject*.
 
 <b>passage</b><sup>1</sup> [pesidʒ]: the act or process of moving through, under, or over something on the way from one place to another.
 <b>passage</b><sup>2</sup>: a short extract from a book or other printed material.
@@ -304,16 +304,16 @@ line_indent: false
 
 <b>essay</b>: a short piece of writing on a particular subject.
 
-<b>severely</b>: to a great or intense “degree”.
+<b>severely</b>: to a great or intense *degree*.
 <b>seriously</b>: in a way that is important.
 
 <b>treat</b><sup>1</sup> (v.): behave toward in a particular way.
 <b>treat</b><sup>2</sup> (n.): an event that is out of the ordinary and gives great pleasure.
-<b>deal with</b><sup>1</sup>: take action "to handle a problem, situation, or person".
+<b>deal with</b><sup>1</sup>: take action *to handle a problem, situation, or person*.
 <b>deal with</b><sup>2</sup>: take as a subject<sup>2</sup>.
 
-<b>interest</b><sup>1</sup> (n.): the "state" of wanting to know about something.
-<b>interest</b><sup>2</sup> (n.): a "subject" about which one is concerned or enthusiastic.
+<b>interest</b><sup>1</sup> (n.): the *state* of wanting to know about something.
+<b>interest</b><sup>2</sup> (n.): a *subject* about which one is concerned or enthusiastic.
 
 <b>center</b>: the exact point that is equidistant from every point on the circumference.
 <b>middle</b>: the position between two ends or sides.
@@ -322,9 +322,9 @@ line_indent: false
 <b>take care of</b><sup>2</sup>: keep someone or something safe.
 <b>care for</b>: provide care for someone, especially they are sick, old, or young.
 
-<b>vocation</b>: a strong feeling of “suitability”  for a particular career or occupation.
-<b>calling</b> (n.): "a strong inner feeling" that a particular life purpose is what one is meant to do.
-<b>mission</b><sup>2</sup>: "an important task or purpose" that someone feels a strong sense of duty to carry out.
+<b>vocation</b>: a strong feeling of *suitability*  for a particular career or occupation.
+<b>calling</b> (n.): *a strong inner feeling* that a particular life purpose is what one is meant to do.
+<b>mission</b><sup>2</sup>: *an important task or purpose* that someone feels a strong sense of duty to carry out.
 
 <b>conclusion</b><sup>2</sup>: the summing-up of a text.
 <b>closing</b>: the end of an event or activity.
@@ -338,8 +338,8 @@ line_indent: false
 
 <b>document</b>: a piece of written or printed material that contains information.
 <b>paperwork</b>: routine documents involved in an administrative process.
-<b>text</b><sup>1</sup>: written or printed words considered as "language content".
-<b>text</b><sup>2</sup>: the main body of a piece of writing, as "distinct from other material such as illustrations".
+<b>text</b><sup>1</sup>: written or printed words considered as *language content*.
+<b>text</b><sup>2</sup>: the main body of a piece of writing, as *distinct from other material such as illustrations*.
 
 <b>count</b><sup>1</sup> (v.): determine the total number of.
 <b>count</b><sup>2</sup> (v.): recite numbers in ascending order.
@@ -365,7 +365,7 @@ line_indent: false
 
 <b>anxiety</b>: a feeling of worry.
 <b>insecurity</b>: anxiety about oneself; lack of confidence.
-<b>distress</b>: "extreme" anxiety or sorrow.
+<b>distress</b>: *extreme* anxiety or sorrow.
 **suffering** (n.): the state of undergoing pain or distress.
 **hardship**: severe suffering or privation.
 
@@ -383,7 +383,7 @@ line_indent: false
 <b>sensitivity</b>: the quality<sup>2</sup> of being sensitive.
 <b>quality</b><sup>2</sup>: the degree of excellence of something.
 
-<b>collaborate with</b>: work jointly on an activity, especially "to produce something".
+<b>collaborate with</b>: work jointly on an activity, especially *to produce something*.
 <b>cooperate in</b>: work jointly toward the same end.
 <b>cooperate with</b>: assist someone or comply with their requests.
 
@@ -391,15 +391,15 @@ line_indent: false
 <b>dramatically</b>: to a strikingly large extent.
 <b>sharply</b>: with a sudden and dramatical change.
 
-<b>tip</b>: a small but useful piece of "advice".
+<b>tip</b>: a small but useful piece of *advice*.
 <b>secret</b>: a valid but not commonly known method.
 
-<b>modern</b>: relating to the present "as opposed to the past" (implying relative comparison).
+<b>modern</b>: relating to the present *as opposed to the past* (implying relative comparison).
 <b>contemporary</b>: occurring in the present (implying periodization).
 
 <b>better</b><sup>2</sup> (adv.): to a greater degree.
 
-<b>relationship</b>: "the way" in which people or things are connected: <i>romantic relationship, working relationship.</i>
+<b>relationship</b>: *the way* in which people or things are connected: <i>romantic relationship, working relationship.</i>
 <b>connection</b>: a link between two people or things: <i>connection between stress and sleep problems.</i>
 <b>relevance</b>: the quality of being closely connected or appropriate: <i>its relevance to the topic.</i>
 <b>involvement</b>: the fact of being involved with something: <i>his involvement in the crime.</i>
@@ -424,9 +424,9 @@ line_indent: false
 <b>utility</b><sup>2</sup> (adj.): being able to perform several functions.
 
 <b>landscape</b>: all the visible features of an area of land: <i>a desert landscape \| the urban landscape.</i>
-<b>scenery</b>: the natural features of a landscape considered in terms of their appearance, "especially when picturesque".
+<b>scenery</b>: the natural features of a landscape considered in terms of their appearance, *especially when picturesque*.
 
-<b>shortage</b>: a situation in which something is not supplied sufficiently "for a demand".
+<b>shortage</b>: a situation in which something is not supplied sufficiently *for a demand*.
 <b>scarcity</b>: the state of being rare, often as a structural condition.
 <b>famine</b> [ˈfemin]: extreme scarcity of food, causing widespread starvation.
 **privation**: a state in which things that are essential for human well-being such as warmth and food are scarce.
@@ -449,20 +449,20 @@ line_indent: false
 <b>widespread</b>: found over a large area or number of people.
 
 <b>learning</b> (n.): the acquisition of knowledge.
-<b>study</b> (n.): "the devotion of time and attention" to acquiring knowledge.
+<b>study</b> (n.): *the devotion of time and attention* to acquiring knowledge.
 <b>studies</b>: study as pursued by one person.
 
 <b>account for</b>: provide or serve as a reason<sup>1</sup> for something.
-<b>illustrate</b><sup>2</sup>: explain something "by using pictures or examples".
-<b>demonstrate</b>: clearly show the existence or truth of something "by giving proof or evidence".
+<b>illustrate</b><sup>2</sup>: explain something *by using pictures or examples*.
+<b>demonstrate</b>: clearly show the existence or truth of something *by giving proof or evidence*.
 **elaborate**: explain something more fully by adding details.
 
 **express**: make a thought, feeling, or quality noticeable.
 <b>describe</b>: give an account in words of someone or something.
-<b>depict</b> [diˈpikt]: represent "by drawing or painting".
+<b>depict</b> [diˈpikt]: represent *by drawing or painting*.
 
 **depiction**: the concrete result of depicting something, especially in art: *the painting's horrific depiction of war.*
-**portrayal**: the representation of someone or something "in a particular way or as being of a certain nature": *the media portrayal of immigration.*
+**portrayal**: the representation of someone or something *in a particular way or as being of a certain nature*: *the media portrayal of immigration.*
 **profile** [proʊfail]: a short outline of the main facts or features of a person or thing.
 
 <b>instruction</b>: information that tells someone how to do.
@@ -476,7 +476,7 @@ line_indent: false
 <b>promote</b>: further the progress of something.
 <b>development</b>: the process of developing.
 <b>advance</b> [ədˈvens] (n.): a forward movement.
-<b>growth</b>: the process of "increasing in physical size" such as amount, number, etc.
+<b>growth</b>: the process of *increasing in physical size* such as amount, number, etc.
 
 <b>in spite of that</b> (adv.): nevertheless.
 
@@ -521,9 +521,9 @@ line_indent: false
 
 <b>walk</b> (n.): an act of traveling.
 
-<b>desire</b>: a "feeling" of wanting something.
-<b>intention</b>: a "plan or purpose" that someone has in mind before acting.
-<b>volition</b>: a "faculty" of acting or deciding something by your own will, especially despite inner resistance or psychological obstacles.
+<b>desire</b>: a *feeling* of wanting something.
+<b>intention</b>: a *plan or purpose* that someone has in mind before acting.
+<b>volition</b>: a *faculty* of acting or deciding something by your own will, especially despite inner resistance or psychological obstacles.
 <b>faculty</b>: an inherent mental power: *her critical faculty.*
 
 <b>recognize</b> [rekəgnaiz]: identify someone or something as already known.
@@ -559,7 +559,7 @@ line_indent: false
 <b>extend</b>: make something longer.
 <b>expand</b>: make something larger or broader.
 
-<b>uneasy</b>: slightly uncomfortable ("vague sense" that something is wrong).
+<b>uneasy</b>: slightly uncomfortable (*vague sense* that something is wrong).
 <b>anxious</b>: experiencing worry about an imminent event.
 
 <b>era</b>: a distinctive period of history defined by major events: <i>the Obama era.</i>
@@ -614,7 +614,7 @@ line_indent: false
 
 **arbitrarily** [ˌɑrbeˈtrerəli].
 
-**accountable**: (of a person, organization, or institution) required or expected to justify actions or decisions: *parents are **responsible for** their children's actions.*
+**accountable**: (of a person, organization, or institution) required or expected to justify actions or decisions: *parents are **accountable for** their children's actions.*
 **accountability**: the fact or condition of being accountable: *their lack of accountability has corroded public respect.*
 **responsible**<sup>1</sup>: having the duty to take care of a task, person, or thing: *she is **responsible for** the marketing team.*
 **responsibility**: the fact or state of having duty to do something.
@@ -633,7 +633,7 @@ line_indent: false
 **accurately**: in a way that is correct.
 
 **release**<sup>1</sup>: let someone or something go free.
-**liberate**: set someone free from a situation "in which their liberty is severely restricted".
+**liberate**: set someone free from a situation *in which their liberty is severely restricted*.
 
 **reveal**: make something known.
 **release**<sup>2</sup>: make information available to the public.
@@ -684,7 +684,7 @@ line_indent: false
 **arduous** [ˈɑːr.dʒu.əs]: involving strenuous exertion; difficult and tiring.
 **quest**: a long and arduous search for something.
 
-**effort** [ˈefərt]: an attempt to "accomplish" something.
+**effort** [ˈefərt]: an attempt to *accomplish* something.
 **hard work** (n.): a great deal of effort: *it takes hard work to be successful in business.*
 <b>strive</b> (v.): make great effort to achieve something.
 <b>endeavor</b> [inˈdev.ər] (n.): an attempt to achieve something.
@@ -724,7 +724,7 @@ line_indent: false
 
 **incessant**: (of something regarded as unpleasant) continuing without pause or interruption: *the incessant barking kept me awake all night.*
 **relentless**: incessant with the same force or pressure without weakening: *the team faced relentless pressure in the second half.*
-**indefinite**: lasting for an "unlimited period of time".
+**indefinite**: lasting for an *unlimited period of time*.
 
 **attendant** (adj.): occurring as a result of: *the regular change of the seasons and the attendant influence on the weather.*
 
@@ -761,7 +761,7 @@ line_indent: false
 
 **compatible**: (of two things) able to exist or occur together without conflict: *this makes the usual polynomial notation completely **compatible with** the underlying set-theoretic definition.*
 
-**refine**<sup>2</sup>: improve something "by making small adjustments" that increase its precision.
+**refine**<sup>2</sup>: improve something *by making small adjustments* that increase its precision.
 **revise**: re-examine and make alterations to (written or printed matter).
 
 **present**<sup>1</sup> [priˈzent] (v.): give or award formally: *a top executive will **present** an award **to** him.*
@@ -769,7 +769,7 @@ line_indent: false
 **present**<sup>3</sup> (v.): represent (someone or something) to others in a particular way: *he **presented himself as** a hardworking man.*
 **put forward**: present<sup>2</sup> a proposal or theory for consideration: *scientists will put forward models of the world.*
 
-**provide (someone) (with-PP)**: give someone "something that is needed or useful" for a particular purpose.
+**provide (someone) (with-PP)**: give someone *something that is needed or useful* for a particular purpose.
 
 **blueprint** (n.): a detailed guide or plan for building or organizing something: *the **blueprint for** modern science.*
 
@@ -797,4 +797,4 @@ line_indent: false
 **juxtaposition** [ˌdʒʌk.stə.pəˈziʃ.ən]: the fact of two things being seen or placed close together.
 **collocation**: *Linguistics* the habitual juxtaposition of a particular word with another word.
 
-**characterize**: describe the distinctive nature of someone or something: *Heine–Borel theorem characterize compact subsets of a Euclidean space.*
+**characterize**: describe the distinctive nature of someone or something: *Heine–Borel theorem characterize compact subsets of Euclidean space.*
