@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Semantics
+title: External
 index_page: true
 ---
 
