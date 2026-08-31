@@ -7,8 +7,8 @@ category_path:
   - 3. Analysis
   - 1. Introduction to Analysis
   - 2. Metric Spaces
-created_at: 2026-08-25 12:05:21 +0900
-last_modified_at: 2026-08-29 10:34:52 +0900
+created_at: 2026-08-31 15:32:11 +0900
+last_modified_at: 2026-08-31 15:32:11 +0900
 ---
 $A$ is *perfect* if it contains all of its limit points, and every point of $A$ itself is a limit point, that is, $A=A'$. In other words, a perfect set is closed, and none of its own points is locally isolated from the rest of the set. Density answers how widely $A$ spreads throughout the ambient space $M$. If any point of $M$ cannot locally avoid $A$, then $A$ is said to be *dense* in $M$. Equivalently, $A$ is dense in $M$ if $M = \overline A$.
 

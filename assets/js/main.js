@@ -5,7 +5,7 @@
 
   var labelPattern = /^(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle)\s+(\d+(?:\.\d+)+)\.?/;
   var sourceLabelPattern = /(?:\*\*|<(?:strong|b)\b[^>]*>)\s*(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle)\s+(\d+(?:\.\d+)+)\.?(?=\s|\*|\)|<\/(?:strong|b)>)/g;
-  var referencePattern = /\b(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle)\s+(\d+(?:\.\d+)+)\b/g;
+  var referencePattern = /\b\d+(?:\.\d+)+\b/g;
   var entryLabelPattern = /^(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle|Notation|Axiom|Exercise)\s+\d+(?:\.\d+)*\.?/;
   var proofMarkerPattern = /^(?:Proof|Subproof|Solution)(?:\s+\d+)?\.?$/i;
   var italicStatementKinds = {
@@ -135,7 +135,7 @@
     window.location.hash = hash;
   }
 
-  function buildLabelTargets(sources) {
+  function buildNumberTargets(sources) {
     var targets = {};
 
     sources.forEach(function (source) {
@@ -144,8 +144,16 @@
       sourceLabelPattern.lastIndex = 0;
 
       while ((match = sourceLabelPattern.exec(source.content))) {
-        var label = makeLabel(match[1], match[2]);
-        targets[label] = source.url + '#' + makeAnchorId(match[1], match[2]);
+        var number = match[2];
+        var href = source.url + '#' + makeAnchorId(match[1], number);
+
+        if (Object.prototype.hasOwnProperty.call(targets, number)) {
+          if (targets[number] !== href) {
+            targets[number] = null;
+          }
+        } else {
+          targets[number] = href;
+        }
       }
     });
 
@@ -744,8 +752,8 @@
     referencePattern.lastIndex = 0;
 
     while ((match = referencePattern.exec(text))) {
-      var label = makeLabel(match[1], match[2]);
-      var href = targets[label];
+      var numberText = match[0];
+      var href = targets[numberText];
       var link;
       var number;
 
@@ -754,16 +762,15 @@
       }
 
       fragment.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
-      fragment.appendChild(document.createTextNode(match[1] + ' '));
 
       link = document.createElement('a');
       link.className = 'math-ref-link';
       link.href = href;
-      link.setAttribute('aria-label', match[0]);
+      link.setAttribute('aria-label', 'Reference ' + numberText);
 
       number = document.createElement('span');
       number.className = 'math-ref-number';
-      number.textContent = match[2];
+      number.textContent = numberText;
       link.appendChild(number);
 
       fragment.appendChild(link);
@@ -873,7 +880,7 @@
       return;
     }
 
-    linkReferences(postBody, buildLabelTargets(sources));
+    linkReferences(postBody, buildNumberTargets(sources));
     bindReferenceLinkClicks(postBody);
     settleHashScroll();
   }
