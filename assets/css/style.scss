@@ -41,7 +41,7 @@
 
 :root {
   /* Adjust this value to resize every site-level content container at once. */
-  --site-max-width: 57rem;
+  --site-max-width: 56rem;
   --reading-serif: "New Computer Modern", "Computer Modern",
     "Latin Modern Roman", serif;
   --interface-sans: var(--reading-serif);
@@ -269,8 +269,12 @@ blockquote mjx-container {
 
 /* Responsive */
 @media screen and (max-width: 64rem) {
+  html {
+  font-size: 16.5px;
+  }
+
   :root {
-  --site-max-width: 53rem;
+  --site-max-width: 48rem;
   }
 
   .main-content {
