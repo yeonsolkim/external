@@ -433,7 +433,7 @@
       }
     },
     output: {
-      font: 'mathjax-tex',
+      font: 'mathjax-newcm',
       displayOverflow: scrollDisplayMath ? 'overflow' : 'linebreak',
       linebreaks: {
         inline: true,
@@ -444,7 +444,6 @@
     svg: {
       blacker: mathBlacker,
       fontCache: 'none',
-      scale: 0.95,
       exFactor: 0.5,
       displayAlign: 'center',
       displayOverflow: scrollDisplayMath ? 'overflow' : 'linebreak',

@@ -4,28 +4,46 @@
 @import "jekyll-theme-cayman";
 
 @font-face {
-  font-family: "STIX Two Text Web";
+  font-family: "New Computer Modern";
   font-style: normal;
-  font-weight: 400 700;
+  font-weight: 400;
   font-display: swap;
-  src: url("../fonts/stix-two/STIXTwoText-Variable.woff2")
+  src: url("../fonts/new-computer-modern/NewCM10-Book.woff2")
     format("woff2");
 }
 
 @font-face {
-  font-family: "STIX Two Text Web";
+  font-family: "New Computer Modern";
   font-style: italic;
-  font-weight: 400 700;
+  font-weight: 400;
   font-display: swap;
-  src: url("../fonts/stix-two/STIXTwoText-Italic-Variable.woff2")
+  src: url("../fonts/new-computer-modern/NewCM10-BookItalic.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "New Computer Modern";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/new-computer-modern/NewCM10-Bold.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "New Computer Modern";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/new-computer-modern/NewCM10-BoldItalic.woff2")
     format("woff2");
 }
 
 :root {
   /* Adjust this value to resize every site-level content container at once. */
   --site-max-width: 57rem;
-  --reading-serif: "STIX Two Text Web", "STIX Two Text",
-    "Iowan Old Style", Georgia, serif;
+  --reading-serif: "New Computer Modern", "Computer Modern",
+    "Latin Modern Roman", serif;
   --interface-sans: var(--reading-serif);
 }
 
@@ -130,7 +148,7 @@ body {
 .breadcrumb-item a[aria-current="page"],
 .breadcrumb-label[aria-current="page"] {
   color: #202122 !important;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .breadcrumb-label {

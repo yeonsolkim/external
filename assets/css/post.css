@@ -4,7 +4,7 @@ width: 100% !important;
 box-sizing: border-box !important;
 word-wrap: break-word;
 line-height: 1.5;
-color: #333;
+color: #1f1f1f;
 }
 
 .post-header {
@@ -16,7 +16,7 @@ text-align: left;
 .post-title {
 max-width: 100%;
 margin: 0 !important;
-color: #222226 !important;
+color: #000000 !important;
 font-family: var(--reading-serif);
 font-size: 1.7rem !important;
 font-weight: bold !important;
@@ -98,6 +98,7 @@ margin-bottom: 0 rem;
 .post-body { 
   max-width: none !important ;
   line-height: 1.5;
+  word-spacing: -0.04em;
 }
 
 .post-body.math-scroll {
@@ -109,8 +110,14 @@ margin-bottom: 0 rem;
   margin-top: 0;
 }
 
-article.post[data-reference-scope="dictionary"] .post-body .dictionary-annotation {
-  color: #9c9c9c;
+article.post[data-reference-scope="dictionary"] .post-body .dictionary-annotation,
+article.post[data-reference-scope="dictionary"] .post-body .dictionary-annotation strong { 
+  color: #9c9c9c !important;
+}
+
+.post-body strong,
+.post-body b {
+  color: #000000;
 }
 
 .post-body a:not(.math-ref-link) {
@@ -444,9 +451,9 @@ line-height: 1;
 .post-body a.math-ref-link .math-ref-number::after {
 content: "";
 position: absolute;
-top: -0.12em;
+top: 0.1em;
 right: 0;
-bottom: 0.12em;
+bottom: 0;
 left: 0;
 border: 0.7px solid red;
 pointer-events: none;
