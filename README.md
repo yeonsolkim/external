@@ -142,6 +142,12 @@ structure.
 
 ### Math and Post Styling
 
+- `assets/css/style.scss` self-hosts New Computer Modern 10 Book for the
+  site's roman and italic text, with the matching bold faces. The font files
+  and their GUST Font License are kept under
+  `assets/fonts/new-computer-modern`.
+- MathJax uses its `mathjax-newcm` output font so formulas match the site's
+  New Computer Modern text without changing the existing SVG renderer.
 - `assets/js/mathjax-config.js` prepares math before MathJax runs. It handles
   raw `$...$` fallback normalization, list items containing display math,
   ordered-list marker prefixes, mobile math scrolling, and MathJax startup
