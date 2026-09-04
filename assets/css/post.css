@@ -98,7 +98,7 @@ margin-bottom: 0 rem;
 .post-body { 
   max-width: none !important ;
   line-height: 1.5;
-  word-spacing: -0.04em;
+  word-spacing: -0.045em;
 }
 
 .post-body.math-scroll {

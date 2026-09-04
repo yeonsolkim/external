@@ -279,11 +279,14 @@ blockquote mjx-container {
 
   .main-content {
     font-size: 1rem !important;
-    line-height: 1.55 !important;
   }
 }
 
 @media screen and (max-width: 47.9375rem) {
+  html {
+  font-size: 15.5px;
+  }
+
   :root {
   --site-max-width: 57rem;
   }
