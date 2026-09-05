@@ -6,7 +6,7 @@ category_path:
   - 3. English
   - 2. Dictionary
 created_at: 2026-08-10 15:41:50 +0900
-last_modified_at: 2026-08-30 14:16:23 +0900
+last_modified_at: 2026-09-05 15:57:56 +0900
 
 line_indent: false
 ---
@@ -203,8 +203,6 @@ line_indent: false
 <b>pro</b>: a consideration supporting *one choice*.
 <b>benefit</b>: an actually good effect of gain from something.
 <b>merit</b>: a feature of something that gives it genuine worth or value.
-
-<b>genuine</b> [ˈdʒen.ju.in].
 
 <b>anticipate</b> [enˈtisipeit]: think about something before it happens.
 <b>look forward to</b>: anticipate with pleasure.
@@ -486,32 +484,10 @@ line_indent: false
 <b>ambassador</b><sup>2</sup>: a person who acts as a representative or promoter of a particular body or activity.
 <b>representative</b><sup>2</sup>: an example of a class<sup>2</sup>.
 
-<b>idiomatic</b> [it̬iəˈmet̬ik].
-<b>idiom</b> [ˈit̬iəm].
-<b>monetary</b> [ˈmɑnəteri].
-
 <b>concise</b>: giving the necessary information clearly and in a few worlds.
 <b>brief</b>: of short duration.
 
 <b>settle for</b>: accept or agree to something that one considers to be less than satisfactory.
-
-<b>revenue</b> [ˈrevənu].
-<b>defy</b> [diˈfai].
-<b>retrospection</b> [ˌretrəˈspekʃən].
-<b>quality</b> [ˈkwɑlət̬i].
-<b>surface</b> [ˈsərfis].
-<b>Switzerland</b> [ˈswit.sər.lend].
-
-<b>auxiliary</b> [əɡˈzileri].
-<b>gerund</b> [ˈdʒerənd].
-<b>preterite</b> [ˈpret̬ərit].
-<b>predicate</b> [ˈpret̬eket] (n.).
-<b>predicate</b> [ˈpret̬ikeit] (v.).
-<b>clause</b> [kləz].
-<b>interrogative</b> [ˌint̬əˈrɑɡet̬iv].
-<b>participial</b> [ˌpɑrt̬iˈsipiəl].
-<b>pragmatic</b> [preɡˈmet̬ik].
-<b>pronoun</b> [ˈpronaʊn].
 
 <b>if</b><sup>2</sup> (p.): whenever.
 <b>when</b> (p.): temporal background.
@@ -571,7 +547,7 @@ line_indent: false
 <b>gender</b>: identities concerning social differences rather than biological ones.
 
 <b>passion</b>: a deep emotional drive, especially the one that runs through one's life.
-<b>enthusiasm</b> [inˈθuː.zi.æzm]: intense and eager interest or enjoyment, especially the one lasting in a short period.
+<b>enthusiasm</b> [inˈθuziæzm]: intense and eager interest or enjoyment, especially the one lasting in a short period.
 
 <b>compulsory</b>: required by a law or rule, with no choice to refuse.
 <b>mandatory</b>: officially required by a law or rule.
@@ -612,8 +588,6 @@ line_indent: false
 
 **then**<sup>2</sup> (adv.): after that.
 
-**arbitrarily** [ˌɑrbeˈtrerəli].
-
 **accountable**: (of a person, organization, or institution) required or expected to justify actions or decisions: *parents are **accountable for** their children's actions.*
 **accountability**: the fact or condition of being accountable: *their lack of accountability has corroded public respect.*
 **responsible**<sup>1</sup>: having the duty to take care of a task, person, or thing: *she is **responsible for** the marketing team.*
@@ -646,10 +620,10 @@ line_indent: false
 
 **reveal**<sup>2</sup>: cause or allow<sup>1</sup> something to be seen.
 
-**serendipity** [ˌserənˈdipit̬i]: the occurrence of finding something valuable, pleasant, or useful by chance.
+**serendipity** [serənˈdipit̬i]: the occurrence of finding something valuable, pleasant, or useful by chance.
 
 **instant**: coming with little waiting.
-**instantaneous** [in.stənˈtei.ni.əs]: occurring or done in an instant.
+**instantaneous** [instənˈteiniəs]: occurring or done in an instant.
 **immediate**: happening right after something else: *the book's success was immediate.*
 **prompt**: (of a response) done quickly and without unnecessary delay.
 
@@ -667,12 +641,12 @@ line_indent: false
 
 **while**: at the same time as.
 
-**utilitarian** [juːtil.əˈter.i.ən]: designed to be useful rather than attractive.
+**utilitarian** [jutiləˈteriən]: designed to be useful rather than attractive.
 **practical**: likely to succeed or be effective in real circumstances.
 **pragmatic**: dealing with things in a way that is based on practical rather than theoretical considerations.
 
 **compilation**: a thing that is put together by assembling previously separate items.
-**digest** [ˈdai.dʒest] (n.): a summary of collected materials.
+**digest** [ˈdaidʒest] (n.): a summary of collected materials.
 
 **for the sake of**: for the purpose of.
 
@@ -794,7 +768,7 @@ line_indent: false
 
 **prototype**: a first or preliminary model of something, from which other forms are developed: *the prototype of an $n$-dimensional manifold is an $n$-dimensional Euclidean space.*
 
-**juxtaposition** [ˌdʒʌk.stə.pəˈziʃ.ən]: the fact of two things being seen or placed close together.
+**juxtaposition** [dʒʌkstəpəˈziʃən]: the fact of two things being seen or placed close together.
 **collocation**: *Linguistics* the habitual juxtaposition of a particular word with another word.
 
 **characterize**: describe the distinctive nature of someone or something: *Heine–Borel theorem characterize compact subsets of Euclidean space.*
