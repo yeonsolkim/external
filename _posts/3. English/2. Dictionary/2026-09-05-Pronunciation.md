@@ -6,7 +6,9 @@ category_path:
   - 3. English
   - 2. Dictionary
 created_at: 2026-09-05 11:24:15 +0900
-last_modified_at: 2026-09-05 15:58:08 +0900
+last_modified_at: 2026-09-05 18:53:13 +0900
+
+line_indent: false
 ---
 
 <b>revenue</b> [ˈrevənu].
