@@ -4,7 +4,7 @@ title: "Time Interval"
 date: 2026-05-21 00:00:00 +0900
 category_path:
   - Others
-  - 1. Essays
+  - 3. Essays
 created_at: 2026-08-06 13:53:49 +0900
 last_modified_at: 2026-08-24 16:19:04 +0900
 ---

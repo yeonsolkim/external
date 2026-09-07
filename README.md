@@ -172,6 +172,9 @@ structure.
 - `assets/css/style.scss` imports the Cayman theme and applies global site
   overrides. The front matter at the top is intentional so Jekyll processes the
   Sass file.
+- To prevent line breaks in selected table columns, put an inline attribute list
+  directly below the table, such as `{:nowrap-columns="1,3"}`. Column numbers are
+  one-based; commas and spaces can both separate multiple columns.
 - `assets/css/index.css` is only for the home page category tree and edited
   time labels.
 

@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Vocabularies"
+title: "Vocabularies I"
 date: 2026-04-25 00:00:00 +0900
 category_path:
   - 3. English
   - 2. Dictionary
 created_at: 2026-08-10 15:41:50 +0900
-last_modified_at: 2026-09-05 18:53:15 +0900
+last_modified_at: 2026-09-07 18:15:02 +0900
 
 line_indent: false
 ---
@@ -28,9 +28,9 @@ line_indent: false
 <b>tradition</b>: a *long-established custom* that has been passed on from one generation to another.
 <b>traditional</b>: existing as a part of tradition.
 
-<b>society</b> [səˈsaiət̬i]: the aggregate of people living together.
+<b>society</b> \|səˈsaiət̬i\|: the aggregate of people living together.
 <b>civilization</b>: advanced human society with organized communities and develop systems such as government, law, religion, and culture.
-<b>folk</b> [foʊk] (adj.): relating to the traditional art of a society.
+<b>folk</b> \|foʊk\| (adj.): relating to the traditional art of a society.
 
 <b>campaign</b>: organized actions carried out to achieve a particular goals.
 <b>movement</b><sup>2</sup>: a campaign undertaken by a broad group of people working together to advance their social or political ideas.
@@ -83,17 +83,17 @@ line_indent: false
 <b>formal</b><sup>1</sup>: done in accordance with rules of conventions or etiquette.
 <b>formal</b><sup>2</sup>: concerned with outward form or appearance, as distinct from content.
 <b>distinct</b>: recognizably different and clearly separate.
-<b>resemble</b> [rizembl].
+<b>resemble</b> \|rizembl\|.
 
-<b>ascertain</b> [esərˈtein]: make sure of: *an attempt to ascertain the cause of the accident.*
+<b>ascertain</b> \|esərˈtein\|: make sure of: *an attempt to ascertain the cause of the accident.*
 <b>determine</b><sup>2</sup>: ascertain exactly, as a result of research or calculation.
 <b>confirm</b>: establish correctness of something previously suspected.
 
 <b>moral</b>: concerned with the principles of right and wrong of human.
 <b>ethics</b>: moral principles.
 <b>just</b><sup>1</sup> (adj.): *behaving* according to what is morally right.
-<b>justice</b>: just behavior or treatment.
-<b>treatment</b>: the manner in which someone behaves toward someone or something.
+<b>justice</b>: just behavior or treatment<sup>1</sup>.
+<b>treatment</b><sup>1</sup>: the manner in which someone behaves toward someone or something.
 
 <b>integrity</b><sup>1</sup>: the quality of being honest.
 <b>integrity</b><sup>2</sup>: the state of being whole and undivided.
@@ -109,7 +109,7 @@ line_indent: false
 <b>revoke</b>: put an end to a permission or license.
 
 <b>practice</b><sup>2</sup>: the *actual* application of an idea.
-<b>discipline</b> [ˈdisəsplin]: the practice of training people to obey rules.
+<b>discipline</b> \|ˈdisəsplin\|: the practice of training people to obey rules.
 <b>enforce</b>: compel<sup>2</sup> observance of a law or rule.
 <b>compel</b><sup>1</sup>: force someone to do something.
 <b>compel</b><sup>2</sup>: bring about something by the use of force.
@@ -118,10 +118,10 @@ line_indent: false
 <b>hurriedly</b>: in a rushed manner.
 <b>secret</b> (adj.): not known or not meant to be known by others.
 <b>secretly</b>: in a secret way.
-<b>abscond</b> [əbˈskənd]: leave hurriedly and secretly.
-<b>accentuate</b> [ekˈsentʃueit]: make more noticeable.
-<b>access</b> [ˈekses] (n.): the right or opportunity to use or approach something.
-<b>abuse</b> [əbjus]: use something to bad effect.
+<b>abscond</b> \|əbˈskənd\|: leave hurriedly and secretly.
+<b>accentuate</b> \|ekˈsentʃueit\|: make more noticeable.
+<b>access</b> \|ˈekses\| (n.): the right or opportunity to use or approach something.
+<b>abuse</b> \|əbjus\|: use something to bad effect.
 
 <b>restore</b>: return to a former condition.
 
@@ -129,7 +129,7 @@ line_indent: false
 <b>liberal</b><sup>2</sup>: relating to a political and social philosophy that promotes individual right.
 <b>conservative</b>: favoring socially traditional ideas (contrasted with liberal<sup>1</sup>).
 
-<b>primarily</b> [praiˈmerəli]: as the chief or central thing rather than a secondary one.
+<b>primarily</b> \|praiˈmerəli\|: as the chief or central thing rather than a secondary one.
 <b>mostly</b>: to a great extent.
 <b>largely</b>: mostly, but not completely.
 
@@ -141,7 +141,7 @@ line_indent: false
 **type**<sup>2</sup>: a person or thing considered as a representative of a type<sup>1</sup>: *I'm an adventurous type.*
 
 <b>pick out</b> (v.): choose someone or something from a number of alternatives.
-<b>alternative</b> [əlˈtər.nə.t̬iv].
+<b>alternative</b> \|əlˈtər.nə.t̬iv\|.
 <b>get rid of</b>: take action so as to be free of a troublesome or unwanted person or thing.
 
 <b>so as (to-infinitival clause)</b>: in order (to-infinitival clause).
@@ -164,7 +164,7 @@ line_indent: false
 <b>imperative</b>: extremely important and *needing immediate attention*.
 <b>crucial</b>: decisive in the success or failure of something.
 
-**preliminary** [prɪˈlimineri] (adj.): denoting an event preceding for something more important.
+**preliminary** \|prɪˈlimineri\| (adj.): denoting an event preceding for something more important.
 
 **foreground** (v.): make something the most important feature.
 
@@ -192,19 +192,19 @@ line_indent: false
 <b>home</b>: the place where *one* lives permanently, especially as a member of a family.
 <b>residence</b>: a place where someone lives, especially in a legal or official sense.
 
-<b>compromise</b> [ˈkɑmprəmaiz]: an agreement reached by *mutual concession*.
+<b>compromise</b> \|ˈkɑmprəmaiz\|: an agreement reached by *mutual concession*.
 <b>settlement</b>: an agreement that *brings a dispute to an end*.
 
 <b>equal</b>: *being* the same in quantity or degree.
 <b>fair</b>: *treating* people without giving an unfair advantage to one side.
 
-<b>advantage</b><sup>1</sup> [ədˈvent̬idʒ]: a condition that makes someone or something more successful or effective than others: *she had an **advantage** **over** her mother's generation.*
+<b>advantage</b><sup>1</sup> \|ədˈvent̬idʒ\|: a condition that makes someone or something more successful or effective than others: *she had an **advantage** **over** her mother's generation.*
 **advantage**<sup>2</sup>: the opportunity to gain something.
 <b>pro</b>: a consideration supporting *one choice*.
 <b>benefit</b>: an actually good effect of gain from something.
 <b>merit</b>: a feature of something that gives it genuine worth or value.
 
-<b>anticipate</b> [enˈtisipeit]: think about something before it happens.
+<b>anticipate</b> \|enˈtisipeit\|: think about something before it happens.
 <b>look forward to</b>: anticipate with pleasure.
 
 <b>forecast</b>: predict future conditions or developments, especially by analyzing data.
@@ -256,7 +256,7 @@ line_indent: false
 <b>director</b><sup>1</sup>: a person who supervise staff for a movie or program, etc.
 <b>director</b><sup>2</sup>: a person who is in charge of a department or activity.
 <b>director</b><sup>3</sup>: a member of the board of people that oversees the affairs of a business.
-<b>direct</b> [diˈrekt].
+<b>direct</b> \|diˈrekt\|.
 
 <b>damage</b>: harm caused to something; one that causes specific and noticeable impairment on its function or value.
 
@@ -269,7 +269,7 @@ line_indent: false
 <b>feature</b>: a noticeable property<sup>1</sup>.
 <b>characteristic</b>: a typical quality of a type<sup>1</sup>.
 <b>trait</b>: a distinguishing quality belongs to a person.
-**nature**<sup>2</sup>: *[in singular]* the inherent features of something: *I realized the nature of the problems.*
+**nature**<sup>2</sup>: *\|in singular\|* the inherent features of something: *I realized the nature of the problems.*
 
 <b>property</b><sup>2</sup>: something that is owned by a person or group.
 <b>asset</b>: a useful or valuable thing or person.
@@ -284,19 +284,19 @@ line_indent: false
 <b>remark</b><sup>2</sup> (n.): something said, usually briefly.
 <b>comment</b> (n.): something said or written that expresses an opinion or explanation *about a particular subject*.
 
-<b>passage</b><sup>1</sup> [pesidʒ]: the act or process of moving through, under, or over something on the way from one place to another.
+<b>passage</b><sup>1</sup> \|pesidʒ\|: the act or process of moving through, under, or over something on the way from one place to another.
 <b>passage</b><sup>2</sup>: a short extract from a book or other printed material.
 
-<b>abate</b> [əˈbeit]: become less intense.
+<b>abate</b> \|əˈbeit\|: become less intense.
 
-<b>abet</b> [əˈbet]: encourage or assist someone, in particular, to commit crime.
+<b>abet</b> \|əˈbet\|: encourage or assist someone, in particular, to commit crime.
 <b>abettor</b>.
 
 <b>hate</b>: dislike very strongly.
-<b>abhor</b> [ebˈhɔl] (v.): hate something because it's unacceptable.
+<b>abhor</b> \|ebˈhɔl\| (v.): hate something because it's unacceptable.
 
-<b>abundant</b> [əˈbəndənt]: existing in large quantities.
-<b>bountiful</b> [ˈbaʊntifl]: giving generously.
+<b>abundant</b> \|əˈbəndənt\|: existing in large quantities.
+<b>bountiful</b> \|ˈbaʊntifl\|: giving generously.
 
 <b>handy</b>: useful in a convenient, practical, or easy-to-use way.
 
@@ -308,7 +308,7 @@ line_indent: false
 <b>treat</b><sup>1</sup> (v.): behave toward in a particular way.
 <b>treat</b><sup>2</sup> (n.): an event that is out of the ordinary and gives great pleasure.
 <b>deal with</b><sup>1</sup>: take action *to handle a problem, situation, or person*.
-<b>deal with</b><sup>2</sup>: take as a subject<sup>2</sup>.
+<b>deal with</b><sup>2</sup>: take as a subject<sup>2</sup>: *the novel deals with several different topics.*
 
 <b>interest</b><sup>1</sup> (n.): the *state* of wanting to know about something.
 <b>interest</b><sup>2</sup> (n.): a *subject* about which one is concerned or enthusiastic.
@@ -342,15 +342,15 @@ line_indent: false
 <b>count</b><sup>1</sup> (v.): determine the total number of.
 <b>count</b><sup>2</sup> (v.): recite numbers in ascending order.
 <b>count</b><sup>3</sup> (v.): be significant<sup>2</sup>.
-<b>significant</b><sup>2</sup> [siɡˈnifikənt]: having a particular meaning.
+<b>significant</b><sup>2</sup> \|siɡˈnifikənt\|: having a particular meaning.
 <b>count (on-PP)</b>: regard someone or something as certain for what is expected.
 <b>rely (on-PP)</b>: depend on someone or something for support.
 
 <b>freedom</b>: the right or power to act or think as one wants.
-<b>autonomy</b> [ɑˈtənəmi]: the right of self-government (of a particular resource).
+<b>autonomy</b> \|ɑˈtənəmi\|: the right of self-government (of a particular resource).
 <b>independence</b>: the state of not relying on another person or group.
 
-<b>psychological</b> [sai.kəˈlɑː.dʒi.kəl]: affecting or arising in the mind.
+<b>psychological</b> \|sai.kəˈlɑː.dʒi.kəl\|: affecting or arising in the mind.
 
 <b>attribute</b>: regard something as being caused by someone or something.
 
@@ -366,9 +366,6 @@ line_indent: false
 <b>distress</b>: *extreme* anxiety or sorrow.
 **suffering** (n.): the state of undergoing pain or distress.
 **hardship**: severe suffering or privation.
-
-<b>ease</b>: make something less severe.
-<b>relieve</b>: cause pain or distress to become less severe.
 
 <b>integrate</b>: combine one thing with another so that they become a whole.
 <b>incorporate</b>: include something as part of a whole.
@@ -405,7 +402,7 @@ line_indent: false
 <b>setting</b>: the place, situation, and atmosphere in which something happens: <i>the movie's setting feels very romantic.</i>
 <b>venue</b>: a place where an event is held: <i>the wedding venue.</i>
 <b>site</b>: a place where something exists or happens.
-<b>area</b><sup>1</sup> [ˈeriə]: a part of a place, space, or surface.
+<b>area</b><sup>1</sup> \|ˈeriə\|: a part of a place, space, or surface.
 <b>area</b><sup>2</sup>: a place allocated for a specific purpose.
 <b>region</b>: a part of a country or the world having definable characteristic.
 
@@ -414,9 +411,9 @@ line_indent: false
 <b>topic</b>: a specific matter dealt with in a text, discourse, or conversation.
 
 <b>theme</b>: the main message of a speech or a piece of writing: <i>the theme of the novel.</i>
-<b>thesis</b> [ˈθisis]: a statement that is put forward as a premise to be maintained or proved.
-**hypothesis** [haiˈpɑːθesis].
-<b>premise</b> [ˈpremis].
+<b>thesis</b> \|ˈθisis\|: a statement that is put forward as a premise to be maintained or proved.
+**hypothesis** \|haiˈpɑːθesis\|.
+<b>premise</b> \|ˈpremis\|.
 
 <b>utility</b><sup>1</sup> (n.): the state of being beneficial.
 <b>utility</b><sup>2</sup> (adj.): being able to perform several functions.
@@ -426,7 +423,7 @@ line_indent: false
 
 <b>shortage</b>: a situation in which something is not supplied sufficiently *for a demand*.
 <b>scarcity</b>: the state of being rare, often as a structural condition.
-<b>famine</b> [ˈfemin]: extreme scarcity of food, causing widespread starvation.
+<b>famine</b> \|ˈfemin\|: extreme scarcity of food, causing widespread starvation.
 **privation**: a state in which things that are essential for human well-being such as warmth and food are scarce.
 
 <b>refill</b>: fill a specific container again.
@@ -457,11 +454,11 @@ line_indent: false
 
 **express**: make a thought, feeling, or quality noticeable.
 <b>describe</b>: give an account in words of someone or something.
-<b>depict</b> [diˈpikt]: represent *by drawing or painting*.
+<b>depict</b> \|diˈpikt\|: represent *by drawing or painting*.
 
 **depiction**: the concrete result of depicting something, especially in art: *the painting's horrific depiction of war.*
 **portrayal**: the representation of someone or something *in a particular way or as being of a certain nature*: *the media portrayal of immigration.*
-**profile** [proʊfail]: a short outline of the main facts or features of a person or thing.
+**profile** \|proʊfail\|: a short outline of the main facts or features of a person or thing.
 
 <b>instruction</b>: information that tells someone how to do.
 <b>direction</b>: guidance or command about what to do or where to go.
@@ -473,14 +470,14 @@ line_indent: false
 <b>foster</b>: help the development of something over time by creating the right conditions for it.
 <b>promote</b>: further the progress of something.
 <b>development</b>: the process of developing.
-<b>advance</b> [ədˈvens] (n.): a forward movement.
+<b>advance</b> \|ədˈvens\| (n.): a forward movement.
 <b>growth</b>: the process of *increasing in physical size* such as amount, number, etc.
 
 <b>in spite of that</b> (adv.): nevertheless.
 
-<b>representative</b><sup>1</sup> [ˌrepriˈzent̬et̬iv]: a person chosen or appointed to act or speak for others.
+<b>representative</b><sup>1</sup> \|ˌrepriˈzent̬et̬iv\|: a person chosen or appointed to act or speak for others.
 <b>delegate</b>: a person sent to represent others.
-<b>ambassador</b><sup>1</sup> [emˈbeset̬ər]: an accredited diplomat sent by a country as its official representative to a foreign country.
+<b>ambassador</b><sup>1</sup> \|emˈbeset̬ər\|: an accredited diplomat sent by a country as its official representative to a foreign country.
 <b>ambassador</b><sup>2</sup>: a person who acts as a representative or promoter of a particular body or activity.
 <b>representative</b><sup>2</sup>: an example of a class<sup>2</sup>.
 
@@ -502,12 +499,12 @@ line_indent: false
 <b>volition</b>: a *faculty* of acting or deciding something by your own will, especially despite inner resistance or psychological obstacles.
 <b>faculty</b>: an inherent mental power: *her critical faculty.*
 
-<b>recognize</b> [rekəgnaiz]: identify someone or something as already known.
+<b>recognize</b> \|rekəgnaiz\|: identify someone or something as already known.
 <b>perceive</b>: become aware of something through the senses.
 <b>find</b><sup>2</sup>: perceive by chance.
 
 <b>general</b>: applying to most situations, people, or things, but not necessarily every single one.
-<b>universal</b> [juniˈvəlsl]: applying to everyone or everything, without exception.
+<b>universal</b> \|juniˈvəlsl\|: applying to everyone or everything, without exception.
 
 <b>arrange</b>: put things in a particular order.
 <b>align</b>: arrange in a straight line.
@@ -547,7 +544,7 @@ line_indent: false
 <b>gender</b>: identities concerning social differences rather than biological ones.
 
 <b>passion</b>: a deep emotional drive, especially the one that runs through one's life.
-<b>enthusiasm</b> [inˈθuziæzm]: intense and eager interest or enjoyment, especially the one lasting in a short period.
+<b>enthusiasm</b> \|inˈθuziæzm\|: intense and eager interest or enjoyment, especially the one lasting in a short period.
 
 <b>compulsory</b>: required by a law or rule, with no choice to refuse.
 <b>mandatory</b>: officially required by a law or rule.
@@ -555,7 +552,7 @@ line_indent: false
 
 <b>electronic</b><sup>1</sup>: (of a device) having many small components, especially microchips and transistors.
 **electronic**<sup>2</sup>: relating to electrons.
-<b>mobile</b> [ˈmoʊbl].
+<b>mobile</b> \|ˈmoʊbl\|.
 
 <b>more</b> (det.): a greater or additional amount of.
 <b>only too</b> (det.): an extreme degree of (often carrying negative nuance): <i>her words were only too fast.</i>
@@ -573,7 +570,7 @@ line_indent: false
 
 <b>invent</b><sup>2</sup>: make up a story, especially so as to deceive someone.
 
-<b>reputation (for-PP)</b> [re-].
+<b>reputation (for-PP)</b> \|re-\|.
 <b>secret (to-PP)</b>.
 <b>succeed (in-PP)</b> (v.).
 
@@ -581,8 +578,8 @@ line_indent: false
 
 <b>present</b> (v.): bring something to the attention of someone for consideration.
 <b>illustrate</b>:.
-**treatment**: a systematic account or discussion of a subject.
-**systematic** [ˌsisteˈmet̬ik]: done or acting according to a fixed plan.
+**treatment**<sup>2</sup>: a systematic discussion of a subject<sup>1</sup>: *the modern treatment of abstract algebra.*
+**systematic** \|sisteˈmet̬ik\|: done or acting according to a fixed plan.
 **throughout** (adv.): from beginning to an end of an event or period of time.
 **as well as**: and also.
 
@@ -597,13 +594,13 @@ line_indent: false
 **eventual**: occurring at the end of or as a result.
 
 **feeling (for-PP)** (n.): an intuitive understanding of something.
-**grasp** [ɡresp]: understand the main idea of something; get metal hold of something.
+**grasp** \|ɡresp\|: understand the main idea of something; get metal hold of something.
 **comprehend**: understand something fully.
 **appreciate**<sup>1</sup>: recognize the full implications, value, or importance of something.
 **appreciate**<sup>2</sup>: be grateful for something.
 
 **definitely**: without any doubt (used for emphasis).
-**precisely** [preˈsaisli]: in an exact and specific way, without vagueness.
+**precisely** \|preˈsaisli\|: in an exact and specific way, without vagueness.
 **accurately**: in a way that is correct.
 
 **release**<sup>1</sup>: let someone or something go free.
@@ -620,10 +617,10 @@ line_indent: false
 
 **reveal**<sup>2</sup>: cause or allow<sup>1</sup> something to be seen.
 
-**serendipity** [serənˈdipit̬i]: the occurrence of finding something valuable, pleasant, or useful by chance.
+**serendipity** \|serənˈdipit̬i\|: the occurrence of finding something valuable, pleasant, or useful by chance.
 
 **instant**: coming with little waiting.
-**instantaneous** [instənˈteiniəs]: occurring or done in an instant.
+**instantaneous** \|instənˈteiniəs\|: occurring or done in an instant.
 **immediate**: happening right after something else: *the book's success was immediate.*
 **prompt**: (of a response) done quickly and without unnecessary delay.
 
@@ -641,12 +638,12 @@ line_indent: false
 
 **while**: at the same time as.
 
-**utilitarian** [jutiləˈteriən]: designed to be useful rather than attractive.
+**utilitarian** \|jutiləˈteriən\|: designed to be useful rather than attractive.
 **practical**: likely to succeed or be effective in real circumstances.
 **pragmatic**: dealing with things in a way that is based on practical rather than theoretical considerations.
 
 **compilation**: a thing that is put together by assembling previously separate items.
-**digest** [ˈdaidʒest] (n.): a summary of collected materials.
+**digest** \|ˈdaidʒest\| (n.): a summary of collected materials.
 
 **for the sake of**: for the purpose of.
 
@@ -654,14 +651,14 @@ line_indent: false
 **brevity**: concise use of words in writing or speech: *for the sake of brevity, we generally suppress information like this.*
 
 **exertion**: the use of physical and mental energy.
-**strenuous** [ˈstren.ju.əs]: requiring great exertion.
-**arduous** [ˈɑːr.dʒu.əs]: involving strenuous exertion; difficult and tiring.
+**strenuous** \|ˈstren.ju.əs\|: requiring great exertion.
+**arduous** \|ˈɑːr.dʒu.əs\|: involving strenuous exertion; difficult and tiring.
 **quest**: a long and arduous search for something.
 
-**effort** [ˈefərt]: an attempt to *accomplish* something.
+**effort** \|ˈefərt\|: an attempt to *accomplish* something.
 **hard work** (n.): a great deal of effort: *it takes hard work to be successful in business.*
 <b>strive</b> (v.): make great effort to achieve something.
-<b>endeavor</b> [inˈdev.ər] (n.): an attempt to achieve something.
+<b>endeavor</b> \|inˈdev.ər\| (n.): an attempt to achieve something.
 
 **millennium** (*plural* **millennia**): a period of a thousand years.
 
@@ -676,7 +673,7 @@ line_indent: false
 **adept (at -PP)** (adj.): very skilled or proficient at something.
 **skill** (n.): the ability to execute specific procedures, apply structured frameworks, or utilize specialized tools: *her technical skill allowed her to execute complex code without errors.*
 **art**<sup>2</sup>: a way of doing something well, especially one that requires judgement or ingenuity: *he has mastered the art of negotiation.*
-**rhetoric** [ˈret̬ərik] (n.): the art of persuasive speaking or writing.
+**rhetoric** \|ˈret̬ərik\| (n.): the art of persuasive speaking or writing.
 
 **available**: able to be used or obtained.
 
@@ -738,7 +735,7 @@ line_indent: false
 **refine**<sup>2</sup>: improve something *by making small adjustments* that increase its precision.
 **revise**: re-examine and make alterations to (written or printed matter).
 
-**present**<sup>1</sup> [priˈzent] (v.): give or award formally: *a top executive will **present** an award **to** him.*
+**present**<sup>1</sup> \|priˈzent\| (v.): give or award formally: *a top executive will **present** an award **to** him.*
 **present**<sup>2</sup> (v.): show (something) for others to consider.
 **present**<sup>3</sup> (v.): represent (someone or something) to others in a particular way: *he **presented himself as** a hardworking man.*
 **put forward**: present<sup>2</sup> a proposal or theory for consideration: *scientists will put forward models of the world.*
@@ -768,7 +765,7 @@ line_indent: false
 
 **prototype**: a first or preliminary model of something, from which other forms are developed: *the prototype of an $n$-dimensional manifold is an $n$-dimensional Euclidean space.*
 
-**juxtaposition** [dʒʌkstəpəˈziʃən]: the fact of two things being seen or placed close together.
+**juxtaposition** \|dʒʌkstəpəˈziʃən\|: the fact of two things being seen or placed close together.
 **collocation**: *Linguistics* the habitual juxtaposition of a particular word with another word.
 
 **characterize**: describe the distinctive nature of someone or something: *Heine–Borel theorem characterize compact subsets of Euclidean space.*

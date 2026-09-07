@@ -4,7 +4,7 @@ width: 100% !important;
 box-sizing: border-box !important;
 word-wrap: break-word;
 line-height: 1.4;
-color: #000000d1;
+color: #000000d6;
 }
 
 .post-header {
@@ -20,7 +20,6 @@ color: #000000 !important;
 font-family: var(--reading-serif);
 font-size: 1.7rem !important;
 font-weight: bold !important;
-text-wrap: balance;
 padding-top: 1rem;
 }
 
@@ -72,11 +71,11 @@ color: #b0b0b4;
 }
 
 .main-content .post-header-divider {
-margin: 0 0 2rem;
+margin: 0 0 1rem;
 }
 
 .post-body-divider {
-margin: 2rem 0 -2rem !important;
+margin: 1rem 0 -2rem !important;
 }
 
 #comment-section {
@@ -449,9 +448,9 @@ line-height: 1;
 .post-body a.math-ref-link .math-ref-number::after {
 content: "";
 position: absolute;
-top: 0.1em;
+top: 0.13em;
 right: 0;
-bottom: 0;
+bottom: -0.06em;
 left: 0;
 border: 0.7px solid red;
 pointer-events: none;

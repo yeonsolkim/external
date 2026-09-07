@@ -4,7 +4,7 @@ title: "Kuru Toga KS vs. Kuru Toga ADVANCE"
 date: 2026-08-09 00:00:00 +0900
 category_path:
   - Others
-  - 1. Essays
+  - 3. Essays
 created_at: 2026-08-09 14:04:09 +0900
 last_modified_at: 2026-09-03 15:05:27 +0900
 ---
