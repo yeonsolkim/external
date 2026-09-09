@@ -117,6 +117,65 @@ article.post[data-reference-scope="dictionary"] .post-body .dictionary-annotatio
   color: #000000;
 }
 
+/*
+ * Keep code close to LaTeX's \texttt/verbatim treatment: typewriter text,
+ * no inline badge, and a quiet ruled block instead of an application card.
+ */
+.post-body code,
+.post-body pre {
+  font-family: "New Computer Modern Mono", "Latin Modern Mono",
+    "CMU Typewriter Text", "Courier New", monospace;
+  font-variant-ligatures: none;
+  word-spacing: normal;
+}
+
+.post-body :not(pre) > code {
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-size: 0.9em;
+  line-height: inherit;
+  white-space: break-spaces;
+  overflow-wrap: anywhere;
+}
+
+.post-body .highlight {
+  margin: 1lh 0;
+  background: transparent;
+}
+
+.post-body pre {
+  margin: 1lh 0;
+  padding: 0.65lh 1em;
+  overflow-x: auto;
+  color: #222;
+  background: #fbfbf8;
+  border: solid #cecec8;
+  border-width: 1px 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 0.88em;
+  line-height: 1.4;
+  tab-size: 2;
+  -webkit-overflow-scrolling: touch;
+}
+
+.post-body pre code {
+  display: block;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: pre;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
 .post-body a:not(.math-ref-link) {
 color: blue !important;
 text-decoration: none !important;
