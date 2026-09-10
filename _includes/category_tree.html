@@ -64,7 +64,7 @@
             data-updated-display="{{ post_updated_display }}"
           {% endif %}
         >
-          {{ post_date_display }}{% if post.last_modified_at and post_updated_day != post_date_day %} (updated {{ post_updated_display }}){% endif %}
+          {{ post_date_display }}{% if post.last_modified_at and post_updated_day != post_date_day %}<span class="post-updated-meta"> (updated {{ post_updated_display }})</span>{% endif %}
         </span>
       </li>
     {%- endfor -%}

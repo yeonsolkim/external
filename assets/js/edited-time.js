@@ -55,12 +55,14 @@
     }
 
     const relativeUpdatedText = formatUpdatedTime(updatedAt, updatedText);
-    const text = relativeUpdatedText
-      ? createdText + "⠀(" + relativeUpdatedText + ")"
-      : createdText + "⠀(updated " + updatedText + ")";
+    const updatedLabel = relativeUpdatedText
+      ? "(" + relativeUpdatedText + ")"
+      : "(updated " + updatedText + ")";
 
-    if (text) {
-      el.textContent = text;
-    }
+    el.textContent = createdText;
+    const updatedEl = document.createElement("span");
+    updatedEl.className = "post-updated-meta";
+    updatedEl.textContent = "⠀" + updatedLabel;
+    el.appendChild(updatedEl);
   });
 })();

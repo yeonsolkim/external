@@ -6,6 +6,11 @@
   font-weight: 300 !important;
 }
 
+/* Temporarily hide the "(updated ...)" part of the post date. Remove this rule to show it again. */
+.post-updated-meta {
+  display: none;
+}
+
 /* Shared category and post row styles */
 .category-root,
 .category-heading,
