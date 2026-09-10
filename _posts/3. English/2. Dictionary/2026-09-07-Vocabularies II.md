@@ -6,7 +6,7 @@ category_path:
   - 3. English
   - 2. Dictionary
 created_at: 2026-09-07 12:58:48 +0900
-last_modified_at: 2026-09-08 15:05:20 +0900
+last_modified_at: 2026-09-09 20:39:39 +0900
 
 line_indent: false
 ---
@@ -28,4 +28,4 @@ line_indent: false
 **cube**: the product of a number multiplied by its square: *the **cube of** its length.*
 **quartic**: involving the fourth of a quantity.
 
-**dedicated**: (of a thing) exclusively allocated to or intended for a particular purpose: 
+**dedicated**: (of a thing) exclusively allocated to or intended for a particular purpose: *a dedicated study week*

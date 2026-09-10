@@ -7,7 +7,7 @@
   var sourceLabelPattern = /(?:\*\*|<(?:strong|b)\b[^>]*>)\s*(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle)\s+(\d+(?:\.\d+)+)\.?(?=\s|\*|\)|<\/(?:strong|b)>)/g;
   var referencePattern = /\b\d+(?:\.\d+)+\b/g;
   var entryLabelPattern = /^(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle|Notation|Axiom|Exercise)\s+\d+(?:\.\d+)*\.?/;
-  var proofMarkerPattern = /^(?:Proof|Subproof|Solution)(?:\s+\d+)?\.?$/i;
+  var proofMarkerPattern = /^(Proof|Subproof|Solution)(?:\s+\d+)?\.?$/i;
   var italicStatementKinds = {
     Theorem: true,
     Lemma: true,
@@ -303,29 +303,6 @@
     return null;
   }
 
-  function getPreviousVisibleSibling(node) {
-    var sibling = node.previousSibling;
-
-    while (sibling) {
-      if (sibling.nodeType === Node.COMMENT_NODE) {
-        sibling = sibling.previousSibling;
-        continue;
-      }
-
-      if (
-        sibling.nodeType === Node.TEXT_NODE &&
-        normalizeSpace(sibling.nodeValue || '') === ''
-      ) {
-        sibling = sibling.previousSibling;
-        continue;
-      }
-
-      return sibling;
-    }
-
-    return null;
-  }
-
   function getStatementLabelEnd(labelElement) {
     var statementName = getNextVisibleSibling(labelElement);
 
@@ -414,74 +391,6 @@
     });
   }
 
-  function addSoftLineIndent(textNode) {
-    var text = textNode.nodeValue || '';
-    var parts = text.split('\n');
-    var fragment;
-    var hasFollowingContent = Boolean(getNextVisibleSibling(textNode));
-    var index;
-
-    if (parts.length < 2) {
-      return;
-    }
-
-    fragment = document.createDocumentFragment();
-    fragment.appendChild(document.createTextNode(parts[0]));
-
-    for (index = 1; index < parts.length; index += 1) {
-      var indent = document.createElement('span');
-
-      fragment.appendChild(document.createTextNode('\n'));
-
-      if (
-        parts[index].trim() !== '' ||
-        (index === parts.length - 1 && hasFollowingContent)
-      ) {
-        indent.className = 'post-soft-line-indent';
-        indent.setAttribute('aria-hidden', 'true');
-        fragment.appendChild(indent);
-      }
-
-      fragment.appendChild(document.createTextNode(parts[index]));
-    }
-
-    textNode.parentNode.replaceChild(fragment, textNode);
-  }
-
-  function addSoftLineIndents(postBody) {
-    var walker = document.createTreeWalker(postBody, NodeFilter.SHOW_TEXT, {
-      acceptNode: function (node) {
-        var separatesInlineContent;
-
-        if (
-          shouldSkipTypographyTextNode(node) ||
-          !node.parentElement.closest('p') ||
-          !node.nodeValue.includes('\n')
-        ) {
-          return NodeFilter.FILTER_REJECT;
-        }
-
-        separatesInlineContent = node.nodeValue.trim() === '' &&
-          getPreviousVisibleSibling(node) &&
-          getNextVisibleSibling(node);
-
-        if (node.nodeValue.trim() === '' && !separatesInlineContent) {
-          return NodeFilter.FILTER_REJECT;
-        }
-
-        return NodeFilter.FILTER_ACCEPT;
-      }
-    });
-    var nodes = [];
-    var node;
-
-    while ((node = walker.nextNode())) {
-      nodes.push(node);
-    }
-
-    nodes.forEach(addSoftLineIndent);
-  }
-
   function initPostTypographySpacing() {
     var postBody = getPostBody();
 
@@ -492,30 +401,6 @@
     postBody.setAttribute('data-typography-spacing', 'true');
     removeSpaceAfterEmSpace(postBody);
     addMathLabelGaps(postBody);
-
-    if (usesLineIndent(postBody)) {
-      addSoftLineIndents(postBody);
-    }
-  }
-
-  function getTopLevelBlock(postBody, element) {
-    var block = element;
-
-    while (block && block.parentElement !== postBody) {
-      block = block.parentElement;
-    }
-
-    return block && block.parentElement === postBody ? block : null;
-  }
-
-  function getDirectChild(container, descendant) {
-    var child = descendant;
-
-    while (child && child.parentNode !== container) {
-      child = child.parentNode;
-    }
-
-    return child && child.parentNode === container ? child : null;
   }
 
   function getTextBeforeNode(container, node) {
@@ -527,204 +412,404 @@
     return normalizeSpace(range.toString());
   }
 
-  function findProofMarker(element) {
-    var candidates = element.querySelectorAll('em, i');
-    var marker = null;
-
-    candidates.forEach(function (candidate) {
-      if (!marker && proofMarkerPattern.test(normalizeSpace(candidate.textContent || ''))) {
-        marker = candidate;
-      }
-    });
-
-    return marker;
-  }
-
   function isEntryLabel(element) {
     return entryLabelPattern.test(normalizeSpace(element.textContent || ''));
   }
 
-  function isDisplayMathBlock(element) {
-    return Boolean(element && (
-      (element.tagName === 'MJX-CONTAINER' && element.getAttribute('display') === 'true') ||
-      element.classList.contains('MathJax_Display')
-    ));
+  function directChildrenMatching(container, tagName) {
+    return Array.prototype.filter.call(container.children, function (child) {
+      return child.tagName === tagName;
+    });
   }
 
-  function isListBlock(element) {
-    return Boolean(element && /^(?:OL|UL)$/.test(element.tagName));
+  function softLineBreaks(paragraph) {
+    var walker = document.createTreeWalker(paragraph, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (node) {
+        if (
+          shouldSkipTypographyTextNode(node) ||
+          !node.nodeValue ||
+          !node.nodeValue.includes('\n')
+        ) {
+          return NodeFilter.FILTER_REJECT;
+        }
+
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var breaks = [];
+    var node;
+
+    while ((node = walker.nextNode())) {
+      for (var index = 0; index < node.nodeValue.length; index += 1) {
+        if (node.nodeValue[index] === '\n') {
+          breaks.push({ node: node, offset: index });
+        }
+      }
+    }
+
+    return breaks;
   }
 
-  function hasStartingBoldMarker(element) {
-    var marker = element.querySelector('strong, b');
-
-    return Boolean(marker && getTextBeforeNode(element, marker) === '');
+  function fragmentHasVisibleContent(fragment) {
+    return normalizeSpace(fragment.textContent || '') !== '' || Boolean(
+      fragment.querySelector(
+        'br, img, svg, canvas, mjx-container, math, iframe, video, audio, input'
+      )
+    );
   }
 
-  function hasStartingEntityMarker(element) {
-    var candidates = element.querySelectorAll('strong, b, em, i');
-    var found = false;
+  function paragraphSegment(paragraph, contents, continuation) {
+    var segment = paragraph.cloneNode(false);
+
+    if (continuation) {
+      segment.removeAttribute('id');
+      segment.removeAttribute('aria-labelledby');
+      segment.setAttribute('data-paragraph-continuation', 'soft');
+    }
+
+    segment.classList.add('semantic-unit', 'semantic-paragraph');
+    segment.appendChild(contents);
+    return segment;
+  }
+
+  function splitParagraphAtSoftLines(paragraph) {
+    var breaks = softLineBreaks(paragraph);
+    var replacement;
+    var startNode = paragraph;
+    var startOffset = 0;
+    var segmentCount = 0;
+
+    if (!breaks.length) {
+      paragraph.classList.add('semantic-unit', 'semantic-paragraph');
+      return;
+    }
+
+    replacement = document.createDocumentFragment();
+
+    breaks.concat([{ node: paragraph, offset: paragraph.childNodes.length }]).forEach(function (boundary) {
+      var range = document.createRange();
+      var contents;
+
+      range.setStart(startNode, startOffset);
+      range.setEnd(boundary.node, boundary.offset);
+      contents = range.cloneContents();
+
+      if (fragmentHasVisibleContent(contents)) {
+        replacement.appendChild(paragraphSegment(paragraph, contents, segmentCount > 0));
+        segmentCount += 1;
+      }
+
+      if (boundary.node !== paragraph) {
+        startNode = boundary.node;
+        startOffset = boundary.offset + 1;
+      }
+    });
+
+    if (segmentCount) {
+      paragraph.parentNode.replaceChild(replacement, paragraph);
+    }
+  }
+
+  function prepareParagraphUnits(postBody) {
+    var paragraphs = directChildrenMatching(postBody, 'P');
+
+    if (usesLineIndent(postBody)) {
+      paragraphs.forEach(splitParagraphAtSoftLines);
+    } else {
+      paragraphs.forEach(function (paragraph) {
+        paragraph.classList.add('semantic-unit', 'semantic-paragraph');
+      });
+    }
+  }
+
+  function readEntryDescriptor(paragraph) {
+    var candidates;
+    var descriptor = null;
+
+    if (!paragraph || paragraph.tagName !== 'P') {
+      return null;
+    }
+
+    candidates = paragraph.querySelectorAll('strong, b, em, i');
 
     candidates.forEach(function (candidate) {
+      var text;
+      var entryMatch;
+      var proofMatch;
+
+      if (descriptor || getTextBeforeNode(paragraph, candidate) !== '') {
+        return;
+      }
+
+      text = normalizeSpace(candidate.textContent || '');
+      entryMatch = text.match(entryLabelPattern);
+
+      if (entryMatch) {
+        descriptor = {
+          kind: entryMatch[1],
+          labelElement: candidate
+        };
+        return;
+      }
+
+      proofMatch = text.match(proofMarkerPattern);
+
+      if (proofMatch) {
+        descriptor = {
+          kind: proofMatch[1].charAt(0).toUpperCase() + proofMatch[1].slice(1).toLowerCase(),
+          labelElement: candidate
+        };
+      }
+    });
+
+    return descriptor;
+  }
+
+  function isSemanticBoundary(element) {
+    return element.classList.contains('post-explicit-entry-break') ||
+      isDocumentBoundary(element);
+  }
+
+  function isDocumentBoundary(element) {
+    return /^H[1-6]$/.test(element.tagName) || element.tagName === 'HR';
+  }
+
+  function isMarkerTerminatedEnvironment(kind) {
+    return kind === 'Proof' || kind === 'Subproof';
+  }
+
+  function elementEndsEnvironment(element, kind) {
+    var expected = kind.toLowerCase();
+    var marker = element.matches('[data-environment-end]') ?
+      element :
+      element.querySelector('[data-environment-end]');
+
+    return Boolean(marker && marker.getAttribute('data-environment-end') === expected);
+  }
+
+  function isCompetingProofStart(descriptor, kind) {
+    if (!descriptor) {
+      return false;
+    }
+
+    if (kind === 'Proof') {
+      return descriptor.kind === 'Proof';
+    }
+
+    return descriptor.kind === 'Proof' || descriptor.kind === 'Subproof';
+  }
+
+  function hasMatchingEnvironmentEnd(start, kind) {
+    var member = start;
+
+    while (member) {
+      var descriptor = member === start ? null : readEntryDescriptor(member);
+
+      if (isCompetingProofStart(descriptor, kind)) {
+        return false;
+      }
+
+      if (elementEndsEnvironment(member, kind)) {
+        return true;
+      }
+
+      member = member.nextElementSibling;
+    }
+
+    return false;
+  }
+
+  function isStructuralContinuationMarker(element) {
+    return element.classList.contains('post-structural-continuation');
+  }
+
+  function environmentKindClass(kind) {
+    return kind.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  }
+
+  function ensureEntryLabelId(labelElement, kind, number) {
+    var id = labelElement.id;
+
+    if (id) {
+      return id;
+    }
+
+    id = 'math-' + environmentKindClass(kind) + '-' + number;
+    labelElement.id = id;
+    return id;
+  }
+
+  function decorateEnvironmentParagraphs(environment) {
+    directChildrenMatching(environment, 'P').forEach(function (paragraph) {
+      paragraph.classList.remove('semantic-unit', 'semantic-paragraph');
+      paragraph.classList.add('math-environment__paragraph');
+    });
+  }
+
+  function groupMathEnvironments(container, state, skipOpeningParagraph) {
+    var current = container.firstElementChild;
+
+    if (skipOpeningParagraph && current) {
+      current = current.nextElementSibling;
+    }
+
+    while (current) {
+      var descriptor = readEntryDescriptor(current);
+      var markerTerminated;
+
+      if (!descriptor) {
+        current = current.nextElementSibling;
+        continue;
+      }
+
+      markerTerminated = isMarkerTerminatedEnvironment(descriptor.kind);
+
+      if (markerTerminated && !hasMatchingEnvironmentEnd(current, descriptor.kind)) {
+        current = current.nextElementSibling;
+        continue;
+      }
+
+      state.environmentNumber += 1;
+
+      var environment = document.createElement('section');
+      var kindClass = environmentKindClass(descriptor.kind);
+      var member = current;
+      var structuralBridge = false;
+      var structuralContinuation = false;
+
+      environment.className = 'semantic-unit math-environment math-environment--' + kindClass;
+      environment.setAttribute('data-environment-kind', descriptor.kind);
+      environment.setAttribute(
+        'aria-labelledby',
+        ensureEntryLabelId(descriptor.labelElement, descriptor.kind, state.environmentNumber)
+      );
+
+      if (italicStatementKinds[descriptor.kind]) {
+        environment.classList.add('math-statement-italic');
+      }
+
+      container.insertBefore(environment, member);
+
+      while (member) {
+        var nextMember = member.nextElementSibling;
+
+        if (member !== current) {
+          var memberDescriptor;
+
+          if (isStructuralContinuationMarker(member)) {
+            structuralContinuation = structuralBridge;
+            environment.appendChild(member);
+            member = nextMember;
+            continue;
+          }
+
+          memberDescriptor = readEntryDescriptor(member);
+
+          if (
+            !markerTerminated &&
+            (isSemanticBoundary(member) || memberDescriptor)
+          ) {
+            break;
+          }
+
+          if (member.tagName === 'P') {
+            if (
+              !markerTerminated &&
+              member.getAttribute('data-paragraph-continuation') !== 'soft' &&
+              !structuralBridge
+            ) {
+              break;
+            }
+
+            if (structuralContinuation && !memberDescriptor) {
+              member.setAttribute('data-paragraph-continuation', 'structural');
+            }
+
+            structuralBridge = false;
+            structuralContinuation = false;
+          } else {
+            structuralBridge = true;
+            structuralContinuation = false;
+          }
+        }
+
+        environment.appendChild(member);
+        member = nextMember;
+
+        if (markerTerminated && elementEndsEnvironment(environment.lastElementChild, descriptor.kind)) {
+          break;
+        }
+      }
+
+      decorateEnvironmentParagraphs(environment);
+
+      if (descriptor.kind === 'Proof') {
+        groupMathEnvironments(environment, state, true);
+      }
+
+      current = member;
+    }
+  }
+
+  function markSectionOpeningParagraphs(postBody) {
+    var needsOpeningParagraph = true;
+
+    Array.prototype.forEach.call(postBody.children, function (element) {
+      if (/^H[1-6]$/.test(element.tagName)) {
+        needsOpeningParagraph = true;
+        return;
+      }
+
       if (
-        !found &&
-        getTextBeforeNode(element, candidate) === '' &&
-        (
-          isEntryLabel(candidate) ||
-          proofMarkerPattern.test(normalizeSpace(candidate.textContent || ''))
-        )
+        element.classList.contains('post-explicit-entry-break') ||
+        element.classList.contains('post-structural-continuation')
       ) {
-        found = true;
-      }
-    });
-
-    return found;
-  }
-
-  function isStatementBoundary(element) {
-    var tagName = element.tagName;
-    var previousBlock;
-
-    if (element.classList.contains('post-explicit-entry-break')) {
-      return true;
-    }
-
-    if (/^H[1-6]$/.test(tagName) || tagName === 'HR') {
-      return true;
-    }
-
-    if (tagName !== 'P') {
-      return false;
-    }
-
-    previousBlock = element.previousElementSibling;
-
-    if (isDisplayMathBlock(previousBlock)) {
-      return hasStartingEntityMarker(element);
-    }
-
-    if (isListBlock(previousBlock)) {
-      return hasStartingEntityMarker(element) || hasStartingBoldMarker(element);
-    }
-
-    return true;
-  }
-
-  function wrapSiblingRange(parent, firstNode, stopNode) {
-    var nodes = [];
-    var node = firstNode;
-    var wrapper;
-
-    while (node && node !== stopNode) {
-      nodes.push(node);
-      node = node.nextSibling;
-    }
-
-    if (!nodes.length) {
-      return;
-    }
-
-    wrapper = document.createElement('span');
-    wrapper.className = 'math-statement-italic';
-    parent.insertBefore(wrapper, nodes[0]);
-
-    nodes.forEach(function (rangeNode) {
-      wrapper.appendChild(rangeNode);
-    });
-  }
-
-  function italicizeStartingBlock(block, labelElement) {
-    var proofMarker = findProofMarker(block);
-    var labelChild;
-    var proofChild;
-
-    if (!proofMarker) {
-      block.classList.add('math-statement-italic');
-      return false;
-    }
-
-    labelChild = getDirectChild(block, labelElement);
-    proofChild = getDirectChild(block, proofMarker);
-
-    if (labelChild && proofChild) {
-      wrapSiblingRange(block, labelChild.nextSibling, proofChild);
-    }
-
-    return true;
-  }
-
-  function italicizeContinuationBlock(block) {
-    var proofMarker = findProofMarker(block);
-    var proofChild;
-
-    if (!proofMarker) {
-      block.classList.add('math-statement-italic');
-      return false;
-    }
-
-    proofChild = getDirectChild(block, proofMarker);
-
-    if (proofChild && getTextBeforeNode(block, proofMarker) !== '') {
-      wrapSiblingRange(block, block.firstChild, proofChild);
-    }
-
-    return true;
-  }
-
-  function italicizeMathStatements(postBody) {
-    var labels;
-
-    if (postBody.getAttribute('data-math-statements-italicized') === 'true') {
-      return;
-    }
-
-    postBody.setAttribute('data-math-statements-italicized', 'true');
-    labels = postBody.querySelectorAll('.math-label-anchor');
-
-    labels.forEach(function (labelElement) {
-      var label = readLabel(labelElement.textContent || '');
-      var block;
-      var nextBlock;
-      var reachedProof;
-
-      if (!label || !italicStatementKinds[label.kind]) {
         return;
       }
 
-      block = getTopLevelBlock(postBody, labelElement);
+      if (element.matches('p.semantic-paragraph')) {
+        if (needsOpeningParagraph) {
+          element.classList.add('semantic-paragraph--section-opening');
+        }
 
-      if (!block) {
+        needsOpeningParagraph = false;
         return;
       }
 
-      reachedProof = italicizeStartingBlock(block, labelElement);
-      nextBlock = block.nextElementSibling;
-
-      while (!reachedProof && nextBlock && !isStatementBoundary(nextBlock)) {
-        reachedProof = italicizeContinuationBlock(nextBlock);
-        nextBlock = nextBlock.nextElementSibling;
-      }
+      needsOpeningParagraph = false;
     });
   }
 
-  function initMathStatementItalics() {
+  function buildSemanticPostUnits(postBody) {
+    if (postBody.getAttribute('data-semantic-units') === 'true') {
+      return;
+    }
+
+    prepareParagraphUnits(postBody);
+    groupMathEnvironments(postBody, { environmentNumber: 0 }, false);
+    markSectionOpeningParagraphs(postBody);
+    postBody.setAttribute('data-semantic-units', 'true');
+  }
+
+  function initSemanticPostUnits() {
     var postBody = getPostBody();
-    var applyItalics;
+    var applyUnits;
 
     if (!postBody) {
       return;
     }
 
-    applyItalics = function () {
-      italicizeMathStatements(postBody);
+    applyUnits = function () {
+      buildSemanticPostUnits(postBody);
+      initScrollablePostTables();
     };
 
     if (window.MathJax && window.MathJax.startup && window.MathJax.startup.promise) {
-      window.MathJax.startup.promise.then(applyItalics, applyItalics);
+      window.MathJax.startup.promise.then(applyUnits, applyUnits);
       return;
     }
 
-    applyItalics();
+    applyUnits();
   }
 
   function shouldSkipTextNode(node) {
@@ -958,8 +1043,7 @@
   function initPageEnhancements() {
     initMathReferenceLinks();
     initPostTypographySpacing();
-    initMathStatementItalics();
-    initScrollablePostTables();
+    initSemanticPostUnits();
   }
 
   if (document.readyState === 'loading') {

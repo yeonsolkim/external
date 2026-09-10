@@ -11,12 +11,9 @@
 .category-heading,
 .post-list li {
   box-sizing: border-box;
-  min-height: 2.625rem;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-  line-height: 1.4;
+  line-height: 2.2;
   border-bottom: 0.7px solid #c6c6c6bd;
 }
 
@@ -107,7 +104,6 @@
 .post-link {
   color: blue !important;
   font-size: 1rem;
-  line-height: 1.4;
   text-decoration: none !important;
 }
 

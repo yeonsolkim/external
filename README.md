@@ -159,6 +159,34 @@ structure.
 - Statement names written immediately after a numbered label, such as
   `**Theorem 1.1.1.** (Example name).`, are kept upright even when theorem
   text is italicized.
+- Post prose is converted into semantic units after MathJax finishes. A source
+  soft newline starts a new `<p>` with a `1em` first-line indent; the first
+  paragraph after the post title or a Markdown heading is not indented. The
+  same soft-newline rule applies inside a labeled environment: its opening
+  paragraph is flush left and each soft-line continuation is indented `1em`.
+- A paragraph beginning with a supported bold label (`Definition`, `Theorem`,
+  `Lemma`, `Corollary`, `Proposition`, `Remark`, `Example`, `Principle`,
+  `Notation`, `Axiom`, or `Exercise`) or an italic proof marker (`Proof`,
+  `Subproof`, or `Solution`) starts a labeled `<section>` environment. Display
+  math, tables, lists, diagrams, and code blocks adjacent to the statement stay
+  inside that environment. Theorem-like environments inherit the existing
+  italic statement style.
+- `Proof` environments end only at their `\square` QED marker, while `Subproof`
+  environments end only at their `\blacksquare` marker; blank lines and nested
+  labels do not close either environment. Inline markers use the existing
+  `<span class="qed">...</span>` form, and a display-math ending is detected from
+  `\tag*{...}`. A `Subproof` encountered before the enclosing proof's QED marker
+  becomes a nested `<section>` inside that proof. If a matching QED marker is
+  missing, the proof-like block is left ungrouped instead of consuming the
+  remainder of the post.
+- A normal blank line ends a labeled environment when the following block is
+  prose. Because Markdown requires blank lines around display math and other
+  block structures, one blank line after such a block keeps the following
+  paragraph in the environment without indentation. Two blank lines keep it in
+  the environment with a `1em` first-line indent. To force a boundary between a
+  terminal structural block and unlabelled prose, leave three blank lines;
+  `_plugins/post_entry_breaks.rb` preserves these distinctions as hidden semantic
+  markers.
 - Dictionary posts mark usage labels and examples with
   `.dictionary-annotation` during rendering. This keeps those annotations muted
   without changing pronunciations, lexical categories, or ordinary emphasis.

@@ -2,16 +2,22 @@
 
 module ExternalPostEntryBreaks
   MARKER = '<div class="post-explicit-entry-break" aria-hidden="true"></div>'.freeze
+  STRUCTURAL_CONTINUATION_MARKER =
+    '<div class="post-structural-continuation" aria-hidden="true"></div>'.freeze
+  ENVIRONMENT_END_MARKER = lambda do |kind|
+    %(<div class="math-environment-end" data-environment-end="#{kind}" aria-hidden="true"></div>)
+  end
 
   module_function
 
-  def mark(content)
-    return content unless content&.include?("\n\n\n")
+  def mark(content, inline_math = [])
+    return content unless content
 
+    inline_math ||= []
     output = +""
     blank_lines = []
     fence = nil
-    math_block = false
+    math_block = nil
 
     content.each_line do |line|
       if fence
@@ -22,7 +28,13 @@ module ExternalPostEntryBreaks
 
       if math_block
         output << line
-        math_block = false if closing_math_block?(line)
+        math_block << line
+
+        if closing_math_block?(line)
+          append_environment_end_marker(output, display_environment_end_kind(math_block))
+          math_block = nil
+        end
+
         next
       end
 
@@ -35,17 +47,65 @@ module ExternalPostEntryBreaks
       blank_lines.clear
 
       fence = opening_fence(line)
-      math_block = true if !fence && opening_math_block?(line) && !closing_math_block?(line, 2)
-      output << line
+
+      if !fence && opening_math_block?(line)
+        output << line
+
+        if closing_math_block?(line, 2)
+          append_environment_end_marker(output, display_environment_end_kind(line))
+        else
+          math_block = line.dup
+        end
+
+        next
+      end
+
+      output << annotate_inline_environment_end(line, inline_math)
     end
 
     output << blank_lines.join
     output
   end
 
+  def environment_end_kind(source)
+    return 'subproof' if source.include?('\\blacksquare')
+    return 'proof' if source.match?(/\\square\b/)
+
+    nil
+  end
+
+  def display_environment_end_kind(source)
+    return nil unless source.include?('\\tag*')
+
+    environment_end_kind(source)
+  end
+
+  def append_environment_end_marker(output, kind)
+    return unless kind
+
+    output << "\n#{ENVIRONMENT_END_MARKER.call(kind)}\n"
+  end
+
+  def annotate_inline_environment_end(line, inline_math = [])
+    line.gsub(/<span\b[^>]*>.*?<\/span>/i) do |span|
+      next span unless span.match?(/\bclass=(['"])[^'"]*\bqed\b[^'"]*\1/i)
+      next span if span.match?(/\bdata-environment-end=/i)
+
+      source = span.gsub(/@@codex-inline-math-(\d+)@@/) do |placeholder|
+        inline_math.fetch(Regexp.last_match(1).to_i, placeholder)
+      end
+      kind = environment_end_kind(source)
+      next span unless kind
+
+      span.sub(/\A<span\b/i, %(<span data-environment-end="#{kind}"))
+    end
+  end
+
   def append_blank_lines(output, blank_lines)
-    if blank_lines.length >= 2
+    if blank_lines.length >= 3
       output << "\n#{MARKER}\n\n"
+    elsif blank_lines.length == 2
+      output << "\n#{STRUCTURAL_CONTINUATION_MARKER}\n\n"
     else
       output << blank_lines.join
     end
@@ -99,7 +159,7 @@ module ExternalPostEntryBreaks
   def process(item)
     return unless post?(item)
 
-    item.content = mark(item.content)
+    item.content = mark(item.content, item.data['inline_math_placeholders'])
   end
 end
 
