@@ -345,6 +345,12 @@ white-space: nowrap;
 text-align: left;
 }
 
+.post-body li.list-item-display-math mjx-container[display="true"],
+.post-body li.list-item-display-math .MathJax_Display {
+text-align: center;
+text-align-last: center;
+}
+
 .post-body li.list-item-display-math mjx-container[display="true"] > svg {
 margin-left: auto;
 margin-right: auto;
@@ -420,15 +426,19 @@ html.mathjax-loading .post-body {
 visibility: hidden;
 }
 
-.post-body p {
+.post-body p,
+.post-body li:not(.list-item-display-math-only) {
 text-align: justify;
 text-align-last: left;
 text-justify: inter-word;
-white-space: pre-line;
 hyphens: auto;
 -webkit-hyphens: auto;
 overflow-wrap: break-word;
 word-break: normal;
+}
+
+.post-body p {
+white-space: pre-line;
 }
 
 /* Keep the pre-enhancement layout readable if JavaScript is unavailable. */
