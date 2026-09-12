@@ -624,7 +624,7 @@ max-width: 100%;
 overflow-x: hidden;
 overflow-y: hidden;
 margin: 0.4em 0;
-padding: 0.15rem 0;
+padding: 0.3rem 0;
 box-sizing: border-box;
 }
 
@@ -653,6 +653,12 @@ justify-content: flex-start;
 .math-scroll mjx-container[display="true"] > *,
 .math-scroll .MathJax_Display > * {
 max-width: 100%;
+}
+
+.math-scroll mjx-container[display="true"] > svg,
+.math-scroll .MathJax_Display > svg {
+display: block;
+margin-inline: auto;
 }
 
 @media (max-width: 768px), (pointer: coarse) {
