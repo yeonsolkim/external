@@ -32,7 +32,7 @@
   ];
 
   function getPostBody() {
-    return document.querySelector('.post-body.math-scroll') || document.querySelector('.post-body');
+    return document.querySelector('.post-body');
   }
 
   function usesLineIndent(postBody) {

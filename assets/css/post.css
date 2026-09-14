@@ -4,7 +4,7 @@ width: 100% !important;
 box-sizing: border-box !important;
 word-wrap: break-word;
 line-height: 1.3;
-color: #000000c6;
+color: #000000b5;
 }
 
 .post-header {
@@ -19,28 +19,8 @@ max-width: 100%;
 margin: 0 !important;
 color: #000000 !important;
 font-family: var(--reading-serif);
-font-size: 1.7rem !important;
+font-size: 1.5rem !important;
 font-weight: bold !important;
-}
-
-.post-category-path {
-display: inline-block;
-margin: 0 0 0.95rem;
-font-size: 1rem;
-font-weight: 500;
-line-height: 1.2;
-}
-
-.post-category-link {
-display: inline-block;
-color: blue !important;
-text-decoration: none !important;
-}
-
-.main-content .post-category-link:hover {
-color: #405ee8 !important;
-text-decoration: underline !important;
-text-underline-offset: 0.18em;
 }
 
 .post-meta {
@@ -96,14 +76,10 @@ margin-bottom: 0 rem;
 .post-body { 
   max-width: none !important ;
   word-spacing: -0.045em;
-}
-
-.post-body.math-scroll {
   display: flow-root;
-  font-size: 1.035em;
 }
 
-.post-body.math-scroll > :first-child {
+article.post > .post-body > :first-child {
   margin-top: 0 !important;
 }
 
@@ -222,7 +198,6 @@ margin-left: calc(var(--ul-marker-gap-adjust) + 1em);
 }
 
 .post-body ul > li::marker {
-color: #333;
 font-size: 1.1em;
 line-height: 1;
 }
@@ -339,7 +314,6 @@ content: attr(data-marker-text);
 position: absolute;
 left: calc(-1 * (var(--ol-marker-width) + var(--ol-marker-gap)));
 width: var(--ol-marker-width);
-color: #333;
 font-style: normal;
 white-space: nowrap;
 text-align: left;
@@ -502,7 +476,7 @@ margin: 1lh 0;
 padding: 0;
 }
 
-.post-body.math-scroll[data-semantic-units="true"] > .math-environment:first-child {
+.post-body[data-semantic-units="true"] > .math-environment:first-child {
 margin-top: 1lh;
 }
 
@@ -584,10 +558,6 @@ border: 0.7px solid red;
 pointer-events: none;
 }
 
-.math-scroll {
-max-width: 100%;
-}
-
 .post-body mjx-container {
 contain: paint;
 overflow: clip;
@@ -617,13 +587,13 @@ user-select: none;
   }
 }
 
-.math-scroll mjx-container[display="true"],
-.math-scroll .MathJax_Display {
+.post-body mjx-container[display="true"],
+.post-body .MathJax_Display {
 display: block;
 max-width: 100%;
 overflow-x: hidden;
 overflow-y: hidden;
-margin: 0.6rem 0;
+margin: 0.9rem 0 0.6rem;
 padding: 0;
 box-sizing: border-box;
 }
@@ -638,25 +608,25 @@ margin-bottom: 0.5em !important;
 margin-top: 0.5em !important;
 }
 
-.math-scroll mjx-container[display="true"].math-overflowing,
-.math-scroll .MathJax_Display.math-overflowing {
+.post-body mjx-container[display="true"].math-overflowing,
+.post-body .MathJax_Display.math-overflowing {
 overflow-x: auto;
 -webkit-overflow-scrolling: touch;
 }
 
-.math-scroll mjx-container[display="true"][width="full"] {
+.post-body mjx-container[display="true"][width="full"] {
 width: 100%;
 min-width: 0 !important;
 justify-content: flex-start;
 }
 
-.math-scroll mjx-container[display="true"] > *,
-.math-scroll .MathJax_Display > * {
+.post-body mjx-container[display="true"] > *,
+.post-body .MathJax_Display > * {
 max-width: 100%;
 }
 
-.math-scroll mjx-container[display="true"] > svg,
-.math-scroll .MathJax_Display > svg {
+.post-body mjx-container[display="true"] > svg,
+.post-body .MathJax_Display > svg {
 display: block;
 margin-inline: auto;
 }
@@ -669,20 +639,20 @@ margin-inline: auto;
   top: 0.015em;
   }
 
-  .math-scroll mjx-container[display="true"],
-  .math-scroll .MathJax_Display {
+  .post-body mjx-container[display="true"],
+  .post-body .MathJax_Display {
     width: 100%;
     max-width: 100%;
     overflow-y: hidden;
   }
 
-  .math-scroll mjx-container[display="true"] > svg,
-  .math-scroll .MathJax_Display > svg {
+  .post-body mjx-container[display="true"] > svg,
+  .post-body .MathJax_Display > svg {
     width: auto;
     max-width: none !important;
   }
 
-  .math-scroll mjx-container[display="true"][width="full"] > svg {
+  .post-body mjx-container[display="true"][width="full"] > svg {
     width: 100% !important;
   }
 }
