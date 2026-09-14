@@ -76,10 +76,8 @@ title: External
 
   <hr class="post-header-divider">
 
-  <div class="post-body">
-    <div class="post-body math-scroll"{% if page.line_indent == false %} data-line-indent="false"{% endif %}>
-      {{ content }}
-    </div>
+  <div class="post-body"{% if page.line_indent == false %} data-line-indent="false"{% endif %}>
+    {{ content }}
   </div>
 
 

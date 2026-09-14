@@ -18,6 +18,7 @@
   box-sizing: border-box;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+  font-size: 0.95rem !important;
   line-height: 2.2;
   border-bottom: 0.7px solid #c6c6c6bd;
 }
@@ -25,14 +26,12 @@
 /* Category */
 .category-root {
   color: #000000 !important;
-  font-size: 1rem !important;
   font-weight: 600 !important;
   border-bottom-color: #6e6e6e93 !important;
 }
 
 .category-heading {
   color: #000000e7 !important;
-  font-size: 1rem !important;
 }
 
 .subcategory-link {
@@ -108,10 +107,17 @@
 /* Post link */
 .post-link {
   color: blue !important;
-  font-size: 1rem;
   text-decoration: none !important;
 }
 
 .post-link:hover .post-title {
   text-decoration: underline;
+}
+
+@media (max-width: 768px), (pointer: coarse) {
+  .category-root,
+  .category-heading,
+  .post-list li {
+    font-size: 1rem !important;
+  }
 }

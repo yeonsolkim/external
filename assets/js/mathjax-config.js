@@ -357,7 +357,7 @@
     displayMathOverflowFrame = 0;
 
     var elements = document.querySelectorAll(
-      '.math-scroll mjx-container[display="true"], .math-scroll .MathJax_Display'
+      '.post-body mjx-container[display="true"], .post-body .MathJax_Display'
     );
 
     elements.forEach(function (element) {

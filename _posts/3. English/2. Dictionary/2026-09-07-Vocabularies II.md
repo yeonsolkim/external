@@ -6,7 +6,7 @@ category_path:
   - 3. English
   - 2. Dictionary
 created_at: 2026-09-07 12:58:48 +0900
-last_modified_at: 2026-09-09 20:39:39 +0900
+last_modified_at: 2026-09-14 15:00:46 +0900
 
 line_indent: false
 ---
@@ -29,3 +29,5 @@ line_indent: false
 **quartic**: involving the fourth of a quantity.
 
 **dedicated**: (of a thing) exclusively allocated to or intended for a particular purpose: *a dedicated study week*
+
+**redundant**: not or no longer needed or useful: *it is considered redundant to use a conjunction after a semicolon.*
