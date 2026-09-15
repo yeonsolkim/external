@@ -23,8 +23,9 @@ let modifiedAt = tp.file.last_modified_date("YYYY-MM-DD HH:mm:ss");
 -%>
 ---
 layout: post
+category_path: <% categoryPathResult %>
 title: "<% tp.file.title.replace(/\d{4}-\d{2}-\d{2}-/, "") %>"
 date: <% createdAt %> +0900
 last_modified_at: <% modifiedAt %> +0900
-category_path: <% categoryPathResult %>
+publish: false
 ---

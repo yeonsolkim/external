@@ -164,6 +164,10 @@ structure.
   paragraph after the post title or a Markdown heading is not indented. The
   same soft-newline rule applies inside a labeled environment: its opening
   paragraph is flush left and each soft-line continuation is indented `1em`.
+- Posts with `line_indent: false` still convert every source soft newline into
+  a separate paragraph, but suppress the first-line indent. Soft-line
+  continuations remain adjacent, while source paragraphs separated by a blank
+  line retain one line of vertical space.
 - A paragraph beginning with a supported bold label (`Definition`, `Theorem`,
   `Lemma`, `Corollary`, `Proposition`, `Remark`, `Example`, `Principle`,
   `Notation`, `Axiom`, or `Exercise`) or an italic proof marker (`Proof`,
@@ -197,9 +201,8 @@ structure.
 - `assets/css/post.css` is paired with `mathjax-config.js`. It styles custom
   ordered-list markers, display math scrolling, reference-link boxes, QED
   markers, and hides the post body while MathJax is loading.
-- `assets/css/style.scss` imports the Cayman theme and applies global site
-  overrides. The front matter at the top is intentional so Jekyll processes the
-  Sass file.
+- `assets/css/style.scss` contains the local reset and global site styles. The
+  front matter at the top is intentional so Jekyll processes the Sass file.
 - To prevent line breaks in selected table columns, put an inline attribute list
   directly below the table, such as `{:nowrap-columns="1,3"}`. Column numbers are
   one-based; commas and spaces can both separate multiple columns.

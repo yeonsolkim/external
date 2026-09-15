@@ -9,6 +9,7 @@ created_at: 2026-09-07 12:58:48 +0900
 last_modified_at: 2026-09-14 15:00:46 +0900
 
 line_indent: false
+publish: false
 ---
 **charm**: the quality of giving delight: *his charm has captivated the media.*
 **friendliness**: the quality of being kind.

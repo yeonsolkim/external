@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Compact Sets</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Compact Sets" />
+<meta name="author" content="YeonsolKim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="We now consider how a collection of open sets can cover a set $A$ as a whole. Such a collection may contain infinitely many sets, and this raises a natural question. Can finitely many members of the collection already cover $A$? Compactness formalizes the sets for which the answer is always yes." />
+<meta property="og:description" content="We now consider how a collection of open sets can cover a set $A$ as a whole. Such a collection may contain infinitely many sets, and this raises a natural question. Can finitely many members of the collection already cover $A$? Compactness formalizes the sets for which the answer is always yes." />
+<link rel="canonical" href="https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html" />
+<meta property="og:url" content="https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-07-30T15:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Compact Sets" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"YeonsolKim"},"dateModified":"2026-09-12T02:21:46+00:00","datePublished":"2026-07-30T15:00:00+00:00","description":"We now consider how a collection of open sets can cover a set $A$ as a whole. Such a collection may contain infinitely many sets, and this raises a natural question. Can finitely many members of the collection already cover $A$? Compactness formalizes the sets for which the answer is always yes.","headline":"Compact Sets","mainEntityOfPage":{"@type":"WebPage","@id":"https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html"},"url":"https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+  
+  <link rel="stylesheet" href="/assets/css/style.css?v=1789377169">
+
+  
+    <link rel="stylesheet" href="/assets/css/post.css?v=1789377169">
+  
+
+  
+
+  
+    <script>
+      document.documentElement.classList.add('mathjax-loading');
+      window.setTimeout(function () {
+        document.documentElement.classList.remove('mathjax-loading');
+      }, 5000);
+    </script>
+  
+
+  <script src="/assets/js/mathjax-config.js?v=1789377169" defer></script>
+  <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-svg.js"></script>
+</head>
+
+<body>
+  <header class="page-header">
+    <div class="header-inner">
+      <h1 class="project-name">
+        <a href="/">External</a>
+      </h1>
+      <p class="project-tagline">A backup external memory containing several data files</p>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item">
+      <a href="/">Home</a>
+    </li>
+
+    
+    
+      
+        
+
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+        
+
+        <li class="breadcrumb-item">
+          <span class="breadcrumb-separator" aria-hidden="true">›</span>
+          
+            <span class="breadcrumb-label">
+              Mathematics
+            </span>
+          
+        </li>
+      
+        
+
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+            
+            
+
+        
+
+        <li class="breadcrumb-item">
+          <span class="breadcrumb-separator" aria-hidden="true">›</span>
+          
+            <a href="/categories/mathematics/analysis/">
+              Analysis
+            </a>
+          
+        </li>
+      
+        
+
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+            
+            
+
+        
+
+        <li class="breadcrumb-item">
+          <span class="breadcrumb-separator" aria-hidden="true">›</span>
+          
+            <a href="/categories/mathematics/analysis/introduction-to-analysis/">
+              Introduction to Analysis
+            </a>
+          
+        </li>
+      
+        
+
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+        
+
+        <li class="breadcrumb-item">
+          <span class="breadcrumb-separator" aria-hidden="true">›</span>
+          
+            <span class="breadcrumb-label" aria-current="page">
+              2. Metric Spaces
+            </span>
+          
+        </li>
+      
+    
+  </ol>
+</nav>
+
+
+  <main id="content" class="main-content" role="main">
+    
+
+
+<article class="post" data-reference-scope="introduction-to-analysis">
+<!--
+  
+  
+-->
+
+  
+  
+  
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+        
+  
+
+  <header class="post-header">
+    <!--
+    
+      
+        <a
+          href="/categories/mathematics/analysis/"
+          class="post-category-path post-category-link"
+        >Analysis</a>
+      
+    
+    -->
+
+    <h1 class="post-title">
+      2.2.  Compact Sets
+    </h1>
+
+    
+    
+    
+
+    <!--
+    <div class="post-meta">
+      <span class="post-author-name">Yeonsol Kim</span>
+      <span class="post-meta-separator" aria-hidden="true">·</span>
+      <p
+        class="post-date post-date-meta"
+        data-created-day="2026-07-30"
+        data-created-display="July 30, 2026"
+        
+          data-updated-at="2026-09-12T02:21:46+00:00"
+          data-updated-day="2026-09-12"
+          data-updated-display="September 12, 2026"
+        
+      >
+        July 30, 2026 (updated September 12, 2026)
+      </p>
+    </div>
+    -->
+  </header>
+
+  <hr class="post-header-divider">
+
+  <div class="post-body">
+    
+<p>We now consider how a collection of open sets can cover a set <span class="math-inline">\(A\)</span> as a whole. Such a collection may contain infinitely many sets, and this raises a natural question. Can finitely many members of the collection already cover <span class="math-inline math-inline-punctuated">\(A\)?</span> Compactness formalizes the sets for which the answer is always yes.</p>
+
+<p><strong>Definition 2.2.1.</strong> Let <span class="math-inline">\(M\)</span> be a metric space and let <span class="math-inline">\(A\subseteq M.\)</span> A collection <span class="math-inline">\(\lbrace U_{i}\rbrace_{i \in I}\)</span> of subsets of <span class="math-inline">\(M\)</span> is a <em>cover</em> of <span class="math-inline">\(A\)</span> if</p>
+
+\[A\subseteq\bigcup_{i \in I}U_{i}.\]
+
+<p>A cover of <span class="math-inline">\(A\)</span> whose elements are open sets is called an <em>open cover</em> of <span class="math-inline math-inline-punctuated">\(A\).</span>
+A subcollection of a cover of <span class="math-inline">\(A\)</span> that still covers <span class="math-inline">\(A\)</span> is called a <em>subcover</em> of <span class="math-inline math-inline-punctuated">\(A\),</span> and a subcover of <span class="math-inline">\(A\)</span> whose index set is finite is called a <em>finite subcover</em> of <span class="math-inline math-inline-punctuated">\(A\).</span></p>
+
+<p>Since openness depends on the ambient space, it is natural to ask whether compactness does as well. We therefore keep track of the ambient space in the initial definition and then show that this apparent dependence disappears.</p>
+
+<p><strong>Definition 2.2.2.</strong> Let <span class="math-inline">\(M\)</span> be a metric space and let <span class="math-inline">\(A\subseteq N\subseteq M.\)</span> The set <span class="math-inline">\(A\)</span> is <em>compact in</em> <span class="math-inline">\(N\)</span> if every cover of <span class="math-inline">\(A\)</span> whose elements are open in <span class="math-inline">\(N\)</span> has a finite subcover of <span class="math-inline math-inline-punctuated">\(A\).</span></p>
+
+<p><strong>Theorem 2.2.3.</strong> Let <span class="math-inline">\(M\)</span> be a metric space and let <span class="math-inline">\(A\subseteq N\subseteq M.\)</span> Then, <span class="math-inline">\(A\)</span> is compact in <span class="math-inline">\(M\)</span> if and only if <span class="math-inline">\(A\)</span> is compact in <span class="math-inline">\(N.\)</span></p>
+
+<p><em>Proof.</em> Suppose that <span class="math-inline">\(A\)</span> is compact in <span class="math-inline">\(M.\)</span> Let <span class="math-inline">\(\lbrace U_{i}\rbrace_{i \in I}\)</span> be a cover of <span class="math-inline">\(A\)</span> whose elements are open in <span class="math-inline math-inline-punctuated">\(N\).</span> By Theorem 2.1.18, there is an open set <span class="math-inline">\(V_i\)</span> such that <span class="math-inline">\(V_i \cap N=U_i\)</span> for each <span class="math-inline math-inline-punctuated">\(i\in I\);</span> and since <span class="math-inline">\(A\)</span> is compact in <span class="math-inline">\(M,\)</span> we have</p>
+
+\[A\subseteq \bigcup_{k=1}^{n}V_{i_k}\tag{$\ast$}\]
+
+<p>for some finitely many indices <span class="math-inline">\(i_1,\dots,i_n\in I.\)</span> Since <span class="math-inline">\(A\subseteq N,\)</span> <span class="math-inline">\((\ast)\)</span> implies</p>
+
+\[A\subseteq \bigcup_{k=1}^{n}U_{i_k}.\tag{$\ast\ast$}\]
+
+<p>Therefore <span class="math-inline">\(A\)</span> is compact in <span class="math-inline">\(N.\)</span>
+Conversely, suppose that <span class="math-inline">\(A\)</span> is compact in <span class="math-inline math-inline-punctuated">\(N\).</span> Let <span class="math-inline">\(\lbrace V_i\rbrace_{i\in I}\)</span> be a collection of open sets which covers <span class="math-inline">\(A,\)</span> and let <span class="math-inline">\(U_i=V_i\cap N\)</span> for each <span class="math-inline">\(i\in I.\)</span> Then <span class="math-inline">\(U_i\)</span> is open in <span class="math-inline">\(N\)</span> for each <span class="math-inline">\(i\in I,\)</span> and <span class="math-inline">\(\lbrace U_i\rbrace_{i\in I}\)</span> covers <span class="math-inline">\(A.\)</span> Since <span class="math-inline">\(A\)</span> is compact in <span class="math-inline math-inline-punctuated">\(N\),</span> <span class="math-inline">\((\ast\ast)\)</span> holds for some finitely many indices <span class="math-inline">\(i_1,\dots,i_n\in I.\)</span> Since <span class="math-inline">\(U_i\subseteq V_i\)</span> for each <span class="math-inline">\(i\in I,\)</span> <span class="math-inline">\((\ast\ast)\)</span> implies <span class="math-inline">\((\ast).\)</span> Therefore <span class="math-inline">\(A\)</span> is compact in <span class="math-inline">\(M.\)</span><span data-environment-end="proof" class="qed"><span class="math-inline">\(\square\)</span></span></p>
+
+<p>Thus compactness is intrinsic to the space <span class="math-inline math-inline-punctuated">\(A\):</span> it does not depend on whether openness is measured in <span class="math-inline">\(M\)</span> or in an intermediate subspace <span class="math-inline math-inline-punctuated">\(N\).</span> We may therefore drop the reference to the ambient space.</p>
+
+<p><strong>Definition 2.2.4.</strong> Let <span class="math-inline">\(M\)</span> be a metric space and let <span class="math-inline math-inline-punctuated">\(A\subseteq N\subseteq M\).</span> Then, <span class="math-inline">\(A\)</span> is <em>compact</em> if it is compact in <span class="math-inline math-inline-punctuated">\(N\).</span> Equivalently, <span class="math-inline">\(A\)</span> is compact if every cover of <span class="math-inline">\(A\)</span> whose elements are open in <span class="math-inline">\(N\)</span> has a finite subcover.
+In particular, a metric space <span class="math-inline">\(M\)</span> is said to be compact if it is compact as a subset of itself.</p>
+
+<p>We now look into some relationship between compactness and closedness.</p>
+
+<p><strong>Theorem 2.2.5.</strong> Let <span class="math-inline">\(M\)</span> be a metric space and let <span class="math-inline">\(K\subseteq M.\)</span> If <span class="math-inline">\(K\)</span> is compact then <span class="math-inline">\(K\)</span> is closed.</p>
+
+<p><em>Proof.</em> Suppose <span class="math-inline math-inline-punctuated">\(x\in K^c\).</span> For <span class="math-inline math-inline-punctuated">\(y\in K\),</span> since <span class="math-inline math-inline-punctuated">\(x\ne y\),</span> we have <span class="math-inline math-inline-punctuated">\(d(x,y)&gt;0\).</span> Let</p>
+
+\[0&lt; r_y &lt; \frac 1 2 d(x,y).\]
+
+<p>Then the collection <span class="math-inline">\(\mathcal U=\lbrace B_{r_y}(y) : y\in K\rbrace\)</span> is an open cover of <span class="math-inline math-inline-punctuated">\(K\).</span> Since <span class="math-inline">\(K\)</span> is compact, there are finitely many points <span class="math-inline">\(y_1,\dots,y_n\in K\)</span> such that</p>
+
+\[K \subseteq \bigcup_{i=1}^n B_{r_{y_i}}(y_i) = U.\]
+
+<p>Since <span class="math-inline math-inline-punctuated">\(r_{y}&lt;\frac 1 2 d(x,y)\),</span> we have <span class="math-inline">\(B_{r_{y_i}}(y_i) \cap B_{r_{y_i}}(x) = \varnothing\)</span> for each <span class="math-inline math-inline-punctuated">\(i=1,\dots,n\).</span> Therefore, if</p>
+
+\[r = \min \lbrace r_{y_1},\dots,r_{y_n}\rbrace,\]
+
+<p>then <span class="math-inline">\(B_r(x)\)</span> does not intersect <span class="math-inline math-inline-punctuated">\(U\).</span> Since <span class="math-inline math-inline-punctuated">\(K\subseteq U\),</span> we have <span class="math-inline">\(K \cap B_r(x)=\varnothing.\)</span> It follows that <span class="math-inline math-inline-punctuated">\(B_r(x)\subseteq K^c\),</span> and thus <span class="math-inline">\(K^c\)</span> is open. By Theorem 2.1.14, <span class="math-inline">\(K\)</span> is closed.<span data-environment-end="proof" class="qed"><span class="math-inline">\(\square\)</span></span></p>
+
+<p><strong>Remark 2.2.6.</strong> The proof illustrates one of the main ways compactness is used in analysis—turning pointwise information into a uniform one. 
+For each point <span class="math-inline">\(x\)</span> in a set <span class="math-inline math-inline-punctuated">\(A\),</span> we choose an open neighborhood <span class="math-inline">\(N(x)\)</span> on which a desired property holds. The resulting neighborhoods cover <span class="math-inline math-inline-punctuated">\(A\),</span> but there may be infinitely many of them, and the corresponding local choices need not combine into a single global conclusion of <span class="math-inline math-inline-punctuated">\(A\).</span> It is compactness that removes this difficulty. Once only finitely many local choices remain, we can take their minimum, maximum, or a common bound and thereby pass from <em>local</em> control to <em>global</em> control of the set.</p>
+
+<p><strong>Theorem 2.2.7.</strong> Let <span class="math-inline">\(M\)</span> be a metric space and let <span class="math-inline">\(K\subseteq M.\)</span> If <span class="math-inline">\(K\)</span> is compact, then every closed subset of <span class="math-inline">\(K\)</span> is compact.</p>
+
+<p><em>Proof.</em> Let <span class="math-inline">\(F\)</span> be a closed subset of <span class="math-inline math-inline-punctuated">\(K\),</span> and let <span class="math-inline">\(\mathcal U=\lbrace U_i\rbrace_{i\in I}\)</span> be an open cover of <span class="math-inline math-inline-punctuated">\(F\).</span> Let <span class="math-inline math-inline-punctuated">\(\mathcal V = \mathcal U \cup \lbrace F^c\rbrace\).</span> Since each <span class="math-inline">\(U_i\)</span> and <span class="math-inline">\(F^c\)</span> are open, <span class="math-inline">\(\mathcal V\)</span> is an open cover of <span class="math-inline math-inline-punctuated">\(K\).</span> Since <span class="math-inline">\(K\)</span> is compact, there is a finite subcollection <span class="math-inline">\(\mathcal W\)</span> of <span class="math-inline">\(\mathcal V\)</span> which covers <span class="math-inline math-inline-punctuated">\(K\).</span> Then <span class="math-inline">\(\mathcal W\)</span> covers <span class="math-inline math-inline-punctuated">\(F\).</span> If <span class="math-inline">\(F^c\)</span> is a member of <span class="math-inline math-inline-punctuated">\(\mathcal W\),</span> we may just need to remove it from <span class="math-inline math-inline-punctuated">\(\mathcal W\),</span> and <span class="math-inline">\(\mathcal W \setminus \lbrace F^c\rbrace\)</span> is still an open cover of <span class="math-inline math-inline-punctuated">\(F\).</span> Hence <span class="math-inline">\(F\)</span> is compact.<span data-environment-end="proof" class="qed"><span class="math-inline">\(\square\)</span></span></p>
+
+<p><strong>Corollary 2.2.8.</strong> Let <span class="math-inline">\(M\)</span> be a metric space and let <span class="math-inline">\(K,F\subseteq M.\)</span> If <span class="math-inline">\(K\)</span> is compact and <span class="math-inline">\(F\)</span> is closed, then <span class="math-inline">\(K\cap F\)</span> is compact.</p>
+
+<p><em>Proof.</em> Since <span class="math-inline">\(K\)</span> is closed by Theorem 2.2.5 and <span class="math-inline">\(F\)</span> is closed, <span class="math-inline">\(K\cap F\)</span> is closed by (2) of Theorem 2.1.15. Since <span class="math-inline">\(K\cap F\)</span> is a closed subset of <span class="math-inline math-inline-punctuated">\(K\),</span> Theorem 2.2.7 shows that <span class="math-inline">\(K\cap F\)</span> is compact.<span data-environment-end="proof" class="qed"><span class="math-inline">\(\square\)</span></span></p>
+
+<p>The finite-subcover condition has a dual formulation in terms of intersections of closed sets. To state it explicitly, we introduce the finite intersection property.</p>
+
+<p><strong>Definition 2.2.9.</strong> A collection <span class="math-inline">\(\{A_i\}_{i\in I}\)</span> is said to have the <em>finite intersection property</em> if every finite subcollection of <span class="math-inline">\(\{A_i\}_{i\in I}\)</span> has nonempty intersection.</p>
+
+<p><strong>Theorem 2.2.10.</strong> A metric space <span class="math-inline">\(M\)</span> is compact if and only if, for every collection <span class="math-inline">\(\lbrace F_i\rbrace_{i\in I}\)</span> of closed subsets of <span class="math-inline math-inline-punctuated">\(M\),</span></p>
+
+\[\lbrace F_i\rbrace_{i\in I} \text{ has the FIP}\quad \Longrightarrow \quad \bigcap_{i\in I}F_i \ne \varnothing.\]
+
+<p><em>Proof.</em> Suppose that <span class="math-inline">\(M\)</span> is compact, and let <span class="math-inline">\(\lbrace F_i\rbrace_{i\in I}\)</span> be a collection of closed subsets of <span class="math-inline">\(M\)</span> satisfying the FIP. Let <span class="math-inline math-inline-punctuated">\(U_i=M\setminus F_i\).</span> If <span class="math-inline">\(\bigcap_{i\in I} F_i = \varnothing,\)</span> then <span class="math-inline">\(\lbrace U_i\rbrace_{i\in I}\)</span> is an open cover of <span class="math-inline math-inline-punctuated">\(M\).</span> Since <span class="math-inline">\(M\)</span> is compact, <span class="math-inline">\(M = \bigcup_{k=1}^n U_{i_k}\)</span> for some finitely many indices <span class="math-inline math-inline-punctuated">\(i_1,\dots,i_n\).</span> It follows that <span class="math-inline math-inline-punctuated">\(\bigcap_{k=1}^n F_{i_k} = \varnothing\),</span> which contradicts the FIP. Hence <span class="math-inline math-inline-punctuated">\(\bigcap_{i\in I} F_i \ne \varnothing\).</span>
+Conversely, suppose that every collection of closed subsets of <span class="math-inline">\(M\)</span> satisfying the FIP has nonempty intersection. Let <span class="math-inline">\(\lbrace U_i\rbrace_{i\in I}\)</span> be an open cover of <span class="math-inline math-inline-punctuated">\(M\),</span> and put <span class="math-inline math-inline-punctuated">\(F_i = M\setminus U_i\).</span> Then every <span class="math-inline">\(F_i\)</span> is closed in <span class="math-inline math-inline-punctuated">\(M\),</span> and <span class="math-inline math-inline-punctuated">\(\bigcap_{i\in I} F_i =\varnothing\).</span> Consequently, <span class="math-inline">\(\lbrace F_i\rbrace_{i\in I}\)</span> cannot have the finite intersection property. Hence there exists a finite subcollection <span class="math-inline">\(\lbrace F_{i_k}\rbrace_{k=1}^{n}\)</span> whose intersection is empty. Taking complements yields <span class="math-inline math-inline-punctuated">\(M \subseteq \bigcup_{k=1}^n U_{i_k}\).</span> Therefore <span class="math-inline">\(M\)</span> is compact.<span data-environment-end="proof" class="qed"><span class="math-inline">\(\square\)</span></span></p>
+
+<p>The preceding theorem states that a collection of closed subsets of a compact space has a <em>common point</em> whenever it satisfies the FIP. The compactness of the entire ambient space, however, is stronger than necessary: it suffices for one member of the collection to be compact.</p>
+
+<p><strong>Theorem 2.2.11.</strong> Let <span class="math-inline">\(M\)</span> be a metric space. If <span class="math-inline">\(\{F_i\}_{i\in I}\)</span> is a collection of closed subsets of <span class="math-inline">\(M\)</span> satisfying the FIP, and <span class="math-inline">\(F_{i_0}\)</span> is compact for some <span class="math-inline math-inline-punctuated">\(i_0\in I\),</span> then <span class="math-inline">\(\bigcap_{i\in I}F_i\)</span> is nonempty.</p>
+
+<p><em>Proof.</em> Define <span class="math-inline">\(K_i=F_i\cap F_{i_0}\)</span> for each <span class="math-inline math-inline-punctuated">\(i\in I\).</span> Then, we have</p>
+
+\[\bigcap_{k=1}^nK_{i_k} = F_{i_1}\cap\cdots\cap F_{i_n} \cap F_{i_0}\]
+
+<p>for any finitely many indices <span class="math-inline math-inline-punctuated">\(i_1,\dots,i_n\in I\).</span> Since <span class="math-inline">\(\{F_i\}_{i\in I}\)</span> has the FIP, the right-hand side is nonempty. Therefore <span class="math-inline">\(\{K_i\}_{i\in I}\)</span> has the FIP. Since <span class="math-inline">\(F_{i_0}\)</span> is compact and <span class="math-inline">\(K_i\)</span> is closed in <span class="math-inline math-inline-punctuated">\(F_{i_0}\),</span> Theorem 2.2.10 now gives <span class="math-inline math-inline-punctuated">\(\bigcap_{i\in I}K_i\neq\varnothing\).</span> Since</p>
+
+\[\bigcap_{i\in I}K_i = \lowparen{\bigcap_{i\in I}F_i}\cap F_{i_0} =\bigcap_{i\in I}F_i,\]
+
+<p>we finally have <span class="math-inline math-inline-punctuated">\(\bigcap_{i\in I}F_i \ne \varnothing\).</span><span data-environment-end="proof" class="qed"><span class="math-inline">\(\square\)</span></span></p>
+
+<p><strong>Corollary 2.2.12.</strong> Let <span class="math-inline">\(M\)</span> be a metric space. If <span class="math-inline">\((K_n)\)</span> is a sequence of nonempty compact subsets of <span class="math-inline">\(M\)</span> such that <span class="math-inline">\(K_{n+1}\subseteq K_n\)</span> for <span class="math-inline">\(n=1,2,3,\dots\)</span> , then <span class="math-inline">\(\bigcap_{n=1}^{\infty} K_n\)</span> is nonempty.</p>
+
+<p><em>Proof.</em> Let <span class="math-inline">\(\{K_{n_1},\dots,K_{n_k}\}\)</span> be a finite subcollection, and put</p>
+
+\[N=\max\{n_1,\dots,n_k\}.\]
+
+<p>Since <span class="math-inline math-inline-punctuated">\(K_{n+1}\subseteq K_n\),</span> we have</p>
+
+\[\bigcap_{j=1}^{k} K_{n_j} = K_{N} \ne \varnothing.\]
+
+<p>Hence <span class="math-inline">\(\{K_n\}_{n\in\mathbb N^{+}}\)</span> is a collection of closed sets satisfying the FIP. Since <span class="math-inline">\(K_1\)</span> is compact, Theorem 2.2.11 now gives</p>
+
+\[\bigcap_{n=1}^{\infty} K_n = \bigcap_{n\in \mathbb N^{+}\!\!} K_n\ne \varnothing.\tag*{\(\square\)}\]
+
+<div class="math-environment-end" data-environment-end="proof" aria-hidden="true"></div>
+
+<div class="post-structural-continuation" aria-hidden="true"></div>
+
+<p>This result assumes compactness from the outset. For closed intervals in <span class="math-inline math-inline-punctuated">\(\mathbb R\),</span> however, compactness has not yet been established. We therefore prove the next intersection theorem directly from the least-upper-bound property of <span class="math-inline math-inline-punctuated">\(\mathbb R\).</span></p>
+
+<p><strong>Theorem 2.2.13</strong> (Nested intervals theorem). If <span class="math-inline">\((I_n)\)</span> is a sequence of bounded closed intervals in <span class="math-inline">\(\mathbb R\)</span> such that <span class="math-inline">\(I_{n+1}\subseteq I_n,\)</span> then <span class="math-inline">\(\bigcap_{n=1}^{\infty} I_n\)</span> is nonempty.</p>
+
+<p><em>Proof.</em> Let <span class="math-inline">\(I_n = [a_n,b_n]\)</span> and let <span class="math-inline">\(A\)</span> be the set of all <span class="math-inline math-inline-punctuated">\(a_n\).</span> Then, <span class="math-inline">\(A\)</span> is nonempty and bounded above by <span class="math-inline math-inline-punctuated">\(b_1\).</span> Let <span class="math-inline">\(\alpha\)</span> be the supremum for <span class="math-inline math-inline-punctuated">\(A\).</span> If <span class="math-inline">\(m,n\in \mathbb N^{+}\)</span> then we have</p>
+
+\[a_n \le a_{m+n} &lt; b_{m+n} \le b_m,\]
+
+<p>so that <span class="math-inline">\(b_m\)</span> is an upper bound for <span class="math-inline math-inline-punctuated">\(A\).</span> Therefore <span class="math-inline">\(a_m\le \alpha \le b_m\)</span> for every <span class="math-inline math-inline-punctuated">\(m\),</span> so that <span class="math-inline math-inline-punctuated">\(\alpha \in \bigcap_{n=1}^{\infty} I_n\).</span><span data-environment-end="proof" class="qed"><span class="math-inline">\(\square\)</span></span></p>
+
+<p>We next extend this theorem to <span class="math-inline math-inline-punctuated">\(\mathbb R^k\).</span> The appropriate higher-dimensional analogue of a closed interval is a <span class="math-inline math-inline-punctuated">\(k\)-</span>cell.</p>
+
+<p><strong>Definition 2.2.14.</strong> Let <span class="math-inline">\(k\in \mathbb N^{+}\)</span> and let <span class="math-inline">\(a_i\)</span> and <span class="math-inline">\(b_i\)</span> be reals such that <span class="math-inline">\(a_i&lt;b_i\)</span> for <span class="math-inline math-inline-punctuated">\(i=1,\dots,k\).</span> The set of all points <span class="math-inline">\(\mathbf x = (x_1,\dots,x_k)\in \mathbb R^k\)</span> whose coordinates satisfy <span class="math-inline">\(a_i\le x_i\le b_i\)</span> is called a <span class="math-inline math-inline-punctuated">\(k\)-</span><em>cell</em>.</p>
+
+<p><strong>Theorem 2.2.15.</strong> Let <span class="math-inline math-inline-punctuated">\(k\in \mathbb N^{+}\).</span> If <span class="math-inline">\((I_n)\)</span> is a sequence of <span class="math-inline math-inline-punctuated">\(k\)-</span>cells such that <span class="math-inline math-inline-punctuated">\(I_{n+1}\subseteq I_n\),</span> then <span class="math-inline">\(\bigcap_{n=1}^{\infty} I_n\)</span> is nonempty.</p>
+
+<p><em>Proof.</em> Let <span class="math-inline">\(I_n\)</span> consist of all points <span class="math-inline">\(\mathbf x=(x_1,\dots,x_k)\)</span> such that <span class="math-inline">\(x_i \in I_{n,i}\)</span> where <span class="math-inline">\(1\le i\le k\)</span> and <span class="math-inline math-inline-punctuated">\(I_{n,i}=[a_{n,i}, b_{n,i}]\).</span> By means of Theorem 2.2.13, we may let <span class="math-inline">\(\mathbf c_i\)</span> be a point of <span class="math-inline">\(\bigcap_{n=1}^{\infty} I_{n,i}\)</span> for each <span class="math-inline math-inline-punctuated">\(i\).</span> If <span class="math-inline math-inline-punctuated">\(\mathbf c = (c_1,\dots,c_k)\),</span> then <span class="math-inline math-inline-punctuated">\(\mathbf c \in \bigcap_{n=1}^{\infty} I_n\).</span><span data-environment-end="proof" class="qed"><span class="math-inline">\(\square\)</span></span></p>
+
+<p>We now prove a fundamental theorem of compactness in Euclidean space: Every cell is compact. The preceding nested-cell theorem provides the key step in a bisection argument for compactness.</p>
+
+<p><strong>Theorem 2.2.16.</strong> Every <span class="math-inline math-inline-punctuated">\(k\)-</span>cell is compact.</p>
+
+<p><em>Proof.</em> Let <span class="math-inline">\(I\)</span> be a <span class="math-inline math-inline-punctuated">\(k\)-</span>cell, consisting of all points <span class="math-inline">\(\mathbf x=(x_1,\dots,x_k)\in \mathbb R^k\)</span> such that <span class="math-inline">\(x_i\in [a_i, b_i]\)</span> for <span class="math-inline math-inline-punctuated">\(1\le i\le k\).</span> Let <span class="math-inline">\(\mathbf a=(a_1,\dots,a_k)\)</span> and <span class="math-inline math-inline-punctuated">\(\mathbf b=(b_1,\dots,b_k)\),</span> and define <span class="math-inline math-inline-punctuated">\(\delta = \|\mathbf a-\mathbf b\|\).</span> Then, we have <span class="math-inline">\(\|\mathbf x-\mathbf y\|\le \delta\)</span> for every <span class="math-inline math-inline-punctuated">\(\mathbf x,\mathbf y\in I\).</span>
+Suppose, for contradiction, that there exists an open cover <span class="math-inline">\(\mathcal U\)</span> of <span class="math-inline">\(I\)</span> that has no finite subcover of <span class="math-inline math-inline-punctuated">\(I\).</span> Put <span class="math-inline math-inline-punctuated">\(c_i = (a_i+b_i)/2\),</span> then the intervals <span class="math-inline">\([a_i,c_i]\)</span> and <span class="math-inline">\([c_i,b_i]\)</span> determine <span class="math-inline">\(2^k\)</span> <span class="math-inline math-inline-punctuated">\(k\)-</span>cells, whose union is <span class="math-inline math-inline-punctuated">\(I\).</span> At least one of these sub-cells, call it <span class="math-inline math-inline-punctuated">\(I_1\),</span> cannot be covered by any finite subcollection of <span class="math-inline">\(\mathcal U\)</span> (If every sub-cell had a finite subcover, the union of these <span class="math-inline">\(2^k\)</span> finite subcovers would be a finite subcover of <span class="math-inline math-inline-punctuated">\(I\)).</span> We subdivide <span class="math-inline">\(I_1\)</span> and continue the process. Then we obtain a sequence <span class="math-inline">\((I_n)\)</span> with the following properties:</p>
+
+<ol>
+  <li><span class="math-inline">\(I\supseteq I_1 \supseteq I_2 \supseteq \cdots\)</span> ;</li>
+  <li><span class="math-inline">\(I_n\)</span> is not covered by any finite subcollection of <span class="math-inline math-inline-punctuated">\(\mathcal U\);</span></li>
+  <li>if <span class="math-inline">\(\mathbf x,\mathbf y\in I_n\)</span> then <span class="math-inline math-inline-punctuated">\(\| \mathbf x-\mathbf y\|\le 2^{-n}\delta\).</span></li>
+</ol>
+
+<p>By Theorem 2.2.15, there is a point <span class="math-inline">\(\mathbf c\)</span> which lies in every <span class="math-inline math-inline-punctuated">\(I_n\).</span> Then, there exists <span class="math-inline">\(U_0\in \mathcal U\)</span> that contains <span class="math-inline math-inline-punctuated">\(\mathbf c\).</span> Since <span class="math-inline">\(U_0\)</span> is open, there exists <span class="math-inline">\(r&gt;0\)</span> such that <span class="math-inline math-inline-punctuated">\(B_r(\mathbf c)\subseteq U_0\).</span> If <span class="math-inline">\(n\)</span> is so large that <span class="math-inline math-inline-punctuated">\(2^{-n}\delta&lt;r\),</span> then <span class="math-inline math-inline-punctuated">\(I_n\subseteq B_r(\mathbf c)\subseteq U_0\),</span> which contradicts property (2).<span data-environment-end="proof" class="qed"><span class="math-inline">\(\square\)</span></span></p>
+
+<p>We next examine the relation between having a limit point and compactness. Note that the local-to-global principle appears again in the proof of the following theorem: compactness convert the local finiteness of <span class="math-inline">\(A\)</span> into the global finiteness of <span class="math-inline math-inline-punctuated">\(A\).</span></p>
+
+<p><strong>Theorem 2.2.17.</strong> If <span class="math-inline">\(A\)</span> is an infinite subset of a compact set <span class="math-inline math-inline-punctuated">\(K\),</span> then <span class="math-inline">\(A\)</span> has a limit point in <span class="math-inline math-inline-punctuated">\(K\).</span></p>
+
+<p><em>Proof.</em> If no point of <span class="math-inline">\(K\)</span> is a limit point of <span class="math-inline math-inline-punctuated">\(A\),</span> then every <span class="math-inline">\(x\in K\)</span> would have an open ball <span class="math-inline">\(B_{r_x}(x)\)</span> that contains at most one point of <span class="math-inline math-inline-punctuated">\(A\).</span> These balls form an open cover of <span class="math-inline math-inline-punctuated">\(K\).</span> Since <span class="math-inline">\(K\)</span> is compact, there exists <span class="math-inline">\(x_1,\dots,x_n\)</span> such that</p>
+
+\[K\subseteq\bigcup_{i=1}^n B_{r_{x_i}}(x_i).\]
+
+<p>Since <span class="math-inline">\(A\subseteq K\)</span> and each ball contains at most one point of <span class="math-inline math-inline-punctuated">\(A\),</span> the set <span class="math-inline">\(A\)</span> has at most <span class="math-inline">\(n\)</span> points. This contradicts the assumption that <span class="math-inline">\(A\)</span> is infinite.<span data-environment-end="proof" class="qed"><span class="math-inline">\(\square\)</span></span></p>
+
+<p>The theorem states that every infinite subset of a compact space must accumulate somewhere. From this topological consequence, we derive a corollary about Euclidean space: In Euclidean space, boundedness places a set inside a compact cell, so every bounded infinite set inherits the accumulation property.</p>
+
+<p><strong>Corollary 2.2.18</strong> (Bolzano–Weierstrass theorem).  Every bounded infinite subset of <span class="math-inline">\(\mathbb R^k\)</span> has a limit point in <span class="math-inline math-inline-punctuated">\(\mathbb R^k\).</span></p>
+
+<p><em>Proof.</em> Let <span class="math-inline">\(A\)</span> be a bounded infinite subset of <span class="math-inline math-inline-punctuated">\(\mathbb R^k\).</span> Since <span class="math-inline">\(A\)</span> is bounded, some <span class="math-inline math-inline-punctuated">\(k\)-</span>cell <span class="math-inline">\(I\)</span> contains <span class="math-inline math-inline-punctuated">\(A\).</span> Since <span class="math-inline">\(I\)</span> is compact by Theorem 2.2.16, Theorem 2.2.17 shows that <span class="math-inline">\(A\)</span> has a limit point in <span class="math-inline math-inline-punctuated">\(I\).</span><span data-environment-end="proof" class="qed"><span class="math-inline">\(\square\)</span></span></p>
+
+<p>In Euclidean space, the somewhat abstract notion of compactness can be characterized geometrically by closedness and boundedness.</p>
+
+<p><strong>Definition 2.2.19.</strong> Let <span class="math-inline">\(M\)</span> be a metric space, and let <span class="math-inline math-inline-punctuated">\(A\subseteq M\).</span> The set <span class="math-inline">\(A\)</span> is said to be <em>bounded</em> if there exists <span class="math-inline">\(R&gt;0\)</span> such that</p>
+
+\[d(x,y) &lt; R\]
+
+<p>for all <span class="math-inline math-inline-punctuated">\(x,y\in A\).</span></p>
+
+<p><strong>Theorem 2.2.20</strong> (Heine–Borel theorem). Let <span class="math-inline math-inline-punctuated">\(A\subseteq \mathbb R^k\).</span> The set <span class="math-inline">\(A\)</span> is compact if and only if <span class="math-inline">\(A\)</span> is closed and bounded.</p>
+
+<p><em>Proof.</em> Suppose that <span class="math-inline">\(A\)</span> is compact. Fix <span class="math-inline math-inline-punctuated">\(\mathbf p\in \mathbb R^k\).</span> Then, <span class="math-inline">\(\lbrace B_n(\mathbf p): n\in \mathbb N^{+}\rbrace\)</span> is an open cover of <span class="math-inline math-inline-punctuated">\(A\),</span> and a finite subcover places <span class="math-inline">\(A\)</span> inside <span class="math-inline">\(B_{n_0}(\mathbf p)\)</span> for sufficiently large <span class="math-inline math-inline-punctuated">\(n_0\in \mathbb N\).</span> It follows that <span class="math-inline">\(\|\mathbf x - \mathbf y\|&lt;2n_0\)</span> for all <span class="math-inline math-inline-punctuated">\(\mathbf x,\mathbf y\in A\).</span> Thus <span class="math-inline">\(A\)</span> is bounded. Also, it is clear that <span class="math-inline">\(A\)</span> is closed, by Theorem 2.2.5.
+Conversely, suppose that <span class="math-inline">\(A\)</span> is closed and bounded, and let <span class="math-inline math-inline-punctuated">\(\mathbf x=(x_1,\dots,x_k)\in A\).</span> Since <span class="math-inline">\(A\)</span> is bounded, for each <span class="math-inline math-inline-punctuated">\(i\),</span> there exists a closed interval <span class="math-inline">\([a_i,b_i]\)</span> that contains every <span class="math-inline math-inline-punctuated">\(x_i\).</span> Thus, we have <span class="math-inline">\(A\subseteq I\)</span> for some <span class="math-inline math-inline-punctuated">\(k\)-</span>cell <span class="math-inline math-inline-punctuated">\(I\).</span> Since <span class="math-inline">\(A\)</span> is closed, Theorem 2.2.16 and Theorem 2.2.7 show that <span class="math-inline">\(A\)</span> is compact.<span data-environment-end="proof" class="qed"><span class="math-inline">\(\square\)</span></span></p>
+
+<h2 id="references">References</h2>
+<ol class="reference">
+  <li>Rudin, W. (1976). <em>Principles of mathematical analysis</em> (3rd ed.). McGraw-Hill Education.</li>
+</ol>
+
+  </div>
+
+
+  <hr class="post-body-divider">
+
+  
+</article>
+
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Yeonsol Kim. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <script src="/assets/js/main.js?v=1789377169" defer></script>
+
+  
+    <script src="/assets/js/edited-time.js?v=1789377169" defer></script>
+  
+</body>
+</html>

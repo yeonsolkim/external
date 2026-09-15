@@ -7,6 +7,8 @@ category_path:
   - 6. Others
 created_at: 2026-08-06 13:53:49 +0900
 last_modified_at: 2026-08-24 16:18:07 +0900
+
+publish: false
 ---
 
 **Definition 1.** An *outcome* is one particular possible result of the trial. When a die is rolled, the outcomes are $1,2,3,4,5,6.$ The *sample space*, usually denoted by $\Omega$, is the set of all possible outcomes:

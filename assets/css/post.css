@@ -449,7 +449,7 @@ text-indent: 0;
 text-indent: 0;
 }
 
-.post-body[data-line-indent="false"][data-semantic-units="true"] > p.semantic-paragraph:not(:first-child) {
+.post-body[data-line-indent="false"][data-semantic-units="true"] > p.semantic-paragraph:not(:first-child):not([data-paragraph-continuation="soft"]) {
 margin-top: 1lh !important;
 }
 
@@ -564,7 +564,7 @@ overflow: clip;
 }
 
 /*
- * Keep optical inline-math alignment independent of Cayman's block margins.
+ * Keep optical inline-math alignment independent of global block margins.
  * MathJax's per-expression SVG vertical-align remains untouched.
  */
 .post-body .math-inline > mjx-container {
@@ -634,9 +634,14 @@ margin-inline: auto;
 @media (max-width: 768px), (pointer: coarse) {
   .main-content .post-body {
     color: #1f1f1f;
+    font-size: 1.02em;
   }
   .post-body .math-inline > mjx-container {
   top: 0.015em;
+  }
+
+  .post-title {
+  font-size: 1.55rem !important;
   }
 
   .post-body mjx-container[display="true"],

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:podcast="https://podcastindex.org/namespace/1.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>External</title>
+<link>https://yeonsolkim.com/</link>
+<atom:link href="https://yeonsolkim.com/podcast.xml" rel="self" type="application/rss+xml"/>
+<language>en</language>
+<description>A backup external memory containing several data files</description>
+<itunes:author>Yeonsol Kim</itunes:author>
+<itunes:explicit>false</itunes:explicit>
+<itunes:type>episodic</itunes:type>
+<itunes:category text="Science"/>
+<lastBuildDate>Tue, 15 Sep 2026 08:58:06 +0000</lastBuildDate>
+<item>
+<title>3.3. Cauchy Sequences</title>
+<link>https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</link>
+<guid isPermaLink="true">https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</guid>
+<pubDate>Wed, 09 Sep 2026 15:00:00 +0000</pubDate>
+<description>Convergence describes the asymptotic behavior of a sequence by relating its terms to a point of the ambient space. This raises a natural question. How much of this asymptotic behavior can be recognized from the terms of the sequence themselves, without first specifying or establishing the existence of such a point? The Cauchy condition isolates precisely this internal aspect of convergence. Instead of comparing the terms x_n with a separate point x, it compares sufficiently late terms with one another and asks whether they eventually become arbitrarily close. Read the page at https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</description>
+<enclosure url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.mp3" length="8763149" type="audio/mpeg"/>
+<itunes:duration>0:09:08</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.chapters.json" type="application/json+chapters"/>
+</item>
+<item>
+<title>2.4. Connected Sets</title>
+<link>https://yeonsolkim.com/2026/09/03/4.-Connected-Sets.html</link>
+<guid isPermaLink="true">https://yeonsolkim.com/2026/09/03/4.-Connected-Sets.html</guid>
+<pubDate>Thu, 03 Sep 2026 15:00:00 +0000</pubDate>
+<description>We now focus on the fact that the Cantor set has gaps at every scale: given any x\in C and any r&gt;0, no matter how small r is, the neighborhood (x-r,x+r) contains some open interval that does not belong to C. Thus, if we zoom in around any point of the Cantor set, the set never starts looking like a solid interval. To express the property of a set forming one global piece, we introduce connectedness. Read the page at https://yeonsolkim.com/2026/09/03/4.-Connected-Sets.html</description>
+<enclosure url="https://audio.yeonsolkim.com/2026/09/03/4.-Connected-Sets.mp3" length="6198367" type="audio/mpeg"/>
+<itunes:duration>0:06:27</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/2026/09/03/4.-Connected-Sets.chapters.json" type="application/json+chapters"/>
+</item>
+<item>
+<title>3.2. Subsequenes</title>
+<link>https://yeonsolkim.com/2026/09/03/2.-Subsequenes.html</link>
+<guid isPermaLink="true">https://yeonsolkim.com/2026/09/03/2.-Subsequenes.html</guid>
+<pubDate>Thu, 03 Sep 2026 15:00:00 +0000</pubDate>
+<description>A sequence may fail to converge as a whole while some of its terms still exhibit convergent behavior. To capture such behavior, we introduce the notion of a subsequence. Read the page at https://yeonsolkim.com/2026/09/03/2.-Subsequenes.html</description>
+<enclosure url="https://audio.yeonsolkim.com/2026/09/03/2.-Subsequenes.mp3" length="4695937" type="audio/mpeg"/>
+<itunes:duration>0:04:53</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/2026/09/03/2.-Subsequenes.chapters.json" type="application/json+chapters"/>
+</item>
+<item>
+<title>3.1. Convergent Sequences</title>
+<link>https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</link>
+<guid isPermaLink="true">https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</guid>
+<pubDate>Mon, 31 Aug 2026 15:00:00 +0000</pubDate>
+<description>We now use the metric structure to describe the asymptotic behavior of an ordered family of points. To say that a sequence (x_n) of points in M converges to x means that its terms eventually lie as close to x as we wish. Read the page at https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</description>
+<enclosure url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.mp3" length="15578868" type="audio/mpeg"/>
+<itunes:duration>0:16:14</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.chapters.json" type="application/json+chapters"/>
+</item>
+<item>
+<title>2.3. Perfect Sets</title>
+<link>https://yeonsolkim.com/2026/08/05/3.-Perfect-Sets.html</link>
+<guid isPermaLink="true">https://yeonsolkim.com/2026/08/05/3.-Perfect-Sets.html</guid>
+<pubDate>Wed, 05 Aug 2026 15:00:00 +0000</pubDate>
+<description>Theorem 2.2.17 guarantees that an infinite subset of a compact set has at least one limit point. However, this is a somewhere statement, not an everywhere statement: it does not say that every point of the set participates in the accumulation. An infinite compact set may still contain many isolated points. Perfectness imposes a much stronger local picture: a perfect set has accumulation everywhere within the set. Read the page at https://yeonsolkim.com/2026/08/05/3.-Perfect-Sets.html</description>
+<enclosure url="https://audio.yeonsolkim.com/2026/08/05/3.-Perfect-Sets.mp3" length="6551135" type="audio/mpeg"/>
+<itunes:duration>0:06:49</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/2026/08/05/3.-Perfect-Sets.chapters.json" type="application/json+chapters"/>
+</item>
+<item>
+<title>2.2. Compact Sets</title>
+<link>https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html</link>
+<guid isPermaLink="true">https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html</guid>
+<pubDate>Thu, 30 Jul 2026 15:00:00 +0000</pubDate>
+<description>We now consider how a collection of open sets can cover a set A as a whole. Such a collection may contain infinitely many sets, and this raises a natural question. Can finitely many members of the collection already cover A? Compactness formalizes the sets for which the answer is always yes. Read the page at https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html</description>
+<enclosure url="https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.mp3" length="20223310" type="audio/mpeg"/>
+<itunes:duration>0:21:04</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.chapters.json" type="application/json+chapters"/>
+</item>
+<item>
+<title>2.1. Open Sets and Closed Sets</title>
+<link>https://yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.html</link>
+<guid isPermaLink="true">https://yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.html</guid>
+<pubDate>Fri, 24 Jul 2026 15:00:00 +0000</pubDate>
+<description>A great deal of analysis on \mathbb R, \mathbb C, and \mathbb R^k depends not on their full algebraic structure, but only on the notion of distance between points. This suggests isolating the notion of distance from the particular nature of the points themselves. Accordingly, let M be a nonempty set. We temporarily forget what its elements are and retain only a function d:M\times M\to\mathbb R, where d(x,y) is intended to represent the distance between x and y. Not every such function can reasonably be interpreted as a distance. A distance should be nonnegative; distinct points should have positive distance from one another; the distance from x to y should be the same as the distance from y to x; and traveling directly from x to z should be no longer than traveling from x to z through an intermediate point y. These requirements are abstracted into the following axioms. Read the page at https://yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.html</description>
+<enclosure url="https://audio.yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.mp3" length="23185649" type="audio/mpeg"/>
+<itunes:duration>0:24:09</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.chapters.json" type="application/json+chapters"/>
+</item>
+</channel>
+</rss>

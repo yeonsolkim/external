@@ -4,6 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link
+    rel="preload"
+    href="{{ '/assets/fonts/new-computer-modern/NewCM10-Book.woff2' | relative_url }}"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  >
+  <link
+    rel="preload"
+    href="{{ '/assets/fonts/new-computer-modern/NewCM10-Bold.woff2' | relative_url }}"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  >
+
   {% seo %}
 
   {% assign asset_version = site.github.build_revision %}
@@ -14,7 +29,12 @@
 
   {% if page.layout == "post" %}
     <link rel="stylesheet" href="{{ '/assets/css/post.css' | relative_url }}?v={{ asset_version }}">
+    <link rel="stylesheet" href="{{ '/assets/css/narration.css' | relative_url }}?v={{ asset_version }}">
+    {% if page.publish == true %}<meta name="narrate" content="true">{% endif %}
   {% endif %}
+  {% unless site.narration.podcast == false %}
+  <link rel="alternate" type="application/rss+xml" title="{{ site.fixed_banner_title | default: site.title }} — audio" href="{{ '/podcast.xml' | relative_url }}">
+  {% endunless %}
 
   {% if page.index_page %}
     <link rel="stylesheet" href="{{ '/assets/css/index.css' | relative_url }}?v={{ asset_version }}">
@@ -57,6 +77,9 @@
 
   {% if page.index_page or page.layout == "post" %}
     <script src="{{ '/assets/js/edited-time.js' | relative_url }}?v={{ asset_version }}" defer></script>
+  {% endif %}
+  {% if page.layout == "post" %}
+    <script src="{{ '/assets/js/narration-player.js' | relative_url }}?v={{ asset_version }}" defer></script>
   {% endif %}
 </body>
 </html>

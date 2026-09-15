@@ -7,6 +7,8 @@ category_path:
   - 1. History of Mathematics
 created_at: 2026-09-07 17:15:27 +0900
 last_modified_at: 2026-09-07 20:25:53 +0900
+
+publish: false
 ---
 |Century|Mathematician|Major areas / contributions|
 |---|---|--|

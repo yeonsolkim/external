@@ -6,9 +6,10 @@ category_path:
   - 3. English
   - 2. Dictionary
 created_at: 2026-09-05 11:24:15 +0900
-last_modified_at: 2026-09-07 18:15:02 +0900
+last_modified_at: 2026-09-15 08:51:20 +0900
 
 line_indent: false
+publish: false
 ---
 
 <b>revenue</b> \|ˈrevənu\|.
@@ -44,4 +45,6 @@ line_indent: false
 **neither** \|niːðər\|.
 **either** \|iːðər\|.
 
-<b>genuine</b> \|ˈdʒen.ju.in\|.
+<b>genuine</b> \|ˈdʒenjuin\|.
+
+**pronunciation** \|prənansiˈeiʃən\|.

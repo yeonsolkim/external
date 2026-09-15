@@ -8,5 +8,7 @@ category_path:
   - 2. Biographies
 created_at: 2026-09-07 17:04:16 +0900
 last_modified_at: 2026-09-07 17:04:16 +0900
+
+publish: false
 ---
 

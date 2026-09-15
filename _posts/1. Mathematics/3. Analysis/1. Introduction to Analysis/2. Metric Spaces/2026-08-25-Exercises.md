@@ -9,6 +9,8 @@ category_path:
   - 2. Metric Spaces
 created_at: 2026-08-31 15:32:11 +0900
 last_modified_at: 2026-09-02 21:09:53 +0900
+
+publish: false
 ---
 **Exercise 1.** Let $(M,d)$ be a metric space, and let $A\subseteq M$. 
 1. Prove that $A'$ is closed.

@@ -1,0 +1,8 @@
+{%- comment -%}
+  Audio narration of this post. Nothing is rendered; assets/js/narration-player.js reads the
+  manifest URL from here and, only when /audio/<this page>.json exists (written after
+  `jekyll build` by `python3 -m _narrator publish`), makes the statement labels and the title
+  playable.
+{%- endcomment -%}
+{%- assign narration_manifest = page.url | replace: '.html', '.json' | prepend: '/audio' -%}
+<div class="narration" data-manifest="{{ narration_manifest | relative_url }}" data-page="{{ page.url }}" hidden></div>

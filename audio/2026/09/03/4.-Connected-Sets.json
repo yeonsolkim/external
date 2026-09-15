@@ -1,0 +1,121 @@
+{
+  "url": "/2026/09/03/4.-Connected-Sets.html",
+  "title": "2.4. Connected Sets",
+  "lang": "en",
+  "description": "We now focus on the fact that the Cantor set has gaps at every scale: given any $x\\in C$ and any $r>0$, no matter how small $r$ is, the neighborhood $(x-r,x+r)$ contains some open interval that does not belong to $C$. Thus, if we zoom in around any point of the Cantor set, the set never starts looking like a solid interval. To express the property of a set forming one global piece, we introduce connectedness.",
+  "published_at": "2026-09-03T15:00:00+00:00",
+  "audio": "https://audio.yeonsolkim.com/o/19495b44c428e9f6c4cf217e560189b1b20cc0119f8bc26b6f2b13460173ac03.mp3",
+  "stable": "https://audio.yeonsolkim.com/2026/09/03/4.-Connected-Sets.mp3",
+  "chapters_url": "https://audio.yeonsolkim.com/2026/09/03/4.-Connected-Sets.chapters.json",
+  "duration": 387.303,
+  "bytes": 6198367,
+  "voice": "cedar",
+  "page_key": "19495b44c428e9f6c4cf217e560189b1b20cc0119f8bc26b6f2b13460173ac03",
+  "skeleton_hash": "7e2540d8fffc44e1f9df5000873b5fb92d88752376b58f031e133af4d15b1dee",
+  "generated": "2026-09-15",
+  "podcast": true,
+  "sections": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "kind": "introduction",
+      "level": 2,
+      "start": 0.0,
+      "duration": 30.675,
+      "source": "aa419bb287d1b355dbb6c16c18b256b833320b95df4b50081c997d8c0d78dcb3",
+      "audio": "9bd12d17fe5f6a3ca830e8ba6fe74e8c5be2ad4ce25b8a143905fd8f88bd94dd"
+    },
+    {
+      "id": "definition-2-4-1",
+      "title": "Definition 2.4.1",
+      "kind": "definition",
+      "level": 2,
+      "start": 31.875,
+      "duration": 20.058,
+      "source": "625ae618c61dd2c83e2dfc47b60cf1996daf38b03c3d19937ff9343e0021f927",
+      "audio": "14dc25bf4906d7fa037ce7f00a955ee575523cd78f6c6b831684e33e02ec1612"
+    },
+    {
+      "id": "prose-after-definition-2-4-1",
+      "title": "Note that separated sets are of course disjoint, but…",
+      "kind": "prose",
+      "level": 2,
+      "start": 53.134,
+      "duration": 6.796,
+      "source": "746cb759d1763c6ba5458497514c6d56648261b30983225d594b2c9c75169162",
+      "audio": "997bf82d96c8d6f5d2915e027b8822a91158ed22387b626364f4d6778cc63406"
+    },
+    {
+      "id": "definition-2-4-2",
+      "title": "Definition 2.4.2",
+      "kind": "definition",
+      "level": 2,
+      "start": 61.129,
+      "duration": 16.714,
+      "source": "866ce84fa9ccb0937c649ee2ac32c8b8d266e64f4a2b542c4a6cdbf9fbb1bcb0",
+      "audio": "722ca05e83d090131ee285bf7e0f1b2c70a667842a7371e07316d30d317f9681"
+    },
+    {
+      "id": "theorem-2-4-3",
+      "title": "Theorem 2.4.3",
+      "kind": "theorem",
+      "level": 2,
+      "start": 79.043,
+      "duration": 136.817,
+      "source": "21ff5ecd68347265680399104dc41d1739742f0c4de3f2a4b313e046f7635696",
+      "audio": "7167da906c17ba3f7082436674db44b81bff061045658bc0f818303638b57ee5"
+    },
+    {
+      "id": "prose-after-theorem-2-4-3",
+      "title": "On the real line …, a gap is the only possible obstruction…",
+      "kind": "prose",
+      "level": 2,
+      "start": 217.06,
+      "duration": 12.482,
+      "source": "77a207349c4c02feeb80fba9f19790ab42ffdb6533c5c2a2d3e8c42653c290a1",
+      "audio": "797db0266c19addeb6b2875c3ce48c0a8b525bcb22543f90499799666cb1dfe7"
+    },
+    {
+      "id": "theorem-2-4-4",
+      "title": "Theorem 2.4.4",
+      "kind": "theorem",
+      "level": 2,
+      "start": 230.742,
+      "duration": 156.561,
+      "source": "47f92c7f5c8222c9c78c5b07793a4761179227e6d7230f22123f5ec949b04570",
+      "audio": "8dd649a385d349f0c505c952dee095ca1c03b4faa258e526621f4982f1e14787"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "start": 0.0,
+      "end": 31.875
+    },
+    {
+      "id": "definition-2-4-1",
+      "title": "Definition 2.4.1",
+      "start": 31.875,
+      "end": 61.129
+    },
+    {
+      "id": "definition-2-4-2",
+      "title": "Definition 2.4.2",
+      "start": 61.129,
+      "end": 79.043
+    },
+    {
+      "id": "theorem-2-4-3",
+      "title": "Theorem 2.4.3",
+      "start": 79.043,
+      "end": 230.742
+    },
+    {
+      "id": "theorem-2-4-4",
+      "title": "Theorem 2.4.4",
+      "start": 230.742,
+      "end": 387.303
+    }
+  ]
+}

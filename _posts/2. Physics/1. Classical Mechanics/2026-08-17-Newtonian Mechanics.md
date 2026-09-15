@@ -7,6 +7,8 @@ category_path:
   - 1. Classical Mechanics
 created_at: 2026-08-17 13:05:49 +0900
 last_modified_at: 2026-08-24 16:19:04 +0900
+
+publish: false
 ---
 
 **Definition 1.** We consider a system of $k$ particles with fixed masses $m_1,\dots, m_k$, located at positions $\mathbf x_1,\dots,\mathbf x_k\in \mathbb R^3$ at time $t\in \mathbb R$. The $i$th particle is acted upon by a force $\mathbf F_i$ that depends on the positions $\mathbf x_1,\dots,\mathbf x_k$ and the time $t$. We then concatenate the positions and forces into $3k$-vectors
