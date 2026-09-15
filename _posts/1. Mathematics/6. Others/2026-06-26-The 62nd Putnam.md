@@ -7,6 +7,8 @@ category_path:
   - 6. Others
 created_at: 2026-06-26 12:26:40 +0900
 last_modified_at: 2026-08-24 16:11:17 +0900
+
+publish: false
 ---
 
 **A1.** Consider a set $S$ and a binary operation $\ast,$ that is, for each $a,b\in S, a\ast b\in S.$ Assume $(a\ast b)\ast a = b$ for all $a,b\in S.$ Prove that $a\ast (b\ast a)=b$ for all $a,b\in S.$

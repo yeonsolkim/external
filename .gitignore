@@ -20,3 +20,8 @@ vendor/
 /.venv/
 **/__pycache__/
 *.py[cod]
+
+# narrator secrets
+.env
+_audio/
+.env.*

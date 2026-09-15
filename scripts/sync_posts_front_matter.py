@@ -15,6 +15,7 @@ POSTS_ROOT = ROOT / "_posts"
 KST = timezone(timedelta(hours=9))
 DATE_PREFIX_RE = re.compile(r"^\d{4}-\d{2}-\d{2}-")
 FRONT_MATTER_RE = re.compile(r"\A---\r?\n(.*?)\r?\n---\r?\n", flags=re.DOTALL)
+TOP_LEVEL_KEY_RE = re.compile(r"^([A-Za-z_][A-Za-z0-9_-]*):(?:\s.*)?$")
 MANAGED_KEYS = {"layout", "title", "date", "category_path", "created_at", "last_modified_at"}
 STABILITY_INTERVAL_SECONDS = 1.0
 REQUIRED_QUIET_CHECKS = 2
@@ -37,6 +38,15 @@ def yaml_quote(value: str) -> str:
     return '"' + value.replace("\\", "\\\\").replace('"', '\\"') + '"'
 
 
+def has_top_level_key(front_matter: str, key: str) -> bool:
+    for line in front_matter.splitlines():
+        match = TOP_LEVEL_KEY_RE.match(line)
+        if match and match.group(1) == key:
+            return True
+
+    return False
+
+
 def strip_managed_keys(front_matter: str) -> list[str]:
     lines = front_matter.splitlines()
     kept: list[str] = []
@@ -44,7 +54,7 @@ def strip_managed_keys(front_matter: str) -> list[str]:
 
     while i < len(lines):
         line = lines[i]
-        match = re.match(r"^([A-Za-z_][A-Za-z0-9_-]*):(?:\s.*)?$", line)
+        match = TOP_LEVEL_KEY_RE.match(line)
 
         if match and match.group(1) in MANAGED_KEYS:
             i += 1
@@ -85,7 +95,10 @@ def desired_front_matter(path: Path, stat: os.stat_result, existing_front_matter
         f"last_modified_at: {fmt_time(stat.st_mtime)}",
     ]
 
-    extra = strip_managed_keys(existing_front_matter or "")
+    existing_front_matter = existing_front_matter or ""
+    extra = strip_managed_keys(existing_front_matter)
+    if not has_top_level_key(existing_front_matter, "publish"):
+        extra.append("publish: false")
     lines = managed + ([""] + extra if extra else [])
 
     return "---\n" + "\n".join(lines) + "\n---\n"

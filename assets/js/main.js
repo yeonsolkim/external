@@ -35,10 +35,6 @@
     return document.querySelector('.post-body');
   }
 
-  function usesLineIndent(postBody) {
-    return !postBody || postBody.getAttribute('data-line-indent') !== 'false';
-  }
-
   function getReferenceScope() {
     var scopeElement = document.querySelector('[data-reference-scope]');
 
@@ -513,13 +509,7 @@
   function prepareParagraphUnits(postBody) {
     var paragraphs = directChildrenMatching(postBody, 'P');
 
-    if (usesLineIndent(postBody)) {
-      paragraphs.forEach(splitParagraphAtSoftLines);
-    } else {
-      paragraphs.forEach(function (paragraph) {
-        paragraph.classList.add('semantic-unit', 'semantic-paragraph');
-      });
-    }
+    paragraphs.forEach(splitParagraphAtSoftLines);
   }
 
   function readEntryDescriptor(paragraph) {

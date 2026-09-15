@@ -1,16 +1,12 @@
-remote_theme: pages-themes/cayman@v0.2.0
 baseurl: ""
 description: "A backup external memory containing several data files"
 url: "https://yeonsolkim.com"
+# Pages builds in UTC; pin it so local builds produce the same post URLs (/2026/07/30/…).
+timezone: UTC
 fixed_banner_title: "External"
-banner_color_start: "#000000" 
-banner_color_end: "#878787" 
 comments_enabled: false
 author: YeonsolKim  
-github:
-  is_project_page: true
 plugins:
-  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
@@ -21,3 +17,10 @@ social:
 markdown: kramdown
 kramdown:
   math_engine: mathjax
+
+# Audio narration (_narrator/): podcast + in-page player. AUDIO_BASE_URL in the env overrides audio_url.
+narration:
+  author: Yeonsol Kim
+  audio_url: https://audio.yeonsolkim.com
+  voice: cedar
+  podcast: true          # false → no podcast.xml and no feed link; the in-page player is unaffected

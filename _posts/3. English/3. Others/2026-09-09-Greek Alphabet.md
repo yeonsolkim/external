@@ -7,6 +7,8 @@ category_path:
   - 3. Others
 created_at: 2026-09-09 11:27:05 +0900
 last_modified_at: 2026-09-10 10:48:40 +0900
+
+publish: false
 ---
 | No. | Uppercase | Lowercase | Name |
 |---|---|---|---|

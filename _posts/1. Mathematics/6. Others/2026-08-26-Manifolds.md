@@ -7,6 +7,8 @@ category_path:
   - 6. Others
 created_at: 2026-08-26 11:38:11 +0900
 last_modified_at: 2026-08-26 12:21:20 +0900
+
+publish: false
 ---
 
 An $n$-dimensional manifold is an object modeled locally on $\mathbb R^n$. To make the intuitive notion a formal one, we define some notions. We say that two subsets $U$ and $V$ of Euclidean spaces are *homeomorphic* if there exists a bijection $\varphi: U \to V$ such that both $\varphi$ and its inverse are continuous. A subset $M$ of some Euclidean space is said to be *locally Euclidean of dimension $n$* if every point of $M$ has a neighborhood in $M$ that is homeomorphic to a ball in $\mathbb R^n$. The subset $M$ is an $n$-*dimensional manifold* (but this is not the general definition of a manifold).
