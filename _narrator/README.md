@@ -246,6 +246,13 @@ reloaded at the same spot, three times, then playback stops cleanly. `_config.ym
 (author, audio_url, voice, `podcast: true|false` — false drops `podcast.xml` and the head
 link).
 
+**Feed determinism.** `podcast.xml` is committed, so it must not change when nothing did:
+its `lastBuildDate` is derived from the newest page's `generated` date, never from the
+clock. (A clock-based value made CI commit a one-line "change" after every push, which
+left the next local push rejected as non-fast-forward.) The "Git" service therefore runs
+`git pull --rebase --autostash origin main` before `git push`, aborting the rebase and
+notifying if a conflict appears.
+
 **CI** (`.github/workflows/pages.yml`): after the Jekyll build — tests, ffmpeg, `publish
 _site --max-new-minutes 60`, then generated scripts are committed back to `_narration/`
 (`[skip ci]`), together with `audio/**.json` and `podcast.xml`; needs `contents: write`. The steps are skipped until the `S3_BUCKET` secret
