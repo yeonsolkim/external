@@ -4,15 +4,15 @@ title: Corollary 3.2.4 (Bolzano–Weierstrass theorem)
 kind: corollary
 document: 3.2. Subsequenes
 url: /2026/09/03/2.-Subsequenes.html
-source: db3729a05b75eb9315b2b0b54322cd338c4bb8ea33fe00be5431246c1e6481a1
+source: 9e3a3e00997d8c434e578758c5477defd142c344e71c50677ecc79481df6861e
 skeleton: 2
 prompt: lecture-v2
 model: gpt-5.5
-generated: 2026-09-15
-body: c64c6705ea4b673da40443afc97ec0aae9a09cd19e8250bc0d1245b80a829257
-words: 55
+generated: 2026-09-16
+body: 4f4b60fd3fb8834035150592337229425dcb7ce4ef27ef839718b58a3913fcc5
+words: 51
 ---
 
-Corollary 3.2.4, the Bolzano Weierstrass theorem. Every bounded sequence of points in R k contains a convergent subsequence.
+Corollary 3.2.4, the Bolzano–Weierstrass theorem. Every bounded sequence of points in R k contains a convergent subsequence.
 
-Proof. If x n is a bounded sequence in R k, then some k cell contains the set of terms x n. Since every k cell is compact, Theorem 3.2.3 completes the proof. This completes the proof.
+Proof. If x n is a bounded sequence in R k, then some k-cell contains the range of the sequence. Since every k-cell is compact, Theorem 3.2.3 completes the proof. This completes the proof.

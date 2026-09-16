@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "We now use the metric structure to describe the asymptotic behavior of an ordered family of points. To say that a sequence $(x_n)$ of points in $M$ converges to $x$ means that its terms eventually lie as close to $x$ as we wish.",
   "published_at": "2026-08-31T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/792e8ba87b49cf56d802ce1cdc79f2a898f405648fbc45f2eaf6ab297f2d195b.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/930a287d50d665206197d764e7c969938b42d5e86d1b8d970b3da898abb918cc.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.chapters.json",
-  "duration": 973.558,
-  "bytes": 15578868,
+  "duration": 947.374,
+  "bytes": 15159655,
   "voice": "cedar",
-  "page_key": "792e8ba87b49cf56d802ce1cdc79f2a898f405648fbc45f2eaf6ab297f2d195b",
-  "skeleton_hash": "cfa14882969712e277336f1d2c76fe4abc31a2fcc44e06b02d88d4ddc49cc8e7",
-  "generated": "2026-09-15",
+  "page_key": "930a287d50d665206197d764e7c969938b42d5e86d1b8d970b3da898abb918cc",
+  "skeleton_hash": "4df4b5c01e1f96dca2488e53543a05622dfe0ad83914ac09c4f4f2a12b3ebff7",
+  "generated": "2026-09-16",
   "podcast": true,
   "sections": [
     {
@@ -31,16 +31,16 @@
       "kind": "definition",
       "level": 2,
       "start": 15.938,
-      "duration": 43.952,
-      "source": "09f777ff05cf32831064f56d24d0a110285feb92b3b1bc6ebce525f7ecdb0cda",
-      "audio": "6651556769292d81833371bb49a0f40730adbefe23a6c1092406e186def15df7"
+      "duration": 40.321,
+      "source": "c105c4dce70b70ecd032b66950ccc76e34fd4ed0b1abe5ab488abae077aadf8f",
+      "audio": "6ddf09a71c927d9e41bfd3aea0fac1566d705a6bed3de9cf57619ae3cf6fff5b"
     },
     {
       "id": "prose-after-definition-3-1-1",
       "title": "As can be seen from the definition, convergence depends…",
       "kind": "prose",
       "level": 2,
-      "start": 61.091,
+      "start": 57.459,
       "duration": 10.808,
       "source": "362c496da3da79c8a5715748f48504aa3e9fd26f8d6962cc6d759102d8fc8b6a",
       "audio": "8c1ab8d6b625e8772b705139e6da1c24f1dcc2b29de7a9d0311c04112f21e285"
@@ -50,7 +50,7 @@
       "title": "Definition 3.1.2",
       "kind": "definition",
       "level": 2,
-      "start": 73.099,
+      "start": 69.467,
       "duration": 11.55,
       "source": "5420374a95fad91674f7a19163b6b7a994cf9738a2169f7e160f421be18a024e",
       "audio": "65b2e09ebae7554b892c1c088cacc3d56dc71bbfc573f365e9b621d7efbc1906"
@@ -60,7 +60,7 @@
       "title": "Note that the boundedness of a subset of a metric space is…",
       "kind": "prose",
       "level": 2,
-      "start": 85.849,
+      "start": 82.217,
       "duration": 18.35,
       "source": "c5ce252d724b289f60646923757964c483aca3140e9e0e31403d5cf7e3575ea7",
       "audio": "c7d2dd0a3ed75b8004ef828c3f672e7aee33dd60bd4bfc4eb7997a6232ca3652"
@@ -70,7 +70,7 @@
       "title": "Theorem 3.1.3",
       "kind": "theorem",
       "level": 2,
-      "start": 105.399,
+      "start": 101.768,
       "duration": 197.158,
       "source": "59d0312dc2d648a5e6c6c4b9feaa14334a905ffc1b601826706bfeb1570488dd",
       "audio": "914cf6bbd725b897f540236083495b5d24f13f43d16db6ddb0e6d7d9455b1080"
@@ -80,7 +80,7 @@
       "title": "Definition 3.1.4",
       "kind": "definition",
       "level": 2,
-      "start": 303.757,
+      "start": 300.125,
       "duration": 43.212,
       "source": "ae478c2cd7b343d2386a5dd1bc79d4118cb2b90260f2d7cc7883c3cfb78a5f24",
       "audio": "b7959aa9e04b0584957c4db016795548ac4c68792e58b5a63d4324fa9cd5aa9d"
@@ -90,7 +90,7 @@
       "title": "Theorem 3.1.5",
       "kind": "theorem",
       "level": 2,
-      "start": 348.169,
+      "start": 344.538,
       "duration": 60.054,
       "source": "c8ba0b0b920aba40344b95cdba90ce4badf352ebb4dca15f5bfd146d74d3c35c",
       "audio": "eb31ea2bad53d8de08c8683e1bece47fe4bba00c25d0c62f77df34d5547aa7de"
@@ -100,7 +100,7 @@
       "title": "For … with the usual metric …, taking limits is compatible…",
       "kind": "prose",
       "level": 2,
-      "start": 409.424,
+      "start": 405.792,
       "duration": 11.465,
       "source": "ff6e9ee6db9b496e60a103886cb203c5a8e292b40ba0fe06f383cd014aa29ae0",
       "audio": "e60648678836ababd1c442173df4401c1be3364b00ef48bfc3fd3557dd5aebd9"
@@ -110,17 +110,17 @@
       "title": "Theorem 3.1.6",
       "kind": "theorem",
       "level": 2,
-      "start": 422.089,
-      "duration": 273.863,
-      "source": "d5d8f607df0f9f273834400e5a61c5b708a32b5437f22465c5ab924fd0f6127b",
-      "audio": "b49a39bee766f765043ef03351145736c619065d0dc21dd6f0a38bdc73b06a8d"
+      "start": 418.457,
+      "duration": 251.311,
+      "source": "46cc82406e735fd71a882b9da4d876f925d106dd310032a660713db20cc7e4b3",
+      "audio": "e2e73dfb65dc13657238ea944a869e55a7cb9a1b5fa632de85af24cc82202230"
     },
     {
       "id": "lemma-3-1-7",
       "title": "Lemma 3.1.7",
       "kind": "lemma",
       "level": 2,
-      "start": 697.151,
+      "start": 670.968,
       "duration": 148.875,
       "source": "dd4f65e2cffe9135d34d460384485b57a464c4d2de48cb664544170ec77c19e2",
       "audio": "8850a5e1e72a25aeabc7f924cb329e5b18265b15da05ee9c61ea11bfd1e2e4d3"
@@ -130,7 +130,7 @@
       "title": "Having established the limit laws in …, we now take…",
       "kind": "prose",
       "level": 2,
-      "start": 847.226,
+      "start": 821.043,
       "duration": 15.231,
       "source": "3cd0c1bfc73ac3d4e63fa4a88ba3e355ef87a173cbcde605196e09c95c6ad645",
       "audio": "aaf3535551d071aff795c3ed98dae09a2295c873a2ff1a45d382f3c21a10a007"
@@ -140,7 +140,7 @@
       "title": "Theorem 3.1.8",
       "kind": "theorem",
       "level": 2,
-      "start": 863.658,
+      "start": 837.474,
       "duration": 109.9,
       "source": "f8e4c9c70892ac9ccbfc6f510e4789140a9bf10cc71e8a2b6f97162a51479ed5",
       "audio": "187fe45cb73bd8a0bc178b537021b0d1a2e9b771b4870cdeba70beacd48f2616"
@@ -157,49 +157,49 @@
       "id": "definition-3-1-1",
       "title": "Definition 3.1.1",
       "start": 15.938,
-      "end": 73.099
+      "end": 69.467
     },
     {
       "id": "definition-3-1-2",
       "title": "Definition 3.1.2",
-      "start": 73.099,
-      "end": 105.399
+      "start": 69.467,
+      "end": 101.768
     },
     {
       "id": "theorem-3-1-3",
       "title": "Theorem 3.1.3",
-      "start": 105.399,
-      "end": 303.757
+      "start": 101.768,
+      "end": 300.125
     },
     {
       "id": "definition-3-1-4",
       "title": "Definition 3.1.4",
-      "start": 303.757,
-      "end": 348.169
+      "start": 300.125,
+      "end": 344.538
     },
     {
       "id": "theorem-3-1-5",
       "title": "Theorem 3.1.5",
-      "start": 348.169,
-      "end": 422.089
+      "start": 344.538,
+      "end": 418.457
     },
     {
       "id": "theorem-3-1-6",
       "title": "Theorem 3.1.6",
-      "start": 422.089,
-      "end": 697.151
+      "start": 418.457,
+      "end": 670.968
     },
     {
       "id": "lemma-3-1-7",
       "title": "Lemma 3.1.7",
-      "start": 697.151,
-      "end": 863.658
+      "start": 670.968,
+      "end": 837.474
     },
     {
       "id": "theorem-3-1-8",
       "title": "Theorem 3.1.8",
-      "start": 863.658,
-      "end": 973.558
+      "start": 837.474,
+      "end": 947.374
     }
   ]
 }

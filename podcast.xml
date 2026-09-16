@@ -10,7 +10,7 @@
 <itunes:explicit>false</itunes:explicit>
 <itunes:type>episodic</itunes:type>
 <itunes:category text="Science"/>
-<lastBuildDate>Tue, 15 Sep 2026 09:16:53 +0000</lastBuildDate>
+<lastBuildDate>Wed, 16 Sep 2026 09:13:39 +0000</lastBuildDate>
 <item>
 <title>3.3. Cauchy Sequences</title>
 <link>https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</link>
@@ -39,8 +39,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/09/03/2.-Subsequenes.html</guid>
 <pubDate>Thu, 03 Sep 2026 15:00:00 +0000</pubDate>
 <description>A sequence may fail to converge as a whole while some of its terms still exhibit convergent behavior. To capture such behavior, we introduce the notion of a subsequence. Read the page at https://yeonsolkim.com/2026/09/03/2.-Subsequenes.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/09/03/2.-Subsequenes.mp3" length="4695937" type="audio/mpeg"/>
-<itunes:duration>0:04:53</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/09/03/2.-Subsequenes.mp3" length="4528335" type="audio/mpeg"/>
+<itunes:duration>0:04:43</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/09/03/2.-Subsequenes.chapters.json" type="application/json+chapters"/>
 </item>
@@ -50,8 +50,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</guid>
 <pubDate>Mon, 31 Aug 2026 15:00:00 +0000</pubDate>
 <description>We now use the metric structure to describe the asymptotic behavior of an ordered family of points. To say that a sequence (x_n) of points in M converges to x means that its terms eventually lie as close to x as we wish. Read the page at https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.mp3" length="15578868" type="audio/mpeg"/>
-<itunes:duration>0:16:14</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.mp3" length="15159655" type="audio/mpeg"/>
+<itunes:duration>0:15:47</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.chapters.json" type="application/json+chapters"/>
 </item>
