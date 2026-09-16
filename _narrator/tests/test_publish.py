@@ -166,6 +166,9 @@ class Publishing(unittest.TestCase):
         self.assertIn("About A and B. Read the page at https://x.test/2026/01/02/p.html", xml)
         self.assertIn('<podcast:chapters url="https://audio.test/2026/01/02/p.chapters.json"', xml)
         self.assertIn('<guid isPermaLink="true">https://x.test/2026/01/02/p.html</guid>', xml)
+        # deterministic: building the feed twice gives identical bytes
+        self.assertEqual(xml, feed.build(self.pub.site_manifests(), CFG))
+        self.assertIn("<lastBuildDate>", xml)
 
 
 class Config(unittest.TestCase):

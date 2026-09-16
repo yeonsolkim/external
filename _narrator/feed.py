@@ -48,8 +48,12 @@ def build(manifests: list, cfg: dict) -> str:
         "<itunes:explicit>false</itunes:explicit>",
         "<itunes:type>episodic</itunes:type>",
         "<itunes:category text=%s/>" % quoteattr(cfg.get("category") or "Science"),
-        "<lastBuildDate>%s</lastBuildDate>" % _rfc822(""),
     ]
+    # lastBuildDate is derived from the content, never from the clock: the feed is committed,
+    # and a timestamp that moved on every run made CI commit a "change" after every push.
+    newest = max((m.get("generated") or "" for m in items), default="")
+    if newest:
+        out.append("<lastBuildDate>%s</lastBuildDate>" % _rfc822(newest + "T00:00:00+00:00" if len(newest) == 10 else newest))
     if cfg.get("cover"):
         cover = cfg["cover"] if cfg["cover"].startswith("http") else site + cfg["cover"]
         out.append("<itunes:image href=%s/>" % quoteattr(cover))
