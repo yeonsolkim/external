@@ -2,11 +2,11 @@
   "url": "/2026/08/31/1.-Convergent-Sequences.html",
   "title": "3.1. Convergent Sequences",
   "lang": "en",
-  "hash": "4df4b5c01e1f96dca2488e53543a05622dfe0ad83914ac09c4f4f2a12b3ebff7",
+  "hash": "ef224d6e1f230e81c58868004ebd3e2ba8803e9f9d47d727d39ffab795365854",
   "skeleton": 2,
   "prompt": "lecture-v2",
   "model": "gpt-5.5",
-  "updated": "2026-09-16",
+  "updated": "2026-09-17",
   "sections": [
     {
       "id": "introduction",
@@ -176,6 +176,45 @@
       "edited": false,
       "words": 255,
       "math": 30
+    },
+    {
+      "id": "prose-after-theorem-3-1-8",
+      "title": "We now compute the limits of some sequences which occur…",
+      "kind": "prose",
+      "level": 2,
+      "source": "8e53b7cbd65f3efd34fc10a6da742ac9b1b4e6397337edaa2134df7ade27517b",
+      "skip": null,
+      "file": "prose-after-theorem-3-1-8.md",
+      "current": true,
+      "edited": false,
+      "words": 11,
+      "math": 0
+    },
+    {
+      "id": "lemma-3-1-9",
+      "title": "Lemma 3.1.9",
+      "kind": "lemma",
+      "level": 2,
+      "source": "0c723fae4256fab5c5b897184f0f46d478501a03a6e6ace78ecc4c4b40dde13c",
+      "skip": null,
+      "file": "lemma-3-1-9.md",
+      "current": true,
+      "edited": false,
+      "words": 93,
+      "math": 12
+    },
+    {
+      "id": "theorem-3-1-10",
+      "title": "Theorem 3.1.10",
+      "kind": "theorem",
+      "level": 2,
+      "source": "7248358cc00c21cc06be4b3f39c5c5bad006254c6816b66f1b69d28b29830f3a",
+      "skip": null,
+      "file": "theorem-3-1-10.md",
+      "current": true,
+      "edited": false,
+      "words": 86,
+      "math": 11
     },
     {
       "id": "references",

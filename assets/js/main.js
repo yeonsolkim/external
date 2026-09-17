@@ -7,6 +7,7 @@
   var sourceLabelPattern = /(?:\*\*|<(?:strong|b)\b[^>]*>)\s*(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle)\s+(\d+(?:\.\d+)+)\.?(?=\s|\*|\)|<\/(?:strong|b)>)/g;
   var referencePattern = /\b\d+(?:\.\d+)+\b/g;
   var entryLabelPattern = /^(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle|Notation|Axiom|Exercise)\s+\d+(?:\.\d+)*\.?/;
+  var numberedBoldLabelPattern = /^\d+(?:\.\d+)*\.(?:\s+\S[\s\S]*)?$/;
   var proofMarkerPattern = /^(Proof|Subproof|Solution)(?:\s+\d+)?\.?$/i;
   var italicStatementKinds = {
     Theorem: true,
@@ -409,7 +410,22 @@
   }
 
   function isEntryLabel(element) {
-    return entryLabelPattern.test(normalizeSpace(element.textContent || ''));
+    var text = normalizeSpace(element.textContent || '');
+
+    return entryLabelPattern.test(text) || isNumberedBoldLabel(element, text);
+  }
+
+  function isNumberedLabelDomain(element) {
+    var postBody = element.closest('.post-body');
+    var domain = postBody && postBody.getAttribute('data-post-domain');
+
+    return domain === 'mathematics' || domain === 'physics';
+  }
+
+  function isNumberedBoldLabel(element, text) {
+    return /^(STRONG|B)$/.test(element.tagName) &&
+      isNumberedLabelDomain(element) &&
+      numberedBoldLabelPattern.test(text);
   }
 
   function directChildrenMatching(container, tagName) {
@@ -542,6 +558,15 @@
         return;
       }
 
+      if (isNumberedBoldLabel(candidate, text)) {
+        descriptor = {
+          kind: 'Numbered Label',
+          semanticTag: text,
+          labelElement: candidate
+        };
+        return;
+      }
+
       proofMatch = text.match(proofMarkerPattern);
 
       if (proofMatch) {
@@ -614,7 +639,7 @@
   }
 
   function environmentKindClass(kind) {
-    return kind.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    return kind.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
   }
 
   function ensureEntryLabelId(labelElement, kind, number) {
@@ -663,15 +688,16 @@
 
       var environment = document.createElement('section');
       var kindClass = environmentKindClass(descriptor.kind);
+      var semanticTag = descriptor.semanticTag || descriptor.kind;
       var member = current;
       var structuralBridge = false;
       var structuralContinuation = false;
 
       environment.className = 'semantic-unit math-environment math-environment--' + kindClass;
-      environment.setAttribute('data-environment-kind', descriptor.kind);
+      environment.setAttribute('data-environment-kind', semanticTag);
       environment.setAttribute(
         'aria-labelledby',
-        ensureEntryLabelId(descriptor.labelElement, descriptor.kind, state.environmentNumber)
+        ensureEntryLabelId(descriptor.labelElement, semanticTag, state.environmentNumber)
       );
 
       if (italicStatementKinds[descriptor.kind]) {

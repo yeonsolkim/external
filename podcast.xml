@@ -10,7 +10,18 @@
 <itunes:explicit>false</itunes:explicit>
 <itunes:type>episodic</itunes:type>
 <itunes:category text="Science"/>
-<lastBuildDate>Wed, 16 Sep 2026 00:00:00 +0000</lastBuildDate>
+<lastBuildDate>Thu, 17 Sep 2026 00:00:00 +0000</lastBuildDate>
+<item>
+<title>3.4. Upper and Lower Limits</title>
+<link>https://yeonsolkim.com/2026/09/12/4.-Upper-and-Lower-Limits.html</link>
+<guid isPermaLink="true">https://yeonsolkim.com/2026/09/12/4.-Upper-and-Lower-Limits.html</guid>
+<pubDate>Sat, 12 Sep 2026 15:00:00 +0000</pubDate>
+<description>We first extend the notion of convergence by allowing the values +\infty and -\infty. We then associate with each tail of a sequence its supremum and infimum. The limiting behavior of these tail bounds leads to the notions of upper and lower limits. Throughout this section, all suprema and infima are understood to be taken in \overline{\mathbb R} Read the page at https://yeonsolkim.com/2026/09/12/4.-Upper-and-Lower-Limits.html</description>
+<enclosure url="https://audio.yeonsolkim.com/2026/09/12/4.-Upper-and-Lower-Limits.mp3" length="11806729" type="audio/mpeg"/>
+<itunes:duration>0:12:18</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/2026/09/12/4.-Upper-and-Lower-Limits.chapters.json" type="application/json+chapters"/>
+</item>
 <item>
 <title>3.3. Cauchy Sequences</title>
 <link>https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</link>
@@ -50,8 +61,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</guid>
 <pubDate>Mon, 31 Aug 2026 15:00:00 +0000</pubDate>
 <description>We now use the metric structure to describe the asymptotic behavior of an ordered family of points. To say that a sequence (x_n) of points in M converges to x means that its terms eventually lie as close to x as we wish. Read the page at https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.mp3" length="15159655" type="audio/mpeg"/>
-<itunes:duration>0:15:47</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.mp3" length="16624721" type="audio/mpeg"/>
+<itunes:duration>0:17:19</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.chapters.json" type="application/json+chapters"/>
 </item>
