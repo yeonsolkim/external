@@ -1,0 +1,37 @@
+{
+  "url": "/2026/07/10/Combinatorics.html",
+  "title": "Combinatorics",
+  "lang": "en",
+  "description": "1. Trials and outcomes. An outcome is one particular possible result of the trial. The sample space, usually denoted by $\\Omega$, is the set of all possible outcomes. An event is a subset of the sample space. For example, if one die is rolled, the event that an even number appears is",
+  "published_at": "2026-07-10T15:00:00+00:00",
+  "audio": "https://audio.yeonsolkim.com/o/b3900020ed3f4a7bd2e3a577b7a07b73237c79cdb38adb04b7b5a360a2828948.mp3",
+  "stable": "https://audio.yeonsolkim.com/2026/07/10/Combinatorics.mp3",
+  "chapters_url": "https://audio.yeonsolkim.com/2026/07/10/Combinatorics.chapters.json",
+  "duration": 666.14,
+  "bytes": 10659416,
+  "voice": "cedar",
+  "page_key": "b3900020ed3f4a7bd2e3a577b7a07b73237c79cdb38adb04b7b5a360a2828948",
+  "skeleton_hash": "ecedc1bd005f769b209eb1de9977f6c300187ac8d237e8e2ee82d27190d4b154",
+  "generated": "2026-09-18",
+  "podcast": true,
+  "sections": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "kind": "introduction",
+      "level": 2,
+      "start": 0.0,
+      "duration": 666.14,
+      "source": "7772d0c25808445d0857b9c3b6f8ef447ad0cb1a1264f544d5a91a0997f2c15e",
+      "audio": "894f0d03995a527d171f0a59cd3292d9467b1fb1a5a50cf2464645e12c92433e"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "start": 0.0,
+      "end": 666.14
+    }
+  ]
+}

@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "Exercises"
-date: 2026-08-25 00:00:00 +0900
+date: 2026-08-31 00:00:00 +0900
 category_path:
   - 1. Mathematics
   - 3. Analysis
   - 1. Introduction to Analysis
   - 2. Metric Spaces
 created_at: 2026-08-31 15:32:11 +0900
-last_modified_at: 2026-09-02 21:09:53 +0900
+last_modified_at: 2026-09-18 12:44:42 +0900
 
 publish: false
 ---

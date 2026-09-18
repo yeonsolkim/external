@@ -18,6 +18,16 @@
     type="font/woff2"
     crossorigin
   >
+  {% if page.layout == "post" %}
+  <link
+    rel="preload"
+    href="{{ '/assets/fonts/new-computer-modern/NewCM10-BookItalic.woff2' | relative_url }}"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  >
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  {% endif %}
 
   {% seo %}
 
@@ -42,15 +52,113 @@
 
   {% if page.layout == "post" %}
     <script>
-      document.documentElement.classList.add('mathjax-loading');
-      window.setTimeout(function () {
-        document.documentElement.classList.remove('mathjax-loading');
-      }, 5000);
-    </script>
-  {% endif %}
+      (function () {
+        var root = document.documentElement;
+        var pending = { enhancements: true, fonts: true, mathjax: true };
+        var failures = [];
+        var revealScheduled = false;
+        var resolveMathReady;
+        var mathReady = new Promise(function (resolve) {
+          resolveMathReady = resolve;
+        });
 
-  <script src="{{ '/assets/js/mathjax-config.js' | relative_url }}?v={{ asset_version }}" defer></script>
-  <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-svg.js"></script>
+        function revealWhenReady() {
+          var schedule;
+
+          if (pending.enhancements || pending.fonts || pending.mathjax || revealScheduled) {
+            return;
+          }
+
+          revealScheduled = true;
+          schedule = window.requestAnimationFrame || function (callback) {
+            window.setTimeout(callback, 0);
+          };
+          schedule(function () {
+            root.classList.remove('post-preparing');
+            root.classList.add('post-ready');
+          });
+        }
+
+        function complete(name, failed) {
+          if (!Object.prototype.hasOwnProperty.call(pending, name) || !pending[name]) {
+            return;
+          }
+
+          pending[name] = false;
+
+          if (failed) {
+            failures.push(name);
+            root.setAttribute('data-post-preparation-failed', failures.join(' '));
+          }
+
+          if (name === 'mathjax') {
+            resolveMathReady();
+          }
+
+          revealWhenReady();
+        }
+
+        root.classList.add('post-preparing');
+        window.postPreparation = {
+          complete: function (name) {
+            complete(name, false);
+          },
+          fail: function (name) {
+            complete(name, true);
+          },
+          noteFailure: function (name) {
+            failures.push(name);
+            root.setAttribute('data-post-preparation-failed', failures.join(' '));
+          },
+          whenMathReady: function () {
+            return mathReady;
+          },
+          watchMathJax: function () {
+            var startup = window.MathJax && window.MathJax.startup;
+
+            if (!startup || !startup.promise) {
+              complete('mathjax', true);
+              return;
+            }
+
+            startup.promise.then(
+              function () { complete('mathjax', false); },
+              function () { complete('mathjax', true); }
+            );
+          }
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+          if (!document.fonts || !document.fonts.ready) {
+            complete('fonts', false);
+            return;
+          }
+
+          document.fonts.ready.then(
+            function () { complete('fonts', false); },
+            function () { complete('fonts', true); }
+          );
+        }, { once: true });
+      }());
+    </script>
+    <script
+      src="{{ '/assets/js/mathjax-config.js' | relative_url }}?v={{ asset_version }}"
+      defer
+      onerror="window.postPreparation.noteFailure('mathjax-config')"
+    ></script>
+    <script
+      src="{{ '/assets/js/main.js' | relative_url }}?v={{ asset_version }}"
+      defer
+      onerror="window.postPreparation.fail('enhancements')"
+    ></script>
+    <script
+      id="MathJax-script"
+      src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-svg.js"
+      defer
+      onload="window.postPreparation.watchMathJax()"
+      onerror="window.postPreparation.fail('mathjax')"
+    ></script>
+  {% endif %}
 </head>
 
 <body>
@@ -72,8 +180,6 @@
       <p>&copy; {{ "now" | date: "%Y" }} Yeonsol Kim. All rights reserved.</p>
     </footer>
   </main>
-
-  <script src="{{ '/assets/js/main.js' | relative_url }}?v={{ asset_version }}" defer></script>
 
   {% if page.index_page or page.layout == "post" %}
     <script src="{{ '/assets/js/edited-time.js' | relative_url }}?v={{ asset_version }}" defer></script>
