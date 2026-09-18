@@ -20,6 +20,16 @@ module Jekyll
       [label_match[1], visible_label]
     end
 
+    # The contents tree lays the number and the title out in their own grid
+    # columns, but running text such as a breadcrumb needs them as one string.
+    # A single non-breaking space keeps the number with the title it labels.
+    def numbered_label_text(label)
+      number, visible_label = numbered_label_parts(label)
+      return visible_label if number.empty?
+
+      "#{number}\u00A0#{visible_label}"
+    end
+
     def textbook_category(category_path)
       path = category_path.is_a?(Array) ? category_path : [category_path]
 
@@ -67,6 +77,10 @@ module Jekyll
 
     def numbered_label_parts(label)
       CategoryLabels.numbered_label_parts(label)
+    end
+
+    def numbered_label_text(label)
+      CategoryLabels.numbered_label_text(label)
     end
   end
 end
