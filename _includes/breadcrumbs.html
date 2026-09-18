@@ -27,7 +27,7 @@
           is never a section, so it is stripped explicitly.
         {% endcomment %}
         {% if breadcrumb_url == "" and forloop.index > 1 %}
-          {% assign visible_category = category | strip %}
+          {% assign visible_category = category | numbered_label_text %}
         {% else %}
           {% assign visible_category = category | strip_category_order_prefix %}
         {% endif %}
