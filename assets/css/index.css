@@ -22,14 +22,14 @@
   padding: 0.4rem 0;
   font-size: 0.95rem !important;
   line-height: 1.6;
-  border-bottom: 0.7px solid #c6c6c6bd;
+  border-bottom: 1px solid #c6c6c684;
 }
 
 /* Category */
 .category-root {
   color: #000000 !important;
   font-weight: 600 !important;
-  border-bottom-color: #6e6e6e93 !important;
+  border-bottom-color: #6e6e6e67 !important;
 }
 
 .category-heading {
