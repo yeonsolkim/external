@@ -1,0 +1,25 @@
+{
+  "url": "/2026/07/10/Combinatorics.html",
+  "title": "Combinatorics",
+  "lang": "en",
+  "hash": "ecedc1bd005f769b209eb1de9977f6c300187ac8d237e8e2ee82d27190d4b154",
+  "skeleton": 2,
+  "prompt": "lecture-v2",
+  "model": "gpt-5.5",
+  "updated": "2026-09-18",
+  "sections": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "kind": "introduction",
+      "level": 2,
+      "source": "7772d0c25808445d0857b9c3b6f8ef447ad0cb1a1264f544d5a91a0997f2c15e",
+      "skip": null,
+      "file": "introduction.md",
+      "current": true,
+      "edited": false,
+      "words": 2048,
+      "math": 157
+    }
+  ]
+}

@@ -2,11 +2,11 @@
   "url": "/2026/08/31/1.-Convergent-Sequences.html",
   "title": "3.1. Convergent Sequences",
   "lang": "en",
-  "hash": "ef224d6e1f230e81c58868004ebd3e2ba8803e9f9d47d727d39ffab795365854",
+  "hash": "33373bdcc0adf5b3b06c88b4ae84963070dac7ba6e0c041290b1f6f4ccbf0c83",
   "skeleton": 2,
   "prompt": "lecture-v2",
   "model": "gpt-5.5",
-  "updated": "2026-09-17",
+  "updated": "2026-09-18",
   "sections": [
     {
       "id": "introduction",
@@ -130,7 +130,7 @@
       "title": "Theorem 3.1.6",
       "kind": "theorem",
       "level": 2,
-      "source": "46cc82406e735fd71a882b9da4d876f925d106dd310032a660713db20cc7e4b3",
+      "source": "fe2625af56232cea83552ea86949925a567dc20713df49e415740df61b491f79",
       "skip": null,
       "file": "theorem-3-1-6.md",
       "current": true,
@@ -179,16 +179,16 @@
     },
     {
       "id": "prose-after-theorem-3-1-8",
-      "title": "We now compute the limits of some sequences which occur…",
+      "title": "We consider several limits that will be used repeatedly.",
       "kind": "prose",
       "level": 2,
-      "source": "8e53b7cbd65f3efd34fc10a6da742ac9b1b4e6397337edaa2134df7ade27517b",
+      "source": "d9979f37cb6a0f0722704cd29286265058f4124eceab5eb00f10e2a68fcb2ec4",
       "skip": null,
       "file": "prose-after-theorem-3-1-8.md",
       "current": true,
       "edited": false,
-      "words": 11,
-      "math": 0
+      "words": 49,
+      "math": 2
     },
     {
       "id": "lemma-3-1-9",
@@ -208,13 +208,26 @@
       "title": "Theorem 3.1.10",
       "kind": "theorem",
       "level": 2,
-      "source": "7248358cc00c21cc06be4b3f39c5c5bad006254c6816b66f1b69d28b29830f3a",
+      "source": "f2cdb3173c45ce7ef1ac85b087875d575f0be23f6b57a86a2d74472c93332596",
       "skip": null,
       "file": "theorem-3-1-10.md",
       "current": true,
       "edited": false,
-      "words": 86,
-      "math": 11
+      "words": 473,
+      "math": 50
+    },
+    {
+      "id": "prose-after-theorem-3-1-10",
+      "title": "Taken together, these assertions describe several basic…",
+      "kind": "prose",
+      "level": 2,
+      "source": "b6627df850b7c141e1bd9deeaed10814129642906eaf14f770b24cc50d43a5d3",
+      "skip": null,
+      "file": "prose-after-theorem-3-1-10.md",
+      "current": true,
+      "edited": false,
+      "words": 259,
+      "math": 18
     },
     {
       "id": "references",

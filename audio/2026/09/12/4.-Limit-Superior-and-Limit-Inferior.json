@@ -1,0 +1,169 @@
+{
+  "url": "/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html",
+  "title": "3.4. Limit Superior and Limit Inferior",
+  "lang": "en",
+  "description": "We first extend the notion of convergence by allowing the values $+\\infty$ and $-\\infty$. We then associate with each tail of a sequence its supremum and infimum. The limiting behavior of these tail bounds leads to the notions of limit superior and limit inferior. Throughout this section, all suprema and infima are understood to be taken in $\\overline{\\mathbb R}$",
+  "published_at": "2026-09-12T15:00:00+00:00",
+  "audio": "https://audio.yeonsolkim.com/o/1fe38cd035dca98a6ca0e60add3f8f36336f8e4acfb2374da38b40ab97526eeb.mp3",
+  "stable": "https://audio.yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.mp3",
+  "chapters_url": "https://audio.yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.chapters.json",
+  "duration": 747.279,
+  "bytes": 11958041,
+  "voice": "cedar",
+  "page_key": "1fe38cd035dca98a6ca0e60add3f8f36336f8e4acfb2374da38b40ab97526eeb",
+  "skeleton_hash": "d76025d8b5ac2e0415358afb9d0dbc1cd7377201e3bc2e5e8da50a8e2879b4ec",
+  "generated": "2026-09-18",
+  "podcast": true,
+  "sections": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "kind": "introduction",
+      "level": 2,
+      "start": 0.0,
+      "duration": 23.15,
+      "source": "2f76dcafed6e2192a270b656f32c3a654c3d91de338ad89e42d60148fea4c980",
+      "audio": "767bdb476953b453ed0b95acb926a2e24d01644b922d05f4a595c5245d5a098e"
+    },
+    {
+      "id": "definition-3-4-1",
+      "title": "Definition 3.4.1",
+      "kind": "definition",
+      "level": 2,
+      "start": 24.35,
+      "duration": 57.497,
+      "source": "cefdd9d078569558970133f92c66f15eaca62f8f61f5b1081c4ae8a1e3c57fc8",
+      "audio": "ea3032307fbb2fa46820706499f6e8aebdd8aa1c4f17f2d34c1a3378812a4dba"
+    },
+    {
+      "id": "definition-3-4-2",
+      "title": "Definition 3.4.2",
+      "kind": "definition",
+      "level": 2,
+      "start": 83.047,
+      "duration": 68.072,
+      "source": "9d2c8cb417ba3854cc7f36bb9791ac72a17e2083ed952f14c48ba7e3e005de20",
+      "audio": "ee5a05b7b6745a55f113eb8bd6a446b5c683832300f60b2eafe0c82d2d0bc49c"
+    },
+    {
+      "id": "theorem-3-4-3",
+      "title": "Theorem 3.4.3",
+      "kind": "theorem",
+      "level": 2,
+      "start": 152.319,
+      "duration": 239.052,
+      "source": "512038f7000aad41b7bef08cc2ef806c6b3cdee1604a695d47a0cb3ad8fbdeea",
+      "audio": "7a8c09e5a7accec74d3104a84b1a5a0db48cc0aeac85ea0972456136746d8f86"
+    },
+    {
+      "id": "example-3-4-4",
+      "title": "Example 3.4.4",
+      "kind": "example",
+      "level": 2,
+      "start": 392.571,
+      "duration": 89.04,
+      "source": "5acd6ec599986c632e5f4e7920add79715f269e93d057139bbee8bee48d747e0",
+      "audio": "0693ac0a8182b54e5fb94432dab9809a93234cbde12c15220cbc69900b5d9640"
+    },
+    {
+      "id": "theorem-3-4-5",
+      "title": "Theorem 3.4.5",
+      "kind": "theorem",
+      "level": 2,
+      "start": 482.811,
+      "duration": 74.585,
+      "source": "a3874aa5561595ea2e53ede07574522c80250c1c239103903caab7fcd32c574c",
+      "audio": "00413dd02fe0bba4f114a7f48797fb1824d419a779ecc6eeb5841f63ae88d1af"
+    },
+    {
+      "id": "prose-after-theorem-3-4-5",
+      "title": "In particular, if the limit superior and limit inferior…",
+      "kind": "prose",
+      "level": 2,
+      "start": 558.595,
+      "duration": 10.612,
+      "source": "9c54193ec125933c08b26b6fc12bba83dedf7d8e515daff4396b1150ced62adc",
+      "audio": "95ea22665c941ab66af3888e1cf5d109d89606487799e2526dfbfc34fd3cddbf"
+    },
+    {
+      "id": "theorem-3-4-6",
+      "title": "Theorem 3.4.6",
+      "kind": "theorem",
+      "level": 2,
+      "start": 570.408,
+      "duration": 53.957,
+      "source": "8f51600d9f3e305b5349695c73bf42cf369cf9087eb8d80ecb4e1a66a6ff4adf",
+      "audio": "5ab03a81a59a8fe0debc0c1c65c2fac828ee76de90fba2b7e12b8261b8093903"
+    },
+    {
+      "id": "prose-after-theorem-3-4-6",
+      "title": "Finally, because tail suprema and tail infima preserve…",
+      "kind": "prose",
+      "level": 2,
+      "start": 625.564,
+      "duration": 11.028,
+      "source": "b8b2faae3ad8aba121517585d52bc41d65687dca41c77e3f417978e7845cdcf7",
+      "audio": "e7756f5814e0b709038865d2728fc1ddcee51bfad85a662bee004e86797b7da4"
+    },
+    {
+      "id": "theorem-3-4-7",
+      "title": "Theorem 3.4.7",
+      "kind": "theorem",
+      "level": 2,
+      "start": 637.792,
+      "duration": 109.487,
+      "source": "2ff65f87a74d311b35f196dea985f9eb65c1cb25b8f7bf32ac4cf728a0c07529",
+      "audio": "685dfcfdd8a25d621caec06cac16aca35ea697127e6a18e76101efa35ec7d00c"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "start": 0.0,
+      "end": 24.35
+    },
+    {
+      "id": "definition-3-4-1",
+      "title": "Definition 3.4.1",
+      "start": 24.35,
+      "end": 83.047
+    },
+    {
+      "id": "definition-3-4-2",
+      "title": "Definition 3.4.2",
+      "start": 83.047,
+      "end": 152.319
+    },
+    {
+      "id": "theorem-3-4-3",
+      "title": "Theorem 3.4.3",
+      "start": 152.319,
+      "end": 392.571
+    },
+    {
+      "id": "example-3-4-4",
+      "title": "Example 3.4.4",
+      "start": 392.571,
+      "end": 482.811
+    },
+    {
+      "id": "theorem-3-4-5",
+      "title": "Theorem 3.4.5",
+      "start": 482.811,
+      "end": 570.408
+    },
+    {
+      "id": "theorem-3-4-6",
+      "title": "Theorem 3.4.6",
+      "start": 570.408,
+      "end": 637.792
+    },
+    {
+      "id": "theorem-3-4-7",
+      "title": "Theorem 3.4.7",
+      "start": 637.792,
+      "end": 747.279
+    }
+  ]
+}

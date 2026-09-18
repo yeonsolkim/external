@@ -4,7 +4,6 @@
   'use strict';
 
   var labelPattern = /^(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle)\s+(\d+(?:\.\d+)+)\.?/;
-  var sourceLabelPattern = /(?:\*\*|<(?:strong|b)\b[^>]*>)\s*(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle)\s+(\d+(?:\.\d+)+)\.?(?=\s|\*|\)|<\/(?:strong|b)>)/g;
   var referencePattern = /\b\d+(?:\.\d+)+\b/g;
   var entryLabelPattern = /^(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle|Notation|Axiom|Exercise)\s+\d+(?:\.\d+)*\.?/;
   var numberedBoldLabelPattern = /^\d+(?:\.\d+)*\.(?:\s+\S[\s\S]*)?$/;
@@ -15,22 +14,7 @@
     Proposition: true,
     Corollary: true
   };
-  var labelSources = [
-    {%- assign first_source = true -%}
-    {%- for post in site.posts -%}
-      {%- assign reference_scope_source = post.category_path | textbook_category -%}
-      {%- assign reference_scope = reference_scope_source | strip_category_order_prefix | slugify -%}
-      {%- if reference_scope != "" -%}
-        {%- unless first_source -%},{%- endunless -%}
-        {
-          scope: {{ reference_scope | jsonify }},
-          url: {{ post.url | relative_url | jsonify }},
-          content: {{ post.content | jsonify }}
-        }
-        {%- assign first_source = false -%}
-      {%- endif -%}
-    {%- endfor -%}
-  ];
+  var referenceTargetsByScope = {{ site.data.reference_label_targets | default: empty | jsonify }};
 
   function getPostBody() {
     return document.querySelector('.post-body');
@@ -130,33 +114,6 @@
     }
 
     window.location.hash = hash;
-  }
-
-  function buildNumberTargets(sources) {
-    var targets = {};
-
-    sources.forEach(function (source) {
-      var match;
-
-      sourceLabelPattern.lastIndex = 0;
-
-      while ((match = sourceLabelPattern.exec(source.content))) {
-        var number = match[2];
-        var href = source.url + '#' + makeAnchorId(match[1], number);
-
-        if (Object.prototype.hasOwnProperty.call(targets, number)) {
-          if (targets[number] !== href) {
-            targets[number] = null;
-          }
-        } else {
-          targets[number] = href;
-        }
-      }
-    });
-
-    sourceLabelPattern.lastIndex = 0;
-
-    return targets;
   }
 
   function readLabel(text) {
@@ -812,20 +769,28 @@
     var applyUnits;
 
     if (!postBody) {
-      return;
+      return Promise.resolve();
     }
 
     applyUnits = function () {
       buildSemanticPostUnits(postBody);
       initScrollablePostTables();
+
+      if (typeof window.updateDisplayMathOverflow === 'function') {
+        window.updateDisplayMathOverflow();
+      }
     };
 
+    if (window.postPreparation && typeof window.postPreparation.whenMathReady === 'function') {
+      return window.postPreparation.whenMathReady().then(applyUnits, applyUnits);
+    }
+
     if (window.MathJax && window.MathJax.startup && window.MathJax.startup.promise) {
-      window.MathJax.startup.promise.then(applyUnits, applyUnits);
-      return;
+      return window.MathJax.startup.promise.then(applyUnits, applyUnits);
     }
 
     applyUnits();
+    return Promise.resolve();
   }
 
   function shouldSkipTextNode(node) {
@@ -967,9 +932,7 @@
   function initMathReferenceLinks() {
     var postBody = getPostBody();
     var scope = getReferenceScope();
-    var sources = labelSources.filter(function (source) {
-      return source.scope === scope;
-    });
+    var targets = referenceTargetsByScope[scope] || {};
 
     if (!postBody) {
       return;
@@ -977,13 +940,12 @@
 
     addAnchorTargets(postBody);
 
-    if (!scope || !sources.length) {
+    if (!scope || !Object.keys(targets).length) {
       return;
     }
 
-    linkReferences(postBody, buildNumberTargets(sources));
+    linkReferences(postBody, targets);
     bindReferenceLinkClicks(postBody);
-    settleHashScroll();
   }
 
   function applyPostTableNoWrapColumns(table) {
@@ -1059,12 +1021,43 @@
   function initPageEnhancements() {
     initMathReferenceLinks();
     initPostTypographySpacing();
-    initSemanticPostUnits();
+    return initSemanticPostUnits().then(function () {
+      settleHashScroll();
+    });
+  }
+
+  function startPageEnhancements() {
+    var preparation = window.postPreparation;
+    var enhancements;
+
+    try {
+      enhancements = initPageEnhancements();
+    } catch (error) {
+      if (preparation) {
+        preparation.fail('enhancements');
+      }
+      window.console.error(error);
+      return;
+    }
+
+    Promise.resolve(enhancements).then(
+      function () {
+        if (preparation) {
+          preparation.complete('enhancements');
+        }
+      },
+      function (error) {
+        if (preparation) {
+          preparation.fail('enhancements');
+        }
+        window.console.error(error);
+      }
+    );
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initPageEnhancements, { once: true });
+    document.addEventListener('DOMContentLoaded', startPageEnhancements, { once: true });
   } else {
-    initPageEnhancements();
+    startPageEnhancements();
   }
 }());

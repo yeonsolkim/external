@@ -6,9 +6,9 @@ category_path:
   - 1. Mathematics
   - 6. Others
 created_at: 2026-08-06 13:53:49 +0900
-last_modified_at: 2026-09-17 18:26:32 +0900
+last_modified_at: 2026-09-18 17:25:37 +0900
 
-publish: false
+publish: true
 ---
 
 **1. Trials and outcomes.** An *outcome* is one particular possible result of the *trial*. The *sample space*, usually denoted by $\Omega$, is the set of all possible outcomes. An *event* is a subset of the sample space. For example, if one die is rolled, the event that an even number appears is
@@ -72,7 +72,7 @@ $$
 In particular, ${}_nP_n=n!$ and ${}_nP_0=1$.
 
 
-**6. Combinations.** Let $0\leq r\leq n$. An *$r$-combination* of $n$ distinct objects a complete outcome of a process of selecting $r$ objects without repetition in which the order of selection is irrelevant. The number of $r$-combinations is denoted by
+**6. Combinations.** Let $0\leq r\leq n$. An *$r$-combination* of $n$ distinct objects is a complete outcome of a process of selecting $r$ objects without repetition in which the order of selection is irrelevant. The number of $r$-combinations is denoted by
 
 $$
 {}_nC_r \qquad\text{or}\qquad \binom nr.
@@ -124,7 +124,7 @@ $$
 (x_1+y_1)(x_2+y_2)\cdots(x_n+y_n),
 $$
 
-where the subscripts merely record provenance and do not represent different algebraic values.
+where the subscripts merely record provenance.
 Now consider one raw term in the fully expanded expression. By the heuristic that multiplication preserves degree, the raw term consists of exactly $n$ letters.
 First, every factor of this raw term must be one of the summands already present in the original expression. Otherwise, some letter not present in the original expression would somehow have been created during expansion, which makes no sense.
 Second, two different factors of the raw term cannot both have come from the same original factor. If, for example, both $x_i$ and $y_i$ occurred in the same raw term as contributions from $(x_i+y_i)$, then at some point in the expansion those two summands would have had to be multiplied by each other. But distributive expansion never multiplies the summands within a single factor against one another.
@@ -136,27 +136,8 @@ $$
 x_i\prod_{j\ne i}y_j.
 $$
 
-At this point, however, we have shown only that there is a single possible *composition* for a raw term whose unique $x$ comes from the $i$th factor. We have not yet shown that this composition cannot occur twice in the raw expansion. In principle, our previous heuristics alone do not rule out two distinct occurrences of exactly the same raw term.
+At this point, however, we have shown only that there is a single possible composition for a raw term whose unique $x$ comes from the $i$th factor. We have not yet shown that this composition cannot occur twice in the raw expansion. In principle, our previous heuristics alone do not rule out two distinct occurrences of exactly the same raw term.
 This reveals a further primitive heuristic about the act of distributive expansion: Expansion does not spontaneously duplicate a term occurrence. A given multiplication of two existing term occurrences produces its product occurrence once.
-For example, expanding
-
-$$
-A(x+y)
-$$
-
-produces
-
-$$
-Ax+Ay,
-$$
-
-not
-
-$$
-Ax+Ax+Ay.
-$$
-
-There would have to be some distinct source for a second occurrence of $Ax$.
 Now suppose, for contradiction, that two raw terms with exactly the same provenance
 
 $$
@@ -166,14 +147,9 @@ $$
 occurred in the final raw expansion. Trace the two occurrences backward through the expansion. At the last multiplication step, either they came from two distinct identical partial terms, or a single multiplication event somehow produced the same product twice. The latter is ruled out by the no-spontaneous-duplication heuristic. Hence the corresponding partial term must already have occurred twice one stage earlier.
 Applying the same reasoning repeatedly, we are forced to trace the duplication all the way back to the original expression. Eventually, this would require the same summand occurrence in one of the original factors to have been present twice from the beginning. But each such occurrence appears only once in the original expression.
 Therefore, a fixed provenance can produce exactly one raw term occurrence.
-Consequently, for each $i$, there is exactly one raw term containing a single $x$ whose $x$ comes from the $i$th original factor. Hence there are exactly $n$ raw terms of type
-
-$$
-xy^{n-1}.
-$$
-
+Consequently, for each $i$, there is exactly one raw term containing a single $x$ whose $x$ comes from the $i$th original factor. Hence there are exactly $n$ raw terms of type $xy^{n-1}$.
 The same reasoning extends immediately. If a raw term is required to contain exactly $r$ occurrences of $x$, then once we specify which $r$ original factors contribute their $x$-summands, every remaining factor is forced to contribute its $y$-summand. That specification determines one possible provenance, and the no-spontaneous-duplication heuristic guarantees that this provenance occurs exactly once.
-Thus, counting raw terms with exactly $r$ occurrences of $x$ reduces to counting the ways to specify which $r$ of the $n$ original factors contribute $x$.<span class="qed">$\square$</span>
+Thus, counting raw terms with exactly $r$ occurrences of $x$ reduces to counting the ways to specify which $r$ of the $n$ original factors contribute $x$. That is, the number of the raw terms of type $x^ry^{n-r}$ is exactly the number of $r$-combinations of $n$ distinct objects, $\binom n r$. This proves the binomial theorem.<span class="qed">$\square$</span>
 
 
 **9. Corollaries.** Setting $x=y=1$ in the binomial theorem gives

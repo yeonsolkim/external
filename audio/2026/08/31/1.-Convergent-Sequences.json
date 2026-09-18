@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "We now use the metric structure to describe the asymptotic behavior of an ordered family of points. To say that a sequence $(x_n)$ of points in $M$ converges to $x$ means that its terms eventually lie as close to $x$ as we wish.",
   "published_at": "2026-08-31T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/f20d1d79d99cd3517ff6908ba8ec8a9c0fd8f9dd9fce56ba2fa810024feb0152.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/d34e94a42f20c6864703723a6497a31cfc9604cfd34ace50d871120fc4e87689.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.chapters.json",
-  "duration": 1038.93,
-  "bytes": 16624721,
+  "duration": 1374.609,
+  "bytes": 21995497,
   "voice": "cedar",
-  "page_key": "f20d1d79d99cd3517ff6908ba8ec8a9c0fd8f9dd9fce56ba2fa810024feb0152",
-  "skeleton_hash": "ef224d6e1f230e81c58868004ebd3e2ba8803e9f9d47d727d39ffab795365854",
-  "generated": "2026-09-17",
+  "page_key": "d34e94a42f20c6864703723a6497a31cfc9604cfd34ace50d871120fc4e87689",
+  "skeleton_hash": "33373bdcc0adf5b3b06c88b4ae84963070dac7ba6e0c041290b1f6f4ccbf0c83",
+  "generated": "2026-09-18",
   "podcast": true,
   "sections": [
     {
@@ -111,16 +111,16 @@
       "kind": "theorem",
       "level": 2,
       "start": 418.457,
-      "duration": 251.311,
-      "source": "46cc82406e735fd71a882b9da4d876f925d106dd310032a660713db20cc7e4b3",
-      "audio": "e2e73dfb65dc13657238ea944a869e55a7cb9a1b5fa632de85af24cc82202230"
+      "duration": 278.737,
+      "source": "fe2625af56232cea83552ea86949925a567dc20713df49e415740df61b491f79",
+      "audio": "eadd9fd65df42c9a8ffea44d02b084b1c26825d442107304534bb5862f695a8f"
     },
     {
       "id": "lemma-3-1-7",
       "title": "Lemma 3.1.7",
       "kind": "lemma",
       "level": 2,
-      "start": 670.968,
+      "start": 698.394,
       "duration": 148.875,
       "source": "dd4f65e2cffe9135d34d460384485b57a464c4d2de48cb664544170ec77c19e2",
       "audio": "8850a5e1e72a25aeabc7f924cb329e5b18265b15da05ee9c61ea11bfd1e2e4d3"
@@ -130,7 +130,7 @@
       "title": "Having established the limit laws in …, we now take…",
       "kind": "prose",
       "level": 2,
-      "start": 821.043,
+      "start": 848.469,
       "duration": 15.231,
       "source": "3cd0c1bfc73ac3d4e63fa4a88ba3e355ef87a173cbcde605196e09c95c6ad645",
       "audio": "aaf3535551d071aff795c3ed98dae09a2295c873a2ff1a45d382f3c21a10a007"
@@ -140,27 +140,27 @@
       "title": "Theorem 3.1.8",
       "kind": "theorem",
       "level": 2,
-      "start": 837.474,
+      "start": 864.9,
       "duration": 109.9,
       "source": "f8e4c9c70892ac9ccbfc6f510e4789140a9bf10cc71e8a2b6f97162a51479ed5",
       "audio": "187fe45cb73bd8a0bc178b537021b0d1a2e9b771b4870cdeba70beacd48f2616"
     },
     {
       "id": "prose-after-theorem-3-1-8",
-      "title": "We now compute the limits of some sequences which occur…",
+      "title": "We consider several limits that will be used repeatedly.",
       "kind": "prose",
       "level": 2,
-      "start": 948.574,
-      "duration": 4.115,
-      "source": "8e53b7cbd65f3efd34fc10a6da742ac9b1b4e6397337edaa2134df7ade27517b",
-      "audio": "208e6d1edff19ecd15b4fd77c84f2863c01e1806d66ed3e04f0b9edf0dd6f722"
+      "start": 976.001,
+      "duration": 16.407,
+      "source": "d9979f37cb6a0f0722704cd29286265058f4124eceab5eb00f10e2a68fcb2ec4",
+      "audio": "3235c77a1d47bfe545ca67e0aad3625120f61112ce31f07a6ef5549a3390785e"
     },
     {
       "id": "lemma-3-1-9",
       "title": "Lemma 3.1.9",
       "kind": "lemma",
       "level": 2,
-      "start": 953.889,
+      "start": 993.607,
       "duration": 35.331,
       "source": "0c723fae4256fab5c5b897184f0f46d478501a03a6e6ace78ecc4c4b40dde13c",
       "audio": "7c8c6f99b20a668c68db4664d85c98f50b27eadfbbb43f36bf589c4df4621a34"
@@ -170,10 +170,20 @@
       "title": "Theorem 3.1.10",
       "kind": "theorem",
       "level": 2,
-      "start": 990.42,
-      "duration": 48.509,
-      "source": "7248358cc00c21cc06be4b3f39c5c5bad006254c6816b66f1b69d28b29830f3a",
-      "audio": "95074ed063fac79b970c9cdcc3c9b860980fa6397a6076ae603d6939be38f159"
+      "start": 1030.139,
+      "duration": 265.487,
+      "source": "f2cdb3173c45ce7ef1ac85b087875d575f0be23f6b57a86a2d74472c93332596",
+      "audio": "89a9610057288591bd8f2b277b6ea4985621228aacb19ffa35fdc71dae3f8a9b"
+    },
+    {
+      "id": "prose-after-theorem-3-1-10",
+      "title": "Taken together, these assertions describe several basic…",
+      "kind": "prose",
+      "level": 2,
+      "start": 1296.826,
+      "duration": 77.783,
+      "source": "b6627df850b7c141e1bd9deeaed10814129642906eaf14f770b24cc50d43a5d3",
+      "audio": "12c2691ab077a6391b53efef403ede6220b72e34393b14d2ce86f3d8279e2618"
     }
   ],
   "chapters": [
@@ -217,31 +227,31 @@
       "id": "theorem-3-1-6",
       "title": "Theorem 3.1.6",
       "start": 418.457,
-      "end": 670.968
+      "end": 698.394
     },
     {
       "id": "lemma-3-1-7",
       "title": "Lemma 3.1.7",
-      "start": 670.968,
-      "end": 837.474
+      "start": 698.394,
+      "end": 864.9
     },
     {
       "id": "theorem-3-1-8",
       "title": "Theorem 3.1.8",
-      "start": 837.474,
-      "end": 953.889
+      "start": 864.9,
+      "end": 993.607
     },
     {
       "id": "lemma-3-1-9",
       "title": "Lemma 3.1.9",
-      "start": 953.889,
-      "end": 990.42
+      "start": 993.607,
+      "end": 1030.139
     },
     {
       "id": "theorem-3-1-10",
       "title": "Theorem 3.1.10",
-      "start": 990.42,
-      "end": 1038.93
+      "start": 1030.139,
+      "end": 1374.609
     }
   ]
 }

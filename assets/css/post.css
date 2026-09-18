@@ -297,10 +297,6 @@ margin-top: 0 !important;
 margin-top: 1lh !important;
 }
 
-.post-body ol > li {
-position: relative;
-}
-
 .post-body ol > li::marker {
 content: "";
 }
@@ -309,14 +305,29 @@ content: "";
 content: "";
 }
 
-.post-body ol > li::before {
+/*
+ * The marker is an inline-block hanging into the list padding rather than an
+ * absolutely positioned box: an absolutely positioned marker sits at the top of
+ * the first line box, so tall inline math (\displaystyle limits, fractions) on
+ * that line pushes the text baseline down and leaves the marker floating above
+ * it. Inline in the line, the marker shares the text baseline regardless of
+ * the line's height. A loose item starts with a block <p>, so the marker is
+ * hung from that paragraph instead (mathjax-config.js copies data-marker-text
+ * onto it).
+ */
+.post-body ol > li::before,
+.post-body ol > li > p:first-child::before {
 content: attr(data-marker-text);
-position: absolute;
-left: calc(-1 * (var(--ol-marker-width) + var(--ol-marker-gap)));
-width: var(--ol-marker-width);
+display: inline-block;
+width: calc(var(--ol-marker-width) + var(--ol-marker-gap));
+margin-left: calc(-1 * (var(--ol-marker-width) + var(--ol-marker-gap)));
 font-style: normal;
 white-space: nowrap;
 text-align: left;
+}
+
+.post-body ol > li:has(> p:first-child)::before {
+content: none;
 }
 
 .post-body li.list-item-display-math mjx-container[display="true"],
@@ -358,11 +369,8 @@ margin-left: 0;
 margin-top: 0px !important;
 }
 
-.post-body ol ul > li {
-position: static;
-}
-
-.post-body ol ul > li::before {
+.post-body ol ul > li::before,
+.post-body ol ul > li > p:first-child::before {
 content: none;
 }
 
@@ -396,7 +404,7 @@ width: 100% !important;
 box-sizing: border-box !important;
 }
 
-html.mathjax-loading .post-body {
+html.post-preparing .post-body {
 visibility: hidden;
 }
 

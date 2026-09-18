@@ -134,10 +134,16 @@
           listItem.removeAttribute('data-marker-prefix');
         }
 
-        listItem.setAttribute(
-          'data-marker-text',
-          formatMarkerText(markerStyle, (prefix || '') + number)
-        );
+        var markerText = formatMarkerText(markerStyle, (prefix || '') + number);
+        var firstParagraph = listItem.firstElementChild;
+
+        listItem.setAttribute('data-marker-text', markerText);
+
+        // A loose item opens with a block <p>; post.css hangs the marker from
+        // that paragraph so it shares the paragraph's first line.
+        if (firstParagraph && firstParagraph.tagName === 'P') {
+          firstParagraph.setAttribute('data-marker-text', markerText);
+        }
 
         number += reversed ? -1 : 1;
       });
@@ -419,17 +425,16 @@
       pageReady() {
         return normalizeInlineMathWhenReady().then(function () {
           return MathJax.startup.defaultPageReady();
-        }).then(
-          () => {
-            updateDisplayMathOverflow();
-            window.setTimeout(updateDisplayMathOverflow, 100);
-            document.documentElement.classList.remove('mathjax-loading');
-          },
-          (error) => {
-            document.documentElement.classList.remove('mathjax-loading');
-            throw error;
-          }
-        );
+        }).then(function () {
+          updateDisplayMathOverflow();
+
+          return new Promise(function (resolve) {
+            window.requestAnimationFrame(function () {
+              updateDisplayMathOverflow();
+              resolve();
+            });
+          });
+        });
       }
     },
     output: {
