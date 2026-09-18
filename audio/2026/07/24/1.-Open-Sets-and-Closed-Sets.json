@@ -1,6 +1,6 @@
 {
   "url": "/2026/07/24/1.-Open-Sets-and-Closed-Sets.html",
-  "title": "2.1. Open Sets and Closed Sets",
+  "title": "2.1 Open Sets and Closed Sets",
   "lang": "en",
   "description": "A great deal of analysis on $\\mathbb R$, $\\mathbb C$, and $\\mathbb R^k$ depends not on their full algebraic structure, but only on the notion of distance between points. This suggests isolating the notion of distance from the particular nature of the points themselves. Accordingly, let $M$ be a nonempty set. We temporarily forget what its elements are and retain only a function $d:M\\times M\\to\\mathbb R,$ where $d(x,y)$ is intended to represent the distance between $x$ and $y$. Not every such function can reasonably be interpreted as a distance. A distance should be nonnegative; distinct points should have positive distance from one another; the distance from $x$ to $y$ should be the same as the distance from $y$ to $x$; and traveling directly from $x$ to $z$ should be no longer than traveling from $x$ to $z$ through an intermediate point $y$. These requirements are abstracted into the following axioms.",
   "published_at": "2026-07-24T15:00:00+00:00",

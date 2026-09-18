@@ -1,6 +1,6 @@
 {
   "url": "/2026/09/09/3.-Cauchy-Sequences.html",
-  "title": "3.3. Cauchy Sequences",
+  "title": "3.3 Cauchy Sequences",
   "lang": "en",
   "description": "Convergence describes the asymptotic behavior of a sequence by relating its terms to a point of the ambient space. This raises a natural question. How much of this asymptotic behavior can be recognized from the terms of the sequence themselves, without first specifying or establishing the existence of such a point? The Cauchy condition isolates precisely this internal aspect of convergence. Instead of comparing the terms $x_n$ with a separate point $x$, it compares sufficiently late terms with one another and asks whether they eventually become arbitrarily close.",
   "published_at": "2026-09-09T15:00:00+00:00",

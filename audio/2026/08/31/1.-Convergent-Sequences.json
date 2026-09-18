@@ -1,6 +1,6 @@
 {
   "url": "/2026/08/31/1.-Convergent-Sequences.html",
-  "title": "3.1. Convergent Sequences",
+  "title": "3.1 Convergent Sequences",
   "lang": "en",
   "description": "We now use the metric structure to describe the asymptotic behavior of an ordered family of points. To say that a sequence $(x_n)$ of points in $M$ converges to $x$ means that its terms eventually lie as close to $x$ as we wish.",
   "published_at": "2026-08-31T15:00:00+00:00",

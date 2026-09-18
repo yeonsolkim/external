@@ -1,6 +1,6 @@
 {
   "url": "/2026/07/30/2.-Compact-Sets.html",
-  "title": "2.2. Compact Sets",
+  "title": "2.2 Compact Sets",
   "lang": "en",
   "description": "We now consider how a collection of open sets can cover a set $A$ as a whole. Such a collection may contain infinitely many sets, and this raises a natural question. Can finitely many members of the collection already cover $A$? Compactness formalizes the sets for which the answer is always yes.",
   "published_at": "2026-07-30T15:00:00+00:00",
