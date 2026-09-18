@@ -17,7 +17,7 @@ module Jekyll
       return ["", clean_label] unless label_match
 
       visible_label = clean_label.sub(NUMBERED_LABEL, "")
-      ["#{label_match[1]}.", visible_label]
+      [label_match[1], visible_label]
     end
 
     def textbook_category(category_path)
@@ -37,7 +37,7 @@ module Jekyll
       title_number = title_match[1]
       visible_title = clean_title.sub(NUMBERED_LABEL, "")
       title_gap = "\u00A0\u00A0"
-      return "#{title_number}.#{title_gap}#{visible_title}" if title_number.include?(".")
+      return "#{title_number}#{title_gap}#{visible_title}" if title_number.include?(".")
 
       path = category_path.is_a?(Array) ? category_path : [category_path]
       # The penultimate folder names the textbook and does not contribute to a
@@ -48,7 +48,7 @@ module Jekyll
 
       visible_number = ancestor_numbers.empty? ? title_number : (ancestor_numbers + [title_number]).join(".")
 
-      "#{visible_number}.#{title_gap}#{visible_title}"
+      "#{visible_number}#{title_gap}#{visible_title}"
     end
   end
 
