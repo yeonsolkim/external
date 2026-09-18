@@ -1,6 +1,6 @@
 {
   "url": "/2026/09/03/4.-Connected-Sets.html",
-  "title": "2.4. Connected Sets",
+  "title": "2.4 Connected Sets",
   "lang": "en",
   "description": "We now focus on the fact that the Cantor set has gaps at every scale: given any $x\\in C$ and any $r>0$, no matter how small $r$ is, the neighborhood $(x-r,x+r)$ contains some open interval that does not belong to $C$. Thus, if we zoom in around any point of the Cantor set, the set never starts looking like a solid interval. To express the property of a set forming one global piece, we introduce connectedness.",
   "published_at": "2026-09-03T15:00:00+00:00",

@@ -23,7 +23,7 @@
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/09/12/4.-Upper-and-Lower-Limits.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
-<title>3.4. Limit Superior and Limit Inferior</title>
+<title>3.4 Limit Superior and Limit Inferior</title>
 <link>https://yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html</link>
 <guid isPermaLink="true">https://yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html</guid>
 <pubDate>Sat, 12 Sep 2026 15:00:00 +0000</pubDate>
@@ -34,7 +34,7 @@
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
-<title>3.3. Cauchy Sequences</title>
+<title>3.3 Cauchy Sequences</title>
 <link>https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</link>
 <guid isPermaLink="true">https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</guid>
 <pubDate>Wed, 09 Sep 2026 15:00:00 +0000</pubDate>
@@ -45,7 +45,7 @@
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
-<title>2.4. Connected Sets</title>
+<title>2.4 Connected Sets</title>
 <link>https://yeonsolkim.com/2026/09/03/4.-Connected-Sets.html</link>
 <guid isPermaLink="true">https://yeonsolkim.com/2026/09/03/4.-Connected-Sets.html</guid>
 <pubDate>Thu, 03 Sep 2026 15:00:00 +0000</pubDate>
@@ -56,7 +56,7 @@
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/09/03/4.-Connected-Sets.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
-<title>3.2. Subsequenes</title>
+<title>3.2 Subsequenes</title>
 <link>https://yeonsolkim.com/2026/09/03/2.-Subsequenes.html</link>
 <guid isPermaLink="true">https://yeonsolkim.com/2026/09/03/2.-Subsequenes.html</guid>
 <pubDate>Thu, 03 Sep 2026 15:00:00 +0000</pubDate>
@@ -67,7 +67,7 @@
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/09/03/2.-Subsequenes.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
-<title>3.1. Convergent Sequences</title>
+<title>3.1 Convergent Sequences</title>
 <link>https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</link>
 <guid isPermaLink="true">https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</guid>
 <pubDate>Mon, 31 Aug 2026 15:00:00 +0000</pubDate>
@@ -78,7 +78,7 @@
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
-<title>2.3. Perfect Sets</title>
+<title>2.3 Perfect Sets</title>
 <link>https://yeonsolkim.com/2026/08/05/3.-Perfect-Sets.html</link>
 <guid isPermaLink="true">https://yeonsolkim.com/2026/08/05/3.-Perfect-Sets.html</guid>
 <pubDate>Wed, 05 Aug 2026 15:00:00 +0000</pubDate>
@@ -89,7 +89,7 @@
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/08/05/3.-Perfect-Sets.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
-<title>2.2. Compact Sets</title>
+<title>2.2 Compact Sets</title>
 <link>https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html</link>
 <guid isPermaLink="true">https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html</guid>
 <pubDate>Thu, 30 Jul 2026 15:00:00 +0000</pubDate>
@@ -100,7 +100,7 @@
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
-<title>2.1. Open Sets and Closed Sets</title>
+<title>2.1 Open Sets and Closed Sets</title>
 <link>https://yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.html</link>
 <guid isPermaLink="true">https://yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.html</guid>
 <pubDate>Fri, 24 Jul 2026 15:00:00 +0000</pubDate>

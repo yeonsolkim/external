@@ -1,6 +1,6 @@
 {
   "url": "/2026/08/05/3.-Perfect-Sets.html",
-  "title": "2.3. Perfect Sets",
+  "title": "2.3 Perfect Sets",
   "lang": "en",
   "description": "Theorem 2.2.17 guarantees that an infinite subset of a compact set has at least one limit point. However, this is a somewhere statement, not an everywhere statement: it does not say that every point of the set participates in the accumulation. An infinite compact set may still contain many isolated points. Perfectness imposes a much stronger local picture: a perfect set has accumulation everywhere within the set.",
   "published_at": "2026-08-05T15:00:00+00:00",

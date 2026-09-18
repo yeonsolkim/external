@@ -1,6 +1,6 @@
 {
   "url": "/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html",
-  "title": "3.4. Limit Superior and Limit Inferior",
+  "title": "3.4 Limit Superior and Limit Inferior",
   "lang": "en",
   "description": "We first extend the notion of convergence by allowing the values $+\\infty$ and $-\\infty$. We then associate with each tail of a sequence its supremum and infimum. The limiting behavior of these tail bounds leads to the notions of limit superior and limit inferior. Throughout this section, all suprema and infima are understood to be taken in $\\overline{\\mathbb R}$",
   "published_at": "2026-09-12T15:00:00+00:00",
