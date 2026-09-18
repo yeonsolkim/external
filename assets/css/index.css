@@ -4,6 +4,7 @@
   color: #767676a8;
   font-size: 0.8rem;
   font-weight: 300 !important;
+  white-space: nowrap;
 }
 
 /* Temporarily hide the "(updated ...)" part of the post date. Remove this rule to show it again. */
@@ -18,8 +19,9 @@
   box-sizing: border-box;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+  padding: 0.4rem 0;
   font-size: 0.95rem !important;
-  line-height: 2.2;
+  line-height: 1.6;
   border-bottom: 0.7px solid #c6c6c6bd;
 }
 
