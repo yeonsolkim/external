@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "We now consider how a collection of open sets can cover a set $A$ as a whole. Such a collection may contain infinitely many sets, and this raises a natural question. Can finitely many members of the collection already cover $A$? Compactness formalizes the sets for which the answer is always yes.",
   "published_at": "2026-07-30T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/ffed5934911e165020fee1cea719e70dace2c13686206c08bf7277bad45ae1db.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/be43726e70a4efee95aa279ba499ce52a7cc4d74c6bf3691c5d245d901d131fc.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.chapters.json",
-  "duration": 1263.781,
-  "bytes": 20223310,
+  "duration": 1258.713,
+  "bytes": 20142226,
   "voice": "cedar",
-  "page_key": "ffed5934911e165020fee1cea719e70dace2c13686206c08bf7277bad45ae1db",
-  "skeleton_hash": "94b54ab26a9d29610c829187b95c2cce476babb65b95cbd0337fbcbe45eefabe",
-  "generated": "2026-09-15",
+  "page_key": "be43726e70a4efee95aa279ba499ce52a7cc4d74c6bf3691c5d245d901d131fc",
+  "skeleton_hash": "5541fc45b73e53a1fd02aabb59a5675b4e10fb61bfa4c27234a8678d620f8c34",
+  "generated": "2026-09-19",
   "podcast": true,
   "sections": [
     {
@@ -141,36 +141,36 @@
       "kind": "prose",
       "level": 2,
       "start": 430.298,
-      "duration": 11.182,
-      "source": "d72c4ee53830e93f32a4951192bb3e07bd087f0a715b45cf85af657df91b9d8e",
-      "audio": "87d89f3e863b5a6354cc0a835df49d2b818d1870f1f7750116e808757631e52b"
+      "duration": 10.746,
+      "source": "5ae8e8624b9abe755f49b208bd1dcaacf1685b475281ebe2ad882e53143c4cf9",
+      "audio": "406cc7f3a9b87a1ce81c18952ef7cc323d67ba5fbfb33c0e0968305c6307fc76"
     },
     {
       "id": "definition-2-2-9",
       "title": "Definition 2.2.9",
       "kind": "definition",
       "level": 2,
-      "start": 442.68,
-      "duration": 13.852,
-      "source": "459a645251d5ae0a4e95bcbfe4745f7776f0dad2c5539bfd99df7c6f80ae2c56",
-      "audio": "cfaf7600c9e63dd3135e8e9cd07d9011107e6f8b355ea95394ab3f765c07a978"
+      "start": 442.244,
+      "duration": 13.831,
+      "source": "cfe5bb1b561db7bc87cdb024e59c500d77f71df01606ff2948403dfb6789f44d",
+      "audio": "87ed7e8cba548fafe7ac2bd16f7d247b8a9746787324afaec05be25d75032ead"
     },
     {
       "id": "theorem-2-2-10",
       "title": "Theorem 2.2.10",
       "kind": "theorem",
       "level": 2,
-      "start": 457.732,
-      "duration": 110.02,
-      "source": "8a6442d7fb6373e2f7b0664c5dc1b3367c025fa3bb3e9271e441acd5b90be454",
-      "audio": "ad713181cd0b095f640b03c30937d5b28c385a62a785bb3a7741564055674fb2"
+      "start": 457.274,
+      "duration": 105.41,
+      "source": "850817edc58a75a31091b4b68a98b34d1094a66f69c9e764a565ea3cbf064d28",
+      "audio": "a5bd899a25f0f3df9e38b5d498017ba2ff634ab13c5a300fe5ff9504ffa8152b"
     },
     {
       "id": "prose-after-theorem-2-2-10",
       "title": "The preceding theorem states that a collection of closed…",
       "kind": "prose",
       "level": 2,
-      "start": 568.952,
+      "start": 563.885,
       "duration": 18.131,
       "source": "2ec31a3fefdc27dc12b01fcdde1157bfbee027c9628e7b50fdbe86f4ede91a5e",
       "audio": "882728c4f56467374165b5746add16cb9b9a6beadfc41ac592190953751d7f0f"
@@ -180,7 +180,7 @@
       "title": "Theorem 2.2.11",
       "kind": "theorem",
       "level": 2,
-      "start": 588.283,
+      "start": 583.215,
       "duration": 78.901,
       "source": "3ffa9afa57a2374b47c7d611ac93eed8d13f5dd4287ecb235bbc41dea47f99c0",
       "audio": "8c220c1ac03d9e06bbb41bcbb934673f67615a2374eee1e10a805c9e395c2ab2"
@@ -190,7 +190,7 @@
       "title": "Corollary 2.2.12",
       "kind": "corollary",
       "level": 2,
-      "start": 668.384,
+      "start": 663.316,
       "duration": 70.394,
       "source": "0570bc1832d73dbeaf1977ed0274159690d1fa905556d4942a9c84fe44895423",
       "audio": "504ecc619340222e82aeaa9801d5407dc6bb686375c976287364999e79166d01"
@@ -200,7 +200,7 @@
       "title": "This result assumes compactness from the outset.",
       "kind": "prose",
       "level": 2,
-      "start": 739.978,
+      "start": 734.91,
       "duration": 13.809,
       "source": "2ed9eb0d917aa7e0cfa0d8e2cd612e3d1a1cab4373e8ca40eb1ce2317ed524a8",
       "audio": "4c15e727af51423615e3655dba7bef7380f4282d449b31e4b12b959f64f5b4d7"
@@ -210,7 +210,7 @@
       "title": "Theorem 2.2.13 (Nested intervals theorem)",
       "kind": "theorem",
       "level": 2,
-      "start": 754.987,
+      "start": 749.919,
       "duration": 67.995,
       "source": "50c3e1adfa367295e11c66411b385ab301ec6952e11e68752aafc9328cb9e785",
       "audio": "21372ed7e2a102b66e80389cbf7abbf644cd30e4efdc39179654c53477481c64"
@@ -220,7 +220,7 @@
       "title": "We next extend this theorem to ….",
       "kind": "prose",
       "level": 2,
-      "start": 824.182,
+      "start": 819.115,
       "duration": 7.601,
       "source": "871f3f71f74b8598305204e8c0128e24d9c9cd02ead94a5213be4044d5ceda6e",
       "audio": "c049297fc04510287914565a8fdb081fa73dc5afd9c69442ef31377fca65aac9"
@@ -230,7 +230,7 @@
       "title": "Definition 2.2.14",
       "kind": "definition",
       "level": 2,
-      "start": 832.983,
+      "start": 827.916,
       "duration": 24.595,
       "source": "c3ceccbba43e0271c44996636b8eda9d976e98fca8cdb7c20c8eb2b6de3f2d58",
       "audio": "3a2650bd246341ac370892987d6d8210ba2f9d8b90ac24efa444d4451f10ed89"
@@ -240,7 +240,7 @@
       "title": "Theorem 2.2.15",
       "kind": "theorem",
       "level": 2,
-      "start": 858.778,
+      "start": 853.71,
       "duration": 49.043,
       "source": "56894abcd3be838a0459022fa6ac94a94f2ac257422f03365d572eab61426efe",
       "audio": "49acff3ab981fb8ac673f39605fe7e0a3d89d621d828443739080b25f7c14900"
@@ -250,7 +250,7 @@
       "title": "We now prove a fundamental theorem of compactness in…",
       "kind": "prose",
       "level": 2,
-      "start": 909.021,
+      "start": 903.953,
       "duration": 12.669,
       "source": "69d99f9abbe7a08b820a14a8ee27526ff34738691ff0bef654290fc27140ad2e",
       "audio": "d589b2676007b6dd59ce8ab7679efa563935ba08136d46fd4eaef511c61d3a72"
@@ -260,7 +260,7 @@
       "title": "Theorem 2.2.16",
       "kind": "theorem",
       "level": 2,
-      "start": 922.89,
+      "start": 917.822,
       "duration": 124.502,
       "source": "76292fb51d060bc71e1f470b1c20e476e2b591df8b292e5211acadb957d24d96",
       "audio": "cfdb35b9016c345b03446c8f0af1e76bf409537a4bdfedd55cb31b17fb055592"
@@ -270,7 +270,7 @@
       "title": "We next examine the relation between having a limit point…",
       "kind": "prose",
       "level": 2,
-      "start": 1048.592,
+      "start": 1043.524,
       "duration": 14.446,
       "source": "f5931129f9c25feb7422647c86ed5d25bde260d4b7ab7b2c8c9d4aa5b3de749e",
       "audio": "023cfa752f069906cbf063a94fa2c7d4a2f086db9710c4516109695f73ef8032"
@@ -280,7 +280,7 @@
       "title": "Theorem 2.2.17",
       "kind": "theorem",
       "level": 2,
-      "start": 1064.237,
+      "start": 1059.17,
       "duration": 46.656,
       "source": "71c45a3b59e2aa7b7c1a311a25af061ef7ebe7c5381f3b8a3e6efc81b0258fa5",
       "audio": "69cce6cdaae498aabc7a39edc33936bf49f1e785c0b263ab50cb164514b6488a"
@@ -290,7 +290,7 @@
       "title": "The theorem states that every infinite subset of a compact…",
       "kind": "prose",
       "level": 2,
-      "start": 1112.094,
+      "start": 1107.026,
       "duration": 18.553,
       "source": "8f2d8b4a95cbb42d95abd434cebf80e5a5df5bb1142899c4b180d6d190705fa1",
       "audio": "76ff029abc90aac6a4840739a056b4d9426125f43a7f0416fe38f977c3689484"
@@ -300,7 +300,7 @@
       "title": "Corollary 2.2.18 (Bolzano–Weierstrass theorem)",
       "kind": "corollary",
       "level": 2,
-      "start": 1131.847,
+      "start": 1126.779,
       "duration": 28.628,
       "source": "afc311038513e18432a607526cf6d4f907aaa5c55edf0683a7ad9982ba741cc9",
       "audio": "64656423106d27433a006934c89daaa90cb5b34ca2340817e312eff89072fed7"
@@ -310,7 +310,7 @@
       "title": "In Euclidean space, the somewhat abstract notion of…",
       "kind": "prose",
       "level": 2,
-      "start": 1161.674,
+      "start": 1156.607,
       "duration": 8.216,
       "source": "058b255c48a334c6cf80bca869e1465a859ce228e6da16d7e92b8371db0af540",
       "audio": "045b90e796a7e0b62c1792f3f4db20863c168648f0793a4f86eec120c8dc3a62"
@@ -320,7 +320,7 @@
       "title": "Definition 2.2.19",
       "kind": "definition",
       "level": 2,
-      "start": 1171.091,
+      "start": 1166.024,
       "duration": 17.012,
       "source": "cbeac45dd307d34efd4b92b47b4808293ecf8f9461ce4be1bccb874c70be6532",
       "audio": "760aeaee559da3535fd55959d2f4f50f770265696473db6e8adfd032c5db111e"
@@ -330,7 +330,7 @@
       "title": "Theorem 2.2.20 (Heine–Borel theorem)",
       "kind": "theorem",
       "level": 2,
-      "start": 1189.303,
+      "start": 1184.236,
       "duration": 74.478,
       "source": "7d953aea26ba85785d0e702d9deae09c4d72edeafe3cb5ac108e0b35719009d9",
       "audio": "b54cf76759d161036ce95abb901f35cfe57a4a527b944de7e7c8984456611b30"
@@ -389,79 +389,79 @@
       "id": "corollary-2-2-8",
       "title": "Corollary 2.2.8",
       "start": 397.91,
-      "end": 442.68
+      "end": 442.244
     },
     {
       "id": "definition-2-2-9",
       "title": "Definition 2.2.9",
-      "start": 442.68,
-      "end": 457.732
+      "start": 442.244,
+      "end": 457.274
     },
     {
       "id": "theorem-2-2-10",
       "title": "Theorem 2.2.10",
-      "start": 457.732,
-      "end": 588.283
+      "start": 457.274,
+      "end": 583.215
     },
     {
       "id": "theorem-2-2-11",
       "title": "Theorem 2.2.11",
-      "start": 588.283,
-      "end": 668.384
+      "start": 583.215,
+      "end": 663.316
     },
     {
       "id": "corollary-2-2-12",
       "title": "Corollary 2.2.12",
-      "start": 668.384,
-      "end": 754.987
+      "start": 663.316,
+      "end": 749.919
     },
     {
       "id": "theorem-2-2-13",
       "title": "Theorem 2.2.13 (Nested intervals theorem)",
-      "start": 754.987,
-      "end": 832.983
+      "start": 749.919,
+      "end": 827.916
     },
     {
       "id": "definition-2-2-14",
       "title": "Definition 2.2.14",
-      "start": 832.983,
-      "end": 858.778
+      "start": 827.916,
+      "end": 853.71
     },
     {
       "id": "theorem-2-2-15",
       "title": "Theorem 2.2.15",
-      "start": 858.778,
-      "end": 922.89
+      "start": 853.71,
+      "end": 917.822
     },
     {
       "id": "theorem-2-2-16",
       "title": "Theorem 2.2.16",
-      "start": 922.89,
-      "end": 1064.237
+      "start": 917.822,
+      "end": 1059.17
     },
     {
       "id": "theorem-2-2-17",
       "title": "Theorem 2.2.17",
-      "start": 1064.237,
-      "end": 1131.847
+      "start": 1059.17,
+      "end": 1126.779
     },
     {
       "id": "corollary-2-2-18",
       "title": "Corollary 2.2.18 (Bolzano–Weierstrass theorem)",
-      "start": 1131.847,
-      "end": 1171.091
+      "start": 1126.779,
+      "end": 1166.024
     },
     {
       "id": "definition-2-2-19",
       "title": "Definition 2.2.19",
-      "start": 1171.091,
-      "end": 1189.303
+      "start": 1166.024,
+      "end": 1184.236
     },
     {
       "id": "theorem-2-2-20",
       "title": "Theorem 2.2.20 (Heine–Borel theorem)",
-      "start": 1189.303,
-      "end": 1263.781
+      "start": 1184.236,
+      "end": 1258.713
     }
   ]
 }

@@ -198,8 +198,7 @@ margin-left: calc(var(--ul-marker-gap-adjust) + 1em);
 }
 
 .post-body ul > li::marker {
-font-size: 1.1em;
-line-height: 1;
+font-size: 0.8rem;
 }
 
 .post-body li > p {
@@ -209,7 +208,6 @@ margin-bottom: 0 !important;
 
 
 .post-body ul > li {
-padding-left: var(--ul-marker-gap-adjust);
 line-height: inherit;
 }
 
@@ -276,7 +274,7 @@ background-color: #ffffff00 !important;
 
 .post-body ol {
 --ol-left-indent: 1em;
---ol-marker-gap: 0.8rem;
+--ol-marker-gap: 0.6rem;
 --ol-marker-width: 2rem;
 list-style: none;
 margin-top: 0.5rem !important;
@@ -360,9 +358,8 @@ margin-right: auto;
 .post-body ol ul {
 list-style-position: outside;
 list-style-type: disc !important;
-padding-left: 1em;
 margin-bottom: 0px !important;
-margin-left: 0;
+padding-left: 0;
 }
 
 .post-body ol > li > ul:first-child { 
@@ -446,6 +443,11 @@ white-space: normal;
 margin-top: 0 !important;
 margin-bottom: 0 !important;
 text-indent: 1em;
+}
+
+/* A single blank line after display math continues the preceding paragraph. */
+.post-body[data-semantic-units="true"] > p.semantic-paragraph[data-paragraph-continuation="display"] {
+text-indent: 0;
 }
 
 .post-body[data-semantic-units="true"] > p.semantic-paragraph--section-opening {
@@ -550,7 +552,7 @@ text-decoration: none !important;
 .post-body a.math-ref-link .math-ref-number {
 display: inline-block;
 position: relative;
-padding: 0 0.12em;
+padding: 0 0.1em;
 line-height: 1;
 text-indent: 0;
 }
@@ -558,9 +560,9 @@ text-indent: 0;
 .post-body a.math-ref-link .math-ref-number::after {
 content: "";
 position: absolute;
-top: 0.13em;
+top: 0.15em;
 right: 0;
-bottom: -0.06em;
+bottom: -0.02em;
 left: 0;
 border: 0.7px solid red;
 pointer-events: none;

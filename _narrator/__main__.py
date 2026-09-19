@@ -201,6 +201,8 @@ def cmd_publish(args: argparse.Namespace) -> int:
             results = list(pool.map(one, sources))
     failures = results.count(False)
     if not args.dry_run:
+        if os.path.isdir(args.source):
+            pub.prune_orphans()          # only a whole-site run knows which pages still exist
         pub.write_feed()
     return 1 if failures else 0
 

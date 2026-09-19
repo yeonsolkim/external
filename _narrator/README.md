@@ -58,8 +58,11 @@ its proof, display equations and lists belong to it. The author's transitional p
 between two results is its own `prose` section: after a proof, every paragraph past the
 QED; without a proof, the first paragraph that starts a new sentence in a new block (a
 paragraph that finishes a display equation, or begins lowercase, still belongs to the
-statement). Prose before the first section is `introduction`. A heading named
-References/Bibliography is kept but `skip`ped. The name in parentheses after the label is
+statement). In posts whose `.post-body` carries `data-post-domain="mathematics"` or `"physics"`
+(the same rule `main.js` uses), a bold numbered heading such as `**3. Multiplication
+rule.**` also opens a section (`numbered-3`, title "3. Multiplication rule"), which runs
+until the next one — no prose split. Prose before the first section is `introduction`. A
+heading named References/Bibliography is kept but `skip`ped. The name in parentheses after the label is
 captured: `Theorem 2.2.20 (Heine–Borel theorem)`. A `prose` section is a cache unit; the
 feed and player may fold it into the previous chapter for display.
 
@@ -202,6 +205,9 @@ Posts are processed **two at a time** (`--posts N`) with four sections in flight
 written atomically and a key is synthesised at most once even when two posts race for it.
 Output lines carry the post's slug when more than one post is being handled.
 
+A whole-site run also prunes `audio/*.json` manifests whose page no longer exists (renamed
+or deleted posts), so the feed cannot keep a ghost episode.
+
 A post's `page_key` is its ordered section keys + `AUDIO_VERSION`. `publish` costs nothing
 when `o/<page key>.json` already exists (one HEAD, then the site files are written); with
 a local `_audio/` page it uploads; otherwise it pulls sections from the mirror, synthesises
@@ -239,8 +245,10 @@ While playing, everything except the section being read fades to grey (labels, l
 equations included — post.css colours those explicitly), the page follows the reading unless
 you scrolled in the last 8 s, a 2 px hairline along the top shows progress, and the lock
 screen gets play/pause/seek. Labels are found through the ids `main.js` already gives
-every labelled statement (`cursor: pointer` + dotted underline on hover mark them), and the
-block map is rebuilt when `main.js` wraps statements into `<section>`s. A dropped stream is
+every labelled statement; numbered headings ("3. Multiplication rule.") get their id from
+the page script itself. `cursor: pointer` + a dotted underline on hover mark every label
+that has audio, and the block map is rebuilt when `main.js` wraps statements into
+`<section>`s. A dropped stream is
 reloaded at the same spot, three times, then playback stops cleanly. `_config.yml` gained
 `timezone: UTC` (so local builds produce the same URLs as Pages) and a `narration:` block
 (author, audio_url, voice, `podcast: true|false` — false drops `podcast.xml` and the head

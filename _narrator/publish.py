@@ -253,6 +253,19 @@ class Publisher:
             if os.path.exists(path):
                 os.remove(path)
 
+    def prune_orphans(self, site_dir: Optional[str] = None) -> list:
+        """Drop manifests whose page no longer exists in the built site (renamed or deleted
+        posts); the bucket keeps their audio. Returns the URLs removed."""
+        site_dir = site_dir or self.site_dir
+        removed = []
+        for m in self.site_manifests():
+            page = os.path.join(site_dir, *m["url"].strip("/").split("/"))
+            if not os.path.exists(page):
+                self.remove_site_manifest(m["url"])
+                removed.append(m["url"])
+                self.log("%-50s removed: page no longer exists" % m["url"])
+        return removed
+
     # -- feed ---------------------------------------------------------------------
     def site_manifests(self) -> list:
         root = os.path.join(self.source_dir or self.site_dir, "audio")

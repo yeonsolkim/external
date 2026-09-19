@@ -724,6 +724,28 @@
     }
   }
 
+  function isDisplayMathBlock(element) {
+    return element.matches(
+      'mjx-container[display="true"], math[display="block"], .commutative-diagram'
+    );
+  }
+
+  function markDisplayMathContinuations(postBody) {
+    Array.prototype.forEach.call(postBody.children, function (element) {
+      var continuation;
+
+      if (!isDisplayMathBlock(element)) {
+        return;
+      }
+
+      continuation = element.nextElementSibling;
+
+      if (continuation && continuation.matches('p.semantic-paragraph')) {
+        continuation.setAttribute('data-paragraph-continuation', 'display');
+      }
+    });
+  }
+
   function markSectionOpeningParagraphs(postBody) {
     var needsOpeningParagraph = true;
 
@@ -760,6 +782,7 @@
 
     prepareParagraphUnits(postBody);
     groupMathEnvironments(postBody, { environmentNumber: 0 }, false);
+    markDisplayMathContinuations(postBody);
     markSectionOpeningParagraphs(postBody);
     postBody.setAttribute('data-semantic-units', 'true');
   }

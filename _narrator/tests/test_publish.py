@@ -152,6 +152,17 @@ class Publishing(unittest.TestCase):
         self.assertFalse(os.path.exists(os.path.join(self.source, "audio", "2026", "01", "02", "p.json")))
         self.assertFalse(os.path.exists(os.path.join(self.site, "audio", "2026", "01", "02", "p.json")))
 
+    def test_orphan_manifest_is_pruned(self):
+        self.scripts()
+        self.fake_page()
+        self.pub.publish_post(self.skel)
+        os.makedirs(os.path.join(self.site, "2026", "01", "02"))
+        open(os.path.join(self.site, "2026", "01", "02", "p.html"), "w").write("x")
+        self.assertEqual(self.pub.prune_orphans(), [])
+        os.remove(os.path.join(self.site, "2026", "01", "02", "p.html"))
+        self.assertEqual(self.pub.prune_orphans(), ["/2026/01/02/p.html"])
+        self.assertEqual(self.pub.site_manifests(), [])
+
     def test_feed(self):
         self.scripts()
         self.fake_page()
