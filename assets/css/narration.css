@@ -2,11 +2,11 @@
    hear that statement, the post title to hear the whole post, anywhere to stop. */
 
 /* Clickable labels and title. */
-.post-body .math-label-anchor[data-nrp],
+.post-body [data-nrp],
 .post-title[data-nrp] {
   cursor: pointer;
 }
-.post-body .math-label-anchor[data-nrp]:hover,
+.post-body [data-nrp]:hover,
 .post-title[data-nrp]:hover {
   text-decoration: none;
 }
@@ -15,7 +15,7 @@
    links and equations included (post.css colours those explicitly). */
 .nrp-reading .post-body > .nrp-dim,
 .nrp-reading .post-body > .nrp-dim * { color: #a8a8ad !important; }
-.nrp-reading .post-body .math-label-anchor[data-nrp]:hover,
+.nrp-reading .post-body [data-nrp]:hover,
 .nrp-reading .post-title[data-nrp]:hover { text-decoration: none; }
 
 @media (prefers-color-scheme: dark) {

@@ -19,7 +19,7 @@
   box-sizing: border-box;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
-  padding: 0.4rem 0;
+  padding: 0.26rem 0;
   font-size: 0.95rem !important;
   line-height: 1.6;
   border-bottom: 1px solid #c6c6c684;
@@ -48,7 +48,7 @@
 .category-block {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
-  margin-left: 1.375rem;
+  margin-left: 1.4rem;
 }
 
 /* Keep the first level of textbook contents pages aligned with their root. */
@@ -99,7 +99,7 @@
 }
 
 .post-list li {
-  margin-left: 1.375rem;
+  margin-left: 1.4rem;
 }
 
 .textbook-section > .post-list li {

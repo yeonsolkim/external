@@ -50,6 +50,7 @@ OUTPUT. Only the script: plain paragraphs separated by blank lines, roughly one 
 
 KIND_NOTES = {
     "introduction": "the opening paragraphs, before the first numbered statement",
+    "numbered": "a numbered part of the note — announce it by its number and heading as written",
     "prose": "the author's transition between two results — read it as written, it is not a summary",
     "heading": "a titled section",
 }

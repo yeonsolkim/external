@@ -23,6 +23,7 @@
   /* The block (direct child of .post-body) where each section starts. */
   function locateStarts(sections, blocks) {
     var starts = {};
+    var body = document.querySelector('.post-body');
     function block(el) { return el && (el.closest('.post-body > *') || null); }
     sections.forEach(function (s) {
       var el = document.getElementById(s.id);          /* main.js anchors every labelled statement */
@@ -36,12 +37,14 @@
           })[0];
         }
       } else if (!el) {
+        /* A labelled paragraph main.js gave no id (e.g. "1. Trials and outcomes."): find it by
+           its lead <strong>, anywhere under a block, and make the label the anchor. */
         var label = norm(s.title.split(' (')[0]).toLowerCase();
-        el = blocks.filter(function (b) {
-          var lead = b.firstElementChild;
-          return b.tagName === 'P' && lead && /^(STRONG|B)$/.test(lead.tagName) &&
-            norm(lead.textContent).replace(/\.$/, '').toLowerCase() === label;
-        })[0];
+        var leads = body ? body.querySelectorAll('p > strong:first-child, p > b:first-child') : [];
+        el = Array.prototype.filter.call(leads, function (lead) {
+          return norm(lead.textContent).replace(/\.$/, '').toLowerCase() === label;
+        })[0] || null;
+        if (el && !el.id) el.id = s.id;
       }
       var b = block(el);
       if (b) {

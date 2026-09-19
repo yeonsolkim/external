@@ -167,6 +167,10 @@ structure.
   paragraph after the post title or a Markdown heading is not indented. The
   same soft-newline rule applies inside a labeled environment: its opening
   paragraph is flush left and each soft-line continuation is indented `1em`.
+- In ordinary prose, one blank line after display math continues the preceding
+  paragraph, so the following line is not indented. Two blank lines start a new
+  paragraph with a `1em` first-line indent. This matches the display-math
+  continuation rule inside labeled environments.
 - Posts with `line_indent: false` still convert every source soft newline into
   a separate paragraph, but suppress the first-line indent. Soft-line
   continuations remain adjacent, while source paragraphs separated by a blank

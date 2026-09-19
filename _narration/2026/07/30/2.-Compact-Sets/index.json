@@ -1,12 +1,12 @@
 {
   "url": "/2026/07/30/2.-Compact-Sets.html",
-  "title": "2.2. Compact Sets",
+  "title": "2.2 Compact Sets",
   "lang": "en",
-  "hash": "94b54ab26a9d29610c829187b95c2cce476babb65b95cbd0337fbcbe45eefabe",
-  "skeleton": 2,
+  "hash": "5541fc45b73e53a1fd02aabb59a5675b4e10fb61bfa4c27234a8678d620f8c34",
+  "skeleton": 3,
   "prompt": "lecture-v2",
   "model": "gpt-5.5",
-  "updated": "2026-09-15",
+  "updated": "2026-09-19",
   "sections": [
     {
       "id": "introduction",
@@ -169,12 +169,12 @@
       "title": "The finite-subcover condition has a dual formulation in…",
       "kind": "prose",
       "level": 2,
-      "source": "d72c4ee53830e93f32a4951192bb3e07bd087f0a715b45cf85af657df91b9d8e",
+      "source": "5ae8e8624b9abe755f49b208bd1dcaacf1685b475281ebe2ad882e53143c4cf9",
       "skip": null,
       "file": "prose-after-corollary-2-2-8.md",
       "current": true,
       "edited": false,
-      "words": 24,
+      "words": 23,
       "math": 0
     },
     {
@@ -182,12 +182,12 @@
       "title": "Definition 2.2.9",
       "kind": "definition",
       "level": 2,
-      "source": "459a645251d5ae0a4e95bcbfe4745f7776f0dad2c5539bfd99df7c6f80ae2c56",
+      "source": "cfe5bb1b561db7bc87cdb024e59c500d77f71df01606ff2948403dfb6789f44d",
       "skip": null,
       "file": "definition-2-2-9.md",
       "current": true,
       "edited": false,
-      "words": 32,
+      "words": 31,
       "math": 2
     },
     {
@@ -195,12 +195,12 @@
       "title": "Theorem 2.2.10",
       "kind": "theorem",
       "level": 2,
-      "source": "8a6442d7fb6373e2f7b0664c5dc1b3367c025fa3bb3e9271e441acd5b90be454",
+      "source": "850817edc58a75a31091b4b68a98b34d1094a66f69c9e764a565ea3cbf064d28",
       "skip": null,
       "file": "theorem-2-2-10.md",
       "current": true,
       "edited": false,
-      "words": 290,
+      "words": 289,
       "math": 27
     },
     {

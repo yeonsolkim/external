@@ -36,7 +36,7 @@ from typing import Optional
 
 from .htmltree import Node, parse_html
 
-SKELETON_VERSION = 2
+SKELETON_VERSION = 3
 
 # Environment kinds this site writes as `**Kind N.N.N.**` at the start of a paragraph.
 ENV_KINDS = {
@@ -46,6 +46,10 @@ ENV_KINDS = {
 }
 ENV_RE = re.compile(r"^\s*([A-Z][a-z]+)\s+(\d+(?:\.\d+)*)\s*\.?\s*$")
 ENV_UNNUMBERED_RE = re.compile(r"^\s*([A-Z][a-z]+)\s*\.\s*$")
+# `**1. Trials and outcomes.**` — the site's main.js treats these as entries too, but only in
+# the mathematics/physics domains (`data-post-domain` on .post-body); we follow suit.
+NUMBERED_RE = re.compile(r"^\s*(\d+(?:\.\d+)*)\.(?:\s+(\S.*?))?\s*$")
+NUMBERED_DOMAINS = {"mathematics", "physics"}
 PROOF_RE = re.compile(r"^\s*(?:proof|sketch of proof|proof sketch|solution)\b", re.I)
 # "(Heine–Borel theorem)." right after the bold label
 ENV_NAME_RE = re.compile(r"^\s*\(([^()]*(?:\([^()]*\)[^()]*)*)\)\s*\.?")
@@ -156,10 +160,11 @@ def word_count(text: str) -> int:
 class Renderer:
     """Turns inline content into text with math placeholders. One per document."""
 
-    def __init__(self) -> None:
+    def __init__(self, numbered_labels: bool = False) -> None:
         self.math: list = []        # (tex, display)
         self.warnings: list = []
         self.ended: Optional[str] = None   # set when an environment-end marker was rendered
+        self.numbered_labels = numbered_labels   # `**1. Name.**` opens a section
 
     # math ---------------------------------------------------------------------
     def token(self, tex: str, display: bool) -> str:
@@ -343,6 +348,14 @@ def _paragraph(node: Node, r: Renderer) -> Block:
                     "label": number,
                     "name": normalize(name_match.group(1)) if name_match else "",
                 }
+            elif r.numbered_labels:
+                match = NUMBERED_RE.match(label)
+                if match:
+                    block.env = {
+                        "kind": "numbered",
+                        "label": match.group(1),
+                        "name": (match.group(2) or "").rstrip(".").strip(),
+                    }
         elif PROOF_RE.match(label):
             block.proof = True
     return block
@@ -411,6 +424,8 @@ def _env_id(env: dict, counter: dict) -> str:
 
 
 def _env_title(env: dict) -> str:
+    if env["kind"] == "numbered":
+        return env["label"] + "." + (" " + env["name"] if env["name"] else "")
     title = env["kind"].capitalize()
     if env["label"]:
         title += " " + env["label"]
@@ -493,7 +508,7 @@ def _assemble(blocks: list) -> list:
                 label=block.env["label"], name=block.env["name"],
                 # The site's assets/js/main.js (addAnchorTargets) gives every numbered label
                 # this same id client-side, so `#theorem-2-2-3` resolves on the live page.
-                anchor=env_id if block.env["label"] else None,
+                anchor=env_id if block.env["label"] and block.env["kind"] != "numbered" else None,
             )
             sections.append(current)
         if current is None:
@@ -505,8 +520,8 @@ def _assemble(blocks: list) -> list:
 
     out: list = []
     for section in sections:
-        if section.kind in ("heading", "introduction"):
-            out.append(section)
+        if section.kind in ("heading", "introduction", "numbered"):
+            out.append(section)          # a numbered part runs until the next one
         else:
             out.extend(_split_prose(section))
     return out
@@ -569,7 +584,8 @@ def build(html: str, source: str = "") -> Skeleton:
         except (ValueError, AttributeError):
             modified = ""
 
-    r = Renderer()
+    domain = (body.get("data-post-domain") or "").strip().lower()
+    r = Renderer(numbered_labels=domain in NUMBERED_DOMAINS)
     blocks: list = []
     _walk(body, blocks, r)
     sections = _assemble(blocks)

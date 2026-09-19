@@ -152,3 +152,21 @@ class Synthetic(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class NumberedLabels(unittest.TestCase):
+    BODY = ('<p><strong>1. Trials.</strong> An outcome is a result.</p><p>More on trials.</p>'
+            '<p><strong>2. Addition rule.</strong> Two events.</p><p><strong>Theorem 1.2.</strong> Stated.</p>')
+
+    def test_math_domain_sections_by_number(self):
+        html = wrap(self.BODY).replace('<div class="post-body">', '<div class="post-body" data-post-domain="mathematics">')
+        skel = build(html)
+        self.assertEqual([s.id for s in skel.sections], ["numbered-1", "numbered-2", "theorem-1-2"])
+        self.assertEqual([s.title for s in skel.sections], ["1. Trials", "2. Addition rule", "Theorem 1.2"])
+        self.assertEqual(skel.sections[0].kind, "numbered")
+        self.assertIsNone(skel.sections[0].anchor)          # main.js gives these no id
+        self.assertIn("More on trials.", skel.sections[0].text)   # runs until the next number, no prose split
+
+    def test_other_domains_ignore_numbered_bold(self):
+        skel = build(wrap(self.BODY))
+        self.assertEqual([s.id for s in skel.sections], ["introduction", "theorem-1-2"])
