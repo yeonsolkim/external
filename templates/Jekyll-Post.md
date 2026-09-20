@@ -26,6 +26,5 @@ layout: post
 category_path: <% categoryPathResult %>
 title: "<% tp.file.title.replace(/\d{4}-\d{2}-\d{2}-/, "") %>"
 date: <% createdAt %> +0900
-last_modified_at: <% modifiedAt %> +0900
 publish: false
 ---
