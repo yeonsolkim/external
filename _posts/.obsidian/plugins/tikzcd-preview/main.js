@@ -9,7 +9,16 @@ const { promisify } = require("node:util");
 const execFileAsync = promisify(execFile);
 const CACHE_VERSION = "2";
 const SVG_SCALE = 1.2;
+// Obsidian renders math with MathJax 3's CHTML output, which differs from the
+// site's SVG output in two ways that matter for \whitestar:
+// - it measures the system-font star at full size and sets that width in px,
+//   ignoring the font-size scale, so the glyph is boxed with a wide gap after
+//   it; \rlap drops that box and \hspace restores the scaled advance width;
+// - SVG stroke-width does nothing on HTML text, so -webkit-text-stroke
+//   thickens the outline instead (relative to the scaled glyph size).
+// 55% matches the TeX font's \circ, whose ring is larger than newcm's.
 const MATHJAX_PREAMBLE = String.raw`
+\def\whitestar{\mathbin{\rlap{{\unicode{x2606}}}\hspace{0.55em}}}
 \def\lowparen#1{
   \mathinner{
     \mathopen{\lower .3em {\bigg(}}

@@ -404,14 +404,19 @@
 
   window.MathJax = {
     loader: {
-      load: ['[tex]/mathtools']
+      load: ['[tex]/mathtools', '[tex]/unicode', '[tex]/html']
     },
     tex: {
-      packages: {'[+]': ['mathtools']},
+      packages: {'[+]': ['mathtools', 'unicode', 'html']},
       inlineMath: [['\\(', '\\)']],
       displayMath: [['$$', '$$'], ['\\[', '\\]']],
       processEscapes: true,
       macros: {
+        // The system-font star is roughly 0.9em wide, so scale it down to ~0.4em
+        // (a touch above \circ's 0.3em) and lift it onto the math axis. Its
+        // outline is much thinner than \circ's ring, so stroke it (in the
+        // glyph's 1000-per-em units) to bring the weight up to match.
+        whitestar: '\\mathbin{\\raise0.07em{\\style{font-size:55%;stroke-width:45px}{\\unicode[serif]{x2606}}}}',
         lowparen: [
           '\\mathinner{\\mathopen{\\lower .3em {\\bigg(}}#1\\mathclose{\\lower .3em {\\bigg)}}}',
           1
