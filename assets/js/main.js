@@ -3,8 +3,8 @@
 (function () {
   'use strict';
 
-  var labelPattern = /^(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle)\s+(\d+(?:\.\d+)+)\.?/;
-  var referencePattern = /\b\d+(?:\.\d+)+\b/g;
+  var labelPattern = /^(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle|Exercise)\s+(\d+(?:\.\d+)+)\.?/;
+  var referencePattern = /\b(?:(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle|Exercise)\s+)?(\d+(?:\.\d+)+)\b/g;
   var entryLabelPattern = /^(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle|Notation|Axiom|Exercise)\s+\d+(?:\.\d+)*\.?/;
   var numberedBoldLabelPattern = /^\d+(?:\.\d+)*\.(?:\s+\S[\s\S]*)?$/;
   var proofMarkerPattern = /^(Proof|Subproof|Solution)(?:\s+\d+)?\.?$/i;
@@ -841,8 +841,10 @@
     referencePattern.lastIndex = 0;
 
     while ((match = referencePattern.exec(text))) {
-      var numberText = match[0];
-      var href = targets[numberText];
+      var kind = match[1] || '';
+      var numberText = match[2];
+      var referenceKey = kind ? makeLabel(kind, numberText) : numberText;
+      var href = targets[referenceKey];
       var link;
       var number;
 
@@ -852,10 +854,14 @@
 
       fragment.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
 
+      if (kind) {
+        fragment.appendChild(document.createTextNode(kind + ' '));
+      }
+
       link = document.createElement('a');
       link.className = 'math-ref-link';
       link.href = href;
-      link.setAttribute('aria-label', 'Reference ' + numberText);
+      link.setAttribute('aria-label', 'Reference ' + referenceKey);
 
       number = document.createElement('span');
       number.className = 'math-ref-number';
