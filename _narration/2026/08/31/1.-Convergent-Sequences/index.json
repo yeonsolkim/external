@@ -2,11 +2,11 @@
   "url": "/2026/08/31/1.-Convergent-Sequences.html",
   "title": "3.1 Convergent Sequences",
   "lang": "en",
-  "hash": "b8173b3f10a6c86ae2f8cf688b3cdb65a7d31ce8b911d37fceed6af964ec615d",
+  "hash": "365d9e565818e607a9c1a93621c91d308488a20f59b62f79b20e6fc7b6cdff99",
   "skeleton": 3,
   "prompt": "lecture-v2",
   "model": "gpt-5.5",
-  "updated": "2026-09-19",
+  "updated": "2026-09-22",
   "sections": [
     {
       "id": "introduction",
@@ -130,7 +130,7 @@
       "title": "Theorem 3.1.6",
       "kind": "theorem",
       "level": 2,
-      "source": "579c2b5b809007aaba1e98cdd61f30e226ad75adadd37deb989c9c2ecaa8a0b9",
+      "source": "2bc421e1b609e30e07811b6dc20b98719a0c38c519e592785e6544d091fa7313",
       "skip": null,
       "file": "theorem-3-1-6.md",
       "current": true,
