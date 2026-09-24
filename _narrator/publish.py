@@ -147,6 +147,12 @@ class Publisher:
             return {"state": "scripts", "why": why}
         keys = [stage3.section_key(body, self.voice, self.model) for _, body in scripts]
         page = stage3.page_key(keys)
+        # One HEAD decides the common case. A page the bucket already holds needs nothing
+        # else — probing its sections (one HEAD each) is what made a no-op CI run take minutes.
+        remote = self.store.head("o/%s.json" % page) if self.store else None
+        if remote:
+            return {"state": "published", "page_key": page, "scripts": scripts, "keys": keys, "local": None,
+                    "remote": True, "to_fetch": 0, "to_synth": 0, "minutes": 0.0}
         local_mp3, local_json = stage3.page_paths(skel, self.audio_root)
         local = None
         if os.path.exists(local_json):
@@ -154,15 +160,14 @@ class Publisher:
                 local = json.load(handle)
             if local.get("page_key") != page or not os.path.exists(local_mp3):
                 local = None
-        remote = self.store.head("o/%s.json" % page) if self.store else None
         missing = [(s, b, k) for (s, b), k in zip(scripts, keys) if stage3.cached_section(self.cache_dir, k) is None]
         to_synth = missing
-        if self.store and missing:
+        if self.store and missing and not local:
             to_synth = [(s, b, k) for s, b, k in missing if not self.store.head("cache/%s.json" % k)]
         chars = sum(len(b) for _, b, _ in to_synth)
-        state = "published" if remote else ("assembled" if local else ("assemble" if not to_synth else "synthesise"))
+        state = "assembled" if local else ("assemble" if not to_synth else "synthesise")
         return {"state": state, "page_key": page, "scripts": scripts, "keys": keys, "local": local,
-                "remote": bool(remote), "to_fetch": len(missing) - len(to_synth),
+                "remote": False, "to_fetch": len(missing) - len(to_synth),
                 "to_synth": len(to_synth), "minutes": chars / 900.0}
 
     def publish_post(self, skel: Skeleton, max_new_minutes: float = 30.0, dry_run: bool = False,
@@ -253,18 +258,20 @@ class Publisher:
             if os.path.exists(path):
                 os.remove(path)
 
-    def prune_orphans(self, site_dir: Optional[str] = None) -> list:
-        """Drop manifests whose page no longer exists in the built site (renamed or deleted
-        posts); the bucket keeps their audio. Returns the URLs removed."""
+    def orphans(self, site_dir: Optional[str] = None) -> list:
+        """URLs of manifests whose page no longer exists in the built site (renamed or deleted posts)."""
         site_dir = site_dir or self.site_dir
-        removed = []
-        for m in self.site_manifests():
-            page = os.path.join(site_dir, *m["url"].strip("/").split("/"))
-            if not os.path.exists(page):
-                self.remove_site_manifest(m["url"])
-                removed.append(m["url"])
-                self.log("%-50s removed: page no longer exists" % m["url"])
-        return removed
+        return [m["url"] for m in self.site_manifests()
+                if not os.path.exists(os.path.join(site_dir, *m["url"].strip("/").split("/")))]
+
+    def prune_orphans(self, site_dir: Optional[str] = None, dry_run: bool = False) -> list:
+        """Drop the orphans' manifests; the bucket keeps their audio. Returns the URLs."""
+        found = self.orphans(site_dir)
+        for url in found:
+            if not dry_run:
+                self.remove_site_manifest(url)
+            self.log("%-50s %s: page no longer exists" % (url, "would remove" if dry_run else "removed"))
+        return found
 
     # -- feed ---------------------------------------------------------------------
     def site_manifests(self) -> list:

@@ -412,11 +412,14 @@
       displayMath: [['$$', '$$'], ['\\[', '\\]']],
       processEscapes: true,
       macros: {
-        // The system-font star is roughly 0.9em wide, so scale it down to ~0.4em
-        // (a touch above \circ's 0.3em) and lift it onto the math axis. Its
-        // outline is much thinner than \circ's ring, so stroke it (in the
-        // glyph's 1000-per-em units) to bring the weight up to match.
-        whitestar: '\\mathbin{\\raise0.07em{\\style{font-size:55%;stroke-width:45px}{\\unicode[serif]{x2606}}}}',
+        // The system-font star is roughly 0.9em wide, so scale it down toward
+        // \circ's 0.3em and lift it onto the math axis. Its outline is much
+        // thinner than \circ's ring, so stroke it (in the glyph's 1000-per-em
+        // units) to bring the weight up to match. Unlike the math font's own
+        // glyphs, which are paths, this one is real SVG <text> and inherits
+        // font-style/weight from the surrounding prose, so an italic statement
+        // body would slant it; pin both to normal.
+        whitestar: '\\mathbin{\\raise0.07em{\\style{font-size:55%;stroke-width:45px;font-style:normal;font-weight:normal}{\\unicode[serif]{x2606}}}}',
         lowparen: [
           '\\mathinner{\\mathopen{\\lower .3em {\\bigg(}}#1\\mathclose{\\lower .3em {\\bigg)}}}',
           1
