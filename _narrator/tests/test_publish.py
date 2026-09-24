@@ -157,7 +157,8 @@ class Publishing(unittest.TestCase):
         self.fake_page()
         self.pub.publish_post(self.skel)
         os.makedirs(os.path.join(self.site, "2026", "01", "02"))
-        open(os.path.join(self.site, "2026", "01", "02", "p.html"), "w").write("x")
+        with open(os.path.join(self.site, "2026", "01", "02", "p.html"), "w") as f:
+            f.write("x")
         self.assertEqual(self.pub.prune_orphans(), [])
         os.remove(os.path.join(self.site, "2026", "01", "02", "p.html"))
         self.assertEqual(self.pub.prune_orphans(), ["/2026/01/02/p.html"])
@@ -222,17 +223,22 @@ class Parallel(unittest.TestCase):
                     keys.append(voice.section_key("Script %s." % s.id, "cedar", "gpt-4o-mini-tts"))
                 cache = os.path.join(root, "_audio", "cache"); os.makedirs(cache, exist_ok=True)
                 for k in keys:
-                    open(os.path.join(cache, k + ".flac"), "wb").write(b"flac")
-                    json.dump({"key": k, "duration": 1.0}, open(os.path.join(cache, k + ".json"), "w"))
+                    with open(os.path.join(cache, k + ".flac"), "wb") as f:
+                        f.write(b"flac")
+                    with open(os.path.join(cache, k + ".json"), "w") as f:
+                        json.dump({"key": k, "duration": 1.0}, f)
                 mp3, js = voice.page_paths(sk, os.path.join(root, "_audio")); os.makedirs(os.path.dirname(mp3), exist_ok=True)
-                open(mp3, "wb").write(b"mp3")
-                json.dump({"url": sk.url, "title": "P", "lang": "en", "page_key": voice.page_key(keys), "audio": "p.mp3",
-                           "duration": 2.0, "bytes": 3, "voice": "cedar", "model": "gpt-4o-mini-tts", "audio_version": voice.AUDIO_VERSION,
-                           "skeleton_hash": sk.hash, "sections": [], "chapters": []}, open(js, "w"))
+                with open(mp3, "wb") as f:
+                    f.write(b"mp3")
+                with open(js, "w") as f:
+                    json.dump({"url": sk.url, "title": "P", "lang": "en", "page_key": voice.page_key(keys), "audio": "p.mp3",
+                               "duration": 2.0, "bytes": 3, "voice": "cedar", "model": "gpt-4o-mini-tts", "audio_version": voice.AUDIO_VERSION,
+                               "skeleton_hash": sk.hash, "sections": [], "chapters": []}, f)
             with ThreadPoolExecutor(max_workers=2) as pool:
                 results = list(pool.map(lambda sk: pub.publish_post(sk), skels))
             self.assertTrue(all(r is not None for r in results))
             self.assertEqual(sorted(k for k in store.objects if k.endswith("p3.mp3") or k.endswith("p4.mp3")),
                              ["2026/01/03/p3.mp3", "2026/01/04/p4.mp3"])
             path = pub.write_feed()
-            self.assertEqual(open(path, encoding="utf-8").read().count("<item>"), 2)
+            with open(path, encoding="utf-8") as f:
+                self.assertEqual(f.read().count("<item>"), 2)

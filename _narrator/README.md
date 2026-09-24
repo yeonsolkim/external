@@ -209,7 +209,9 @@ A whole-site run also prunes `audio/*.json` manifests whose page no longer exist
 or deleted posts), so the feed cannot keep a ghost episode.
 
 A post's `page_key` is its ordered section keys + `AUDIO_VERSION`. `publish` costs nothing
-when `o/<page key>.json` already exists (one HEAD, then the site files are written); with
+when `o/<page key>.json` already exists — one HEAD settles it, and nothing else is probed
+(a no-op whole-site run is ~5 s; it used to probe every section of every post, ~300
+requests, which is why the CI step took minutes); with
 a local `_audio/` page it uploads; otherwise it pulls sections from the mirror, synthesises
 only the missing ones (`--max-new-minutes` guards a post), assembles, uploads, mirrors, and
 re-points the aliases with a server-side copy. A fresh checkout (CI, another machine) never
@@ -261,8 +263,10 @@ left the next local push rejected as non-fast-forward.) The "Git" service theref
 `git pull --rebase --autostash origin main` before `git push`, aborting the rebase and
 notifying if a conflict appears.
 
-**CI** (`.github/workflows/pages.yml`): after the Jekyll build — tests, ffmpeg, `publish
-_site --max-new-minutes 60`, then generated scripts are committed back to `_narration/`
+**CI** (`.github/workflows/pages.yml`): after the Jekyll build — tests, then a **plan** step
+(`publish _site --dry-run`, a few seconds: one HEAD per published post) that decides
+whether anything needs generating; only then ffmpeg is installed and `publish _site
+--max-new-minutes 60` runs, and generated scripts are committed back to `_narration/`
 (`[skip ci]`), together with `audio/**.json` and `podcast.xml`; needs `contents: write`. The steps are skipped until the `S3_BUCKET` secret
 exists, so the site deploys as before in the meantime.
 
