@@ -402,6 +402,9 @@
   var touchMathWeight = shouldUseTouchMathWeight();
   var mathBlacker = iPhoneDevice ? 0 : (touchMathWeight ? 2 : 9);
 
+  // post.css strokes commutative-diagram glyphs to the same weight.
+  document.documentElement.style.setProperty('--math-blacker', String(mathBlacker));
+
   window.MathJax = {
     loader: {
       load: ['[tex]/mathtools', '[tex]/unicode', '[tex]/html']

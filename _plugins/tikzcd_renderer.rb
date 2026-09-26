@@ -6,12 +6,14 @@ require "open3"
 require "tmpdir"
 
 module ExternalTikzcdRenderer
-  CACHE_VERSION = "4"
+  CACHE_VERSION = "6"
   DEFAULT_CACHE_DIR = ".jekyll-cache/tikzcd"
-  SVG_SCALE = 1.28
-  CSS_PIXELS_PER_POINT = 4.0 / 3.0
-  # assets/css/main.css: 15.5px root size times the desktop content scale.
-  REFERENCE_FONT_SIZE_PX = 15.5 * 1.05
+  # The diagrams' 10pt math size in the SVG user unit, the big point.
+  TEX_EM_BP = 10 * 72 / 72.27
+  # MathJax sizes its SVG output in ex, taking the x-height of its font
+  # (mathjax-newcm) to be the x-height of the surrounding text. Sizing diagrams
+  # the same way makes 10pt equal MathJax's em at every font size.
+  MATHJAX_X_HEIGHT = 0.442
   DISPLAY_MATH_PATTERN = /\$\$(?<body>.*?)\$\$/m
   TIKZCD_ENVIRONMENT_PATTERN = /\A\s*(?<environment>\\begin\s*\{tikzcd\}(?:\[[^\]\r\n]*\])?.*?\\end\s*\{tikzcd\})\s*\z/m
 
@@ -148,8 +150,19 @@ module ExternalTikzcdRenderer
           directory,
           "dvisvgm"
         )
+        # Glyph paths do not record their font size; the font output keeps it
+        # per font number, which both runs assign alike.
+        run_command(
+          ["dvisvgm", "--bbox=papersize", "--exact-bbox", "--output=fonts.svg", "diagram.dvi"],
+          directory,
+          "dvisvgm"
+        )
 
-        File.read(File.join(directory, "diagram.svg"))
+        scale_glyph_strokes(
+          File.read(File.join(directory, "diagram.svg")),
+          # Only its ASCII style sheet is read; the embedded glyphs may not be UTF-8.
+          File.binread(File.join(directory, "fonts.svg"))
+        )
       end
     rescue Errno::ENOENT => error
       raise RenderError,
@@ -164,10 +177,38 @@ module ExternalTikzcdRenderer
       raise RenderError, "#{label} failed for #{item_path}:\n#{details}"
     end
 
+    # dvisvgm defines each glyph once, as <path id="g<font>-<char>"> at that
+    # font's size, and draws other sizes of the same font through a scaled
+    # <use>. Multiplying the path's stroke by its font size lets post.css give
+    # the stroke per em, and the <use> scaling carries it to every size, as
+    # MathJax's own glyph strokes scale with its script sizes.
+    def scale_glyph_strokes(svg, font_svg)
+      font_sizes = font_svg.scan(/\btext\.f(\d+)\s*\{[^}]*\bfont-size:\s*(\d+(?:\.\d+)?)px/).to_h
+
+      svg.gsub(/<path id=(["'])g(\d+)-\d+\1/) do |path|
+        font = Regexp.last_match(2)
+        raise RenderError, "dvisvgm did not report the size of font #{font} for #{item_path}" unless font_sizes.key?(font)
+
+        %(#{path} style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * #{font_sizes[font]})")
+      end
+    end
+
+    # MathJax draws sub- and superscripts by scaling its 10pt glyphs by 0.707,
+    # where TeX switches to the heavier optical sizes (cmmi7, cmmi5, ...). Use
+    # the 10pt designs at every size and MathJax's script sizes so that labels
+    # match the surrounding math.
     def latex_document(environment)
       <<~LATEX
         \\def\\pgfsysdriver{pgfsys-dvisvgm.def}
         \\documentclass[tikz,border=0pt]{standalone}
+        \\DeclareFontShape{OT1}{cmr}{m}{n}{<->cmr10}{}
+        \\DeclareFontShape{OT1}{cmr}{m}{it}{<->cmti10}{}
+        \\DeclareFontShape{OT1}{cmr}{bx}{n}{<->cmbx10}{}
+        \\DeclareFontShape{OML}{cmm}{m}{it}{<->cmmi10}{}
+        \\DeclareFontShape{OML}{cmm}{b}{it}{<->cmmib10}{}
+        \\DeclareFontShape{OMS}{cmsy}{m}{n}{<->cmsy10}{}
+        \\DeclareFontShape{OMS}{cmsy}{b}{n}{<->cmbsy10}{}
+        \\DeclareMathSizes{10}{10}{7.07}{5}
         \\usepackage{tikz-cd}
         \\makeatletter
         \\def\\pgfsys@papersize#1#2{}
@@ -201,19 +242,14 @@ module ExternalTikzcdRenderer
       end.strip
     end
 
+    # dvisvgm gives the page size in pt, meaning big points.
     def normalize_svg_dimensions(attributes)
-      attributes.gsub(/\b(?<name>width|height)=(?<quote>["'])(?<value>\d+(?:\.\d+)?)(?<unit>[a-zA-Z%]*)\k<quote>/) do
+      attributes.gsub(/\b(?<name>width|height)=(?<quote>["'])(?<value>\d+(?:\.\d+)?)pt\k<quote>/) do
         name = Regexp.last_match(:name)
         quote = Regexp.last_match(:quote)
-        value = Regexp.last_match(:value).to_f
-        unit = Regexp.last_match(:unit)
+        ex_value = Regexp.last_match(:value).to_f / TEX_EM_BP / MATHJAX_X_HEIGHT
 
-        if unit.casecmp("pt").zero?
-          em_value = value * SVG_SCALE * CSS_PIXELS_PER_POINT / REFERENCE_FONT_SIZE_PX
-          "#{name}=#{quote}#{format_number(em_value)}em#{quote}"
-        else
-          "#{name}=#{quote}#{format_number(value * SVG_SCALE)}#{unit}#{quote}"
-        end
+        "#{name}=#{quote}#{format_number(ex_value)}ex#{quote}"
       end
     end
 
