@@ -192,7 +192,7 @@ margin-top: 3.5rem !important;
 list-style-position: outside;
 list-style-type: disc !important;
 padding-left: 1em ;
-margin-top: 0 !important;
+margin-top: 0.5rem !important;
 margin-bottom: 0 !important;
 margin-left: calc(var(--ul-marker-gap-adjust) + 1em);
 }
@@ -229,10 +229,11 @@ margin-bottom: 0 !important;
 max-width: 100%;
 }
 
+/* Spaced like display math (mjx-container[display="true"] below). */
 .post-body .commutative-diagram {
 display: block;
 max-width: 100%;
-margin: -0.3rem 0;
+margin: 0.9rem 0 0.6rem;
 padding: 0;
 overflow-x: auto;
 overflow-y: hidden;
@@ -245,24 +246,24 @@ width: auto;
 max-width: none;
 height: auto;
 margin: 0 auto;
+/*
+ * Glyph stroke per em; tikzcd_renderer.rb scales it to each font size.
+ * MathJax draws New Computer Modern Book, which is TeX's Computer Modern
+ * grown by about 0.0033em on each side of every outline, and strokes it
+ * with var(--math-blacker) thousandths of an em (mathjax-config.js).
+ */
+--tikzcd-glyph-stroke: calc((6.5 + var(--math-blacker, 9)) * 0.001px);
 }
 
 /* dvisvgm turns TeX glyphs into paths, so CSS font-weight cannot affect them. */
 .post-body .commutative-diagram__svg use {
 fill: currentColor;
 stroke: currentColor;
-stroke-width: 0.25px;
 paint-order: stroke fill;
 }
 
 .post-body .commutative-diagram__svg path[fill="none"] {
 stroke-width: 0.33px;
-}
-
-@media (max-width: 768px), (pointer: coarse) {
-  .post-body .commutative-diagram__svg use {
-  stroke-width: 0.08px;
-  }
 }
 
 .hr,

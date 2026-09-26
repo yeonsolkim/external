@@ -19,9 +19,22 @@ posts.
 
 `_plugins/tikzcd_renderer.rb` wraps each block in a standalone LaTeX document,
 compiles it with `latex`, converts the DVI output to inline SVG with `dvisvgm`,
-and caches the undecorated SVG under `.jekyll-cache/tikzcd`. The generated SVG
+and caches the resulting SVG under `.jekyll-cache/tikzcd`. The generated SVG
 IDs are namespaced before insertion so multiple diagrams can safely appear in
 one post.
+
+Diagram glyphs are matched to the MathJax math around them:
+
+- The LaTeX document uses the 10pt Computer Modern designs at every size and
+  MathJax's script sizes (7.07pt and 5pt), where TeX would switch to the
+  heavier optical sizes (`cmmi7`, `cmmi5`, ...) for labels.
+- The SVG width and height are given in `ex` the way MathJax sizes its own SVG
+  output, so 10pt is one MathJax em at every font size.
+- Each glyph path carries a stroke proportional to its font size. Its weight,
+  `--tikzcd-glyph-stroke` in `assets/css/post.css`, adds the difference between
+  Computer Modern and the New Computer Modern Book outlines MathJax draws to
+  MathJax's own glyph stroke, which `assets/js/mathjax-config.js` publishes as
+  `--math-blacker`.
 
 For Obsidian preview, enable the tracked `TikZ-cd Preview` plugin and install a
 TeX distribution that provides `latex`, `dvisvgm`, and `tikz-cd`. The plugin
