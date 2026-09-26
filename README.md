@@ -230,6 +230,11 @@ structure.
   one-based; commas and spaces can both separate multiple columns.
 - `assets/css/index.css` is only for the home page category tree and edited
   time labels.
+- Dark mode follows the device setting. Black and white swap while every
+  colour keeps its hue and saturation (pure red stays red; images are left
+  alone). The `@media (prefers-color-scheme: dark)` block at the end of
+  `style.scss`, `post.css`, and `index.css` is generated: after changing a
+  colour in those files, run `python3 scripts/dark_mode_css.py`.
 
 ### Other Includes
 
