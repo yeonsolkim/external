@@ -6,7 +6,7 @@ category_path:
   - 3. English
   - 2. Dictionary
 created_at: 2026-09-07 12:58:48 +0900
-last_modified_at: 2026-09-23 13:44:34 +0900
+last_modified_at: 2026-09-27 10:47:27 +0900
 
 line_indent: false
 publish: false
@@ -34,3 +34,8 @@ publish: false
 **redundant**: not or no longer needed or useful: *it is considered redundant to use a conjunction after a semicolon.*
 
 **symmetry**: *Mathematics* a law or operation in which a physical property or process has an equivalence in two or more directions. 
+
+**straightforward** (adj.): uncomplicated and easy to understand: *it is straightforward to formalize the notion of functions.*
+
+**thread**: a theme or characteristic running throughout a situation or piece of writing: *a **common thread** we will follow in this book will be to try to understand the type of a structure.*
+**common**: shared by more than one: *problems **common to** both commutities.*

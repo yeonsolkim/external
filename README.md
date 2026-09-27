@@ -14,6 +14,24 @@ A \arrow{r}{f} \arrow[swap]{dr}{g\circ f} & B \arrow{d}{g} \\
 $$
 ````
 
+Diagrams can also share a display-math block with other math, for example to
+set two of them side by side. The block is then typeset as one display formula,
+as LaTeX would inside `\[ ... \]`, with `amsmath` loaded for `\text`. As in
+LaTeX, leave no blank lines inside the block:
+
+````markdown
+$$
+\begin{tikzcd}
+A \arrow[r, "f"] & B
+\end{tikzcd}
+\quad \text{or} \quad
+\begin{tikzcd}
+A \arrow[d, "f"] \\
+B
+\end{tikzcd}
+$$
+````
+
 The concise ```` ```tikzcd ```` fenced form remains supported for existing
 posts.
 
@@ -38,9 +56,9 @@ Diagram glyphs are matched to the MathJax math around them:
 
 For Obsidian preview, enable the tracked `TikZ-cd Preview` plugin and install a
 TeX distribution that provides `latex`, `dvisvgm`, and `tikz-cd`. The plugin
-runs before the normal Markdown post-processors, diverts display-math `tikzcd`
-environments to the same TeX-to-SVG pipeline used by the site, and leaves all
-other display math for MathJax. Its SVG output is scaled to match the
+runs before the normal Markdown post-processors, diverts display math holding
+`tikzcd` environments to the same TeX-to-SVG pipeline used by the site, and
+leaves all other display math for MathJax. Its SVG output is scaled to match the
 surrounding MathJax typography.
 
 This site contains many Markdown posts with inline LaTeX math written as

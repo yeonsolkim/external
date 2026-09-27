@@ -27,10 +27,7 @@
   max-width: none;
   height: auto;
   margin: 0 auto;
-}
-
-.tikzcd-preview__svg path:not([fill]),
-.tikzcd-preview__svg use:not([fill]) {
+  /* Inherited, so paths inside a filled group keep that group's fill. */
   fill: currentColor;
 }
 

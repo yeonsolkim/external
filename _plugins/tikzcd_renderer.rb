@@ -15,7 +15,9 @@ module ExternalTikzcdRenderer
   # the same way makes 10pt equal MathJax's em at every font size.
   MATHJAX_X_HEIGHT = 0.442
   DISPLAY_MATH_PATTERN = /\$\$(?<body>.*?)\$\$/m
-  TIKZCD_ENVIRONMENT_PATTERN = /\A\s*(?<environment>\\begin\s*\{tikzcd\}(?:\[[^\]\r\n]*\])?.*?\\end\s*\{tikzcd\})\s*\z/m
+  # One tikzcd environment and nothing else: the body may not end another one.
+  TIKZCD_ENVIRONMENT_PATTERN = /\A\s*(?<environment>\\begin\s*\{tikzcd\}(?:\[[^\]\r\n]*\])?(?:(?!\\end\s*\{tikzcd\}).)*\\end\s*\{tikzcd\})\s*\z/m
+  TIKZCD_BEGIN_PATTERN = /\\begin\s*\{tikzcd\}/
 
   class RenderError < StandardError; end
 
@@ -95,10 +97,19 @@ module ExternalTikzcdRenderer
 
         if environment_match
           render_diagram(environment_match[:environment])
+        elsif body.match?(TIKZCD_BEGIN_PATTERN)
+          render_diagram(display_formula(body))
         else
           display_math
         end
       end
+    end
+
+    # Diagrams set among other math, as in
+    #   \begin{tikzcd}...\end{tikzcd} \quad \text{or} \quad \begin{tikzcd}...\end{tikzcd},
+    # form one display formula. Blank lines are dropped: TeX would end the formula there.
+    def display_formula(body)
+      "$\\displaystyle\n#{body.strip.gsub(/\n\s*\n/, "\n")}\n$"
     end
 
     def tikzcd_environment(source)
@@ -197,10 +208,15 @@ module ExternalTikzcdRenderer
     # where TeX switches to the heavier optical sizes (cmmi7, cmmi5, ...). Use
     # the 10pt designs at every size and MathJax's script sizes so that labels
     # match the surrounding math.
+    #
+    # A lone diagram is typeset as its own tikzpicture. A display formula has to
+    # stay on one page, which the tikz option (a page per tikzpicture) would
+    # prevent, and may use amsmath's \text.
     def latex_document(environment)
+      formula = !environment.match?(TIKZCD_ENVIRONMENT_PATTERN)
       <<~LATEX
         \\def\\pgfsysdriver{pgfsys-dvisvgm.def}
-        \\documentclass[tikz,border=0pt]{standalone}
+        \\documentclass[#{"tikz," unless formula}border=0pt]{standalone}
         \\DeclareFontShape{OT1}{cmr}{m}{n}{<->cmr10}{}
         \\DeclareFontShape{OT1}{cmr}{m}{it}{<->cmti10}{}
         \\DeclareFontShape{OT1}{cmr}{bx}{n}{<->cmbx10}{}
@@ -209,7 +225,7 @@ module ExternalTikzcdRenderer
         \\DeclareFontShape{OMS}{cmsy}{m}{n}{<->cmsy10}{}
         \\DeclareFontShape{OMS}{cmsy}{b}{n}{<->cmbsy10}{}
         \\DeclareMathSizes{10}{10}{7.07}{5}
-        \\usepackage{tikz-cd}
+        #{"\\usepackage{amsmath}\n" if formula}\\usepackage{tikz-cd}
         \\makeatletter
         \\def\\pgfsys@papersize#1#2{}
         \\let\\tikzcd@typesetpicturebox\\pgfsys@typesetpicturebox
