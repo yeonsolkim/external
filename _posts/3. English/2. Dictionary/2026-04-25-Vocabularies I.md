@@ -6,7 +6,7 @@ category_path:
   - 3. English
   - 2. Dictionary
 created_at: 2026-08-10 15:41:50 +0900
-last_modified_at: 2026-09-07 18:15:02 +0900
+last_modified_at: 2026-09-27 10:43:22 +0900
 
 line_indent: false
 publish: false
@@ -56,6 +56,7 @@ publish: false
 <b>all the time</b>: continuously.
 <b>always</b>: on every occasion.
 <b>usual</b>: *frequently* occurring or done.
+
 <b>normal</b>: conforming to a standard<sup>2</sup>.
 <b>standard</b><sup>1</sup>: a level of quality.
 <b>standard</b><sup>2</sup>: a required or agreed level of quality.

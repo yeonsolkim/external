@@ -275,6 +275,15 @@ stroke-width: 0.33px;
   .post-body .commutative-diagram__svg [stroke="#000"] {
   stroke: currentColor;
   }
+
+  /* tikz-cd hides the lines behind description labels and crossing-over arrows with white; use the dark page's black. */
+  .post-body .commutative-diagram__svg [fill="#fff"] {
+  fill: #000;
+  }
+
+  .post-body .commutative-diagram__svg [stroke="#fff"] {
+  stroke: #000;
+  }
 }
 
 .hr,

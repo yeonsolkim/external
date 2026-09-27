@@ -9,6 +9,9 @@ const { promisify } = require("node:util");
 const execFileAsync = promisify(execFile);
 const CACHE_VERSION = "2";
 const SVG_SCALE = 1.2;
+// One tikzcd environment and nothing else: the body may not end another one.
+const TIKZCD_ENVIRONMENT_PATTERN =
+  /^\s*(\\begin\s*\{tikzcd\}(?:\[[^\]\r\n]*\])?(?:(?!\\end\s*\{tikzcd\})[\s\S])*\\end\s*\{tikzcd\})\s*$/;
 // Obsidian renders math with MathJax 3's CHTML output, which differs from the
 // site's SVG output in two ways that matter for \whitestar:
 // - it measures the system-font star at full size and sets that width in px,
@@ -65,11 +68,17 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
 
   renderDisplayMathDiagrams(el, ctx) {
     const section = ctx.getSectionInfo(el);
-    const sourceHasTikzcd = section?.text.includes("\\begin{tikzcd}");
+    // The section info holds the whole note; only this section's lines pair
+    // up with the math elements rendered in el.
+    const sectionText = section?.text
+      .split("\n")
+      .slice(section.lineStart, section.lineEnd + 1)
+      .join("\n");
+    const sourceHasTikzcd = sectionText?.includes("\\begin{tikzcd}");
     let environments = [];
 
     if (sourceHasTikzcd) {
-      const displayBlocks = this.findDisplayMathBlocks(section.text);
+      const displayBlocks = this.findDisplayMathBlocks(sectionText);
       environments = displayBlocks
         .map((block) => block.environment)
         .filter(Boolean);
@@ -114,17 +123,23 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
     let match;
 
     while ((match = displayMathPattern.exec(markdown)) !== null) {
-      const body = match[1];
-      const environmentMatch = body.match(
-        /^\s*(\\begin\s*\{tikzcd\}(?:\[[^\]\r\n]*\])?[\s\S]*?\\end\s*\{tikzcd\})\s*$/
-      );
-
-      blocks.push({
-        environment: environmentMatch ? environmentMatch[1] : null,
-      });
+      blocks.push({ environment: this.tikzcdSource(match[1]) });
     }
 
     return blocks;
+  }
+
+  // What a display math body is typeset from: its tikzcd environment when that
+  // is all it holds, or else one display formula setting the diagrams among
+  // the other math, as in
+  //   \begin{tikzcd}...\end{tikzcd} \quad \text{or} \quad \begin{tikzcd}...\end{tikzcd}.
+  // Blank lines are dropped from a formula: TeX would end it there.
+  tikzcdSource(body) {
+    const environmentMatch = body.match(TIKZCD_ENVIRONMENT_PATTERN);
+    if (environmentMatch) return environmentMatch[1];
+    if (!/\\begin\s*\{tikzcd\}/.test(body)) return null;
+
+    return `$\\displaystyle\n${body.trim().replace(/\n\s*\n/g, "\n")}\n$`;
   }
 
   findMathBlockElements(el) {
@@ -145,17 +160,11 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
     if (el.matches?.(selector)) candidates.push(el);
     candidates.push(...el.querySelectorAll(selector));
 
-    const matches = candidates.filter((candidate) => {
-      if (candidate.closest?.(".tikzcd-preview")) return false;
-
-      const source = [
-        candidate.getAttribute?.("data-math") || "",
-        candidate.textContent || "",
-        candidate.getAttribute?.("aria-label") || "",
-      ].join("\n");
-
-      return this.extractTikzcdEnvironment(source) !== null;
-    });
+    const matches = candidates.filter(
+      (candidate) =>
+        !candidate.closest?.(".tikzcd-preview") &&
+        this.candidateTikzcdSource(candidate) !== null
+    );
 
     // Keep only the innermost match so one failed equation is replaced once.
     const innermost = matches.filter(
@@ -167,13 +176,8 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
 
     let replaced = 0;
     innermost.forEach((candidate, index) => {
-      const source = [
-        candidate.getAttribute?.("data-math") || "",
-        candidate.textContent || "",
-        candidate.getAttribute?.("aria-label") || "",
-      ].join("\n");
       const environment =
-        sourceEnvironments[index] || this.extractTikzcdEnvironment(source);
+        sourceEnvironments[index] || this.candidateTikzcdSource(candidate);
       if (!environment) return;
 
       const target =
@@ -188,12 +192,19 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
     return replaced;
   }
 
-  extractTikzcdEnvironment(source) {
-    const match = source.match(
-      /\\begin\s*\{tikzcd\}(?:\[[^\]\r\n]*\])?[\s\S]*?\\end\s*\{tikzcd\}/
-    );
+  // A math element holds its TeX as text until MathJax replaces it, and
+  // MathJax shows the TeX of a formula it cannot typeset.
+  candidateTikzcdSource(candidate) {
+    for (const text of [
+      candidate.getAttribute?.("data-math"),
+      candidate.textContent,
+      candidate.getAttribute?.("aria-label"),
+    ]) {
+      const source = text ? this.tikzcdSource(text) : null;
+      if (source) return source;
+    }
 
-    return match ? match[0] : null;
+    return null;
   }
 
   replaceWithTikz(mathEl, environment) {
@@ -334,10 +345,15 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
     throw lastError;
   }
 
+  // A lone diagram is typeset as its own tikzpicture. A display formula has to
+  // stay on one page, which the tikz option (a page per tikzpicture) would
+  // prevent, and may use amsmath's \text.
   latexDocument(environment) {
+    const formula = !TIKZCD_ENVIRONMENT_PATTERN.test(environment);
     return [
       "\\def\\pgfsysdriver{pgfsys-dvisvgm.def}",
-      "\\documentclass[tikz,border=2pt]{standalone}",
+      `\\documentclass[${formula ? "" : "tikz,"}border=2pt]{standalone}`,
+      ...(formula ? ["\\usepackage{amsmath}"] : []),
       "\\usepackage{tikz-cd}",
       "\\begin{document}",
       environment,
@@ -392,6 +408,10 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
         const color = element.getAttribute(attribute)?.toLowerCase();
         if (["#000", "#000000", "black"].includes(color)) {
           element.setAttribute(attribute, "currentColor");
+        } else if (["#fff", "#ffffff", "white"].includes(color)) {
+          // tikz-cd's background colour, painted behind description labels
+          // and under crossing-over arrows to hide the lines they cover.
+          element.style.setProperty(attribute, "var(--background-primary)");
         }
       });
     }
