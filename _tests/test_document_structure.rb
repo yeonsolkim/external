@@ -109,6 +109,20 @@ check("a figure bridges to the paragraph after it") do
   bridged.index("Still the definition.") < bridged.index("</section>")
 end
 
+displayed = build(<<~HTML)
+  <p><strong>Definition 2.2.19.</strong> A set is bounded if there is R such that</p>
+
+  \\[d(x,y) &lt; R\\]
+
+  <p>for all x, y in A.</p>
+  <p>Ordinary prose.</p>
+HTML
+check("display math bridges to the paragraph that finishes its sentence") do
+  displayed.index("for all x, y in A.") < displayed.index("</section>") &&
+    displayed.index("Ordinary prose.") > displayed.index("</section>")
+end
+check("bookkeeping keys are not rendered as attributes") { !displayed.include?(" kind=") }
+
 named = build(%(<p><strong>Theorem 2.2.20</strong> (Heine–Borel theorem). Statement.</p>))
 check("a parenthesised name is captured") { named.include?('data-name="Heine–Borel theorem"') }
 

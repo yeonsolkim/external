@@ -192,6 +192,12 @@ module ExternalDocumentStructure
     block[:type] == :element && block[:classes].include?("post-structural-continuation")
   end
 
+  # kramdown leaves display math as bare text between paragraphs (`\[…\]`), not an element,
+  # so it has to be recognised here to bridge to the paragraph that continues its sentence.
+  def display_math?(block)
+    block[:type] == :text && block[:raw].match?(/\\\[|\$\$|\\begin\{/)
+  end
+
   def blank?(block)
     block[:type] != :element ? block[:raw].strip.empty? : false
   end
@@ -231,7 +237,8 @@ module ExternalDocumentStructure
   end
 
   def attrs_to_s(attrs)
-    attrs.reject { |_, value| value.nil? || value.to_s.empty? }
+    # Symbol keys (:kind) are the pass's own bookkeeping, not HTML attributes.
+    attrs.reject { |name, value| name.is_a?(Symbol) || value.nil? || value.to_s.empty? }
          .map { |name, value| %( #{name}="#{value.to_s.gsub('"', "&quot;")}") }.join
   end
 
@@ -360,7 +367,9 @@ module ExternalDocumentStructure
         close_units.call
       end
 
-      bridge = if block[:type] != :element || continuation_marker?(block)
+      bridge = if display_math?(block)
+                 true
+               elsif block[:type] != :element || continuation_marker?(block)
                  bridge
                else
                  block[:tag] != "p"
