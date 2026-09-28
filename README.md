@@ -113,6 +113,10 @@ structure.
 - Running the sync script may rewrite those managed keys based on filename,
   folder path, and file timestamps. Put custom front matter in other keys if it
   should be preserved.
+- `title` is the exception: an existing title is kept as written, so it may
+  differ from the filename. The script derives it from the filename only when
+  the key is missing, so renaming a post does not change its title; delete the
+  `title` line to regenerate it.
 - New posts should keep the filename pattern `YYYY-MM-DD-title.md`. Files
   without a date prefix may be renamed by the sync script.
 - The Obsidian templates in `templates/` help create/update post front matter,

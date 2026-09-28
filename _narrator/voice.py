@@ -299,13 +299,44 @@ def assemble_page(skel: Skeleton, scripts: list, metas: list, cache_dir: str, ou
             "id": section.id, "title": section.title, "kind": section.kind, "level": section.level,
             "start": round(start, 3), "duration": round(seconds(pcm), 3),
             "source": section.hash, "audio": meta["key"],
+            "parent": section.parent, "proves": section.proves,
         })
     total = seconds(page)
 
-    # Chapters: every section except transitional prose, which folds into the one before.
+    # A unit that is read as several sections — a subsection holding a statement, say — also
+    # gets an entry, spanning its children. The audio is one timeline, so a parent's range is
+    # exactly its children's: every level is playable without synthesising anything twice.
+    narrated = {s.id for s, _ in scripts}
+    spans = {}
+    for (section, _body), entry in zip(scripts, entries):
+        parent = section.parent
+        while parent:
+            span = spans.setdefault(parent, [entry["start"], 0.0])
+            span[0] = min(span[0], entry["start"])
+            span[1] = max(span[1], entry["start"] + entry["duration"])
+            parent = _parent_of(skel, parent)
+    for section in skel.sections:
+        if section.id in spans and section.id not in narrated:
+            start, end = spans[section.id]
+            entries.append({
+                "id": section.id, "title": section.title, "kind": section.kind, "level": section.level,
+                "start": round(start, 3), "duration": round(end - start, 3),
+                "source": section.hash, "audio": None, "parent": section.parent, "proves": None,
+                "container": True,
+            })
+        elif section.id in spans:
+            for entry in entries:
+                if entry["id"] == section.id:
+                    entry["span"] = round(max(spans[section.id][1] - entry["start"], entry["duration"]), 3)
+    entries.sort(key=lambda e: (e["start"], e.get("level", 0)))
+
+    # Chapters: every section except transitional prose and proofs, which fold into the
+    # statement before them, and containers, which are their children.
     chapters = []
     for entry in entries:
-        if entry["kind"] == "prose" and chapters:
+        if entry.get("container"):
+            continue
+        if entry["kind"] in ("prose", "proof") and chapters:
             continue
         chapters.append({"id": entry["id"], "title": entry["title"], "start": entry["start"]})
     for i, chapter in enumerate(chapters):
@@ -336,6 +367,13 @@ def assemble_page(skel: Skeleton, scripts: list, metas: list, cache_dir: str, ou
     log("wrote %s (%.1f MB, %.1f min, %d chapters) and %s" % (
         out_mp3, manifest["bytes"] / 1e6, total / 60, len(chapters), out_json))
     return manifest
+
+
+def _parent_of(skel: Skeleton, section_id: str) -> Optional[str]:
+    for section in skel.sections:
+        if section.id == section_id:
+            return section.parent
+    return None
 
 
 def page_paths(skel: Skeleton, audio_root: str) -> tuple:

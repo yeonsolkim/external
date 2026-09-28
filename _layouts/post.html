@@ -82,6 +82,7 @@ title: External
     class="post-body"
     {% if page.line_indent == false %} data-line-indent="false"{% endif %}
     {% if parent_category != "" %} data-post-domain="{{ parent_category | strip_category_order_prefix | slugify }}"{% endif %}
+    {% if page.document_structure %} data-document-structure="true"{% endif %}
   >
     {{ content }}
   </div>

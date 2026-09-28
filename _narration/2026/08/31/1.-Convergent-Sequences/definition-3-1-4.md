@@ -2,13 +2,13 @@
 section: definition-3-1-4
 title: Definition 3.1.4
 kind: definition
-document: 3.1. Convergent Sequences
+document: 3.1 Convergent Sequences
 url: /2026/08/31/1.-Convergent-Sequences.html
 source: ae478c2cd7b343d2386a5dd1bc79d4118cb2b90260f2d7cc7883c3cfb78a5f24
-skeleton: 2
-prompt: lecture-v2
+skeleton: 4
+prompt: lecture-v3
 model: gpt-5.5
-generated: 2026-09-15
+generated: 2026-09-28
 body: 4eeb766d3c58662a8e85ca4523354a3188f76e506fd822ddfcd708078584ed3f
 words: 122
 ---

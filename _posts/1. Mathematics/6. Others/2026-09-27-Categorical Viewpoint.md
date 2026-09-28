@@ -1,17 +1,15 @@
 ---
 layout: post
-title: "Categorical Viewpoint"
+title: "Sets: Categorical Viewpoint"
 date: 2026-09-27 00:00:00 +0900
 category_path:
   - 1. Mathematics
   - 6. Others
 created_at: 2026-09-27 16:02:08 +0900
 last_modified_at: 2026-09-27 17:07:42 +0900
-
 publish: false
 ---
-
-If $f$ is a function from $X$ to $Y$, we draw 
+**1. Set-functions.** Let $X$ and $Y$ be sets. If $f$ is a function from $X$ to $Y$, we draw 
 
 $$
 \begin{tikzcd}
@@ -21,7 +19,7 @@ X \ar[r, "f"] & Y
 $$
 
 
-Let $f:X\to Y$ and $g:Y\to Z$ be given. If $g \circ f : X\to Z$ is the composite of $f$ and $g$, we may draw diagrams such as 
+**2. Composition of functions.** Let $f:X\to Y$ and $g:Y\to Z$ be given. If $g \circ f : X\to Z$ is the composite of $f$ and $g$, we may draw diagrams such as 
 
 $$
 \begin{tikzcd}
@@ -72,7 +70,7 @@ commute.
 
 
 
-**Definition.** Let $f:X\to Y$ be a function. A function $g:Y\to X$ is called a *left-inverse* of $f$ if $g\circ f = \mathrm{id}_X$; the following diagram commutes:
+**3.  Surjectivity and injectivity.** Let $f:X\to Y$ be a function. A function $g:Y\to X$ is called a *left-inverse* of $f$ if $g\circ f = \mathrm{id}_X$; the following diagram commutes:
 
 $$
 \begin{tikzcd}
@@ -92,12 +90,12 @@ $$
 
 If a function from $Y$ to $X$ is both a left-inverse and right-inverse of $f$, then it is called the *inverse* of $f$.
 
-**Proposition.** Let $X\ne \varnothing$, and let $f:X\to Y$ be a function.
+**Proposition 1.** Let $X\ne \varnothing$, and let $f:X\to Y$ be a function.
 1. $f$ is injective if and only if it has a left-inverse.
 2. $f$ is surjective if and only if it has a right-inverse.
 
 
-**Example.**
+**4. Cartesian product.**
 
 $$
 \begin{tikzcd}[row sep=large, column sep=huge]

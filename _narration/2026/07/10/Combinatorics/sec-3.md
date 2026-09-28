@@ -1,0 +1,20 @@
+---
+section: sec-3
+title: 3. Multiplication rule
+kind: subsection
+document: Combinatorics
+url: /2026/07/10/Combinatorics.html
+source: b06eb18090c335b9035d73e38d7f5451035893b559d796040cb12c1d8ca6ac55
+skeleton: 4
+prompt: lecture-v3
+model: gpt-5.5
+generated: 2026-09-28
+body: bbc048c00807e01713984951093ccb09664164f656cc88bc6b4ad6f11cbf52c4
+words: 179
+---
+
+3. Multiplication rule. A process is a trial that is completed in successive stages, whose outcome is called the complete outcome. We let A be the event of the first stage and B the event of the second stage, with size of A equals m and size of B equals n.
+
+The event “A occurs and then B occurs” is denoted by A then B. Suppose that x records the first-stage outcome and y records the second-stage outcome. Since each of the m possible values of x can be paired with each of the n possible values of y, size of A then B equals size of A times size of B equals m n.
+
+This formula is called the multiplication rule. The multiplication rule extends to any finite number of stages. If a process consists of k successive stages, and each event A i of the i-th stage has n i possible outcomes, then the event A one through A k can occur in n one times n two times and so on up to n k ways.

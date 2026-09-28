@@ -39,3 +39,5 @@ publish: false
 
 **thread**: a theme or characteristic running throughout a situation or piece of writing: *a **common thread** we will follow in this book will be to try to understand the type of a structure.*
 **common**: shared by more than one: *problems **common to** both commutities.*
+
+**manifest**: 

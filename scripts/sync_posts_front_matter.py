@@ -47,6 +47,20 @@ def has_top_level_key(front_matter: str, key: str) -> bool:
     return False
 
 
+def top_level_entry(front_matter: str, key: str) -> list[str]:
+    lines = front_matter.splitlines()
+
+    for i, line in enumerate(lines):
+        match = TOP_LEVEL_KEY_RE.match(line)
+        if match and match.group(1) == key:
+            end = i + 1
+            while end < len(lines) and (lines[end].startswith(" ") or lines[end].startswith("\t")):
+                end += 1
+            return lines[i:end]
+
+    return []
+
+
 def strip_managed_keys(front_matter: str) -> list[str]:
     lines = front_matter.splitlines()
     kept: list[str] = []
@@ -84,18 +98,24 @@ def category_yaml(path: Path) -> list[str]:
 
 def desired_front_matter(path: Path, stat: os.stat_result, existing_front_matter: str | None) -> str:
     date_prefix = path.name[:10]
-    title = DATE_PREFIX_RE.sub("", path.stem).replace("_", " ")
+    existing_front_matter = existing_front_matter or ""
+
+    # An existing title is kept as written, so it may differ from the file
+    # name; only a missing title is derived from the file name.
+    title_lines = top_level_entry(existing_front_matter, "title")
+    if not title_lines:
+        title = DATE_PREFIX_RE.sub("", path.stem).replace("_", " ")
+        title_lines = [f"title: {yaml_quote(title)}"]
 
     managed = [
         "layout: post",
-        f"title: {yaml_quote(title)}",
+        *title_lines,
         f"date: {date_prefix} 00:00:00 +0900",
         *category_yaml(path),
         f"created_at: {fmt_time(created_ts(stat))}",
         f"last_modified_at: {fmt_time(stat.st_mtime)}",
     ]
 
-    existing_front_matter = existing_front_matter or ""
     extra = strip_managed_keys(existing_front_matter)
     if not has_top_level_key(existing_front_matter, "publish"):
         extra.append("publish: false")

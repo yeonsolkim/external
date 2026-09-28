@@ -775,14 +775,37 @@
     });
   }
 
+  function unitContainers(postBody) {
+    return [postBody].concat(
+      Array.prototype.slice.call(postBody.querySelectorAll('.doc-section, .math-environment'))
+    );
+  }
+
   function buildSemanticPostUnits(postBody) {
     if (postBody.getAttribute('data-semantic-units') === 'true') {
       return;
     }
 
-    prepareParagraphUnits(postBody);
-    groupMathEnvironments(postBody, { environmentNumber: 0 }, false);
-    markDisplayMathContinuations(postBody);
+    // Sectioning and environments now arrive from the server
+    // (_plugins/document_structure.rb, see _docs/STRUCTURE.md). When they do, only the
+    // presentational passes are left — over every unit container, since paragraphs are no
+    // longer all direct children of the body.
+    var structured = postBody.getAttribute('data-document-structure') === 'true';
+    var containers = structured ? unitContainers(postBody) : [postBody];
+
+    containers.forEach(prepareParagraphUnits);
+
+    if (structured) {
+      containers.forEach(function (container) {
+        if (container !== postBody && !container.classList.contains('doc-section--heading')) {
+          decorateEnvironmentParagraphs(container);
+        }
+      });
+    } else {
+      groupMathEnvironments(postBody, { environmentNumber: 0 }, false);
+    }
+
+    containers.forEach(markDisplayMathContinuations);
     markSectionOpeningParagraphs(postBody);
     postBody.setAttribute('data-semantic-units', 'true');
   }

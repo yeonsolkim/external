@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "Convergence describes the asymptotic behavior of a sequence by relating its terms to a point of the ambient space. This raises a natural question. How much of this asymptotic behavior can be recognized from the terms of the sequence themselves, without first specifying or establishing the existence of such a point? The concept of Cauchyness isolates precisely this internal aspect of convergence. Instead of comparing the terms $x_n$ with a separate point $x$, it compares sufficiently late terms with one another and asks whether they eventually become arbitrarily close.",
   "published_at": "2026-09-09T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/92773d9326ccc1ea0fd0536433a631f0d988cf1c7a29f2c150ee24867565cd77.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/cf5c1a54d18e9e9042af5667aee8e05b6983a62360d95ad1d16c0ae308e95df3.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.chapters.json",
-  "duration": 564.622,
-  "bytes": 9035655,
+  "duration": 574.488,
+  "bytes": 9193644,
   "voice": "cedar",
-  "page_key": "92773d9326ccc1ea0fd0536433a631f0d988cf1c7a29f2c150ee24867565cd77",
-  "skeleton_hash": "8534ef3a7386f19809020955eb3f5410539a175624f24e4fac8790cbeb5ca37a",
-  "generated": "2026-09-19",
+  "page_key": "cf5c1a54d18e9e9042af5667aee8e05b6983a62360d95ad1d16c0ae308e95df3",
+  "skeleton_hash": "0eaf594a73a1edc5bd607569ccd765cc043d14be0570742bbf9cafda54d40398",
+  "generated": "2026-09-28",
   "podcast": true,
   "sections": [
     {
@@ -23,7 +23,9 @@
       "start": 0.0,
       "duration": 34.34,
       "source": "9279a843a803749dcec4eb667cca4878d9ef28ce07eeb05ae975f7bf79fa113a",
-      "audio": "8f41d8232d3205f5332d3cbcb2d981a2ecc5243daaaed7b41907de8534ee475e"
+      "audio": "8f41d8232d3205f5332d3cbcb2d981a2ecc5243daaaed7b41907de8534ee475e",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "definition-3-3-1",
@@ -31,99 +33,179 @@
       "kind": "definition",
       "level": 2,
       "start": 35.54,
-      "duration": 38.368,
-      "source": "f2e0e73cab0a1ceee4fa647790c32dc35030635eff3752db02069497d15ba087",
-      "audio": "a834cef54fa004621ba853658fa17370fa1893ffe71ab8c1897f3182bf9e9277"
+      "duration": 23.369,
+      "source": "1f950f9d430d3e2c357aa8f8ba632e2d8c019bb05cacf015dd66efd7319ee74e",
+      "audio": "f885914d4114dd74cf90ee3cd6aebc8750ed621efc7e55da93a18066bec8cd47",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "prose-after-definition-3-3-1",
+      "title": "The Cauchy condition can be viewed geometrically as…",
+      "kind": "prose",
+      "level": 2,
+      "start": 60.109,
+      "duration": 11.986,
+      "source": "db9409d6addc6a4def008bef2262bb9eb982179df69dfd429a5cf067c3074102",
+      "audio": "ba3774c26a366645b592748d13b5557a8df6bc6314a628ec2a4ead364d637f06",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "definition-3-3-2",
       "title": "Definition 3.3.2",
       "kind": "definition",
       "level": 2,
-      "start": 75.108,
-      "duration": 14.104,
+      "start": 73.295,
+      "duration": 18.425,
       "source": "af861721788285ee0aabd92b95537149fdcaa0d871844db51d62b4ce7980e12e",
-      "audio": "391e541097851c7f7f72117f2edd25c8fb52e7d2b3f65509ca2c37874b6e14b6"
+      "audio": "04ab087cfb254b04a0c040fa81457d785d26d2273f84517210d6cd6bcc44f209",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "theorem-3-3-3",
       "title": "Theorem 3.3.3",
       "kind": "theorem",
       "level": 2,
-      "start": 90.412,
-      "duration": 77.732,
-      "source": "c507fc6134fadf22be83385a91a7bae4aad747addadf245df7b306e7bc0448ba",
-      "audio": "42100351a7645f9efe7f7c782b11137b14ced53b99f8089db2784555552e1c92"
+      "start": 92.919,
+      "duration": 18.392,
+      "source": "ad4243a2fb43780c9c9181fba2a7db19cd11a222f0c710fc35cdb9c2b826abc6",
+      "audio": "b96c3300dbdab191ed6f9b8faaee018ac61985089fba358703f9246a956d0f97",
+      "parent": null,
+      "proves": null
     },
     {
-      "id": "prose-after-theorem-3-3-3",
+      "id": "proof-theorem-3-3-3",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 112.512,
+      "duration": 58.903,
+      "source": "e7cd3b3ecf75d425d7e05a3c287b99e0b782725c2a990a3b22e49d25945bd459",
+      "audio": "e049d7d8e97b74848da4a06edfc9d8e0a0e4c0c049983ecdbb37e941558d1137",
+      "parent": null,
+      "proves": "theorem-3-3-3"
+    },
+    {
+      "id": "prose-after-proof-theorem-3-3-3",
       "title": "The preceding results focus on describing Cauchyness itself.",
       "kind": "prose",
       "level": 2,
-      "start": 169.344,
+      "start": 172.615,
       "duration": 23.212,
       "source": "777fc118ec1aaef0ebc43efd46fb76e14e9d16ec8b706f7478142b03e1d66232",
-      "audio": "466076960b1cd44f850867d3786ac85ec807a805e937b5a5bb9cc7a9ca9f3742"
+      "audio": "466076960b1cd44f850867d3786ac85ec807a805e937b5a5bb9cc7a9ca9f3742",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "lemma-3-3-4",
       "title": "Lemma 3.3.4",
       "kind": "lemma",
       "level": 2,
-      "start": 193.755,
-      "duration": 120.373,
-      "source": "5ef3b3df551aa18832b13304bb13fea7a8f840a6dd92ddaad2042ead35add406",
-      "audio": "e32194e5421a33085628c1eb2c5cdb5889a8a1577cfecd5df780bd310a58d7d4"
+      "start": 197.026,
+      "duration": 35.51,
+      "source": "0750645da8e0d66f2dbe2bfff736e80500b55ff658f11b5137eae85130cbd501",
+      "audio": "b781eb9d408e6875bc112885bc8e205095bd9752072422817418977aad38f4e2",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-lemma-3-3-4",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 233.736,
+      "duration": 88.894,
+      "source": "16c11fcca8622cf56e833f91aa937a8369d164e92233e23488340a3de30a1b94",
+      "audio": "803673b9cf7e25b03fee4cea7db31c031178be5db6680f5948337fd1b6117440",
+      "parent": null,
+      "proves": "lemma-3-3-4"
     },
     {
       "id": "theorem-3-3-5",
       "title": "Theorem 3.3.5",
       "kind": "theorem",
       "level": 2,
-      "start": 315.328,
-      "duration": 137.743,
-      "source": "e6c1fb8405230bf3c53f27a39b589328167bc2c90af41df9fa7471e1acea29c6",
-      "audio": "952f4a0865e41d912f98d1ff12c2daf1f0ce2ea0430fc3715d5a3b02dc6fe737"
+      "start": 323.831,
+      "duration": 20.432,
+      "source": "a659176e58f9dd1943bde4d36fa8545f0226c63ddac930977471516a42b7ae7c",
+      "audio": "c7e83a88691189c14e205bb81431cb3437d797c2e4a1697e7dedee706da03970",
+      "parent": null,
+      "proves": null
     },
     {
-      "id": "prose-after-theorem-3-3-5",
+      "id": "proof-theorem-3-3-5",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 345.463,
+      "duration": 113.571,
+      "source": "75583f9694ba3f98a46560f48381cb1a7fee0626b22a2e2269f71163b8b2b8e9",
+      "audio": "1864ded427704cc2f0a141bc597a4056ab387eb5bfb9b12b52c29d3a60bba4c1",
+      "parent": null,
+      "proves": "theorem-3-3-5"
+    },
+    {
+      "id": "prose-after-proof-theorem-3-3-5",
       "title": "A Euclidean space … is not compact, so Theorem 3.3.5 cannot…",
       "kind": "prose",
       "level": 2,
-      "start": 454.271,
+      "start": 460.234,
       "duration": 18.45,
       "source": "1260087d57e1adec81c3c0e8cc0387056d88609ad9f2ddd1cc59704e26f81661",
-      "audio": "6c0dccb07b7534f0954f0d3f322dec2ced045aae24d6036cc48bd0df309b304d"
+      "audio": "6c0dccb07b7534f0954f0d3f322dec2ced045aae24d6036cc48bd0df309b304d",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "corollary-3-3-6",
       "title": "Corollary 3.3.6",
       "kind": "corollary",
       "level": 2,
-      "start": 473.921,
-      "duration": 48.1,
-      "source": "f503c50367171354399457bd4c8645524a6bb7d57c6fee1c03498f3f0c57aaa0",
-      "audio": "2a9715131fba9305f5841b41cee59d0ab225055cafe4060a408d8ecd9cbff757"
+      "start": 479.884,
+      "duration": 11.15,
+      "source": "6c1166b76a0534dcc01d84c0c875199342dc366e67bc97921d6ee7fb8fa08a91",
+      "audio": "6d0f6de862074e821c03750ae88ccec7a8e9a859bdb6da73323adeb4980e3daa",
+      "parent": null,
+      "proves": null
     },
     {
-      "id": "prose-after-corollary-3-3-6",
+      "id": "proof-corollary-3-3-6",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 492.234,
+      "duration": 39.654,
+      "source": "ba2445a024da598edc2caf1d7f87db250c0c88ec5c4ad9f4a10808e7c916b933",
+      "audio": "16decacf82cf7bfd472ead54b46ecf9d6793c2a831210c467c93091b54f8c6cf",
+      "parent": null,
+      "proves": "corollary-3-3-6"
+    },
+    {
+      "id": "prose-after-proof-corollary-3-3-6",
       "title": "The argument in … reveals a distinction that is more…",
       "kind": "prose",
       "level": 2,
-      "start": 523.222,
+      "start": 533.088,
       "duration": 29.0,
       "source": "d989ab9e981e0d589735bbf3066379e91ae7b299e8333ec43544157a94a1b9a9",
-      "audio": "3104cc95c19627ca26a9907267cdee7993445d312103f2d6b6589a9b37b11f5e"
+      "audio": "3104cc95c19627ca26a9907267cdee7993445d312103f2d6b6589a9b37b11f5e",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "definition-3-3-7",
       "title": "Definition 3.3.7",
       "kind": "definition",
       "level": 2,
-      "start": 553.422,
+      "start": 563.288,
       "duration": 11.2,
       "source": "26b1f23413b9a22cb98eda2d1e418585e17ca2ab3433412f9401d9585a1a2097",
-      "audio": "e4144d326fc54a41e2a4e75276c1f0f66b3c4d15eace27ada02c61f066c0f9a1"
+      "audio": "e4144d326fc54a41e2a4e75276c1f0f66b3c4d15eace27ada02c61f066c0f9a1",
+      "parent": null,
+      "proves": null
     }
   ],
   "chapters": [
@@ -137,43 +219,43 @@
       "id": "definition-3-3-1",
       "title": "Definition 3.3.1",
       "start": 35.54,
-      "end": 75.108
+      "end": 73.295
     },
     {
       "id": "definition-3-3-2",
       "title": "Definition 3.3.2",
-      "start": 75.108,
-      "end": 90.412
+      "start": 73.295,
+      "end": 92.919
     },
     {
       "id": "theorem-3-3-3",
       "title": "Theorem 3.3.3",
-      "start": 90.412,
-      "end": 193.755
+      "start": 92.919,
+      "end": 197.026
     },
     {
       "id": "lemma-3-3-4",
       "title": "Lemma 3.3.4",
-      "start": 193.755,
-      "end": 315.328
+      "start": 197.026,
+      "end": 323.831
     },
     {
       "id": "theorem-3-3-5",
       "title": "Theorem 3.3.5",
-      "start": 315.328,
-      "end": 473.921
+      "start": 323.831,
+      "end": 479.884
     },
     {
       "id": "corollary-3-3-6",
       "title": "Corollary 3.3.6",
-      "start": 473.921,
-      "end": 553.422
+      "start": 479.884,
+      "end": 563.288
     },
     {
       "id": "definition-3-3-7",
       "title": "Definition 3.3.7",
-      "start": 553.422,
-      "end": 564.622
+      "start": 563.288,
+      "end": 574.488
     }
   ]
 }

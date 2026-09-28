@@ -15,7 +15,13 @@ Stream format, per section (compatible with the old extension's extract.js):
 Math is numbered per SECTION, not per document, so inserting an equation in one
 section does not renumber — and re-hash — every section after it.
 
-Sectioning rule (this site): a section opens at every heading (h2–h6) and at every
+Structure comes from the page itself. `_plugins/document_structure.rb` wraps every
+sectioning unit and environment in a `<section data-doc="...">` at build time
+(see `_docs/STRUCTURE.md`), so this module reads a tree rather than matching bold text.
+The heuristics below are the fallback for pages built before that plugin, and for the
+domains it does not touch.
+
+Legacy sectioning rule: a section opens at every heading (h2–h6) and at every
 numbered environment paragraph (`<strong>Theorem 2.2.16.</strong> ...`). The
 environment's statement, its proof, display equations and lists belong to it. The
 transitional prose the author writes between one result and the next is its own
@@ -36,7 +42,7 @@ from typing import Optional
 
 from .htmltree import Node, parse_html
 
-SKELETON_VERSION = 3
+SKELETON_VERSION = 4
 
 # Environment kinds this site writes as `**Kind N.N.N.**` at the start of a paragraph.
 ENV_KINDS = {
@@ -91,6 +97,8 @@ class Section:
     math: int = 0
     words: int = 0
     has_proof: bool = False
+    parent: Optional[str] = None   # the unit this one sits in
+    proves: Optional[str] = None   # a proof names what it proves
     blocks: list = field(default_factory=list, repr=False)
 
 
@@ -414,6 +422,115 @@ def _walk(node: Node, out: list, r: Renderer) -> None:
             out.append(Block("p", r.inline(child)))
 
 
+# ----------------------------------------------------------------------------- tree
+def _unit_of(node: Node) -> Optional[dict]:
+    """A `<section data-doc=...>` the structure plugin produced — everything else is content."""
+    if node.is_text or node.tag != "section" or not node.get("data-doc"):
+        return None
+    kind = node.get("data-doc") or ""
+    number = node.get("data-number") or ""
+    label_id = node.get("aria-labelledby") or re.sub(r"^unit-", "", node.get("id") or "")
+    return {
+        "kind": kind,
+        "number": number,
+        "title": normalize(node.get("data-title") or ""),
+        "name": normalize(node.get("data-name") or ""),
+        "display_kind": node.get("data-environment-kind") or "",
+        "proves": node.get("data-proves") or None,
+        "id": label_id or _slug(kind + "-" + number),
+    }
+
+
+def _walk_units(node: Node, r: Renderer) -> list:
+    """-> [Block | {"unit": dict, "items": [...]}] in document order.
+
+    Consecutive non-unit children are walked as one run, so a rule that looks back at the
+    previous block (the QED marker) still sees it.
+    """
+    items: list = []
+    pending: list = []
+
+    def flush() -> None:
+        if not pending:
+            return
+        holder = Node("#holder")
+        holder.children.extend(pending)
+        blocks: list = []
+        _walk(holder, blocks, r)
+        items.extend(blocks)
+        pending.clear()
+
+    for child in node.children:
+        unit = _unit_of(child)
+        if unit is None:
+            pending.append(child)
+            continue
+        flush()
+        items.append({"unit": unit, "items": _walk_units(child, r)})
+    flush()
+    return items
+
+
+def _unit_title(unit: dict) -> str:
+    kind, number, title = unit["kind"], unit["number"], unit["title"]
+    if kind == "proof":
+        return "Proof"
+    if kind in ("section", "subsection", "subsubsection"):
+        return ("%s. %s" % (number, title)).strip().rstrip(".") if number else title
+    display = unit["display_kind"] or kind.capitalize()
+    out = ("%s %s" % (display, number)).strip()
+    return out + (" (%s)" % unit["name"] if unit["name"] else "")
+
+
+def _assemble_tree(items: list, parent: Optional[str] = None, level: int = 2,
+                   sections: Optional[list] = None) -> list:
+    """Units become sections in document order.
+
+    A unit's own leading text is the unit's own section — so `sec-3` holds the prose of
+    section 3 and `proposition-1` the proposition inside it. Text that follows a child unit
+    becomes `prose-after-<that unit>`, the same naming used at the top level.
+    """
+    if sections is None:
+        sections = []
+    owner = next((x for x in sections if x.id == parent), None) if parent else None
+    current: Optional[Section] = owner
+    previous_unit: Optional[str] = None
+
+    for item in items:
+        if isinstance(item, dict):
+            unit = item["unit"]
+            section = Section(
+                id=unit["id"], title=_unit_title(unit), kind=unit["kind"], level=level,
+                label=unit["number"], name=unit["name"], anchor=unit["id"],
+                parent=parent, proves=unit["proves"],
+            )
+            sections.append(section)
+            _assemble_tree(item["items"], parent=unit["id"], level=level + 1, sections=sections)
+            if unit["proves"]:
+                for other in sections:
+                    if other.id == unit["proves"]:
+                        other.has_proof = True
+            previous_unit = unit["id"]
+            current = None
+            continue
+
+        if current is None:
+            if previous_unit:
+                current = Section(id="prose-after-%s" % previous_unit,
+                                  title=_prose_title(item.text), kind="prose",
+                                  level=level, parent=parent)
+            else:
+                current = Section(id="introduction", title="Introduction",
+                                  kind="introduction", level=level, parent=parent)
+            sections.append(current)
+
+        if item.proof:
+            current.has_proof = True
+        current.blocks.append(item)
+
+    return sections
+
+
 # ----------------------------------------------------------------------------- sections
 def _env_id(env: dict, counter: dict) -> str:
     kind = env["kind"]
@@ -527,6 +644,23 @@ def _assemble(blocks: list) -> list:
     return out
 
 
+REFERENCE_IDS = {"references", "reference", "bibliography"}
+
+
+def _mark_skipped(sections: list) -> None:
+    """A references section, and everything under it, is kept but not narrated."""
+    skipped = set()
+    for section in sections:
+        reason = None
+        if section.id in REFERENCE_IDS or section.title.lower().rstrip(".") in REFERENCE_TITLES:
+            reason = "reference list"
+        elif section.parent in skipped:
+            reason = "reference list"
+        if reason:
+            section.skip = reason
+            skipped.add(section.id)
+
+
 def _finish(section: Section, math: list) -> None:
     """Number the section's math from 1, splice the TeX in, hash the result."""
     count = [0]
@@ -585,10 +719,15 @@ def build(html: str, source: str = "") -> Skeleton:
             modified = ""
 
     domain = (body.get("data-post-domain") or "").strip().lower()
-    r = Renderer(numbered_labels=domain in NUMBERED_DOMAINS)
-    blocks: list = []
-    _walk(body, blocks, r)
-    sections = _assemble(blocks)
+    structured = body.find(lambda n: n.tag == "section" and n.get("data-doc")) is not None
+    r = Renderer(numbered_labels=not structured and domain in NUMBERED_DOMAINS)
+    if structured:
+        sections = _assemble_tree(_walk_units(body, r))
+    else:
+        blocks = []
+        _walk(body, blocks, r)
+        sections = _assemble(blocks)
+    _mark_skipped(sections)
     for section in sections:
         _finish(section, r.math)
 
@@ -621,10 +760,17 @@ def render_text(skel: Skeleton) -> str:
     ]
     if skel.warnings:
         lines.append("warnings: " + "; ".join(skel.warnings))
+    depth = {None: 0}
     for i, s in enumerate(skel.sections, 1):
+        level = depth.get(s.parent, 0)
+        depth[s.id] = level + 1
         lines.append("")
-        head = "## [%d] %s" % (i, s.title)
+        head = "%s [%d] %s" % ("#" * (level + 2), i, s.title)
         meta = "id=%s  hash=%s  math=%d  words=%d" % (s.id, s.hash[:12], s.math, s.words)
+        if s.parent:
+            meta += "  in=%s" % s.parent
+        if s.proves:
+            meta += "  proves=%s" % s.proves
         if s.has_proof:
             meta += "  proof"
         if s.skip:

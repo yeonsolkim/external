@@ -170,3 +170,64 @@ class NumberedLabels(unittest.TestCase):
     def test_other_domains_ignore_numbered_bold(self):
         skel = build(wrap(self.BODY))
         self.assertEqual([s.id for s in skel.sections], ["introduction", "theorem-1-2"])
+
+
+class StructuredTree(unittest.TestCase):
+    """The pages built by _plugins/document_structure.rb — a tree, not a guess."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.compact = cls.load("compact-sets-structured")
+        cls.categorical = cls.load("categorical-viewpoint")
+
+    @staticmethod
+    def load(name):
+        path = os.path.join(os.path.dirname(__file__), "fixtures", name + ".html")
+        with open(path, encoding="utf-8") as handle:
+            return build(handle.read(), path)
+
+    def test_golden(self):
+        self.assertEqual(self.compact.hash, "69c5ac0cd80e20430ede2343925b9cb59bf2bb525d07cba25acefb5c3ce5cfb5")
+        self.assertEqual((len(self.compact.sections), self.compact.math, self.compact.words), (47, 351, 3723))
+        self.assertEqual(self.categorical.hash, "80e509c69d7c2fcc188b19c6311cb6f6f28e5d94eefe8ad148cf4af27c45340e")
+
+    def test_statement_and_proof_are_separate_and_linked(self):
+        named = {s.id: s for s in self.compact.sections}
+        theorem, proof = named["theorem-2-2-3"], named["proof-theorem-2-2-3"]
+        self.assertEqual(proof.proves, "theorem-2-2-3")
+        self.assertTrue(theorem.has_proof)
+        self.assertTrue(theorem.text.rstrip().endswith("compact in [MATH 6; TeX] N [/MATH]."))
+        self.assertTrue(proof.text.startswith("Proof."))
+        self.assertTrue(proof.text.rstrip().endswith("[END PROOF]"))
+        # the order is the order it is read in
+        ids = [s.id for s in self.compact.sections]
+        self.assertLess(ids.index("theorem-2-2-3"), ids.index("proof-theorem-2-2-3"))
+        self.assertLess(ids.index("proof-theorem-2-2-3"), ids.index("prose-after-proof-theorem-2-2-3"))
+
+    def test_nesting(self):
+        named = {s.id: s for s in self.categorical.sections}
+        self.assertEqual([s.id for s in self.categorical.sections],
+                         ["sec-1", "sec-2", "sec-3", "proposition-1", "sec-4", "references"])
+        self.assertEqual(named["proposition-1"].parent, "sec-3")
+        self.assertIsNone(named["sec-3"].parent)
+        self.assertEqual(named["sec-3"].title, "3. Surjectivity and injectivity")
+        self.assertEqual(named["sec-3"].kind, "subsection")
+        # a unit's own text is its own section, and stops where the child begins
+        self.assertIn("called the inverse of", named["sec-3"].text)
+        self.assertNotIn("Proposition 1.", named["sec-3"].text)
+
+    def test_anchors_exist_in_the_page(self):
+        with open(os.path.join(os.path.dirname(__file__), "fixtures", "categorical-viewpoint.html"),
+                  encoding="utf-8") as handle:
+            html = handle.read()
+        for section in self.categorical.sections:
+            if section.anchor:
+                self.assertIn('id="%s"' % section.anchor, html, section.id)
+
+    def test_references_are_kept_but_not_narrated(self):
+        references = [s for s in self.categorical.sections if s.id == "references"][0]
+        self.assertEqual(references.skip, "reference list")
+
+    def test_a_page_without_the_plugin_still_parses(self):
+        # the legacy fixture is the same post as deployed before the plugin existed
+        self.assertEqual(len(CompactSets.skel.sections), 33)
