@@ -2,7 +2,7 @@
   "url": "/2026/08/31/1.-Convergent-Sequences.html",
   "title": "3.1 Convergent Sequences",
   "lang": "en",
-  "hash": "ae90a70de6596c39778c21cf50f75071eb4b01d4648eef4a11ea1170c4487bb6",
+  "hash": "4fc79a906fdc381a9a97ae00ebeae5056fba4ffcbc334e38a25de2f2d9591ca0",
   "skeleton": 4,
   "prompt": "lecture-v3",
   "model": "gpt-5.5",
@@ -26,26 +26,26 @@
       "title": "Definition 3.1.1",
       "kind": "definition",
       "level": 2,
-      "source": "763e1b7ab661db8c1fed5d26b19973d2c5ac6dc3ec665acfe663bd032c6fa1b1",
+      "source": "c105c4dce70b70ecd032b66950ccc76e34fd4ed0b1abe5ab488abae077aadf8f",
       "skip": null,
       "file": "definition-3-1-1.md",
       "current": true,
       "edited": false,
-      "words": 79,
-      "math": 8
+      "words": 152,
+      "math": 16
     },
     {
       "id": "prose-after-definition-3-1-1",
-      "title": "In this case, we also say that … converges to …, or that ……",
+      "title": "As can be seen from the definition, convergence depends…",
       "kind": "prose",
       "level": 2,
-      "source": "78ce0bdcc1c917a6a737ca1822f51d5021a7cbc3d06a72bd9e29b102cf3e902a",
+      "source": "362c496da3da79c8a5715748f48504aa3e9fd26f8d6962cc6d759102d8fc8b6a",
       "skip": null,
       "file": "prose-after-definition-3-1-1.md",
       "current": true,
       "edited": false,
-      "words": 102,
-      "math": 8
+      "words": 29,
+      "math": 0
     },
     {
       "id": "definition-3-1-2",
@@ -221,26 +221,13 @@
       "title": "Theorem 3.1.8",
       "kind": "theorem",
       "level": 2,
-      "source": "7b3534a6eadbcc51560abf0c2ee95ba0148ada58c1b3dd5a5c80c99f149b1e42",
+      "source": "21370b5ae3c866eb38fa20d4e06a0f53ba9e5d517db3fb40dd28be7de20bf69b",
       "skip": null,
       "file": "theorem-3-1-8.md",
       "current": true,
       "edited": false,
-      "words": 56,
-      "math": 6
-    },
-    {
-      "id": "prose-after-theorem-3-1-8",
-      "title": "for ….",
-      "kind": "prose",
-      "level": 2,
-      "source": "01d7a6051d69c35600ed8af9aa0639eed6e52cad5b2ef127073d4985728aa73a",
-      "skip": null,
-      "file": "prose-after-theorem-3-1-8.md",
-      "current": true,
-      "edited": false,
-      "words": 6,
-      "math": 1
+      "words": 62,
+      "math": 7
     },
     {
       "id": "proof-theorem-3-1-8",

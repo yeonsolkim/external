@@ -17,8 +17,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html</guid>
 <pubDate>Sat, 12 Sep 2026 15:00:00 +0000</pubDate>
 <description>We first extend the notion of convergence by allowing the values +\infty and -\infty. We then associate with each tail of a sequence its supremum and infimum. The limiting behavior of these tail bounds leads to the notions of limit superior and limit inferior. Throughout this section, all suprema and infima are understood to be taken in \overline{\mathbb R} Read the page at https://yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.mp3" length="12047065" type="audio/mpeg"/>
-<itunes:duration>0:12:33</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.mp3" length="11846028" type="audio/mpeg"/>
+<itunes:duration>0:12:20</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.chapters.json" type="application/json+chapters"/>
 </item>
@@ -34,17 +34,6 @@
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
-<title>2.4 Connected Sets</title>
-<link>https://yeonsolkim.com/2026/09/03/4.-Connected-Sets.html</link>
-<guid isPermaLink="true">https://yeonsolkim.com/2026/09/03/4.-Connected-Sets.html</guid>
-<pubDate>Thu, 03 Sep 2026 15:00:00 +0000</pubDate>
-<description>We now focus on the fact that the Cantor set has gaps at every scale: given any x\in C and any r&gt;0, no matter how small r is, the neighborhood (x-r,x+r) contains some open interval that does not belong to C. Thus, if we zoom in around any point of the Cantor set, the set never starts looking like a solid interval. To express the property of a set forming one global piece, we introduce connectedness. Read the page at https://yeonsolkim.com/2026/09/03/4.-Connected-Sets.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/09/03/4.-Connected-Sets.mp3" length="6021988" type="audio/mpeg"/>
-<itunes:duration>0:06:16</itunes:duration>
-<itunes:episodeType>full</itunes:episodeType>
-<podcast:chapters url="https://audio.yeonsolkim.com/2026/09/03/4.-Connected-Sets.chapters.json" type="application/json+chapters"/>
-</item>
-<item>
 <title>3.2 Subsequenes</title>
 <link>https://yeonsolkim.com/2026/09/03/2.-Subsequenes.html</link>
 <guid isPermaLink="true">https://yeonsolkim.com/2026/09/03/2.-Subsequenes.html</guid>
@@ -56,13 +45,24 @@
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/09/03/2.-Subsequenes.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
+<title>2.4 Connected Sets</title>
+<link>https://yeonsolkim.com/2026/09/03/4.-Connected-Sets.html</link>
+<guid isPermaLink="true">https://yeonsolkim.com/2026/09/03/4.-Connected-Sets.html</guid>
+<pubDate>Thu, 03 Sep 2026 15:00:00 +0000</pubDate>
+<description>We now focus on the fact that the Cantor set has gaps at every scale: given any x\in C and any r&gt;0, no matter how small r is, the neighborhood (x-r,x+r) contains some open interval that does not belong to C. Thus, if we zoom in around any point of the Cantor set, the set never starts looking like a solid interval. To express the property of a set forming one global piece, we introduce connectedness. Read the page at https://yeonsolkim.com/2026/09/03/4.-Connected-Sets.html</description>
+<enclosure url="https://audio.yeonsolkim.com/2026/09/03/4.-Connected-Sets.mp3" length="6021988" type="audio/mpeg"/>
+<itunes:duration>0:06:16</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/2026/09/03/4.-Connected-Sets.chapters.json" type="application/json+chapters"/>
+</item>
+<item>
 <title>3.1 Convergent Sequences</title>
 <link>https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</link>
 <guid isPermaLink="true">https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</guid>
 <pubDate>Mon, 31 Aug 2026 15:00:00 +0000</pubDate>
 <description>We now use the metric structure to describe the asymptotic behavior of an ordered family of points. To say that a sequence (x_n) of points in M converges to x means that its terms eventually lie as close to x as we wish. Read the page at https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.mp3" length="20535146" type="audio/mpeg"/>
-<itunes:duration>0:21:23</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.mp3" length="20436091" type="audio/mpeg"/>
+<itunes:duration>0:21:17</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.chapters.json" type="application/json+chapters"/>
 </item>
@@ -72,8 +72,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/08/05/3.-Perfect-Sets.html</guid>
 <pubDate>Wed, 05 Aug 2026 15:00:00 +0000</pubDate>
 <description>Theorem 2.2.17 guarantees that an infinite subset of a compact set has at least one limit point. However, this is a somewhere statement, not an everywhere statement: it does not say that every point of the set participates in the accumulation. An infinite compact set may still contain many isolated points. Perfectness imposes a much stronger local picture: a perfect set has accumulation everywhere within the set. Read the page at https://yeonsolkim.com/2026/08/05/3.-Perfect-Sets.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/08/05/3.-Perfect-Sets.mp3" length="6506412" type="audio/mpeg"/>
-<itunes:duration>0:06:47</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/08/05/3.-Perfect-Sets.mp3" length="6336722" type="audio/mpeg"/>
+<itunes:duration>0:06:36</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/08/05/3.-Perfect-Sets.chapters.json" type="application/json+chapters"/>
 </item>
@@ -83,8 +83,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html</guid>
 <pubDate>Thu, 30 Jul 2026 15:00:00 +0000</pubDate>
 <description>We now consider how a collection of open sets can cover a set A as a whole. Such a collection may contain infinitely many sets, and this raises a natural question. Can finitely many members of the collection already cover A? Compactness formalizes the sets for which the answer is always yes. Read the page at https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.mp3" length="20476175" type="audio/mpeg"/>
-<itunes:duration>0:21:20</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.mp3" length="20409303" type="audio/mpeg"/>
+<itunes:duration>0:21:15</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.chapters.json" type="application/json+chapters"/>
 </item>
@@ -94,8 +94,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.html</guid>
 <pubDate>Fri, 24 Jul 2026 15:00:00 +0000</pubDate>
 <description>A great deal of analysis on \mathbb R, \mathbb C, and \mathbb R^k depends not on their full algebraic structure, but only on the notion of distance between points. This suggests isolating the notion of distance from the particular nature of the points themselves. Accordingly, let M be a nonempty set. We temporarily forget what its elements are and retain only a function d:M\times M\to\mathbb R, where d(x,y) is intended to represent the distance between x and y. Not every such function can reasonably be interpreted as a distance. A distance should be nonnegative; distinct points should have positive distance from one another; the distance from x to y should be the same as the distance from y to x; and traveling directly from x to z should be no longer than traveling from x to z through an intermediate point y. These requirements are abstracted into the following axioms. Read the page at https://yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.mp3" length="23522942" type="audio/mpeg"/>
-<itunes:duration>0:24:30</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.mp3" length="23458577" type="audio/mpeg"/>
+<itunes:duration>0:24:26</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.chapters.json" type="application/json+chapters"/>
 </item>
