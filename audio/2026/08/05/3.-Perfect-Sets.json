@@ -4,14 +4,14 @@
   "lang": "en",
   "description": "Theorem 2.2.17 guarantees that an infinite subset of a compact set has at least one limit point. However, this is a somewhere statement, not an everywhere statement: it does not say that every point of the set participates in the accumulation. An infinite compact set may still contain many isolated points. Perfectness imposes a much stronger local picture: a perfect set has accumulation everywhere within the set.",
   "published_at": "2026-08-05T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/874746489ac1cf194dad9d752cbd926739834f263850792867164f2b335f909f.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/1d7572d9578bac7ba24a9457b9dc8e9af7d9675e4d17b661e8dafda427691333.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/08/05/3.-Perfect-Sets.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/08/05/3.-Perfect-Sets.chapters.json",
-  "duration": 406.55,
-  "bytes": 6506412,
+  "duration": 395.96,
+  "bytes": 6336722,
   "voice": "cedar",
-  "page_key": "874746489ac1cf194dad9d752cbd926739834f263850792867164f2b335f909f",
-  "skeleton_hash": "1d317beac5535f1d1e595b5cdb8b7bf8f60c5d4478013fd56605c0910da1eaeb",
+  "page_key": "1d7572d9578bac7ba24a9457b9dc8e9af7d9675e4d17b661e8dafda427691333",
+  "skeleton_hash": "b6a347de097865d78c37fa820cc6d15855901f204c410ca5eb93b1d3575fe243",
   "generated": "2026-09-28",
   "podcast": true,
   "sections": [
@@ -33,21 +33,9 @@
       "kind": "definition",
       "level": 2,
       "start": 28.289,
-      "duration": 16.026,
-      "source": "6a053c24f67e83f6be58325a7d157e81f48b59b5abb1a8074144ba88b01279e9",
-      "audio": "8b516bde9dfee36eb0e39b53a3368476a36a0bef7bfc9ec3da7b5fbe019f6878",
-      "parent": null,
-      "proves": null
-    },
-    {
-      "id": "prose-after-definition-2-3-1",
-      "title": "for some ….",
-      "kind": "prose",
-      "level": 2,
-      "start": 45.514,
-      "duration": 24.238,
-      "source": "8754312081854acaf50011ec3744955221dca9b15fbcbcdbe5bc08ca32be2289",
-      "audio": "7a8fcdd2061bffa8826ea83ee0158c78cdfd881b7d7ef22692ee83a1220ccbc8",
+      "duration": 37.956,
+      "source": "ffdfc041948527e8bdadf769a63d72a0a0b318ebf422cd5c6df20de908d63aa9",
+      "audio": "279c8d2d608b6b53be2884884c2e98498f1770f950b0c3acad700b0e097a092a",
       "parent": null,
       "proves": null
     },
@@ -56,7 +44,7 @@
       "title": "Remark 2.3.2",
       "kind": "remark",
       "level": 2,
-      "start": 70.953,
+      "start": 67.445,
       "duration": 38.285,
       "source": "6b744785670c48d97ea93783a225f415e4fd8c3464f538b703ded0e398de46d2",
       "audio": "b04abb0a7a6e3ec1d29b69696fdaab3ad00a8f9bb9bbeeed11ca27c82dc9a8b2",
@@ -68,7 +56,7 @@
       "title": "This example of … also shows that having no isolated points…",
       "kind": "prose",
       "level": 2,
-      "start": 110.438,
+      "start": 106.93,
       "duration": 18.51,
       "source": "190ddd1bb88eaf2ef1c6803ec05e17d187bdfbe047ce7e5942a108dc03eea814",
       "audio": "287d6efcdcf139a203b585e8ea508479c585c015432ec11ff8e1f92f4200475b",
@@ -80,7 +68,7 @@
       "title": "Theorem 2.3.3",
       "kind": "theorem",
       "level": 2,
-      "start": 130.149,
+      "start": 126.64,
       "duration": 6.141,
       "source": "1eda1ff1a5e44d5953d7097f6687cffa52cc867a5b9bde6068471bcfb1bb347b",
       "audio": "3037b9e4c0a4c22b498c674af15ebd8a59e97f3e9a79fcf1deab41b17c2cbc29",
@@ -92,7 +80,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 137.49,
+      "start": 133.981,
       "duration": 116.052,
       "source": "3023ec2d09a39544248539f188ac66a4e37c6555b079771b0f3daa68b9cf5b79",
       "audio": "49e8ea0e3cd877734220e7302bf26b5b3744f0f1c1dd97f1d6f1ece85a83a752",
@@ -104,7 +92,7 @@
       "title": "The theorem gives a strong conclusion from perfectness, but…",
       "kind": "prose",
       "level": 2,
-      "start": 254.742,
+      "start": 251.233,
       "duration": 13.54,
       "source": "4f91793c6fb165e354b2da1fb0edc39427d82ce3f4ebd035da97d9136c7105a5",
       "audio": "885bc3917269711504581a6286551dc284ecab2ee3906da50210cf015c38ff62",
@@ -116,22 +104,22 @@
       "title": "Definition 2.3.4 (Cantor set)",
       "kind": "definition",
       "level": 2,
-      "start": 269.481,
-      "duration": 19.751,
-      "source": "56710e5b6929a1e774460e34d98549d7f391ed70b82ea41d71da2a9fda4ae786",
-      "audio": "7c5781d26443b7a30e7d041b3b51b72fbce2a8c2eea29468a2f421456b1c95ac",
+      "start": 265.973,
+      "duration": 52.926,
+      "source": "77dd445b98bcd687d5f1ad31c8cf9d22e05b33240679f5ad9e0f36167b98cc9a",
+      "audio": "7fb5b04a1e76a6ce80908bf38a67570de997ba9c9db563cc10143225d678f5fe",
       "parent": null,
       "proves": null
     },
     {
       "id": "prose-after-definition-2-3-4",
-      "title": "Removing the open middle thirds of the intervals, let … be…",
+      "title": "At every finite stage it becomes increasingly fragmented,…",
       "kind": "prose",
       "level": 2,
-      "start": 290.432,
-      "duration": 116.118,
-      "source": "9ea6340c507bbe46e9bf32e8384dc1afef025b1c8d162b169241e2284109bdc5",
-      "audio": "348df152a55138a4a8957128c5df50c277823d378c9454e3ac6007e5a5b54780",
+      "start": 320.099,
+      "duration": 75.861,
+      "source": "6ca840db6bc96164576a45d5c499fca530ec2e98be21a4ede93c6ef76bfb68c1",
+      "audio": "909db5fe21b61136591c31325737bb3742086e3eb641dbc642e43a4b3c758f12",
       "parent": null,
       "proves": null
     }
@@ -147,25 +135,25 @@
       "id": "definition-2-3-1",
       "title": "Definition 2.3.1",
       "start": 28.289,
-      "end": 70.953
+      "end": 67.445
     },
     {
       "id": "remark-2-3-2",
       "title": "Remark 2.3.2",
-      "start": 70.953,
-      "end": 130.149
+      "start": 67.445,
+      "end": 126.64
     },
     {
       "id": "theorem-2-3-3",
       "title": "Theorem 2.3.3",
-      "start": 130.149,
-      "end": 269.481
+      "start": 126.64,
+      "end": 265.973
     },
     {
       "id": "definition-2-3-4",
       "title": "Definition 2.3.4 (Cantor set)",
-      "start": 269.481,
-      "end": 406.55
+      "start": 265.973,
+      "end": 395.96
     }
   ]
 }

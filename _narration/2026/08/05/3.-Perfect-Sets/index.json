@@ -2,7 +2,7 @@
   "url": "/2026/08/05/3.-Perfect-Sets.html",
   "title": "2.3 Perfect Sets",
   "lang": "en",
-  "hash": "1d317beac5535f1d1e595b5cdb8b7bf8f60c5d4478013fd56605c0910da1eaeb",
+  "hash": "b6a347de097865d78c37fa820cc6d15855901f204c410ca5eb93b1d3575fe243",
   "skeleton": 4,
   "prompt": "lecture-v3",
   "model": "gpt-5.5",
@@ -26,26 +26,13 @@
       "title": "Definition 2.3.1",
       "kind": "definition",
       "level": 2,
-      "source": "6a053c24f67e83f6be58325a7d157e81f48b59b5abb1a8074144ba88b01279e9",
+      "source": "ffdfc041948527e8bdadf769a63d72a0a0b318ebf422cd5c6df20de908d63aa9",
       "skip": null,
       "file": "definition-2-3-1.md",
       "current": true,
       "edited": false,
-      "words": 47,
-      "math": 5
-    },
-    {
-      "id": "prose-after-definition-2-3-1",
-      "title": "for some ….",
-      "kind": "prose",
-      "level": 2,
-      "source": "8754312081854acaf50011ec3744955221dca9b15fbcbcdbe5bc08ca32be2289",
-      "skip": null,
-      "file": "prose-after-definition-2-3-1.md",
-      "current": true,
-      "edited": false,
-      "words": 96,
-      "math": 9
+      "words": 143,
+      "math": 14
     },
     {
       "id": "remark-2-3-2",
@@ -117,26 +104,26 @@
       "title": "Definition 2.3.4 (Cantor set)",
       "kind": "definition",
       "level": 2,
-      "source": "56710e5b6929a1e774460e34d98549d7f391ed70b82ea41d71da2a9fda4ae786",
+      "source": "77dd445b98bcd687d5f1ad31c8cf9d22e05b33240679f5ad9e0f36167b98cc9a",
       "skip": null,
       "file": "definition-2-3-4.md",
       "current": true,
       "edited": false,
-      "words": 62,
-      "math": 6
+      "words": 132,
+      "math": 11
     },
     {
       "id": "prose-after-definition-2-3-4",
-      "title": "Removing the open middle thirds of the intervals, let … be…",
+      "title": "At every finite stage it becomes increasingly fragmented,…",
       "kind": "prose",
       "level": 2,
-      "source": "9ea6340c507bbe46e9bf32e8384dc1afef025b1c8d162b169241e2284109bdc5",
+      "source": "6ca840db6bc96164576a45d5c499fca530ec2e98be21a4ede93c6ef76bfb68c1",
       "skip": null,
       "file": "prose-after-definition-2-3-4.md",
       "current": true,
       "edited": false,
-      "words": 305,
-      "math": 26
+      "words": 235,
+      "math": 21
     },
     {
       "id": "references",

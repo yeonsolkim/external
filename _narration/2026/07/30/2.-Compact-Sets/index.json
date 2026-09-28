@@ -2,7 +2,7 @@
   "url": "/2026/07/30/2.-Compact-Sets.html",
   "title": "2.2 Compact Sets",
   "lang": "en",
-  "hash": "69c5ac0cd80e20430ede2343925b9cb59bf2bb525d07cba25acefb5c3ce5cfb5",
+  "hash": "43f71da7a34e8c472cca91a3d09c96a12a82e06b3b5932a0338d2a1235df18dc",
   "skeleton": 4,
   "prompt": "lecture-v3",
   "model": "gpt-5.5",
@@ -26,26 +26,26 @@
       "title": "Definition 2.2.1",
       "kind": "definition",
       "level": 2,
-      "source": "e39e700515d9350a428a6cb2278ff9c070ba96ce0ae45030e4ad9b09866eb684",
+      "source": "cf967a30e888abd2661c50a65459fe524d719fbcb51fdcd0e8265af455ba6a32",
       "skip": null,
       "file": "definition-2-2-1.md",
       "current": true,
       "edited": false,
-      "words": 56,
-      "math": 6
+      "words": 134,
+      "math": 13
     },
     {
       "id": "prose-after-definition-2-2-1",
-      "title": "A cover of … whose elements are open sets is called an open…",
+      "title": "Since openness depends on the ambient space, it is natural…",
       "kind": "prose",
       "level": 2,
-      "source": "5ae6acf639848d10a4e7b59e2b990f525458e06d6fade261202705babd005ef4",
+      "source": "28bb0039e3e311fb4821cda22ec71460073287227350f3402be8488a02234097",
       "skip": null,
       "file": "prose-after-definition-2-2-1.md",
       "current": true,
       "edited": false,
-      "words": 115,
-      "math": 7
+      "words": 37,
+      "math": 0
     },
     {
       "id": "definition-2-2-2",
@@ -559,26 +559,13 @@
       "title": "Definition 2.2.19",
       "kind": "definition",
       "level": 2,
-      "source": "759f6fb0f5afd07628bbb0e095ca579408952d0ed28743f31b009ed83f571bfc",
+      "source": "cbeac45dd307d34efd4b92b47b4808293ecf8f9461ce4be1bccb874c70be6532",
       "skip": null,
       "file": "definition-2-2-19.md",
       "current": true,
       "edited": false,
-      "words": 49,
-      "math": 5
-    },
-    {
-      "id": "prose-after-definition-2-2-19",
-      "title": "for all ….",
-      "kind": "prose",
-      "level": 2,
-      "source": "34cf0370c7f1709ab3b6ecd2dc919d550ef00ff21d08642c823083f7e9496be0",
-      "skip": null,
-      "file": "prose-after-definition-2-2-19.md",
-      "current": true,
-      "edited": false,
-      "words": 8,
-      "math": 1
+      "words": 57,
+      "math": 6
     },
     {
       "id": "theorem-2-2-20",

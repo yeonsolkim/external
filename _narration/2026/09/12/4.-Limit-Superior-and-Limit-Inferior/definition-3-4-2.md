@@ -4,13 +4,19 @@ title: Definition 3.4.2
 kind: definition
 document: 3.4 Limit Superior and Limit Inferior
 url: /2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html
-source: b5f9583dcbc0c02233380d8e82fbe3c653b0a35e700b6073a08618925a841c56
+source: 95a0d5c59c947dfe4a1467a5b669108aa6a7414bb5c72fd2f1bcef7334902a80
 skeleton: 4
 prompt: lecture-v3
 model: gpt-5.5
 generated: 2026-09-28
-body: 895cd2d0843295cd0280a30987aac1c807de2e5c6ba8cd56453cd0e5005354f2
-words: 57
+body: be34e8821582bec832e9320b12c477f0dd3a334927278538fd74206ecae92e17
+words: 111
 ---
 
-Definition 3.4.2. Let x n be a sequence in R. For each k, define s k equals the supremum of the set of x n such that n is greater than or equal to k, and t k equals the infimum of the set of x n such that n is greater than or equal to k.
+Definition 3.4.2. Let x n be a sequence in R. For each k, define
+
+s k equals the supremum of the set of x n such that n is greater than or equal to k, and t k equals the infimum of the set of x n such that n is greater than or equal to k.
+
+The limit superior and limit inferior of x n are defined, respectively, by
+
+the lim sup of x n equals the infimum over k greater than or equal to one of s k, and the lim inf of x n equals the supremum over k greater than or equal to one of t k.
