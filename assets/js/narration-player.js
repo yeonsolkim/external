@@ -8,7 +8,7 @@
  *   – a click on the post title plays the whole post from the start;
  *   – while playing, one click or tap anywhere stops.
  * While playing, everything except the section being read fades to grey, the page follows
- * the reading, a hairline at the top shows progress, and the lock screen gets controls.
+ * the reading, and the lock screen gets controls.
  */
 (function () {
   'use strict';
@@ -124,10 +124,6 @@
     audio.setAttribute('aria-hidden', 'true');
     document.body.appendChild(audio);
 
-    var bar = document.createElement('div');
-    bar.className = 'nrp-progress';
-    document.body.appendChild(bar);
-
     var range = null;            /* {start, end} of what is being played */
     var current = -1;
     var userScrolledAt = 0;
@@ -177,7 +173,7 @@
 
     function setReading(on) {
       document.documentElement.classList.toggle('nrp-reading', on);
-      if (!on) { current = -1; blocks.forEach(function (b) { b.classList.remove('nrp-dim'); }); bar.style.width = '0'; }
+      if (!on) { current = -1; blocks.forEach(function (b) { b.classList.remove('nrp-dim'); }); }
       else focusSection(sectionAt(audio.currentTime || (range ? range.start : 0)));
     }
 
@@ -210,7 +206,6 @@
       var t = audio.currentTime || 0;
       if (t >= range.end - 0.05) { stop(); return; }
       focusSection(sectionAt(t));
-      bar.style.width = (100 * Math.max(0, t - range.start) / Math.max(1, range.end - range.start)) + '%';
       if ('mediaSession' in navigator && audio.duration && navigator.mediaSession.setPositionState) {
         try { navigator.mediaSession.setPositionState({ duration: audio.duration, playbackRate: audio.playbackRate, position: t }); } catch (e) {}
       }
