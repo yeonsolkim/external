@@ -15,6 +15,7 @@ from __future__ import annotations
 import datetime as _dt
 import hashlib
 import hmac
+import http.client
 import os
 import urllib.error
 import urllib.parse
@@ -47,6 +48,31 @@ def uri_encode(text: str, encode_slash: bool = True) -> str:
         else:
             out.append("%%%02X" % byte)
     return "".join(out)
+
+
+# The endpoint resolves to several Cloudflare addresses, and some networks cannot reach one
+# of them. socket.create_connection tries them in turn, each with the request's timeout —
+# 300 s, sized for uploads — so every request sat five minutes on the dead address before
+# trying the next. Connecting gets its own short timeout; the transfer keeps the long one.
+CONNECT_TIMEOUT = 3
+
+
+class _Connection(http.client.HTTPSConnection):
+    def connect(self) -> None:
+        transfer, self.timeout = self.timeout, CONNECT_TIMEOUT
+        try:
+            super().connect()
+        finally:
+            self.timeout = transfer
+        self.sock.settimeout(transfer)
+
+
+class _Handler(urllib.request.HTTPSHandler):
+    def https_open(self, req):
+        return self.do_open(_Connection, req, context=self._context)
+
+
+_opener = urllib.request.build_opener(_Handler())
 
 
 class Store:
@@ -110,7 +136,7 @@ class Store:
         request = urllib.request.Request(url, data=body if method in ("PUT", "POST") else None,
                                          method=method, headers=h)
         try:
-            return urllib.request.urlopen(request, timeout=timeout)
+            return _opener.open(request, timeout=timeout)
         except urllib.error.HTTPError as error:
             if error.code == 404:
                 return None
