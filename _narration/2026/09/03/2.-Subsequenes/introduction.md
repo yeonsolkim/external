@@ -2,13 +2,13 @@
 section: introduction
 title: Introduction
 kind: introduction
-document: 3.2. Subsequenes
+document: 3.2 Subsequenes
 url: /2026/09/03/2.-Subsequenes.html
 source: 2f130de9f7c9373a06c86230ea5d13c7c8108923694cdda550df35aee53abf9e
-skeleton: 2
-prompt: lecture-v2
+skeleton: 4
+prompt: lecture-v3
 model: gpt-5.5
-generated: 2026-09-15
+generated: 2026-09-28
 body: 2f130de9f7c9373a06c86230ea5d13c7c8108923694cdda550df35aee53abf9e
 words: 29
 ---

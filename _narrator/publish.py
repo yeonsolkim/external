@@ -127,7 +127,24 @@ class Publisher:
         return uploaded
 
     # -- one post ---------------------------------------------------------------
-    def plan(self, skel: Skeleton) -> dict:
+    def manifest_is_stale(self, skel: Skeleton, scripts: list) -> bool:
+        """Do the published section ids still match the page?
+
+        `page_key` is the audio's identity — the ordered section recordings — so renaming a
+        section leaves it unchanged and the page looks published while its manifest points
+        at ids the page no longer has. Comparing costs one read, so it is asked for
+        (`--refresh-manifests`) rather than done on every run.
+        """
+        rel = os.path.join("audio", *(url_key_from(skel.url) + ".json").split("/"))
+        path = os.path.join(self.source_dir or self.site_dir, rel)
+        if not os.path.exists(path):
+            return True
+        with open(path, encoding="utf-8") as handle:
+            published = json.load(handle)
+        have = [entry["id"] for entry in published["sections"] if not entry.get("container")]
+        return have != [section.id for section, _ in scripts]
+
+    def plan(self, skel: Skeleton, refresh: bool = False) -> dict:
         """What publishing this post would take. Never spends."""
         if not skel.narrate:
             return {"state": "skip", "why": "publish: true not set in the front matter"}
@@ -150,8 +167,11 @@ class Publisher:
         # One HEAD decides the common case. A page the bucket already holds needs nothing
         # else — probing its sections (one HEAD each) is what made a no-op CI run take minutes.
         remote = self.store.head("o/%s.json" % page) if self.store else None
-        if remote:
+        if remote and not (refresh and self.manifest_is_stale(skel, scripts)):
             return {"state": "published", "page_key": page, "scripts": scripts, "keys": keys, "local": None,
+                    "remote": True, "to_fetch": 0, "to_synth": 0, "minutes": 0.0}
+        if remote:
+            return {"state": "manifest", "page_key": page, "scripts": scripts, "keys": keys, "local": None,
                     "remote": True, "to_fetch": 0, "to_synth": 0, "minutes": 0.0}
         local_mp3, local_json = stage3.page_paths(skel, self.audio_root)
         local = None
@@ -171,8 +191,8 @@ class Publisher:
                 "to_synth": len(to_synth), "minutes": chars / 900.0}
 
     def publish_post(self, skel: Skeleton, max_new_minutes: float = 30.0, dry_run: bool = False,
-                     log=None) -> Optional[dict]:
-        p = self.plan(skel)
+                     refresh: bool = False, log=None) -> Optional[dict]:
+        p = self.plan(skel, refresh=refresh)
         log = log or self.log
         if p["state"] == "skip":
             log("%-50s skipped (%s)" % (skel.url, p["why"]))
@@ -193,7 +213,25 @@ class Publisher:
         key = url_key(skel)
         page = p["page_key"]
         manifest = None
-        if p["remote"] and self.store:
+        if p["state"] == "manifest":
+            # The recordings are unchanged (same page key); only the section names moved.
+            # Rebuild the manifest from the cache and replace the JSON, not the audio.
+            metas = [stage3.cached_section(self.cache_dir, k) for k in p["keys"]]
+            if all(metas):
+                out_mp3, out_json = stage3.page_paths(skel, self.audio_root)
+                manifest = stage3.assemble_page(skel, p["scripts"], metas, self.cache_dir, out_mp3,
+                                                out_json, self.voice, self.model,
+                                                artist=self.cfg.get("author", ""),
+                                                album=self.cfg.get("site_title", ""), log=log)
+                manifest["generated"] = _dt.date.today().isoformat()
+                if self.store:
+                    self.store.put("o/%s.json" % page,
+                                   json.dumps(manifest, ensure_ascii=False).encode("utf-8"),
+                                   "application/json", IMMUTABLE)
+                    log("  manifest refreshed; the audio was already published")
+            else:
+                manifest = json.loads(self.store.get("o/%s.json" % page).decode("utf-8"))
+        elif p["remote"] and self.store:
             manifest = json.loads(self.store.get("o/%s.json" % page).decode("utf-8"))
         else:
             if p["local"]:
@@ -221,9 +259,12 @@ class Publisher:
         site = self.site_manifest(skel, manifest)
         if self.store:
             alias = self.store.get(key + ".json")
-            current = alias and json.loads(alias.decode("utf-8")).get("page_key") == page
+            published = json.loads(alias.decode("utf-8")) if alias else None
+            current = bool(published) and published.get("page_key") == page and \
+                [e["id"] for e in published.get("sections", [])] == [e["id"] for e in site["sections"]]
             if not current:
-                self.store.copy("o/%s.mp3" % page, key + ".mp3", "audio/mpeg", ALIAS)
+                if not published or published.get("page_key") != page:
+                    self.store.copy("o/%s.mp3" % page, key + ".mp3", "audio/mpeg", ALIAS)
                 self.store.put(key + ".json", json.dumps(site, ensure_ascii=False).encode("utf-8"),
                                "application/json", ALIAS)
                 self.store.put(key + ".chapters.json",

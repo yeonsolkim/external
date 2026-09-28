@@ -179,13 +179,14 @@ def cmd_publish(args: argparse.Namespace) -> int:
             return True
         tag = "[%s] " % os.path.basename(skel.url).replace(".html", "")[:28] if len(sources) > 1 else ""
         log = lambda m: say(tag, m)
-        state = pub.plan(skel)["state"]
+        state = pub.plan(skel, refresh=args.refresh)["state"]
         if state == "scripts" and not args.no_scripts and not args.dry_run and skel.words >= stage4.MIN_WORDS:
             log("%-50s generating scripts" % skel.url)
             stage2.run(skel, stage2.post_dir(args.narration, skel), model=args.text_model, workers=args.workers,
                        log=lambda m: log("  " + m))
         try:
-            pub.publish_post(skel, max_new_minutes=args.max_new_minutes, dry_run=args.dry_run, log=log)
+            pub.publish_post(skel, max_new_minutes=args.max_new_minutes, dry_run=args.dry_run,
+                             refresh=args.refresh, log=log)
         except (stage4.PublishError, StoreError) as error:
             say(tag, "  !! %s" % error)
             return False
@@ -272,6 +273,8 @@ def main(argv: list) -> int:
                    help="refuse to synthesise more than this much new speech for one post (default 30)")
     p.add_argument("--no-scripts", dest="no_scripts", action="store_true", help="never call the LLM; skip posts without scripts")
     p.add_argument("--no-store", dest="no_store", action="store_true", help="no bucket: only write site files")
+    p.add_argument("--refresh-manifests", dest="refresh", action="store_true",
+                   help="also republish a manifest whose section names no longer match the page (no new audio)")
     p.add_argument("--no-source", dest="no_source", action="store_true",
                    help="do not also write audio/*.json and podcast.xml into the source tree")
     p.add_argument("--dry-run", dest="dry_run", action="store_true", help="report the state of every post, spend nothing")

@@ -4,162 +4,206 @@
   "lang": "en",
   "description": "1. Trials and outcomes. An outcome is one particular possible result of the trial. The sample space, usually denoted by $\\Omega$, is the set of all possible outcomes. An event is a subset of the sample space. For example, if one die is rolled, the event that an even number appears is",
   "published_at": "2026-07-10T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/fa06b371565545b09f26019e7c3c64d259cc004c35d2d45cb6d6ca7f892adb4e.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/cd9596b78e089612263f658d074c385c385c1271114ac3c532530045cd4ad0ae.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/07/10/Combinatorics.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/07/10/Combinatorics.chapters.json",
-  "duration": 707.453,
-  "bytes": 11321161,
+  "duration": 687.017,
+  "bytes": 10993899,
   "voice": "cedar",
-  "page_key": "fa06b371565545b09f26019e7c3c64d259cc004c35d2d45cb6d6ca7f892adb4e",
-  "skeleton_hash": "ad0cf0f5b7441e185a17b9a7ddcf03302a22d882e4802713c3352a1f1a71668c",
-  "generated": "2026-09-19",
+  "page_key": "cd9596b78e089612263f658d074c385c385c1271114ac3c532530045cd4ad0ae",
+  "skeleton_hash": "50706628bf530bbd663ff8ded789d2e03beeebed44b4a76d099feeb6326cb35f",
+  "generated": "2026-09-28",
   "podcast": true,
   "sections": [
     {
-      "id": "numbered-1",
+      "id": "sec-1",
       "title": "1. Trials and outcomes",
-      "kind": "numbered",
+      "kind": "subsection",
       "level": 2,
       "start": 0.0,
-      "duration": 60.552,
+      "duration": 56.767,
       "source": "5c8b8fb13b55930347ca05d59c8286d5468eb5a45d155340cfc2c4c5b9ff1597",
-      "audio": "dbf1ebf2eed4f98867cb5271d277eae84dc52a5c9a82709d8f74ee2ae47ee670"
+      "audio": "29c68a24749aaa51311bec5d3730d1d85f19a78815126311334d657f9f586d2a",
+      "parent": null,
+      "proves": null
     },
     {
-      "id": "numbered-2",
+      "id": "sec-2",
       "title": "2. Addition rule",
-      "kind": "numbered",
+      "kind": "subsection",
       "level": 2,
-      "start": 61.752,
+      "start": 57.967,
       "duration": 35.395,
       "source": "c3fe7f4d7f60b47c237298553e34a535470d15d6e15d03e39e40659f0a1a74c7",
-      "audio": "2a1e1de8f1da0b371b9af0418f775d650a96c20c43a0a9971aa16c9a9824a8a1"
+      "audio": "2a1e1de8f1da0b371b9af0418f775d650a96c20c43a0a9971aa16c9a9824a8a1",
+      "parent": null,
+      "proves": null
     },
     {
-      "id": "numbered-3",
+      "id": "sec-3",
       "title": "3. Multiplication rule",
-      "kind": "numbered",
+      "kind": "subsection",
       "level": 2,
-      "start": 98.346,
-      "duration": 65.186,
+      "start": 94.561,
+      "duration": 65.816,
       "source": "b06eb18090c335b9035d73e38d7f5451035893b559d796040cb12c1d8ca6ac55",
-      "audio": "6cf1e535bacab00146e53368fa6e9c2fb00213044964a23bd15473fc4ed74657"
+      "audio": "6331a89a53bb32c1b270db918b0fc2fb23218d82e95268183a32a849f8f44a53",
+      "parent": null,
+      "proves": null
     },
     {
-      "id": "numbered-4",
+      "id": "sec-4",
       "title": "4. Factorial",
-      "kind": "numbered",
+      "kind": "subsection",
       "level": 2,
-      "start": 164.732,
-      "duration": 44.968,
+      "start": 161.577,
+      "duration": 41.902,
       "source": "22fe0fc1d694e0e1986f2f3f33ad8908a22b06eadd1b20e8bc61cff860e23042",
-      "audio": "8877455f4011c31ce05c084a60dda4046d3bf813f89eea1ccdf0e352b8ffdfc4"
+      "audio": "036ca1e8d91f2f6db268b430514e708feb6c72b1984288dd0432ec58d979e10c",
+      "parent": null,
+      "proves": null
     },
     {
-      "id": "numbered-5",
+      "id": "sec-5",
       "title": "5. Permutations",
-      "kind": "numbered",
+      "kind": "subsection",
       "level": 2,
-      "start": 210.9,
-      "duration": 41.419,
+      "start": 204.679,
+      "duration": 43.99,
       "source": "34b5c19938bee3be21dddec0a7adb605f7cc616aa2e286eb1e0f1a9e5f9ccf30",
-      "audio": "f1068b84a28b3cfc0653253eda5b0683a7c24386286f1a85c700b7aba6394262"
+      "audio": "239ae5c7724700c1928d46a70230164609d0b4158da93420999f8a2bbc2a973a",
+      "parent": null,
+      "proves": null
     },
     {
-      "id": "numbered-6",
+      "id": "sec-6",
       "title": "6. Combinations",
-      "kind": "numbered",
+      "kind": "subsection",
       "level": 2,
-      "start": 253.519,
-      "duration": 57.869,
+      "start": 249.869,
+      "duration": 59.103,
       "source": "226f8f2a776aee14c9961c22e893348acb01a60412693e9f611a90c4700f002d",
-      "audio": "c1d0e115bb867515fe901e2bc6b4606f999ce5a328559e7471d6b466d30924d1"
+      "audio": "3f024e03bebf7341017c85b0ab974cf947a0309a80bb765585a2bfbc98b14ba4",
+      "parent": null,
+      "proves": null
     },
     {
-      "id": "numbered-7",
+      "id": "sec-7",
       "title": "7. Pascal’s identity",
-      "kind": "numbered",
+      "kind": "subsection",
       "level": 2,
-      "start": 312.588,
-      "duration": 42.07,
-      "source": "27ec127e524ccc13a2415c0d65d6ec100928fb6e848f478bd70ed6630252eac7",
-      "audio": "7deea81c451ca45ebe934b5b13ae49a8492d67c73d4df65ee3b46af23cc2cce9"
+      "start": 310.172,
+      "duration": 12.517,
+      "source": "94a593c4388259cdfafa53f580f5db9b1d18a2c5212d61750476fa66d5e4ea52",
+      "audio": "87e461c066c2b9c30ffb56b04cf312c182981f9e445df935da454c5a59bdcbe6",
+      "parent": null,
+      "proves": null,
+      "span": 40.247
     },
     {
-      "id": "numbered-8",
+      "id": "proof-sec-7",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 323.889,
+      "duration": 26.53,
+      "source": "a64779c09717ac32ec9c83b24b013b64b65a3b92819492757113c60d59c060a3",
+      "audio": "9fa0e46f86dba35ba88c91424c51e3749dfc05d23baf2666b4febcb85ecf0a50",
+      "parent": "sec-7",
+      "proves": "sec-7"
+    },
+    {
+      "id": "sec-8",
       "title": "8. Binomial theorem",
-      "kind": "numbered",
+      "kind": "subsection",
       "level": 2,
-      "start": 355.858,
-      "duration": 313.858,
-      "source": "207d0229514901447943365a4f0aa19a0d2c11ffab2d6554ae2f5c6d55485011",
-      "audio": "afcf1734a85d5341fb4e801dd281b1b5f6f6cb61d42a9826ee06784c249f90bb"
+      "start": 351.62,
+      "duration": 15.402,
+      "source": "66850f8891a998789181111f75f410b08e4d9b6fc782072a8d91ff8a18badfde",
+      "audio": "48d9bf33d05bc013695a6a6958b5e850c096f121c1224893e2083755144656b5",
+      "parent": null,
+      "proves": null,
+      "span": 297.661
     },
     {
-      "id": "numbered-9",
+      "id": "proof-sec-8",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 368.222,
+      "duration": 281.059,
+      "source": "fe2ad52ae466dfaf8aa7a76d35bfb7816d910017441d8ccdc0258fcb027114b7",
+      "audio": "27f133f2475cbd026db8361ab3a351e9f9c5938b1a612f15ba35e7c011e12065",
+      "parent": "sec-8",
+      "proves": "sec-8"
+    },
+    {
+      "id": "sec-9",
       "title": "9. Corollaries",
-      "kind": "numbered",
+      "kind": "subsection",
       "level": 2,
-      "start": 670.916,
+      "start": 650.481,
       "duration": 36.537,
       "source": "e3f3155b9bbcdee0387ad187cdccaf57d6de0226c02849600c2671933844ec4a",
-      "audio": "71643a3165ee0ae7914701a5875fe9dad4a9e80471bc293fd1bc62aa60e38eea"
+      "audio": "71643a3165ee0ae7914701a5875fe9dad4a9e80471bc293fd1bc62aa60e38eea",
+      "parent": null,
+      "proves": null
     }
   ],
   "chapters": [
     {
-      "id": "numbered-1",
+      "id": "sec-1",
       "title": "1. Trials and outcomes",
       "start": 0.0,
-      "end": 61.752
+      "end": 57.967
     },
     {
-      "id": "numbered-2",
+      "id": "sec-2",
       "title": "2. Addition rule",
-      "start": 61.752,
-      "end": 98.346
+      "start": 57.967,
+      "end": 94.561
     },
     {
-      "id": "numbered-3",
+      "id": "sec-3",
       "title": "3. Multiplication rule",
-      "start": 98.346,
-      "end": 164.732
+      "start": 94.561,
+      "end": 161.577
     },
     {
-      "id": "numbered-4",
+      "id": "sec-4",
       "title": "4. Factorial",
-      "start": 164.732,
-      "end": 210.9
+      "start": 161.577,
+      "end": 204.679
     },
     {
-      "id": "numbered-5",
+      "id": "sec-5",
       "title": "5. Permutations",
-      "start": 210.9,
-      "end": 253.519
+      "start": 204.679,
+      "end": 249.869
     },
     {
-      "id": "numbered-6",
+      "id": "sec-6",
       "title": "6. Combinations",
-      "start": 253.519,
-      "end": 312.588
+      "start": 249.869,
+      "end": 310.172
     },
     {
-      "id": "numbered-7",
+      "id": "sec-7",
       "title": "7. Pascal’s identity",
-      "start": 312.588,
-      "end": 355.858
+      "start": 310.172,
+      "end": 351.62
     },
     {
-      "id": "numbered-8",
+      "id": "sec-8",
       "title": "8. Binomial theorem",
-      "start": 355.858,
-      "end": 670.916
+      "start": 351.62,
+      "end": 650.481
     },
     {
-      "id": "numbered-9",
+      "id": "sec-9",
       "title": "9. Corollaries",
-      "start": 670.916,
-      "end": 707.453
+      "start": 650.481,
+      "end": 687.017
     }
   ]
 }

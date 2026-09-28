@@ -2,13 +2,13 @@
 section: introduction
 title: Introduction
 kind: introduction
-document: 2.3. Perfect Sets
+document: 2.3 Perfect Sets
 url: /2026/08/05/3.-Perfect-Sets.html
 source: 69b4b32b70a032570030c9f467b4afb20a477c54a22668a6b53c71d1950814a3
-skeleton: 2
-prompt: lecture-v2
+skeleton: 4
+prompt: lecture-v3
 model: gpt-5.5
-generated: 2026-09-15
+generated: 2026-09-28
 body: 69b4b32b70a032570030c9f467b4afb20a477c54a22668a6b53c71d1950814a3
 words: 67
 ---

@@ -181,6 +181,7 @@ run `script` first.
 ## Stage 4 — publish
 
 ```bash
+ruby _tests/test_document_structure.rb                        # the build-time structure pass
 python3 -m _narrator publish _site --dry-run                  # state of every post, spends nothing
 python3 -m _narrator publish _site/2026/07/30/2.-Compact-Sets.html
 python3 -m _narrator publish _site --max-new-minutes 60       # everything (generates missing scripts)
@@ -205,6 +206,11 @@ Posts are processed **two at a time** (`--posts N`) with four sections in flight
 written atomically and a key is synthesised at most once even when two posts race for it.
 Output lines carry the post's slug when more than one post is being handled.
 
+`page_key` is the *audio's* identity — the ordered recordings — so renaming a section
+leaves it unchanged and the post still looks published while its manifest names ids the
+page no longer has. `--refresh-manifests` compares the two and republishes just the JSON
+(the recordings are reused, nothing is synthesised or re-uploaded).
+
 A whole-site run also prunes `audio/*.json` manifests whose page no longer exists (renamed
 or deleted posts), so the feed cannot keep a ghost episode.
 
@@ -224,6 +230,14 @@ AND into the source tree, which Jekyll copies on every build and which is commit
 local `jekyll serve` rebuild never loses them, and Pages serves them even when the
 narration step does not run. `--no-source` skips the source-tree copy. (RSS + iTunes + Podcasting 2.0 chapters; episode = page,
 guid = page URL, enclosure = stable alias, newest first).
+
+**Structure comes from the page.** `_plugins/document_structure.rb` builds a LaTeX-shaped
+tree at build time (`_docs/STRUCTURE.md`); the skeleton reads it instead of matching bold
+text, so a section knows its `parent`, its `number`, and — for a proof — what it `proves`.
+A statement and its proof are separate sections, as in LaTeX, and the manifest gives a
+unit that contains others a `span` covering them. Because the page's audio is one
+timeline, every level is playable without synthesising anything twice: a heading plays its
+whole part, a statement plays with the proof that follows it, `Proof.` plays alone.
 
 **Which posts get audio.** Only posts whose front matter says `publish: true` (a checkbox in
 Obsidian's properties panel; `templates/Jekyll-Post.md` seeds `publish: false`). The layout

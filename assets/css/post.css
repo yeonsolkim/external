@@ -460,6 +460,7 @@ white-space: normal;
 }
 
 /* Each source soft line becomes a real paragraph in the enhanced DOM. */
+.post-body[data-semantic-units="true"] :is(.post-body, .doc-section--heading) > p.semantic-paragraph,
 .post-body[data-semantic-units="true"] > p.semantic-paragraph {
 margin-top: 0 !important;
 margin-bottom: 0 !important;
@@ -467,15 +468,18 @@ text-indent: 1em;
 }
 
 /* A single blank line after display math continues the preceding paragraph. */
+.post-body[data-semantic-units="true"] .doc-section--heading > p.semantic-paragraph[data-paragraph-continuation="display"],
 .post-body[data-semantic-units="true"] > p.semantic-paragraph[data-paragraph-continuation="display"] {
 text-indent: 0;
 }
 
+.post-body[data-semantic-units="true"] .doc-section--heading > p.semantic-paragraph--section-opening,
 .post-body[data-semantic-units="true"] > p.semantic-paragraph--section-opening {
 text-indent: 0;
 }
 
 /* Dictionary-style posts retain their opt-out from line indentation. */
+.post-body[data-line-indent="false"][data-semantic-units="true"] .doc-section--heading > p.semantic-paragraph,
 .post-body[data-line-indent="false"][data-semantic-units="true"] > p.semantic-paragraph {
 text-indent: 0;
 }
@@ -497,7 +501,9 @@ display: none !important;
  * Numbered statements and proof-like entries are semantic block units.
  * Collapsing block margins keep one line of space between adjacent units.
  */
-.post-body[data-semantic-units="true"] > .math-environment {
+/* A unit sits directly in the body, or inside a section wrapper (_docs/STRUCTURE.md). */
+.post-body[data-semantic-units="true"] .doc-section > :is(.math-environment, .doc-section),
+.post-body[data-semantic-units="true"] > :is(.math-environment, .doc-section) {
 margin: 1lh 0;
 padding: 0;
 }
@@ -507,18 +513,18 @@ margin: 1lh 0;
 padding: 0;
 }
 
-.post-body[data-semantic-units="true"] > .math-environment:first-child {
+.post-body[data-semantic-units="true"] > :is(.math-environment, .doc-section):first-child {
 margin-top: 1lh;
 }
 
-.post-body .math-environment > p.math-environment__paragraph {
+.post-body :is(.math-environment, .doc-section--numbered) > p.math-environment__paragraph {
 margin-top: 0 !important;
 margin-bottom: 0 !important;
 text-indent: 0;
 }
 
 /* Soft continuations and two-blank structural continuations are indented. */
-.post-body .math-environment > p.math-environment__paragraph:is(
+.post-body :is(.math-environment, .doc-section--numbered) > p.math-environment__paragraph:is(
   [data-paragraph-continuation="soft"],
   [data-paragraph-continuation="structural"]
 ) {
@@ -629,13 +635,13 @@ padding: 0;
 box-sizing: border-box;
 }
 
-:is(.post-body, .math-environment) > p:has(+ mjx-container[display="true"]),
-:is(.post-body, .math-environment) > p:has(+ .MathJax_Display) {
+:is(.post-body, .math-environment, .doc-section) > p:has(+ mjx-container[display="true"]),
+:is(.post-body, .math-environment, .doc-section) > p:has(+ .MathJax_Display) {
 margin-bottom: 0.5em !important;
 }
 
-:is(.post-body, .math-environment) > mjx-container[display="true"] + p,
-:is(.post-body, .math-environment) > .MathJax_Display + p {
+:is(.post-body, .math-environment, .doc-section) > mjx-container[display="true"] + p,
+:is(.post-body, .math-environment, .doc-section) > .MathJax_Display + p {
 margin-top: 0.5em !important;
 }
 

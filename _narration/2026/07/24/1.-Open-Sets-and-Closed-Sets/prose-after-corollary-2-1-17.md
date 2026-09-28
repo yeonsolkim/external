@@ -2,13 +2,13 @@
 section: prose-after-corollary-2-1-17
 title: So far, all notions have been considered within one ambient…
 kind: prose
-document: 2.1. Open Sets and Closed Sets
+document: 2.1 Open Sets and Closed Sets
 url: /2026/07/24/1.-Open-Sets-and-Closed-Sets.html
 source: 52f2a945d41fd750bf632b497cf8eb9147bae8231147efea2eb32182c369cdec
-skeleton: 2
-prompt: lecture-v2
+skeleton: 4
+prompt: lecture-v3
 model: gpt-5.5
-generated: 2026-09-15
+generated: 2026-09-28
 body: 5055f4c75f23817b59e26bc26e56a3fc774feffe457438974bcb036fc6ba8960
 words: 67
 ---

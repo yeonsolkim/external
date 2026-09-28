@@ -200,10 +200,22 @@ def run(skel: Skeleton, out_dir: str, model: str = DEFAULT_MODEL, force: bool = 
         }, glossary)
     total = len([s for s in skel.sections if not s.skip])
     order = {s.id: i for i, s in enumerate([s for s in skel.sections if not s.skip], 1)}
+    titles = {s.id: s.title for s in skel.sections}
+    parents = {s.id: s.parent for s in skel.sections}
+
+    def path_of(section_id: str) -> str:
+        trail = []
+        parent = parents.get(section_id)
+        while parent:
+            trail.append(titles.get(parent, parent))
+            parent = parents.get(parent)
+        return " \u2192 ".join(reversed(trail))
 
     def generate(item: tuple) -> tuple:
         section, reason = item
-        user = section_user(skel.title, order[section.id], total, section, glossary, macros)
+        user = section_user(skel.title, order[section.id], total, section, glossary, macros,
+                            path=path_of(section.id),
+                            proves=titles.get(section.proves or "", ""))
         script = llm.chat(LECTURE_SYSTEM, user, model=model, max_tokens=8000, reasoning=reasoning)
         return section, script
 

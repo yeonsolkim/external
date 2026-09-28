@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link
+    rel="preload"
+    href="/assets/fonts/new-computer-modern/NewCM10-Book.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  >
+  <link
+    rel="preload"
+    href="/assets/fonts/new-computer-modern/NewCM10-Bold.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  >
+  
+  <link
+    rel="preload"
+    href="/assets/fonts/new-computer-modern/NewCM10-BookItalic.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  >
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Sets: Categorical Viewpoint</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Sets: Categorical Viewpoint" />
+<meta name="author" content="YeonsolKim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1. Set-functions. Let $X$ and $Y$ be sets. If $f$ is a function from $X$ to $Y$, we draw" />
+<meta property="og:description" content="1. Set-functions. Let $X$ and $Y$ be sets. If $f$ is a function from $X$ to $Y$, we draw" />
+<link rel="canonical" href="http://0.0.0.0:4000/2026/09/26/Categorical-Viewpoint.html" />
+<meta property="og:url" content="http://0.0.0.0:4000/2026/09/26/Categorical-Viewpoint.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-09-26T15:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Sets: Categorical Viewpoint" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"YeonsolKim"},"dateModified":"2026-09-27T08:07:42+00:00","datePublished":"2026-09-26T15:00:00+00:00","description":"1. Set-functions. Let $X$ and $Y$ be sets. If $f$ is a function from $X$ to $Y$, we draw","headline":"Sets: Categorical Viewpoint","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/2026/09/26/Categorical-Viewpoint.html"},"url":"http://0.0.0.0:4000/2026/09/26/Categorical-Viewpoint.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+  
+  <link rel="stylesheet" href="/assets/css/style.css?v=1790586644">
+
+  
+    <link rel="stylesheet" href="/assets/css/post.css?v=1790586644">
+    <link rel="stylesheet" href="/assets/css/narration.css?v=1790586644">
+    
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="External — audio" href="/podcast.xml">
+  
+
+  
+
+  
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var pending = { enhancements: true, fonts: true, mathjax: true };
+        var failures = [];
+        var revealScheduled = false;
+        var resolveMathReady;
+        var mathReady = new Promise(function (resolve) {
+          resolveMathReady = resolve;
+        });
+
+        function revealWhenReady() {
+          var schedule;
+
+          if (pending.enhancements || pending.fonts || pending.mathjax || revealScheduled) {
+            return;
+          }
+
+          revealScheduled = true;
+          schedule = window.requestAnimationFrame || function (callback) {
+            window.setTimeout(callback, 0);
+          };
+          schedule(function () {
+            root.classList.remove('post-preparing');
+            root.classList.add('post-ready');
+          });
+        }
+
+        function complete(name, failed) {
+          if (!Object.prototype.hasOwnProperty.call(pending, name) || !pending[name]) {
+            return;
+          }
+
+          pending[name] = false;
+
+          if (failed) {
+            failures.push(name);
+            root.setAttribute('data-post-preparation-failed', failures.join(' '));
+          }
+
+          if (name === 'mathjax') {
+            resolveMathReady();
+          }
+
+          revealWhenReady();
+        }
+
+        root.classList.add('post-preparing');
+        window.postPreparation = {
+          complete: function (name) {
+            complete(name, false);
+          },
+          fail: function (name) {
+            complete(name, true);
+          },
+          noteFailure: function (name) {
+            failures.push(name);
+            root.setAttribute('data-post-preparation-failed', failures.join(' '));
+          },
+          whenMathReady: function () {
+            return mathReady;
+          },
+          watchMathJax: function () {
+            var startup = window.MathJax && window.MathJax.startup;
+
+            if (!startup || !startup.promise) {
+              complete('mathjax', true);
+              return;
+            }
+
+            startup.promise.then(
+              function () { complete('mathjax', false); },
+              function () { complete('mathjax', true); }
+            );
+          }
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+          if (!document.fonts || !document.fonts.ready) {
+            complete('fonts', false);
+            return;
+          }
+
+          document.fonts.ready.then(
+            function () { complete('fonts', false); },
+            function () { complete('fonts', true); }
+          );
+        }, { once: true });
+      }());
+    </script>
+    <script
+      src="/assets/js/mathjax-config.js?v=1790586644"
+      defer
+      onerror="window.postPreparation.noteFailure('mathjax-config')"
+    ></script>
+    <script
+      src="/assets/js/main.js?v=1790586644"
+      defer
+      onerror="window.postPreparation.fail('enhancements')"
+    ></script>
+    <script
+      id="MathJax-script"
+      src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-svg.js"
+      defer
+      onload="window.postPreparation.watchMathJax()"
+      onerror="window.postPreparation.fail('mathjax')"
+    ></script>
+  
+</head>
+
+<body>
+  <header class="page-header">
+    <div class="header-inner">
+      <h1 class="project-name">
+        <a href="/">External</a>
+      </h1>
+      <p class="project-tagline">A backup external memory containing several data files</p>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item">
+      <a href="/">Home</a>
+    </li>
+
+    
+    
+      
+        
+
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+        
+        
+
+        <li class="breadcrumb-item">
+          <span class="breadcrumb-separator" aria-hidden="true">›</span>
+          
+            <span class="breadcrumb-label">
+              Mathematics
+            </span>
+          
+        </li>
+      
+        
+
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+            
+
+        
+        
+
+        <li class="breadcrumb-item">
+          <span class="breadcrumb-separator" aria-hidden="true">›</span>
+          
+            <a href="/categories/mathematics/others/" aria-current="page">
+              Others
+            </a>
+          
+        </li>
+      
+    
+  </ol>
+</nav>
+
+
+  <main id="content" class="main-content" role="main">
+    
+
+
+<article class="post" data-reference-scope="others">
+<!--
+  
+  
+-->
+
+  
+  
+  
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+        
+  
+
+  <header class="post-header">
+    <!--
+    
+      
+        <a
+          href="/categories/mathematics/others/"
+          class="post-category-path post-category-link"
+        >Others</a>
+      
+    
+    -->
+
+    <h1 class="post-title">
+      Sets: Categorical Viewpoint
+    </h1>
+
+    
+    
+    
+
+    <!--
+    <div class="post-meta">
+      <span class="post-author-name">Yeonsol Kim</span>
+      <span class="post-meta-separator" aria-hidden="true">·</span>
+      <p
+        class="post-date post-date-meta"
+        data-created-day="2026-09-26"
+        data-created-display="September 26, 2026"
+        
+          data-updated-at="2026-09-27T08:07:42+00:00"
+          data-updated-day="2026-09-27"
+          data-updated-display="September 27, 2026"
+        
+      >
+        September 26, 2026 (updated September 27, 2026)
+      </p>
+    </div>
+    -->
+  </header>
+
+  <hr class="post-header-divider">
+
+  <div class="narration" data-manifest="/audio/2026/09/26/Categorical-Viewpoint.json" data-page="/2026/09/26/Categorical-Viewpoint.html" hidden></div>
+
+
+  <div
+    class="post-body"
+    
+     data-post-domain="mathematics"
+     data-document-structure="true"
+  >
+    
+<section class="doc-section doc-section--numbered semantic-unit" data-doc="subsection" data-number="1" data-title="Set-functions" id="unit-sec-1">
+<p><strong id="sec-1" class="math-label-anchor doc-heading" role="heading" aria-level="3">1. Set-functions.</strong> Let <span class="math-inline">\(X\)</span> and <span class="math-inline">\(Y\)</span> be sets. If <span class="math-inline">\(f\)</span> is a function from <span class="math-inline">\(X\)</span> to <span class="math-inline math-inline-punctuated">\(Y\),</span> we draw</p>
+
+<figure class="commutative-diagram" data-tikzcd-hash="6fd7703baada">
+<!-- This file was generated by dvisvgm 3.6 -->
+<svg class="commutative-diagram__svg" role="img" aria-labelledby="tikzcd-6fd7703baa-1-title" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13.822878ex" height="3.834769ex" viewBox="-72 -72 60.868862 16.886356">
+<title id="tikzcd-6fd7703baa-1-title">Commutative diagram</title>
+<defs>
+<path id="tikzcd-6fd7703baa-1-g0-58" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M1.35237-.37331C1.35237-.577575 1.183324-.746621 .97906-.746621S.605749-.577575 .605749-.37331S.774795 0 .97906 0S1.35237-.169046 1.35237-.37331Z" />
+<path id="tikzcd-6fd7703baa-1-g0-88" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M3.416143-2.894917L2.824481-4.296592C2.80335-4.352941 2.789263-4.381115 2.789263-4.388159C2.789263-4.430421 2.909004-4.564249 3.204835-4.592423C3.275271-4.599467 3.345707-4.60651 3.345707-4.726251C3.345707-4.810775 3.261184-4.810775 3.240053-4.810775C2.951266-4.810775 2.648391-4.789644 2.35256-4.789644C2.17647-4.789644 1.739768-4.810775 1.563678-4.810775C1.521416-4.810775 1.436893-4.810775 1.436893-4.669903C1.436893-4.592423 1.507329-4.592423 1.598896-4.592423C2.021511-4.592423 2.063773-4.521987 2.127165-4.367028L2.958309-2.401866L1.472111-.80297L1.380544-.72549C1.035408-.35218 .704359-.239482 .345136-.218351C.253569-.211308 .190177-.211308 .190177-.07748C.190177-.070436 .190177 0 .281744 0C.493052 0 .72549-.021131 .943842-.021131C1.204455-.021131 1.479155 0 1.732724 0C1.774986 0 1.859509 0 1.859509-.140872C1.859509-.211308 1.789073-.218351 1.774986-.218351C1.711593-.225395 1.493242-.239482 1.493242-.436703C1.493242-.5494 1.598896-.662098 1.683419-.753665L2.401866-1.514373L3.035789-2.204645L3.747192-.521226C3.775366-.443746 3.78241-.436703 3.78241-.422616C3.78241-.366267 3.648582-.246526 3.373881-.218351C3.296402-.211308 3.23301-.204264 3.23301-.084523C3.23301 0 3.310489 0 3.338663 0C3.535884 0 4.028936-.021131 4.226156-.021131C4.402246-.021131 4.831905 0 5.007995 0C5.0573 0 5.141824 0 5.141824-.133828C5.141824-.218351 5.071388-.218351 5.015039-.218351C4.543118-.225395 4.529031-.246526 4.40929-.52827C4.13459-1.183324 3.662669-2.282124 3.500666-2.70474C3.979631-3.197792 4.719208-4.035979 4.944603-4.2332C5.148867-4.402246 5.416524-4.571292 5.839139-4.592423C5.930706-4.599467 5.994098-4.599467 5.994098-4.733295C5.994098-4.740339 5.994098-4.810775 5.902532-4.810775C5.691224-4.810775 5.458785-4.789644 5.240434-4.789644C4.979821-4.789644 4.712164-4.810775 4.458595-4.810775C4.416333-4.810775 4.324767-4.810775 4.324767-4.669903C4.324767-4.620598 4.359985-4.599467 4.40929-4.592423C4.472682-4.58538 4.691034-4.571292 4.691034-4.374072C4.691034-4.275461 4.613554-4.183895 4.557205-4.120502L3.416143-2.894917Z" />
+<path id="tikzcd-6fd7703baa-1-g0-89" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M4.205026-4.007805L4.303636-4.106415C4.514944-4.317723 4.747382-4.557205 5.226347-4.592423C5.303826-4.599467 5.367219-4.599467 5.367219-4.726251C5.367219-4.7826 5.332001-4.810775 5.275652-4.810775C5.092518-4.810775 4.888254-4.789644 4.698077-4.789644C4.465638-4.789644 4.219113-4.810775 3.993718-4.810775C3.951456-4.810775 3.859889-4.810775 3.859889-4.676946C3.859889-4.599467 3.930325-4.592423 3.965543-4.592423C4.014848-4.592423 4.219113-4.578336 4.219113-4.430421C4.219113-4.310679 4.05711-4.127546 4.028936-4.092328L2.394822-2.211688L1.620027-4.303636C1.577765-4.402246 1.577765-4.416333 1.577765-4.423377C1.577765-4.592423 1.922901-4.592423 1.993337-4.592423C2.091947-4.592423 2.162383-4.592423 2.162383-4.733295C2.162383-4.810775 2.07786-4.810775 2.056729-4.810775C1.859509-4.810775 1.366457-4.789644 1.169237-4.789644C.993147-4.789644 .556444-4.810775 .380354-4.810775C.338093-4.810775 .246526-4.810775 .246526-4.669903C.246526-4.592423 .316962-4.592423 .408528-4.592423C.831144-4.592423 .859318-4.529031 .922711-4.352941L1.789073-2.035599C1.796116-2.014468 1.817247-1.936988 1.817247-1.915858S1.535503-.760708 1.500285-.633923C1.408719-.246526 1.401675-.225395 .838188-.218351C.704359-.218351 .648011-.218351 .648011-.07748C.648011 0 .732534 0 .746621 0C.943842 0 1.436893-.021131 1.634114-.021131S2.338473 0 2.535694 0C2.584999 0 2.669522 0 2.669522-.140872C2.669522-.218351 2.60613-.218351 2.472301-.218351C2.458214-.218351 2.324386-.218351 2.204645-.232439C2.056729-.246526 2.014468-.260613 2.014468-.345136C2.014468-.394441 2.07786-.640967 2.113078-.788883L2.359604-1.782029C2.394822-1.915858 2.401866-1.936988 2.458214-2.000381L4.205026-4.007805Z" />
+<path id="tikzcd-6fd7703baa-1-g0-102" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M2.584999-2.817438H3.190748C3.33162-2.817438 3.402056-2.817438 3.402056-2.958309C3.402056-3.035789 3.33162-3.035789 3.211879-3.035789H2.627261L2.775176-3.838759C2.80335-3.986674 2.901961-4.486769 2.944222-4.571292C3.007615-4.705121 3.127356-4.810775 3.275271-4.810775C3.303446-4.810775 3.486579-4.810775 3.620407-4.68399C3.310489-4.655816 3.240053-4.40929 3.240053-4.303636C3.240053-4.141633 3.366838-4.05711 3.500666-4.05711C3.6838-4.05711 3.888064-4.212069 3.888064-4.479726C3.888064-4.803731 3.564058-4.965734 3.275271-4.965734C3.035789-4.965734 2.592043-4.838949 2.380735-4.141633C2.338473-3.993718 2.317342-3.923282 2.148296-3.035789H1.662288C1.52846-3.035789 1.45098-3.035789 1.45098-2.901961C1.45098-2.817438 1.514373-2.817438 1.648201-2.817438H2.113078L1.584809-.035218C1.458024 .648011 1.338283 1.288978 .972016 1.288978C.943842 1.288978 .767752 1.288978 .633923 1.162193C.957929 1.141062 1.021321 .887493 1.021321 .781839C1.021321 .619836 .894536 .535313 .760708 .535313C.577575 .535313 .37331 .690272 .37331 .957929C.37331 1.27489 .683229 1.443937 .972016 1.443937C1.359414 1.443937 1.641157 1.028365 1.767942 .760708C1.993337 .316962 2.15534-.535313 2.162383-.584618L2.584999-2.817438Z" />
+<use id="tikzcd-6fd7703baa-1-g1-58" xlink:href="#tikzcd-6fd7703baa-1-g0-58" transform="scale(1.414426)" />
+<use id="tikzcd-6fd7703baa-1-g1-88" xlink:href="#tikzcd-6fd7703baa-1-g0-88" transform="scale(1.414426)" />
+<use id="tikzcd-6fd7703baa-1-g1-89" xlink:href="#tikzcd-6fd7703baa-1-g0-89" transform="scale(1.414426)" />
+</defs>
+<g id="tikzcd-6fd7703baa-1-page1">
+<g stroke-miterlimit="10" transform="translate(-42.949277,-62.1636)scale(0.996264,-0.996264)">
+<g fill="#000" stroke="#000">
+<g stroke-width="0.4">
+<g transform="translate(-29.15967,-3.41666)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-42.949277,-62.1636)scale(-1,-1)">
+<g stroke="#000" stroke-miterlimit="10" transform="translate(-34.142048,-62.1636)scale(0.996264,-0.996264)">
+<g transform="translate(-4.53471,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-34.142048,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-34.142048" y="-62.1636" xlink:href="#tikzcd-6fd7703baa-1-g1-88" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke="#000" stroke-miterlimit="10" transform="translate(6.863833,-62.1636)scale(0.996264,-0.996264)">
+<g transform="translate(-4.01389,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(6.863833,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="6.863833" y="-62.1636" xlink:href="#tikzcd-6fd7703baa-1-g1-89" />
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M-11.27916-.91666H11.92085" fill="none" />
+<g transform="translate(12.12083,-0.91666)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(-1.59036,2.8108)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-42.949277,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-42.949277" y="-62.1636" xlink:href="#tikzcd-6fd7703baa-1-g0-102" />
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<use x="-13.898549" y="-58.759708" xlink:href="#tikzcd-6fd7703baa-1-g1-58" />
+</g>
+</svg>
+</figure>
+
+<div class="post-structural-continuation" aria-hidden="true"></div>
+
+
+</section>
+<section class="doc-section doc-section--numbered semantic-unit" data-doc="subsection" data-number="2" data-title="Composition of functions" id="unit-sec-2">
+<p><strong id="sec-2" class="math-label-anchor doc-heading" role="heading" aria-level="3">2. Composition of functions.</strong> Let <span class="math-inline">\(f:X\to Y\)</span> and <span class="math-inline">\(g:Y\to Z\)</span> be given. If <span class="math-inline">\(g \circ f : X\to Z\)</span> is the composite of <span class="math-inline">\(f\)</span> and <span class="math-inline math-inline-punctuated">\(g\),</span> we may draw diagrams such as</p>
+
+<figure class="commutative-diagram" data-tikzcd-hash="deae0d55b7c8">
+<!-- This file was generated by dvisvgm 3.6 -->
+<svg class="commutative-diagram__svg" role="img" aria-labelledby="tikzcd-deae0d55b7-2-title" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="42.015407ex" height="11.109163ex" viewBox="-72 -72 185.014296 48.919054">
+<title id="tikzcd-deae0d55b7-2-title">Commutative diagram</title>
+<defs>
+<path id="tikzcd-deae0d55b7-2-g0-14" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M3.127356-1.760898C3.127356-2.514563 2.500476-3.127356 1.760898-3.127356C1.00019-3.127356 .387398-2.500476 .387398-1.760898C.387398-1.014278 1.00019-.394441 1.760898-.394441C2.500476-.394441 3.127356-1.007234 3.127356-1.760898ZM1.760898-.676185C1.148106-.676185 .669141-1.169237 .669141-1.760898S1.155149-2.845612 1.760898-2.845612C2.345517-2.845612 2.845612-2.366648 2.845612-1.760898S2.345517-.676185 1.760898-.676185Z" />
+<path id="tikzcd-deae0d55b7-2-g1-88" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M3.416143-2.894917L2.824481-4.296592C2.80335-4.352941 2.789263-4.381115 2.789263-4.388159C2.789263-4.430421 2.909004-4.564249 3.204835-4.592423C3.275271-4.599467 3.345707-4.60651 3.345707-4.726251C3.345707-4.810775 3.261184-4.810775 3.240053-4.810775C2.951266-4.810775 2.648391-4.789644 2.35256-4.789644C2.17647-4.789644 1.739768-4.810775 1.563678-4.810775C1.521416-4.810775 1.436893-4.810775 1.436893-4.669903C1.436893-4.592423 1.507329-4.592423 1.598896-4.592423C2.021511-4.592423 2.063773-4.521987 2.127165-4.367028L2.958309-2.401866L1.472111-.80297L1.380544-.72549C1.035408-.35218 .704359-.239482 .345136-.218351C.253569-.211308 .190177-.211308 .190177-.07748C.190177-.070436 .190177 0 .281744 0C.493052 0 .72549-.021131 .943842-.021131C1.204455-.021131 1.479155 0 1.732724 0C1.774986 0 1.859509 0 1.859509-.140872C1.859509-.211308 1.789073-.218351 1.774986-.218351C1.711593-.225395 1.493242-.239482 1.493242-.436703C1.493242-.5494 1.598896-.662098 1.683419-.753665L2.401866-1.514373L3.035789-2.204645L3.747192-.521226C3.775366-.443746 3.78241-.436703 3.78241-.422616C3.78241-.366267 3.648582-.246526 3.373881-.218351C3.296402-.211308 3.23301-.204264 3.23301-.084523C3.23301 0 3.310489 0 3.338663 0C3.535884 0 4.028936-.021131 4.226156-.021131C4.402246-.021131 4.831905 0 5.007995 0C5.0573 0 5.141824 0 5.141824-.133828C5.141824-.218351 5.071388-.218351 5.015039-.218351C4.543118-.225395 4.529031-.246526 4.40929-.52827C4.13459-1.183324 3.662669-2.282124 3.500666-2.70474C3.979631-3.197792 4.719208-4.035979 4.944603-4.2332C5.148867-4.402246 5.416524-4.571292 5.839139-4.592423C5.930706-4.599467 5.994098-4.599467 5.994098-4.733295C5.994098-4.740339 5.994098-4.810775 5.902532-4.810775C5.691224-4.810775 5.458785-4.789644 5.240434-4.789644C4.979821-4.789644 4.712164-4.810775 4.458595-4.810775C4.416333-4.810775 4.324767-4.810775 4.324767-4.669903C4.324767-4.620598 4.359985-4.599467 4.40929-4.592423C4.472682-4.58538 4.691034-4.571292 4.691034-4.374072C4.691034-4.275461 4.613554-4.183895 4.557205-4.120502L3.416143-2.894917Z" />
+<path id="tikzcd-deae0d55b7-2-g1-89" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M4.205026-4.007805L4.303636-4.106415C4.514944-4.317723 4.747382-4.557205 5.226347-4.592423C5.303826-4.599467 5.367219-4.599467 5.367219-4.726251C5.367219-4.7826 5.332001-4.810775 5.275652-4.810775C5.092518-4.810775 4.888254-4.789644 4.698077-4.789644C4.465638-4.789644 4.219113-4.810775 3.993718-4.810775C3.951456-4.810775 3.859889-4.810775 3.859889-4.676946C3.859889-4.599467 3.930325-4.592423 3.965543-4.592423C4.014848-4.592423 4.219113-4.578336 4.219113-4.430421C4.219113-4.310679 4.05711-4.127546 4.028936-4.092328L2.394822-2.211688L1.620027-4.303636C1.577765-4.402246 1.577765-4.416333 1.577765-4.423377C1.577765-4.592423 1.922901-4.592423 1.993337-4.592423C2.091947-4.592423 2.162383-4.592423 2.162383-4.733295C2.162383-4.810775 2.07786-4.810775 2.056729-4.810775C1.859509-4.810775 1.366457-4.789644 1.169237-4.789644C.993147-4.789644 .556444-4.810775 .380354-4.810775C.338093-4.810775 .246526-4.810775 .246526-4.669903C.246526-4.592423 .316962-4.592423 .408528-4.592423C.831144-4.592423 .859318-4.529031 .922711-4.352941L1.789073-2.035599C1.796116-2.014468 1.817247-1.936988 1.817247-1.915858S1.535503-.760708 1.500285-.633923C1.408719-.246526 1.401675-.225395 .838188-.218351C.704359-.218351 .648011-.218351 .648011-.07748C.648011 0 .732534 0 .746621 0C.943842 0 1.436893-.021131 1.634114-.021131S2.338473 0 2.535694 0C2.584999 0 2.669522 0 2.669522-.140872C2.669522-.218351 2.60613-.218351 2.472301-.218351C2.458214-.218351 2.324386-.218351 2.204645-.232439C2.056729-.246526 2.014468-.260613 2.014468-.345136C2.014468-.394441 2.07786-.640967 2.113078-.788883L2.359604-1.782029C2.394822-1.915858 2.401866-1.936988 2.458214-2.000381L4.205026-4.007805Z" />
+<path id="tikzcd-deae0d55b7-2-g1-90" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M5.071388-4.641728C5.078431-4.669903 5.092518-4.705121 5.092518-4.747382C5.092518-4.810775 5.0573-4.810775 4.916429-4.810775H1.944032C1.774986-4.810775 1.767942-4.803731 1.72568-4.669903L1.338283-3.402056C1.324196-3.366838 1.317152-3.317533 1.317152-3.303446C1.317152-3.296402 1.317152-3.225966 1.401675-3.225966C1.465068-3.225966 1.479155-3.275271 1.493242-3.296402C1.760898-4.127546 2.127165-4.592423 3.225966-4.592423H4.374072L.436703-.190177C.436703-.183133 .408528-.084523 .408528-.063392C.408528 0 .457834 0 .584618 0H3.648582C3.817628 0 3.824671-.007044 3.866933-.140872L4.367028-1.697506C4.374072-1.72568 4.395203-1.774986 4.395203-1.80316C4.395203-1.838378 4.367028-1.88064 4.303636-1.88064S4.2332-1.852465 4.183895-1.70455C3.873977-.746621 3.535884-.239482 2.338473-.239482H1.134019L5.071388-4.641728Z" />
+<path id="tikzcd-deae0d55b7-2-g1-102" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M2.584999-2.817438H3.190748C3.33162-2.817438 3.402056-2.817438 3.402056-2.958309C3.402056-3.035789 3.33162-3.035789 3.211879-3.035789H2.627261L2.775176-3.838759C2.80335-3.986674 2.901961-4.486769 2.944222-4.571292C3.007615-4.705121 3.127356-4.810775 3.275271-4.810775C3.303446-4.810775 3.486579-4.810775 3.620407-4.68399C3.310489-4.655816 3.240053-4.40929 3.240053-4.303636C3.240053-4.141633 3.366838-4.05711 3.500666-4.05711C3.6838-4.05711 3.888064-4.212069 3.888064-4.479726C3.888064-4.803731 3.564058-4.965734 3.275271-4.965734C3.035789-4.965734 2.592043-4.838949 2.380735-4.141633C2.338473-3.993718 2.317342-3.923282 2.148296-3.035789H1.662288C1.52846-3.035789 1.45098-3.035789 1.45098-2.901961C1.45098-2.817438 1.514373-2.817438 1.648201-2.817438H2.113078L1.584809-.035218C1.458024 .648011 1.338283 1.288978 .972016 1.288978C.943842 1.288978 .767752 1.288978 .633923 1.162193C.957929 1.141062 1.021321 .887493 1.021321 .781839C1.021321 .619836 .894536 .535313 .760708 .535313C.577575 .535313 .37331 .690272 .37331 .957929C.37331 1.27489 .683229 1.443937 .972016 1.443937C1.359414 1.443937 1.641157 1.028365 1.767942 .760708C1.993337 .316962 2.15534-.535313 2.162383-.584618L2.584999-2.817438Z" />
+<path id="tikzcd-deae0d55b7-2-g1-103" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M3.317533-2.655435C3.324576-2.697696 3.338663-2.732914 3.338663-2.78222C3.338663-2.901961 3.25414-2.972397 3.134399-2.972397C3.063963-2.972397 2.873786-2.923091 2.845612-2.669522C2.718827-2.930135 2.472301-3.113268 2.190558-3.113268C1.387588-3.113268 .514182-2.127165 .514182-1.112888C.514182-.415572 .943842 0 1.45098 0C1.866552 0 2.197601-.331049 2.268037-.408528L2.275081-.401485C2.127165 .225395 2.042642 .514182 2.042642 .52827C2.014468 .591662 1.774986 1.288978 1.028365 1.288978C.894536 1.288978 .662098 1.281934 .464877 1.218542C.676185 1.155149 .753665 .972016 .753665 .852275C.753665 .739577 .676185 .605749 .486008 .605749C.331049 .605749 .105654 .732534 .105654 1.014278C.105654 1.303065 .366267 1.443937 1.042452 1.443937C1.922901 1.443937 2.43004 .894536 2.535694 .471921L3.317533-2.655435ZM2.401866-.90158C2.359604-.718447 2.197601-.542357 2.042642-.408528C1.894727-.281744 1.676375-.154959 1.472111-.154959C1.119931-.154959 1.014278-.521226 1.014278-.80297C1.014278-1.141062 1.218542-1.972206 1.408719-2.33143C1.598896-2.676566 1.90177-2.958309 2.197601-2.958309C2.662478-2.958309 2.761089-2.387778 2.761089-2.35256S2.747002-2.275081 2.739958-2.246906L2.401866-.90158Z" />
+<use id="tikzcd-deae0d55b7-2-g2-88" xlink:href="#tikzcd-deae0d55b7-2-g1-88" transform="scale(1.414426)" />
+<use id="tikzcd-deae0d55b7-2-g2-89" xlink:href="#tikzcd-deae0d55b7-2-g1-89" transform="scale(1.414426)" />
+<use id="tikzcd-deae0d55b7-2-g2-90" xlink:href="#tikzcd-deae0d55b7-2-g1-90" transform="scale(1.414426)" />
+<path id="tikzcd-deae0d55b7-2-g3-111" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 9.96264)" d="M4.692403-2.132005C4.692403-3.407223 3.696139-4.463263 2.49066-4.463263C1.24533-4.463263 .278954-3.377335 .278954-2.132005C.278954-.846824 1.315068 .109589 2.480697 .109589C3.686177 .109589 4.692403-.86675 4.692403-2.132005ZM2.49066-.139477C2.062267-.139477 1.62391-.348692 1.354919-.806974C1.105853-1.24533 1.105853-1.853051 1.105853-2.211706C1.105853-2.600249 1.105853-3.138232 1.344956-3.576588C1.613948-4.034869 2.082192-4.244085 2.480697-4.244085C2.919054-4.244085 3.347447-4.024907 3.606476-3.596513S3.865504-2.590286 3.865504-2.211706C3.865504-1.853051 3.865504-1.315068 3.646326-.876712C3.427148-.428394 2.988792-.139477 2.49066-.139477Z" />
+<path id="tikzcd-deae0d55b7-2-g3-114" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 9.96264)" d="M1.663761-3.307597V-4.403487L.278954-4.293898V-3.985056C.976339-3.985056 1.05604-3.915318 1.05604-3.427148V-.757161C1.05604-.308842 .946451-.308842 .278954-.308842V0C.667497-.009963 1.135741-.029888 1.414695-.029888C1.8132-.029888 2.281445-.029888 2.67995 0V-.308842H2.470735C1.733499-.308842 1.713574-.418431 1.713574-.777086V-2.311333C1.713574-3.297634 2.132005-4.184309 2.889166-4.184309C2.958904-4.184309 2.978829-4.184309 2.998755-4.174346C2.968867-4.164384 2.769614-4.044832 2.769614-3.785803C2.769614-3.506849 2.978829-3.35741 3.198007-3.35741C3.377335-3.35741 3.626401-3.476961 3.626401-3.795766S3.317559-4.403487 2.889166-4.403487C2.161893-4.403487 1.803238-3.73599 1.663761-3.307597Z" />
+</defs>
+<g id="tikzcd-deae0d55b7-2-page1">
+<g stroke-miterlimit="10" transform="translate(-22.947927,-49.551137)scale(0.996264,-0.996264)">
+<g fill="#000" stroke="#000">
+<g stroke-width="0.4">
+<g transform="translate(-49.23602,-3.41666)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-22.947927,-49.551137)scale(-1,-1)">
+<g stroke="#000" stroke-miterlimit="10" transform="translate(-14.140698,-49.551137)scale(0.996264,-0.996264)">
+<g transform="translate(-4.53471,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-14.140698,-49.551137)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-14.140698" y="-49.551137" xlink:href="#tikzcd-deae0d55b7-2-g2-88" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke="#000" stroke-miterlimit="10" transform="translate(26.865183,-49.551137)scale(0.996264,-0.996264)">
+<g transform="translate(-4.01389,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(26.865183,-49.551137)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="26.865183" y="-49.551137" xlink:href="#tikzcd-deae0d55b7-2-g2-89" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke="#000" stroke-miterlimit="10" transform="translate(67.110032,-49.551137)scale(0.996264,-0.996264)">
+<g transform="translate(-3.77083,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(67.110032,-49.551137)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="67.110032" y="-49.551137" xlink:href="#tikzcd-deae0d55b7-2-g2-90" />
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M-31.35551-.91666H-8.1555" fill="none" />
+<g transform="translate(-7.95552,-0.91666)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(-21.66672,2.8108)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-22.947927,-49.551137)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-22.947927" y="-49.551137" xlink:href="#tikzcd-deae0d55b7-2-g1-102" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M-31.35551-6.1309C-9.49068-18.55516 11.19112-18.41364 32.53831-5.89264" fill="none" />
+<g transform="matrix(0.86253,0.5059,-0.5059,0.86253,32.71078,-5.79149)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(-4.86296,-22.6034)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-22.947927,-49.551137)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-22.947927" y="-49.551137" xlink:href="#tikzcd-deae0d55b7-2-g1-103" />
+<use x="-19.335638" y="-49.551137" xlink:href="#tikzcd-deae0d55b7-2-g0-14" />
+<use x="-15.813828" y="-49.551137" xlink:href="#tikzcd-deae0d55b7-2-g1-102" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M9.28331-.91666H32.48332" fill="none" />
+<g transform="translate(32.6833,-0.91666)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(19.27039,2.8108)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-22.947927,-49.551137)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-22.947927" y="-49.551137" xlink:href="#tikzcd-deae0d55b7-2-g1-103" />
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<use x="36.066806" y="-46.147245" xlink:href="#tikzcd-deae0d55b7-2-g3-111" />
+<use x="41.048145" y="-46.147245" xlink:href="#tikzcd-deae0d55b7-2-g3-114" />
+<g stroke-miterlimit="10" transform="translate(83.963564,-46.147245)scale(0.996264,-0.996264)">
+<g fill="#000" stroke="#000">
+<g stroke-width="0.4">
+<g transform="translate(-29.15967,-19.49306)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(83.963564,-46.147245)scale(-1,-1)">
+<g stroke="#000" stroke-miterlimit="10" transform="translate(92.770792,-78.179939)scale(0.996264,-0.996264)">
+<g transform="translate(-4.53471,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(92.770792,-78.179939)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="92.770792" y="-78.179939" xlink:href="#tikzcd-deae0d55b7-2-g2-88" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke="#000" stroke-miterlimit="10" transform="translate(133.776673,-78.179939)scale(0.996264,-0.996264)">
+<g transform="translate(-4.01389,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(133.776673,-78.179939)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="133.776673" y="-78.179939" xlink:href="#tikzcd-deae0d55b7-2-g2-89" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke="#000" stroke-miterlimit="10" transform="translate(92.770792,-46.147245)scale(0.996264,-0.996264)" />
+<g stroke="#000" stroke-miterlimit="10" transform="translate(133.776673,-46.147245)scale(0.996264,-0.996264)">
+<g transform="translate(-3.77083,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(133.776673,-46.147245)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="133.776673" y="-46.147245" xlink:href="#tikzcd-deae0d55b7-2-g2-90" />
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M-11.27916 15.15976H11.92085" fill="none" />
+<g transform="translate(12.12083,15.15976)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(-1.59036,18.88722)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(83.963564,-46.147245)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="83.963564" y="-46.147245" xlink:href="#tikzcd-deae0d55b7-2-g1-102" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M-12.17908 8.80003L12.2487-10.28258" fill="none" />
+<g transform="matrix(0.78802,-0.6156,0.6156,0.78802,12.40628,-10.40569)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(-13.54356,-8.12685)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(83.963564,-46.147245)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="83.963564" y="-46.147245" xlink:href="#tikzcd-deae0d55b7-2-g1-103" />
+<use x="87.575852" y="-46.147245" xlink:href="#tikzcd-deae0d55b7-2-g0-14" />
+<use x="91.097663" y="-46.147245" xlink:href="#tikzcd-deae0d55b7-2-g1-102" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M20.84024 8.80003V-8.40005" fill="none" />
+<g transform="matrix(0.0,-1.0,1.0,0.0,20.84024,-8.60004)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(23.193,-0.83464)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(83.963564,-46.147245)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="83.963564" y="-46.147245" xlink:href="#tikzcd-deae0d55b7-2-g1-103" />
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</figure>
+
+<p>and say that the diagrams <em>commute</em>.
+Generally, saying that a diagram commutes means that whenever two directed paths share the same source and target, the composition of the functions along both paths yields the same result.
+It is evident from the definition of composition that composition is <em>associative</em>. That is, if <span class="math-inline math-inline-punctuated">\(f:X\to Y, g:Y\to Z\),</span> and <span class="math-inline">\(h: Z\to W\)</span> are functions, then <span class="math-inline math-inline-punctuated">\(h\circ(g\circ f) = (h\circ g)\circ f\);</span> the diagram</p>
+
+<figure class="commutative-diagram" data-tikzcd-hash="50f28a968e1e">
+<!-- This file was generated by dvisvgm 3.6 -->
+<svg class="commutative-diagram__svg" role="img" aria-labelledby="tikzcd-50f28a968e-3-title" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32.107792ex" height="11.46657ex" viewBox="-72 -72 141.386242 50.492892">
+<title id="tikzcd-50f28a968e-3-title">Commutative diagram</title>
+<defs>
+<path id="tikzcd-50f28a968e-3-g0-14" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M3.127356-1.760898C3.127356-2.514563 2.500476-3.127356 1.760898-3.127356C1.00019-3.127356 .387398-2.500476 .387398-1.760898C.387398-1.014278 1.00019-.394441 1.760898-.394441C2.500476-.394441 3.127356-1.007234 3.127356-1.760898ZM1.760898-.676185C1.148106-.676185 .669141-1.169237 .669141-1.760898S1.155149-2.845612 1.760898-2.845612C2.345517-2.845612 2.845612-2.366648 2.845612-1.760898S2.345517-.676185 1.760898-.676185Z" />
+<path id="tikzcd-50f28a968e-3-g1-87" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M6.458976-3.993718C6.635065-4.303636 6.804112-4.557205 7.247858-4.592423C7.31125-4.599467 7.381686-4.599467 7.381686-4.733295C7.381686-4.761469 7.353512-4.810775 7.297163-4.810775C7.128117-4.810775 6.930896-4.789644 6.754806-4.789644C6.515324-4.789644 6.254711-4.810775 6.022273-4.810775C5.980011-4.810775 5.888444-4.810775 5.888444-4.676946C5.888444-4.599467 5.951837-4.592423 5.994098-4.592423C6.163145-4.58538 6.40967-4.529031 6.40967-4.317723C6.40967-4.240243 6.374452-4.183895 6.318104-4.085284L4.416333-.767752L4.15572-4.261374C4.148677-4.402246 4.13459-4.58538 4.648772-4.592423C4.768513-4.592423 4.838949-4.592423 4.838949-4.733295C4.838949-4.803731 4.761469-4.810775 4.733295-4.810775C4.451551-4.810775 4.15572-4.789644 3.873977-4.789644C3.711974-4.789644 3.296402-4.810775 3.134399-4.810775C3.092138-4.810775 3.000571-4.810775 3.000571-4.669903C3.000571-4.592423 3.071007-4.592423 3.169617-4.592423C3.479535-4.592423 3.528841-4.550162 3.542928-4.416333L3.585189-3.873977L1.80316-.767752L1.535503-4.338854C1.535503-4.423377 1.535503-4.58538 2.070817-4.592423C2.141253-4.592423 2.218732-4.592423 2.218732-4.733295C2.218732-4.810775 2.134209-4.810775 2.120122-4.810775C1.838378-4.810775 1.542547-4.789644 1.25376-4.789644C1.007234-4.789644 .753665-4.810775 .514182-4.810775C.478964-4.810775 .387398-4.810775 .387398-4.676946C.387398-4.592423 .45079-4.592423 .563488-4.592423C.915667-4.592423 .922711-4.529031 .936798-4.33181L1.25376-.028174C1.260803 .09861 1.267847 .154959 1.366457 .154959C1.45098 .154959 1.472111 .112698 1.535503 .007044L3.60632-3.585189L3.866933-.028174C3.88102 .119741 3.895107 .154959 3.979631 .154959C4.071197 .154959 4.113459 .084523 4.148677 .021131L6.458976-3.993718Z" />
+<path id="tikzcd-50f28a968e-3-g1-88" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M3.416143-2.894917L2.824481-4.296592C2.80335-4.352941 2.789263-4.381115 2.789263-4.388159C2.789263-4.430421 2.909004-4.564249 3.204835-4.592423C3.275271-4.599467 3.345707-4.60651 3.345707-4.726251C3.345707-4.810775 3.261184-4.810775 3.240053-4.810775C2.951266-4.810775 2.648391-4.789644 2.35256-4.789644C2.17647-4.789644 1.739768-4.810775 1.563678-4.810775C1.521416-4.810775 1.436893-4.810775 1.436893-4.669903C1.436893-4.592423 1.507329-4.592423 1.598896-4.592423C2.021511-4.592423 2.063773-4.521987 2.127165-4.367028L2.958309-2.401866L1.472111-.80297L1.380544-.72549C1.035408-.35218 .704359-.239482 .345136-.218351C.253569-.211308 .190177-.211308 .190177-.07748C.190177-.070436 .190177 0 .281744 0C.493052 0 .72549-.021131 .943842-.021131C1.204455-.021131 1.479155 0 1.732724 0C1.774986 0 1.859509 0 1.859509-.140872C1.859509-.211308 1.789073-.218351 1.774986-.218351C1.711593-.225395 1.493242-.239482 1.493242-.436703C1.493242-.5494 1.598896-.662098 1.683419-.753665L2.401866-1.514373L3.035789-2.204645L3.747192-.521226C3.775366-.443746 3.78241-.436703 3.78241-.422616C3.78241-.366267 3.648582-.246526 3.373881-.218351C3.296402-.211308 3.23301-.204264 3.23301-.084523C3.23301 0 3.310489 0 3.338663 0C3.535884 0 4.028936-.021131 4.226156-.021131C4.402246-.021131 4.831905 0 5.007995 0C5.0573 0 5.141824 0 5.141824-.133828C5.141824-.218351 5.071388-.218351 5.015039-.218351C4.543118-.225395 4.529031-.246526 4.40929-.52827C4.13459-1.183324 3.662669-2.282124 3.500666-2.70474C3.979631-3.197792 4.719208-4.035979 4.944603-4.2332C5.148867-4.402246 5.416524-4.571292 5.839139-4.592423C5.930706-4.599467 5.994098-4.599467 5.994098-4.733295C5.994098-4.740339 5.994098-4.810775 5.902532-4.810775C5.691224-4.810775 5.458785-4.789644 5.240434-4.789644C4.979821-4.789644 4.712164-4.810775 4.458595-4.810775C4.416333-4.810775 4.324767-4.810775 4.324767-4.669903C4.324767-4.620598 4.359985-4.599467 4.40929-4.592423C4.472682-4.58538 4.691034-4.571292 4.691034-4.374072C4.691034-4.275461 4.613554-4.183895 4.557205-4.120502L3.416143-2.894917Z" />
+<path id="tikzcd-50f28a968e-3-g1-89" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M4.205026-4.007805L4.303636-4.106415C4.514944-4.317723 4.747382-4.557205 5.226347-4.592423C5.303826-4.599467 5.367219-4.599467 5.367219-4.726251C5.367219-4.7826 5.332001-4.810775 5.275652-4.810775C5.092518-4.810775 4.888254-4.789644 4.698077-4.789644C4.465638-4.789644 4.219113-4.810775 3.993718-4.810775C3.951456-4.810775 3.859889-4.810775 3.859889-4.676946C3.859889-4.599467 3.930325-4.592423 3.965543-4.592423C4.014848-4.592423 4.219113-4.578336 4.219113-4.430421C4.219113-4.310679 4.05711-4.127546 4.028936-4.092328L2.394822-2.211688L1.620027-4.303636C1.577765-4.402246 1.577765-4.416333 1.577765-4.423377C1.577765-4.592423 1.922901-4.592423 1.993337-4.592423C2.091947-4.592423 2.162383-4.592423 2.162383-4.733295C2.162383-4.810775 2.07786-4.810775 2.056729-4.810775C1.859509-4.810775 1.366457-4.789644 1.169237-4.789644C.993147-4.789644 .556444-4.810775 .380354-4.810775C.338093-4.810775 .246526-4.810775 .246526-4.669903C.246526-4.592423 .316962-4.592423 .408528-4.592423C.831144-4.592423 .859318-4.529031 .922711-4.352941L1.789073-2.035599C1.796116-2.014468 1.817247-1.936988 1.817247-1.915858S1.535503-.760708 1.500285-.633923C1.408719-.246526 1.401675-.225395 .838188-.218351C.704359-.218351 .648011-.218351 .648011-.07748C.648011 0 .732534 0 .746621 0C.943842 0 1.436893-.021131 1.634114-.021131S2.338473 0 2.535694 0C2.584999 0 2.669522 0 2.669522-.140872C2.669522-.218351 2.60613-.218351 2.472301-.218351C2.458214-.218351 2.324386-.218351 2.204645-.232439C2.056729-.246526 2.014468-.260613 2.014468-.345136C2.014468-.394441 2.07786-.640967 2.113078-.788883L2.359604-1.782029C2.394822-1.915858 2.401866-1.936988 2.458214-2.000381L4.205026-4.007805Z" />
+<path id="tikzcd-50f28a968e-3-g1-90" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M5.071388-4.641728C5.078431-4.669903 5.092518-4.705121 5.092518-4.747382C5.092518-4.810775 5.0573-4.810775 4.916429-4.810775H1.944032C1.774986-4.810775 1.767942-4.803731 1.72568-4.669903L1.338283-3.402056C1.324196-3.366838 1.317152-3.317533 1.317152-3.303446C1.317152-3.296402 1.317152-3.225966 1.401675-3.225966C1.465068-3.225966 1.479155-3.275271 1.493242-3.296402C1.760898-4.127546 2.127165-4.592423 3.225966-4.592423H4.374072L.436703-.190177C.436703-.183133 .408528-.084523 .408528-.063392C.408528 0 .457834 0 .584618 0H3.648582C3.817628 0 3.824671-.007044 3.866933-.140872L4.367028-1.697506C4.374072-1.72568 4.395203-1.774986 4.395203-1.80316C4.395203-1.838378 4.367028-1.88064 4.303636-1.88064S4.2332-1.852465 4.183895-1.70455C3.873977-.746621 3.535884-.239482 2.338473-.239482H1.134019L5.071388-4.641728Z" />
+<path id="tikzcd-50f28a968e-3-g1-102" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M2.584999-2.817438H3.190748C3.33162-2.817438 3.402056-2.817438 3.402056-2.958309C3.402056-3.035789 3.33162-3.035789 3.211879-3.035789H2.627261L2.775176-3.838759C2.80335-3.986674 2.901961-4.486769 2.944222-4.571292C3.007615-4.705121 3.127356-4.810775 3.275271-4.810775C3.303446-4.810775 3.486579-4.810775 3.620407-4.68399C3.310489-4.655816 3.240053-4.40929 3.240053-4.303636C3.240053-4.141633 3.366838-4.05711 3.500666-4.05711C3.6838-4.05711 3.888064-4.212069 3.888064-4.479726C3.888064-4.803731 3.564058-4.965734 3.275271-4.965734C3.035789-4.965734 2.592043-4.838949 2.380735-4.141633C2.338473-3.993718 2.317342-3.923282 2.148296-3.035789H1.662288C1.52846-3.035789 1.45098-3.035789 1.45098-2.901961C1.45098-2.817438 1.514373-2.817438 1.648201-2.817438H2.113078L1.584809-.035218C1.458024 .648011 1.338283 1.288978 .972016 1.288978C.943842 1.288978 .767752 1.288978 .633923 1.162193C.957929 1.141062 1.021321 .887493 1.021321 .781839C1.021321 .619836 .894536 .535313 .760708 .535313C.577575 .535313 .37331 .690272 .37331 .957929C.37331 1.27489 .683229 1.443937 .972016 1.443937C1.359414 1.443937 1.641157 1.028365 1.767942 .760708C1.993337 .316962 2.15534-.535313 2.162383-.584618L2.584999-2.817438Z" />
+<path id="tikzcd-50f28a968e-3-g1-103" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M3.317533-2.655435C3.324576-2.697696 3.338663-2.732914 3.338663-2.78222C3.338663-2.901961 3.25414-2.972397 3.134399-2.972397C3.063963-2.972397 2.873786-2.923091 2.845612-2.669522C2.718827-2.930135 2.472301-3.113268 2.190558-3.113268C1.387588-3.113268 .514182-2.127165 .514182-1.112888C.514182-.415572 .943842 0 1.45098 0C1.866552 0 2.197601-.331049 2.268037-.408528L2.275081-.401485C2.127165 .225395 2.042642 .514182 2.042642 .52827C2.014468 .591662 1.774986 1.288978 1.028365 1.288978C.894536 1.288978 .662098 1.281934 .464877 1.218542C.676185 1.155149 .753665 .972016 .753665 .852275C.753665 .739577 .676185 .605749 .486008 .605749C.331049 .605749 .105654 .732534 .105654 1.014278C.105654 1.303065 .366267 1.443937 1.042452 1.443937C1.922901 1.443937 2.43004 .894536 2.535694 .471921L3.317533-2.655435ZM2.401866-.90158C2.359604-.718447 2.197601-.542357 2.042642-.408528C1.894727-.281744 1.676375-.154959 1.472111-.154959C1.119931-.154959 1.014278-.521226 1.014278-.80297C1.014278-1.141062 1.218542-1.972206 1.408719-2.33143C1.598896-2.676566 1.90177-2.958309 2.197601-2.958309C2.662478-2.958309 2.761089-2.387778 2.761089-2.35256S2.747002-2.275081 2.739958-2.246906L2.401866-.90158Z" />
+<path id="tikzcd-50f28a968e-3-g1-104" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M2.021511-4.810775C2.021511-4.817818 2.021511-4.888254 1.929945-4.888254C1.767942-4.888254 1.25376-4.831905 1.070626-4.817818C1.014278-4.810775 .936798-4.803731 .936798-4.676946C.936798-4.592423 1.00019-4.592423 1.105844-4.592423C1.443937-4.592423 1.458024-4.543118 1.458024-4.472682L1.436893-4.33181L.415572-.2747C.387398-.17609 .387398-.162003 .387398-.119741C.387398 .042262 .52827 .07748 .591662 .07748C.704359 .07748 .817057-.007044 .852275-.105654L.986103-.640967L1.141062-1.27489C1.183324-1.42985 1.225585-1.584809 1.260803-1.746811C1.27489-1.789073 1.331239-2.021511 1.338283-2.063773C1.359414-2.127165 1.577765-2.521607 1.817247-2.711784C1.972206-2.824481 2.190558-2.958309 2.493432-2.958309S2.873786-2.718827 2.873786-2.465258C2.873786-2.084904 2.60613-1.317152 2.437083-.887493C2.380735-.72549 2.345517-.640967 2.345517-.500095C2.345517-.169046 2.592043 .07748 2.923091 .07748C3.585189 .07748 3.845802-.950885 3.845802-1.007234C3.845802-1.07767 3.78241-1.07767 3.761279-1.07767C3.690843-1.07767 3.690843-1.056539 3.655625-.950885C3.549971-.577575 3.324576-.07748 2.937179-.07748C2.817438-.07748 2.768132-.147915 2.768132-.309918C2.768132-.486008 2.831525-.655054 2.894917-.810013C3.007615-1.112888 3.324576-1.951075 3.324576-2.359604C3.324576-2.817438 3.042833-3.113268 2.514563-3.113268C2.070817-3.113268 1.732724-2.894917 1.472111-2.570912L2.021511-4.810775Z" />
+<use id="tikzcd-50f28a968e-3-g2-87" xlink:href="#tikzcd-50f28a968e-3-g1-87" transform="scale(1.414426)" />
+<use id="tikzcd-50f28a968e-3-g2-88" xlink:href="#tikzcd-50f28a968e-3-g1-88" transform="scale(1.414426)" />
+<use id="tikzcd-50f28a968e-3-g2-89" xlink:href="#tikzcd-50f28a968e-3-g1-89" transform="scale(1.414426)" />
+<use id="tikzcd-50f28a968e-3-g2-90" xlink:href="#tikzcd-50f28a968e-3-g1-90" transform="scale(1.414426)" />
+</defs>
+<g id="tikzcd-50f28a968e-3-page1">
+<g stroke-miterlimit="10" transform="translate(-1.306882,-47.540367)scale(0.996264,-0.996264)">
+<g fill="#000" stroke="#000">
+<g stroke-width="0.4">
+<g transform="translate(-70.95822,-3.41666)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-1.306882,-47.540367)scale(-1,-1)">
+<g stroke="#000" stroke-miterlimit="10" transform="translate(7.500347,-47.540367)scale(0.996264,-0.996264)">
+<g transform="translate(-4.53471,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(7.500347,-47.540367)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="7.500347" y="-47.540367" xlink:href="#tikzcd-50f28a968e-3-g2-88" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke="#000" stroke-miterlimit="10" transform="translate(48.506227,-47.540367)scale(0.996264,-0.996264)">
+<g transform="translate(-4.01389,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(48.506227,-47.540367)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="48.506227" y="-47.540367" xlink:href="#tikzcd-50f28a968e-3-g2-89" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke="#000" stroke-miterlimit="10" transform="translate(88.751076,-47.540367)scale(0.996264,-0.996264)">
+<g transform="translate(-3.77083,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(88.751076,-47.540367)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="88.751076" y="-47.540367" xlink:href="#tikzcd-50f28a968e-3-g2-90" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke="#000" stroke-miterlimit="10" transform="translate(130.393471,-47.540367)scale(0.996264,-0.996264)">
+<g transform="translate(-5.41667,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(130.393471,-47.540367)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="130.393471" y="-47.540367" xlink:href="#tikzcd-50f28a968e-3-g2-87" />
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M-53.07771-.91666H-29.8777" fill="none" />
+<g transform="translate(-29.67772,-0.91666)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(-43.38892,2.8108)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-1.306882,-47.540367)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-1.306882" y="-47.540367" xlink:href="#tikzcd-50f28a968e-3-g1-102" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M-53.07771-6.1309C-31.21288-18.55516-10.53108-18.41364 10.81612-5.89264" fill="none" />
+<g transform="matrix(0.86253,0.5059,-0.5059,0.86253,10.98859,-5.79149)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(-26.58514,-22.6034)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-1.306882,-47.540367)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-1.306882" y="-47.540367" xlink:href="#tikzcd-50f28a968e-3-g1-103" />
+<use x="2.305407" y="-47.540367" xlink:href="#tikzcd-50f28a968e-3-g0-14" />
+<use x="5.827217" y="-47.540367" xlink:href="#tikzcd-50f28a968e-3-g1-102" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M-12.43889-.91666H10.76112" fill="none" />
+<g transform="translate(10.9611,-0.91666)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(-2.45181,2.8108)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-1.306882,-47.540367)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-1.306882" y="-47.540367" xlink:href="#tikzcd-50f28a968e-3-g1-103" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M-12.43889 3.99835C9.01509 16.75064 29.54298 17.01114 50.96494 5.0032" fill="none" />
+<g transform="matrix(0.87225,-0.48895,0.48895,0.87225,51.13936,4.90544)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(13.7015,17.48888)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-1.306882,-47.540367)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-1.306882" y="-47.540367" xlink:href="#tikzcd-50f28a968e-3-g1-104" />
+<use x="2.751351" y="-47.540367" xlink:href="#tikzcd-50f28a968e-3-g0-14" />
+<use x="6.273162" y="-47.540367" xlink:href="#tikzcd-50f28a968e-3-g1-103" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M27.71382-.91666H50.91383" fill="none" />
+<g transform="translate(51.11382,-0.91666)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(37.4771,1.4361)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-1.306882,-47.540367)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-1.306882" y="-47.540367" xlink:href="#tikzcd-50f28a968e-3-g1-104" />
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</figure>
+
+<p>commutes.
+The identity function is very special with respect to compositions. For any function <span class="math-inline math-inline-punctuated">\(f:X\to Y\),</span> the diagrams</p>
+
+<figure class="commutative-diagram" data-tikzcd-hash="04416dbaf415">
+<!-- This file was generated by dvisvgm 3.6 -->
+<svg class="commutative-diagram__svg" role="img" aria-labelledby="tikzcd-04416dbaf4-4-title" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="53.18307ex" height="8.196708ex" viewBox="-72 -72 234.190954 36.094097">
+<title id="tikzcd-04416dbaf4-4-title">Commutative diagram</title>
+<defs>
+<path id="tikzcd-04416dbaf4-4-g0-88" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 4.98132)" d="M2.41594-2.047323L1.997509-3.038605C1.982565-3.078456 1.972603-3.098381 1.972603-3.103362C1.972603-3.13325 2.057285-3.227895 2.266501-3.247821C2.316314-3.252802 2.366127-3.257783 2.366127-3.342466C2.366127-3.402242 2.306351-3.402242 2.291407-3.402242C2.087173-3.402242 1.872976-3.387298 1.663761-3.387298C1.539228-3.387298 1.230386-3.402242 1.105853-3.402242C1.075965-3.402242 1.016189-3.402242 1.016189-3.302615C1.016189-3.247821 1.066002-3.247821 1.13076-3.247821C1.429639-3.247821 1.459527-3.198007 1.504359-3.088418L2.092154-1.69863L1.041096-.56787L.976339-.513076C.732254-.249066 .498132-.169365 .244085-.154421C.179328-.14944 .134496-.14944 .134496-.054795C.134496-.049813 .134496 0 .199253 0C.348692 0 .513076-.014944 .667497-.014944C.851806-.014944 1.046077 0 1.225405 0C1.255293 0 1.315068 0 1.315068-.099626C1.315068-.14944 1.265255-.154421 1.255293-.154421C1.210461-.159402 1.05604-.169365 1.05604-.308842C1.05604-.388543 1.13076-.468244 1.190535-.533001L1.69863-1.070984L2.146949-1.559153L2.650062-.368618C2.669988-.313823 2.674969-.308842 2.674969-.298879C2.674969-.259029 2.580324-.174346 2.386052-.154421C2.331258-.14944 2.286426-.144458 2.286426-.059776C2.286426 0 2.34122 0 2.361146 0C2.500623 0 2.849315-.014944 2.988792-.014944C3.113325-.014944 3.417186 0 3.541719 0C3.576588 0 3.636364 0 3.636364-.094645C3.636364-.154421 3.58655-.154421 3.5467-.154421C3.212951-.159402 3.202989-.174346 3.118306-.373599C2.924035-.836862 2.590286-1.613948 2.475716-1.912827C2.814446-2.261519 3.337484-2.854296 3.496887-2.993773C3.641345-3.113325 3.830635-3.232877 4.129514-3.247821C4.194271-3.252802 4.239103-3.252802 4.239103-3.347447C4.239103-3.352428 4.239103-3.402242 4.174346-3.402242C4.024907-3.402242 3.860523-3.387298 3.706102-3.387298C3.521793-3.387298 3.332503-3.402242 3.153176-3.402242C3.123288-3.402242 3.058531-3.402242 3.058531-3.302615C3.058531-3.267746 3.083437-3.252802 3.118306-3.247821C3.163138-3.242839 3.317559-3.232877 3.317559-3.0934C3.317559-3.023661 3.262765-2.958904 3.222914-2.914072L2.41594-2.047323Z" />
+<path id="tikzcd-04416dbaf4-4-g0-89" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 4.98132)" d="M2.973848-2.834371L3.043587-2.90411C3.193026-3.053549 3.35741-3.222914 3.696139-3.247821C3.750934-3.252802 3.795766-3.252802 3.795766-3.342466C3.795766-3.382316 3.770859-3.402242 3.731009-3.402242C3.601494-3.402242 3.457036-3.387298 3.32254-3.387298C3.158157-3.387298 2.983811-3.402242 2.824408-3.402242C2.794521-3.402242 2.729763-3.402242 2.729763-3.307597C2.729763-3.252802 2.779577-3.247821 2.804483-3.247821C2.839352-3.247821 2.983811-3.237858 2.983811-3.13325C2.983811-3.048568 2.86924-2.919054 2.849315-2.894147L1.693649-1.564134L1.145704-3.043587C1.115816-3.113325 1.115816-3.123288 1.115816-3.128269C1.115816-3.247821 1.3599-3.247821 1.409714-3.247821C1.479452-3.247821 1.529265-3.247821 1.529265-3.347447C1.529265-3.402242 1.469489-3.402242 1.454545-3.402242C1.315068-3.402242 .966376-3.387298 .826899-3.387298C.702366-3.387298 .393524-3.402242 .268991-3.402242C.239103-3.402242 .174346-3.402242 .174346-3.302615C.174346-3.247821 .224159-3.247821 .288917-3.247821C.587796-3.247821 .607721-3.202989 .652553-3.078456L1.265255-1.439601C1.270237-1.424658 1.285181-1.369863 1.285181-1.354919S1.085928-.537983 1.061021-.448319C.996264-.174346 .991283-.159402 .592777-.154421C.498132-.154421 .458281-.154421 .458281-.054795C.458281 0 .518057 0 .52802 0C.667497 0 1.016189-.014944 1.155666-.014944S1.653798 0 1.793275 0C1.828144 0 1.88792 0 1.88792-.099626C1.88792-.154421 1.843088-.154421 1.748443-.154421C1.738481-.154421 1.643836-.154421 1.559153-.164384C1.454545-.174346 1.424658-.184309 1.424658-.244085C1.424658-.278954 1.469489-.4533 1.494396-.557908L1.668742-1.260274C1.693649-1.354919 1.69863-1.369863 1.738481-1.414695L2.973848-2.834371Z" />
+<path id="tikzcd-04416dbaf4-4-g0-102" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 4.98132)" d="M1.828144-1.992528H2.256538C2.356164-1.992528 2.405978-1.992528 2.405978-2.092154C2.405978-2.146949 2.356164-2.146949 2.271482-2.146949H1.858032L1.96264-2.714819C1.982565-2.819427 2.052304-3.173101 2.082192-3.232877C2.127024-3.327522 2.211706-3.402242 2.316314-3.402242C2.336239-3.402242 2.465753-3.402242 2.560399-3.312578C2.34122-3.292653 2.291407-3.118306 2.291407-3.043587C2.291407-2.929016 2.381071-2.86924 2.475716-2.86924C2.60523-2.86924 2.749689-2.978829 2.749689-3.16812C2.749689-3.39726 2.520548-3.511831 2.316314-3.511831C2.146949-3.511831 1.833126-3.422167 1.683686-2.929016C1.653798-2.824408 1.638854-2.774595 1.519303-2.146949H1.175592C1.080946-2.146949 1.026152-2.146949 1.026152-2.052304C1.026152-1.992528 1.070984-1.992528 1.165629-1.992528H1.494396L1.120797-.024907C1.031133 .458281 .946451 .911582 .687422 .911582C.667497 .911582 .542964 .911582 .448319 .821918C.67746 .806974 .722291 .627646 .722291 .552927C.722291 .438356 .632628 .37858 .537983 .37858C.408468 .37858 .26401 .488169 .26401 .67746C.26401 .901619 .483188 1.021171 .687422 1.021171C.961395 1.021171 1.160648 .727273 1.250311 .537983C1.409714 .224159 1.524284-.37858 1.529265-.41345L1.828144-1.992528Z" />
+<use id="tikzcd-04416dbaf4-4-g1-102" xlink:href="#tikzcd-04416dbaf4-4-g0-102" transform="scale(1.414001)" />
+<path id="tikzcd-04416dbaf4-4-g2-97" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M2.345517-.535313C2.373691-.253569 2.563868 .042262 2.894917 .042262C3.042833 .042262 3.472492-.056349 3.472492-.62688V-1.021321H3.296402V-.62688C3.296402-.218351 3.120312-.17609 3.042833-.17609C2.810394-.17609 2.78222-.493052 2.78222-.52827V-1.936988C2.78222-2.232819 2.78222-2.507519 2.52865-2.768132C2.25395-3.042833 1.90177-3.15553 1.563678-3.15553C.986103-3.15553 .500095-2.824481 .500095-2.359604C.500095-2.148296 .640967-2.028555 .8241-2.028555C1.021321-2.028555 1.148106-2.169427 1.148106-2.35256C1.148106-2.437083 1.112888-2.669522 .788883-2.676566C.97906-2.923091 1.324196-3.000571 1.549591-3.000571C1.894727-3.000571 2.296212-2.725871 2.296212-2.098991V-1.838378C1.936988-1.817247 1.443937-1.796116 1.00019-1.584809C.471921-1.345326 .295831-.97906 .295831-.669141C.295831-.09861 .97906 .07748 1.422806 .07748C1.887683 .07748 2.211688-.204264 2.345517-.535313ZM2.296212-1.690463V-.986103C2.296212-.316962 1.789073-.07748 1.472111-.07748C1.126975-.07748 .838188-.324005 .838188-.676185C.838188-1.063583 1.134019-1.648201 2.296212-1.690463Z" />
+<path id="tikzcd-04416dbaf4-4-g2-100" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M2.676566-.387398V.07748L3.711974 0V-.218351C3.218922-.218351 3.162574-.267657 3.162574-.612793V-4.888254L2.148296-4.810775V-4.592423C2.641348-4.592423 2.697696-4.543118 2.697696-4.197982V-2.676566C2.493432-2.930135 2.190558-3.113268 1.810204-3.113268C.97906-3.113268 .239482-2.422996 .239482-1.514373C.239482-.619836 .929754 .07748 1.732724 .07748C2.183514 .07748 2.500476-.162003 2.676566-.387398ZM2.676566-2.275081V-.831144C2.676566-.704359 2.676566-.690272 2.599086-.570531C2.387778-.232439 2.070817-.07748 1.767942-.07748C1.45098-.07748 1.197411-.260613 1.028365-.52827C.845231-.817057 .8241-1.218542 .8241-1.507329C.8241-1.767942 .838188-2.190558 1.042452-2.507519C1.190367-2.725871 1.458024-2.958309 1.838378-2.958309C2.084904-2.958309 2.380735-2.852656 2.599086-2.535694C2.676566-2.415953 2.676566-2.401866 2.676566-2.275081Z" />
+<path id="tikzcd-04416dbaf4-4-g2-105" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M1.246716-3.113268L.260613-3.035789V-2.817438C.718447-2.817438 .781839-2.775176 .781839-2.43004V-.535313C.781839-.218351 .704359-.218351 .232439-.218351V0C.457834-.007044 .838188-.021131 1.007234-.021131C1.25376-.021131 1.500285-.007044 1.739768 0V-.218351C1.27489-.218351 1.246716-.253569 1.246716-.52827V-3.113268ZM1.27489-4.338854C1.27489-4.564249 1.098801-4.712164 .90158-4.712164C.683229-4.712164 .52827-4.521987 .52827-4.338854C.52827-4.148677 .683229-3.965543 .90158-3.965543C1.098801-3.965543 1.27489-4.113459 1.27489-4.338854Z" />
+<path id="tikzcd-04416dbaf4-4-g2-110" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M.774795-2.422996V-.535313C.774795-.218351 .697316-.218351 .225395-.218351V0C.471921-.007044 .831144-.021131 1.021321-.021131C1.204455-.021131 1.570721-.007044 1.810204 0V-.218351C1.338283-.218351 1.260803-.218351 1.260803-.535313V-1.831334C1.260803-2.563868 1.760898-2.958309 2.211688-2.958309C2.655435-2.958309 2.732914-2.577955 2.732914-2.17647V-.535313C2.732914-.218351 2.655435-.218351 2.183514-.218351V0C2.43004-.007044 2.789263-.021131 2.97944-.021131C3.162574-.021131 3.528841-.007044 3.768323 0V-.218351C3.402056-.218351 3.225966-.218351 3.218922-.429659V-1.774986C3.218922-2.380735 3.218922-2.599086 3.000571-2.852656C2.901961-2.972397 2.669522-3.113268 2.260994-3.113268C1.746811-3.113268 1.415762-2.810394 1.218542-2.373691V-3.113268L.225395-3.035789V-2.817438C.718447-2.817438 .774795-2.768132 .774795-2.422996Z" />
+<use id="tikzcd-04416dbaf4-4-g3-88" xlink:href="#tikzcd-04416dbaf4-4-g0-88" transform="scale(2)" />
+<use id="tikzcd-04416dbaf4-4-g3-89" xlink:href="#tikzcd-04416dbaf4-4-g0-89" transform="scale(2)" />
+<use id="tikzcd-04416dbaf4-4-g4-97" xlink:href="#tikzcd-04416dbaf4-4-g2-97" transform="scale(1.414426)" />
+<use id="tikzcd-04416dbaf4-4-g4-100" xlink:href="#tikzcd-04416dbaf4-4-g2-100" transform="scale(1.414426)" />
+<use id="tikzcd-04416dbaf4-4-g4-110" xlink:href="#tikzcd-04416dbaf4-4-g2-110" transform="scale(1.414426)" />
+</defs>
+<g id="tikzcd-04416dbaf4-4-page1">
+<g stroke-miterlimit="10" transform="translate(-22.705777,-62.1636)scale(0.996264,-0.996264)">
+<g fill="#000" stroke="#000">
+<g stroke-width="0.4">
+<g transform="translate(-49.47908,-3.41666)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-22.705777,-62.1636)scale(-1,-1)">
+<g stroke="#000" stroke-miterlimit="10" transform="translate(-13.898549,-62.1636)scale(0.996264,-0.996264)">
+<g transform="translate(-4.53471,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-13.898549,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-13.898549" y="-62.1636" xlink:href="#tikzcd-04416dbaf4-4-g3-88" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke="#000" stroke-miterlimit="10" transform="translate(27.107332,-62.1636)scale(0.996264,-0.996264)">
+<g transform="translate(-4.01389,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(27.107332,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="27.107332" y="-62.1636" xlink:href="#tikzcd-04416dbaf4-4-g3-89" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke="#000" stroke-miterlimit="10" transform="translate(67.59433,-62.1636)scale(0.996264,-0.996264)">
+<g transform="translate(-4.01389,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(67.59433,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="67.59433" y="-62.1636" xlink:href="#tikzcd-04416dbaf4-4-g3-89" />
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M-31.59857-.91666H-8.39856" fill="none" />
+<g transform="translate(-8.19858,-0.91666)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(-21.90977,2.8108)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-22.705777,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-22.705777" y="-62.1636" xlink:href="#tikzcd-04416dbaf4-4-g1-102" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M-31.59857-6.13518C-9.76103-18.60748 10.92009-18.51021 32.29482-6.03612" fill="none" />
+<g transform="matrix(0.86363,0.50401,-0.50401,0.86363,32.46751,-5.93532)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(-1.54633,-22.6778)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-22.705777,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-22.705777" y="-62.1636" xlink:href="#tikzcd-04416dbaf4-4-g1-102" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M9.04025-.91666H32.24026" fill="none" />
+<g transform="translate(32.44025,-0.91666)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(15.63747,2.49658)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-22.705777,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-22.705777" y="-62.1636" xlink:href="#tikzcd-04416dbaf4-4-g2-105" />
+<use x="-20.749218" y="-62.1636" xlink:href="#tikzcd-04416dbaf4-4-g2-100" />
+<use x="-16.836126" y="-61.107076" xlink:href="#tikzcd-04416dbaf4-4-g0-89" />
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<use x="36.551105" y="-58.759708" xlink:href="#tikzcd-04416dbaf4-4-g4-97" />
+<use x="41.532444" y="-58.759708" xlink:href="#tikzcd-04416dbaf4-4-g4-110" />
+<use x="47.067261" y="-58.759708" xlink:href="#tikzcd-04416dbaf4-4-g4-100" />
+<g stroke-miterlimit="10" transform="translate(112.377838,-62.1636)scale(0.996264,-0.996264)">
+<g fill="#000" stroke="#000">
+<g stroke-width="0.4">
+<g transform="translate(-49.99991,-3.41666)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(112.377838,-62.1636)scale(-1,-1)">
+<g stroke="#000" stroke-miterlimit="10" transform="translate(121.185067,-62.1636)scale(0.996264,-0.996264)">
+<g transform="translate(-4.53471,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(121.185067,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="121.185067" y="-62.1636" xlink:href="#tikzcd-04416dbaf4-4-g3-88" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke="#000" stroke-miterlimit="10" transform="translate(162.70983,-62.1636)scale(0.996264,-0.996264)">
+<g transform="translate(-4.53471,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(162.70983,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="162.70983" y="-62.1636" xlink:href="#tikzcd-04416dbaf4-4-g3-88" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke="#000" stroke-miterlimit="10" transform="translate(203.715711,-62.1636)scale(0.996264,-0.996264)">
+<g transform="translate(-4.01389,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(203.715711,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="203.715711" y="-62.1636" xlink:href="#tikzcd-04416dbaf4-4-g3-89" />
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M-32.1194-.91666H-8.91939" fill="none" />
+<g transform="translate(-8.7194,-0.91666)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(-25.7826,2.49658)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(112.377838,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="112.377838" y="-62.1636" xlink:href="#tikzcd-04416dbaf4-4-g2-105" />
+<use x="114.334398" y="-62.1636" xlink:href="#tikzcd-04416dbaf4-4-g2-100" />
+<use x="118.24749" y="-61.107076" xlink:href="#tikzcd-04416dbaf4-4-g0-88" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M-32.1194-6.13312C-9.92859-18.80896 11.08801-18.7124 32.81563-6.03413" fill="none" />
+<g transform="matrix(0.86366,0.50395,-0.50395,0.86366,32.98834,-5.93336)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(-1.5462,-22.82867)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(112.377838,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="112.377838" y="-62.1636" xlink:href="#tikzcd-04416dbaf4-4-g1-102" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M9.56108-.91666H32.7611" fill="none" />
+<g transform="translate(32.96107,-0.91666)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(19.24988,2.8108)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(112.377838,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="112.377838" y="-62.1636" xlink:href="#tikzcd-04416dbaf4-4-g1-102" />
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</figure>
+
+<p>commute.</p>
+
+<div class="post-explicit-entry-break" aria-hidden="true"></div>
+
+
+</section>
+<section class="doc-section doc-section--numbered semantic-unit" data-doc="subsection" data-number="3" data-title="Surjectivity and injectivity" id="unit-sec-3">
+<p><strong id="sec-3" class="math-label-anchor doc-heading" role="heading" aria-level="3">3.  Surjectivity and injectivity.</strong> Let <span class="math-inline">\(f:X\to Y\)</span> be a function. A function <span class="math-inline">\(g:Y\to X\)</span> is called a <em>left-inverse</em> of <span class="math-inline">\(f\)</span> if <span class="math-inline math-inline-punctuated">\(g\circ f = \mathrm{id}_X\);</span> the following diagram commutes:</p>
+
+<figure class="commutative-diagram" data-tikzcd-hash="3436f63c0487">
+<!-- This file was generated by dvisvgm 3.6 -->
+<svg class="commutative-diagram__svg" role="img" aria-labelledby="tikzcd-3436f63c04-5-title" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23.252851ex" height="8.117095ex" viewBox="-72 -72 102.393624 35.743522">
+<title id="tikzcd-3436f63c04-5-title">Commutative diagram</title>
+<defs>
+<path id="tikzcd-3436f63c04-5-g0-58" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 4.98132)" d="M.956413-.26401C.956413-.408468 .836862-.52802 .692403-.52802S.428394-.408468 .428394-.26401S.547945 0 .692403 0S.956413-.119552 .956413-.26401Z" />
+<path id="tikzcd-3436f63c04-5-g0-88" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 4.98132)" d="M2.41594-2.047323L1.997509-3.038605C1.982565-3.078456 1.972603-3.098381 1.972603-3.103362C1.972603-3.13325 2.057285-3.227895 2.266501-3.247821C2.316314-3.252802 2.366127-3.257783 2.366127-3.342466C2.366127-3.402242 2.306351-3.402242 2.291407-3.402242C2.087173-3.402242 1.872976-3.387298 1.663761-3.387298C1.539228-3.387298 1.230386-3.402242 1.105853-3.402242C1.075965-3.402242 1.016189-3.402242 1.016189-3.302615C1.016189-3.247821 1.066002-3.247821 1.13076-3.247821C1.429639-3.247821 1.459527-3.198007 1.504359-3.088418L2.092154-1.69863L1.041096-.56787L.976339-.513076C.732254-.249066 .498132-.169365 .244085-.154421C.179328-.14944 .134496-.14944 .134496-.054795C.134496-.049813 .134496 0 .199253 0C.348692 0 .513076-.014944 .667497-.014944C.851806-.014944 1.046077 0 1.225405 0C1.255293 0 1.315068 0 1.315068-.099626C1.315068-.14944 1.265255-.154421 1.255293-.154421C1.210461-.159402 1.05604-.169365 1.05604-.308842C1.05604-.388543 1.13076-.468244 1.190535-.533001L1.69863-1.070984L2.146949-1.559153L2.650062-.368618C2.669988-.313823 2.674969-.308842 2.674969-.298879C2.674969-.259029 2.580324-.174346 2.386052-.154421C2.331258-.14944 2.286426-.144458 2.286426-.059776C2.286426 0 2.34122 0 2.361146 0C2.500623 0 2.849315-.014944 2.988792-.014944C3.113325-.014944 3.417186 0 3.541719 0C3.576588 0 3.636364 0 3.636364-.094645C3.636364-.154421 3.58655-.154421 3.5467-.154421C3.212951-.159402 3.202989-.174346 3.118306-.373599C2.924035-.836862 2.590286-1.613948 2.475716-1.912827C2.814446-2.261519 3.337484-2.854296 3.496887-2.993773C3.641345-3.113325 3.830635-3.232877 4.129514-3.247821C4.194271-3.252802 4.239103-3.252802 4.239103-3.347447C4.239103-3.352428 4.239103-3.402242 4.174346-3.402242C4.024907-3.402242 3.860523-3.387298 3.706102-3.387298C3.521793-3.387298 3.332503-3.402242 3.153176-3.402242C3.123288-3.402242 3.058531-3.402242 3.058531-3.302615C3.058531-3.267746 3.083437-3.252802 3.118306-3.247821C3.163138-3.242839 3.317559-3.232877 3.317559-3.0934C3.317559-3.023661 3.262765-2.958904 3.222914-2.914072L2.41594-2.047323Z" />
+<path id="tikzcd-3436f63c04-5-g0-89" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 4.98132)" d="M2.973848-2.834371L3.043587-2.90411C3.193026-3.053549 3.35741-3.222914 3.696139-3.247821C3.750934-3.252802 3.795766-3.252802 3.795766-3.342466C3.795766-3.382316 3.770859-3.402242 3.731009-3.402242C3.601494-3.402242 3.457036-3.387298 3.32254-3.387298C3.158157-3.387298 2.983811-3.402242 2.824408-3.402242C2.794521-3.402242 2.729763-3.402242 2.729763-3.307597C2.729763-3.252802 2.779577-3.247821 2.804483-3.247821C2.839352-3.247821 2.983811-3.237858 2.983811-3.13325C2.983811-3.048568 2.86924-2.919054 2.849315-2.894147L1.693649-1.564134L1.145704-3.043587C1.115816-3.113325 1.115816-3.123288 1.115816-3.128269C1.115816-3.247821 1.3599-3.247821 1.409714-3.247821C1.479452-3.247821 1.529265-3.247821 1.529265-3.347447C1.529265-3.402242 1.469489-3.402242 1.454545-3.402242C1.315068-3.402242 .966376-3.387298 .826899-3.387298C.702366-3.387298 .393524-3.402242 .268991-3.402242C.239103-3.402242 .174346-3.402242 .174346-3.302615C.174346-3.247821 .224159-3.247821 .288917-3.247821C.587796-3.247821 .607721-3.202989 .652553-3.078456L1.265255-1.439601C1.270237-1.424658 1.285181-1.369863 1.285181-1.354919S1.085928-.537983 1.061021-.448319C.996264-.174346 .991283-.159402 .592777-.154421C.498132-.154421 .458281-.154421 .458281-.054795C.458281 0 .518057 0 .52802 0C.667497 0 1.016189-.014944 1.155666-.014944S1.653798 0 1.793275 0C1.828144 0 1.88792 0 1.88792-.099626C1.88792-.154421 1.843088-.154421 1.748443-.154421C1.738481-.154421 1.643836-.154421 1.559153-.164384C1.454545-.174346 1.424658-.184309 1.424658-.244085C1.424658-.278954 1.469489-.4533 1.494396-.557908L1.668742-1.260274C1.693649-1.354919 1.69863-1.369863 1.738481-1.414695L2.973848-2.834371Z" />
+<path id="tikzcd-3436f63c04-5-g0-102" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 4.98132)" d="M1.828144-1.992528H2.256538C2.356164-1.992528 2.405978-1.992528 2.405978-2.092154C2.405978-2.146949 2.356164-2.146949 2.271482-2.146949H1.858032L1.96264-2.714819C1.982565-2.819427 2.052304-3.173101 2.082192-3.232877C2.127024-3.327522 2.211706-3.402242 2.316314-3.402242C2.336239-3.402242 2.465753-3.402242 2.560399-3.312578C2.34122-3.292653 2.291407-3.118306 2.291407-3.043587C2.291407-2.929016 2.381071-2.86924 2.475716-2.86924C2.60523-2.86924 2.749689-2.978829 2.749689-3.16812C2.749689-3.39726 2.520548-3.511831 2.316314-3.511831C2.146949-3.511831 1.833126-3.422167 1.683686-2.929016C1.653798-2.824408 1.638854-2.774595 1.519303-2.146949H1.175592C1.080946-2.146949 1.026152-2.146949 1.026152-2.052304C1.026152-1.992528 1.070984-1.992528 1.165629-1.992528H1.494396L1.120797-.024907C1.031133 .458281 .946451 .911582 .687422 .911582C.667497 .911582 .542964 .911582 .448319 .821918C.67746 .806974 .722291 .627646 .722291 .552927C.722291 .438356 .632628 .37858 .537983 .37858C.408468 .37858 .26401 .488169 .26401 .67746C.26401 .901619 .483188 1.021171 .687422 1.021171C.961395 1.021171 1.160648 .727273 1.250311 .537983C1.409714 .224159 1.524284-.37858 1.529265-.41345L1.828144-1.992528Z" />
+<path id="tikzcd-3436f63c04-5-g0-103" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 4.98132)" d="M2.346202-1.877958C2.351183-1.907846 2.361146-1.932752 2.361146-1.967621C2.361146-2.052304 2.30137-2.102117 2.216687-2.102117C2.166874-2.102117 2.032379-2.067248 2.012453-1.88792C1.92279-2.072229 1.748443-2.201743 1.549191-2.201743C.98132-2.201743 .363636-1.504359 .363636-.787049C.363636-.293898 .667497 0 1.026152 0C1.32005 0 1.554172-.234122 1.603985-.288917L1.608966-.283935C1.504359 .159402 1.444583 .363636 1.444583 .373599C1.424658 .418431 1.255293 .911582 .727273 .911582C.632628 .911582 .468244 .9066 .328767 .861768C.478207 .816936 .533001 .687422 .533001 .60274C.533001 .523039 .478207 .428394 .343711 .428394C.234122 .428394 .07472 .518057 .07472 .71731C.07472 .921544 .259029 1.021171 .737235 1.021171C1.3599 1.021171 1.718555 .632628 1.793275 .333748L2.346202-1.877958ZM1.69863-.637609C1.668742-.508095 1.554172-.383562 1.444583-.288917C1.339975-.199253 1.185554-.109589 1.041096-.109589C.79203-.109589 .71731-.368618 .71731-.56787C.71731-.806974 .861768-1.39477 .996264-1.648817C1.13076-1.892902 1.344956-2.092154 1.554172-2.092154C1.882939-2.092154 1.952677-1.688667 1.952677-1.663761S1.942715-1.608966 1.937733-1.589041L1.69863-.637609Z" />
+<use id="tikzcd-3436f63c04-5-g1-102" xlink:href="#tikzcd-3436f63c04-5-g0-102" transform="scale(1.414001)" />
+<use id="tikzcd-3436f63c04-5-g1-103" xlink:href="#tikzcd-3436f63c04-5-g0-103" transform="scale(1.414001)" />
+<path id="tikzcd-3436f63c04-5-g2-100" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M2.676566-.387398V.07748L3.711974 0V-.218351C3.218922-.218351 3.162574-.267657 3.162574-.612793V-4.888254L2.148296-4.810775V-4.592423C2.641348-4.592423 2.697696-4.543118 2.697696-4.197982V-2.676566C2.493432-2.930135 2.190558-3.113268 1.810204-3.113268C.97906-3.113268 .239482-2.422996 .239482-1.514373C.239482-.619836 .929754 .07748 1.732724 .07748C2.183514 .07748 2.500476-.162003 2.676566-.387398ZM2.676566-2.275081V-.831144C2.676566-.704359 2.676566-.690272 2.599086-.570531C2.387778-.232439 2.070817-.07748 1.767942-.07748C1.45098-.07748 1.197411-.260613 1.028365-.52827C.845231-.817057 .8241-1.218542 .8241-1.507329C.8241-1.767942 .838188-2.190558 1.042452-2.507519C1.190367-2.725871 1.458024-2.958309 1.838378-2.958309C2.084904-2.958309 2.380735-2.852656 2.599086-2.535694C2.676566-2.415953 2.676566-2.401866 2.676566-2.275081Z" />
+<path id="tikzcd-3436f63c04-5-g2-105" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M1.246716-3.113268L.260613-3.035789V-2.817438C.718447-2.817438 .781839-2.775176 .781839-2.43004V-.535313C.781839-.218351 .704359-.218351 .232439-.218351V0C.457834-.007044 .838188-.021131 1.007234-.021131C1.25376-.021131 1.500285-.007044 1.739768 0V-.218351C1.27489-.218351 1.246716-.253569 1.246716-.52827V-3.113268ZM1.27489-4.338854C1.27489-4.564249 1.098801-4.712164 .90158-4.712164C.683229-4.712164 .52827-4.521987 .52827-4.338854C.52827-4.148677 .683229-3.965543 .90158-3.965543C1.098801-3.965543 1.27489-4.113459 1.27489-4.338854Z" />
+<use id="tikzcd-3436f63c04-5-g3-58" xlink:href="#tikzcd-3436f63c04-5-g0-58" transform="scale(2)" />
+<use id="tikzcd-3436f63c04-5-g3-88" xlink:href="#tikzcd-3436f63c04-5-g0-88" transform="scale(2)" />
+<use id="tikzcd-3436f63c04-5-g3-89" xlink:href="#tikzcd-3436f63c04-5-g0-89" transform="scale(2)" />
+</defs>
+<g id="tikzcd-3436f63c04-5-page1">
+<g stroke-miterlimit="10" transform="translate(-22.186895,-62.1636)scale(0.996264,-0.996264)">
+<g fill="#000" stroke="#000">
+<g stroke-width="0.4">
+<g transform="translate(-49.99991,-3.41666)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-22.186895,-62.1636)scale(-1,-1)">
+<g stroke="#000" stroke-miterlimit="10" transform="translate(-13.379666,-62.1636)scale(0.996264,-0.996264)">
+<g transform="translate(-4.53471,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-13.379666,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-13.379666" y="-62.1636" xlink:href="#tikzcd-3436f63c04-5-g3-88" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke="#000" stroke-miterlimit="10" transform="translate(27.626214,-62.1636)scale(0.996264,-0.996264)">
+<g transform="translate(-4.01389,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(27.626214,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="27.626214" y="-62.1636" xlink:href="#tikzcd-3436f63c04-5-g3-89" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke="#000" stroke-miterlimit="10" transform="translate(68.632095,-62.1636)scale(0.996264,-0.996264)">
+<g transform="translate(-4.53471,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(68.632095,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="68.632095" y="-62.1636" xlink:href="#tikzcd-3436f63c04-5-g3-88" />
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M-32.1194-.91666H-8.91939" fill="none" />
+<g transform="translate(-8.7194,-0.91666)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(-22.4306,2.8108)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-22.186895,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-22.186895" y="-62.1636" xlink:href="#tikzcd-3436f63c04-5-g1-102" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M-32.1194-6.13435C-10.42433-18.65997 10.42433-18.65997 31.77304-6.33432" fill="none" />
+<g transform="matrix(0.86601,0.49998,-0.49998,0.86601,31.94621,-6.23434)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(-5.46318,-22.79102)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-22.186895,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-22.186895" y="-62.1636" xlink:href="#tikzcd-3436f63c04-5-g2-105" />
+<use x="-20.230335" y="-62.1636" xlink:href="#tikzcd-3436f63c04-5-g2-100" />
+<use x="-16.317244" y="-61.107076" xlink:href="#tikzcd-3436f63c04-5-g0-88" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M8.51942-.91666H31.71944" fill="none" />
+<g transform="translate(31.91942,-0.91666)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(18.5065,2.8108)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-22.186895,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-22.186895" y="-62.1636" xlink:href="#tikzcd-3436f63c04-5-g1-103" />
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<use x="27.626214" y="-58.759708" xlink:href="#tikzcd-3436f63c04-5-g3-58" />
+</g>
+</svg>
+</figure>
+
+<p>A function <span class="math-inline">\(h:Y\to X\)</span> is called a <em>right-inverse</em> of <span class="math-inline">\(f\)</span> if <span class="math-inline math-inline-punctuated">\(f\circ h = \mathrm{id}_Y\);</span> the following diagram commutes:</p>
+
+<figure class="commutative-diagram" data-tikzcd-hash="57a0fec6959c">
+<!-- This file was generated by dvisvgm 3.6 -->
+<svg class="commutative-diagram__svg" role="img" aria-labelledby="tikzcd-57a0fec695-6-title" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23.017183ex" height="8.083548ex" viewBox="-72 -72 101.355866 35.595796">
+<title id="tikzcd-57a0fec695-6-title">Commutative diagram</title>
+<defs>
+<path id="tikzcd-57a0fec695-6-g0-58" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 4.98132)" d="M.956413-.26401C.956413-.408468 .836862-.52802 .692403-.52802S.428394-.408468 .428394-.26401S.547945 0 .692403 0S.956413-.119552 .956413-.26401Z" />
+<path id="tikzcd-57a0fec695-6-g0-88" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 4.98132)" d="M2.41594-2.047323L1.997509-3.038605C1.982565-3.078456 1.972603-3.098381 1.972603-3.103362C1.972603-3.13325 2.057285-3.227895 2.266501-3.247821C2.316314-3.252802 2.366127-3.257783 2.366127-3.342466C2.366127-3.402242 2.306351-3.402242 2.291407-3.402242C2.087173-3.402242 1.872976-3.387298 1.663761-3.387298C1.539228-3.387298 1.230386-3.402242 1.105853-3.402242C1.075965-3.402242 1.016189-3.402242 1.016189-3.302615C1.016189-3.247821 1.066002-3.247821 1.13076-3.247821C1.429639-3.247821 1.459527-3.198007 1.504359-3.088418L2.092154-1.69863L1.041096-.56787L.976339-.513076C.732254-.249066 .498132-.169365 .244085-.154421C.179328-.14944 .134496-.14944 .134496-.054795C.134496-.049813 .134496 0 .199253 0C.348692 0 .513076-.014944 .667497-.014944C.851806-.014944 1.046077 0 1.225405 0C1.255293 0 1.315068 0 1.315068-.099626C1.315068-.14944 1.265255-.154421 1.255293-.154421C1.210461-.159402 1.05604-.169365 1.05604-.308842C1.05604-.388543 1.13076-.468244 1.190535-.533001L1.69863-1.070984L2.146949-1.559153L2.650062-.368618C2.669988-.313823 2.674969-.308842 2.674969-.298879C2.674969-.259029 2.580324-.174346 2.386052-.154421C2.331258-.14944 2.286426-.144458 2.286426-.059776C2.286426 0 2.34122 0 2.361146 0C2.500623 0 2.849315-.014944 2.988792-.014944C3.113325-.014944 3.417186 0 3.541719 0C3.576588 0 3.636364 0 3.636364-.094645C3.636364-.154421 3.58655-.154421 3.5467-.154421C3.212951-.159402 3.202989-.174346 3.118306-.373599C2.924035-.836862 2.590286-1.613948 2.475716-1.912827C2.814446-2.261519 3.337484-2.854296 3.496887-2.993773C3.641345-3.113325 3.830635-3.232877 4.129514-3.247821C4.194271-3.252802 4.239103-3.252802 4.239103-3.347447C4.239103-3.352428 4.239103-3.402242 4.174346-3.402242C4.024907-3.402242 3.860523-3.387298 3.706102-3.387298C3.521793-3.387298 3.332503-3.402242 3.153176-3.402242C3.123288-3.402242 3.058531-3.402242 3.058531-3.302615C3.058531-3.267746 3.083437-3.252802 3.118306-3.247821C3.163138-3.242839 3.317559-3.232877 3.317559-3.0934C3.317559-3.023661 3.262765-2.958904 3.222914-2.914072L2.41594-2.047323Z" />
+<path id="tikzcd-57a0fec695-6-g0-89" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 4.98132)" d="M2.973848-2.834371L3.043587-2.90411C3.193026-3.053549 3.35741-3.222914 3.696139-3.247821C3.750934-3.252802 3.795766-3.252802 3.795766-3.342466C3.795766-3.382316 3.770859-3.402242 3.731009-3.402242C3.601494-3.402242 3.457036-3.387298 3.32254-3.387298C3.158157-3.387298 2.983811-3.402242 2.824408-3.402242C2.794521-3.402242 2.729763-3.402242 2.729763-3.307597C2.729763-3.252802 2.779577-3.247821 2.804483-3.247821C2.839352-3.247821 2.983811-3.237858 2.983811-3.13325C2.983811-3.048568 2.86924-2.919054 2.849315-2.894147L1.693649-1.564134L1.145704-3.043587C1.115816-3.113325 1.115816-3.123288 1.115816-3.128269C1.115816-3.247821 1.3599-3.247821 1.409714-3.247821C1.479452-3.247821 1.529265-3.247821 1.529265-3.347447C1.529265-3.402242 1.469489-3.402242 1.454545-3.402242C1.315068-3.402242 .966376-3.387298 .826899-3.387298C.702366-3.387298 .393524-3.402242 .268991-3.402242C.239103-3.402242 .174346-3.402242 .174346-3.302615C.174346-3.247821 .224159-3.247821 .288917-3.247821C.587796-3.247821 .607721-3.202989 .652553-3.078456L1.265255-1.439601C1.270237-1.424658 1.285181-1.369863 1.285181-1.354919S1.085928-.537983 1.061021-.448319C.996264-.174346 .991283-.159402 .592777-.154421C.498132-.154421 .458281-.154421 .458281-.054795C.458281 0 .518057 0 .52802 0C.667497 0 1.016189-.014944 1.155666-.014944S1.653798 0 1.793275 0C1.828144 0 1.88792 0 1.88792-.099626C1.88792-.154421 1.843088-.154421 1.748443-.154421C1.738481-.154421 1.643836-.154421 1.559153-.164384C1.454545-.174346 1.424658-.184309 1.424658-.244085C1.424658-.278954 1.469489-.4533 1.494396-.557908L1.668742-1.260274C1.693649-1.354919 1.69863-1.369863 1.738481-1.414695L2.973848-2.834371Z" />
+<path id="tikzcd-57a0fec695-6-g0-102" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 4.98132)" d="M1.828144-1.992528H2.256538C2.356164-1.992528 2.405978-1.992528 2.405978-2.092154C2.405978-2.146949 2.356164-2.146949 2.271482-2.146949H1.858032L1.96264-2.714819C1.982565-2.819427 2.052304-3.173101 2.082192-3.232877C2.127024-3.327522 2.211706-3.402242 2.316314-3.402242C2.336239-3.402242 2.465753-3.402242 2.560399-3.312578C2.34122-3.292653 2.291407-3.118306 2.291407-3.043587C2.291407-2.929016 2.381071-2.86924 2.475716-2.86924C2.60523-2.86924 2.749689-2.978829 2.749689-3.16812C2.749689-3.39726 2.520548-3.511831 2.316314-3.511831C2.146949-3.511831 1.833126-3.422167 1.683686-2.929016C1.653798-2.824408 1.638854-2.774595 1.519303-2.146949H1.175592C1.080946-2.146949 1.026152-2.146949 1.026152-2.052304C1.026152-1.992528 1.070984-1.992528 1.165629-1.992528H1.494396L1.120797-.024907C1.031133 .458281 .946451 .911582 .687422 .911582C.667497 .911582 .542964 .911582 .448319 .821918C.67746 .806974 .722291 .627646 .722291 .552927C.722291 .438356 .632628 .37858 .537983 .37858C.408468 .37858 .26401 .488169 .26401 .67746C.26401 .901619 .483188 1.021171 .687422 1.021171C.961395 1.021171 1.160648 .727273 1.250311 .537983C1.409714 .224159 1.524284-.37858 1.529265-.41345L1.828144-1.992528Z" />
+<path id="tikzcd-57a0fec695-6-g0-104" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 4.98132)" d="M1.429639-3.402242C1.429639-3.407223 1.429639-3.457036 1.364882-3.457036C1.250311-3.457036 .886675-3.417186 .757161-3.407223C.71731-3.402242 .662516-3.39726 .662516-3.307597C.662516-3.247821 .707347-3.247821 .782067-3.247821C1.021171-3.247821 1.031133-3.212951 1.031133-3.163138L1.016189-3.063512L.293898-.194271C.273973-.124533 .273973-.11457 .273973-.084682C.273973 .029888 .373599 .054795 .418431 .054795C.498132 .054795 .577833-.004981 .60274-.07472L.697385-.4533L.806974-.901619C.836862-1.011208 .86675-1.120797 .891656-1.235367C.901619-1.265255 .941469-1.429639 .946451-1.459527C.961395-1.504359 1.115816-1.783313 1.285181-1.917808C1.39477-1.997509 1.549191-2.092154 1.763387-2.092154S2.032379-1.92279 2.032379-1.743462C2.032379-1.474471 1.843088-.931507 1.723537-.627646C1.683686-.513076 1.65878-.4533 1.65878-.353674C1.65878-.119552 1.833126 .054795 2.067248 .054795C2.535492 .054795 2.719801-.672478 2.719801-.712329C2.719801-.762142 2.674969-.762142 2.660025-.762142C2.610212-.762142 2.610212-.747198 2.585305-.672478C2.510585-.408468 2.351183-.054795 2.07721-.054795C1.992528-.054795 1.957659-.104608 1.957659-.219178C1.957659-.343711 2.002491-.463263 2.047323-.572852C2.127024-.787049 2.351183-1.379826 2.351183-1.668742C2.351183-1.992528 2.15193-2.201743 1.778331-2.201743C1.464508-2.201743 1.225405-2.047323 1.041096-1.818182L1.429639-3.402242Z" />
+<use id="tikzcd-57a0fec695-6-g1-102" xlink:href="#tikzcd-57a0fec695-6-g0-102" transform="scale(1.414001)" />
+<use id="tikzcd-57a0fec695-6-g1-104" xlink:href="#tikzcd-57a0fec695-6-g0-104" transform="scale(1.414001)" />
+<path id="tikzcd-57a0fec695-6-g2-100" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M2.676566-.387398V.07748L3.711974 0V-.218351C3.218922-.218351 3.162574-.267657 3.162574-.612793V-4.888254L2.148296-4.810775V-4.592423C2.641348-4.592423 2.697696-4.543118 2.697696-4.197982V-2.676566C2.493432-2.930135 2.190558-3.113268 1.810204-3.113268C.97906-3.113268 .239482-2.422996 .239482-1.514373C.239482-.619836 .929754 .07748 1.732724 .07748C2.183514 .07748 2.500476-.162003 2.676566-.387398ZM2.676566-2.275081V-.831144C2.676566-.704359 2.676566-.690272 2.599086-.570531C2.387778-.232439 2.070817-.07748 1.767942-.07748C1.45098-.07748 1.197411-.260613 1.028365-.52827C.845231-.817057 .8241-1.218542 .8241-1.507329C.8241-1.767942 .838188-2.190558 1.042452-2.507519C1.190367-2.725871 1.458024-2.958309 1.838378-2.958309C2.084904-2.958309 2.380735-2.852656 2.599086-2.535694C2.676566-2.415953 2.676566-2.401866 2.676566-2.275081Z" />
+<path id="tikzcd-57a0fec695-6-g2-105" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M1.246716-3.113268L.260613-3.035789V-2.817438C.718447-2.817438 .781839-2.775176 .781839-2.43004V-.535313C.781839-.218351 .704359-.218351 .232439-.218351V0C.457834-.007044 .838188-.021131 1.007234-.021131C1.25376-.021131 1.500285-.007044 1.739768 0V-.218351C1.27489-.218351 1.246716-.253569 1.246716-.52827V-3.113268ZM1.27489-4.338854C1.27489-4.564249 1.098801-4.712164 .90158-4.712164C.683229-4.712164 .52827-4.521987 .52827-4.338854C.52827-4.148677 .683229-3.965543 .90158-3.965543C1.098801-3.965543 1.27489-4.113459 1.27489-4.338854Z" />
+<use id="tikzcd-57a0fec695-6-g3-58" xlink:href="#tikzcd-57a0fec695-6-g0-58" transform="scale(2)" />
+<use id="tikzcd-57a0fec695-6-g3-88" xlink:href="#tikzcd-57a0fec695-6-g0-88" transform="scale(2)" />
+<use id="tikzcd-57a0fec695-6-g3-89" xlink:href="#tikzcd-57a0fec695-6-g0-89" transform="scale(2)" />
+</defs>
+<g id="tikzcd-57a0fec695-6-page1">
+<g stroke-miterlimit="10" transform="translate(-22.705777,-62.1636)scale(0.996264,-0.996264)">
+<g fill="#000" stroke="#000">
+<g stroke-width="0.4">
+<g transform="translate(-49.47908,-3.41666)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-22.705777,-62.1636)scale(-1,-1)">
+<g stroke="#000" stroke-miterlimit="10" transform="translate(-14.417431,-62.1636)scale(0.996264,-0.996264)">
+<g transform="translate(-4.01389,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-14.417431,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-14.417431" y="-62.1636" xlink:href="#tikzcd-57a0fec695-6-g3-89" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke="#000" stroke-miterlimit="10" transform="translate(26.588449,-62.1636)scale(0.996264,-0.996264)">
+<g transform="translate(-4.53471,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(26.588449,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="26.588449" y="-62.1636" xlink:href="#tikzcd-57a0fec695-6-g3-88" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke="#000" stroke-miterlimit="10" transform="translate(67.59433,-62.1636)scale(0.996264,-0.996264)">
+<g transform="translate(-4.01389,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(67.59433,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="67.59433" y="-62.1636" xlink:href="#tikzcd-57a0fec695-6-g3-89" />
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M-32.64023-.91666H-9.44022" fill="none" />
+<g transform="translate(-9.24023,-0.91666)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(-22.87695,1.4361)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-22.705777,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-22.705777" y="-62.1636" xlink:href="#tikzcd-57a0fec695-6-g1-104" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M-32.64023-5.83376C-10.59335-18.56248 10.59335-18.56248 32.29387-6.03372" fill="none" />
+<g transform="matrix(0.86601,0.49998,-0.49998,0.86601,32.46704,-5.93375)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(-5.20277,-22.64273)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-22.705777,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-22.705777" y="-62.1636" xlink:href="#tikzcd-57a0fec695-6-g2-105" />
+<use x="-20.749218" y="-62.1636" xlink:href="#tikzcd-57a0fec695-6-g2-100" />
+<use x="-16.836126" y="-61.107076" xlink:href="#tikzcd-57a0fec695-6-g0-89" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M9.04025-.91666H32.24026" fill="none" />
+<g transform="translate(32.44025,-0.91666)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(18.72905,2.8108)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(-22.705777,-62.1636)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="-22.705777" y="-62.1636" xlink:href="#tikzcd-57a0fec695-6-g1-102" />
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<use x="26.588449" y="-58.759708" xlink:href="#tikzcd-57a0fec695-6-g3-58" />
+</g>
+</svg>
+</figure>
+
+<p>If a function from <span class="math-inline">\(Y\)</span> to <span class="math-inline">\(X\)</span> is both a left-inverse and right-inverse of <span class="math-inline math-inline-punctuated">\(f\),</span> then it is called the <em>inverse</em> of <span class="math-inline math-inline-punctuated">\(f\).</span></p>
+
+<section class="semantic-unit math-environment math-environment--proposition math-statement-italic" data-doc="proposition" data-environment-kind="Proposition" data-number="1" id="unit-proposition-1" aria-labelledby="proposition-1" kind="Proposition">
+<p><strong id="proposition-1" class="math-label-anchor">Proposition 1.</strong> Let <span class="math-inline math-inline-punctuated">\(X\ne \varnothing\),</span> and let <span class="math-inline">\(f:X\to Y\)</span> be a function.</p>
+<ol>
+  <li><span class="math-inline">\(f\)</span> is injective if and only if it has a left-inverse.</li>
+  <li><span class="math-inline">\(f\)</span> is surjective if and only if it has a right-inverse.</li>
+</ol>
+
+<div class="post-structural-continuation" aria-hidden="true"></div>
+
+
+</section>
+
+</section>
+<section class="doc-section doc-section--numbered semantic-unit" data-doc="subsection" data-number="4" data-title="Product" id="unit-sec-4">
+<p><strong id="sec-4" class="math-label-anchor doc-heading" role="heading" aria-level="3">4. Product.</strong></p>
+
+<figure class="commutative-diagram" data-tikzcd-hash="d755a5bc2d3d">
+<!-- This file was generated by dvisvgm 3.6 -->
+<svg class="commutative-diagram__svg" role="img" aria-labelledby="tikzcd-d755a5bc2d-7-title" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="33.142455ex" height="12.652154ex" viewBox="-72 -72 145.942366 55.713594">
+<title id="tikzcd-d755a5bc2d-7-title">Commutative diagram</title>
+<defs>
+<path id="tikzcd-d755a5bc2d-7-g0-57" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M3.521797-4.634685C3.521797-4.867123 3.500666-4.888254 3.275271-4.888254H.633923C.514182-4.888254 .387398-4.888254 .387398-4.747382S.514182-4.60651 .633923-4.60651H3.240053V-2.584999H.732534C.612793-2.584999 .486008-2.584999 .486008-2.444127S.612793-2.303255 .732534-2.303255H3.240053V-.281744H.633923C.514182-.281744 .387398-.281744 .387398-.140872S.514182 0 .633923 0H3.275271C3.500666 0 3.521797-.021131 3.521797-.253569V-4.634685Z" />
+<path id="tikzcd-d755a5bc2d-7-g1-25" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 4.98132)" d="M1.32005-1.858032H1.882939C1.718555-1.120797 1.673724-.9066 1.673724-.572852C1.673724-.498132 1.673724-.363636 1.713574-.194271C1.763387 .024907 1.818182 .054795 1.892902 .054795C1.992528 .054795 2.097136-.034869 2.097136-.134496C2.097136-.164384 2.097136-.174346 2.067248-.244085C1.92279-.60274 1.92279-.926526 1.92279-1.066002C1.92279-1.330012 1.957659-1.599004 2.012453-1.858032H2.580324C2.645081-1.858032 2.824408-1.858032 2.824408-2.027397C2.824408-2.146949 2.719801-2.146949 2.625156-2.146949H.956413C.846824-2.146949 .657534-2.146949 .438356-1.912827C.26401-1.718555 .134496-1.489415 .134496-1.464508C.134496-1.459527 .134496-1.414695 .194271-1.414695C.234122-1.414695 .244085-1.43462 .273973-1.474471C.518057-1.858032 .806974-1.858032 .9066-1.858032H1.190535C1.031133-1.255293 .762142-.652553 .552927-.199253C.513076-.124533 .513076-.11457 .513076-.079701C.513076 .014944 .592777 .054795 .657534 .054795C.806974 .054795 .846824-.084682 .9066-.268991C.976339-.498132 .976339-.508095 1.041096-.757161L1.32005-1.858032Z" />
+<path id="tikzcd-d755a5bc2d-7-g1-65" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 4.98132)" d="M.891656-.572852C.692403-.239103 .498132-.169365 .278954-.154421C.219178-.14944 .174346-.14944 .174346-.054795C.174346-.024907 .199253 0 .239103 0C.373599 0 .52802-.014944 .667497-.014944C.83188-.014944 1.006227 0 1.165629 0C1.195517 0 1.260274 0 1.260274-.094645C1.260274-.14944 1.215442-.154421 1.180573-.154421C1.066002-.164384 .946451-.204234 .946451-.328767C.946451-.388543 .976339-.443337 1.016189-.513076L1.39477-1.150685H2.645081C2.655044-1.046077 2.724782-.368618 2.724782-.318804C2.724782-.169365 2.465753-.154421 2.366127-.154421C2.296389-.154421 2.246575-.154421 2.246575-.054795C2.246575 0 2.306351 0 2.316314 0C2.520548 0 2.734745-.014944 2.938979-.014944C3.063512-.014944 3.377335 0 3.501868 0C3.531756 0 3.591532 0 3.591532-.099626C3.591532-.154421 3.541719-.154421 3.476961-.154421C3.16812-.154421 3.16812-.18929 3.153176-.333748L2.849315-3.447073C2.839352-3.5467 2.839352-3.566625 2.75467-3.566625C2.674969-3.566625 2.655044-3.531756 2.625156-3.481943L.891656-.572852ZM1.489415-1.305106L2.470735-2.948941L2.630137-1.305106H1.489415Z" />
+<path id="tikzcd-d755a5bc2d-7-g1-66" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 4.98132)" d="M.797011-.388543C.747198-.194271 .737235-.154421 .343711-.154421C.259029-.154421 .209215-.154421 .209215-.054795C.209215 0 .254047 0 .343711 0H2.122042C2.909091 0 3.496887-.587796 3.496887-1.075965C3.496887-1.43462 3.20797-1.723537 2.724782-1.778331C3.242839-1.872976 3.765878-2.241594 3.765878-2.714819C3.765878-3.083437 3.437111-3.402242 2.839352-3.402242H1.165629C1.070984-3.402242 1.021171-3.402242 1.021171-3.302615C1.021171-3.247821 1.066002-3.247821 1.160648-3.247821C1.17061-3.247821 1.265255-3.247821 1.349938-3.237858C1.439601-3.227895 1.484433-3.222914 1.484433-3.158157C1.484433-3.138232 1.479452-3.123288 1.464508-3.063512L.797011-.388543ZM1.549191-1.823163L1.858032-3.058531C1.902864-3.232877 1.912827-3.247821 2.127024-3.247821H2.769614C3.20797-3.247821 3.312578-2.953923 3.312578-2.734745C3.312578-2.296389 2.884184-1.823163 2.276463-1.823163H1.549191ZM1.325031-.154421C1.255293-.154421 1.24533-.154421 1.215442-.159402C1.165629-.164384 1.150685-.169365 1.150685-.209215C1.150685-.224159 1.150685-.234122 1.175592-.323786L1.519303-1.713574H2.460772C2.938979-1.713574 3.033624-1.344956 3.033624-1.13076C3.033624-.637609 2.590286-.154421 2.002491-.154421H1.325031Z" />
+<path id="tikzcd-d755a5bc2d-7-g1-80" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 4.98132)" d="M1.50934-1.574097H2.356164C3.063512-1.574097 3.755915-2.092154 3.755915-2.650062C3.755915-3.033624 3.427148-3.402242 2.774595-3.402242H1.160648C1.066002-3.402242 1.011208-3.402242 1.011208-3.307597C1.011208-3.247821 1.05604-3.247821 1.155666-3.247821C1.220423-3.247821 1.310087-3.242839 1.369863-3.237858C1.449564-3.227895 1.479452-3.212951 1.479452-3.158157C1.479452-3.138232 1.474471-3.123288 1.459527-3.063512L.79203-.388543C.742217-.194271 .732254-.154421 .33873-.154421C.254047-.154421 .199253-.154421 .199253-.059776C.199253 0 .259029 0 .273973 0C.41345 0 .767123-.014944 .9066-.014944C1.011208-.014944 1.120797-.009963 1.225405-.009963C1.334994-.009963 1.444583 0 1.549191 0C1.58406 0 1.648817 0 1.648817-.099626C1.648817-.154421 1.603985-.154421 1.50934-.154421C1.325031-.154421 1.185554-.154421 1.185554-.244085C1.185554-.273973 1.195517-.298879 1.200498-.328767L1.50934-1.574097ZM1.867995-3.058531C1.912827-3.232877 1.92279-3.247821 2.136986-3.247821H2.615193C3.028643-3.247821 3.292653-3.113325 3.292653-2.769614C3.292653-2.575342 3.193026-2.146949 2.998755-1.967621C2.749689-1.743462 2.450809-1.703611 2.231631-1.703611H1.529265L1.867995-3.058531Z" />
+<path id="tikzcd-d755a5bc2d-7-g1-88" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 4.98132)" d="M2.41594-2.047323L1.997509-3.038605C1.982565-3.078456 1.972603-3.098381 1.972603-3.103362C1.972603-3.13325 2.057285-3.227895 2.266501-3.247821C2.316314-3.252802 2.366127-3.257783 2.366127-3.342466C2.366127-3.402242 2.306351-3.402242 2.291407-3.402242C2.087173-3.402242 1.872976-3.387298 1.663761-3.387298C1.539228-3.387298 1.230386-3.402242 1.105853-3.402242C1.075965-3.402242 1.016189-3.402242 1.016189-3.302615C1.016189-3.247821 1.066002-3.247821 1.13076-3.247821C1.429639-3.247821 1.459527-3.198007 1.504359-3.088418L2.092154-1.69863L1.041096-.56787L.976339-.513076C.732254-.249066 .498132-.169365 .244085-.154421C.179328-.14944 .134496-.14944 .134496-.054795C.134496-.049813 .134496 0 .199253 0C.348692 0 .513076-.014944 .667497-.014944C.851806-.014944 1.046077 0 1.225405 0C1.255293 0 1.315068 0 1.315068-.099626C1.315068-.14944 1.265255-.154421 1.255293-.154421C1.210461-.159402 1.05604-.169365 1.05604-.308842C1.05604-.388543 1.13076-.468244 1.190535-.533001L1.69863-1.070984L2.146949-1.559153L2.650062-.368618C2.669988-.313823 2.674969-.308842 2.674969-.298879C2.674969-.259029 2.580324-.174346 2.386052-.154421C2.331258-.14944 2.286426-.144458 2.286426-.059776C2.286426 0 2.34122 0 2.361146 0C2.500623 0 2.849315-.014944 2.988792-.014944C3.113325-.014944 3.417186 0 3.541719 0C3.576588 0 3.636364 0 3.636364-.094645C3.636364-.154421 3.58655-.154421 3.5467-.154421C3.212951-.159402 3.202989-.174346 3.118306-.373599C2.924035-.836862 2.590286-1.613948 2.475716-1.912827C2.814446-2.261519 3.337484-2.854296 3.496887-2.993773C3.641345-3.113325 3.830635-3.232877 4.129514-3.247821C4.194271-3.252802 4.239103-3.252802 4.239103-3.347447C4.239103-3.352428 4.239103-3.402242 4.174346-3.402242C4.024907-3.402242 3.860523-3.387298 3.706102-3.387298C3.521793-3.387298 3.332503-3.402242 3.153176-3.402242C3.123288-3.402242 3.058531-3.402242 3.058531-3.302615C3.058531-3.267746 3.083437-3.252802 3.118306-3.247821C3.163138-3.242839 3.317559-3.232877 3.317559-3.0934C3.317559-3.023661 3.262765-2.958904 3.222914-2.914072L2.41594-2.047323Z" />
+<path id="tikzcd-d755a5bc2d-7-g1-102" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 4.98132)" d="M1.828144-1.992528H2.256538C2.356164-1.992528 2.405978-1.992528 2.405978-2.092154C2.405978-2.146949 2.356164-2.146949 2.271482-2.146949H1.858032L1.96264-2.714819C1.982565-2.819427 2.052304-3.173101 2.082192-3.232877C2.127024-3.327522 2.211706-3.402242 2.316314-3.402242C2.336239-3.402242 2.465753-3.402242 2.560399-3.312578C2.34122-3.292653 2.291407-3.118306 2.291407-3.043587C2.291407-2.929016 2.381071-2.86924 2.475716-2.86924C2.60523-2.86924 2.749689-2.978829 2.749689-3.16812C2.749689-3.39726 2.520548-3.511831 2.316314-3.511831C2.146949-3.511831 1.833126-3.422167 1.683686-2.929016C1.653798-2.824408 1.638854-2.774595 1.519303-2.146949H1.175592C1.080946-2.146949 1.026152-2.146949 1.026152-2.052304C1.026152-1.992528 1.070984-1.992528 1.165629-1.992528H1.494396L1.120797-.024907C1.031133 .458281 .946451 .911582 .687422 .911582C.667497 .911582 .542964 .911582 .448319 .821918C.67746 .806974 .722291 .627646 .722291 .552927C.722291 .438356 .632628 .37858 .537983 .37858C.408468 .37858 .26401 .488169 .26401 .67746C.26401 .901619 .483188 1.021171 .687422 1.021171C.961395 1.021171 1.160648 .727273 1.250311 .537983C1.409714 .224159 1.524284-.37858 1.529265-.41345L1.828144-1.992528Z" />
+<use id="tikzcd-d755a5bc2d-7-g2-25" xlink:href="#tikzcd-d755a5bc2d-7-g1-25" transform="scale(1.414001)" />
+<use id="tikzcd-d755a5bc2d-7-g2-102" xlink:href="#tikzcd-d755a5bc2d-7-g1-102" transform="scale(1.414001)" />
+<path id="tikzcd-d755a5bc2d-7-g3-33" style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 7.043594)" d="M1.07767-1.472111L1.35237-4.68399C1.35237-4.916429 1.162193-5.043213 .97906-5.043213S.605749-4.916429 .605749-4.68399L.880449-1.479155C.887493-1.373501 .894536-1.317152 .97906-1.317152C1.049495-1.317152 1.070626-1.35237 1.07767-1.472111ZM1.35237-.37331C1.35237-.577575 1.183324-.746621 .97906-.746621S.605749-.577575 .605749-.37331S.774795 0 .97906 0S1.35237-.169046 1.35237-.37331Z" />
+<use id="tikzcd-d755a5bc2d-7-g4-65" xlink:href="#tikzcd-d755a5bc2d-7-g1-65" transform="scale(2)" />
+<use id="tikzcd-d755a5bc2d-7-g4-66" xlink:href="#tikzcd-d755a5bc2d-7-g1-66" transform="scale(2)" />
+<use id="tikzcd-d755a5bc2d-7-g4-80" xlink:href="#tikzcd-d755a5bc2d-7-g1-80" transform="scale(2)" />
+<use id="tikzcd-d755a5bc2d-7-g4-88" xlink:href="#tikzcd-d755a5bc2d-7-g1-88" transform="scale(2)" />
+</defs>
+<g id="tikzcd-d755a5bc2d-7-page1">
+<g stroke-miterlimit="10" transform="translate(.971181,-43.835875)scale(0.996264,-0.996264)">
+<g fill="#000" stroke="#000">
+<g stroke-width="0.4">
+<g transform="translate(-73.24483,-23.99304)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(.971181,-43.835875)scale(-1,-1)">
+<g stroke="#000" stroke-miterlimit="10" transform="translate(8.996628,-84.8349)scale(0.996264,-0.996264)">
+<g transform="translate(-3.75,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(8.996628,-84.8349)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="8.996628" y="-84.8349" xlink:href="#tikzcd-d755a5bc2d-7-g4-65" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke="#000" stroke-miterlimit="10" transform="translate(73.650067,-84.8349)scale(0.996264,-0.996264)">
+<g transform="translate(-3.90451,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(73.650067,-84.8349)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="73.650067" y="-84.8349" xlink:href="#tikzcd-d755a5bc2d-7-g4-80" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke="#000" stroke-miterlimit="10" transform="translate(138.595805,-84.8349)scale(0.996264,-0.996264)">
+<g transform="translate(-4.0434,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(138.595805,-84.8349)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="138.595805" y="-84.8349" xlink:href="#tikzcd-d755a5bc2d-7-g4-66" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke="#000" stroke-miterlimit="10" transform="translate(8.996628,-43.835875)scale(0.996264,-0.996264)" />
+<g stroke="#000" stroke-miterlimit="10" transform="translate(73.650067,-43.835875)scale(0.996264,-0.996264)">
+<g transform="translate(-4.53471,0.0)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(73.650067,-43.835875)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x="73.650067" y="-43.835875" xlink:href="#tikzcd-d755a5bc2d-7-g4-88" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke="#000" stroke-miterlimit="10" transform="translate(138.595805,-43.835875)scale(0.996264,-0.996264)" />
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M-8.70345 19.65973H-56.53378" fill="none" />
+<g transform="matrix(-1.0,0.0,0.0,-1.0,-56.73376,19.65973)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(-36.95863,23.07297)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(.971181,-43.835875)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x=".971181" y="-43.835875" xlink:href="#tikzcd-d755a5bc2d-7-g2-25" />
+<use x="4.986222" y="-42.779351" xlink:href="#tikzcd-d755a5bc2d-7-g1-65" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M8.11665 19.65973H55.94699" fill="none" />
+<g transform="translate(56.14697,19.65973)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(27.94505,23.07297)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(.971181,-43.835875)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x=".971181" y="-43.835875" xlink:href="#tikzcd-d755a5bc2d-7-g2-25" />
+<use x="4.986222" y="-42.779351" xlink:href="#tikzcd-d755a5bc2d-7-g1-66" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M-9.33365-15.76L-56.59601 14.21492" fill="none" />
+<g transform="matrix(-0.84444,0.53555,-0.53555,-0.84444,-56.76488,14.322)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(-43.19781,-7.92792)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(.971181,-43.835875)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x=".971181" y="-43.835875" xlink:href="#tikzcd-d755a5bc2d-7-g2-102" />
+<use x="4.419625" y="-42.779351" xlink:href="#tikzcd-d755a5bc2d-7-g1-65" />
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<g stroke-dasharray="2.79985,1.59991" stroke-dashoffset="0.0">
+<path d="M-.2934-13.3V12.90004" fill="none" />
+<g transform="matrix(0.0,1.0,-1.0,0.0,-0.2934,13.10002)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g fill="#fff">
+<g fill="#fff">
+<path d="M-7.50319-5.29498H6.9164V5.29499H-7.50319Z" stroke="none" />
+</g>
+<g transform="translate(-5.35042,-1.7675)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(.971181,-43.835875)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x=".971181" y="-43.835875" xlink:href="#tikzcd-d755a5bc2d-7-g0-57" />
+<use x="4.884301" y="-43.835875" xlink:href="#tikzcd-d755a5bc2d-7-g3-33" />
+<use x="6.840861" y="-43.835875" xlink:href="#tikzcd-d755a5bc2d-7-g2-102" />
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g stroke-width="0.39998">
+<path d="M8.74686-15.7862L56.00877 14.05124" fill="none" />
+<g transform="matrix(0.84557,0.53381,-0.53381,0.84557,56.17786,14.15799)">
+<g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d="M-2.07988 2.39986C-1.69989 .95992-.85313 .27998 0 0C-.85313-.27998-1.69989-.95992-2.07988-2.39986" fill="none" />
+ </g>
+ </g>
+ </g>
+</g>
+<g transform="translate(34.89966,-8.0232)">
+<g stroke="none" transform="scale(-1.00375,1.00375)translate(.971181,-43.835875)scale(-1,-1)">
+<g fill="#000">
+<g stroke="none">
+<use x=".971181" y="-43.835875" xlink:href="#tikzcd-d755a5bc2d-7-g2-102" />
+<use x="4.419625" y="-42.779351" xlink:href="#tikzcd-d755a5bc2d-7-g1-66" />
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</figure>
+
+<div class="post-structural-continuation" aria-hidden="true"></div>
+
+
+</section>
+<section class="doc-section doc-section--heading semantic-unit" data-doc="section" data-title="References" id="unit-references">
+<h2 id="references">References</h2>
+<ol class="reference">
+  <li>Aluffi, P. (2009). <em>Algebra: Chapter 0.</em> American Mathematical Society, Providence, RI. <a href="https://doi.org/10.1090/gsm/104">https://doi.org/10.1090/gsm/104</a></li>
+</ol>
+
+</section>
+
+  </div>
+
+
+  <hr class="post-body-divider">
+
+  
+</article>
+
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Yeonsol Kim. All rights reserved.</p>
+    </footer>
+  </main>
+
+  
+    <script src="/assets/js/edited-time.js?v=1790586644" defer></script>
+  
+  
+    <script src="/assets/js/narration-player.js?v=1790586644" defer></script>
+  
+</body>
+</html>

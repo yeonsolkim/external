@@ -2,13 +2,13 @@
 section: remark-2-2-6
 title: Remark 2.2.6
 kind: remark
-document: 2.2. Compact Sets
+document: 2.2 Compact Sets
 url: /2026/07/30/2.-Compact-Sets.html
 source: bcaf6622ac668101b3f595ced0a2e11c94ede39b40a941910416321da96f5829
-skeleton: 2
-prompt: lecture-v2
+skeleton: 4
+prompt: lecture-v3
 model: gpt-5.5
-generated: 2026-09-15
+generated: 2026-09-28
 body: 6833857de0519aaa749462d3f4c9a3cfa8ae8937987be2c48d219958aa116c7e
 words: 107
 ---

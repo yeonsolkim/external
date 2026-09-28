@@ -1,7 +1,10 @@
 /*
  * Narration without a player. Reads /audio/<page>.json (written by the narrator after the
  * site is built) and, only when it exists:
- *   – a click or tap on a statement's label ("Theorem 3.1.1.") plays that statement;
+ *   – a click or tap on a statement's label ("Theorem 3.1.1.") plays that statement and the
+ *     proof that follows it; a click on "Proof." plays only the proof;
+ *   – a click on a numbered heading ("3. Surjectivity and injectivity.") plays that whole
+ *     part, statements and proofs included;
  *   – a click on the post title plays the whole post from the start;
  *   – while playing, one click or tap anywhere stops.
  * While playing, everything except the section being read fades to grey, the page follows
@@ -20,25 +23,43 @@
 
   function norm(s) { return (s || '').replace(/\s+/g, ' ').trim(); }
 
-  /* The block (direct child of .post-body) where each section starts. */
+  /* The page is a tree of units (_docs/STRUCTURE.md). Its blocks — the grain at which the
+     text is greyed out while the audio plays — are the leaves: paragraphs, figures, lists,
+     and whole environments. So we descend into sectioning wrappers but not into an
+     environment, which is read as one section. */
+  function blockList(body) {
+    var blocks = [];
+    (function walk(container) {
+      Array.prototype.forEach.call(container.children, function (element) {
+        if (/^(SCRIPT|STYLE)$/.test(element.tagName)) return;
+        if (element.classList.contains('doc-section')) { walk(element); return; }
+        blocks.push(element);
+      });
+    })(body);
+    return blocks;
+  }
+
+  /* Which block each section starts at. */
   function locateStarts(sections, blocks) {
     var starts = {};
+    var known = new Set(blocks);
+    function block(el) {
+      while (el && !known.has(el)) el = el.parentElement;
+      return el;
+    }
     var body = document.querySelector('.post-body');
-    function block(el) { return el && (el.closest('.post-body > *') || null); }
     sections.forEach(function (s) {
-      var el = document.getElementById(s.id);          /* main.js anchors every labelled statement */
+      var el = document.getElementById(s.id);          /* the server gives every unit an id */
       if (!el && s.kind === 'introduction') {
         el = blocks.filter(function (b) { return b.tagName === 'P'; })[0];
       } else if (!el && s.kind === 'prose') {
-        var head = norm(s.title.split('…')[0]).slice(0, 40).toLowerCase();
+        var head = norm(s.title.split('\u2026')[0]).slice(0, 40).toLowerCase();
         if (head.length >= 12) {
           el = blocks.filter(function (b) {
             return b.tagName === 'P' && norm(b.textContent).slice(0, 40).toLowerCase().indexOf(head) === 0;
           })[0];
         }
       } else if (!el) {
-        /* A labelled paragraph main.js gave no id (e.g. "1. Trials and outcomes."): find it by
-           its lead <strong>, anywhere under a block, and make the label the anchor. */
         var label = norm(s.title.split(' (')[0]).toLowerCase();
         var leads = body ? body.querySelectorAll('p > strong:first-child, p > b:first-child') : [];
         el = Array.prototype.filter.call(leads, function (lead) {
@@ -64,14 +85,16 @@
     /* The page's own scripts wrap statements into <section>s after MathJax has run, so the
        block map is rebuilt whenever .post-body's children change. */
     function layout() {
-      if (!body || body.childElementCount === layoutCount) return false;
-      layoutCount = body.childElementCount;
+      var count = body ? body.querySelectorAll('*').length : 0;
+      if (!body || count === layoutCount) return false;
+      layoutCount = count;
       blocks.forEach(function (b) { b.classList.remove('nrp-dim'); });
-      blocks = Array.prototype.filter.call(body.children, function (el) { return !/^(SCRIPT|STYLE)$/.test(el.tagName); });
+      blocks = blockList(body);
       starts = locateStarts(sections, blocks);
       blockSection = blocks.map(function () { return -1; });
       var order = sections.map(function (s, i) { return { i: i, at: starts[s.id] }; })
-        .filter(function (x) { return x.at !== undefined; }).sort(function (a, b) { return a.at - b.at; });
+        .filter(function (x) { return x.at !== undefined && !sections[x.i].container; })
+        .sort(function (a, b) { return a.at - b.at; });
       order.forEach(function (x, k) {
         var end = k + 1 < order.length ? order[k + 1].at : blocks.length;
         for (var b = x.at; b < end; b++) blockSection[b] = x.i;
@@ -88,6 +111,7 @@
       });
       if (title) title.setAttribute('data-nrp', 'all');
     }
+
 
     layout();
     if (body && window.MutationObserver) {
@@ -108,9 +132,27 @@
     var current = -1;
     var userScrolledAt = 0;
 
+    /* How far a click on this unit plays: its own audio, everything nested inside it (the
+       manifest gives a parent the span of its children), and the proof that follows a
+       statement — which is a sibling, as it is in LaTeX, but is read with it. */
+    function rangeEnd(s) {
+      var end = s.start + (s.span || s.duration);
+      if (s.kind !== "proof") {
+        sections.forEach(function (other) {
+          if (other.proves === s.id) {
+            end = Math.max(end, other.start + (other.span || other.duration));
+          }
+        });
+      }
+      return end;
+    }
+
     function sectionAt(t) {
       var found = -1;
-      for (var i = 0; i < sections.length; i++) { if (sections[i].start <= t + 0.05) found = i; else break; }
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i].container) continue;          /* a container is its children */
+        if (sections[i].start <= t + 0.05) found = i; else break;
+      }
       return found;
     }
 
@@ -212,7 +254,7 @@
       var s = sections.filter(function (x) { return x.id === id; })[0];
       if (!s) return;
       e.preventDefault();
-      play(s.start, s.start + s.duration);
+      play(s.start, rangeEnd(s));
     });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') stop(); });
     window.addEventListener('wheel', function () { userScrolledAt = Date.now(); }, { passive: true });

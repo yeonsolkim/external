@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import re
 
-PROMPT_VERSION = "lecture-v2"
+PROMPT_VERSION = "lecture-v3"
 
 GLOSSARY_SYSTEM = """You are preparing the NOTATION GLOSSARY for a lecture that reads a mathematical text aloud, so that every symbol is spoken the same way throughout.
 
@@ -31,6 +31,7 @@ FIDELITY. The text is the author's. Keep the author's order, wording, variable n
 - announce environments as the author labels them: "Definition 2.2.1.", "Theorem 2.2.20, the Heine–Borel theorem.", "Proof.";
 - a minimal lead-in to a display equation the prose does not lead into ("we have", "that is", "namely");
 - [END PROOF] is spoken as "This completes the proof." and [END SUBPROOF] as "This proves the claim.";
+- a proof is read straight after the statement it proves, so open it with "Proof." and never restate the statement; a numbered part of the document opens with its number and heading as the author wrote them, e.g. "3. Surjectivity and injectivity.";
 - when a display equation carries a label (\\tag{$\\ast$}, \\tag{3}), name it once — "We refer to this inclusion as star." / "We call this equation 3." — and speak later references (\\ast), (\\ast\\ast), (3) as "star", "double star", "equation 3". A display equation is often the middle of a sentence that continues below it — finish that sentence first, then name the label, never in the middle. Example — source: "since A is compact in M, we have [MATH; display] A \\subseteq \\bigcup_{k=1}^{n} V_{i_k} \\tag{$\\ast$} [/MATH] for some finitely many indices i_1, \\dots, i_n \\in I." → script: "since A is compact in M, we have A contained in the union from k equals one to n of V sub i k, for some finitely many indices i one through i n in I. We refer to this inclusion as star.";
 - a numbered list is spoken with its numbers ("First, ... Second, ... Third, ..." or "Property one: ..."), because the text refers back to the items by number.
 
@@ -51,6 +52,9 @@ OUTPUT. Only the script: plain paragraphs separated by blank lines, roughly one 
 KIND_NOTES = {
     "introduction": "the opening paragraphs, before the first numbered statement",
     "numbered": "a numbered part of the note — announce it by its number and heading as written",
+    "subsection": "a numbered part of the document — announce it by its number and heading as written",
+    "subsubsection": "a numbered part of the document — announce it by its number and heading as written",
+    "section": "a titled section",
     "prose": "the author's transition between two results — read it as written, it is not a summary",
     "heading": "a titled section",
 }
@@ -63,14 +67,21 @@ def glossary_user(title: str, stream: str, macros: str) -> str:
     return head + "\n\n---\nSTREAM:\n" + stream
 
 
-def section_user(title: str, index: int, total: int, section, glossary: str, macros: str) -> str:
+def section_user(title: str, index: int, total: int, section, glossary: str, macros: str,
+                 path: str = "", proves: str = "") -> str:
     note = KIND_NOTES.get(section.kind)
     if note is None:
-        note = "a %s%s" % (section.kind, ", with its proof" if section.has_proof else "")
+        note = "a %s" % section.kind
+        if section.kind == "proof":
+            note = "the proof of %s, read immediately after it" % (proves or "the statement above")
+        elif section.has_proof:
+            note = "a %s; its proof follows as the next section, so do not read it here" % section.kind
     lines = [
         "DOCUMENT: %s" % title,
         "SECTION %d of %d: %s  (%s)" % (index, total, section.title, note),
     ]
+    if path:
+        lines.append("WHERE IT SITS: %s" % path)
     if macros:
         lines.append("MACROS (author-defined TeX; one that only changes size or position is silent): " + macros)
     lines.append("")

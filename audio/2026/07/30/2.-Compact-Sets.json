@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "We now consider how a collection of open sets can cover a set $A$ as a whole. Such a collection may contain infinitely many sets, and this raises a natural question. Can finitely many members of the collection already cover $A$? Compactness formalizes the sets for which the answer is always yes.",
   "published_at": "2026-07-30T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/be43726e70a4efee95aa279ba499ce52a7cc4d74c6bf3691c5d245d901d131fc.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/bf95f30683cd25b5e53a71b4f4971c93cb752def4dea49b54ed89eeaa32c4f1a.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.chapters.json",
-  "duration": 1258.713,
-  "bytes": 20142226,
+  "duration": 1279.607,
+  "bytes": 20476175,
   "voice": "cedar",
-  "page_key": "be43726e70a4efee95aa279ba499ce52a7cc4d74c6bf3691c5d245d901d131fc",
-  "skeleton_hash": "5541fc45b73e53a1fd02aabb59a5675b4e10fb61bfa4c27234a8678d620f8c34",
-  "generated": "2026-09-19",
+  "page_key": "bf95f30683cd25b5e53a71b4f4971c93cb752def4dea49b54ed89eeaa32c4f1a",
+  "skeleton_hash": "69c5ac0cd80e20430ede2343925b9cb59bf2bb525d07cba25acefb5c3ce5cfb5",
+  "generated": "2026-09-28",
   "podcast": true,
   "sections": [
     {
@@ -23,7 +23,9 @@
       "start": 0.0,
       "duration": 17.959,
       "source": "85acd2802d2805b87610fc35a6780ee4130d468ca4aaf7f2594116db86f4ff8e",
-      "audio": "7ed3d7a4d2f27a7a9fdcc7b5f6313c814be0bfee819b8d235c72773884052faf"
+      "audio": "7ed3d7a4d2f27a7a9fdcc7b5f6313c814be0bfee819b8d235c72773884052faf",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "definition-2-2-1",
@@ -31,309 +33,539 @@
       "kind": "definition",
       "level": 2,
       "start": 19.159,
-      "duration": 34.501,
-      "source": "cf967a30e888abd2661c50a65459fe524d719fbcb51fdcd0e8265af455ba6a32",
-      "audio": "d39185d4c0bcbfc44638b2041709dc3bb8423572291fef5def966d2f1e7a37e0"
+      "duration": 15.601,
+      "source": "e39e700515d9350a428a6cb2278ff9c070ba96ce0ae45030e4ad9b09866eb684",
+      "audio": "325b02e8c0345595783223322ceb04887578bae52ab5ff9dc56815a01e2dba29",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "prose-after-definition-2-2-1",
-      "title": "Since openness depends on the ambient space, it is natural…",
+      "title": "A cover of … whose elements are open sets is called an open…",
       "kind": "prose",
       "level": 2,
-      "start": 54.859,
-      "duration": 12.327,
-      "source": "28bb0039e3e311fb4821cda22ec71460073287227350f3402be8488a02234097",
-      "audio": "736706105d82e0bc2452b3f51cd41db0d6cb4d5756c16ed0b2ef51e25b2bf9d1"
+      "start": 35.959,
+      "duration": 30.95,
+      "source": "5ae6acf639848d10a4e7b59e2b990f525458e06d6fade261202705babd005ef4",
+      "audio": "0b6c13b822ec6d00e6d5c233fe576e4c2c0c7b5e3dfcccdf7e8f97fd85df8059",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "definition-2-2-2",
       "title": "Definition 2.2.2",
       "kind": "definition",
       "level": 2,
-      "start": 68.386,
+      "start": 68.109,
       "duration": 16.525,
       "source": "5f59a4f3c6cff4c4388c9d3663bf2de60f707ca35d7027fb6c465dc20ea7a678",
-      "audio": "6f14f2a788962afb17271996327a893c86feef74ed61452954cb2387d56a32d6"
+      "audio": "6f14f2a788962afb17271996327a893c86feef74ed61452954cb2387d56a32d6",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "theorem-2-2-3",
       "title": "Theorem 2.2.3",
       "kind": "theorem",
       "level": 2,
-      "start": 86.111,
-      "duration": 92.644,
-      "source": "61386823ca3342dc22411d348ce623ca80870c5ade0c45cfb9d5f71bb8e6a919",
-      "audio": "b32e2cf4da30144fd46199c1fd05487308f2902b9cdec661a446d34f74881a07"
+      "start": 85.834,
+      "duration": 13.799,
+      "source": "79ca7513023175ccbd5ab30b9cdeba967866b3348b6fde4665eacefb6585cf33",
+      "audio": "5c613d3436eb965450f3973dafc6be626e476304a3709f42f40f093003dea191",
+      "parent": null,
+      "proves": null
     },
     {
-      "id": "prose-after-theorem-2-2-3",
+      "id": "proof-theorem-2-2-3",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 100.833,
+      "duration": 79.72,
+      "source": "4d4ac74de769d14138128b8933f521947a3512dd52717d9e3e9e1cf99f82eccc",
+      "audio": "125c5a315708c531ac36a1e45fdfddaf5a2746b5637480388363a640424e4c2d",
+      "parent": null,
+      "proves": "theorem-2-2-3"
+    },
+    {
+      "id": "prose-after-proof-theorem-2-2-3",
       "title": "Thus compactness is intrinsic to the space …: it does not…",
       "kind": "prose",
       "level": 2,
-      "start": 179.955,
+      "start": 181.753,
       "duration": 13.124,
       "source": "6ac406d7fb54e11196f276c4b5452b73cca927ef2d8e5d1ac77f2a113d3e6518",
-      "audio": "29a13cc63f271f02449357969107a3f536ce2dd96ed3e98505c99e0dd66e6f38"
+      "audio": "29a13cc63f271f02449357969107a3f536ce2dd96ed3e98505c99e0dd66e6f38",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "definition-2-2-4",
       "title": "Definition 2.2.4",
       "kind": "definition",
       "level": 2,
-      "start": 194.278,
+      "start": 196.077,
       "duration": 21.654,
       "source": "607999a83c42d627c04b0f24fbd568494cb3c8420abdcbfd856354bab94461d9",
-      "audio": "551d38db99a7e33db594f53800dc61f92b3f5c014fb567958fe5da934e124a34"
+      "audio": "551d38db99a7e33db594f53800dc61f92b3f5c014fb567958fe5da934e124a34",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "prose-after-definition-2-2-4",
       "title": "We now look into some relationship between compactness and…",
       "kind": "prose",
       "level": 2,
-      "start": 217.133,
+      "start": 218.931,
       "duration": 4.627,
       "source": "abe418a16c3f940ba162d9d85fb30ebbf5e335906697a9747d556ccc27d02760",
-      "audio": "a6e538b44ead72a836945fa8db3db2586cd32b5a7364f8b2a1bcd025a3611c55"
+      "audio": "a6e538b44ead72a836945fa8db3db2586cd32b5a7364f8b2a1bcd025a3611c55",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "theorem-2-2-5",
       "title": "Theorem 2.2.5",
       "kind": "theorem",
       "level": 2,
-      "start": 222.96,
-      "duration": 87.538,
-      "source": "78401689a84c7c745f83254febbba73ea623f26133ec8d63aeba72212767fdb7",
-      "audio": "739246b513f6121eaacf922bba00dd2e35e1c7144f7a6c8adc0a6f225e93e66e"
+      "start": 224.758,
+      "duration": 10.298,
+      "source": "331ce3d4326b763a5c9ebd4ac1b4193047458cedc5abc5120c801ec1ff72af9e",
+      "audio": "2a34c98fd0771bc88702706d83b05c1d9ddb7bef790833784c0d57abee5da2a2",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-2-2-5",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 236.256,
+      "duration": 78.861,
+      "source": "1c136cf25984e14b52ad576f464de5d38f2952a57db07f003d0f6b8cea67aea9",
+      "audio": "83cb15699fd165a0ef49eeca5943b64c62f57ebd2844920940543b950215207b",
+      "parent": null,
+      "proves": "theorem-2-2-5"
     },
     {
       "id": "remark-2-2-6",
       "title": "Remark 2.2.6",
       "kind": "remark",
       "level": 2,
-      "start": 311.698,
+      "start": 316.317,
       "duration": 37.956,
       "source": "bcaf6622ac668101b3f595ced0a2e11c94ede39b40a941910416321da96f5829",
-      "audio": "368a76f1f07f92229bbd81c1cb745b086895d4e6b8b85c5b57359b6c7c64033d"
+      "audio": "368a76f1f07f92229bbd81c1cb745b086895d4e6b8b85c5b57359b6c7c64033d",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "theorem-2-2-7",
       "title": "Theorem 2.2.7",
       "kind": "theorem",
       "level": 2,
-      "start": 350.853,
-      "duration": 45.857,
-      "source": "65f6da868c6d8440e0422a8c77b0e67ee98a4ab90c6d60fadf1a04aa3b20fae3",
-      "audio": "0f8c933c8d434df2575f0f627bbbe73eea1de619fbaecf0feace9bd9b05d189d"
+      "start": 355.473,
+      "duration": 12.037,
+      "source": "6c2ca72b896d488fd5a87e75f28b09f9643c3749c313c05d7704bc715987618c",
+      "audio": "7c018c203cc79a71c3700373c1f754c359ddb48c27a663cdc1629d0b796de0d0",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-2-2-7",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 368.71,
+      "duration": 36.296,
+      "source": "0828a18f7b6e65134a2bbc7f2601eaa0aecb27c792dd82fa015db6e9dea3150e",
+      "audio": "05b69f281a47bdae1952efad42a40bb93f358e937ca7bc0e7b610ad2d72c2818",
+      "parent": null,
+      "proves": "theorem-2-2-7"
     },
     {
       "id": "corollary-2-2-8",
       "title": "Corollary 2.2.8",
       "kind": "corollary",
       "level": 2,
-      "start": 397.91,
-      "duration": 31.188,
-      "source": "86ded0da968c8c744595106544cb3ed2e085cecf1cb2cd49d270d8b948c6a41b",
-      "audio": "36a8c0063a2c2c9dd2cd30570bafbd9a616ae45d1d66717602a4d3d0938d9228"
+      "start": 406.206,
+      "duration": 12.718,
+      "source": "831f3f4519651202a9d8f1df26d7907e6beec465a3bce3366481c13c05735c39",
+      "audio": "71cc7f786f2bb834588509a3f54bb6e7a8060853c661949c82550794d2a1fef0",
+      "parent": null,
+      "proves": null
     },
     {
-      "id": "prose-after-corollary-2-2-8",
+      "id": "proof-corollary-2-2-8",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 420.124,
+      "duration": 17.937,
+      "source": "9ac1f4cf721cb237b3e6463ee247d8ca1ddb025e86a369be8239218f4ae95be3",
+      "audio": "a51583d627ad7737f8813b5e325bf726ae4332ddb16afdb825782818aaaa6ae0",
+      "parent": null,
+      "proves": "corollary-2-2-8"
+    },
+    {
+      "id": "prose-after-proof-corollary-2-2-8",
       "title": "The finite-subcover condition has a dual formulation in…",
       "kind": "prose",
       "level": 2,
-      "start": 430.298,
+      "start": 439.261,
       "duration": 10.746,
       "source": "5ae8e8624b9abe755f49b208bd1dcaacf1685b475281ebe2ad882e53143c4cf9",
-      "audio": "406cc7f3a9b87a1ce81c18952ef7cc323d67ba5fbfb33c0e0968305c6307fc76"
+      "audio": "406cc7f3a9b87a1ce81c18952ef7cc323d67ba5fbfb33c0e0968305c6307fc76",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "definition-2-2-9",
       "title": "Definition 2.2.9",
       "kind": "definition",
       "level": 2,
-      "start": 442.244,
+      "start": 451.206,
       "duration": 13.831,
       "source": "cfe5bb1b561db7bc87cdb024e59c500d77f71df01606ff2948403dfb6789f44d",
-      "audio": "87ed7e8cba548fafe7ac2bd16f7d247b8a9746787324afaec05be25d75032ead"
+      "audio": "87ed7e8cba548fafe7ac2bd16f7d247b8a9746787324afaec05be25d75032ead",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "theorem-2-2-10",
       "title": "Theorem 2.2.10",
       "kind": "theorem",
       "level": 2,
-      "start": 457.274,
-      "duration": 105.41,
-      "source": "850817edc58a75a31091b4b68a98b34d1094a66f69c9e764a565ea3cbf064d28",
-      "audio": "a5bd899a25f0f3df9e38b5d498017ba2ff634ab13c5a300fe5ff9504ffa8152b"
+      "start": 466.237,
+      "duration": 22.593,
+      "source": "9bc877285b4319cc01bb85bc201adf66de2a42cc0b3dd41b627c03331dee26b4",
+      "audio": "448c9348423a58cf583e8fcdc31acd042520a805b25db698869fc7558622c162",
+      "parent": null,
+      "proves": null
     },
     {
-      "id": "prose-after-theorem-2-2-10",
+      "id": "proof-theorem-2-2-10",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 490.03,
+      "duration": 85.897,
+      "source": "da639ed20f666f2293a106c20fc967ca65a401c5175e24f42713bceab0b79398",
+      "audio": "cb3691b34840fdaa7a05757a5cf4ef9f5c3088cc08808529c7300f60a9ac6339",
+      "parent": null,
+      "proves": "theorem-2-2-10"
+    },
+    {
+      "id": "prose-after-proof-theorem-2-2-10",
       "title": "The preceding theorem states that a collection of closed…",
       "kind": "prose",
       "level": 2,
-      "start": 563.885,
+      "start": 577.126,
       "duration": 18.131,
       "source": "2ec31a3fefdc27dc12b01fcdde1157bfbee027c9628e7b50fdbe86f4ede91a5e",
-      "audio": "882728c4f56467374165b5746add16cb9b9a6beadfc41ac592190953751d7f0f"
+      "audio": "882728c4f56467374165b5746add16cb9b9a6beadfc41ac592190953751d7f0f",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "theorem-2-2-11",
       "title": "Theorem 2.2.11",
       "kind": "theorem",
       "level": 2,
-      "start": 583.215,
-      "duration": 78.901,
-      "source": "3ffa9afa57a2374b47c7d611ac93eed8d13f5dd4287ecb235bbc41dea47f99c0",
-      "audio": "8c220c1ac03d9e06bbb41bcbb934673f67615a2374eee1e10a805c9e395c2ab2"
+      "start": 596.457,
+      "duration": 20.233,
+      "source": "46e2cf08b7b3e33605219739c025b7faa7ed44dea6bf3f95d8933fcff2b321fc",
+      "audio": "9b28d264964339b6c17cf41d3d9cd903a487bd303eb2e76608cbb5ebccf4b639",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-2-2-11",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 617.89,
+      "duration": 59.624,
+      "source": "b244aa4106308b97432015ded21731df34f414457e8c1dc76b4e03538882a1dc",
+      "audio": "583491dcfaadfe04776fcc52a2622e8bf60eb28e090c8bd638c26936d499abc9",
+      "parent": null,
+      "proves": "theorem-2-2-11"
     },
     {
       "id": "corollary-2-2-12",
       "title": "Corollary 2.2.12",
       "kind": "corollary",
       "level": 2,
-      "start": 663.316,
-      "duration": 70.394,
-      "source": "0570bc1832d73dbeaf1977ed0274159690d1fa905556d4942a9c84fe44895423",
-      "audio": "504ecc619340222e82aeaa9801d5407dc6bb686375c976287364999e79166d01"
+      "start": 678.713,
+      "duration": 21.045,
+      "source": "53c961b404d4dae6c989136422f18aebee630bbf856878b79fd92f32c4a7b432",
+      "audio": "e3c04a3bcdd5ae86ce1efe48ee34a3f908f6f38171f103a75566340c4535bcee",
+      "parent": null,
+      "proves": null
     },
     {
-      "id": "prose-after-corollary-2-2-12",
+      "id": "proof-corollary-2-2-12",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 700.959,
+      "duration": 46.693,
+      "source": "79901abc1283420d967c6998e3d7c38eaad6ce5003c4e45d1e217292c60c0cb0",
+      "audio": "645f915a6a008ac28028e83a58aa8279aeb36be6303634046fd5031cb418d088",
+      "parent": null,
+      "proves": "corollary-2-2-12"
+    },
+    {
+      "id": "prose-after-proof-corollary-2-2-12",
       "title": "This result assumes compactness from the outset.",
       "kind": "prose",
       "level": 2,
-      "start": 734.91,
+      "start": 748.852,
       "duration": 13.809,
       "source": "2ed9eb0d917aa7e0cfa0d8e2cd612e3d1a1cab4373e8ca40eb1ce2317ed524a8",
-      "audio": "4c15e727af51423615e3655dba7bef7380f4282d449b31e4b12b959f64f5b4d7"
+      "audio": "4c15e727af51423615e3655dba7bef7380f4282d449b31e4b12b959f64f5b4d7",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "theorem-2-2-13",
       "title": "Theorem 2.2.13 (Nested intervals theorem)",
       "kind": "theorem",
       "level": 2,
-      "start": 749.919,
-      "duration": 67.995,
-      "source": "50c3e1adfa367295e11c66411b385ab301ec6952e11e68752aafc9328cb9e785",
-      "audio": "21372ed7e2a102b66e80389cbf7abbf644cd30e4efdc39179654c53477481c64"
+      "start": 763.861,
+      "duration": 17.0,
+      "source": "1b6f99f571db131e2668d738f70f50d6e04dad06d72e79c25b51c52b4216eb4a",
+      "audio": "85ee91acdc53c96b88778f57b6f761581c2585fe0647d57a7e596b85f0f0247e",
+      "parent": null,
+      "proves": null
     },
     {
-      "id": "prose-after-theorem-2-2-13",
+      "id": "proof-theorem-2-2-13",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 782.061,
+      "duration": 38.192,
+      "source": "66111bb0ae79c70cd0ff482f1a1f26fac7b2daae348937ed90e2b63a1b60cfbf",
+      "audio": "d47be7e0b1f5441cf91ff47a471be4f1629a9e82102988e61f8d1c3a30382e31",
+      "parent": null,
+      "proves": "theorem-2-2-13"
+    },
+    {
+      "id": "prose-after-proof-theorem-2-2-13",
       "title": "We next extend this theorem to ….",
       "kind": "prose",
       "level": 2,
-      "start": 819.115,
+      "start": 821.454,
       "duration": 7.601,
       "source": "871f3f71f74b8598305204e8c0128e24d9c9cd02ead94a5213be4044d5ceda6e",
-      "audio": "c049297fc04510287914565a8fdb081fa73dc5afd9c69442ef31377fca65aac9"
+      "audio": "c049297fc04510287914565a8fdb081fa73dc5afd9c69442ef31377fca65aac9",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "definition-2-2-14",
       "title": "Definition 2.2.14",
       "kind": "definition",
       "level": 2,
-      "start": 827.916,
+      "start": 830.255,
       "duration": 24.595,
       "source": "c3ceccbba43e0271c44996636b8eda9d976e98fca8cdb7c20c8eb2b6de3f2d58",
-      "audio": "3a2650bd246341ac370892987d6d8210ba2f9d8b90ac24efa444d4451f10ed89"
+      "audio": "3a2650bd246341ac370892987d6d8210ba2f9d8b90ac24efa444d4451f10ed89",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "theorem-2-2-15",
       "title": "Theorem 2.2.15",
       "kind": "theorem",
       "level": 2,
-      "start": 853.71,
-      "duration": 49.043,
-      "source": "56894abcd3be838a0459022fa6ac94a94f2ac257422f03365d572eab61426efe",
-      "audio": "49acff3ab981fb8ac673f39605fe7e0a3d89d621d828443739080b25f7c14900"
+      "start": 856.049,
+      "duration": 18.327,
+      "source": "b03262d335325aab394149dd26e47a020a11c2294f9f3db44c6837bd1afafb4f",
+      "audio": "f9c62a6beb2b50227c95c4c957d696a0b9364f71ce3b8adbd0b837b9c8670afa",
+      "parent": null,
+      "proves": null
     },
     {
-      "id": "prose-after-theorem-2-2-15",
+      "id": "proof-theorem-2-2-15",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 875.576,
+      "duration": 35.651,
+      "source": "1b7779110c4f9fccbdc98072ac52f8dcae4bb25043eb7d429986223912220edc",
+      "audio": "325ffbfc01f2c1a031b145a3177bbf20459e5dc7c93c0b7a9556cd2b635a6c88",
+      "parent": null,
+      "proves": "theorem-2-2-15"
+    },
+    {
+      "id": "prose-after-proof-theorem-2-2-15",
       "title": "We now prove a fundamental theorem of compactness in…",
       "kind": "prose",
       "level": 2,
-      "start": 903.953,
+      "start": 912.428,
       "duration": 12.669,
       "source": "69d99f9abbe7a08b820a14a8ee27526ff34738691ff0bef654290fc27140ad2e",
-      "audio": "d589b2676007b6dd59ce8ab7679efa563935ba08136d46fd4eaef511c61d3a72"
+      "audio": "d589b2676007b6dd59ce8ab7679efa563935ba08136d46fd4eaef511c61d3a72",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "theorem-2-2-16",
       "title": "Theorem 2.2.16",
       "kind": "theorem",
       "level": 2,
-      "start": 917.822,
-      "duration": 124.502,
-      "source": "76292fb51d060bc71e1f470b1c20e476e2b591df8b292e5211acadb957d24d96",
-      "audio": "cfdb35b9016c345b03446c8f0af1e76bf409537a4bdfedd55cb31b17fb055592"
+      "start": 926.297,
+      "duration": 6.014,
+      "source": "dc185866dc06e9b1b91adbe8f9c13f1885e968472ede687060222d8a50dbfe3d",
+      "audio": "a208ed726769c3bda78b8f9d3d305af1e9d3feea8548e906f07fb68fcfd02374",
+      "parent": null,
+      "proves": null
     },
     {
-      "id": "prose-after-theorem-2-2-16",
+      "id": "proof-theorem-2-2-16",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 933.51,
+      "duration": 129.538,
+      "source": "20d7b27582f1b5407c7e96432636bc8b24c444592f2f5bf27dce11583a78445c",
+      "audio": "08c2ca154cddd774cfb50a90830e6ca25010ca88928af53e92e67ad57a13e9df",
+      "parent": null,
+      "proves": "theorem-2-2-16"
+    },
+    {
+      "id": "prose-after-proof-theorem-2-2-16",
       "title": "We next examine the relation between having a limit point…",
       "kind": "prose",
       "level": 2,
-      "start": 1043.524,
+      "start": 1064.248,
       "duration": 14.446,
       "source": "f5931129f9c25feb7422647c86ed5d25bde260d4b7ab7b2c8c9d4aa5b3de749e",
-      "audio": "023cfa752f069906cbf063a94fa2c7d4a2f086db9710c4516109695f73ef8032"
+      "audio": "023cfa752f069906cbf063a94fa2c7d4a2f086db9710c4516109695f73ef8032",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "theorem-2-2-17",
       "title": "Theorem 2.2.17",
       "kind": "theorem",
       "level": 2,
-      "start": 1059.17,
-      "duration": 46.656,
-      "source": "71c45a3b59e2aa7b7c1a311a25af061ef7ebe7c5381f3b8a3e6efc81b0258fa5",
-      "audio": "69cce6cdaae498aabc7a39edc33936bf49f1e785c0b263ab50cb164514b6488a"
+      "start": 1079.894,
+      "duration": 8.28,
+      "source": "ddb870b94b4bcc68373f89455211aa96aafd0886d5f95320776a5923a78065a5",
+      "audio": "d724b673f26964e7830349369b55e479564217844004d10aec7508a79a12e221",
+      "parent": null,
+      "proves": null
     },
     {
-      "id": "prose-after-theorem-2-2-17",
+      "id": "proof-theorem-2-2-17",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 1089.374,
+      "duration": 38.474,
+      "source": "db33561e410cc09c2ab8a172a2db241948fc20aa1ee0718a72c5e1a539658fc0",
+      "audio": "31421e50e7c41a0d2d25626ea6cae5136a911ecc69a54dbd0ee332617b8987eb",
+      "parent": null,
+      "proves": "theorem-2-2-17"
+    },
+    {
+      "id": "prose-after-proof-theorem-2-2-17",
       "title": "The theorem states that every infinite subset of a compact…",
       "kind": "prose",
       "level": 2,
-      "start": 1107.026,
+      "start": 1129.048,
       "duration": 18.553,
       "source": "8f2d8b4a95cbb42d95abd434cebf80e5a5df5bb1142899c4b180d6d190705fa1",
-      "audio": "76ff029abc90aac6a4840739a056b4d9426125f43a7f0416fe38f977c3689484"
+      "audio": "76ff029abc90aac6a4840739a056b4d9426125f43a7f0416fe38f977c3689484",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "corollary-2-2-18",
       "title": "Corollary 2.2.18 (Bolzano–Weierstrass theorem)",
       "kind": "corollary",
       "level": 2,
-      "start": 1126.779,
-      "duration": 28.628,
-      "source": "afc311038513e18432a607526cf6d4f907aaa5c55edf0683a7ad9982ba741cc9",
-      "audio": "64656423106d27433a006934c89daaa90cb5b34ca2340817e312eff89072fed7"
+      "start": 1148.801,
+      "duration": 9.913,
+      "source": "f3bae1a0e34298d3bea568beaabbc1ee9aef98a24c89cc746d2ab918efb012a8",
+      "audio": "4ec3ee05df9f8b1c77a10e82fdebc6950f393a9a46d2fa3cd8c34f6c56d696aa",
+      "parent": null,
+      "proves": null
     },
     {
-      "id": "prose-after-corollary-2-2-18",
+      "id": "proof-corollary-2-2-18",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 1159.914,
+      "duration": 18.096,
+      "source": "9ae4040b22d3e493b8e2b918e49f9ef04f28db0b37e92d97d732053eda7776b4",
+      "audio": "039fab24a7b41a4ca7f9ee790df3b885e3e8bb99fcfaf65ee4a5859e042e52ff",
+      "parent": null,
+      "proves": "corollary-2-2-18"
+    },
+    {
+      "id": "prose-after-proof-corollary-2-2-18",
       "title": "In Euclidean space, the somewhat abstract notion of…",
       "kind": "prose",
       "level": 2,
-      "start": 1156.607,
+      "start": 1179.21,
       "duration": 8.216,
       "source": "058b255c48a334c6cf80bca869e1465a859ce228e6da16d7e92b8371db0af540",
-      "audio": "045b90e796a7e0b62c1792f3f4db20863c168648f0793a4f86eec120c8dc3a62"
+      "audio": "045b90e796a7e0b62c1792f3f4db20863c168648f0793a4f86eec120c8dc3a62",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "definition-2-2-19",
       "title": "Definition 2.2.19",
       "kind": "definition",
       "level": 2,
-      "start": 1166.024,
-      "duration": 17.012,
-      "source": "cbeac45dd307d34efd4b92b47b4808293ecf8f9461ce4be1bccb874c70be6532",
-      "audio": "760aeaee559da3535fd55959d2f4f50f770265696473db6e8adfd032c5db111e"
+      "start": 1188.627,
+      "duration": 14.585,
+      "source": "759f6fb0f5afd07628bbb0e095ca579408952d0ed28743f31b009ed83f571bfc",
+      "audio": "49936cd5c6f6906b1d12a02bde1544ec1f9ff25e7a8fab6001d9a1cac89a5b0d",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "prose-after-definition-2-2-19",
+      "title": "for all ….",
+      "kind": "prose",
+      "level": 2,
+      "start": 1204.412,
+      "duration": 2.76,
+      "source": "34cf0370c7f1709ab3b6ecd2dc919d550ef00ff21d08642c823083f7e9496be0",
+      "audio": "4f88eb104cc168388f46d4ce6fde2c6a80ad3cb4e1b0abb00b6afff43b580e18",
+      "parent": null,
+      "proves": null
     },
     {
       "id": "theorem-2-2-20",
       "title": "Theorem 2.2.20 (Heine–Borel theorem)",
       "kind": "theorem",
       "level": 2,
-      "start": 1184.236,
-      "duration": 74.478,
-      "source": "7d953aea26ba85785d0e702d9deae09c4d72edeafe3cb5ac108e0b35719009d9",
-      "audio": "b54cf76759d161036ce95abb901f35cfe57a4a527b944de7e7c8984456611b30"
+      "start": 1208.372,
+      "duration": 11.743,
+      "source": "c967a284eda746f6e7e52f5795f142a28cfb5b321a65ced0438cf6f204689162",
+      "audio": "c9fa1afb30734269fa0a68ee39c3db96c5c12b8404b00f49f5f735f91041f94f",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-2-2-20",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 1221.315,
+      "duration": 58.291,
+      "source": "86b3ca19b11323c04ac44f701d266c69edb0111073af5e7a918402292c4e0495",
+      "audio": "afcf6c7bfad66920b7f7db017fcf41fa44010174007083b3ffd51d8de15b90bc",
+      "parent": null,
+      "proves": "theorem-2-2-20"
     }
   ],
   "chapters": [
@@ -347,121 +579,121 @@
       "id": "definition-2-2-1",
       "title": "Definition 2.2.1",
       "start": 19.159,
-      "end": 68.386
+      "end": 68.109
     },
     {
       "id": "definition-2-2-2",
       "title": "Definition 2.2.2",
-      "start": 68.386,
-      "end": 86.111
+      "start": 68.109,
+      "end": 85.834
     },
     {
       "id": "theorem-2-2-3",
       "title": "Theorem 2.2.3",
-      "start": 86.111,
-      "end": 194.278
+      "start": 85.834,
+      "end": 196.077
     },
     {
       "id": "definition-2-2-4",
       "title": "Definition 2.2.4",
-      "start": 194.278,
-      "end": 222.96
+      "start": 196.077,
+      "end": 224.758
     },
     {
       "id": "theorem-2-2-5",
       "title": "Theorem 2.2.5",
-      "start": 222.96,
-      "end": 311.698
+      "start": 224.758,
+      "end": 316.317
     },
     {
       "id": "remark-2-2-6",
       "title": "Remark 2.2.6",
-      "start": 311.698,
-      "end": 350.853
+      "start": 316.317,
+      "end": 355.473
     },
     {
       "id": "theorem-2-2-7",
       "title": "Theorem 2.2.7",
-      "start": 350.853,
-      "end": 397.91
+      "start": 355.473,
+      "end": 406.206
     },
     {
       "id": "corollary-2-2-8",
       "title": "Corollary 2.2.8",
-      "start": 397.91,
-      "end": 442.244
+      "start": 406.206,
+      "end": 451.206
     },
     {
       "id": "definition-2-2-9",
       "title": "Definition 2.2.9",
-      "start": 442.244,
-      "end": 457.274
+      "start": 451.206,
+      "end": 466.237
     },
     {
       "id": "theorem-2-2-10",
       "title": "Theorem 2.2.10",
-      "start": 457.274,
-      "end": 583.215
+      "start": 466.237,
+      "end": 596.457
     },
     {
       "id": "theorem-2-2-11",
       "title": "Theorem 2.2.11",
-      "start": 583.215,
-      "end": 663.316
+      "start": 596.457,
+      "end": 678.713
     },
     {
       "id": "corollary-2-2-12",
       "title": "Corollary 2.2.12",
-      "start": 663.316,
-      "end": 749.919
+      "start": 678.713,
+      "end": 763.861
     },
     {
       "id": "theorem-2-2-13",
       "title": "Theorem 2.2.13 (Nested intervals theorem)",
-      "start": 749.919,
-      "end": 827.916
+      "start": 763.861,
+      "end": 830.255
     },
     {
       "id": "definition-2-2-14",
       "title": "Definition 2.2.14",
-      "start": 827.916,
-      "end": 853.71
+      "start": 830.255,
+      "end": 856.049
     },
     {
       "id": "theorem-2-2-15",
       "title": "Theorem 2.2.15",
-      "start": 853.71,
-      "end": 917.822
+      "start": 856.049,
+      "end": 926.297
     },
     {
       "id": "theorem-2-2-16",
       "title": "Theorem 2.2.16",
-      "start": 917.822,
-      "end": 1059.17
+      "start": 926.297,
+      "end": 1079.894
     },
     {
       "id": "theorem-2-2-17",
       "title": "Theorem 2.2.17",
-      "start": 1059.17,
-      "end": 1126.779
+      "start": 1079.894,
+      "end": 1148.801
     },
     {
       "id": "corollary-2-2-18",
       "title": "Corollary 2.2.18 (Bolzano–Weierstrass theorem)",
-      "start": 1126.779,
-      "end": 1166.024
+      "start": 1148.801,
+      "end": 1188.627
     },
     {
       "id": "definition-2-2-19",
       "title": "Definition 2.2.19",
-      "start": 1166.024,
-      "end": 1184.236
+      "start": 1188.627,
+      "end": 1208.372
     },
     {
       "id": "theorem-2-2-20",
       "title": "Theorem 2.2.20 (Heine–Borel theorem)",
-      "start": 1184.236,
-      "end": 1258.713
+      "start": 1208.372,
+      "end": 1279.607
     }
   ]
 }
