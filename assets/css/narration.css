@@ -12,15 +12,16 @@
 }
 
 /* Reading focus: while playing, everything but the section being read fades — labels,
-   links and equations included (post.css colours those explicitly). */
-.nrp-reading .post-body > .nrp-dim,
-.nrp-reading .post-body > .nrp-dim * { color: #a8a8ad !important; }
+   links and equations included (post.css colours those explicitly). The faded blocks can
+   sit inside .doc-section wrappers (_docs/STRUCTURE.md), so no child combinator here. */
+.nrp-reading .post-body .nrp-dim,
+.nrp-reading .post-body .nrp-dim * { color: #a8a8ad !important; }
 .nrp-reading .post-body [data-nrp]:hover,
 .nrp-reading .post-title[data-nrp]:hover { text-decoration: none; }
 
 @media (prefers-color-scheme: dark) {
-  .nrp-reading .post-body > .nrp-dim,
-  .nrp-reading .post-body > .nrp-dim * { color: #6e6e73 !important; }
+  .nrp-reading .post-body .nrp-dim,
+  .nrp-reading .post-body .nrp-dim * { color: #6e6e73 !important; }
 }
 @media (prefers-reduced-motion: reduce) {
   .post-body > *, .post-body > * * { transition: none; }
