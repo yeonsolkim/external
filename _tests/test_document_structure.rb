@@ -109,6 +109,20 @@ check("a figure bridges to the paragraph after it") do
   bridged.index("Still the definition.") < bridged.index("</section>")
 end
 
+# kramdown writes a `$$…$$` block as bare `\[…\]` text between the paragraphs, not an element.
+displayed = build(%(<p><strong>Definition 1.</strong> Bounded if</p>\n\n\\[d(x,y) &lt; R\\]\n\n<p>for all x, y.</p><p>Ordinary prose.</p>))
+check("a display equation bridges to the paragraph after it") do
+  displayed.index("for all x, y.") < displayed.index("</section>")
+end
+check("the bridge reaches only that one paragraph") do
+  displayed.index("Ordinary prose.") > displayed.index("</section>")
+end
+
+broken = build(%(<p><strong>Definition 1.</strong> Text</p>\n\n\\[x\\]\n\n<div class="post-explicit-entry-break"></div><p>Prose.</p>))
+check("three blank lines after a display equation still end the statement") do
+  broken.index("<p>Prose.</p>") > broken.index("</section>")
+end
+
 named = build(%(<p><strong>Theorem 2.2.20</strong> (Heine–Borel theorem). Statement.</p>))
 check("a parenthesised name is captured") { named.include?('data-name="Heine–Borel theorem"') }
 

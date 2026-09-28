@@ -192,6 +192,13 @@ module ExternalDocumentStructure
     block[:type] == :element && block[:classes].include?("post-structural-continuation")
   end
 
+  # kramdown's MathJax engine writes a `$$…$$` block as bare `\[…\]` text between the
+  # paragraphs, not as an element — main.js only ever met it as <mjx-container>, after
+  # MathJax had run. So a display equation has to be recognised in text.
+  def display_math?(block)
+    block[:type] == :text && block[:raw].strip.match?(/\A\\\[.*\\\]\z/m)
+  end
+
   def blank?(block)
     block[:type] != :element ? block[:raw].strip.empty? : false
   end
@@ -360,7 +367,9 @@ module ExternalDocumentStructure
         close_units.call
       end
 
-      bridge = if block[:type] != :element || continuation_marker?(block)
+      bridge = if display_math?(block)
+                 true
+               elsif block[:type] != :element || continuation_marker?(block)
                  bridge
                else
                  block[:tag] != "p"

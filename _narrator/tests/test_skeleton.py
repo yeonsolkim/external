@@ -187,8 +187,8 @@ class StructuredTree(unittest.TestCase):
             return build(handle.read(), path)
 
     def test_golden(self):
-        self.assertEqual(self.compact.hash, "69c5ac0cd80e20430ede2343925b9cb59bf2bb525d07cba25acefb5c3ce5cfb5")
-        self.assertEqual((len(self.compact.sections), self.compact.math, self.compact.words), (47, 351, 3723))
+        self.assertEqual(self.compact.hash, "43f71da7a34e8c472cca91a3d09c96a12a82e06b3b5932a0338d2a1235df18dc")
+        self.assertEqual((len(self.compact.sections), self.compact.math, self.compact.words), (46, 351, 3723))
         self.assertEqual(self.categorical.hash, "80e509c69d7c2fcc188b19c6311cb6f6f28e5d94eefe8ad148cf4af27c45340e")
 
     def test_statement_and_proof_are_separate_and_linked(self):
@@ -203,6 +203,14 @@ class StructuredTree(unittest.TestCase):
         ids = [s.id for s in self.compact.sections]
         self.assertLess(ids.index("theorem-2-2-3"), ids.index("proof-theorem-2-2-3"))
         self.assertLess(ids.index("proof-theorem-2-2-3"), ids.index("prose-after-proof-theorem-2-2-3"))
+
+    def test_a_display_equation_does_not_end_the_statement(self):
+        # the paragraph after a display equation finishes the statement, as on the legacy page
+        named = {s.id: s for s in self.compact.sections}
+        self.assertIn("is called a finite subcover", named["definition-2-2-1"].text)
+        self.assertTrue(named["prose-after-definition-2-2-1"].text.startswith("Since openness depends"))
+        self.assertTrue(named["definition-2-2-19"].text.endswith("[MATH 6; TeX] x,y\\in A [/MATH]."))
+        self.assertNotIn("prose-after-definition-2-2-19", named)
 
     def test_nesting(self):
         named = {s.id: s for s in self.categorical.sections}

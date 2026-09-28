@@ -53,10 +53,13 @@ prose therefore always match what is printed.
   `h2`–`h6`, or at the end of the post. Environments, prose, figures and lists in between
   belong to it.
 - An **environment** ends at the QED marker when it has one (`data-environment-end`, from
-  `$\square$` / `$\blacksquare$` / `\tag*{\(\square\)}`), otherwise at the next opener or
-  at a paragraph that is not a continuation. Continuations are the existing blank-line
-  markers `post-structural-continuation` (two blank lines) and `post-explicit-entry-break`
-  (three or more), emitted by `_plugins/post_entry_breaks.rb`.
+  `$\square$` / `$\blacksquare$` / `\tag*{\(\square\)}`), otherwise at the next opener, at
+  a `post-explicit-entry-break` (three or more blank lines, from
+  `_plugins/post_entry_breaks.rb`), or at a paragraph that is not a continuation. A
+  paragraph continues the statement when a display equation, figure or list comes right
+  before it, so `… such that $$…$$ for all $x$.` stays one statement; a
+  `post-structural-continuation` (two blank lines) in between changes nothing. kramdown
+  writes a display equation as bare `\[…\]` text, not as an element.
 - A **proof** ends at its QED marker, else like an environment.
 
 ## 4. Identifiers — stable, and never renamed silently
