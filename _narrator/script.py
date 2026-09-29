@@ -33,7 +33,7 @@ import re
 from concurrent.futures import ThreadPoolExecutor
 from typing import Optional
 
-from . import llm
+from . import lint, llm
 from .prompts import (PROMPT_VERSION, GLOSSARY_SYSTEM, LECTURE_SYSTEM, glossary_user,
                       section_user, macros_from_mathjax_config)
 from .skeleton import SKELETON_VERSION, Skeleton, Section, glossary_source
@@ -217,7 +217,17 @@ def run(skel: Skeleton, out_dir: str, model: str = DEFAULT_MODEL, force: bool = 
                             path=path_of(section.id),
                             proves=titles.get(section.proves or "", ""))
         script = llm.chat(LECTURE_SYSTEM, user, model=model, max_tokens=8000, reasoning=reasoning)
-        return section, script
+        found = lint.problems(script)
+        if found:
+            # One more try, told what slipped; the better of the two drafts is kept.
+            retry = llm.chat(LECTURE_SYSTEM, user + "\n\n---\nYOUR PREVIOUS DRAFT of this section "
+                             "had these problems: " + "; ".join(found) + ". Write the section "
+                             "again: no typographical mark or TeX is spoken (principle 1), and "
+                             "no paragraph ends inside a sentence.",
+                             model=model, max_tokens=8000, reasoning=reasoning)
+            if len(lint.problems(retry)) < len(found):
+                script = retry
+        return section, script, lint.problems(script)
 
     def draft_is_current(section: Section) -> bool:
         meta, body = read_md(os.path.join(out_dir, section.id + ".new.md"))
@@ -234,7 +244,9 @@ def run(skel: Skeleton, out_dir: str, model: str = DEFAULT_MODEL, force: bool = 
     if targets:
         log("generating %d section(s) with %s, %d at a time" % (len(targets), model, workers))
     with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
-        for section, script in pool.map(generate, targets):
+        for section, script, found in pool.map(generate, targets):
+            for problem in found:
+                log("  LINT      %-40s %s" % (section.id, problem))
             meta = {
                 "section": section.id, "title": section.title, "kind": section.kind,
                 "document": skel.title, "url": skel.url,

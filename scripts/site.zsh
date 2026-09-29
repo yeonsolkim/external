@@ -228,6 +228,15 @@ preview() {
     step "narration check"; narration=$(narration_report); step_done "${narration:-nothing to do}"
   fi
 
+  # Scripts that speak typography or keep TeX (_narrator/lint.py); hand edits included.
+  step "script lint"
+  local slips
+  slips=$(python3 -m _narrator lint _narration 2>>"$log")
+  print -r -- "$slips" >>"$log"
+  local -a slip_lines=("${(@f)slips}")
+  [[ -n "$slips" ]] && notes+=("${#slip_lines} script slip(s) — see site.log")
+  step_done "${slips:+${#slip_lines} slip(s)}"
+
   step "start server"
   start_server || fail "the server did not start — see $server_log"
   step_done

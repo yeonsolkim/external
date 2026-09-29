@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import re
 
-PROMPT_VERSION = "lecture-v3"
+PROMPT_VERSION = "lecture-v4"
 
 GLOSSARY_SYSTEM = """You are preparing the NOTATION GLOSSARY for a lecture that reads a mathematical text aloud, so that every symbol is spoken the same way throughout.
 
@@ -35,19 +35,29 @@ FIDELITY. The text is the author's. Keep the author's order, wording, variable n
 - when a display equation carries a label (\\tag{$\\ast$}, \\tag{3}), name it once — "We refer to this inclusion as star." / "We call this equation 3." — and speak later references (\\ast), (\\ast\\ast), (3) as "star", "double star", "equation 3". A display equation is often the middle of a sentence that continues below it — finish that sentence first, then name the label, never in the middle. Example — source: "since A is compact in M, we have [MATH; display] A \\subseteq \\bigcup_{k=1}^{n} V_{i_k} \\tag{$\\ast$} [/MATH] for some finitely many indices i_1, \\dots, i_n \\in I." → script: "since A is compact in M, we have A contained in the union from k equals one to n of V sub i k, for some finitely many indices i one through i n in I. We refer to this inclusion as star.";
 - a numbered list is spoken with its numbers ("First, ... Second, ... Third, ..." or "Property one: ..."), because the text refers back to the items by number.
 
-SPOKEN MATHEMATICS. Every equation is read in full, in words, exactly as a lecturer says it at the board — and a lecturer never says "open parenthesis", "close parenthesis", "backslash", or a command name. Parentheses and braces are silent; grouping is carried by phrasing and pauses ("the quantity a i plus b i, over two"). Styling is inaudible.
+SPOKEN MATHEMATICS. Every equation is read in full, in words, as a careful lecturer says it at the board. Two principles decide every reading. The conventions after them are how this lecture applies the principles; anything they do not cover is decided by the principles, not by the look of the symbols.
+
+1. THE LISTENER CANNOT SEE THE PAGE. Say what the notation means, never what it looks like. No typographical mark is ever spoken — not parentheses, brackets, braces, bars, dots, commas, or slashes, and never a command name: "open parenthesis", "dot dot dot", "ellipsis", "backslash", "caret" never occur. An ellipsis is spoken as the pattern it continues: n(n-1)\\cdots 2\\cdot 1 is "n times the quantity n minus one, and so on, down to two times one"; a_1+a_2+\\cdots+a_n is "a one plus a two, and so on, up to a n"; x_1,\\dots,x_k is "x one through x k". Styling is inaudible.
+
+2. EVERY SPOKEN FORMULA HAS EXACTLY ONE READING. A listener hears the words in order and cannot see where a group opens or closes. For every formula, ask: could these words be heard as a different formula? If so, make the grouping audible — "the quantity", "all over", "the factorial of", a pause (a comma) where a group ends, or a clause that names the whole ("the union, over i from 1 to n, of the ball of radius r i about y i"). A listener must be able to tell what is inside a product, a fraction, a power, a root, a union, or a function argument. For example:
+- n(n-1) is "n times the quantity n minus one" — never "n times n minus one", which is heard as n squared minus one;
+- \\frac{n(n-1)}{2} is "n times the quantity n minus one, all over two";
+- \\frac{n!}{(n-r)!} is "n factorial, over the factorial of n minus r";
+- \\frac{\\sqrt 2}{n-1} is "the square root of two, over n minus one", but \\sqrt{2/(n-1)} is "the square root of the quantity two over n minus one";
+- x^{n+1} is "x to the power n plus one", but x^n+1 is "x to the n, plus one";
+- f(x+y) is "f of the quantity x plus y", but f(x)+y is "f of x, plus y".
+Fence only where a misreading is possible: a plus b stays "a plus b", and "the quantity" around a single symbol is noise.
 The NOTATION GLOSSARY fixes what a symbol IS CALLED so that readings stay consistent across the lecture. Each entry is `symbol — spoken name (note)`: speak the NAME; the note only tells you when to add a role word. Add it where the sentence would otherwise be ambiguous, and never where the sentence already carries the role: "the collection U equals the family of balls" — not "the collection the cover U equals"; "let V be U together with the complement of F" — not "let the cover V equal the cover U union"; "for every x and y in I" — not "for every the point x and the point y in I".
-Conventions: x^2 "x squared"; x^n "x to the n"; x_i "x i" — say "sub" only for nested or ambiguous subscripts (V_{i_k} "V sub i k"); \\frac{a}{b} "a over b"; \\sqrt{d} "the square root of d"; \\sum_{i=1}^{n} "the sum from i equals 1 to n of"; \\bigcup_{i \\in I} U_i "the union over i in I of U i"; \\bigcap "the intersection"; \\subseteq "is contained in"; \\in "belongs to" or "in"; \\lbrace U_i \\rbrace_{i \\in I} "the family U i, for i in I"; \\varnothing "the empty set"; \\|x\\| "the norm of x"; |x| "the absolute value of x"; B_r(x) "the open ball of radius r about x"; [a,b] "the closed interval from a to b"; \\le "is less than or equal to", in a chain "which is at most"; \\ne "is not equal to"; \\dots "and so on up to"; \\mathbb R^k "R k".
+Conventions: x^2 "x squared"; x^n "x to the n"; x_i "x i" — say "sub" only for nested or ambiguous subscripts (V_{i_k} "V sub i k"); \\frac{a}{b} "a over b"; \\sqrt{d} "the square root of d"; \\sum_{i=1}^{n} "the sum from i equals 1 to n of"; \\bigcup_{i \\in I} U_i "the union over i in I of U i"; \\bigcap "the intersection"; \\subseteq "is contained in"; \\in "belongs to" or "in"; \\lbrace U_i \\rbrace_{i \\in I} "the family U i, for i in I"; \\varnothing "the empty set"; \\|x\\| "the norm of x"; |x| "the absolute value of x"; B_r(x) "the open ball of radius r about x"; [a,b] "the closed interval from a to b"; \\le "is less than or equal to", in a chain "which is at most"; \\ne "is not equal to"; \\dots and \\cdots "and so on, up to" or "and so on, down to", following the pattern (principle 1); \\mathbb R^k "R k".
 TUPLES AND BOUNDS. (x_1,\\dots,x_k) is "x one through x k" (add "the point" or "the k-tuple" only when needed); 1 \\le i \\le k is "for i from one to k"; I \\supseteq I_1 \\supseteq I_2 \\supseteq \\cdots is "I contains I one, which contains I two, and so on"; 2^{-n}\\delta is "two to the minus n, times delta".
 CHAINS. A chained relation A \\subseteq N \\subseteq M is spoken "A is contained in N, which is contained in M"; in a "let" clause, "let A be a subset of N, and N a subset of M". Never read a chain as a run-on ("A is a subset of N is a subset of M").
-GROUPING MUST BE AUDIBLE. When the structure of an expression matters, fence it in words: "the union, over i from 1 to n, of the ball of radius r i about y i — and we call this union U." A listener must be able to tell what is inside a union, a fraction, or a function argument.
 MULTI-LINE DERIVATIONS are read as one connected chain: "... which equals ..., which is at most ...". Never "line one, line two".
 
 PAGE ARTIFACTS. [FIGURE: ...] and [DIAGRAM: ...] become one sentence ("The page shows a commutative diagram."). [TABLE omitted]: "The page has a table, which we do not read." [CODE omitted]: "The page has a code listing, which we do not read." Citation brackets and footnote marks are not spoken.
 
 NUMBERS AND LABELS. Keep result labels as digits with dots exactly as the author writes them ("Theorem 2.1.18") — the speech engine reads them as "two point one point eighteen". Write every other number the way it is spoken.
 
-OUTPUT. Only the script: plain paragraphs separated by blank lines, roughly one per paragraph of the source. No headings, no markdown, no brackets, no notes, no stage directions. Write in the language of the source."""
+OUTPUT. Only the script: plain paragraphs separated by blank lines, roughly one per paragraph of the source. A paragraph never ends inside a sentence: when a sentence runs through a display equation ("… is defined by [display] for all n."), or a colon introduces what follows, the whole sentence stays in one paragraph. No headings, no markdown, no brackets, no notes, no stage directions. Write in the language of the source."""
 
 KIND_NOTES = {
     "introduction": "the opening paragraphs, before the first numbered statement",
