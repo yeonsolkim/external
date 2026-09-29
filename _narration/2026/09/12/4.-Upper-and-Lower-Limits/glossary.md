@@ -9,7 +9,7 @@ body: b7463e5348a1970a1a15cb2f753968ef5c3c4c7a02f54eb3bf50fcadc94752d3
 ---
 
 \overline{\mathbb R} — extended real line (all suprema and infima are taken there)
-\mathbb N^{+} — positive integers (positive natural numbers)
+\mathbb Z^{+} — positive integers (positive natural numbers)
 +\infty — plus infinity (allowed as an extended limit value)
 -\infty — minus infinity (allowed as an extended limit value)
 \limsup_{n\to\infty} x_n — limit superior of x n (also called the upper limit)

@@ -28,7 +28,7 @@ B_r(\mathbf c) — the ball of radius r about c (open ball centered at the point
 \mathbf c — c (the point (c_1,\dots,c_k))
 \mathbf p — p (a fixed point of \mathbb R^k)
 \mathbf c_i — c i (used as a point chosen from the interval I_{n,i}; read as written)
-\mathbb N^{+} — positive integers (index set starting at 1)
+\mathbb Z^{+} — positive integers (index set starting at 1)
 k-cell — k cell (closed rectangular box in \mathbb R^k)
 (I_n) — the sequence I n (nested intervals or nested cells, depending on context)
 (K_n) — the sequence K n (nested compact sets)

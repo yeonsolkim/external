@@ -11,7 +11,7 @@ body: 382b118ac9bb445406e30766954df529ea1b81578949cd62ee51e0ec70b6eaf5
 \overline{\mathbb R} — extended real line (real line together with plus infinity and minus infinity)
 +\infty — plus infinity (allowed as an extended limit value)
 -\infty — minus infinity (allowed as an extended limit value)
-\mathbb N^{+} — positive integers (indices start at one)
+\mathbb Z^{+} — positive integers (indices start at one)
 \limsup_{n\to\infty} x_n — lim sup of x n (limit superior of the sequence)
 \liminf_{n\to\infty} x_n — lim inf of x n (limit inferior of the sequence)
 s_k — s k (supremum of the k-th tail; upper envelope)

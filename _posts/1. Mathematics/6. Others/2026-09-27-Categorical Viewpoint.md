@@ -6,7 +6,8 @@ category_path:
   - 1. Mathematics
   - 6. Others
 created_at: 2026-09-27 16:02:08 +0900
-last_modified_at: 2026-09-27 17:07:42 +0900
+last_modified_at: 2026-09-29 08:45:43 +0900
+
 publish: false
 ---
 **1. Set-functions.** Let $X$ and $Y$ be sets. If $f$ is a function from $X$ to $Y$, we draw 
