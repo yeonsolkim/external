@@ -4,13 +4,13 @@
   "lang": "en",
   "description": "A great deal of analysis on $\\mathbb R$, $\\mathbb C$, and $\\mathbb R^k$ depends not on their full algebraic structure, but only on the notion of distance between points. This suggests isolating the notion of distance from the particular nature of the points themselves. Accordingly, let $M$ be a nonempty set. We temporarily forget what its elements are and retain only a function $d:M\\times M\\to\\mathbb R,$ where $d(x,y)$ is intended to represent the distance between $x$ and $y$. Not every such function can reasonably be interpreted as a distance. A distance should be nonnegative; distinct points should have positive distance from one another; the distance from $x$ to $y$ should be the same as the distance from $y$ to $x$; and traveling directly from $x$ to $z$ should be no longer than traveling from $x$ to $z$ through an intermediate point $y$. These requirements are abstracted into the following axioms.",
   "published_at": "2026-07-24T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/44265f578928d1fd4bd95afc39c288dee31a139736f4a400962e28d4c4364899.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/d9e708d4b4893dfb0948907d2d0c8dceb4f8367de15f50cb34c3358b92bb19f8.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.chapters.json",
-  "duration": 1475.188,
-  "bytes": 23605698,
+  "duration": 1446.49,
+  "bytes": 23146361,
   "voice": "cedar",
-  "page_key": "44265f578928d1fd4bd95afc39c288dee31a139736f4a400962e28d4c4364899",
+  "page_key": "d9e708d4b4893dfb0948907d2d0c8dceb4f8367de15f50cb34c3358b92bb19f8",
   "skeleton_hash": "6aa3a971841b8c7e6f358da4fdeb11fb0bfecaa0b9180198e0ec4f1351a8e2f9",
   "generated": "2026-09-29",
   "podcast": true,
@@ -21,9 +21,9 @@
       "kind": "introduction",
       "level": 2,
       "start": 0.0,
-      "duration": 51.704,
+      "duration": 55.7,
       "source": "1b72e481723cadc46742f472e36cd4d7b390c9a0a7f3542d9f7657a4a899a5a1",
-      "audio": "c871ae411004522afb44b92f93d3501ce944e91917f8f4c2026ca09bfb02b306",
+      "audio": "0a3cb32abfb778fa041a032dcfc942b7173208ec1a6380dca404ef767ef0b2e8",
       "parent": null,
       "proves": null
     },
@@ -32,10 +32,10 @@
       "title": "Definition 2.1.1",
       "kind": "definition",
       "level": 2,
-      "start": 52.904,
-      "duration": 43.1,
+      "start": 56.9,
+      "duration": 36.292,
       "source": "9cf57feab97355b820e4101f8235e66521b7893302afd687980d688f022eaf72",
-      "audio": "8437c89aa910e4ed1640556278bea285665de50fb4f97e6a9ef5413a4abcdc0f",
+      "audio": "bbebf1664eb9699dfc197648b7907619761cffd0d50b5673acebb6e83394ef5c",
       "parent": null,
       "proves": null
     },
@@ -44,10 +44,10 @@
       "title": "Example 2.1.2",
       "kind": "example",
       "level": 2,
-      "start": 97.205,
-      "duration": 58.489,
+      "start": 94.392,
+      "duration": 53.724,
       "source": "f12942d8b6a62119d61a4b4bd9750d2b1a70adb0ca24056986b118701737af28",
-      "audio": "4bfc8ed60ea15627835ccf70242bff3003ff332fb9fa0b1aa18cec432afc87b3",
+      "audio": "1796dc7bb77dba993ad26f97651490f8db5a565368bfa92a8392b6ee9328df12",
       "parent": null,
       "proves": null
     },
@@ -56,7 +56,7 @@
       "title": "What we are primarily interested in is the behavior of all…",
       "kind": "prose",
       "level": 2,
-      "start": 156.894,
+      "start": 149.316,
       "duration": 12.994,
       "source": "ef9b21c0426c7103711a8f8c5ddae6ac2169d3e0b9c64f1938f3f5da5fcdce08",
       "audio": "3b91da63fe6cb603c2822fe289ee430e3e9ded527ef96b04c61befa3ec9bfd1c",
@@ -68,10 +68,10 @@
       "title": "Definition 2.1.3",
       "kind": "definition",
       "level": 2,
-      "start": 171.088,
-      "duration": 65.921,
+      "start": 163.51,
+      "duration": 52.411,
       "source": "9028fec6b13c70c674fc21632b803cb3ea1e91b2c15eb53aa1042fe9b313d802",
-      "audio": "7b2712cdb87d1b5a2738d9cbc4341192f5d5e5c6b419b3f6208187c5f4746b9f",
+      "audio": "abf79d5dfdc852310b9e90ff995e183013b4e553feb76c1f6c86c4ad2251cc89",
       "parent": null,
       "proves": null
     },
@@ -80,7 +80,7 @@
       "title": "The balls can describe the local relation between a point ……",
       "kind": "prose",
       "level": 2,
-      "start": 238.208,
+      "start": 217.121,
       "duration": 14.043,
       "source": "32b4fb77f4f22eff95b092a0b346ed0bff06bb919a77b5299bd074b1cc18f1a0",
       "audio": "11d144ea77c565a6f1549a66f84927f85b32c612ca59b3d6701f7e92c554b909",
@@ -92,10 +92,10 @@
       "title": "Definition 2.1.4",
       "kind": "definition",
       "level": 2,
-      "start": 253.452,
-      "duration": 66.069,
+      "start": 232.365,
+      "duration": 62.869,
       "source": "b1a51b87212bdf8ca3ebaf61f59fcc35e4c9ab09fcca844be6b7bf5e2625d9ce",
-      "audio": "1c271394829acd50914281443325de84094ad27bae7ac7a21d9118d8c0b878ae",
+      "audio": "fd554b06ea15e8c9c5e25b98e9fa6fee00bed5d763f5d23d896d0454fd67acff",
       "parent": null,
       "proves": null
     },
@@ -104,7 +104,7 @@
       "title": "Theorem 2.1.5",
       "kind": "theorem",
       "level": 2,
-      "start": 320.721,
+      "start": 296.434,
       "duration": 19.045,
       "source": "e53c972731e23aa68e7d68ed2477edbfd73a280f2e8ee47e0190b41bd135b546",
       "audio": "5fa5f581ee883ccbe7b047b79b383d838feee198b5b41e5787f6a811c0ef90c7",
@@ -116,10 +116,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 340.966,
-      "duration": 130.665,
+      "start": 316.679,
+      "duration": 128.273,
       "source": "a1d78d5edd63775ecaafbf6a3c3dc53e841fdd3600bb1a1147e06de036365cf9",
-      "audio": "901d2b3ace122e5d25256283ab01b0fb283a11bd3941daca54274d9caadb8b45",
+      "audio": "dfe0a2c30923b9cd3f3d05d47757ea9e6043790de9c2d94110d6b7452ad37a4c",
       "parent": null,
       "proves": "theorem-2-1-5"
     },
@@ -128,7 +128,7 @@
       "title": "Closure point and limit point answer the second question:…",
       "kind": "prose",
       "level": 2,
-      "start": 472.831,
+      "start": 446.152,
       "duration": 9.331,
       "source": "00a7707aa30c6bac172eec932aa5b56be4c22709cc48e1aba8e4c542216fa513",
       "audio": "424ac65f75a6ea95507f9f02382362de05826b36e79ca0db0aa1ed2ab0368545",
@@ -140,10 +140,10 @@
       "title": "Definition 2.1.6",
       "kind": "definition",
       "level": 2,
-      "start": 483.362,
-      "duration": 52.714,
+      "start": 456.683,
+      "duration": 52.143,
       "source": "6e9c0433a48c06bb1b0953793cf104ae56d5553ac4ab220706cfb6918639294e",
-      "audio": "1013071fba773c9921c796d5cc67d51a7eb88c2e6d609df871ecc9bfa70e4a97",
+      "audio": "81ea720551e347bf62aacda49fd746a79d1559871e14856eec6d08bfb7d76a36",
       "parent": null,
       "proves": null
     },
@@ -152,10 +152,10 @@
       "title": "Remark 2.1.7",
       "kind": "remark",
       "level": 2,
-      "start": 537.275,
-      "duration": 28.35,
+      "start": 510.026,
+      "duration": 29.272,
       "source": "d32b4dcb3d3853b639c1bbaed43e2bad4ab16ad69f309d523867d694f66359f6",
-      "audio": "96467417ed8457a72f9e64fcab7faa93bc794ff40259dde00b8b4cb29ba891c6",
+      "audio": "6ff87b813595050c4837e51cbde984b82804489bc1f3f85c2387c4f8584458c1",
       "parent": null,
       "proves": null
     },
@@ -164,7 +164,7 @@
       "title": "Theorem 2.1.8",
       "kind": "theorem",
       "level": 2,
-      "start": 566.825,
+      "start": 540.498,
       "duration": 11.942,
       "source": "da4cbf670be42759eaddec736d86771bdfe05dd204dfcac07d93f7c1d49839e2",
       "audio": "df0227f92ab74e9cd39e73b8764e331cade6f1184242be536fb6ef52509b01be",
@@ -176,10 +176,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 579.967,
-      "duration": 34.13,
+      "start": 553.64,
+      "duration": 36.682,
       "source": "accd7ebca269d3e607d4a6adf1b4b983a3f1db4a57342eb1cb4eb19c3fe16fc8",
-      "audio": "8b2f03b2e3ffe952254e2bd72402de992255d8915d8c781cddc2327f82dc97ea",
+      "audio": "e34d413bbc15e36e715ae6f911086571975eb9b57fa3bb47b2af1070f344944c",
       "parent": null,
       "proves": "theorem-2-1-8"
     },
@@ -188,7 +188,7 @@
       "title": "Corollary 2.1.9",
       "kind": "corollary",
       "level": 2,
-      "start": 615.297,
+      "start": 591.522,
       "duration": 11.494,
       "source": "3694e18514d64284bca1f9eaf2191608fca6602c7113b1cfb4aa4a0f34e304b6",
       "audio": "ef89cc78ace51746e6c5fa88303500b0a15c7bc5c648622441ac13e662e2ff33",
@@ -200,7 +200,7 @@
       "title": "Theorem 2.1.10",
       "kind": "theorem",
       "level": 2,
-      "start": 627.991,
+      "start": 604.215,
       "duration": 11.512,
       "source": "07a72f663c9968346f8fc21b77ca832659090fe6a1b41fd8c1ccac8ac98f7013",
       "audio": "2931a0ab8fd1e173161f144afb35db6f25ccb81e6989e96f2cd5e5f25b065317",
@@ -212,7 +212,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 640.703,
+      "start": 616.927,
       "duration": 20.074,
       "source": "2b26a7128107972142a94845b997eea35b8a25171fc29d44ccc094d9c1dbbdee",
       "audio": "d30cb186c9341529f1c78fde121b9744deb3b3337e97366e949ee85bbed745fb",
@@ -224,10 +224,10 @@
       "title": "Proposition 2.1.11",
       "kind": "proposition",
       "level": 2,
-      "start": 661.977,
-      "duration": 26.821,
+      "start": 638.202,
+      "duration": 24.669,
       "source": "ad613dee3c6bc9adbf64006bd0db4351567630452dc85a899b5aa8b92585c2b7",
-      "audio": "3dad86fd7623a01c84a6baf654dd09563334e346a0c03dadf58a244949f5a4aa",
+      "audio": "f8d19ecde4e41ebebe96000dfef3238856303c2a6acd4c5d3c4f057c632d6b9b",
       "parent": null,
       "proves": null
     },
@@ -236,10 +236,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 689.998,
-      "duration": 67.638,
+      "start": 664.071,
+      "duration": 64.837,
       "source": "234879528c0dc04b3992291cf5290073042b4ab460fb08b8f44842c371582d8f",
-      "audio": "08149b5dc8dcf4c3f75cae2ca7aeca7296c8498915ac61d9730f50e0fd7abe41",
+      "audio": "f672338d45e053fc3ec57700defc3e728db386c059d81add1225c5f13cc2debf",
       "parent": null,
       "proves": "proposition-2-1-11"
     },
@@ -248,7 +248,7 @@
       "title": "So far, our notions have described the local relations of…",
       "kind": "prose",
       "level": 2,
-      "start": 758.836,
+      "start": 730.108,
       "duration": 28.311,
       "source": "a8b0560b924276c93c227446d82c357235b5242d4af28b5c48855b61953c221c",
       "audio": "6f864486469cbb64f6331d96a46e39b44a1d6d0e00be103fd98b924a02af39cb",
@@ -260,10 +260,10 @@
       "title": "Definition 2.1.12",
       "kind": "definition",
       "level": 2,
-      "start": 788.346,
-      "duration": 36.596,
+      "start": 759.619,
+      "duration": 36.215,
       "source": "2de367f5b12204a329c5e12f58d1a5b6f89dc4d68883e1d2758187941d695f04",
-      "audio": "796458f15ce4dc4a9131bf320a1934924927c827f72a17a072a0a87abcb7e0c2",
+      "audio": "c09ca8ab503b98fa7f0caa65d9f18b44c410936671fab995cffcec13c5cea3e8",
       "parent": null,
       "proves": null
     },
@@ -272,7 +272,7 @@
       "title": "Theorem 2.1.13",
       "kind": "theorem",
       "level": 2,
-      "start": 826.142,
+      "start": 797.034,
       "duration": 4.946,
       "source": "e8b49720826f8e8da888a9b589d71ca3f0ccb6a63017fcbae0cbb6838b330e84",
       "audio": "154bb226f12483552de801868731929385386502318fc2c73f694d12505c8c7e",
@@ -284,10 +284,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 832.288,
-      "duration": 39.706,
+      "start": 803.18,
+      "duration": 43.653,
       "source": "210b46a76c5f08547a663153d0312da5ba32f753b21f2393e49dbbb860d33c5a",
-      "audio": "21f01b582e531b3c01de7ce212fa0075c5daf36e480bb15618ac3674965f8c86",
+      "audio": "25db3f4a29eb7856111f91551228ca4b2e3f4dc51570b41038350a9ee4de1013",
       "parent": null,
       "proves": "theorem-2-1-13"
     },
@@ -296,7 +296,7 @@
       "title": "Theorem 2.1.14",
       "kind": "theorem",
       "level": 2,
-      "start": 873.195,
+      "start": 848.033,
       "duration": 10.95,
       "source": "005219b8961b377df3b8a7a0cdb8bd7d65108014409ec25b5fef89b1d3f5b347",
       "audio": "003bb58c6596f8298007cdc2d5397d329c79abead3f6205484c4bb748865e7ac",
@@ -308,7 +308,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 885.345,
+      "start": 860.183,
       "duration": 46.996,
       "source": "e0ca7c651cf71af54fb506766eed26509b57c260453738b34c5c336eb87c2518",
       "audio": "2fa6052f28ed3c61e9968fed6d821ca327b1a6d649756a47814745aa40911a5d",
@@ -320,7 +320,7 @@
       "title": "Complementation turns the duality between open and closed…",
       "kind": "prose",
       "level": 2,
-      "start": 933.54,
+      "start": 908.379,
       "duration": 8.128,
       "source": "0f2ba0f37cec61fb25476d966cae16e2e007c1c71ab40bffa9aa087d457f4a50",
       "audio": "3c6ec75c7e1368f07eec77ec9f226a4c38a417bcb7179da7bf835d0fd8839de4",
@@ -332,7 +332,7 @@
       "title": "Theorem 2.1.15",
       "kind": "theorem",
       "level": 2,
-      "start": 942.868,
+      "start": 917.706,
       "duration": 43.791,
       "source": "bb36acdb87d63e1343600ab01734b7847fbb5f52d9a12449eed0b2f1a5356c5c",
       "audio": "a9b5de2735548254f406ed9de4d9be4332a296166af8e715ef40ebc68297554b",
@@ -344,10 +344,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 987.86,
-      "duration": 114.694,
+      "start": 962.698,
+      "duration": 118.457,
       "source": "1dc90ad7e2080e626bd425d75fcdcbce43fbac2639898b0e77545f73aeab097b",
-      "audio": "c7378403c1c0b3b29306807b9d562d5af21e703000b822b972ec83da4e06779d",
+      "audio": "c8efde7eeb41f18c2f637398c432b7d9b4ae1e90707321bd4bf3c8ff9939ca6b",
       "parent": null,
       "proves": "theorem-2-1-15"
     },
@@ -356,10 +356,10 @@
       "title": "Theorem 2.1.16",
       "kind": "theorem",
       "level": 2,
-      "start": 1103.754,
-      "duration": 20.453,
+      "start": 1082.355,
+      "duration": 17.441,
       "source": "2f5bd161367eacc332f9f1c001e384a4122c3660291a017ca2770eaa3fc90a65",
-      "audio": "21f6c9089734421ccfc08135721d1f6fa1285a87bea0d55d05ed6464f3afa86f",
+      "audio": "e0d3cab4262193dc9a5a0844808fd31810663b2b420c87cdc937acb7faedfed9",
       "parent": null,
       "proves": null
     },
@@ -368,10 +368,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 1125.407,
-      "duration": 93.757,
+      "start": 1100.997,
+      "duration": 92.098,
       "source": "b54d8cccf55b7dee59ced42334be2804911a39d5f1182f948ab0b753586e9fd5",
-      "audio": "eab663e15f3f2efac8ea09a58b307cdc30ca9001d484d01515cece37a74c5efc",
+      "audio": "e55e1890a3d382d76b0cbead748d2f7d2463cf011b95c4fec8d111cb59db8a04",
       "parent": null,
       "proves": "theorem-2-1-16"
     },
@@ -380,7 +380,7 @@
       "title": "Corollary 2.1.17",
       "kind": "corollary",
       "level": 2,
-      "start": 1220.364,
+      "start": 1194.294,
       "duration": 11.571,
       "source": "7d5e38b9d3fb093daaa5450d3755b64fbe6d7ae5c5baafc94e7e204523eaf187",
       "audio": "bf062239711bc6020430be09fb9080a36661a763ac02c0991f74dfa8a5035634",
@@ -392,7 +392,7 @@
       "title": "So far, all notions have been considered within one ambient…",
       "kind": "prose",
       "level": 2,
-      "start": 1233.135,
+      "start": 1207.065,
       "duration": 22.205,
       "source": "52f2a945d41fd750bf632b497cf8eb9147bae8231147efea2eb32182c369cdec",
       "audio": "f4c3ceda0eba2c93f7d2ce618b3e8c36694b51a791527c82b2aaf778554f31b9",
@@ -404,7 +404,7 @@
       "title": "Theorem 2.1.18",
       "kind": "theorem",
       "level": 2,
-      "start": 1256.54,
+      "start": 1230.47,
       "duration": 16.216,
       "source": "e95531fb81384e44d501220e613909bbf5e7e160b5019308d8541282636bcb9c",
       "audio": "1a0cc2bbcc95fadc65cb14364b9b0f2c025140c5bd02f4fb23ea9d0ef3844188",
@@ -416,10 +416,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 1273.956,
-      "duration": 92.598,
+      "start": 1247.886,
+      "duration": 94.725,
       "source": "278603bc0b1c956039ceef3ad75d5d31f60b514d2f5c7eb1a65a863b0cde49fd",
-      "audio": "75f0ab4e6807765e34af5fe8f77fa665d202950315f48a63e7be575014374747",
+      "audio": "0aaebcaa956d58c9546c245cf99f582d40a9a965ab502f39812138ec35239dc1",
       "parent": null,
       "proves": "theorem-2-1-18"
     },
@@ -428,10 +428,10 @@
       "title": "Theorem 2.1.19",
       "kind": "theorem",
       "level": 2,
-      "start": 1367.753,
-      "duration": 16.435,
+      "start": 1343.811,
+      "duration": 16.489,
       "source": "3e8e00c1b4c42ba6183a6fbba82935b64467b3c1c7a20fd59ef6a1312fada346",
-      "audio": "a27a2c27b37a53ab1cd26d6eb822071ce9acabe3f47bc03882dc61a68da97f09",
+      "audio": "1dbff13f5738919a2236218dc83c606baed513d0ddf608eb73688933dfe88c7e",
       "parent": null,
       "proves": null
     },
@@ -440,10 +440,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 1385.388,
-      "duration": 48.217,
+      "start": 1361.5,
+      "duration": 43.407,
       "source": "182c3fa120256ba9984cad7f4b71e1bfab25e60481cb481d2b82ad59c7aa8bf2",
-      "audio": "8dd4597a252af65524445b214387ee261e2f1fdcdc4aeff0faef7bbc43690239",
+      "audio": "d2b258c14de6cfc56360d64e9fd3a65f5baa0b0c3534359ab30ec6f7bd823874",
       "parent": null,
       "proves": "theorem-2-1-19"
     },
@@ -452,7 +452,7 @@
       "title": "Remark 2.1.20",
       "kind": "remark",
       "level": 2,
-      "start": 1434.805,
+      "start": 1406.107,
       "duration": 40.383,
       "source": "f24fa73c0e08902408146ef21ac9e9c83c0d876573a88d1cb546d85269bc2102",
       "audio": "e029474347b2b948c6003baef4f21fee062db03c36f90943684c5c9279d830d0",
@@ -465,127 +465,127 @@
       "id": "introduction",
       "title": "Introduction",
       "start": 0.0,
-      "end": 52.904
+      "end": 56.9
     },
     {
       "id": "definition-2-1-1",
       "title": "Definition 2.1.1",
-      "start": 52.904,
-      "end": 97.205
+      "start": 56.9,
+      "end": 94.392
     },
     {
       "id": "example-2-1-2",
       "title": "Example 2.1.2",
-      "start": 97.205,
-      "end": 171.088
+      "start": 94.392,
+      "end": 163.51
     },
     {
       "id": "definition-2-1-3",
       "title": "Definition 2.1.3",
-      "start": 171.088,
-      "end": 253.452
+      "start": 163.51,
+      "end": 232.365
     },
     {
       "id": "definition-2-1-4",
       "title": "Definition 2.1.4",
-      "start": 253.452,
-      "end": 320.721
+      "start": 232.365,
+      "end": 296.434
     },
     {
       "id": "theorem-2-1-5",
       "title": "Theorem 2.1.5",
-      "start": 320.721,
-      "end": 483.362
+      "start": 296.434,
+      "end": 456.683
     },
     {
       "id": "definition-2-1-6",
       "title": "Definition 2.1.6",
-      "start": 483.362,
-      "end": 537.275
+      "start": 456.683,
+      "end": 510.026
     },
     {
       "id": "remark-2-1-7",
       "title": "Remark 2.1.7",
-      "start": 537.275,
-      "end": 566.825
+      "start": 510.026,
+      "end": 540.498
     },
     {
       "id": "theorem-2-1-8",
       "title": "Theorem 2.1.8",
-      "start": 566.825,
-      "end": 615.297
+      "start": 540.498,
+      "end": 591.522
     },
     {
       "id": "corollary-2-1-9",
       "title": "Corollary 2.1.9",
-      "start": 615.297,
-      "end": 627.991
+      "start": 591.522,
+      "end": 604.215
     },
     {
       "id": "theorem-2-1-10",
       "title": "Theorem 2.1.10",
-      "start": 627.991,
-      "end": 661.977
+      "start": 604.215,
+      "end": 638.202
     },
     {
       "id": "proposition-2-1-11",
       "title": "Proposition 2.1.11",
-      "start": 661.977,
-      "end": 788.346
+      "start": 638.202,
+      "end": 759.619
     },
     {
       "id": "definition-2-1-12",
       "title": "Definition 2.1.12",
-      "start": 788.346,
-      "end": 826.142
+      "start": 759.619,
+      "end": 797.034
     },
     {
       "id": "theorem-2-1-13",
       "title": "Theorem 2.1.13",
-      "start": 826.142,
-      "end": 873.195
+      "start": 797.034,
+      "end": 848.033
     },
     {
       "id": "theorem-2-1-14",
       "title": "Theorem 2.1.14",
-      "start": 873.195,
-      "end": 942.868
+      "start": 848.033,
+      "end": 917.706
     },
     {
       "id": "theorem-2-1-15",
       "title": "Theorem 2.1.15",
-      "start": 942.868,
-      "end": 1103.754
+      "start": 917.706,
+      "end": 1082.355
     },
     {
       "id": "theorem-2-1-16",
       "title": "Theorem 2.1.16",
-      "start": 1103.754,
-      "end": 1220.364
+      "start": 1082.355,
+      "end": 1194.294
     },
     {
       "id": "corollary-2-1-17",
       "title": "Corollary 2.1.17",
-      "start": 1220.364,
-      "end": 1256.54
+      "start": 1194.294,
+      "end": 1230.47
     },
     {
       "id": "theorem-2-1-18",
       "title": "Theorem 2.1.18",
-      "start": 1256.54,
-      "end": 1367.753
+      "start": 1230.47,
+      "end": 1343.811
     },
     {
       "id": "theorem-2-1-19",
       "title": "Theorem 2.1.19",
-      "start": 1367.753,
-      "end": 1434.805
+      "start": 1343.811,
+      "end": 1406.107
     },
     {
       "id": "remark-2-1-20",
       "title": "Remark 2.1.20",
-      "start": 1434.805,
-      "end": 1475.188
+      "start": 1406.107,
+      "end": 1446.49
     }
   ]
 }

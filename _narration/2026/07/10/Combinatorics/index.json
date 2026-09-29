@@ -4,9 +4,9 @@
   "lang": "en",
   "hash": "50706628bf530bbd663ff8ded789d2e03beeebed44b4a76d099feeb6326cb35f",
   "skeleton": 4,
-  "prompt": "lecture-v3",
+  "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-09-28",
+  "updated": "2026-09-29",
   "sections": [
     {
       "id": "sec-1",
@@ -100,13 +100,13 @@
       "math": 4
     },
     {
-      "id": "math-proof-1",
+      "id": "proof-sec-7",
       "title": "Proof",
       "kind": "proof",
       "level": 3,
       "source": "a64779c09717ac32ec9c83b24b013b64b65a3b92819492757113c60d59c060a3",
       "skip": null,
-      "file": "math-proof-1.md",
+      "file": "proof-sec-7.md",
       "current": true,
       "edited": false,
       "words": 122,
@@ -126,13 +126,13 @@
       "math": 4
     },
     {
-      "id": "math-proof-2",
+      "id": "proof-sec-8",
       "title": "Proof",
       "kind": "proof",
       "level": 3,
       "source": "fe2ad52ae466dfaf8aa7a76d35bfb7816d910017441d8ccdc0258fcb027114b7",
       "skip": null,
-      "file": "math-proof-2.md",
+      "file": "proof-sec-8.md",
       "current": true,
       "edited": false,
       "words": 893,

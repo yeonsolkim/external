@@ -6,9 +6,9 @@ document: 3.4 Limit Superior and Limit Inferior
 url: /2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html
 source: 9c54193ec125933c08b26b6fc12bba83dedf7d8e515daff4396b1150ced62adc
 skeleton: 4
-prompt: lecture-v3
+prompt: lecture-v4
 model: gpt-5.5
-generated: 2026-09-28
+generated: 2026-09-29
 body: 9c54193ec125933c08b26b6fc12bba83dedf7d8e515daff4396b1150ced62adc
 words: 25
 ---

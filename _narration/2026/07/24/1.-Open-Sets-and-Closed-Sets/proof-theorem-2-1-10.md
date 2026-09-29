@@ -6,9 +6,9 @@ document: 2.1 Open Sets and Closed Sets
 url: /2026/07/24/1.-Open-Sets-and-Closed-Sets.html
 source: 2b26a7128107972142a94845b997eea35b8a25171fc29d44ccc094d9c1dbbdee
 skeleton: 4
-prompt: lecture-v3
+prompt: lecture-v4
 model: gpt-5.5
-generated: 2026-09-28
+generated: 2026-09-29
 body: d3b8028a15f36342dcd26f973c039cb8e38689e4cbedfc046be3aa65a69988e4
 words: 68
 ---

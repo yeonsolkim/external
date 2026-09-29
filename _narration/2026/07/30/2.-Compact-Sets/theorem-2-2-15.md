@@ -6,7 +6,7 @@ document: 2.2 Compact Sets
 url: /2026/07/30/2.-Compact-Sets.html
 source: c434e6e38b46926d4e20962d977bab010ea424e685696f13dfb65c23310744e6
 skeleton: 4
-prompt: lecture-v3
+prompt: lecture-v4
 model: gpt-5.5
 generated: 2026-09-29
 body: d89d2a3ddc56a735126b61ecc50ad3b794eed577c07798705020661a83e8d3d2
