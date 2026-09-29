@@ -4,7 +4,7 @@ title: "Combinatorics"
 date: 2026-07-11 00:00:00 +0900
 category_path:
   - 1. Mathematics
-  - 6. Others
+  - 5. Combinatorics
 created_at: 2026-08-06 13:53:49 +0900
 last_modified_at: 2026-09-18 17:25:37 +0900
 

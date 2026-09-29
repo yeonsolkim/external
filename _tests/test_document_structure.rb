@@ -123,6 +123,38 @@ check("display math bridges to the paragraph that finishes its sentence") do
 end
 check("bookkeeping keys are not rendered as attributes") { !displayed.include?(" kind=") }
 
+MARK = %(<div class="post-structural-continuation" aria-hidden="true"></div>)
+restarted = build(<<~HTML)
+  <p><strong>Example 1.3.5.</strong> The matrices generate since</p>
+
+  \\[A = a_{11} E_{11} + \\cdots.\\]
+
+  #{MARK}
+
+  <p>On the other hand, consider</p>
+
+  \\[B.\\]
+
+  <p>are dependent.</p>
+  <ol><li>x</li></ol>
+  #{MARK}
+  <p>After the list.</p>
+HTML
+check("two blank lines after display math: same unit, marked for the indent") do
+  restarted.include?('<p data-paragraph-continuation="structural">On the other hand') &&
+    restarted.index("On the other hand") < restarted.index("</section>")
+end
+check("one blank line after display math is not marked") do
+  restarted.include?("<p>are dependent.</p>")
+end
+check("two blank lines after a list are marked too") do
+  restarted.include?('<p data-paragraph-continuation="structural">After the list.')
+end
+top_level = build(%(<p>Prose</p>\n\\[x\\]\n#{MARK}\n<p>More prose.</p>))
+check("in the body nothing is marked (it is indented anyway)") do
+  top_level.include?("<p>More prose.</p>")
+end
+
 named = build(%(<p><strong>Theorem 2.2.20</strong> (Heine–Borel theorem). Statement.</p>))
 check("a parenthesised name is captured") { named.include?('data-name="Heine–Borel theorem"') }
 

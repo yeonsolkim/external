@@ -198,6 +198,13 @@ module ExternalDocumentStructure
     block[:type] == :text && block[:raw].match?(/\\\[|\$\$|\\begin\{/)
   end
 
+  # Paragraphs in an environment, a proof or a numbered section are flush by default, so
+  # only there does a structural continuation need marking; in the body and under an `##`
+  # heading every paragraph is indented already.
+  def indenting_unit?(unit)
+    %i[environment proof].include?(unit.role) || (unit.role == :section && unit.depth.positive?)
+  end
+
   def blank?(block)
     block[:type] != :element ? block[:raw].strip.empty? : false
   end
@@ -250,6 +257,7 @@ module ExternalDocumentStructure
     last_statement = nil
     seen_numbers = {}
     bridge = false
+    structural = false
 
     close_to = lambda do |predicate|
       while stack.length > 1 && predicate.call(stack.last)
@@ -357,6 +365,13 @@ module ExternalDocumentStructure
         block = with_label_attrs(block, descriptor[:label], "id" => id, "class" => "math-proof-marker")
       end
 
+      # Two blank lines after a figure, list or display equation start a new paragraph of the
+      # same unit, which is indented (post.css); one blank line continues the sentence.
+      if structural && descriptor.nil? && block[:type] == :element && block[:tag] == "p" &&
+         indenting_unit?(stack.last)
+        block = block.merge(raw: block[:raw].sub(/\A<p\b/, '<p data-paragraph-continuation="structural"'))
+      end
+
       stack.last << block[:raw]
 
       # --- close what this block finished --------------------------------------------
@@ -366,6 +381,14 @@ module ExternalDocumentStructure
          ends_environment?(block, current.attrs[:kind])
         close_units.call
       end
+
+      structural = if continuation_marker?(block)
+                     bridge
+                   elsif display_math?(block) || block[:type] == :element
+                     false
+                   else
+                     structural
+                   end
 
       bridge = if display_math?(block)
                  true
