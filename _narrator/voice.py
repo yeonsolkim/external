@@ -10,7 +10,8 @@ offsets and ID3 chapters.
     _audio/<url path>.json              manifest: sections with start/duration, chapters
 
 Synthesis is per paragraph (the API takes 4096 chars; a paragraph is also the natural
-unit of a pause). Paragraphs are joined with PARA_GAP of silence, sections with
+unit of a pause, so a paragraph must never stop inside a sentence — the script stage
+guarantees that, see lint.py). Paragraphs are joined with PARA_GAP of silence, sections with
 SECTION_GAP; leading/trailing silence from the engine is trimmed first so the gaps are
 ours and the offsets are exact. Durations come from sample counts, not from probing.
 """

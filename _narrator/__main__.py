@@ -3,6 +3,7 @@
     python3 -m _narrator skeleton _site               [--json out-dir]
     python3 -m _narrator script   <post.html | URL>  [--dry-run] [--force] [--only id,id] [--model M]
     python3 -m _narrator lecture  <post.html | URL>  [--out file]     # assembled script, for review
+    python3 -m _narrator lint     [_narration]       # scripts that speak typography or keep TeX
     python3 -m _narrator voice    <post.html | URL>  [--voice V] [--dry-run]   # scripts -> _audio/<url>.mp3 + .json
     python3 -m _narrator sample   <post.html | URL>  --section theorem-2-2-3 [--voices a,b,c]
     python3 -m _narrator publish  <post.html | URL | _site> [--site _site] [--dry-run] [--max-new-minutes 30]
@@ -100,6 +101,14 @@ def cmd_script(args: argparse.Namespace) -> int:
     stage2.run(skel, out_dir, model=args.model, force=args.force, only=only,
                dry_run=args.dry_run, workers=args.workers, reasoning=args.reasoning)
     return 0
+
+
+def cmd_lint(args: argparse.Namespace) -> int:
+    from . import lint
+    found = lint.check_tree(args.root)
+    for path, problem in found:
+        print("%s: %s" % (path, problem))
+    return 1 if found else 0
 
 
 def cmd_lecture(args: argparse.Namespace) -> int:
@@ -236,6 +245,10 @@ def main(argv: list) -> int:
     p.add_argument("--out", default="_narration", help="root of the script tree (default _narration)")
     p.add_argument("--out-file", dest="out_file", help="write here instead of stdout")
     p.set_defaults(func=cmd_lecture)
+
+    p = sub.add_parser("lint", help="scripts that speak a typographical mark or keep TeX (no LLM)")
+    p.add_argument("root", nargs="?", default="_narration", help="root of the script tree (default _narration)")
+    p.set_defaults(func=cmd_lint)
 
     p = sub.add_parser("voice", help="lecture scripts -> mastered mp3 + manifest (calls the TTS API)")
     p.add_argument("source", help="a built post (.html) or a URL")
