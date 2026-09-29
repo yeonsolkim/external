@@ -10,15 +10,15 @@
 <itunes:explicit>false</itunes:explicit>
 <itunes:type>episodic</itunes:type>
 <itunes:category text="Science"/>
-<lastBuildDate>Mon, 28 Sep 2026 00:00:00 +0000</lastBuildDate>
+<lastBuildDate>Tue, 29 Sep 2026 00:00:00 +0000</lastBuildDate>
 <item>
 <title>3.4 Limit Superior and Limit Inferior</title>
 <link>https://yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html</link>
 <guid isPermaLink="true">https://yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html</guid>
 <pubDate>Sat, 12 Sep 2026 15:00:00 +0000</pubDate>
 <description>We first extend the notion of convergence by allowing the values +\infty and -\infty. We then associate with each tail of a sequence its supremum and infimum. The limiting behavior of these tail bounds leads to the notions of limit superior and limit inferior. Throughout this section, all suprema and infima are understood to be taken in \overline{\mathbb R} Read the page at https://yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.mp3" length="11846028" type="audio/mpeg"/>
-<itunes:duration>0:12:20</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.mp3" length="11806740" type="audio/mpeg"/>
+<itunes:duration>0:12:18</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.chapters.json" type="application/json+chapters"/>
 </item>
@@ -28,8 +28,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</guid>
 <pubDate>Wed, 09 Sep 2026 15:00:00 +0000</pubDate>
 <description>Convergence describes the asymptotic behavior of a sequence by relating its terms to a point of the ambient space. This raises a natural question. How much of this asymptotic behavior can be recognized from the terms of the sequence themselves, without first specifying or establishing the existence of such a point? The concept of Cauchyness isolates precisely this internal aspect of convergence. Instead of comparing the terms x_n with a separate point x, it compares sufficiently late terms with one another and asks whether they eventually become arbitrarily close. Read the page at https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.mp3" length="9193644" type="audio/mpeg"/>
-<itunes:duration>0:09:34</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.mp3" length="9161462" type="audio/mpeg"/>
+<itunes:duration>0:09:32</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.chapters.json" type="application/json+chapters"/>
 </item>
@@ -39,8 +39,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/09/03/2.-Subsequenes.html</guid>
 <pubDate>Thu, 03 Sep 2026 15:00:00 +0000</pubDate>
 <description>A sequence may fail to converge as a whole while some of its terms still exhibit convergent behavior. To capture such behavior, we introduce the notion of a subsequence. Read the page at https://yeonsolkim.com/2026/09/03/2.-Subsequenes.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/09/03/2.-Subsequenes.mp3" length="4750689" type="audio/mpeg"/>
-<itunes:duration>0:04:57</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/09/03/2.-Subsequenes.mp3" length="4953818" type="audio/mpeg"/>
+<itunes:duration>0:05:10</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/09/03/2.-Subsequenes.chapters.json" type="application/json+chapters"/>
 </item>
@@ -61,8 +61,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</guid>
 <pubDate>Mon, 31 Aug 2026 15:00:00 +0000</pubDate>
 <description>We now use the metric structure to describe the asymptotic behavior of an ordered family of points. To say that a sequence (x_n) of points in M converges to x means that its terms eventually lie as close to x as we wish. Read the page at https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.mp3" length="20436091" type="audio/mpeg"/>
-<itunes:duration>0:21:17</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.mp3" length="20633786" type="audio/mpeg"/>
+<itunes:duration>0:21:29</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.chapters.json" type="application/json+chapters"/>
 </item>
@@ -83,8 +83,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html</guid>
 <pubDate>Thu, 30 Jul 2026 15:00:00 +0000</pubDate>
 <description>We now consider how a collection of open sets can cover a set A as a whole. Such a collection may contain infinitely many sets, and this raises a natural question. Can finitely many members of the collection already cover A? Compactness formalizes the sets for which the answer is always yes. Read the page at https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.mp3" length="20409303" type="audio/mpeg"/>
-<itunes:duration>0:21:15</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.mp3" length="20391748" type="audio/mpeg"/>
+<itunes:duration>0:21:14</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.chapters.json" type="application/json+chapters"/>
 </item>
@@ -94,8 +94,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.html</guid>
 <pubDate>Fri, 24 Jul 2026 15:00:00 +0000</pubDate>
 <description>A great deal of analysis on \mathbb R, \mathbb C, and \mathbb R^k depends not on their full algebraic structure, but only on the notion of distance between points. This suggests isolating the notion of distance from the particular nature of the points themselves. Accordingly, let M be a nonempty set. We temporarily forget what its elements are and retain only a function d:M\times M\to\mathbb R, where d(x,y) is intended to represent the distance between x and y. Not every such function can reasonably be interpreted as a distance. A distance should be nonnegative; distinct points should have positive distance from one another; the distance from x to y should be the same as the distance from y to x; and traveling directly from x to z should be no longer than traveling from x to z through an intermediate point y. These requirements are abstracted into the following axioms. Read the page at https://yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.mp3" length="23458577" type="audio/mpeg"/>
-<itunes:duration>0:24:26</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.mp3" length="23605698" type="audio/mpeg"/>
+<itunes:duration>0:24:35</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.chapters.json" type="application/json+chapters"/>
 </item>

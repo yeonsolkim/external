@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "A sequence may fail to converge as a whole while some of its terms still exhibit convergent behavior. To capture such behavior, we introduce the notion of a subsequence.",
   "published_at": "2026-09-03T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/ac927c8a67332563341fb8ca3c0b8254e4a0c30f9fdb9da155c59bae6f3228fb.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/c924edf78a9eeddaa5655222f0a1b7c0a9134a3f0669d9de12e27347c14df952.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/09/03/2.-Subsequenes.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/09/03/2.-Subsequenes.chapters.json",
-  "duration": 296.822,
-  "bytes": 4750689,
+  "duration": 309.512,
+  "bytes": 4953818,
   "voice": "cedar",
-  "page_key": "ac927c8a67332563341fb8ca3c0b8254e4a0c30f9fdb9da155c59bae6f3228fb",
-  "skeleton_hash": "e7958da73792bfe4dfa2fc42b70a00143198586dc94d209910b913911275f910",
-  "generated": "2026-09-28",
+  "page_key": "c924edf78a9eeddaa5655222f0a1b7c0a9134a3f0669d9de12e27347c14df952",
+  "skeleton_hash": "fc642472a6bd016b8d2db799e99fa8c87f9460b136a8e2039e37f124fce2fbba",
+  "generated": "2026-09-29",
   "podcast": true,
   "sections": [
     {
@@ -33,9 +33,9 @@
       "kind": "definition",
       "level": 2,
       "start": 11.334,
-      "duration": 28.712,
-      "source": "56dc45bf794fa7466392016e65ee7ea8295857dc3232633502a72a94babc6f9e",
-      "audio": "98242cb5f8d4c57f562f6d72e1ddc0723f95801248089e60010aa7952f7ce45f",
+      "duration": 26.421,
+      "source": "c08350925fd46047216fee7cda6856e383dd49cc3db49534348b030d1dbdd612",
+      "audio": "dca7b6a06b0b8fd62bc51644056344841e03fbed67a6a39e1494f8392fb2830d",
       "parent": null,
       "proves": null
     },
@@ -44,7 +44,7 @@
       "title": "Theorem 3.2.2",
       "kind": "theorem",
       "level": 2,
-      "start": 41.246,
+      "start": 38.956,
       "duration": 11.459,
       "source": "6abf61ec4cafd712679c30ce455536d0c110d35698f23db2e3948e56781d72b5",
       "audio": "6a62bb1149e92b727a9f49ac16597dd630d7f2a64df15fa17849a0371f3a8fc7",
@@ -56,10 +56,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 53.905,
-      "duration": 47.957,
-      "source": "6b5c4971a67a898ff1947ac246c0a1056596110e5f9908a34724d11541c1016e",
-      "audio": "a4319016cf31060dd3b9a5c0e854f7721b1fc3a157eecf43fac593876d390eca",
+      "start": 51.615,
+      "duration": 56.728,
+      "source": "07fadd802e63ec55c815d08bcaf97e07f70b125e5847fcf20974792dc8f011ce",
+      "audio": "21d3a6fcc71135b4d0301cff0df00aab9c196ce0114537d08b9fdc462984b05a",
       "parent": null,
       "proves": "theorem-3-2-2"
     },
@@ -68,7 +68,7 @@
       "title": "Theorem 3.2.3",
       "kind": "theorem",
       "level": 2,
-      "start": 103.062,
+      "start": 109.543,
       "duration": 10.343,
       "source": "1964ac6b8619ad1d562c92af81aad704d0e5a0e607c674582f5706191bfaddb1",
       "audio": "eec60992060d4936e75417c8a7d0e108a3ea1a799fa673e5c44173544ab02f62",
@@ -80,7 +80,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 114.606,
+      "start": 121.086,
       "duration": 52.716,
       "source": "73b305ec81ef354635f2edd407580ea0c97e39a626efa302e141a8d90704f629",
       "audio": "5a2a8b0546ae2a19c29f7cb1b3c590f20fbab83ca95d07d62d6f0ad6f618fec2",
@@ -92,7 +92,7 @@
       "title": "Specializing this theorem to Euclidean space yields the…",
       "kind": "prose",
       "level": 2,
-      "start": 168.522,
+      "start": 175.003,
       "duration": 15.302,
       "source": "9bde76b79808798495fc5625c13cfa13fb6329618303bd9ef0a3375fcde91e6e",
       "audio": "68eec1635584f4e3e454cef8563ff8d18b716242a9e52a18937fe64b1d65e175",
@@ -104,7 +104,7 @@
       "title": "Corollary 3.2.4 (Bolzano–Weierstrass theorem)",
       "kind": "corollary",
       "level": 2,
-      "start": 185.024,
+      "start": 191.505,
       "duration": 10.417,
       "source": "e0823f6fce5fc21ceabacf66ac64d921d41bcab9c42808a1bdb46abe8003b75c",
       "audio": "f8f15e08746f854f1b664fc69a98b2b6da90858b0566ff5116b7c163737ee748",
@@ -116,7 +116,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 196.641,
+      "start": 203.122,
       "duration": 13.994,
       "source": "122feade80becd397ad05509c53d52d4549522b1dddff11d9442fdcbd12e535b",
       "audio": "7dc8491b703a6e8b4de1fcefb0713711208f1fd1171b95fe5b77591af3fade8b",
@@ -128,7 +128,7 @@
       "title": "Theorem 3.2.5",
       "kind": "theorem",
       "level": 2,
-      "start": 211.836,
+      "start": 218.316,
       "duration": 12.857,
       "source": "62e3dd5359d2400c83d8f841d2f02c8da6b6c7f926648a836be5e70f8eff71fa",
       "audio": "1f4547248d2fc98d5fe6f8f1f935da49930b8ee7a2b4711ba8d5ed6261c1c8d4",
@@ -140,10 +140,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 225.893,
-      "duration": 70.929,
-      "source": "ac81f503058248c869eb8dc9a843c70e68be5b17cbb8907be0b2e99cff869355",
-      "audio": "1f12d15d5f403424f528ecce263b48da2da1920b95b670f88c633ef79936a62b",
+      "start": 232.373,
+      "duration": 77.139,
+      "source": "60327f33d5076939bfb22f19b6d9e1862231a97f5b104c9e284c509ff0abc81d",
+      "audio": "02801ebe62c34452121e54d1f007ad8678a370fcaa9b054a3dd43ea12797682f",
       "parent": null,
       "proves": "theorem-3-2-5"
     }
@@ -159,31 +159,31 @@
       "id": "definition-3-2-1",
       "title": "Definition 3.2.1",
       "start": 11.334,
-      "end": 41.246
+      "end": 38.956
     },
     {
       "id": "theorem-3-2-2",
       "title": "Theorem 3.2.2",
-      "start": 41.246,
-      "end": 103.062
+      "start": 38.956,
+      "end": 109.543
     },
     {
       "id": "theorem-3-2-3",
       "title": "Theorem 3.2.3",
-      "start": 103.062,
-      "end": 185.024
+      "start": 109.543,
+      "end": 191.505
     },
     {
       "id": "corollary-3-2-4",
       "title": "Corollary 3.2.4 (Bolzano–Weierstrass theorem)",
-      "start": 185.024,
-      "end": 211.836
+      "start": 191.505,
+      "end": 218.316
     },
     {
       "id": "theorem-3-2-5",
       "title": "Theorem 3.2.5",
-      "start": 211.836,
-      "end": 296.822
+      "start": 218.316,
+      "end": 309.512
     }
   ]
 }

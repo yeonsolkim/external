@@ -2,11 +2,11 @@
   "url": "/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html",
   "title": "3.4 Limit Superior and Limit Inferior",
   "lang": "en",
-  "hash": "8f9821037aa3857eeee27f42b90b36a72b4db7c293c184f2d3da04704cb920ce",
+  "hash": "eedb72bf4e448fd1b1195fb6606555d8d85c36ec112b5aaa14e162b862779fd4",
   "skeleton": 4,
   "prompt": "lecture-v3",
   "model": "gpt-5.5",
-  "updated": "2026-09-28",
+  "updated": "2026-09-29",
   "sections": [
     {
       "id": "introduction",
@@ -26,7 +26,7 @@
       "title": "Definition 3.4.1",
       "kind": "definition",
       "level": 2,
-      "source": "cefdd9d078569558970133f92c66f15eaca62f8f61f5b1081c4ae8a1e3c57fc8",
+      "source": "01da107ec0b0bcc9730394b4e6dbfb5015c03dc6845ed6d99220af22a5f111a8",
       "skip": null,
       "file": "definition-3-4-1.md",
       "current": true,
