@@ -357,15 +357,15 @@ follow() {
   [[ -z "$run" ]] && { say "no CI run found"; notify "No CI run found for the push"; exit 1; }
   say "run $run"
 
-  /usr/bin/timeout 1800 gh run watch "$run" --interval 15 >/dev/null 2>>"$log"
+  /usr/bin/timeout 5400 gh run watch "$run" --interval 15 >/dev/null 2>>"$log"
   local conclusion
   conclusion=$(/usr/bin/timeout 20 gh run view "$run" --json conclusion --jq .conclusion 2>>"$log")
   if [[ "$conclusion" != success ]]; then
     local failed
     failed=$(/usr/bin/timeout 20 gh run view "$run" --json jobs \
                --jq '[.jobs[].steps[]? | select(.conclusion == "failure") | .name] | first // empty' 2>>"$log")
-    say "CI: ${conclusion:-still running after 30 min} ${failed:+($failed)}"
-    notify "Deploy failed: ${failed:-${conclusion:-not finished after 30 min}}"
+    say "CI: ${conclusion:-still running after 90 min} ${failed:+($failed)}"
+    notify "Deploy failed: ${failed:-${conclusion:-not finished after 90 min}}"
     exit 1
   fi
 
