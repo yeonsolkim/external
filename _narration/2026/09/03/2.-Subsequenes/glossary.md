@@ -8,7 +8,7 @@ generated: 2026-09-16
 body: 79fc4aacc593c97958c9b16befe4a480e0ddaa0c8f07a183d2c600dd003af686
 ---
 
-\mathbb N^+ — positive integers (positive natural numbers)
+\mathbb Z^+ — positive integers (positive natural numbers)
 \mathbb R^k — R k (Euclidean k-space)
 \mathbf x_n — x n (points in R k; say “the point x n” if needed against coordinates)
 k-cell — k-cell (compact rectangular cell in R k)

@@ -8,12 +8,12 @@ category_path:
   - 1. Introduction to Analysis
   - 1. Algebraic and Ordered Structures
 created_at: 2026-09-18 12:16:08 +0900
-last_modified_at: 2026-09-22 10:06:46 +0900
+last_modified_at: 2026-09-29 09:12:25 +0900
 
 publish: false
 ---
 
-**Exercise 1.1** Prove that for all $x\in \mathbb R$ and $n\in \mathbb N^{+},$
+**Exercise 1.1** Prove that for all $x\in \mathbb R$ and $n\in \mathbb Z^{+},$
 
 $$ nx = n\cdot x.$$
 

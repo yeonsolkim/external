@@ -9,7 +9,7 @@ body: 79131ca68c97da71690fd66b48554c09246f35ce855b9ecae8bae9195f1c294a
 ---
 
 \operatorname {diam}{A} — diameter of A (diameter operator; similarly for any set)
-\mathbb N^{+} — positive integers (positive natural numbers)
+\mathbb Z^{+} — positive integers (positive natural numbers)
 E_k — E k (tail set \{x_n:n\ge k\}; say “the tail E k” if needed)
 E_m — E m (tail set \{\mathbf x_n:n\ge m\} in \mathbb R^k)
 A_{m_0} — A m naught (appears in Corollary 3.3.6; likely the tail set meant there)

@@ -8,7 +8,7 @@ generated: 2026-09-22
 body: 78c0272419a8279fa414a24efd0d95d47c019fe273306882d99edc5a29669eb1
 ---
 
-\mathbb N^+ — positive integers (positive natural numbers)
+\mathbb Z^+ — positive integers (positive natural numbers)
 B_r(x) — the ball of radius r about x (open ball centered at x)
 B_1(x) — the unit ball about x (open ball centered at x)
 x_n\uparrow x — x n increases to x (monotonically increasing and converges to x)

@@ -6,7 +6,7 @@ category_path:
   - 3. English
   - 2. Dictionary
 created_at: 2026-09-07 12:58:48 +0900
-last_modified_at: 2026-09-27 10:47:27 +0900
+last_modified_at: 2026-09-29 08:45:43 +0900
 
 line_indent: false
 publish: false

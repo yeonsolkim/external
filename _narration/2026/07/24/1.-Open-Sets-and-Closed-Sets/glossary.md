@@ -8,7 +8,7 @@ generated: 2026-09-15
 body: 529d7180e9c3ba484e7fb876cdb7d6a17e5d056b256f42cae66cb92e9b841323
 ---
 
-\mathbb N^{+} — positive integers (positive natural numbers)
+\mathbb Z^{+} — positive integers (positive natural numbers)
 d\vert{}_{A\times A}, d|_{N\times N} — restricted metric (restriction of d to the indicated subset)
 B_r(a) — the open ball of radius r about a (open ball in the ambient metric space)
 \overline B_r(a) — the closed ball of radius r about a (do not read as closure of B)
