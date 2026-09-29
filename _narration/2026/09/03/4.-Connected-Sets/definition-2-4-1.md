@@ -6,9 +6,9 @@ document: 2.4 Connected Sets
 url: /2026/09/03/4.-Connected-Sets.html
 source: 625ae618c61dd2c83e2dfc47b60cf1996daf38b03c3d19937ff9343e0021f927
 skeleton: 4
-prompt: lecture-v3
+prompt: lecture-v4
 model: gpt-5.5
-generated: 2026-09-28
+generated: 2026-09-29
 body: 5fd5ddadb8fa6c869d509e359f8ec50616ad8cd190664d52d0acc564f8d63505
 words: 57
 ---

@@ -6,9 +6,9 @@ document: 3.2 Subsequenes
 url: /2026/09/03/2.-Subsequenes.html
 source: 122feade80becd397ad05509c53d52d4549522b1dddff11d9442fdcbd12e535b
 skeleton: 4
-prompt: lecture-v3
+prompt: lecture-v4
 model: gpt-5.5
-generated: 2026-09-28
+generated: 2026-09-29
 body: 39685777a5fc87518a168a0e4a8128582335ccaa112fcbc8c39939aa991287e0
 words: 34
 ---

@@ -6,19 +6,33 @@ document: 3.1 Convergent Sequences
 url: /2026/08/31/1.-Convergent-Sequences.html
 source: 4b090729243928f7737f6c18e702a36fcd414546ec5226c8cfc605fb72082601
 skeleton: 4
-prompt: lecture-v3
+prompt: lecture-v4
 model: gpt-5.5
 generated: 2026-09-29
-body: 4cff9bc2821feeebe761ef31941f4a54981d17a532d981b06d47389660c776df
-words: 627
+body: b87d0c60bacb58ea5f7c341484cb7d52b41d1fe08cbabbcec8df2ab713748fe9
+words: 666
 ---
 
-Proof. First, let epsilon greater than zero be given. The Archimedean property of R guarantees the existence of n zero in the positive integers such that n zero is greater than the quantity one over epsilon, to the one over x. Then, n greater than or equal to n zero implies one over n to the x is less than epsilon. Since epsilon greater than zero was arbitrary, one over n to the x tends to zero.
+Proof. Part one. Let epsilon greater than zero be given. The Archimedean property of R guarantees the existence of n naught in the positive integers such that n naught is greater than the quantity one over epsilon, raised to the power one over x. Then, n greater than or equal to n naught implies one over n to the x is less than epsilon. Since epsilon greater than zero was arbitrary, one over n to the x tends to zero.
 
-Second, if x equals one then it is trivial. Suppose x is greater than one and let the n-th root of x equal one plus delta n. Then we have the quantity one plus delta n, to the n, equals x. Since one plus n delta n is less than the quantity one plus delta n, to the n, by the binomial theorem, it follows that one plus n delta n is less than x. Therefore delta n is less than x minus one over n, and thus delta n tends to zero by Lemma 3.1.9. This proves that the limit as n goes to infinity of the n-th root of x equals one. Since the n-th root of x times the n-th root of one over x equals one, we have the limit as n goes to infinity of the n-th root of one over x equals the limit as n goes to infinity of one over the n-th root of x, which equals one over the limit as n goes to infinity of the n-th root of x, which equals one. This shows that part two holds as well when x is less than one.
+Part two. If x equals one then it is trivial. Suppose x is greater than one and let the n-th root of x equal one plus delta n. Then we have the quantity one plus delta n, to the n, equals x.
 
-Third, let the n-th root of n equal one plus delta n where delta n is greater than zero. Then we have the quantity one plus delta n, to the n, equals n. If n is greater than or equal to two, then n times n minus one over two, times delta n squared, is less than the quantity one plus delta, to the n, by the binomial theorem. It follows that n times n minus one over two, times delta n squared, is less than n. Thus we have zero is less than delta n, which is less than the square root of two over n minus one. Hence delta n tends to zero, by Lemma 3.1.9. Consequently, the n-th root of n tends to one.
+Since one plus n times delta n is less than the quantity one plus delta n, to the n, by the binomial theorem, it follows that one plus n times delta n is less than x.
 
-Fourth, let k be an integer such that k is greater than y and k is greater than zero. If n is greater than two k, then, by the binomial theorem, the quantity one plus x, to the n, is greater than n choose k times x to the k, which equals n times n minus one times and so on up to n minus k plus one, over k factorial, times x to the k, which is greater than n to the k over two to the k times k factorial, times x to the k. It follows that zero is less than n to the y over the quantity one plus x, to the n, which is less than two to the k times k factorial over x to the k times n to the k minus y. Since we have two to the k times k factorial over x to the k times n to the k minus y tends to zero by part one, Lemma 3.1.9 now gives n to the y over the quantity one plus x, to the n, tends to zero.
+Therefore delta n is less than the quantity x minus one, over n, and thus delta n tends to zero by Lemma 3.1.9. This proves the limit as n goes to infinity of the n-th root of x equals one. Since the n-th root of x times the n-th root of the quantity one over x equals one, we have the limit as n goes to infinity of the n-th root of the quantity one over x equals the limit as n goes to infinity of one over the n-th root of x, which equals one over the limit as n goes to infinity of the n-th root of x, which equals one.
 
-Fifth, if x equals zero it is trivial. If zero is less than the absolute value of x, which is less than one, then taking y equals zero in part four shows part five. This completes the proof.
+This shows that part two holds as well when x is less than one.
+
+Part three. Let the n-th root of n equal one plus delta n where delta n is greater than zero. Then we have the quantity one plus delta n, to the n, equals n.
+
+If n is greater than or equal to two, then n times the quantity n minus one, all over two, times delta n squared, is less than the quantity one plus delta, to the n, by the binomial theorem. It follows that n times the quantity n minus one, all over two, times delta n squared, is less than n.
+
+Thus we have zero is less than delta n, which is less than the square root of the quantity two over n minus one. Hence delta n tends to zero, by Lemma 3.1.9. Consequently, the n-th root of n tends to one.
+
+Part four. Let k be an integer such that k is greater than y and k is greater than zero. If n is greater than two k, then, by the binomial theorem, the quantity one plus x, to the n, is greater than n choose k times x to the k, which equals n times the quantity n minus one, and so on, down to the quantity n minus k plus one, all over k factorial, times x to the k, which is greater than n to the k, over the product of two to the k and k factorial, times x to the k.
+
+It follows that zero is less than n to the y, over the quantity one plus x, raised to the n, which is less than two to the k times k factorial, over the product of x to the k and n to the power k minus y.
+
+Since we have two to the k times k factorial, over the product of x to the k and n to the power k minus y, tends to zero by part one, Lemma 3.1.9 now gives n to the y, over the quantity one plus x, raised to the n, tends to zero.
+
+Part five. If x equals zero it is trivial. If zero is less than the absolute value of x, which is less than one, then taking y equals zero in part four shows part five. This completes the proof.

@@ -6,9 +6,9 @@ document: 3.3 Cauchy Sequences
 url: /2026/09/09/3.-Cauchy-Sequences.html
 source: 777fc118ec1aaef0ebc43efd46fb76e14e9d16ec8b706f7478142b03e1d66232
 skeleton: 4
-prompt: lecture-v3
+prompt: lecture-v4
 model: gpt-5.5
-generated: 2026-09-28
+generated: 2026-09-29
 body: 777fc118ec1aaef0ebc43efd46fb76e14e9d16ec8b706f7478142b03e1d66232
 words: 60
 ---

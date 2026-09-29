@@ -6,9 +6,9 @@ document: 2.3 Perfect Sets
 url: /2026/08/05/3.-Perfect-Sets.html
 source: 190ddd1bb88eaf2ef1c6803ec05e17d187bdfbe047ce7e5942a108dc03eea814
 skeleton: 4
-prompt: lecture-v3
+prompt: lecture-v4
 model: gpt-5.5
-generated: 2026-09-28
+generated: 2026-09-29
 body: ee6fcfb7ce450462a858bd4283bc39fbaa41e006fb94a998e39b1d5950912d4d
 words: 47
 ---

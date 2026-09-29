@@ -4,13 +4,13 @@
   "lang": "en",
   "description": "We first extend the notion of convergence by allowing the values $+\\infty$ and $-\\infty$. We then associate with each tail of a sequence its supremum and infimum. The limiting behavior of these tail bounds leads to the notions of limit superior and limit inferior. Throughout this section, all suprema and infima are understood to be taken in $\\overline{\\mathbb R}$",
   "published_at": "2026-09-12T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/6a6a1455bc6e818247c095511a141534b038f42ab2507b7d3bdbc258141eddc1.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/e7b2f3253bebebc902d501cbb1edff40fd9cf323d77be7def7ea2a3a9eacdd51.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.chapters.json",
-  "duration": 737.806,
-  "bytes": 11806740,
+  "duration": 723.68,
+  "bytes": 11580624,
   "voice": "cedar",
-  "page_key": "6a6a1455bc6e818247c095511a141534b038f42ab2507b7d3bdbc258141eddc1",
+  "page_key": "e7b2f3253bebebc902d501cbb1edff40fd9cf323d77be7def7ea2a3a9eacdd51",
   "skeleton_hash": "eedb72bf4e448fd1b1195fb6606555d8d85c36ec112b5aaa14e162b862779fd4",
   "generated": "2026-09-29",
   "podcast": true,
@@ -33,9 +33,9 @@
       "kind": "definition",
       "level": 2,
       "start": 24.35,
-      "duration": 52.12,
+      "duration": 53.469,
       "source": "01da107ec0b0bcc9730394b4e6dbfb5015c03dc6845ed6d99220af22a5f111a8",
-      "audio": "6d3108f78bf332202ae19103a36e74297e8dabd0736a562446c4bc4fab6ff3d3",
+      "audio": "c51d18d6e3012d0f10735a25f6a2a86aee4dbfca155757cdcac6af570ce5a050",
       "parent": null,
       "proves": null
     },
@@ -44,10 +44,10 @@
       "title": "Definition 3.4.2",
       "kind": "definition",
       "level": 2,
-      "start": 77.67,
-      "duration": 42.807,
+      "start": 79.019,
+      "duration": 29.389,
       "source": "95a0d5c59c947dfe4a1467a5b669108aa6a7414bb5c72fd2f1bcef7334902a80",
-      "audio": "8dc0bb3fe837d39887291f9f1fd8daebb2528fdccb1c23b8299ac1d76c7c7cda",
+      "audio": "70d1c60be7f674cb01ff5b8d1c2f4444ec7a2a441f3baf0888d70b5449d26fca",
       "parent": null,
       "proves": null
     },
@@ -56,7 +56,7 @@
       "title": "The sequence … is monotonically decreasing, while … is…",
       "kind": "prose",
       "level": 2,
-      "start": 121.677,
+      "start": 109.608,
       "duration": 32.71,
       "source": "7d8d0a65739be8ea26bfd6ba63e4214ac4c373e3ad8086e2490060039fcf7079",
       "audio": "12a1c3ba41baffecbf198f21b4d1c6aa6aad9b1ece37ede2a2d3c082462cb6dd",
@@ -68,10 +68,10 @@
       "title": "Theorem 3.4.3",
       "kind": "theorem",
       "level": 2,
-      "start": 155.587,
-      "duration": 16.386,
+      "start": 143.518,
+      "duration": 14.828,
       "source": "4fcd2111eb19e56f96d1ae524cc76cf237057875a68fb4532015bd5c4903faac",
-      "audio": "ed5c733accefc171d85e2583a92b492bd0d4a5eba2ded19df9a6889ae9ee00bd",
+      "audio": "17e87d3d3a33ec34f80b4994815792dcc8f4e3fdd9c57b4ad0715358149ce6ea",
       "parent": null,
       "proves": null
     },
@@ -80,10 +80,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 173.173,
-      "duration": 203.652,
+      "start": 159.546,
+      "duration": 208.914,
       "source": "d200489f8df76f09749c629bc641e9c16a8d578acdd1710bdf0990fb0d6f38c7",
-      "audio": "1a92a1f7b884dec3b4fd568c155b224e9b4545f22b4a42ff27a8d0f679bf2898",
+      "audio": "9ba9dce77f8541c5b2799c2b090f8a22ee7622dc948f7e2b0c9c96edd20d6faa",
       "parent": null,
       "proves": "theorem-3-4-3"
     },
@@ -92,10 +92,10 @@
       "title": "Example 3.4.4",
       "kind": "example",
       "level": 2,
-      "start": 378.025,
-      "duration": 75.744,
+      "start": 369.66,
+      "duration": 72.549,
       "source": "643a6e59fe6999f1b17c4b29015dff95066c7259ae8a048d73d053b5e3bf7cb5",
-      "audio": "ac609d192fa4c06fccc36a2076fd9920cb2f3699d4f0907e1b8ca0e6b10384e0",
+      "audio": "0e84c7631a9c719511c5eda9ddb180cf94d3c7f0ece511b7336061317685e992",
       "parent": null,
       "proves": null
     },
@@ -104,7 +104,7 @@
       "title": "While Theorem 3.4.3 describes the values attained along…",
       "kind": "prose",
       "level": 2,
-      "start": 454.97,
+      "start": 443.41,
       "duration": 9.577,
       "source": "3ad3549ed6b52f8c17df17f721fdff1260e4ad7bbae1012dfc9ac75f354c0e0b",
       "audio": "46aa86747d2875cc65d51a06647242d4fc50681ecd45959789b2f2fb6839abae",
@@ -116,10 +116,10 @@
       "title": "Theorem 3.4.5",
       "kind": "theorem",
       "level": 2,
-      "start": 465.747,
-      "duration": 21.643,
+      "start": 454.187,
+      "duration": 23.586,
       "source": "d103f27ede1744cf168d51f1a3131bf0cd2a05921c9b4920277923ca028ec205",
-      "audio": "557e45091daa655a3e12cb56a38caf9e329839126c3fe6fd9913b02b879cf491",
+      "audio": "24b1d6778342fc56a6c03b554a9befc5ce1e72ecb48915bae4ae2f4c0001969d",
       "parent": null,
       "proves": null
     },
@@ -128,10 +128,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 488.589,
-      "duration": 51.956,
+      "start": 478.972,
+      "duration": 54.065,
       "source": "711092f3f06991fbc91c736adf826736a02a28d59971e7722d0640709d2430d2",
-      "audio": "984a881306a319710ad67cedeb3e37124436a9b4b80e6078735ce3410dd6ba26",
+      "audio": "58a560f24df13b766e3d58181390fd8084ea7a41a59bcd446cac518983e9db47",
       "parent": null,
       "proves": "theorem-3-4-5"
     },
@@ -140,7 +140,7 @@
       "title": "In particular, if the limit superior and limit inferior…",
       "kind": "prose",
       "level": 2,
-      "start": 541.745,
+      "start": 534.237,
       "duration": 10.612,
       "source": "9c54193ec125933c08b26b6fc12bba83dedf7d8e515daff4396b1150ced62adc",
       "audio": "95ea22665c941ab66af3888e1cf5d109d89606487799e2526dfbfc34fd3cddbf",
@@ -152,10 +152,10 @@
       "title": "Theorem 3.4.6",
       "kind": "theorem",
       "level": 2,
-      "start": 553.557,
-      "duration": 15.35,
+      "start": 546.049,
+      "duration": 16.559,
       "source": "0e7e2f43bbb81bb45d958fc401acfb36a676dee8a9cb522d421d69d7c7f0582f",
-      "audio": "743c618b80ca0878e2be6c7c7f75b6a91ed2d13db0dcd24a4a0d4c7ffdf4b551",
+      "audio": "2b5ea43dc36f2bcdc5edc9d985a77eaed9050695307dc701a6b5f65a48d9a44c",
       "parent": null,
       "proves": null
     },
@@ -164,10 +164,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 570.107,
-      "duration": 38.984,
+      "start": 563.808,
+      "duration": 40.927,
       "source": "ca6ab2c169517d2c7b143141052c3bfec3cab4c76dc40eef91b0436df5dd03fa",
-      "audio": "deb46fd3c17d1007770e345867de9fbeb5c953f912e70a754e33b37d6dd6817e",
+      "audio": "26d07e7c0b6f31d1fa744ce843eb084469c0c4f58212ca00f0e2b618c0253484",
       "parent": null,
       "proves": "theorem-3-4-6"
     },
@@ -176,7 +176,7 @@
       "title": "Finally, because tail suprema and tail infima preserve…",
       "kind": "prose",
       "level": 2,
-      "start": 610.291,
+      "start": 605.935,
       "duration": 11.028,
       "source": "b8b2faae3ad8aba121517585d52bc41d65687dca41c77e3f417978e7845cdcf7",
       "audio": "e7756f5814e0b709038865d2728fc1ddcee51bfad85a662bee004e86797b7da4",
@@ -188,10 +188,10 @@
       "title": "Theorem 3.4.7",
       "kind": "theorem",
       "level": 2,
-      "start": 622.519,
-      "duration": 23.233,
+      "start": 618.163,
+      "duration": 24.423,
       "source": "6d4e054cbfa8a830818a309af3bb24d38503e532999e2c2f3789dd86ee6a2e5d",
-      "audio": "c08cd0a250f8aca161654a8f640f6f2fda45c0f8d3a41cfd039324cf4d5e55c3",
+      "audio": "cf5b8ca1039ce831bf6102078b50a4a67ddb5bce61f1e803f10c55e7e44364ff",
       "parent": null,
       "proves": null
     },
@@ -200,10 +200,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 646.952,
-      "duration": 90.854,
+      "start": 643.786,
+      "duration": 79.894,
       "source": "eef5c18f6cf6223462af012eaae3c43e3041693f07d882af62dffc8cbf743bc7",
-      "audio": "2e488769af103571266c9f8ccdf9dd473e3b680eaa6c67a8d5c3e850b5265330",
+      "audio": "023016303d6e1722935b5ddc2d61a5a8cc782adc524ab913714aedf6494731f5",
       "parent": null,
       "proves": "theorem-3-4-7"
     }
@@ -219,43 +219,43 @@
       "id": "definition-3-4-1",
       "title": "Definition 3.4.1",
       "start": 24.35,
-      "end": 77.67
+      "end": 79.019
     },
     {
       "id": "definition-3-4-2",
       "title": "Definition 3.4.2",
-      "start": 77.67,
-      "end": 155.587
+      "start": 79.019,
+      "end": 143.518
     },
     {
       "id": "theorem-3-4-3",
       "title": "Theorem 3.4.3",
-      "start": 155.587,
-      "end": 378.025
+      "start": 143.518,
+      "end": 369.66
     },
     {
       "id": "example-3-4-4",
       "title": "Example 3.4.4",
-      "start": 378.025,
-      "end": 465.747
+      "start": 369.66,
+      "end": 454.187
     },
     {
       "id": "theorem-3-4-5",
       "title": "Theorem 3.4.5",
-      "start": 465.747,
-      "end": 553.557
+      "start": 454.187,
+      "end": 546.049
     },
     {
       "id": "theorem-3-4-6",
       "title": "Theorem 3.4.6",
-      "start": 553.557,
-      "end": 622.519
+      "start": 546.049,
+      "end": 618.163
     },
     {
       "id": "theorem-3-4-7",
       "title": "Theorem 3.4.7",
-      "start": 622.519,
-      "end": 737.806
+      "start": 618.163,
+      "end": 723.68
     }
   ]
 }

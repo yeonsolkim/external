@@ -6,9 +6,9 @@ document: Combinatorics
 url: /2026/07/10/Combinatorics.html
 source: a64779c09717ac32ec9c83b24b013b64b65a3b92819492757113c60d59c060a3
 skeleton: 4
-prompt: lecture-v3
+prompt: lecture-v4
 model: gpt-5.5
-generated: 2026-09-28
+generated: 2026-09-29
 body: 6d91ab15b9313fa614914056f5820ddcc013ecaa097b33c5383d80aa1cc44e4e
 words: 79
 ---

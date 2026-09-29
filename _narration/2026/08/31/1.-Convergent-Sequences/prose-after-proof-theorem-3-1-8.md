@@ -6,9 +6,9 @@ document: 3.1 Convergent Sequences
 url: /2026/08/31/1.-Convergent-Sequences.html
 source: d9979f37cb6a0f0722704cd29286265058f4124eceab5eb00f10e2a68fcb2ec4
 skeleton: 4
-prompt: lecture-v3
+prompt: lecture-v4
 model: gpt-5.5
-generated: 2026-09-28
+generated: 2026-09-29
 body: 62b83288a4fad038a17e2465c51f99755112e8b11ba859a5b20946df951bdee6
 words: 39
 ---

@@ -6,16 +6,14 @@ document: 2.1 Open Sets and Closed Sets
 url: /2026/07/24/1.-Open-Sets-and-Closed-Sets.html
 source: 1dc90ad7e2080e626bd425d75fcdcbce43fbac2639898b0e77545f73aeab097b
 skeleton: 4
-prompt: lecture-v3
+prompt: lecture-v4
 model: gpt-5.5
-generated: 2026-09-28
-body: 03842f957f2a4f6d58d1213a233442a545dbe19c940e0bc5a5e1b2232d6a4b86
+generated: 2026-09-29
+body: a431b4a19fbcb95dabb27aa056770f4652fc6ab2de766f2881d397d04b1a2478
 words: 350
 ---
 
-Proof.
-
-One. Let x belong to the union over i in I of U i. Then we may let x belong to U i for some i in I. Since x is an interior point of U i, x is also an interior point of the union over i in I of U i. Therefore the union over i in I of U i is open.
+Proof. One. Let x belong to the union over i in I of U i. Then we may let x belong to U i for some i in I. Since x is an interior point of U i, x is also an interior point of the union over i in I of U i. Therefore the union over i in I of U i is open.
 
 Two. By Theorem 2.1.14, F i complement is open for every i in I. Then the union over i in I of F i complement is open by part one. Since the union over i in I of F i complement equals the complement of the intersection over i in I of F i, the intersection over i in I of F i is closed by Theorem 2.1.14.
 

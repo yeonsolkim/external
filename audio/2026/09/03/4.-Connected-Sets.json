@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "We now focus on the fact that the Cantor set has gaps at every scale: given any $x\\in C$ and any $r>0$, no matter how small $r$ is, the neighborhood $(x-r,x+r)$ contains some open interval that does not belong to $C$. Thus, if we zoom in around any point of the Cantor set, the set never starts looking like a solid interval. To express the property of a set forming one global piece, we introduce connectedness.",
   "published_at": "2026-09-03T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/d073d26a753d08ea03833c3eca9793322f68cebbac70742b3ed205eee75c9ac8.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/86b70bf6d07cba1bc83a400626a2be1b9598299c4c7e9766aa570b18bf5e778c.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/09/03/4.-Connected-Sets.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/09/03/4.-Connected-Sets.chapters.json",
-  "duration": 376.281,
-  "bytes": 6021988,
+  "duration": 386.245,
+  "bytes": 6181231,
   "voice": "cedar",
-  "page_key": "d073d26a753d08ea03833c3eca9793322f68cebbac70742b3ed205eee75c9ac8",
+  "page_key": "86b70bf6d07cba1bc83a400626a2be1b9598299c4c7e9766aa570b18bf5e778c",
   "skeleton_hash": "e7a1053993a699a762efdb5f9d4f7dcc1da1180668582dbb8d08d8fa2d14a902",
-  "generated": "2026-09-28",
+  "generated": "2026-09-29",
   "podcast": true,
   "sections": [
     {
@@ -81,9 +81,9 @@
       "kind": "proof",
       "level": 2,
       "start": 97.63,
-      "duration": 117.687,
+      "duration": 116.961,
       "source": "315b9a27765a7f12eed0112265ba0162a0b4403741d1969fee93274035b7c465",
-      "audio": "bde03b86db3a5003e8d4978c1426e7a15530ae60dd3ee47ef67de292ea9f654b",
+      "audio": "96d382ba6116528e31acef882c518e64fea63bd10bf98bbe419cebd8f4595737",
       "parent": null,
       "proves": "theorem-2-4-3"
     },
@@ -92,7 +92,7 @@
       "title": "On the real line …, a gap is the only possible obstruction…",
       "kind": "prose",
       "level": 2,
-      "start": 216.517,
+      "start": 215.79,
       "duration": 12.482,
       "source": "77a207349c4c02feeb80fba9f19790ab42ffdb6533c5c2a2d3e8c42653c290a1",
       "audio": "797db0266c19addeb6b2875c3ce48c0a8b525bcb22543f90499799666cb1dfe7",
@@ -104,10 +104,10 @@
       "title": "Theorem 2.4.4",
       "kind": "theorem",
       "level": 2,
-      "start": 230.199,
-      "duration": 16.276,
+      "start": 229.473,
+      "duration": 13.863,
       "source": "2b04f4d80eff04c977e55af2eab9958f42f0510eb78c8f61973baea65b987131",
-      "audio": "1757074b635dad50ca508b8c7614f4e573982b0385a95cfdb02916a85c520736",
+      "audio": "fac0fa5860a8e822ab98cc0351be9e1c0e66e8c5da94fc5f0f04c4aa46e30891",
       "parent": null,
       "proves": null
     },
@@ -116,10 +116,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 247.675,
-      "duration": 128.606,
+      "start": 244.536,
+      "duration": 141.71,
       "source": "eb1bdbb8c234b4d29ad900b01486f5fd8fc1e42cc6e54e15b2260b4b173640ed",
-      "audio": "cfb9a833fe23a709d4a430e941d2abbd6abaf411142f61fe11177bd65a84dd45",
+      "audio": "cb5f2cb4f7e620c2a5b6f73612f875783300fc1c5aa6038604b4301d60916dd4",
       "parent": null,
       "proves": "theorem-2-4-4"
     }
@@ -147,13 +147,13 @@
       "id": "theorem-2-4-3",
       "title": "Theorem 2.4.3",
       "start": 79.968,
-      "end": 230.199
+      "end": 229.473
     },
     {
       "id": "theorem-2-4-4",
       "title": "Theorem 2.4.4",
-      "start": 230.199,
-      "end": 376.281
+      "start": 229.473,
+      "end": 386.245
     }
   ]
 }
