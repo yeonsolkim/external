@@ -5,13 +5,13 @@ url: "https://yeonsolkim.com"
 timezone: UTC
 fixed_banner_title: "External"
 comments_enabled: false
-author: YeonsolKim  
+author: Yeonsol Kim  
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
 social:
-  name: YeonsolKim
+  name: Yeonsol Kim
   links:
     - https://github.com/yeonsolkim
 markdown: kramdown
