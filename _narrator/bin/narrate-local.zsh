@@ -1,8 +1,8 @@
 #!/bin/zsh
-# Local narration for the "Git Stage" service: right after `jekyll build`, publish every post
-# marked `publish: true`, stage the outputs (_narration/, audio/, podcast.xml) and notify —
-# so the local site carries the audio before the push. Runs in the foreground; everything
-# goes to the log.
+# A deliberate local narration run (CI normally does this — _narrator/README.md): after
+# `jekyll build`, publish every post marked `publish: true`, stage the outputs (_narration/,
+# audio/, podcast.xml) and notify — so the local site carries the audio before the push.
+# Runs in the foreground; everything goes to the log.
 #
 #   /bin/zsh _narrator/bin/narrate-local.zsh [repo] [log]
 set -uo pipefail

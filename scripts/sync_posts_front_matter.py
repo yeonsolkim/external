@@ -96,9 +96,26 @@ def category_yaml(path: Path) -> list[str]:
     return ["category_path:", *[f"  - {category}" for category in categories]]
 
 
+def recorded_created_ts(front_matter: str) -> float | None:
+    for line in top_level_entry(front_matter, "created_at")[:1]:
+        value = line.split(":", 1)[1].strip().strip("\"'")
+        try:
+            return datetime.strptime(value, "%Y-%m-%d %H:%M:%S %z").timestamp()
+        except ValueError:
+            return None
+    return None
+
+
 def desired_front_matter(path: Path, stat: os.stat_result, existing_front_matter: str | None) -> str:
     date_prefix = path.name[:10]
     existing_front_matter = existing_front_matter or ""
+
+    # git re-creates a file on checkout, clone or `rebase --autostash`, which resets its
+    # birth time; the creation time already recorded is kept unless the file is older.
+    created = created_ts(stat)
+    recorded = recorded_created_ts(existing_front_matter)
+    if recorded is not None:
+        created = min(created, recorded)
 
     # An existing title is kept as written, so it may differ from the file
     # name; only a missing title is derived from the file name.
@@ -112,7 +129,7 @@ def desired_front_matter(path: Path, stat: os.stat_result, existing_front_matter
         *title_lines,
         f"date: {date_prefix} 00:00:00 +0900",
         *category_yaml(path),
-        f"created_at: {fmt_time(created_ts(stat))}",
+        f"created_at: {fmt_time(created)}",
         f"last_modified_at: {fmt_time(stat.st_mtime)}",
     ]
 
@@ -205,7 +222,7 @@ def stabilize_front_matter() -> int:
 
     print(
         "Post front matter did not stabilize. "
-        "Stop editing the open note and run Git Stage again.",
+        "Stop editing the open note and run the workflow again.",
         file=sys.stderr,
     )
     return 2
