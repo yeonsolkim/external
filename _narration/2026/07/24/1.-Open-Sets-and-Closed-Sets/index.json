@@ -2,11 +2,11 @@
   "url": "/2026/07/24/1.-Open-Sets-and-Closed-Sets.html",
   "title": "2.1 Open Sets and Closed Sets",
   "lang": "en",
-  "hash": "761d0a543c5d66538cac1adbbb797ec8eb539dfa33d591c3e00afbc65ab2b56b",
+  "hash": "6aa3a971841b8c7e6f358da4fdeb11fb0bfecaa0b9180198e0ec4f1351a8e2f9",
   "skeleton": 4,
   "prompt": "lecture-v3",
   "model": "gpt-5.5",
-  "updated": "2026-09-28",
+  "updated": "2026-09-29",
   "sections": [
     {
       "id": "introduction",
@@ -39,7 +39,7 @@
       "title": "Example 2.1.2",
       "kind": "example",
       "level": 2,
-      "source": "48086eb2b308e503cf467c6b31e5876d4e5b23c948da07fdaca3901b3bbc2aa5",
+      "source": "f12942d8b6a62119d61a4b4bd9750d2b1a70adb0ca24056986b118701737af28",
       "skip": null,
       "file": "example-2-1-2.md",
       "current": true,
