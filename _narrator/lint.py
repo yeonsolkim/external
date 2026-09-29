@@ -18,6 +18,7 @@ from a correct reading by pattern, so it is not checked here.
 """
 from __future__ import annotations
 
+import json
 import os
 import re
 from typing import List, Tuple
@@ -56,11 +57,18 @@ def body_of(path: str) -> str:
 
 
 def check_tree(root: str) -> List[Tuple[str, str]]:
-    """(path, problem) for every section script under root — not glossaries or drafts."""
+    """(path, problem) for every section script under root that a post still reads — not
+    glossaries, drafts, or files an index.json no longer lists (left from an old section id)."""
     out = []
     for directory, _dirs, files in os.walk(root):
+        listed = None
+        if "index.json" in files:
+            with open(os.path.join(directory, "index.json"), encoding="utf-8") as handle:
+                listed = {s["file"] for s in json.load(handle).get("sections", []) if s.get("file")}
         for name in sorted(files):
             if not name.endswith(".md") or name.endswith(".new.md") or name == "glossary.md":
+                continue
+            if listed is not None and name not in listed:
                 continue
             path = os.path.join(directory, name)
             out.extend((path, problem) for problem in problems(body_of(path)))

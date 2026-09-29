@@ -1,4 +1,5 @@
 """The script lint and the one retry it earns — no network. `python3 -m unittest _narrator.tests.test_lint`"""
+import json
 import os
 import tempfile
 import unittest
@@ -41,6 +42,15 @@ class Problems(unittest.TestCase):
                     handle.write("---\nsection: s\n---\n\n" + body + "\n")
             found = lint.check_tree(tmp)
             self.assertEqual([os.path.basename(p) for p, _ in found], ["a.md"])
+
+    def test_the_tree_skips_scripts_the_index_no_longer_lists(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            for name in ("sec-4.md", "numbered-4.md"):
+                with open(os.path.join(tmp, name), "w", encoding="utf-8") as handle:
+                    handle.write("---\nsection: s\n---\n\nx comma y\n")
+            with open(os.path.join(tmp, "index.json"), "w", encoding="utf-8") as handle:
+                json.dump({"sections": [{"id": "sec-4", "file": "sec-4.md"}]}, handle)
+            self.assertEqual([os.path.basename(p) for p, _ in lint.check_tree(tmp)], ["sec-4.md"])
 
 
 class Retry(unittest.TestCase):
