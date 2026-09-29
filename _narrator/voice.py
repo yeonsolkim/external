@@ -30,7 +30,8 @@ from concurrent.futures import ThreadPoolExecutor
 from typing import Optional
 
 from . import tts
-from .script import post_dir, read_md
+from .prompts import PROMPT_VERSION
+from .script import _sha, post_dir, read_md
 from .skeleton import Skeleton
 
 AUDIO_VERSION = 1
@@ -246,7 +247,11 @@ def ensure_section(cache_dir: str, section_id: str, body: str, voice: str, model
 
 # ----------------------------------------------------------------------------- pages
 def scripts_for(skel: Skeleton, narration_root: str) -> list:
-    """[(section, body)] in reading order; refuses to build a page with holes."""
+    """[(section, body)] in reading order; refuses to build a page with holes.
+
+    A script is out of date when the page moved under it, or when it was generated with an
+    older prompt — the rule `script` applies, so that a prompt bump reaches CI through
+    `publish`. A script edited by hand is never out of date because of the prompt."""
     directory = post_dir(narration_root, skel)
     out = []
     missing, stale = [], []
@@ -254,15 +259,18 @@ def scripts_for(skel: Skeleton, narration_root: str) -> list:
         if section.skip or (section.words == 0 and section.math == 0):
             continue
         meta, body = read_md(os.path.join(directory, section.id + ".md"))
+        edited = bool(meta.get("body")) and meta.get("body") != _sha(body)
         if not body:
             missing.append(section.id)
         elif meta.get("source") != section.hash:
+            stale.append(section.id)
+        elif meta.get("prompt") != PROMPT_VERSION and not edited:
             stale.append(section.id)
         out.append((section, body))
     if missing:
         raise VoiceError("no script for: %s — run `script` first" % ", ".join(missing))
     if stale:
-        raise VoiceError("scripts out of date with the page: %s — run `script` first" % ", ".join(stale))
+        raise VoiceError("scripts out of date: %s — run `script` first" % ", ".join(stale))
     return out
 
 
