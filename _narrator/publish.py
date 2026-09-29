@@ -158,7 +158,7 @@ class Publisher:
                 why = "no scripts yet (%d sections)" % (why.count(",") + 1)
             elif why.startswith("scripts out of date"):
                 ids = why.split(":", 1)[1].split("—")[0].strip()
-                why = ("scripts out of date with the page: %s — regenerated automatically unless "
+                why = ("scripts out of date with the page or the prompt: %s — regenerated automatically unless "
                        "edited by hand; for an edited one, merge <id>.new.md or run "
                        "`script <post> --accept <id>`" % ids)
             return {"state": "scripts", "why": why}

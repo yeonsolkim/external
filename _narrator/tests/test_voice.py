@@ -1,8 +1,43 @@
 """Stage 3 — text chunking, silence trimming, keys, chapters. No network, no ffmpeg."""
 import array
+import os
+import tempfile
 import unittest
 
+from _narrator import script as stage2
 from _narrator import voice
+from _narrator.prompts import PROMPT_VERSION
+from _narrator.tests.test_script import skel
+
+
+class ScriptsFor(unittest.TestCase):
+    """Which scripts a page may be built from — the gate `publish` uses before speaking."""
+
+    def write(self, root, prompt, edit=False):
+        s = skel()
+        directory = stage2.post_dir(root, s)
+        for section in s.sections:
+            if section.skip:
+                continue
+            body = "A clean script."
+            stage2.write_md(os.path.join(directory, section.id + ".md"), {
+                "section": section.id, "source": section.hash, "prompt": prompt,
+                "body": stage2._sha(body)}, body + (" Edited by hand." if edit else ""))
+        return s
+
+    def test_scripts_from_the_current_prompt_are_used(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            self.assertEqual(len(voice.scripts_for(self.write(tmp, PROMPT_VERSION), tmp)), 2)
+
+    def test_scripts_from_an_older_prompt_are_out_of_date(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            s = self.write(tmp, "lecture-v0")
+            with self.assertRaisesRegex(voice.VoiceError, "scripts out of date: introduction, theorem-1"):
+                voice.scripts_for(s, tmp)
+
+    def test_a_hand_edited_script_outlives_a_prompt_bump(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            self.assertEqual(len(voice.scripts_for(self.write(tmp, "lecture-v0", edit=True), tmp)), 2)
 
 
 class Text(unittest.TestCase):
