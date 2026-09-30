@@ -10,7 +10,7 @@
 <itunes:explicit>false</itunes:explicit>
 <itunes:type>episodic</itunes:type>
 <itunes:category text="Science"/>
-<lastBuildDate>Tue, 29 Sep 2026 00:00:00 +0000</lastBuildDate>
+<lastBuildDate>Wed, 30 Sep 2026 00:00:00 +0000</lastBuildDate>
 <item>
 <title>3.4 Limit Superior and Limit Inferior</title>
 <link>https://yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html</link>
@@ -28,8 +28,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</guid>
 <pubDate>Wed, 09 Sep 2026 15:00:00 +0000</pubDate>
 <description>Convergence describes the asymptotic behavior of a sequence by relating its terms to a point of the ambient space. This raises a natural question. How much of this asymptotic behavior can be recognized from the terms of the sequence themselves, without first specifying or establishing the existence of such a point? The concept of Cauchyness isolates precisely this internal aspect of convergence. Instead of comparing the terms x_n with a separate point x, it compares sufficiently late terms with one another and asks whether they eventually become arbitrarily close. Read the page at https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.mp3" length="9141400" type="audio/mpeg"/>
-<itunes:duration>0:09:31</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.mp3" length="9070765" type="audio/mpeg"/>
+<itunes:duration>0:09:27</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.chapters.json" type="application/json+chapters"/>
 </item>
@@ -50,8 +50,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/09/03/4.-Connected-Sets.html</guid>
 <pubDate>Thu, 03 Sep 2026 15:00:00 +0000</pubDate>
 <description>We now focus on the fact that the Cantor set has gaps at every scale: given any x\in C and any r&gt;0, no matter how small r is, the neighborhood (x-r,x+r) contains some open interval that does not belong to C. Thus, if we zoom in around any point of the Cantor set, the set never starts looking like a solid interval. To express the property of a set forming one global piece, we introduce connectedness. Read the page at https://yeonsolkim.com/2026/09/03/4.-Connected-Sets.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/09/03/4.-Connected-Sets.mp3" length="6181231" type="audio/mpeg"/>
-<itunes:duration>0:06:26</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/09/03/4.-Connected-Sets.mp3" length="6055843" type="audio/mpeg"/>
+<itunes:duration>0:06:18</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/09/03/4.-Connected-Sets.chapters.json" type="application/json+chapters"/>
 </item>
@@ -61,8 +61,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</guid>
 <pubDate>Mon, 31 Aug 2026 15:00:00 +0000</pubDate>
 <description>We now use the metric structure to describe the asymptotic behavior of an ordered family of points. To say that a sequence (x_n) of points in M converges to x means that its terms eventually lie as close to x as we wish. Read the page at https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.mp3" length="20961884" type="audio/mpeg"/>
-<itunes:duration>0:21:50</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.mp3" length="20798880" type="audio/mpeg"/>
+<itunes:duration>0:21:40</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.chapters.json" type="application/json+chapters"/>
 </item>
@@ -94,8 +94,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.html</guid>
 <pubDate>Fri, 24 Jul 2026 15:00:00 +0000</pubDate>
 <description>A great deal of analysis on \mathbb R, \mathbb C, and \mathbb R^k depends not on their full algebraic structure, but only on the notion of distance between points. This suggests isolating the notion of distance from the particular nature of the points themselves. Accordingly, let M be a nonempty set. We temporarily forget what its elements are and retain only a function d:M\times M\to\mathbb R, where d(x,y) is intended to represent the distance between x and y. Not every such function can reasonably be interpreted as a distance. A distance should be nonnegative; distinct points should have positive distance from one another; the distance from x to y should be the same as the distance from y to x; and traveling directly from x to z should be no longer than traveling from x to z through an intermediate point y. These requirements are abstracted into the following axioms. Read the page at https://yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.mp3" length="23146361" type="audio/mpeg"/>
-<itunes:duration>0:24:06</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.mp3" length="23188575" type="audio/mpeg"/>
+<itunes:duration>0:24:09</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.chapters.json" type="application/json+chapters"/>
 </item>
@@ -105,10 +105,21 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/07/10/Combinatorics.html</guid>
 <pubDate>Fri, 10 Jul 2026 15:00:00 +0000</pubDate>
 <description>1. Trials and outcomes. An outcome is one particular possible result of the trial. The sample space, usually denoted by \Omega, is the set of all possible outcomes. An event is a subset of the sample space. For example, if one die is rolled, the event that an even number appears is Read the page at https://yeonsolkim.com/2026/07/10/Combinatorics.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/07/10/Combinatorics.mp3" length="10935804" type="audio/mpeg"/>
-<itunes:duration>0:11:23</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/07/10/Combinatorics.mp3" length="11093792" type="audio/mpeg"/>
+<itunes:duration>0:11:33</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/07/10/Combinatorics.chapters.json" type="application/json+chapters"/>
+</item>
+<item>
+<title>1.1 Vector Spaces</title>
+<link>https://yeonsolkim.com/2026/06/01/1.-Vector-Spaces.html</link>
+<guid isPermaLink="true">https://yeonsolkim.com/2026/06/01/1.-Vector-Spaces.html</guid>
+<pubDate>Mon, 01 Jun 2026 15:00:00 +0000</pubDate>
+<description>Tuples, matrices, functions, and polynomials are different kinds of objects, yet each can be added to another of its kind and can be multiplied by a scalar. A vector space captures the rules the operations share: addition forms an abelian group, and scalar multiplication by a field works consistently with addition and field arithmetic. This common structure lets us study the fundamental principles such as linear independence, transformation and dimension without depending on what the vectors themselves look like. Read the page at https://yeonsolkim.com/2026/06/01/1.-Vector-Spaces.html</description>
+<enclosure url="https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.mp3" length="8848866" type="audio/mpeg"/>
+<itunes:duration>0:09:13</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.chapters.json" type="application/json+chapters"/>
 </item>
 </channel>
 </rss>

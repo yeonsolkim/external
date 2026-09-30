@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "We now focus on the fact that the Cantor set has gaps at every scale: given any $x\\in C$ and any $r>0$, no matter how small $r$ is, the neighborhood $(x-r,x+r)$ contains some open interval that does not belong to $C$. Thus, if we zoom in around any point of the Cantor set, the set never starts looking like a solid interval. To express the property of a set forming one global piece, we introduce connectedness.",
   "published_at": "2026-09-03T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/86b70bf6d07cba1bc83a400626a2be1b9598299c4c7e9766aa570b18bf5e778c.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/85fd32d913ac676418d73cf94c5d689ef6b1163509bbc8ee90f58b48e9925a80.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/09/03/4.-Connected-Sets.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/09/03/4.-Connected-Sets.chapters.json",
-  "duration": 386.245,
-  "bytes": 6181231,
+  "duration": 378.403,
+  "bytes": 6055843,
   "voice": "cedar",
-  "page_key": "86b70bf6d07cba1bc83a400626a2be1b9598299c4c7e9766aa570b18bf5e778c",
-  "skeleton_hash": "e7a1053993a699a762efdb5f9d4f7dcc1da1180668582dbb8d08d8fa2d14a902",
-  "generated": "2026-09-29",
+  "page_key": "85fd32d913ac676418d73cf94c5d689ef6b1163509bbc8ee90f58b48e9925a80",
+  "skeleton_hash": "fcd772608fdcae5302425b4661debe248e397c0a342aa3290bd99a0335c2b245",
+  "generated": "2026-09-30",
   "podcast": true,
   "sections": [
     {
@@ -117,9 +117,9 @@
       "kind": "proof",
       "level": 2,
       "start": 244.536,
-      "duration": 141.71,
-      "source": "eb1bdbb8c234b4d29ad900b01486f5fd8fc1e42cc6e54e15b2260b4b173640ed",
-      "audio": "cb5f2cb4f7e620c2a5b6f73612f875783300fc1c5aa6038604b4301d60916dd4",
+      "duration": 133.867,
+      "source": "5ecc215b1d50abbdc87e33f7689fc0a8dae2070d256968577488119f1d51d9fc",
+      "audio": "ee6c055309ca196820f54438dc4fbf48515968f6a5b76a5964fd64924bf216d8",
       "parent": null,
       "proves": "theorem-2-4-4"
     }
@@ -153,7 +153,7 @@
       "id": "theorem-2-4-4",
       "title": "Theorem 2.4.4",
       "start": 229.473,
-      "end": 386.245
+      "end": 378.403
     }
   ]
 }

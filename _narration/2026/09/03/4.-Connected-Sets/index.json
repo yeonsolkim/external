@@ -2,11 +2,11 @@
   "url": "/2026/09/03/4.-Connected-Sets.html",
   "title": "2.4 Connected Sets",
   "lang": "en",
-  "hash": "e7a1053993a699a762efdb5f9d4f7dcc1da1180668582dbb8d08d8fa2d14a902",
+  "hash": "fcd772608fdcae5302425b4661debe248e397c0a342aa3290bd99a0335c2b245",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-09-29",
+  "updated": "2026-09-30",
   "sections": [
     {
       "id": "introduction",
@@ -117,7 +117,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "source": "eb1bdbb8c234b4d29ad900b01486f5fd8fc1e42cc6e54e15b2260b4b173640ed",
+      "source": "5ecc215b1d50abbdc87e33f7689fc0a8dae2070d256968577488119f1d51d9fc",
       "skip": null,
       "file": "proof-theorem-2-4-4.md",
       "current": true,
