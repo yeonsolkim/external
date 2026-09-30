@@ -6,7 +6,7 @@ category_path:
   - 1. Mathematics
   - 6. Others
 created_at: 2026-06-26 12:26:40 +0900
-last_modified_at: 2026-08-24 16:11:17 +0900
+last_modified_at: 2026-09-30 16:56:57 +0900
 
 publish: false
 ---
@@ -18,7 +18,7 @@ publish: false
 **B2.**  Find all pairs of real numbers $(x,y)$ satisfying the system of equations
 
 $$ \begin{aligned}
-& \frac 1 x + \frac 1 2y = (x^2+3y^2)(3x^2+y^2)\\
-& \frac 1 x - \frac 1 2y = 2(y^4-x^4).
+& \frac 1 x + \frac 1 {2y} = (x^2+3y^2)(3x^2+y^2)\\
+& \frac 1 x - \frac 1 {2y} = 2(y^4-x^4).
 \end{aligned} 
 $$

@@ -260,6 +260,13 @@ structure.
 
 ### Other Includes
 
+- `_includes/breadcrumbs.html` renders `Home` followed by every level of the
+  page's `category_path`. At phone widths (`max-width: 30rem` in `style.scss`)
+  only `Home` and the last two crumbs stay visible, and an ellipsis stands in
+  for the ones between them. The hidden crumbs use `display: none`, so screen
+  readers skip them too. Nothing becomes unreachable: the second-to-last crumb
+  is always the nearest index page above the current one, so every level can
+  still be reached one step at a time.
 - `_includes/comments.html` contains the Giscus comment embed used by
   `_layouts/post.html`.
 - `_includes/head.html` is not currently included by the active layout. Check

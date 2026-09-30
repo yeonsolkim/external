@@ -351,6 +351,11 @@ body {
   color: inherit;
 }
 
+/* Shown only at phone widths, in place of the crumbs hidden there. */
+.breadcrumb-ellipsis {
+  display: none;
+}
+
 /* Main content */
 .main-content {
   max-width: var(--site-max-width) !important;
@@ -535,6 +540,17 @@ blockquote mjx-container {
   }
 }
 
+/* Phone widths: keep Home and the last two crumbs, with an ellipsis for the rest. */
+@media screen and (max-width: 30rem) {
+  .breadcrumb-item--collapsible {
+    display: none;
+  }
+
+  .breadcrumb-ellipsis {
+    display: inline-flex;
+  }
+}
+
 /* Let the browser draw its own UI (scrollbars, form controls) dark as well. */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -604,20 +620,18 @@ blockquote mjx-container {
     border-left-color: #2e3237;
   }
   .breadcrumb-nav {
-    color: #82878d;
+    color: #bfbfbfbf;
   }
   .breadcrumb-item a {
-    color: #939393b6 !important;
+    color: inherit !important;
   }
   .breadcrumb-item a[aria-current="page"],
   .breadcrumb-label[aria-current="page"] {
     color: #dddedf !important;
   }
-  .breadcrumb-label {
-    color: #939393b6;
-  }
+  .breadcrumb-label,
   .breadcrumb-separator {
-    color: #4e555d;
+    color: inherit;
   }
   blockquote {
     color: #cccccc !important;
