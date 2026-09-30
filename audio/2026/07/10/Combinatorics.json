@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "1. Trials and outcomes. An outcome is one particular possible result of the trial. The sample space, usually denoted by $\\Omega$, is the set of all possible outcomes. An event is a subset of the sample space. For example, if one die is rolled, the event that an even number appears is",
   "published_at": "2026-07-10T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/a6c3b4c5746be4a4457bb578d3cb1768212abec3bcd77c13575bfd68a7a15e8b.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/fa4116a1a1d7f3a06068a051d842c4553e344805476b8a1747e50a10104f7cac.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/07/10/Combinatorics.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/07/10/Combinatorics.chapters.json",
-  "duration": 683.378,
-  "bytes": 10935804,
+  "duration": 693.249,
+  "bytes": 11093792,
   "voice": "cedar",
-  "page_key": "a6c3b4c5746be4a4457bb578d3cb1768212abec3bcd77c13575bfd68a7a15e8b",
-  "skeleton_hash": "50706628bf530bbd663ff8ded789d2e03beeebed44b4a76d099feeb6326cb35f",
-  "generated": "2026-09-29",
+  "page_key": "fa4116a1a1d7f3a06068a051d842c4553e344805476b8a1747e50a10104f7cac",
+  "skeleton_hash": "6769c6fee35266741d03b1b6b282cc893b4d2198817c21e50ac8af0f23df2ba5",
+  "generated": "2026-09-30",
   "podcast": true,
   "sections": [
     {
@@ -45,9 +45,9 @@
       "kind": "subsection",
       "level": 2,
       "start": 95.376,
-      "duration": 59.612,
-      "source": "b06eb18090c335b9035d73e38d7f5451035893b559d796040cb12c1d8ca6ac55",
-      "audio": "09573a752a6bd49287edd9111beab3c5ae8e45bd2fda592f8e94f2317bad20d8",
+      "duration": 69.483,
+      "source": "469c73eeb52de53a4dc132f9cf55752049f66ad8b7f4a04a0f24a34a30c7956f",
+      "audio": "e4fc68e341029deaf338a1e582bfbbe08fd8b032fe62d3d7d8401479da8c62bb",
       "parent": null,
       "proves": null
     },
@@ -56,7 +56,7 @@
       "title": "4. Factorial",
       "kind": "subsection",
       "level": 2,
-      "start": 156.188,
+      "start": 166.06,
       "duration": 39.551,
       "source": "22fe0fc1d694e0e1986f2f3f33ad8908a22b06eadd1b20e8bc61cff860e23042",
       "audio": "dcf2d980d1fedbd32fd1cf95154e97cfb0ceaf94f724212f96700463a7af4761",
@@ -68,7 +68,7 @@
       "title": "5. Permutations",
       "kind": "subsection",
       "level": 2,
-      "start": 196.939,
+      "start": 206.811,
       "duration": 44.383,
       "source": "34b5c19938bee3be21dddec0a7adb605f7cc616aa2e286eb1e0f1a9e5f9ccf30",
       "audio": "3eaa675c9603681803948df56a759e5c8ce173ded8de2a35b2ee9259b696ece1",
@@ -80,7 +80,7 @@
       "title": "6. Combinations",
       "kind": "subsection",
       "level": 2,
-      "start": 242.522,
+      "start": 252.394,
       "duration": 62.062,
       "source": "226f8f2a776aee14c9961c22e893348acb01a60412693e9f611a90c4700f002d",
       "audio": "0e52afa24a399213a026f688fb258fae2539c1cba43a56b4dc42a7dabeea4e36",
@@ -92,7 +92,7 @@
       "title": "7. Pascal’s identity",
       "kind": "subsection",
       "level": 2,
-      "start": 305.784,
+      "start": 315.655,
       "duration": 14.22,
       "source": "94a593c4388259cdfafa53f580f5db9b1d18a2c5212d61750476fa66d5e4ea52",
       "audio": "243deea8c8c53d9f03024ea1e70af22b6ff1e0086b168e4447ca84976236b3a1",
@@ -105,7 +105,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 3,
-      "start": 321.204,
+      "start": 331.075,
       "duration": 26.53,
       "source": "a64779c09717ac32ec9c83b24b013b64b65a3b92819492757113c60d59c060a3",
       "audio": "9fa0e46f86dba35ba88c91424c51e3749dfc05d23baf2666b4febcb85ecf0a50",
@@ -117,20 +117,20 @@
       "title": "8. Binomial theorem",
       "kind": "subsection",
       "level": 2,
-      "start": 348.934,
+      "start": 358.806,
       "duration": 17.724,
       "source": "66850f8891a998789181111f75f410b08e4d9b6fc782072a8d91ff8a18badfde",
       "audio": "a934411bc0432e9fe368d1011f67ce73b0dbd5cd5f7ac4e97571b734d40f86b9",
       "parent": null,
       "proves": null,
-      "span": 297.169
+      "span": 297.168
     },
     {
       "id": "proof-sec-8",
       "title": "Proof",
       "kind": "proof",
       "level": 3,
-      "start": 367.859,
+      "start": 377.73,
       "duration": 278.244,
       "source": "fe2ad52ae466dfaf8aa7a76d35bfb7816d910017441d8ccdc0258fcb027114b7",
       "audio": "c2bc787f4f470f445db5751c5a1d4331d98b902335596b242d1342d39bd3cc2b",
@@ -142,7 +142,7 @@
       "title": "9. Corollaries",
       "kind": "subsection",
       "level": 2,
-      "start": 647.302,
+      "start": 657.174,
       "duration": 36.075,
       "source": "e3f3155b9bbcdee0387ad187cdccaf57d6de0226c02849600c2671933844ec4a",
       "audio": "a595093767763569a1e22a59681c1019caeb82acb446980949e4ce9e4290c686",
@@ -167,43 +167,43 @@
       "id": "sec-3",
       "title": "3. Multiplication rule",
       "start": 95.376,
-      "end": 156.188
+      "end": 166.06
     },
     {
       "id": "sec-4",
       "title": "4. Factorial",
-      "start": 156.188,
-      "end": 196.939
+      "start": 166.06,
+      "end": 206.811
     },
     {
       "id": "sec-5",
       "title": "5. Permutations",
-      "start": 196.939,
-      "end": 242.522
+      "start": 206.811,
+      "end": 252.394
     },
     {
       "id": "sec-6",
       "title": "6. Combinations",
-      "start": 242.522,
-      "end": 305.784
+      "start": 252.394,
+      "end": 315.655
     },
     {
       "id": "sec-7",
       "title": "7. Pascal’s identity",
-      "start": 305.784,
-      "end": 348.934
+      "start": 315.655,
+      "end": 358.806
     },
     {
       "id": "sec-8",
       "title": "8. Binomial theorem",
-      "start": 348.934,
-      "end": 647.302
+      "start": 358.806,
+      "end": 657.174
     },
     {
       "id": "sec-9",
       "title": "9. Corollaries",
-      "start": 647.302,
-      "end": 683.378
+      "start": 657.174,
+      "end": 693.249
     }
   ]
 }

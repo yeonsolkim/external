@@ -2,11 +2,11 @@
   "url": "/2026/07/10/Combinatorics.html",
   "title": "Combinatorics",
   "lang": "en",
-  "hash": "50706628bf530bbd663ff8ded789d2e03beeebed44b4a76d099feeb6326cb35f",
+  "hash": "6769c6fee35266741d03b1b6b282cc893b4d2198817c21e50ac8af0f23df2ba5",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-09-29",
+  "updated": "2026-09-30",
   "sections": [
     {
       "id": "sec-1",
@@ -39,13 +39,13 @@
       "title": "3. Multiplication rule",
       "kind": "subsection",
       "level": 2,
-      "source": "b06eb18090c335b9035d73e38d7f5451035893b559d796040cb12c1d8ca6ac55",
+      "source": "469c73eeb52de53a4dc132f9cf55752049f66ad8b7f4a04a0f24a34a30c7956f",
       "skip": null,
       "file": "sec-3.md",
       "current": true,
       "edited": false,
-      "words": 220,
-      "math": 19
+      "words": 243,
+      "math": 20
     },
     {
       "id": "sec-4",

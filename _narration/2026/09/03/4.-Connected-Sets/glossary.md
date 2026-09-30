@@ -1,14 +1,17 @@
 ---
-document: 2.4. Connected Sets
+document: 2.4 Connected Sets
 url: /2026/09/03/4.-Connected-Sets.html
-source: 0adbd42d0854593299b215dde1df3efcac4e100160218c4df7083bceed856b23
-prompt: lecture-v2
+source: 806e484ef8e67ddf2c04a607ffcd93a86916a938422ace75b584c0892193a85a
+prompt: lecture-v4
 model: gpt-5.5
-generated: 2026-09-15
-body: 579bbcea17392ed8c7b62bd1d38f0b86462e05f1353f0a257109d14dda47bacb
+generated: 2026-09-30
+body: ab1a38784ff14d1a0692fa757650b1b44356fc9ca8f83e3c61574958d877a569
 ---
 
-\,\dot\cup\, — disjoint union (used for decompositions of A into two nonempty pieces)
-\overline U^{\raise{-0.5em}{A}} — the closure of U in A (relative closure in the subspace A)
-\overline V^{\raise{-0.5em}{A}} — the closure of V in A (relative closure in the subspace A)
-\lowparen{#1} — parentheses (author macro only changes parenthesis placement; read silently as ordinary parentheses)
+\,\dot\cup\, — disjoint union (union with the parts disjoint)
+
+\overline U^{\raise{-0.5em}{A}} — the closure of U in A (the lowered A is a superscript indicating relative closure; likewise for V)
+
+\lowparen{#1} — parentheses (author macro only changes parenthesis size and position; silent)
+
+\whitestar — white star (author macro; not used in this section)

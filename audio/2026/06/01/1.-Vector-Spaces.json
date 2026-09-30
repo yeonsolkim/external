@@ -1,0 +1,220 @@
+{
+  "url": "/2026/06/01/1.-Vector-Spaces.html",
+  "title": "1.1 Vector Spaces",
+  "lang": "en",
+  "description": "Tuples, matrices, functions, and polynomials are different kinds of objects, yet each can be added to another of its kind and can be multiplied by a scalar. A vector space captures the rules the operations share: addition forms an abelian group, and scalar multiplication by a field works consistently with addition and field arithmetic. This common structure lets us study the fundamental principles such as linear independence, transformation and dimension without depending on what the vectors themselves look like.",
+  "published_at": "2026-06-01T15:00:00+00:00",
+  "audio": "https://audio.yeonsolkim.com/o/dc6623af7cd98e2bdc35674e825f23b49c088bb14a27892565214c3a7c2604da.mp3",
+  "stable": "https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.mp3",
+  "chapters_url": "https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.chapters.json",
+  "duration": 552.939,
+  "bytes": 8848866,
+  "voice": "cedar",
+  "page_key": "dc6623af7cd98e2bdc35674e825f23b49c088bb14a27892565214c3a7c2604da",
+  "skeleton_hash": "d29e95ce21ce355850d5cea9635a7d019afb0ed818c5d431159211b76fc4eff6",
+  "generated": "2026-09-30",
+  "podcast": true,
+  "sections": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "kind": "introduction",
+      "level": 2,
+      "start": 0.0,
+      "duration": 30.649,
+      "source": "7cf6f89c1837657aef7c88a07a119b66606b816ab1ed12d7aecbc5a536afc5bb",
+      "audio": "9f5aa7820fba25284bf3f81c86ae925ce153f60b0a3c798708b894d024752d2a",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "definition-1-1-1",
+      "title": "Definition 1.1.1",
+      "kind": "definition",
+      "level": 2,
+      "start": 31.849,
+      "duration": 39.763,
+      "source": "2bcec1c11331e756af0787b9350e6218dc98eeccb8017eef21862d5ececb290a",
+      "audio": "07fbeadf36d085efc490c9c794d2fe63d278a41cc642a362de07ca84db008092",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "example-1-1-2",
+      "title": "Example 1.1.2",
+      "kind": "example",
+      "level": 2,
+      "start": 72.811,
+      "duration": 53.997,
+      "source": "4fc0cc437d2d48c34349806ee9657ad2d2fcf79e76b2fc62595003af1709f43e",
+      "audio": "08232c7152f287b3f41d23b10bed66ebdf47abafade37618bd668d725b734e42",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "example-1-1-3",
+      "title": "Example 1.1.3",
+      "kind": "example",
+      "level": 2,
+      "start": 128.009,
+      "duration": 86.885,
+      "source": "bf687b0004d6a10c9bf287f5c73932e0a241bb7faf71fead2866b22fb9592f9e",
+      "audio": "7b5337dd028aef79098c21c3ce47784add85ea0f8040212c81bda4ac63632a85",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "example-1-1-4",
+      "title": "Example 1.1.4",
+      "kind": "example",
+      "level": 2,
+      "start": 216.094,
+      "duration": 42.962,
+      "source": "53d3ddc38d12f39df0dc48069d545ab7145167d8f23312c95340ef25a4e70ef5",
+      "audio": "3b729814e60986a964b817c7f442dda5339070382b3bb92e43efad343a21942e",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "example-1-1-5",
+      "title": "Example 1.1.5",
+      "kind": "example",
+      "level": 2,
+      "start": 260.256,
+      "duration": 125.275,
+      "source": "41ba67869e772c71886f2142fc0741682a24d7a680c5744b4b1928f4768c24bd",
+      "audio": "ed87a1af186af7af7e714b01b287267cf05696167e0d0b3c2ad88c7c54ba9ed4",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "theorem-1-1-6",
+      "title": "Theorem 1.1.6",
+      "kind": "theorem",
+      "level": 2,
+      "start": 386.731,
+      "duration": 29.25,
+      "source": "1113df36dab12e52b9b46b59ec4128774c681f85977eea46ad6a3380af700bc8",
+      "audio": "943ee1b85ac4fcdceaa67bb7b9b68d376136aa1db7ad0b9b3cbf44c8b7248f7f",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-1-1-6",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 417.18,
+      "duration": 74.026,
+      "source": "439804550d3638189325239dc3b53569af875aeff26225ae1717313967de8e97",
+      "audio": "5444f9205f906d3c99e6e3605390c844b7b03a65ead908a980ef34ed1c59883e",
+      "parent": null,
+      "proves": "theorem-1-1-6"
+    },
+    {
+      "id": "exercises",
+      "title": "Exercises",
+      "kind": "section",
+      "level": 2,
+      "start": 492.406,
+      "duration": 1.057,
+      "source": "988f06b3635487bb876deb80a2b413465d1ee7b15edc07b7912f50748d953dfa",
+      "audio": "e30298a1f50cb523222fdbb0a2432b52f9d0d809612f81b85841ad40e06b8031",
+      "parent": null,
+      "proves": null,
+      "span": 60.533
+    },
+    {
+      "id": "math-lemma-10",
+      "title": "Lemma",
+      "kind": "lemma",
+      "level": 3,
+      "start": 494.663,
+      "duration": 14.534,
+      "source": "f86511662c97d3dc068d80007be9fcb7857e845712fbfcffa98f08dee135071f",
+      "audio": "0bcfd3aea014ce5d551f44498e6f33abc81a9bdd11d6f46aa4f2719668816c50",
+      "parent": "exercises",
+      "proves": null
+    },
+    {
+      "id": "proof-math-lemma-10",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 510.397,
+      "duration": 27.352,
+      "source": "9e51988f54fb165c8e72b359f05b218cdc67be96a3e5f4e1d04ef7ab02905a08",
+      "audio": "486fdcd1e1d6648a5e0fa1edd80c67a7ebbd03aad342cb6610de5a4abedc094c",
+      "parent": "exercises",
+      "proves": "math-lemma-10"
+    },
+    {
+      "id": "prose-after-proof-math-lemma-10",
+      "title": "By the contrapositive of this lemma, … because ….",
+      "kind": "prose",
+      "level": 3,
+      "start": 538.949,
+      "duration": 13.99,
+      "source": "7eb9fd581959fe3256cf4391aebbb43e268e47fbd1d839531c8d8b1f08a6fea2",
+      "audio": "cf7981f957f6304c0710d7f5e5d6944875839079017345809da8d37a7fd36f64",
+      "parent": "exercises",
+      "proves": null
+    }
+  ],
+  "chapters": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "start": 0.0,
+      "end": 31.849
+    },
+    {
+      "id": "definition-1-1-1",
+      "title": "Definition 1.1.1",
+      "start": 31.849,
+      "end": 72.811
+    },
+    {
+      "id": "example-1-1-2",
+      "title": "Example 1.1.2",
+      "start": 72.811,
+      "end": 128.009
+    },
+    {
+      "id": "example-1-1-3",
+      "title": "Example 1.1.3",
+      "start": 128.009,
+      "end": 216.094
+    },
+    {
+      "id": "example-1-1-4",
+      "title": "Example 1.1.4",
+      "start": 216.094,
+      "end": 260.256
+    },
+    {
+      "id": "example-1-1-5",
+      "title": "Example 1.1.5",
+      "start": 260.256,
+      "end": 386.731
+    },
+    {
+      "id": "theorem-1-1-6",
+      "title": "Theorem 1.1.6",
+      "start": 386.731,
+      "end": 492.406
+    },
+    {
+      "id": "exercises",
+      "title": "Exercises",
+      "start": 492.406,
+      "end": 494.663
+    },
+    {
+      "id": "math-lemma-10",
+      "title": "Lemma",
+      "start": 494.663,
+      "end": 552.939
+    }
+  ]
+}

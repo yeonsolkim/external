@@ -2,11 +2,11 @@
   "url": "/2026/09/09/3.-Cauchy-Sequences.html",
   "title": "3.3 Cauchy Sequences",
   "lang": "en",
-  "hash": "d8fbb66c971b844b3dd109e877d581e51f6af9ab76d622ffd13bbfe83c50d267",
+  "hash": "d034b8b5406fd8d05741435dc01c2b29bf8dfc03edfb770f6ef38b1664783002",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-09-29",
+  "updated": "2026-09-30",
   "sections": [
     {
       "id": "introduction",
@@ -78,7 +78,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "source": "85104d0390b2ba014e23543fb2eece2dc750350fe9501c71f45a025da1c26db8",
+      "source": "5a660a970a9695372a1f19b80b08fdda15bd02015062c2c776ed5e86eb4520bc",
       "skip": null,
       "file": "proof-theorem-3-3-3.md",
       "current": true,
@@ -104,12 +104,12 @@
       "title": "Lemma 3.3.4",
       "kind": "lemma",
       "level": 2,
-      "source": "0750645da8e0d66f2dbe2bfff736e80500b55ff658f11b5137eae85130cbd501",
+      "source": "baa16db425401a7e87a46f87bc561cc1888b721e9b1ca3d5a8fa849c8b907f79",
       "skip": null,
       "file": "lemma-3-3-4.md",
       "current": true,
       "edited": false,
-      "words": 101,
+      "words": 102,
       "math": 10
     },
     {
@@ -117,12 +117,12 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "source": "6f4e797643760da4654f4b3359da1c174743509b5f2fdff6fc377459976dfbe0",
+      "source": "3cce40f33ca137f34eb5e844ab2eb7022db0968ec7aee29f7990af7bbb102456",
       "skip": null,
       "file": "proof-lemma-3-3-4.md",
       "current": true,
       "edited": false,
-      "words": 189,
+      "words": 190,
       "math": 18
     },
     {
@@ -143,12 +143,12 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "source": "360e3936b13b7ba7b469a59f66776133b202af7bc3efd6f7e805125a50cfe712",
+      "source": "327c97cda5a9f163a5cae9804584a2d2742f57df87bf4bbf35353b6fa72aa110",
       "skip": null,
       "file": "proof-theorem-3-3-5.md",
       "current": true,
       "edited": false,
-      "words": 275,
+      "words": 272,
       "math": 29
     },
     {
@@ -182,13 +182,13 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "source": "a0485c9da7903833cf3d0325d47cf7ad3fdaa9656dd6f199d7b0fe23c9db48b9",
+      "source": "1434250e4908f9c19ce53f220f846022be1ad0123285b212ebfe1f8ab3b7b8a5",
       "skip": null,
       "file": "proof-corollary-3-3-6.md",
       "current": true,
       "edited": false,
-      "words": 100,
-      "math": 10
+      "words": 117,
+      "math": 11
     },
     {
       "id": "prose-after-proof-corollary-3-3-6",

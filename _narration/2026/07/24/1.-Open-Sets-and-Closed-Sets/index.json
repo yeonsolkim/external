@@ -2,11 +2,11 @@
   "url": "/2026/07/24/1.-Open-Sets-and-Closed-Sets.html",
   "title": "2.1 Open Sets and Closed Sets",
   "lang": "en",
-  "hash": "6aa3a971841b8c7e6f358da4fdeb11fb0bfecaa0b9180198e0ec4f1351a8e2f9",
+  "hash": "2b731ddb6cb13926ade471897cfbb92eac268d77703cd52089f0b565de2ce242",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-09-29",
+  "updated": "2026-09-30",
   "sections": [
     {
       "id": "introduction",
@@ -221,12 +221,12 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "source": "2b26a7128107972142a94845b997eea35b8a25171fc29d44ccc094d9c1dbbdee",
+      "source": "74dfbbeaa2a84036303b842757ffe267f9ea57c7ee40ad2f9e31aebee9408da1",
       "skip": null,
       "file": "proof-theorem-2-1-10.md",
       "current": true,
       "edited": false,
-      "words": 78,
+      "words": 76,
       "math": 10
     },
     {
