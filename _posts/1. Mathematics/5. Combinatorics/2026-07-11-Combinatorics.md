@@ -6,7 +6,7 @@ category_path:
   - 1. Mathematics
   - 5. Combinatorics
 created_at: 2026-08-06 13:53:49 +0900
-last_modified_at: 2026-09-18 17:25:37 +0900
+last_modified_at: 2026-09-30 16:56:57 +0900
 
 publish: true
 ---
@@ -39,7 +39,7 @@ $$
 |A|=m \quad \text{and} \quad |B|=n.  
 $$
 
-The event "$A$ occurs and then $B$ occurs" is denoted by $A\times B$.
+Assume that every pair in $A\times B$ is an admissible complete outcome. Then the event "$A$ occurs and then $B$ occurs" is denoted by $A\times B$.
 Suppose that $x$ records the first-stage outcome and $y$ records the second-stage outcome. Since each of the $m$ possible values of $x$ can be paired with each of the $n$ possible values of $y$, 
 
 $$
@@ -47,7 +47,7 @@ $$
 $$
 
 This formula is called the *multiplication rule*.
-The multiplication rule extends to any finite number of stages. If a process consists of $k$ successive stages, and each event $A_i$ of the $i$th stage has $n_i$ possible outcomes, then the event $A_1\times\cdots\times A_k$ can occur in $n_1n_2\cdots n_k$ ways.
+The multiplication rule extends to any finite number of stages. If a process consists of $k$ successive stages, and each event $A_i$ of the $i$th stage has $n_i$ possible outcomes, and every tuple in $A_1\times\cdots\times A_k$ is admissible, then this event can occur in $n_1n_2\cdots n_k$ ways.
 
 
 **4. Factorial.** For a positive integer $n$, the *factorial* of $n$ is defined by

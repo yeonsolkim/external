@@ -228,6 +228,24 @@ class StructuredTree(unittest.TestCase):
         references = [s for s in self.categorical.sections if s.id == "references"][0]
         self.assertEqual(references.skip, "reference list")
 
+    def test_exercises_and_their_solutions_are_kept_but_not_narrated(self):
+        skel = build(wrap(
+            '<section class="doc-section" data-doc="subsection" data-number="1" data-title="Groups" id="unit-sec-1">'
+            '<p><strong id="sec-1">1. Groups.</strong> A group is a set.</p>'
+            '<section data-doc="exercise" data-environment-kind="Exercise" data-number="1.1.1" '
+            'id="unit-exercise-1-1-1" aria-labelledby="exercise-1-1-1">'
+            '<p><strong id="exercise-1-1-1">Exercise 1.1.1.</strong> Show the identity is unique.</p></section>'
+            '<section data-doc="proof" data-environment-kind="Solution" data-proves="exercise-1-1-1" '
+            'id="unit-proof-exercise-1-1-1"><p><em id="proof-exercise-1-1-1">Solution.</em> Suppose.</p></section>'
+            '<p>We now turn to subgroups.</p></section>'))
+        skipped = {s.id: s.skip for s in skel.sections}
+        self.assertEqual(skipped["exercise-1-1-1"], "exercise")
+        self.assertEqual(skipped["proof-exercise-1-1-1"], "exercise")
+        self.assertIsNone(skipped["sec-1"])
+        self.assertIsNone(skipped["prose-after-proof-exercise-1-1-1"])
+        self.assertNotIn("identity is unique", glossary_source(skel))
+        self.assertEqual(skel.words, sum(s.words for s in skel.sections if not s.skip))
+
     def test_a_page_without_the_plugin_still_parses(self):
         # the legacy fixture is the same post as deployed before the plugin existed
         self.assertEqual(len(CompactSets.skel.sections), 33)

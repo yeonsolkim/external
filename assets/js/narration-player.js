@@ -81,6 +81,15 @@
     var body = document.querySelector('.post-body');
     var title = document.querySelector('.post-title');
     var blocks = [], starts = {}, blockSection = [], layoutCount = -1;
+    var narrated = new Set(sections.map(function (s) { return s.id; }));
+
+    /* A unit the narration skips — an exercise and its solution, the references — has no
+       audio, so it is never lit as part of the section read before it. */
+    function silent(block) {
+      var unit = block.closest('section[data-doc]');
+      if (!unit || !body.contains(unit)) return false;
+      return !narrated.has(unit.getAttribute('aria-labelledby') || unit.id.replace(/^unit-/, ''));
+    }
 
     /* The page's own scripts wrap statements into <section>s after MathJax has run, so the
        block map is rebuilt whenever .post-body's children change. */
@@ -97,7 +106,7 @@
         .sort(function (a, b) { return a.at - b.at; });
       order.forEach(function (x, k) {
         var end = k + 1 < order.length ? order[k + 1].at : blocks.length;
-        for (var b = x.at; b < end; b++) blockSection[b] = x.i;
+        for (var b = x.at; b < end; b++) if (!silent(blocks[b])) blockSection[b] = x.i;
       });
       markLabels();
       return true;

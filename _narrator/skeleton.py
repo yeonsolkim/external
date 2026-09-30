@@ -647,18 +647,28 @@ def _assemble(blocks: list) -> list:
 REFERENCE_IDS = {"references", "reference", "bibliography"}
 
 
+# Kept in the skeleton but not read aloud: a problem left to the reader is for the page.
+SKIPPED_KINDS = {"exercise": "exercise"}
+
+
 def _mark_skipped(sections: list) -> None:
-    """A references section, and everything under it, is kept but not narrated."""
-    skipped = set()
+    """A references section or an exercise — and everything under it, and the proof or
+    solution that answers it — is kept but not narrated. Prose after an exercise is the
+    author's own text and is still read."""
+    skipped: dict = {}
     for section in sections:
         reason = None
         if section.id in REFERENCE_IDS or section.title.lower().rstrip(".") in REFERENCE_TITLES:
             reason = "reference list"
+        elif section.kind in SKIPPED_KINDS:
+            reason = SKIPPED_KINDS[section.kind]
         elif section.parent in skipped:
-            reason = "reference list"
+            reason = skipped[section.parent]
+        elif section.proves in skipped:
+            reason = skipped[section.proves]
         if reason:
             section.skip = reason
-            skipped.add(section.id)
+            skipped[section.id] = reason
 
 
 def _finish(section: Section, math: list) -> None:
