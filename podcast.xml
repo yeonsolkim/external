@@ -116,8 +116,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</guid>
 <pubDate>Thu, 18 Jun 2026 15:00:00 +0000</pubDate>
 <description>Within a vector space, we often focus on elements that satisfy a particular condition. The important question is whether the condition survives the operations of the larger space: do addition and scalar multiplication keep us among elements satisfying that condition? If they do, and the zero vector also satisfies the condition, the collection forms a vector space on its own. Such a collection is called a subspace. Read the page at https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.mp3" length="22214174" type="audio/mpeg"/>
-<itunes:duration>0:23:08</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.mp3" length="22181991" type="audio/mpeg"/>
+<itunes:duration>0:23:06</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.chapters.json" type="application/json+chapters"/>
 </item>
