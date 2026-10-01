@@ -649,16 +649,25 @@ REFERENCE_IDS = {"references", "reference", "bibliography"}
 
 # Kept in the skeleton but not read aloud: a problem left to the reader is for the page.
 SKIPPED_KINDS = {"exercise": "exercise"}
+# An `## Exercises` heading ends the lecture: it and everything after it are not read.
+EXERCISE_TITLES = {"exercises", "exercise"}
+HEADING_KINDS = {"heading", "section", "subsection", "subsubsection"}
 
 
 def _mark_skipped(sections: list) -> None:
     """A references section or an exercise — and everything under it, and the proof or
     solution that answers it — is kept but not narrated. Prose after an exercise is the
-    author's own text and is still read."""
+    author's own text and is still read. From an `## Exercises` heading on, nothing is."""
     skipped: dict = {}
+    rest: Optional[str] = None
     for section in sections:
         reason = None
-        if section.id in REFERENCE_IDS or section.title.lower().rstrip(".") in REFERENCE_TITLES:
+        title = re.sub(r"^\d+(?:\.\d+)*\.\s*", "", section.title).lower().rstrip(".")
+        if rest is None and section.kind in HEADING_KINDS and title in EXERCISE_TITLES:
+            rest = "exercises"
+        if rest:
+            reason = rest
+        elif section.id in REFERENCE_IDS or section.title.lower().rstrip(".") in REFERENCE_TITLES:
             reason = "reference list"
         elif section.kind in SKIPPED_KINDS:
             reason = SKIPPED_KINDS[section.kind]

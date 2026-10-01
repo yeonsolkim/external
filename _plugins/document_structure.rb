@@ -177,9 +177,42 @@ module ExternalDocumentStructure
   end
 
   def ends_environment?(block, kind)
-    return false unless block[:type] == :element
+    environment_ends(block).include?(kind.downcase)
+  end
 
-    block[:raw].scan(/data-environment-end\s*=\s*"([^"]*)"/i).flatten.include?(kind.downcase)
+  # The QED markers in a block, in order: "proof" for □, "subproof" for ■.
+  def environment_ends(block)
+    return [] unless block[:type] == :element
+
+    block[:raw].scan(/data-environment-end\s*=\s*"([^"]*)"/i).flatten
+  end
+
+  # A proof ends at its QED, so a lemma or a subproof met before that is part of the proof,
+  # as `\begin{lemma}` inside `\begin{proof}` is in LaTeX. Another proof of the same rank
+  # cannot be: `Proof.` competes with `Proof.`, `Subproof.` with either.
+  def competing_proof?(descriptor, kind)
+    return false unless descriptor && descriptor[:role] == :proof
+
+    kind == "Proof" ? descriptor[:kind] == "Proof" : %w[Proof Subproof].include?(descriptor[:kind])
+  end
+
+  # Whether the proof opened at blocks[from] reaches its own QED before anything that would
+  # end it first — the rule assets/js/main.js used (hasMatchingEnvironmentEnd). Only then may
+  # it hold units; a proof without a QED ends at the next opener, as before.
+  def end_ahead?(blocks, from, kind)
+    blocks[from..].each_with_index do |block, offset|
+      if offset.positive?
+        descriptor = descriptor_of(block)
+        return false if descriptor && descriptor[:role] == :section
+        return false if competing_proof?(descriptor, kind) || semantic_boundary?(block)
+      end
+      return true if ends_environment?(block, kind)
+    end
+    false
+  end
+
+  def hosts?(unit, descriptor)
+    unit.attrs[:hosts] && !competing_proof?(descriptor, unit.attrs[:kind])
   end
 
   def semantic_boundary?(block)
@@ -268,7 +301,7 @@ module ExternalDocumentStructure
 
     close_units = lambda { close_to.call(->(unit) { %i[environment proof].include?(unit.role) }) }
 
-    blocks.each do |block|
+    blocks.each_with_index do |block, index|
       if blank?(block) || block[:type] == :comment
         stack.last << block[:raw]
         next
@@ -284,7 +317,7 @@ module ExternalDocumentStructure
           close_units.call
           close_to.call(->(unit) { unit.role == :section && unit.depth >= depth })
         when :environment, :proof
-          close_units.call
+          close_to.call(->(unit) { %i[environment proof].include?(unit.role) && !hosts?(unit, descriptor) })
         end
       elsif block[:type] == :element && block[:tag].match?(/\Ah[1-6]\z/)
         close_units.call
@@ -361,6 +394,7 @@ module ExternalDocumentStructure
           "id" => "unit-#{id}"
         })
         unit.attrs[:kind] = kind
+        unit.attrs[:hosts] = marker_terminated?(kind) && end_ahead?(blocks, index, kind)
         stack.push(unit)
         block = with_label_attrs(block, descriptor[:label], "id" => id, "class" => "math-proof-marker")
       end
@@ -375,11 +409,14 @@ module ExternalDocumentStructure
       stack.last << block[:raw]
 
       # --- close what this block finished --------------------------------------------
-      current = stack.last
-      if %i[environment proof].include?(current.role) &&
-         marker_terminated?(current.attrs[:kind]) &&
-         ends_environment?(block, current.attrs[:kind])
-        close_units.call
+      # Each QED closes the innermost open proof of its kind, and whatever is still open
+      # inside that proof (a lemma bridged to the closing paragraph).
+      environment_ends(block).each do |ended|
+        finished = stack.reverse.find do |unit|
+          %i[environment proof].include?(unit.role) && marker_terminated?(unit.attrs[:kind]) &&
+            unit.attrs[:kind].downcase == ended
+        end
+        close_to.call(->(_unit) { stack.include?(finished) }) if finished
       end
 
       structural = if continuation_marker?(block)
