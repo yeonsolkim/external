@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "Tuples, matrices, functions, and polynomials are different kinds of objects, yet each can be added to another of its kind and can be multiplied by a scalar. A vector space captures the rules the operations share: addition forms an abelian group, and scalar multiplication by a field works consistently with addition and field arithmetic. This common structure lets us study the fundamental principles such as linear independence, transformation and dimension without depending on what the vectors themselves look like.",
   "published_at": "2026-06-01T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/dc6623af7cd98e2bdc35674e825f23b49c088bb14a27892565214c3a7c2604da.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/5a693ce35502cb0c852b728c7285d5ac2611bb9e2134d56f4cb2cc7def0b430b.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.chapters.json",
-  "duration": 552.939,
-  "bytes": 8848866,
+  "duration": 490.567,
+  "bytes": 7850674,
   "voice": "cedar",
-  "page_key": "dc6623af7cd98e2bdc35674e825f23b49c088bb14a27892565214c3a7c2604da",
-  "skeleton_hash": "d29e95ce21ce355850d5cea9635a7d019afb0ed818c5d431159211b76fc4eff6",
-  "generated": "2026-09-30",
+  "page_key": "5a693ce35502cb0c852b728c7285d5ac2611bb9e2134d56f4cb2cc7def0b430b",
+  "skeleton_hash": "2de49226605be68cf2bb1eba17ffcfb3ed2c2f16eb8bccaaee305d7f6060176b",
+  "generated": "2026-10-01",
   "podcast": true,
   "sections": [
     {
@@ -81,9 +81,9 @@
       "kind": "example",
       "level": 2,
       "start": 260.256,
-      "duration": 125.275,
-      "source": "41ba67869e772c71886f2142fc0741682a24d7a680c5744b4b1928f4768c24bd",
-      "audio": "ed87a1af186af7af7e714b01b287267cf05696167e0d0b3c2ad88c7c54ba9ed4",
+      "duration": 124.636,
+      "source": "18eca061f5f42cef5cd33fe7cfc623092b06122c2ddd05aaeb30004ee947cedc",
+      "audio": "fe6cf47c626035ee2852d16c3c4c3f65f04f285e6edb7924c4d25e5d831dfc15",
       "parent": null,
       "proves": null
     },
@@ -92,7 +92,7 @@
       "title": "Theorem 1.1.6",
       "kind": "theorem",
       "level": 2,
-      "start": 386.731,
+      "start": 386.092,
       "duration": 29.25,
       "source": "1113df36dab12e52b9b46b59ec4128774c681f85977eea46ad6a3380af700bc8",
       "audio": "943ee1b85ac4fcdceaa67bb7b9b68d376136aa1db7ad0b9b3cbf44c8b7248f7f",
@@ -104,61 +104,12 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 417.18,
+      "start": 416.542,
       "duration": 74.026,
       "source": "439804550d3638189325239dc3b53569af875aeff26225ae1717313967de8e97",
       "audio": "5444f9205f906d3c99e6e3605390c844b7b03a65ead908a980ef34ed1c59883e",
       "parent": null,
       "proves": "theorem-1-1-6"
-    },
-    {
-      "id": "exercises",
-      "title": "Exercises",
-      "kind": "section",
-      "level": 2,
-      "start": 492.406,
-      "duration": 1.057,
-      "source": "988f06b3635487bb876deb80a2b413465d1ee7b15edc07b7912f50748d953dfa",
-      "audio": "e30298a1f50cb523222fdbb0a2432b52f9d0d809612f81b85841ad40e06b8031",
-      "parent": null,
-      "proves": null,
-      "span": 60.533
-    },
-    {
-      "id": "math-lemma-10",
-      "title": "Lemma",
-      "kind": "lemma",
-      "level": 3,
-      "start": 494.663,
-      "duration": 14.534,
-      "source": "f86511662c97d3dc068d80007be9fcb7857e845712fbfcffa98f08dee135071f",
-      "audio": "0bcfd3aea014ce5d551f44498e6f33abc81a9bdd11d6f46aa4f2719668816c50",
-      "parent": "exercises",
-      "proves": null
-    },
-    {
-      "id": "proof-math-lemma-10",
-      "title": "Proof",
-      "kind": "proof",
-      "level": 3,
-      "start": 510.397,
-      "duration": 27.352,
-      "source": "9e51988f54fb165c8e72b359f05b218cdc67be96a3e5f4e1d04ef7ab02905a08",
-      "audio": "486fdcd1e1d6648a5e0fa1edd80c67a7ebbd03aad342cb6610de5a4abedc094c",
-      "parent": "exercises",
-      "proves": "math-lemma-10"
-    },
-    {
-      "id": "prose-after-proof-math-lemma-10",
-      "title": "By the contrapositive of this lemma, … because ….",
-      "kind": "prose",
-      "level": 3,
-      "start": 538.949,
-      "duration": 13.99,
-      "source": "7eb9fd581959fe3256cf4391aebbb43e268e47fbd1d839531c8d8b1f08a6fea2",
-      "audio": "cf7981f957f6304c0710d7f5e5d6944875839079017345809da8d37a7fd36f64",
-      "parent": "exercises",
-      "proves": null
     }
   ],
   "chapters": [
@@ -196,25 +147,13 @@
       "id": "example-1-1-5",
       "title": "Example 1.1.5",
       "start": 260.256,
-      "end": 386.731
+      "end": 386.092
     },
     {
       "id": "theorem-1-1-6",
       "title": "Theorem 1.1.6",
-      "start": 386.731,
-      "end": 492.406
-    },
-    {
-      "id": "exercises",
-      "title": "Exercises",
-      "start": 492.406,
-      "end": 494.663
-    },
-    {
-      "id": "math-lemma-10",
-      "title": "Lemma",
-      "start": 494.663,
-      "end": 552.939
+      "start": 386.092,
+      "end": 490.567
     }
   ]
 }

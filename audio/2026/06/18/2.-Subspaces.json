@@ -1,0 +1,543 @@
+{
+  "url": "/2026/06/18/2.-Subspaces.html",
+  "title": "1.2 Subspaces",
+  "lang": "en",
+  "description": "Within a vector space, we often focus on elements that satisfy a particular condition. The important question is whether the condition survives the operations of the larger space: do addition and scalar multiplication keep us among elements satisfying that condition? If they do, and the zero vector also satisfies the condition, the collection forms a vector space on its own. Such a collection is called a subspace.",
+  "published_at": "2026-06-18T15:00:00+00:00",
+  "audio": "https://audio.yeonsolkim.com/o/28e8196c20ef5cfdfc8148706a1cf0a34cd12469775ae35c83fec5da09d0cf42.mp3",
+  "stable": "https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.mp3",
+  "chapters_url": "https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.chapters.json",
+  "duration": 1388.248,
+  "bytes": 22214174,
+  "voice": "cedar",
+  "page_key": "28e8196c20ef5cfdfc8148706a1cf0a34cd12469775ae35c83fec5da09d0cf42",
+  "skeleton_hash": "cd5eafef095a4424188edcd423365ace948df4dd117e51ed35b36ff959d6a26e",
+  "generated": "2026-10-01",
+  "podcast": true,
+  "sections": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "kind": "introduction",
+      "level": 2,
+      "start": 0.0,
+      "duration": 22.056,
+      "source": "39f0e965fa8ed095ebdcdb7a02386a342b621530cb1da0c4ba7d28e4cc7a11e9",
+      "audio": "5c60fd9e6197c165009f981c3227ade40a19839d16b783ca12d68e45c06dba05",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "definition-1-2-1",
+      "title": "Definition 1.2.1",
+      "kind": "definition",
+      "level": 2,
+      "start": 23.256,
+      "duration": 20.938,
+      "source": "af830f8b2cd4810f7f5760411141b66cdbb934b66138170eb1072adb2ac6a57c",
+      "audio": "366f5630e83d7a2005b5494ce52b1ad07115a34911bbe1a93563db9d024bd343",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "prose-after-definition-1-2-1",
+      "title": "Since … uses the operations of …, the algebraic laws…",
+      "kind": "prose",
+      "level": 2,
+      "start": 45.393,
+      "duration": 21.787,
+      "source": "ac10524c45d0eac1cbd53a37ebb011908369948f651db6cc170621bf96dd2000",
+      "audio": "64d0760a4a57d8b3dc8e200eecdd9c45f649b782963a3a2335b945481fbf95bc",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "theorem-1-2-2",
+      "title": "Theorem 1.2.2",
+      "kind": "theorem",
+      "level": 2,
+      "start": 68.38,
+      "duration": 30.01,
+      "source": "7a86113410c1fcec36af48f4ecf2dca67c5f1ac2553f7dca0787adf54ceaa43a",
+      "audio": "477d383b2f0b0d3ac3e7f818413d2c43579a9474fd1377529ab0f4d349dc4572",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-1-2-2",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 99.589,
+      "duration": 37.862,
+      "source": "9554e43afbe180b558b6e5f58ca723a84c4f5ee0f637cec5cda0b12f1129e376",
+      "audio": "93c362a2b89d754fae0618b254d76763c19a4dbcb6e2ad8e077dbac4062f9800",
+      "parent": null,
+      "proves": "theorem-1-2-2"
+    },
+    {
+      "id": "example-1-2-3",
+      "title": "Example 1.2.3",
+      "kind": "example",
+      "level": 2,
+      "start": 138.651,
+      "duration": 87.766,
+      "source": "80839cc669a4e02cccf673b6145d03345412fb41f4f12399c730c1586ee0e7f3",
+      "audio": "4adbdfefc7cd7cf98b05a6fdbf2843838c502310c2c860c5851409994e38a8b4",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "example-1-2-4",
+      "title": "Example 1.2.4",
+      "kind": "example",
+      "level": 2,
+      "start": 227.617,
+      "duration": 45.748,
+      "source": "f514a3151c0da94b3d3c0227cb0896a044991f4473a2bbcd4cfe0eee18ea49c8",
+      "audio": "3eefcb714ac067294f383f84365cc1ddbc35555217a015e800f5997ad39699c6",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "example-1-2-5",
+      "title": "Example 1.2.5",
+      "kind": "example",
+      "level": 2,
+      "start": 274.565,
+      "duration": 34.52,
+      "source": "86d83f07cb3579fb38568af0203d68338c9b0e051b5c61b62675ef13eaae1f8f",
+      "audio": "f767fb9ea1c50596583e7cbec03a0df1f44d9d91505f5100db67b4d2ea77787e",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "example-1-2-6",
+      "title": "Example 1.2.6",
+      "kind": "example",
+      "level": 2,
+      "start": 310.285,
+      "duration": 50.89,
+      "source": "524db245e47b5c75d2eb4df004fb8883123ef8bcf7ead3cf674958f663d6ad83",
+      "audio": "1fcdef8bdd956b099ed5a0258024144e8ffd7f106dc8f31bd770c5d90b084dec",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "example-1-2-7",
+      "title": "Example 1.2.7",
+      "kind": "example",
+      "level": 2,
+      "start": 362.375,
+      "duration": 26.974,
+      "source": "cf7b5d2406d5fd401006fa2e793b267f325055dfd05db9d5c421112435837efb",
+      "audio": "998bbbaa073de7728ede495c13f2516b3bab85e9bfb8cb9b26ec85251d6e90d3",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "theorem-1-2-8",
+      "title": "Theorem 1.2.8",
+      "kind": "theorem",
+      "level": 2,
+      "start": 390.548,
+      "duration": 7.053,
+      "source": "bf447352d0ebf79282bb6a88e80f13203a7182c5dfcee03af6bcedf9a68eb274",
+      "audio": "d1d9cb9fd99f9965bc0d17305ccb6e1bbc4ac16d2954d62cfa5f52e3a5d9bbfb",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-1-2-8",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 398.801,
+      "duration": 42.83,
+      "source": "89ef7ebe81a67fdd357da9e99858925c2cd7ecd2876e7c3baf87990b2a66f7cd",
+      "audio": "c17125f6f3c947e933ff36218ffcdd0072302db71fbb9a5f0259af9d1113eb8b",
+      "parent": null,
+      "proves": "theorem-1-2-8"
+    },
+    {
+      "id": "prose-after-proof-theorem-1-2-8",
+      "title": "We now ask whether the union of subspaces of … is a…",
+      "kind": "prose",
+      "level": 2,
+      "start": 442.831,
+      "duration": 21.741,
+      "source": "a75f92543de53541cfbafc1b6e46109223280e0813187134b6d5300f8146ff33",
+      "audio": "65155b68c89d42f9a3ebcd50be6b5fda3e51c4ee79e81be413d4340f40e848ee",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proposition-1-2-9",
+      "title": "Proposition 1.2.9",
+      "kind": "proposition",
+      "level": 2,
+      "start": 465.772,
+      "duration": 15.678,
+      "source": "116d8ed194305cccf02b86374899c2a2d15d687873d6ad0bbbcf78770cb3457d",
+      "audio": "506072dcbe6fc9ef1145b9971bce0442b80356c0da27a46a372167ce8e438b1a",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-proposition-1-2-9",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 482.65,
+      "duration": 43.826,
+      "source": "d95d6f36c74ba55a8600d0593a5da1723b7d3115de8a93c5430fcccbbc903fd8",
+      "audio": "8f7ca089db76bc3b26dcc759516a679cfdcb26ce2fe62968d07eb9cfd46aa49a",
+      "parent": null,
+      "proves": "proposition-1-2-9"
+    },
+    {
+      "id": "prose-after-proof-proposition-1-2-9",
+      "title": "We have seen that the union itself is not an operation that…",
+      "kind": "prose",
+      "level": 2,
+      "start": 527.676,
+      "duration": 22.47,
+      "source": "d00afabea038cf2a78f83fca7faac7e4f06a124ec3ccb70eeaf7ce527eace6fe",
+      "audio": "ea1e01029c5a55f07addc247fdf4750ef2ab44be590b59e3e2354bba3cc6d27a",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "definition-1-2-10",
+      "title": "Definition 1.2.10",
+      "kind": "definition",
+      "level": 2,
+      "start": 551.346,
+      "duration": 20.4,
+      "source": "945d206755f5f426cef4c099533c509c60f0f2285dd334cc55b202a797a620ab",
+      "audio": "d1bbd8258f13d60a25133636b204b3660bc7c8610f5a5636b45e8d3ef359319a",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "theorem-1-2-11",
+      "title": "Theorem 1.2.11",
+      "kind": "theorem",
+      "level": 2,
+      "start": 572.946,
+      "duration": 22.594,
+      "source": "61aae5fa5aa614a102ada2b4eafaa8ce626c806fec78e2059627114f851d9c76",
+      "audio": "52d6bf440497f41421d84627407a2c5767421fb2fbd2d08315a5780c7004aa47",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-1-2-11",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 596.74,
+      "duration": 87.76,
+      "source": "e0e4bd33008686693030cdaaba3ee7c6fb00e254f086c88e5df8e4ac901584e2",
+      "audio": "4ef0916445c0fa79965563321f7907c8fbd99f04cd6a8269b5d6fc86058f4670",
+      "parent": null,
+      "proves": "theorem-1-2-11"
+    },
+    {
+      "id": "prose-after-proof-theorem-1-2-11",
+      "title": "The preceding theorem shows that … is the smallest subspace…",
+      "kind": "prose",
+      "level": 2,
+      "start": 685.701,
+      "duration": 37.33,
+      "source": "8502ce9aabb24a49341f24b53d55885fecf7899b8384cea598e7530bdac0d5d8",
+      "audio": "fae15f6dd3e2f8787654935eedaac75572280c05b81d3cc23345a6ac04ea3180",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "definition-1-2-12",
+      "title": "Definition 1.2.12",
+      "kind": "definition",
+      "level": 2,
+      "start": 724.231,
+      "duration": 19.388,
+      "source": "667c97761a588bafa3e09a53742628fdf67fab02f42e839825602b03c7ceb8a7",
+      "audio": "3508cc26aee59800724333b88851d1a7b8030a74b6d9b1ba316352f2679ec5d2",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "theorem-1-2-13",
+      "title": "Theorem 1.2.13",
+      "kind": "theorem",
+      "level": 2,
+      "start": 744.818,
+      "duration": 21.631,
+      "source": "c012d4432391d50f8b88d3e6d2e99ec45053428ea6df99b0de8f0a17714c7c28",
+      "audio": "32217a08fa743aec934f459f0f71a5ef330134087982904c7a2697574bc7568b",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-1-2-13",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 767.649,
+      "duration": 62.634,
+      "source": "6ba1d001ce19d68505cc2b81482814491d4ec466597ccb370a5c5e4bb3338888",
+      "audio": "eadb3739300a2632ea655723b6f05230fae23d6c1cf91da45d0d3668e2f712a2",
+      "parent": null,
+      "proves": "theorem-1-2-13"
+    },
+    {
+      "id": "prose-after-proof-theorem-1-2-13",
+      "title": "The sum and direct sum describe how subspaces combine…",
+      "kind": "prose",
+      "level": 2,
+      "start": 831.482,
+      "duration": 20.161,
+      "source": "e49408b5452b93b5bfcada05fc4852d778d1d5d23bd7a95e88e5002b2d7ab6ef",
+      "audio": "4177de276015e6eff3fde604ecae6b2b345209617d01745211d6e81425dde177",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "definition-1-2-14",
+      "title": "Definition 1.2.14",
+      "kind": "definition",
+      "level": 2,
+      "start": 852.843,
+      "duration": 22.51,
+      "source": "34f7d1aa15820fb8a62097231b430bc03f85ad5cb65a1f4aadf6c6c47dfddbd2",
+      "audio": "f1453a281bffb09947ce770ac323feb7ad41f77cca0c4aac17cd8b887b1b8d6c",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "prose-after-definition-1-2-14",
+      "title": "It follows from the definition that ….",
+      "kind": "prose",
+      "level": 2,
+      "start": 876.553,
+      "duration": 11.932,
+      "source": "f5b5291fcad35bc9254bc4d70a580d7dab3300ae1c7f3262ee9366656f56bd35",
+      "audio": "d68c40b985124af33d661bb435fef46e2b0bef40adcf5b43ad6e9fdb582a09ec",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proposition-1-2-15",
+      "title": "Proposition 1.2.15",
+      "kind": "proposition",
+      "level": 2,
+      "start": 889.685,
+      "duration": 16.181,
+      "source": "27fe12b8dc9aa1be47fb8c791c3e48585f713ff6db6a45172f39fa09019c01ca",
+      "audio": "25a51749588776a45c5d8edab670cf50745a068d7308b45050f4eec489acfe3f",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-proposition-1-2-15",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 907.066,
+      "duration": 63.355,
+      "source": "5c2fe10b1e685f87d18b409d042b937a31e85fbea2d670ece2c2751a84d3280f",
+      "audio": "4c479c5513d2a5d7aad9e6480062e069c4b5665771698a9969d73c65b31fa0e4",
+      "parent": null,
+      "proves": "proposition-1-2-15"
+    },
+    {
+      "id": "prose-after-proof-proposition-1-2-15",
+      "title": "The cosets therefore partition …: each vector belongs to…",
+      "kind": "prose",
+      "level": 2,
+      "start": 971.621,
+      "duration": 37.31,
+      "source": "4fb29f37270856361c2b2bde5e312867c9b8d2474b213e6243dfd2275e2144bf",
+      "audio": "914f4e051277567e87896d4c86d6a77d1b9c71f7e2e638b92e06717ab81fbde4",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "definition-1-2-16",
+      "title": "Definition 1.2.16",
+      "kind": "definition",
+      "level": 2,
+      "start": 1010.131,
+      "duration": 36.188,
+      "source": "30087c902582e1d18ace075a90c15ae7ed3acd33306a41e63d0e01125ed0ba27",
+      "audio": "98573a627147ce456da035cfebc1da2cfd365c5c32db4b21cd66a4053b76f9f3",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "prose-after-definition-1-2-16",
+      "title": "Since a coset can have more than one representative, these…",
+      "kind": "prose",
+      "level": 2,
+      "start": 1047.52,
+      "duration": 8.476,
+      "source": "84bcf1e4ac58714137b27beaba02d33729dc6f5ae7f15d057f83cfe837df3514",
+      "audio": "ba707038431cbc6c16f6befab6f26cdb2ccc20e299df1e8a8b12739f5cecd98c",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "theorem-1-2-17",
+      "title": "Theorem 1.2.17",
+      "kind": "theorem",
+      "level": 2,
+      "start": 1057.195,
+      "duration": 19.155,
+      "source": "6329ab93dc76dcc19c0a4138673a36916aef2276920f8b801af0ca7c538d660b",
+      "audio": "727680b150519d45be0294280e7507aec93c63e898470737412f03cfe80267a6",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-1-2-17",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 1077.551,
+      "duration": 233.048,
+      "source": "e0a78c76354d125ab2ec391361812f4b635322e3594be82b9c1a81c557f0966f",
+      "audio": "c3ac0d9413918ba0f9af5a00fd208ad2c885af61ee7b9c7ba1d44b47980a169a",
+      "parent": null,
+      "proves": "theorem-1-2-17"
+    },
+    {
+      "id": "example-1-2-18",
+      "title": "Example 1.2.18",
+      "kind": "example",
+      "level": 2,
+      "start": 1311.799,
+      "duration": 76.449,
+      "source": "757cecfd7f240da8dd06936ef91ec8784e2f90384e9c76197869eec7570a09c2",
+      "audio": "33df02a35092b0af0d119e284a4ddb418eed6bd7de08b7310a291794f78cd4c2",
+      "parent": null,
+      "proves": null
+    }
+  ],
+  "chapters": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "start": 0.0,
+      "end": 23.256
+    },
+    {
+      "id": "definition-1-2-1",
+      "title": "Definition 1.2.1",
+      "start": 23.256,
+      "end": 68.38
+    },
+    {
+      "id": "theorem-1-2-2",
+      "title": "Theorem 1.2.2",
+      "start": 68.38,
+      "end": 138.651
+    },
+    {
+      "id": "example-1-2-3",
+      "title": "Example 1.2.3",
+      "start": 138.651,
+      "end": 227.617
+    },
+    {
+      "id": "example-1-2-4",
+      "title": "Example 1.2.4",
+      "start": 227.617,
+      "end": 274.565
+    },
+    {
+      "id": "example-1-2-5",
+      "title": "Example 1.2.5",
+      "start": 274.565,
+      "end": 310.285
+    },
+    {
+      "id": "example-1-2-6",
+      "title": "Example 1.2.6",
+      "start": 310.285,
+      "end": 362.375
+    },
+    {
+      "id": "example-1-2-7",
+      "title": "Example 1.2.7",
+      "start": 362.375,
+      "end": 390.548
+    },
+    {
+      "id": "theorem-1-2-8",
+      "title": "Theorem 1.2.8",
+      "start": 390.548,
+      "end": 465.772
+    },
+    {
+      "id": "proposition-1-2-9",
+      "title": "Proposition 1.2.9",
+      "start": 465.772,
+      "end": 551.346
+    },
+    {
+      "id": "definition-1-2-10",
+      "title": "Definition 1.2.10",
+      "start": 551.346,
+      "end": 572.946
+    },
+    {
+      "id": "theorem-1-2-11",
+      "title": "Theorem 1.2.11",
+      "start": 572.946,
+      "end": 724.231
+    },
+    {
+      "id": "definition-1-2-12",
+      "title": "Definition 1.2.12",
+      "start": 724.231,
+      "end": 744.818
+    },
+    {
+      "id": "theorem-1-2-13",
+      "title": "Theorem 1.2.13",
+      "start": 744.818,
+      "end": 852.843
+    },
+    {
+      "id": "definition-1-2-14",
+      "title": "Definition 1.2.14",
+      "start": 852.843,
+      "end": 889.685
+    },
+    {
+      "id": "proposition-1-2-15",
+      "title": "Proposition 1.2.15",
+      "start": 889.685,
+      "end": 1010.131
+    },
+    {
+      "id": "definition-1-2-16",
+      "title": "Definition 1.2.16",
+      "start": 1010.131,
+      "end": 1057.195
+    },
+    {
+      "id": "theorem-1-2-17",
+      "title": "Theorem 1.2.17",
+      "start": 1057.195,
+      "end": 1311.799
+    },
+    {
+      "id": "example-1-2-18",
+      "title": "Example 1.2.18",
+      "start": 1311.799,
+      "end": 1388.248
+    }
+  ]
+}

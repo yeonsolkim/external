@@ -10,7 +10,7 @@
 <itunes:explicit>false</itunes:explicit>
 <itunes:type>episodic</itunes:type>
 <itunes:category text="Science"/>
-<lastBuildDate>Wed, 30 Sep 2026 00:00:00 +0000</lastBuildDate>
+<lastBuildDate>Thu, 01 Oct 2026 00:00:00 +0000</lastBuildDate>
 <item>
 <title>3.4 Limit Superior and Limit Inferior</title>
 <link>https://yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html</link>
@@ -61,8 +61,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</guid>
 <pubDate>Mon, 31 Aug 2026 15:00:00 +0000</pubDate>
 <description>We now use the metric structure to describe the asymptotic behavior of an ordered family of points. To say that a sequence (x_n) of points in M converges to x means that its terms eventually lie as close to x as we wish. Read the page at https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.mp3" length="20798880" type="audio/mpeg"/>
-<itunes:duration>0:21:40</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.mp3" length="20935552" type="audio/mpeg"/>
+<itunes:duration>0:21:48</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.chapters.json" type="application/json+chapters"/>
 </item>
@@ -111,13 +111,24 @@
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/07/10/Combinatorics.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
+<title>1.2 Subspaces</title>
+<link>https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</link>
+<guid isPermaLink="true">https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</guid>
+<pubDate>Thu, 18 Jun 2026 15:00:00 +0000</pubDate>
+<description>Within a vector space, we often focus on elements that satisfy a particular condition. The important question is whether the condition survives the operations of the larger space: do addition and scalar multiplication keep us among elements satisfying that condition? If they do, and the zero vector also satisfies the condition, the collection forms a vector space on its own. Such a collection is called a subspace. Read the page at https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</description>
+<enclosure url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.mp3" length="22214174" type="audio/mpeg"/>
+<itunes:duration>0:23:08</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.chapters.json" type="application/json+chapters"/>
+</item>
+<item>
 <title>1.1 Vector Spaces</title>
 <link>https://yeonsolkim.com/2026/06/01/1.-Vector-Spaces.html</link>
 <guid isPermaLink="true">https://yeonsolkim.com/2026/06/01/1.-Vector-Spaces.html</guid>
 <pubDate>Mon, 01 Jun 2026 15:00:00 +0000</pubDate>
 <description>Tuples, matrices, functions, and polynomials are different kinds of objects, yet each can be added to another of its kind and can be multiplied by a scalar. A vector space captures the rules the operations share: addition forms an abelian group, and scalar multiplication by a field works consistently with addition and field arithmetic. This common structure lets us study the fundamental principles such as linear independence, transformation and dimension without depending on what the vectors themselves look like. Read the page at https://yeonsolkim.com/2026/06/01/1.-Vector-Spaces.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.mp3" length="8848866" type="audio/mpeg"/>
-<itunes:duration>0:09:13</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.mp3" length="7850674" type="audio/mpeg"/>
+<itunes:duration>0:08:11</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.chapters.json" type="application/json+chapters"/>
 </item>
