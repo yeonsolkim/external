@@ -246,6 +246,26 @@ class StructuredTree(unittest.TestCase):
         self.assertNotIn("identity is unique", glossary_source(skel))
         self.assertEqual(skel.words, sum(s.words for s in skel.sections if not s.skip))
 
+    def test_nothing_from_the_exercises_heading_on_is_narrated(self):
+        skel = build(wrap(
+            '<p>Intro.</p><p><strong id="theorem-1">Theorem 1.</strong> Stated.</p>'
+            '<section class="doc-section doc-section--heading" data-doc="section" data-title="Exercises" '
+            'id="unit-exercises"><h2 id="exercises">Exercises</h2>'
+            '<section data-doc="exercise" data-environment-kind="Exercise" data-number="1" '
+            'id="unit-exercise-1" aria-labelledby="exercise-1"><p><strong id="exercise-1">Exercise 1.</strong> Do.</p></section>'
+            '<section data-doc="proof" data-environment-kind="Proof" data-proves="exercise-1" id="unit-proof-exercise-1">'
+            '<p><em id="proof-exercise-1">Proof.</em> We prove a lemma.</p>'
+            '<section data-doc="lemma" data-environment-kind="Lemma" id="unit-math-lemma-3" aria-labelledby="math-lemma-3">'
+            '<p><strong id="math-lemma-3">Lemma.</strong> A claim.</p></section>'
+            '<p>By the lemma, done.</p></section>'
+            '<p>A closing remark on the exercises.</p></section>'
+            '<section class="doc-section doc-section--heading" data-doc="section" data-title="Notes" id="unit-notes">'
+            '<h2 id="notes">Notes</h2><p>Afterwards.</p></section>'))
+        narrated = [s.id for s in skel.sections if not s.skip]
+        self.assertEqual(narrated, ["introduction"])
+        self.assertTrue(all(s.skip == "exercises" for s in skel.sections if s.id not in ("introduction",)))
+        self.assertNotIn("closing remark", glossary_source(skel))
+
     def test_a_page_without_the_plugin_still_parses(self):
         # the legacy fixture is the same post as deployed before the plugin existed
         self.assertEqual(len(CompactSets.skel.sections), 33)

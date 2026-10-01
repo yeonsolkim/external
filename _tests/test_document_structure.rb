@@ -155,6 +155,31 @@ check("in the body nothing is marked (it is indented anyway)") do
   top_level.include?("<p>More prose.</p>")
 end
 
+QED = %(<span class="qed" data-environment-end="proof">x</span>)
+SUBQED = %(<span class="qed" data-environment-end="subproof">x</span>)
+lemma_in_proof = build(<<~HTML)
+  <p><strong>Exercise 1.1.1.</strong> Prove it.</p>
+  <p><em>Proof.</em> We now prove a lemma.</p>
+  <p><strong>Lemma.</strong> A claim.</p>
+  <p><em>Subproof.</em> Suppose not. #{SUBQED}</p>
+  <p>By the contrapositive of this lemma, done. #{QED}</p>
+  <p><strong>Exercise 1.1.2.</strong> Next.</p>
+HTML
+check("a lemma and its subproof before the QED stay inside the proof") do
+  tree(lemma_in_proof) == ["exercise 1.1.1", "proof", "  lemma", "  proof", "exercise 1.1.2"]
+end
+check("the paragraph after the subproof is still the proof's, up to its QED") do
+  lemma_in_proof.index("By the contrapositive") < lemma_in_proof.index("Exercise 1.1.2") &&
+    lemma_in_proof[lemma_in_proof.index("By the contrapositive")..].index("</section>") <
+      lemma_in_proof[lemma_in_proof.index("By the contrapositive")..].index("<section")
+end
+check("the subproof proves the lemma") { lemma_in_proof.include?('data-proves="math-lemma-3"') }
+
+no_qed = build(%(<p><strong>Theorem 1.</strong> A.</p><p><em>Proof.</em> No end marker.</p><p><strong>Lemma 2.</strong> B.</p>))
+check("a proof with no QED ahead still ends at the next opener") do
+  tree(no_qed) == ["theorem 1", "proof", "lemma 2"]
+end
+
 named = build(%(<p><strong>Theorem 2.2.20</strong> (Heine–Borel theorem). Statement.</p>))
 check("a parenthesised name is captured") { named.include?('data-name="Heine–Borel theorem"') }
 
