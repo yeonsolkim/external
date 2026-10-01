@@ -2,7 +2,7 @@
   "url": "/2026/06/18/2.-Subspaces.html",
   "title": "1.2 Subspaces",
   "lang": "en",
-  "hash": "cd5eafef095a4424188edcd423365ace948df4dd117e51ed35b36ff959d6a26e",
+  "hash": "60dd64f43a8f55df75ea5802f2d68c31e4a29140da492fcddfb5886475da18a9",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
@@ -26,12 +26,12 @@
       "title": "Definition 1.2.1",
       "kind": "definition",
       "level": 2,
-      "source": "af830f8b2cd4810f7f5760411141b66cdbb934b66138170eb1072adb2ac6a57c",
+      "source": "5aa9c9fbd5b9c8bf79a300b34c33b6f6c2883faec5ed152a13637c431fc01d99",
       "skip": null,
       "file": "definition-1-2-1.md",
       "current": true,
       "edited": false,
-      "words": 80,
+      "words": 79,
       "math": 8
     },
     {
