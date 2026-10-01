@@ -25,14 +25,20 @@
 
   /* The page is a tree of units (_docs/STRUCTURE.md). Its blocks — the grain at which the
      text is greyed out while the audio plays — are the leaves: paragraphs, figures, lists,
-     and whole environments. So we descend into sectioning wrappers but not into an
-     environment, which is read as one section. */
+     and whole environments. So we descend into sectioning wrappers, and into a proof that
+     holds units of its own (a lemma proved on the way, read as sections of their own), but
+     not into a plain environment, which is read as one section. */
+  function holdsUnits(element) {
+    return element.classList.contains('doc-section') ||
+      (element.matches('section[data-doc]') && !!element.querySelector(':scope > section[data-doc]'));
+  }
+
   function blockList(body) {
     var blocks = [];
     (function walk(container) {
       Array.prototype.forEach.call(container.children, function (element) {
         if (/^(SCRIPT|STYLE)$/.test(element.tagName)) return;
-        if (element.classList.contains('doc-section')) { walk(element); return; }
+        if (holdsUnits(element)) { walk(element); return; }
         blocks.push(element);
       });
     })(body);
@@ -47,14 +53,32 @@
       while (el && !known.has(el)) el = el.parentElement;
       return el;
     }
+    /* `prose-after-X` is, by construction, the text that follows unit X (_docs/STRUCTURE.md):
+       the first visible block after everything X holds — or, when X sits inside a block (a
+       lemma in a proof), that same block. */
+    function afterUnit(id) {
+      var unit = document.getElementById('unit-' + id);
+      if (!unit) return null;
+      var last = -1;
+      for (var i = 0; i < blocks.length; i++) {
+        if (blocks[i] !== unit && blocks[i].contains(unit)) return blocks[i];
+        if (blocks[i] === unit || unit.contains(blocks[i])) last = i;
+      }
+      for (var k = last + 1; last >= 0 && k < blocks.length; k++) {
+        if (blocks[k].getAttribute('aria-hidden') !== 'true') return blocks[k];
+      }
+      return null;
+    }
     var body = document.querySelector('.post-body');
     sections.forEach(function (s) {
       var el = document.getElementById(s.id);          /* the server gives every unit an id */
       if (!el && s.kind === 'introduction') {
         el = blocks.filter(function (b) { return b.tagName === 'P'; })[0];
       } else if (!el && s.kind === 'prose') {
+        el = afterUnit(s.id.replace(/^prose-after-/, ''));
+        /* a page built before the structure plugin: match the paragraph's opening words */
         var head = norm(s.title.split('\u2026')[0]).slice(0, 40).toLowerCase();
-        if (head.length >= 12) {
+        if (!el && head.length >= 12) {
           el = blocks.filter(function (b) {
             return b.tagName === 'P' && norm(b.textContent).slice(0, 40).toLowerCase().indexOf(head) === 0;
           })[0];
