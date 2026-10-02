@@ -58,8 +58,7 @@ its proof, display equations and lists belong to it. The author's transitional p
 between two results is its own `prose` section: after a proof, every paragraph past the
 QED; without a proof, the first paragraph that starts a new sentence in a new block (a
 paragraph that finishes a display equation, or begins lowercase, still belongs to the
-statement). In posts whose `.post-body` carries `data-post-domain="mathematics"` or `"physics"`
-(the same rule `main.js` uses), a bold numbered heading such as `**3. Multiplication
+statement). A bold numbered heading such as `**3. Multiplication
 rule.**` also opens a section (`numbered-3`, title "3. Multiplication rule"), which runs
 until the next one — no prose split. Prose before the first section is `introduction`. A
 heading named References/Bibliography is kept but `skip`ped. The name in parentheses after the label is

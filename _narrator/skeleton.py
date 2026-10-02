@@ -18,8 +18,7 @@ section does not renumber — and re-hash — every section after it.
 Structure comes from the page itself. `_plugins/document_structure.rb` wraps every
 sectioning unit and environment in a `<section data-doc="...">` at build time
 (see `_docs/STRUCTURE.md`), so this module reads a tree rather than matching bold text.
-The heuristics below are the fallback for pages built before that plugin, and for the
-domains it does not touch.
+The heuristics below are the fallback for pages built before that plugin.
 
 Legacy sectioning rule: a section opens at every heading (h2–h6) and at every
 numbered environment paragraph (`<strong>Theorem 2.2.16.</strong> ...`). The
@@ -52,10 +51,8 @@ ENV_KINDS = {
 }
 ENV_RE = re.compile(r"^\s*([A-Z][a-z]+)\s+(\d+(?:\.\d+)*)\s*\.?\s*$")
 ENV_UNNUMBERED_RE = re.compile(r"^\s*([A-Z][a-z]+)\s*\.\s*$")
-# `**1. Trials and outcomes.**` — the site's main.js treats these as entries too, but only in
-# the mathematics/physics domains (`data-post-domain` on .post-body); we follow suit.
+# `**1. Trials and outcomes.**` — the site's main.js treats these as entries too, in every domain.
 NUMBERED_RE = re.compile(r"^\s*(\d+(?:\.\d+)*)\.(?:\s+(\S.*?))?\s*$")
-NUMBERED_DOMAINS = {"mathematics", "physics"}
 PROOF_RE = re.compile(r"^\s*(?:proof|sketch of proof|proof sketch|solution)\b", re.I)
 # "(Heine–Borel theorem)." right after the bold label
 ENV_NAME_RE = re.compile(r"^\s*\(([^()]*(?:\([^()]*\)[^()]*)*)\)\s*\.?")
@@ -475,7 +472,7 @@ def _unit_title(unit: dict) -> str:
     kind, number, title = unit["kind"], unit["number"], unit["title"]
     if kind == "proof":
         return "Proof"
-    if kind in ("section", "subsection", "subsubsection"):
+    if kind in ("section", "subsection", "subsubsection", "paragraph"):
         return ("%s. %s" % (number, title)).strip().rstrip(".") if number else title
     display = unit["display_kind"] or kind.capitalize()
     out = ("%s %s" % (display, number)).strip()
@@ -651,7 +648,7 @@ REFERENCE_IDS = {"references", "reference", "bibliography"}
 SKIPPED_KINDS = {"exercise": "exercise"}
 # An `## Exercises` heading ends the lecture: it and everything after it are not read.
 EXERCISE_TITLES = {"exercises", "exercise"}
-HEADING_KINDS = {"heading", "section", "subsection", "subsubsection"}
+HEADING_KINDS = {"heading", "section", "subsection", "subsubsection", "paragraph"}
 
 
 def _mark_skipped(sections: list) -> None:
@@ -737,9 +734,8 @@ def build(html: str, source: str = "") -> Skeleton:
         except (ValueError, AttributeError):
             modified = ""
 
-    domain = (body.get("data-post-domain") or "").strip().lower()
     structured = body.find(lambda n: n.tag == "section" and n.get("data-doc")) is not None
-    r = Renderer(numbered_labels=not structured and domain in NUMBERED_DOMAINS)
+    r = Renderer(numbered_labels=not structured)
     if structured:
         sections = _assemble_tree(_walk_units(body, r))
     else:

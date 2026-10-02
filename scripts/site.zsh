@@ -292,6 +292,7 @@ publish() {
 
   step "validate: tests"
   ruby _tests/test_document_structure.rb >>"$log" 2>&1 || fail "document structure tests failed"
+  ruby _tests/test_english_annotations.rb >>"$log" 2>&1 || fail "english annotation tests failed"
   python3 -m unittest discover -s _tests -p 'test_*.py' >>"$log" 2>&1 || fail "commit summary tests failed"
   python3 -m unittest discover -s _narrator/tests -t . >>"$log" 2>&1 || fail "narration tests failed"
   step_done

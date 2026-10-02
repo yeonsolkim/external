@@ -16,8 +16,6 @@
 # so a cross-reference in prose can never drift from the label it points at. A number that
 # does not continue its neighbours is reported as a build warning.
 module ExternalDocumentStructure
-  DOMAINS = %w[mathematics physics].freeze
-
   ENTRY_KINDS = %w[
     Definition Theorem Lemma Corollary Proposition Remark Example
     Principle Notation Axiom Exercise Rule Claim Convention Observation Fact
@@ -30,7 +28,11 @@ module ExternalDocumentStructure
   ENTRY_RE = /\A(#{ENTRY_KINDS.join("|")})(?:\s+(\d+(?:\.\d+)*))?\.?\z/.freeze
   PROOF_RE = /\A(Proof|Subproof|Solution)(?:\s+\d+)?\.?\z/i.freeze
   NUMBERED_RE = /\A(\d+(?:\.\d+)*)\.(?:\s+(\S.*?))?\z/.freeze
-  ORDER_PREFIX = /\A\d+(?:\.\d+)*\.\s*/.freeze
+  # `**Span as the smallest containing subspace.**` — a bold phrase ending in a period that
+  # is no other opener. A label ending in a number (`A1.`, `Question 1.`) is an unknown
+  # environment, not a heading; a headword without a period (`**can**`) stays emphasis.
+  RUN_IN_RE = /\A(?=.*\p{Alpha})(?!.*\b[A-Z]?\d+(?:\.\d+)*\.\z)(\S.*?)\.\z/.freeze
+  RUN_IN_DEPTH = 9 # below every numbered level: any section or heading closes it
 
   VOID_TAGS = %w[area base br col embed hr img input link meta param source track wbr].freeze
   LABEL_TAGS = %w[strong b em i].freeze
@@ -164,6 +166,11 @@ module ExternalDocumentStructure
       return { role: :proof, kind: proof[1].capitalize, label: label }
     end
 
+    # Last, so every labelled opener above wins; bold only, since italic is the proof's.
+    if %w[strong b].include?(label[:tag]) && (title = label[:text][RUN_IN_RE, 1])
+      return { role: :paragraph, title: title, label: label }
+    end
+
     nil
   end
 
@@ -203,6 +210,8 @@ module ExternalDocumentStructure
     blocks[from..].each_with_index do |block, offset|
       if offset.positive?
         descriptor = descriptor_of(block)
+        # A run-in heading does not stop the search: before the QED it is a step of the
+        # proof (`**Existence.**`), not a new part.
         return false if descriptor && descriptor[:role] == :section
         return false if competing_proof?(descriptor, kind) || semantic_boundary?(block)
       end
@@ -235,7 +244,8 @@ module ExternalDocumentStructure
   # only there does a structural continuation need marking; in the body and under an `##`
   # heading every paragraph is indented already.
   def indenting_unit?(unit)
-    %i[environment proof].include?(unit.role) || (unit.role == :section && unit.depth.positive?)
+    %i[environment proof].include?(unit.role) ||
+      (unit.role == :section && unit.depth.positive? && unit.depth < RUN_IN_DEPTH)
   end
 
   def blank?(block)
@@ -289,6 +299,7 @@ module ExternalDocumentStructure
     environment_counter = 0
     last_statement = nil
     seen_numbers = {}
+    seen_ids = Hash.new(0)
     bridge = false
     structural = false
 
@@ -308,10 +319,19 @@ module ExternalDocumentStructure
       end
 
       descriptor = descriptor_of(block)
+      # `**Existence.**` inside a proof that runs to its QED is a step of that proof.
+      if descriptor && descriptor[:role] == :paragraph &&
+         stack.any? { |unit| unit.role == :proof && unit.attrs[:hosts] }
+        descriptor = nil
+      end
 
       # --- close whatever this block ends -----------------------------------------
       if descriptor
         case descriptor[:role]
+        when :paragraph
+          # Even after a display equation, which would otherwise bridge it into the statement.
+          close_units.call
+          close_to.call(->(unit) { unit.role == :section && unit.depth >= RUN_IN_DEPTH })
         when :section
           depth = descriptor[:number].count(".") + 1
           close_units.call
@@ -328,7 +348,8 @@ module ExternalDocumentStructure
           "class" => "doc-section doc-section--heading semantic-unit",
           "data-doc" => heading_level <= 2 ? "section" : "subsection",
           "data-title" => text_of(block[:raw]),
-          "id" => heading_id ? "unit-#{heading_id}" : nil
+          "id" => heading_id ? "unit-#{heading_id}" : nil,
+          :level => heading_level
         }, 0))
       elsif semantic_boundary?(block)
         close_units.call
@@ -340,6 +361,27 @@ module ExternalDocumentStructure
 
       # --- open what this block starts ----------------------------------------------
       case descriptor && descriptor[:role]
+      when :paragraph
+        # One level below the section it sits in; the post title is the page's h1. It has no
+        # number to read, so the id is the title's slug, as kramdown does for `## T`.
+        parent = stack.reverse.find { |unit| unit.role == :section }
+        level = ((parent ? parent.attrs[:level] : 1) + 1).clamp(2, 6)
+        id = "par-#{kind_class(descriptor[:title])}"
+        id = "#{id}-#{seen_ids[id]}" if (seen_ids[id] += 1) > 1
+        unit = Unit.new(:section, {
+          "class" => "doc-section doc-section--run-in semantic-unit",
+          "data-doc" => "paragraph",
+          "data-title" => descriptor[:title],
+          "id" => "unit-#{id}",
+          :level => level
+        }, RUN_IN_DEPTH)
+        last_statement = nil
+        stack.push(unit)
+        block = with_label_attrs(block, descriptor[:label],
+                                 "id" => id,
+                                 "class" => "math-label-anchor doc-heading",
+                                 "role" => "heading",
+                                 "aria-level" => level.to_s)
       when :section
         number = descriptor[:number]
         depth = number.count(".") + 1
@@ -350,7 +392,8 @@ module ExternalDocumentStructure
           "data-doc" => depth == 1 ? "subsection" : "subsubsection",
           "data-number" => number,
           "data-title" => descriptor[:title],
-          "id" => "unit-#{id}"
+          "id" => "unit-#{id}",
+          :level => (depth + 2).clamp(2, 6)
         }, depth)
         last_statement = nil            # a proof in this part proves the part, until a statement opens
         stack.push(unit)
@@ -479,16 +522,10 @@ module ExternalDocumentStructure
   end
 
   # -- entry point ---------------------------------------------------------------------
-  def domain_of(document)
-    path = document.data["category_path"]
-    return nil unless path.is_a?(Array) && path.first
-
-    path.first.to_s.strip.sub(ORDER_PREFIX, "").downcase.gsub(/[^a-z0-9]+/, "-").gsub(/\A-+|-+\z/, "")
-  end
-
+  # Every post, whatever its category: a grammar post's `**2.1. Remoteness.**` is a run-in
+  # subsection exactly as a mathematics post's is.
   def process(document)
     return unless document.respond_to?(:collection) && document.collection&.label == "posts"
-    return unless DOMAINS.include?(domain_of(document))
     return if document.content.to_s.strip.empty?
 
     warnings = []

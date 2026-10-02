@@ -6,7 +6,7 @@ category_path:
   - 3. English
   - 2. Dictionary
 created_at: 2026-08-10 14:55:42 +0900
-last_modified_at: 2026-08-24 16:19:04 +0900
+last_modified_at: 2026-10-02 11:12:34 +0900
 
 publish: false
 ---
@@ -16,6 +16,10 @@ publish: false
 2. permission: *you can go home now.*
 3. circumstantial possibility: *even expert drivers can make mistakes \| water can boil \| the absence of legs cannot disguise their affinities with mammals \| I can't believe that we are faced with that sort of choice.*
 4. conjecture: *she can't be tired now.*
+
+### could
+1. polite proposal: *to ensure that you don't forget to do it, you could mark the margin of this guide with a tick as you complete it.*
+2. 
 
 ### may
 1. permission.
@@ -40,3 +44,4 @@ publish: false
 ### would
 1. a polite opinion or suggestion: *I would be happy to help \| would you like some help?*
 2. past habit: *I would sometimes travel alone.*
+3. conditional (possible) consequence: *if you wanted to keep track of your progress, you would mark each completed activity with a tick.*

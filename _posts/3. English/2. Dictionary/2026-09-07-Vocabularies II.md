@@ -6,7 +6,7 @@ category_path:
   - 3. English
   - 2. Dictionary
 created_at: 2026-09-07 12:58:48 +0900
-last_modified_at: 2026-09-29 08:45:43 +0900
+last_modified_at: 2026-10-02 10:35:36 +0900
 
 line_indent: false
 publish: false
@@ -29,7 +29,7 @@ publish: false
 **cube**: the product of a number multiplied by its square: *the **cube of** its length.*
 **quartic**: involving the fourth of a quantity.
 
-**dedicated**: (of a thing) exclusively allocated to or intended for a particular purpose: *a dedicated study week*
+**dedicated**: (of a thing) exclusively allocated to or intended for a particular purpose: *a dedicated study week.*
 
 **redundant**: not or no longer needed or useful: *it is considered redundant to use a conjunction after a semicolon.*
 
@@ -41,3 +41,5 @@ publish: false
 **common**: shared by more than one: *problems **common to** both commutities.*
 
 **manifest**: 
+
+**demonstration**: :*computer demonstration.*

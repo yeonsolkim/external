@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module ExternalDictionaryAnnotations
-  ANNOTATION_CLASS = "dictionary-annotation"
+module ExternalEnglishAnnotations
+  ANNOTATION_CLASS = "english-annotation"
   HEADWORD_PATTERN = /\A(?<headword>(?:<b>.*?<\/b>|\*\*.*?\*\*)(?:<sup>.*?<\/sup>)?)(?<tail>.*)\z/m
   LEADING_USAGE_LABEL_PATTERN = /\A(?<separator>:[ \t\u00A0]*)(?<label>\*(?:\[[^\]\r\n]+\]|Computing|Linguistics)\*)(?!\{:)/
-  TRAILING_EXAMPLE_PATTERN = /\A(?<before>.*?:.*?)(?<separator>:[ \t\u00A0]*)(?<example>\*.*\*|<(?:em|i)(?:\s[^>]*)?>.*?<\/(?:em|i)>)(?<punctuation>[.!?]?)(?<trailing>[ \t\u00A0]*\r?\n?)\z/m
+  TRAILING_EXAMPLE_PATTERN = /\A(?<before>\s*\S.*?)(?<separator>:[ \t\u00A0]*)(?<example>\*(?:[^*]|\*\*[^*]+\*\*)+\*|<(?:em|i)(?:\s[^>]*)?>.*?<\/(?:em|i)>)(?<punctuation>[.!?]?)(?<trailing>[ \t\u00A0]*\r?\n?)\z/m
   ORDER_PREFIX_PATTERN = /\A(?:(?:[IVXLCDM]+)|(?:\d+))[.)]\s*/i
 
   module_function
@@ -31,12 +31,9 @@ module ExternalDictionaryAnnotations
 
   def annotate_line(line)
     match = line.match(HEADWORD_PATTERN)
-    return line unless match
+    line = match[:headword] + mark_leading_usage_label(match[:tail]) if match
 
-    tail = mark_leading_usage_label(match[:tail])
-    tail = mark_trailing_example(tail)
-
-    match[:headword] + tail
+    mark_trailing_example(line)
   end
 
   def mark_leading_usage_label(tail)
@@ -45,8 +42,8 @@ module ExternalDictionaryAnnotations
     end
   end
 
-  def mark_trailing_example(tail)
-    tail.sub(TRAILING_EXAMPLE_PATTERN) do
+  def mark_trailing_example(line)
+    line.sub(TRAILING_EXAMPLE_PATTERN) do
       example = annotate_example(Regexp.last_match[:example])
 
       Regexp.last_match[:before] +
@@ -77,15 +74,13 @@ module ExternalDictionaryAnnotations
     end
   end
 
-  def dictionary_post?(item)
+  def english_post?(item)
     return false unless item.respond_to?(:collection) && item.collection&.label == "posts"
 
     category_path = item.data["category_path"] || item.data["categories"] || []
     category_path = [category_path] unless category_path.is_a?(Array)
 
-    category_path.any? do |category|
-      category.to_s.strip.sub(ORDER_PREFIX_PATTERN, "").casecmp?("Dictionary")
-    end
+    category_path.first.to_s.strip.sub(ORDER_PREFIX_PATTERN, "").casecmp?("English")
   end
 
   def opening_fence(line)
@@ -98,7 +93,7 @@ module ExternalDictionaryAnnotations
   end
 
   def process(item)
-    return unless dictionary_post?(item)
+    return unless english_post?(item)
 
     item.content = annotate(item.content)
   end
@@ -106,6 +101,6 @@ end
 
 if defined?(Jekyll)
   Jekyll::Hooks.register :documents, :pre_render do |item|
-    ExternalDictionaryAnnotations.process(item)
+    ExternalEnglishAnnotations.process(item)
   end
 end

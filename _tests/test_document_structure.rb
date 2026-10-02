@@ -196,6 +196,85 @@ check("a proof with no statement before it proves the part it is in") do
   in_part.include?('data-proves="sec-7"') && in_part.include?('id="proof-sec-7"')
 end
 
+puts "run-in headings"
+run_in = build(<<~HTML)
+  <p><strong>Example 1.3.6.</strong> The generating set</p>
+
+  \\[F_n[x]=\\operatorname{span}(\\{1,x\\}).\\]
+
+  <p><strong>Span as the smallest containing subspace.</strong> The next theorem.</p>
+  <p><strong>Theorem 1.3.7.</strong> A statement.</p>
+  <p>Prose between results.</p>
+  <p><strong>Corollary 1.3.8.</strong> Another.</p>
+  <p><strong>Span and sums.</strong> More.</p>
+  <h2 id="exercises">Exercises</h2>
+HTML
+check("a bold phrase ending in a period opens a part that holds what follows") do
+  tree(run_in) == ["example 1.3.6", "paragraph", "  theorem 1.3.7", "  corollary 1.3.8", "paragraph", "section"]
+end
+check("it is not bridged into the statement a display equation ends") do
+  run_in.index("Span as the smallest") > run_in.index("</section>")
+end
+check("its label becomes a heading with an id from its title") do
+  run_in.include?('id="par-span-as-the-smallest-containing-subspace"') &&
+    run_in.include?('id="unit-par-span-as-the-smallest-containing-subspace"') &&
+    run_in.include?('data-title="Span as the smallest containing subspace"') &&
+    run_in.include?('data-doc="paragraph"') && run_in.include?('role="heading" aria-level="2"')
+end
+
+check("a label ending in a number, a headword or an italic phrase is not a heading") do
+  [
+    "<p><strong>A1.</strong> Consider a set.</p>",
+    "<p><strong>Question 1.</strong> Under what conditions?</p>",
+    "<p><strong>can</strong> modal verb</p>",
+    "<p><em>Note on terms.</em> x</p>"
+  ].all? { |html| tree(build(html)).empty? }
+end
+
+levels = build(<<~HTML)
+  <h2 id="x">X</h2>
+  <p><strong>Under a heading.</strong> a</p>
+  <p><strong>3. Groups.</strong> b</p>
+  <p><strong>Cosets.</strong> c</p>
+  <p><strong>4. Rings.</strong> d</p>
+  <p><strong>Cosets.</strong> e</p>
+HTML
+check("it nests one level below its section and any numbered section closes it") do
+  tree(levels) == ["section", "  paragraph", "  subsection 3", "    paragraph", "  subsection 4", "    paragraph"]
+end
+check("its aria-level follows the section it sits in") do
+  levels.include?(%(id="par-under-a-heading" class="math-label-anchor doc-heading" role="heading" aria-level="3")) &&
+    levels.include?(%(id="par-cosets" class="math-label-anchor doc-heading" role="heading" aria-level="4"))
+end
+check("a repeated title gets a distinct id") { levels.include?('id="par-cosets-2"') }
+
+steps = build(<<~HTML)
+  <p><strong>Theorem 1.</strong> T.</p>
+  <p><em>Proof.</em> First.</p>
+  <p><strong>Existence.</strong> A.</p>
+  <p><strong>Uniqueness.</strong> B.<span class="qed" data-environment-end="proof">x</span></p>
+HTML
+check("inside a proof that reaches its QED it is a step, not a part") do
+  tree(steps) == ["theorem 1", "proof"] && steps.index("Uniqueness.") < steps.rindex("</section>")
+end
+
+unfinished = build(<<~HTML)
+  <p><strong>Theorem 1.</strong> T.</p>
+  <p><em>Proof.</em> No QED here.</p>
+  <p><strong>Next part.</strong> A.</p>
+HTML
+check("it ends a proof that has no QED") { tree(unfinished) == ["theorem 1", "proof", "paragraph"] }
+
+prose = build(<<~HTML)
+  <p><strong>A part.</strong> It contains</p>
+  <ol><li>x</li></ol>
+  #{MARK}
+  <p>A new paragraph.</p>
+HTML
+check("its prose is body prose, so a structural continuation is not marked") do
+  !prose.include?("data-paragraph-continuation")
+end
+
 puts "what must not change"
 source = <<~HTML
   <p><strong>1. Part.</strong> Body with <span class="math-inline">\\(x\\)</span>.</p>
@@ -228,8 +307,8 @@ document = Struct.new(:data, :content, :collection, :relative_path).new(
   Struct.new(:label).new("posts"), "x.md"
 )
 D.process(document)
-check("outside mathematics and physics nothing is wrapped") do
-  !document.content.include?("<section") && document.data["document_structure"].nil?
+check("every category is structured, English included") do
+  document.content.include?(%(data-number="1")) && document.data["document_structure"] == true
 end
 
 puts(($failures.zero? ? "\nall checks passed" : "\n#{$failures} failed"))
