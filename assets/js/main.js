@@ -372,16 +372,8 @@
     return entryLabelPattern.test(text) || isNumberedBoldLabel(element, text);
   }
 
-  function isNumberedLabelDomain(element) {
-    var postBody = element.closest('.post-body');
-    var domain = postBody && postBody.getAttribute('data-post-domain');
-
-    return domain === 'mathematics' || domain === 'physics';
-  }
-
   function isNumberedBoldLabel(element, text) {
     return /^(STRONG|B)$/.test(element.tagName) &&
-      isNumberedLabelDomain(element) &&
       numberedBoldLabelPattern.test(text);
   }
 
@@ -746,10 +738,10 @@
     });
   }
 
-  function markSectionOpeningParagraphs(postBody) {
+  function markSectionOpeningParagraphs(container) {
     var needsOpeningParagraph = true;
 
-    Array.prototype.forEach.call(postBody.children, function (element) {
+    Array.prototype.forEach.call(container.children, function (element) {
       if (/^H[1-6]$/.test(element.tagName)) {
         needsOpeningParagraph = true;
         return;
@@ -797,7 +789,8 @@
 
     if (structured) {
       containers.forEach(function (container) {
-        if (container !== postBody && !container.classList.contains('doc-section--heading')) {
+        // A heading section, block or run-in, holds body prose; the rest are statements.
+        if (container !== postBody && !container.matches('.doc-section--heading, .doc-section--run-in')) {
           decorateEnvironmentParagraphs(container);
         }
       });
@@ -806,7 +799,11 @@
     }
 
     containers.forEach(markDisplayMathContinuations);
-    markSectionOpeningParagraphs(postBody);
+    // Each heading opens its own wrapper, so the paragraph after it is found there. A run-in
+    // heading's own paragraph is the first one in its wrapper, so it opens flush.
+    [postBody]
+      .concat(Array.prototype.slice.call(postBody.querySelectorAll('.doc-section--heading, .doc-section--run-in')))
+      .forEach(markSectionOpeningParagraphs);
     postBody.setAttribute('data-semantic-units', 'true');
   }
 

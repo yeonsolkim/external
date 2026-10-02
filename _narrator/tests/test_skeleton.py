@@ -158,18 +158,18 @@ class NumberedLabels(unittest.TestCase):
     BODY = ('<p><strong>1. Trials.</strong> An outcome is a result.</p><p>More on trials.</p>'
             '<p><strong>2. Addition rule.</strong> Two events.</p><p><strong>Theorem 1.2.</strong> Stated.</p>')
 
-    def test_math_domain_sections_by_number(self):
-        html = wrap(self.BODY).replace('<div class="post-body">', '<div class="post-body" data-post-domain="mathematics">')
-        skel = build(html)
+    def test_sections_by_number(self):
+        skel = build(wrap(self.BODY))
         self.assertEqual([s.id for s in skel.sections], ["numbered-1", "numbered-2", "theorem-1-2"])
         self.assertEqual([s.title for s in skel.sections], ["1. Trials", "2. Addition rule", "Theorem 1.2"])
         self.assertEqual(skel.sections[0].kind, "numbered")
         self.assertIsNone(skel.sections[0].anchor)          # main.js gives these no id
         self.assertIn("More on trials.", skel.sections[0].text)   # runs until the next number, no prose split
 
-    def test_other_domains_ignore_numbered_bold(self):
-        skel = build(wrap(self.BODY))
-        self.assertEqual([s.id for s in skel.sections], ["introduction", "theorem-1-2"])
+    def test_every_domain_sections_by_number(self):
+        html = wrap(self.BODY).replace('<div class="post-body">', '<div class="post-body" data-post-domain="english">')
+        skel = build(html)
+        self.assertEqual([s.id for s in skel.sections], ["numbered-1", "numbered-2", "theorem-1-2"])
 
 
 class StructuredTree(unittest.TestCase):
@@ -215,6 +215,23 @@ class StructuredTree(unittest.TestCase):
         # a unit's own text is its own section, and stops where the child begins
         self.assertIn("called the inverse of", named["sec-3"].text)
         self.assertNotIn("Proposition 1.", named["sec-3"].text)
+
+    def test_a_run_in_heading_is_a_titled_part(self):
+        skel = build(wrap(
+            '<p><strong id="example-1">Example 1.</strong> An example.</p>'
+            '<section class="doc-section doc-section--run-in semantic-unit" data-doc="paragraph" '
+            'data-title="Span as the smallest containing subspace" id="unit-par-span">'
+            '<p><strong id="par-span" role="heading" aria-level="2">Span as the smallest containing subspace.</strong> '
+            'The next theorem.</p>'
+            '<section data-doc="theorem" data-environment-kind="Theorem" data-number="1.3.7" '
+            'id="unit-theorem-1-3-7" aria-labelledby="theorem-1-3-7">'
+            '<p><strong id="theorem-1-3-7">Theorem 1.3.7.</strong> A statement.</p></section></section>'))
+        named = {s.id: s for s in skel.sections}
+        self.assertEqual(named["par-span"].kind, "paragraph")
+        self.assertEqual(named["par-span"].title, "Span as the smallest containing subspace")
+        self.assertEqual(named["par-span"].anchor, "par-span")
+        self.assertEqual(named["theorem-1-3-7"].parent, "par-span")
+        self.assertIn("The next theorem.", named["par-span"].text)
 
     def test_anchors_exist_in_the_page(self):
         with open(os.path.join(os.path.dirname(__file__), "fixtures", "categorical-viewpoint.html"),

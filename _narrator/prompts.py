@@ -67,6 +67,7 @@ KIND_NOTES = {
     "subsection": "a numbered part of the document — announce it by its number and heading as written",
     "subsubsection": "a numbered part of the document — announce it by its number and heading as written",
     "section": "a titled section",
+    "paragraph": "a titled part of the document; its heading is the opening words of the first paragraph — read it as written",
     "prose": "the author's transition between two results — read it as written, it is not a summary",
     "heading": "a titled section",
 }

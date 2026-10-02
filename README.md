@@ -235,9 +235,13 @@ structure.
   terminal structural block and unlabelled prose, leave three blank lines;
   `_plugins/post_entry_breaks.rb` preserves these distinctions as hidden semantic
   markers.
-- Dictionary posts mark usage labels and examples with
-  `.dictionary-annotation` during rendering. This keeps those annotations muted
-  without changing pronunciations, lexical categories, or ordinary emphasis.
+- English posts mark usage labels and examples with `.english-annotation`
+  during rendering (`_plugins/english_annotations.rb`). An example is an italic
+  span that follows a colon and runs to the end of the line
+  (`…: *example.*`), on any line; a usage label is `*[…]*`, `*Computing*`, or
+  `*Linguistics*` directly after a bold headword's colon. This keeps those
+  annotations muted without changing pronunciations, lexical categories, or
+  ordinary emphasis.
 - For bibliography-style lists under `## References`, use an ordered list and
   put `{:reference}` directly below it. The preprocessor maps that tag to
   `class="reference"`, and ordered-list markers render as `[1]` instead of

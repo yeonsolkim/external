@@ -6,7 +6,7 @@ category_path:
   - 1. Mathematics
   - 5. Combinatorics
 created_at: 2026-08-06 13:53:49 +0900
-last_modified_at: 2026-09-30 16:56:57 +0900
+last_modified_at: 2026-10-02 11:30:32 +0900
 
 publish: true
 ---

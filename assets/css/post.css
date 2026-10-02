@@ -83,8 +83,8 @@ article.post > .post-body > :first-child {
   margin-top: 0 !important;
 }
 
-article.post[data-reference-scope="dictionary"] .post-body .dictionary-annotation,
-article.post[data-reference-scope="dictionary"] .post-body .dictionary-annotation strong { 
+.post-body .english-annotation,
+.post-body .english-annotation strong { 
   color: #9c9c9c !important;
 }
 
@@ -162,9 +162,15 @@ color: blue !important;
 text-decoration: underline !important;
 }
 
-.post-body h1:first-child, 
-.post-body h2:first-child, 
-.post-body h3:first-child { 
+/* Every heading opens its own section wrapper (_docs/STRUCTURE.md), so each is a first
+   child: give back the margin the theme's `.main-content :first-child` takes away, and keep
+   the zero for the post's opening heading only. */
+.post-body .doc-section--heading > :is(h1, h2, h3, h4, h5, h6):first-child {
+margin-top: 2.5rem;
+}
+
+.post-body > :is(h1, h2, h3):first-child,
+.post-body > .doc-section:first-child > :is(h1, h2, h3):first-child {
 margin-top: 0 !important;
 }
 
@@ -460,7 +466,7 @@ white-space: normal;
 }
 
 /* Each source soft line becomes a real paragraph in the enhanced DOM. */
-.post-body[data-semantic-units="true"] :is(.post-body, .doc-section--heading) > p.semantic-paragraph,
+.post-body[data-semantic-units="true"] :is(.post-body, .doc-section--heading, .doc-section--run-in) > p.semantic-paragraph,
 .post-body[data-semantic-units="true"] > p.semantic-paragraph {
 margin-top: 0 !important;
 margin-bottom: 0 !important;
@@ -468,18 +474,18 @@ text-indent: 1em;
 }
 
 /* A single blank line after display math continues the preceding paragraph. */
-.post-body[data-semantic-units="true"] .doc-section--heading > p.semantic-paragraph[data-paragraph-continuation="display"],
+.post-body[data-semantic-units="true"] :is(.doc-section--heading, .doc-section--run-in) > p.semantic-paragraph[data-paragraph-continuation="display"],
 .post-body[data-semantic-units="true"] > p.semantic-paragraph[data-paragraph-continuation="display"] {
 text-indent: 0;
 }
 
-.post-body[data-semantic-units="true"] .doc-section--heading > p.semantic-paragraph--section-opening,
+.post-body[data-semantic-units="true"] :is(.doc-section--heading, .doc-section--run-in) > p.semantic-paragraph--section-opening,
 .post-body[data-semantic-units="true"] > p.semantic-paragraph--section-opening {
 text-indent: 0;
 }
 
 /* Dictionary-style posts retain their opt-out from line indentation. */
-.post-body[data-line-indent="false"][data-semantic-units="true"] .doc-section--heading > p.semantic-paragraph,
+.post-body[data-line-indent="false"][data-semantic-units="true"] :is(.doc-section--heading, .doc-section--run-in) > p.semantic-paragraph,
 .post-body[data-line-indent="false"][data-semantic-units="true"] > p.semantic-paragraph {
 text-indent: 0;
 }
@@ -668,6 +674,36 @@ display: block;
 margin-inline: auto;
 }
 
+/*
+ * A block quote is LaTeX's quote environment (article class): indented \leftmargini = 2.5em
+ * on both sides, in the text's own face and colour, with \topsep + \partopsep (about 1em)
+ * above and below. Each source line keeps its own line, as `\\` would; a blank `>` line
+ * starts a new paragraph, flush, \parsep (0.4em) below the last.
+ */
+.post-body blockquote {
+margin: 1em 2.5em !important;
+padding: 0 !important;
+border: 0 !important;
+color: inherit !important;
+overflow: visible;
+}
+
+.post-body blockquote p {
+margin: 0 !important;
+text-indent: 0 !important;
+white-space: pre-line !important;
+}
+
+.post-body blockquote p + p {
+margin-top: 0.4em !important;
+}
+
+/* One blank line after \end{quote} continues the paragraph; two start a new, indented one
+   (the post-structural-continuation marker then stands between them). */
+.post-body[data-semantic-units="true"] :is(.post-body, .doc-section--heading, .doc-section--run-in) > blockquote + p.semantic-paragraph {
+text-indent: 0;
+}
+
 @media (max-width: 768px), (pointer: coarse) {
   .main-content .post-body {
     color: #1f1f1f;
@@ -743,8 +779,8 @@ figcaption {
   .post-body h6 {
     color: #ffffff !important;
   }
-  article.post[data-reference-scope="dictionary"] .post-body .dictionary-annotation,
-  article.post[data-reference-scope="dictionary"] .post-body .dictionary-annotation strong {
+  .post-body .english-annotation,
+  .post-body .english-annotation strong {
     color: #636363 !important;
   }
   .post-body strong,

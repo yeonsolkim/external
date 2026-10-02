@@ -16,6 +16,7 @@ as `\begin{proof}` is in LaTeX, and carries a pointer back to it.
 | `\subsection{T}` | `### T` | `<section class="doc-section" data-doc="subsection">` + `<h3>` |
 | `\subsection{T}` (run-in, numbered) | `**3. T.**` | `<section class="doc-section" data-doc="subsection" data-number="3">`, label `role="heading"` |
 | `\subsubsection{T}` | `**3.1. T.**` | same, nested under `3.` |
+| `\paragraph{T}` (run-in, unnumbered) | `**T.**` | `<section class="doc-section doc-section--run-in" data-doc="paragraph">`, label `role="heading"` |
 | `\begin{theorem}` … | `**Theorem 1.3.3.** …` | `<section class="math-environment math-environment--theorem" data-doc="theorem">` |
 | `\begin{proof}` … `\qed` | `*Proof.* … $\square$` | `<section class="math-environment math-environment--proof" data-proves="…">` |
 | `\begin{enumerate}` | `1. …` | `<ol>` (unchanged) |
@@ -29,14 +30,22 @@ wrappers around them.
 
 ## 2. Recognising units
 
-Only in the **mathematics** and **physics** domains (`.post-body[data-post-domain]`);
-elsewhere (English, dictionary posts) bold text is ordinary emphasis and no unit is made.
+In every post, whatever its category: a grammar post's `**2.1. Remoteness.**` is a run-in
+subsection exactly as a mathematics post's is. Bold text that matches none of the openers
+below — a dictionary headword such as `**can**` — stays ordinary emphasis.
 
 | unit | opener, as the first thing in a paragraph | pattern |
 |---|---|---|
 | numbered section | `**3. Surjectivity and injectivity.**` | `\d+(\.\d+)*\.` then an optional title |
 | environment | `**Theorem 1.3.3.**`, `**Definition 2.2.1.**`, `**Remark.**` | one of the kinds below, an optional number |
 | proof | `*Proof.*`, `*Subproof.*`, `*Solution.*` | italic, optional trailing number |
+| run-in heading | `**Span as the smallest containing subspace.**` | bold, ends in a period, none of the above, and not ending in a number |
+
+The run-in heading is tried last, so every labelled opener wins over it. A bold label that
+ends in a number — `**A1.**`, `**Question 1.**` — is an environment of a kind not listed
+below, not a heading, and stays ordinary emphasis until its kind is added. Inside a proof
+that runs to its QED, a run-in heading (`**Existence.**`) is a step of that proof and opens
+nothing.
 
 Kinds (as counted in the corpus): Definition 103, Theorem 66, Exercise 30, Example 15,
 Proposition 13, Corollary 8, Remark 7, Axiom 7, Lemma 6, Principle 2, Notation 1, Rule 1.
@@ -52,6 +61,10 @@ prose therefore always match what is printed.
 - A **section** ends at the next section of the same or a shallower level, at the next
   `h2`–`h6`, or at the end of the post. Environments, prose, figures and lists in between
   belong to it.
+- A **run-in heading** is the lowest sectioning level: it nests inside the section it sits
+  in and ends at the next run-in heading, any numbered section, the next `h2`–`h6`, or the
+  end of the post. It closes any open environment or proof, even one a display equation
+  would otherwise have bridged into the heading's paragraph.
 - An **environment** ends at the QED marker when it has one (`data-environment-end`, from
   `$\square$` / `$\blacksquare$` / `\tag*{\(\square\)}`), otherwise at the next opener or
   at a paragraph that is not a continuation. Continuations are the existing blank-line
@@ -67,11 +80,13 @@ prose therefore always match what is printed.
 | proof | `proof-theorem-1-3-3`, else `proof-N` | the label (`<em class="math-proof-marker">`) |
 | numbered section | `sec-3`, `sec-3-1` | the label |
 | heading section | the heading's kramdown id (`references`) | the `<h2>` |
+| run-in heading | `par-` + the title's slug (`par-span-as-the-smallest-containing-subspace`), `-2`, `-3`… on a repeat | the label |
 | section wrapper | `unit-<id of its label/heading>` | the `<section>` |
 
 The label keeps the id it has today, so every existing permalink, cross-reference and
 podcast chapter link keeps resolving. The wrapper gets a derived id so both "jump to the
-statement" and "select the whole unit" are addressable.
+statement" and "select the whole unit" are addressable. A run-in heading has no number to
+read, so its id follows its title, as a kramdown heading id does: retitling it renames it.
 
 ## 5. Headings without changing how the page looks
 
@@ -88,6 +103,14 @@ A run-in numbered title stays inside its paragraph — moving it out would chang
 
 Screen readers and the outline see a level-3 heading; the page looks exactly as before.
 Switching later to a block heading is then a CSS-only decision.
+
+An unnumbered run-in heading is marked the same way, one level below the section it sits
+in: `aria-level="2"` in the body (beside `## Exercises`), `3` under an `##` heading, `4`
+under `**3. T.**`. A numbered section is itself a unit that states things, so its
+paragraphs are flush like an environment's; a run-in heading only groups statements and
+prose, so its wrapper is laid out like an `##` section's — its first paragraph, the one that
+carries the heading, flush, the rest indented (`.doc-section--run-in` in `post.css` and
+`main.js`).
 
 ## 6. The shape produced
 

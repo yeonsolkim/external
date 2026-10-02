@@ -1,13 +1,12 @@
 ---
 layout: post
-title: "1. The Structure of a Sentence"
+title: The Structure of a Sentence
 date: 2026-04-03 00:00:00 +0900
 category_path:
   - 3. English
   - 1. Grammar
-  - 1. Foundations
 created_at: 2026-08-09 14:39:13 +0900
-last_modified_at: 2026-08-24 16:19:04 +0900
+last_modified_at: 2026-10-02 11:47:54 +0900
 
 publish: false
 ---
