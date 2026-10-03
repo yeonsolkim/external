@@ -2,11 +2,11 @@
   "url": "/2026/08/05/3.-Perfect-Sets.html",
   "title": "2.3 Perfect Sets",
   "lang": "en",
-  "hash": "b6a347de097865d78c37fa820cc6d15855901f204c410ca5eb93b1d3575fe243",
+  "hash": "d537730d4b8c6bd76cc7cc1ce5569434b22398bfdc48d21e9fc8f0314b7c9787",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-09-29",
+  "updated": "2026-10-03",
   "sections": [
     {
       "id": "introduction",
@@ -104,7 +104,7 @@
       "title": "Definition 2.3.4 (Cantor set)",
       "kind": "definition",
       "level": 2,
-      "source": "77dd445b98bcd687d5f1ad31c8cf9d22e05b33240679f5ad9e0f36167b98cc9a",
+      "source": "89e81d2703328611c82c12a9ba0f23d1d2c3668c8800218bc3fd7acc0afc1fff",
       "skip": null,
       "file": "definition-2-3-4.md",
       "current": true,
