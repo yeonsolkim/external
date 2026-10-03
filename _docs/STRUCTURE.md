@@ -18,6 +18,7 @@ as `\begin{proof}` is in LaTeX, and carries a pointer back to it.
 | `\subsubsection{T}` | `**3.1. T.**` | same, nested under `3.` |
 | `\paragraph{T}` (run-in, unnumbered) | `**T.**` | `<section class="doc-section doc-section--run-in" data-doc="paragraph">`, label `role="heading"` |
 | `\begin{theorem}` … | `**Theorem 1.3.3.** …` | `<section class="math-environment math-environment--theorem" data-doc="theorem">` |
+| `\begin{theorem}[N]` … | `**Theorem 1.1.6 (N).** …` | same, `data-name="N"`; in the label, `<span class="math-statement-name">(N)</span>` |
 | `\begin{proof}` … `\qed` | `*Proof.* … $\square$` | `<section class="math-environment math-environment--proof" data-proves="…">` |
 | `\begin{enumerate}` | `1. …` | `<ol>` (unchanged) |
 | `\begin{figure}` + `\caption` | tikzcd block | `<figure class="commutative-diagram">` (unchanged) |
@@ -37,7 +38,7 @@ below — a dictionary headword such as `**can**` — stays ordinary emphasis.
 | unit | opener, as the first thing in a paragraph | pattern |
 |---|---|---|
 | numbered section | `**3. Surjectivity and injectivity.**` | `\d+(\.\d+)*\.` then an optional title |
-| environment | `**Theorem 1.3.3.**`, `**Definition 2.2.1.**`, `**Remark.**` | one of the kinds below, an optional number |
+| environment | `**Theorem 1.3.3.**`, `**Definition 2.2.1.**`, `**Remark.**`, `**Theorem 1.1.6 (Multiplication rule).**` | one of the kinds below, an optional number, an optional name in parentheses |
 | proof | `*Proof.*`, `*Subproof.*`, `*Solution.*` | italic, optional trailing number |
 | run-in heading | `**Span as the smallest containing subspace.**` | bold, ends in a period, none of the above, and not ending in a number |
 
@@ -49,7 +50,21 @@ nothing.
 
 Kinds (as counted in the corpus): Definition 103, Theorem 66, Exercise 30, Example 15,
 Proposition 13, Corollary 8, Remark 7, Axiom 7, Lemma 6, Principle 2, Notation 1, Rule 1.
-An environment may carry a name in parentheses: `**Theorem 2.2.20** (Heine–Borel theorem).`
+
+An environment may carry a name, written inside the label as the optional argument of
+`\begin{theorem}[…]`: `**Theorem 1.1.6 (Multiplication rule).**`. The name runs from the
+first parenthesis to the last, so it may hold parentheses and math of its own. It becomes
+`data-name`, and in the label it is wrapped so that only the name leaves the bold — the
+number and the final period stay bold, as amsthm sets the note:
+
+```html
+<strong class="math-label-anchor" id="theorem-1-1-6">Theorem 1.1.6
+  <span class="math-statement-name">(Multiplication rule)</span>.</strong>
+```
+
+The older form, the name after the label (`**Theorem 2.2.20** (Heine–Borel theorem).`), is
+still read for `data-name`, and `main.js` marks its name on the page; write new names in the
+label. A label with a name is an environment, never a run-in heading.
 
 **Numbers are read, never generated.** You write `Theorem 1.3.3.`; the plugin takes that
 string verbatim for the id and the narration. It only *checks* — a number that does not

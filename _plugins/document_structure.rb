@@ -25,7 +25,10 @@ module ExternalDocumentStructure
   # is what the posts actually do — Definition 1.1.9 is followed by Exercise 1.1.2.
   OWN_COUNTER = %w[Exercise].freeze
 
-  ENTRY_RE = /\A(#{ENTRY_KINDS.join("|")})(?:\s+(\d+(?:\.\d+)*))?\.?\z/.freeze
+  # `**Theorem 1.1.6 (Multiplication rule).**` — a name inside the label, as the optional
+  # argument of `\begin{theorem}[…]`. It runs from the first parenthesis to the last, so a
+  # name may hold parentheses of its own (`\(f(x)\)`).
+  ENTRY_RE = /\A(#{ENTRY_KINDS.join("|")})(?:\s+(\d+(?:\.\d+)*))?(?:\s*\((.+)\))?\.?\z/.freeze
   PROOF_RE = /\A(Proof|Subproof|Solution)(?:\s+\d+)?\.?\z/i.freeze
   NUMBERED_RE = /\A(\d+(?:\.\d+)*)\.(?:\s+(\S.*?))?\z/.freeze
   # `**Span as the smallest containing subspace.**` — a bold phrase ending in a period that
@@ -155,7 +158,7 @@ module ExternalDocumentStructure
 
     if (entry = label[:text].match(ENTRY_RE))
       return { role: :environment, kind: entry[1], number: entry[2], label: label,
-               name: statement_name(label[:rest]) }
+               name: entry[3]&.strip || statement_name(label[:rest]), name_in_label: !entry[3].nil? }
     end
 
     if (numbered = label[:text].match(NUMBERED_RE))
@@ -174,7 +177,7 @@ module ExternalDocumentStructure
     nil
   end
 
-  # `**Theorem 2.2.20** (Heine–Borel theorem).`
+  # `**Theorem 2.2.20** (Heine–Borel theorem).` — the older form, the name after the label.
   def statement_name(rest)
     text_of(rest.to_s)[/\A\s*\(([^()]*(?:\([^()]*\)[^()]*)*)\)/, 1]
   end
@@ -422,6 +425,7 @@ module ExternalDocumentStructure
         })
         unit.attrs[:kind] = kind
         stack.push(unit)
+        block = with_statement_name(block, descriptor[:label]) if descriptor[:name_in_label]
         block = with_label_attrs(block, descriptor[:label], "id" => id, "class" => "math-label-anchor")
       when :proof
         environment_counter += 1
@@ -519,6 +523,22 @@ module ExternalDocumentStructure
     rebuilt += ">"
 
     block.merge(raw: block[:raw].sub(open_tag, rebuilt))
+  end
+
+  # A name inside the label is set as amsthm sets the note: upright and not bold, between a
+  # bold number and a bold period. It takes the class main.js gives a name written after the
+  # label, so both forms look alike:
+  # `<strong>Theorem 1.1.6 <span class="math-statement-name">(Multiplication rule)</span>.</strong>`
+  NAME_IN_LABEL_RE = /\A([^(<]*?)(\s*)(\(.*\))(\.?\s*)\z/m.freeze
+
+  def with_statement_name(block, label)
+    parts = label[:html].match(NAME_IN_LABEL_RE)
+    return block unless parts
+
+    original = "#{label[:open_tag]}#{label[:html]}</#{label[:tag]}>"
+    wrapped = %(#{parts[1]}#{parts[2]}<span class="math-statement-name">#{parts[3]}</span>#{parts[4]})
+    # A block, so a backslash in the TeX of a name is not read as a back-reference.
+    block.merge(raw: block[:raw].sub(original) { "#{label[:open_tag]}#{wrapped}</#{label[:tag]}>" })
   end
 
   # -- entry point ---------------------------------------------------------------------
