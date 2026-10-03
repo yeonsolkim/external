@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "Theorem 2.2.17 guarantees that an infinite subset of a compact set has at least one limit point. However, this is a somewhere statement, not an everywhere statement: it does not say that every point of the set participates in the accumulation. An infinite compact set may still contain many isolated points. Perfectness imposes a much stronger local picture: a perfect set has accumulation everywhere within the set.",
   "published_at": "2026-08-05T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/20eb93762fe567253931e224b1dcaf881aa7a6567062128577d48b4d430cc1fe.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/2d90b0b424e66c667693523db45ea2b6336bd73bbc30c23804d43ece58387848.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/08/05/3.-Perfect-Sets.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/08/05/3.-Perfect-Sets.chapters.json",
-  "duration": 384.778,
-  "bytes": 6157835,
+  "duration": 384.445,
+  "bytes": 6152820,
   "voice": "cedar",
-  "page_key": "20eb93762fe567253931e224b1dcaf881aa7a6567062128577d48b4d430cc1fe",
-  "skeleton_hash": "b6a347de097865d78c37fa820cc6d15855901f204c410ca5eb93b1d3575fe243",
-  "generated": "2026-09-29",
+  "page_key": "2d90b0b424e66c667693523db45ea2b6336bd73bbc30c23804d43ece58387848",
+  "skeleton_hash": "d537730d4b8c6bd76cc7cc1ce5569434b22398bfdc48d21e9fc8f0314b7c9787",
+  "generated": "2026-10-03",
   "podcast": true,
   "sections": [
     {
@@ -105,9 +105,9 @@
       "kind": "definition",
       "level": 2,
       "start": 259.238,
-      "duration": 52.102,
-      "source": "77dd445b98bcd687d5f1ad31c8cf9d22e05b33240679f5ad9e0f36167b98cc9a",
-      "audio": "756b03c911730961333c81d2aa1ee01f6710530b91aa1c15005459aff2c39745",
+      "duration": 51.769,
+      "source": "89e81d2703328611c82c12a9ba0f23d1d2c3668c8800218bc3fd7acc0afc1fff",
+      "audio": "40c0f211ad35fe3411a178851f48d36e7adef23cdffb87b3dbed9bc6336b0508",
       "parent": null,
       "proves": null
     },
@@ -116,7 +116,7 @@
       "title": "At every finite stage it becomes increasingly fragmented,…",
       "kind": "prose",
       "level": 2,
-      "start": 312.54,
+      "start": 312.207,
       "duration": 72.238,
       "source": "6ca840db6bc96164576a45d5c499fca530ec2e98be21a4ede93c6ef76bfb68c1",
       "audio": "680208fae1442883b9ad5be592a416d5aede2a46f1e0248588eee69b4f76dcbd",
@@ -153,7 +153,7 @@
       "id": "definition-2-3-4",
       "title": "Definition 2.3.4 (Cantor set)",
       "start": 259.238,
-      "end": 384.778
+      "end": 384.445
     }
   ]
 }
