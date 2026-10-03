@@ -25,7 +25,7 @@ where $I_3$ is the $3\times 3$ identity matrix. And set
 
 $$ v = \frac {dx}{dt}\quad \text{and} \quad a = \frac{dv}{dt}.$$
 
-**Principle 2** (Newton's law). Newton's law is a foundational physical law of dynamics of classical mechanics, which is a second-order ordinary differential equation for $x$ when $F$ is known:
+**Principle 2 (Newton's law).** Newton's law is a foundational physical law of dynamics of classical mechanics, which is a second-order ordinary differential equation for $x$ when $F$ is known:
 
 $$ F = ma.$$
 

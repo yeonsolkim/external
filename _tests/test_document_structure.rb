@@ -196,6 +196,39 @@ check("a proof with no statement before it proves the part it is in") do
   in_part.include?('data-proves="sec-7"') && in_part.include?('id="proof-sec-7"')
 end
 
+puts "named environments"
+named = build(%(<p><strong>Theorem 1.1.6 (Multiplication rule).</strong> Let A be an event.</p>))
+check("a name inside the label is an environment's name, not a run-in heading") do
+  tree(named) == ["theorem 1.1.6"] && named.include?('data-name="Multiplication rule"') &&
+    named.include?('id="theorem-1-1-6"') && !named.include?('data-doc="paragraph"')
+end
+check("only the name leaves the bold: number and period stay in the label") do
+  named.include?(%(<strong id="theorem-1-1-6" class="math-label-anchor">Theorem 1.1.6 ) +
+                 %(<span class="math-statement-name">(Multiplication rule)</span>.</strong>))
+end
+check("wrapping the name adds no text, not even a space") do
+  source = %(<p><strong>Theorem 1.1.6 (Multiplication rule).</strong> Let A be an event.</p>)
+  inline = ->(html) { html.gsub(/<[^>]*>/, "").gsub(/\s+/, " ").strip } # as the narrator reads it
+  inline.call(build(source)) == inline.call(source)
+end
+
+nested_name = build(%(<p><strong>Lemma 2.1 (<span class="math-inline">\\(f(x)\\)</span> bound).</strong> Then.</p>))
+check("a name runs to the last parenthesis, so it may hold math with parentheses") do
+  tree(nested_name) == ["lemma 2.1"] &&
+    nested_name.include?(%(<span class="math-statement-name">(<span class="math-inline">\\(f(x)\\)</span> bound)</span>.</strong>))
+end
+
+unnumbered_name = build(%(<p><strong>Remark (On notation).</strong> We write.</p>))
+check("an unnumbered environment may carry a name too") do
+  tree(unnumbered_name) == ["remark"] && unnumbered_name.include?('data-name="On notation"')
+end
+
+trailing_name = build(%(<p><strong>Theorem 2.2.20</strong> (Heine–Borel theorem). Let A.</p>))
+check("the older form, the name after the label, is still read") do
+  trailing_name.include?('data-name="Heine–Borel theorem"') &&
+    !trailing_name.include?("math-statement-name")
+end
+
 puts "run-in headings"
 run_in = build(<<~HTML)
   <p><strong>Example 1.3.6.</strong> The generating set</p>

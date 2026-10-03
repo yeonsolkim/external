@@ -216,6 +216,22 @@ class StructuredTree(unittest.TestCase):
         self.assertIn("called the inverse of", named["sec-3"].text)
         self.assertNotIn("Proposition 1.", named["sec-3"].text)
 
+    def test_a_name_inside_the_label_reads_as_one_after_it(self):
+        # `**Theorem 2.2.20 (Heine–Borel theorem).**` and `**Theorem 2.2.20** (Heine–Borel
+        # theorem).` must give the same section, text and hash, so moving a name into the
+        # label regenerates no recording.
+        unit = ('<section data-doc="theorem" data-environment-kind="Theorem" data-number="2.2.20" '
+                'data-name="Heine–Borel theorem" id="unit-theorem-2-2-20" aria-labelledby="theorem-2-2-20">'
+                '<p>%s Let A be a subset.</p></section>')
+        after = build(wrap(unit % (
+            '<strong id="theorem-2-2-20" class="math-label-anchor">Theorem 2.2.20</strong> (Heine–Borel theorem).')))
+        inside = build(wrap(unit % (
+            '<strong id="theorem-2-2-20" class="math-label-anchor">Theorem 2.2.20 '
+            '<span class="math-statement-name">(Heine–Borel theorem)</span>.</strong>')))
+        before, now = after.sections[0], inside.sections[0]
+        self.assertEqual(now.title, "Theorem 2.2.20 (Heine–Borel theorem)")
+        self.assertEqual((now.title, now.text, now.hash), (before.title, before.text, before.hash))
+
     def test_a_run_in_heading_is_a_titled_part(self):
         skel = build(wrap(
             '<p><strong id="example-1">Example 1.</strong> An example.</p>'

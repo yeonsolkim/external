@@ -156,6 +156,12 @@
     var node = labelElement.nextSibling;
     var text;
 
+    // `**Theorem 1.1.6 (Multiplication rule).**` arrives with its name already marked
+    // (_plugins/document_structure.rb); a parenthesis after it, `(a) If …`, is the statement.
+    if (labelElement.querySelector('.math-statement-name')) {
+      return;
+    }
+
     while (node && node.nodeType === Node.TEXT_NODE && normalizeSpace(node.nodeValue || '') === '') {
       node = node.nextSibling;
     }
