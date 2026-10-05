@@ -152,12 +152,16 @@ article.post > .post-body > :first-child {
   word-break: normal;
 }
 
-.post-body a:not(.math-ref-link) {
+/*
+ * hyperref with colorlinks and allcolors=blue: every link is set in blue — a URL, a \ref's
+ * number (main.js links only the number, as Theorem~\ref{…} does), a footnote's mark.
+ */
+.post-body a {
 color: blue !important;
 text-decoration: none !important;
 }
 
-.post-body a:not(.math-ref-link):hover {
+.post-body a:hover {
 color: blue !important;
 text-decoration: underline !important;
 }
@@ -191,44 +195,6 @@ margin-top: 2lh !important;
 
 .post-body hr {
 margin-top: 3.5rem !important;
-}
-
-.post-body ul {
---ul-marker-gap-adjust: 0.15rem;
-list-style-position: outside;
-list-style-type: disc !important;
-padding-left: 1em ;
-margin-top: 0.5rem !important;
-margin-bottom: 0 !important;
-margin-left: calc(var(--ul-marker-gap-adjust) + 1em);
-}
-
-.post-body ul > li::marker {
-font-size: 0.8rem;
-}
-
-.post-body li > p {
-margin-top: 0 !important;
-margin-bottom: 0 !important;
-}
-
-
-.post-body ul > li {
-line-height: inherit;
-}
-
-.post-body ul > li::before {
-content: none;
-}
-
-.post-body ul ul, 
-.post-body ul ol {
-margin-top: 0 !important;
-margin-bottom: 0 !important;
-}
-
-.post-body ul ul {
-  margin-left: 0;
 }
 
 .post-body img, .post-body canvas, .post-body svg {
@@ -299,14 +265,36 @@ border-top: 1px solid #d3d3d3bc !important;
 background-color: #ffffff00 !important;
 }
 
-.post-body ol {
---ol-left-indent: 1em;
---ol-marker-gap: 0.6rem;
---ol-marker-width: 2rem;
+/*
+ * Lists, set as LaTeX's enumerate and itemize with enumitem's `leftmargin=*`: a list's labels
+ * start 1em in from the text around it (`labelindent=1em`), or, in a nested list, exactly where
+ * the text of its parent item starts (`labelindent=0pt`). Each label sits flush left in a box
+ * as wide as the list's widest label (mathjax-config.js measures it into --list-labelwidth),
+ * and the text follows \labelsep (0.5em) after the box. The labels count each kind on its own,
+ * as LaTeX's enumi–enumiv and \labelitemi–iv do: (1), (a), (i), (A) for ol (mathjax-config.js),
+ * and •, a bold –, ∗, · for ul, so an ul inside an ol still opens with •.
+ */
+.post-body :is(ol, ul) {
+--list-labelindent: 1em;
+--list-labelwidth: 1em;
+--list-labelsep: 0.5em;
 list-style: none;
 margin-top: 0.5rem !important;
 margin-bottom: 0.5rem !important;
-padding-left: calc(var(--ol-left-indent) + var(--ol-marker-width) + var(--ol-marker-gap));
+padding-left: calc(var(--list-labelindent) + var(--list-labelwidth) + var(--list-labelsep));
+}
+
+/* A nested list belongs to its item's text: its labels start where that text starts, and it
+   has no space of its own above or below. */
+.post-body li :is(ol, ul) {
+--list-labelindent: 0em;
+margin-top: 0 !important;
+margin-bottom: 0 !important;
+}
+
+.post-body li > p {
+margin-top: 0 !important;
+margin-bottom: 0 !important;
 }
 
 /* Keep list boundaries on the same baseline rhythm as adjacent text lines. */
@@ -322,11 +310,11 @@ margin-top: 0 !important;
 margin-top: 1lh !important;
 }
 
-.post-body ol > li::marker {
+.post-body :is(ol, ul) > li::marker {
 content: "";
 }
 
-.post-body ol > li.list-item-display-math::marker {
+.post-body :is(ol, ul) > li.list-item-display-math::marker {
 content: "";
 }
 
@@ -340,18 +328,49 @@ content: "";
  * hung from that paragraph instead (mathjax-config.js copies data-marker-text
  * onto it).
  */
-.post-body ol > li::before,
-.post-body ol > li > p:first-child::before {
-content: attr(data-marker-text);
+.post-body :is(ol, ul) > li::before,
+.post-body :is(ol, ul) > li > p:first-child::before {
 display: inline-block;
-width: calc(var(--ol-marker-width) + var(--ol-marker-gap));
-margin-left: calc(-1 * (var(--ol-marker-width) + var(--ol-marker-gap)));
+width: calc(var(--list-labelwidth) + var(--list-labelsep));
+margin-left: calc(-1 * (var(--list-labelwidth) + var(--list-labelsep)));
 font-style: normal;
 white-space: nowrap;
 text-align: left;
 }
 
-.post-body ol > li:has(> p:first-child)::before {
+.post-body ol > li::before,
+.post-body ol > li > p:first-child::before {
+content: attr(data-marker-text);
+}
+
+/* \labelitemi: \textbullet. */
+.post-body ul > li::before,
+.post-body ul > li > p:first-child::before {
+content: "\2022";
+font-weight: normal;
+}
+
+/* \labelitemii: \normalfont\bfseries\textendash. */
+.post-body ul ul > li::before,
+.post-body ul ul > li > p:first-child::before {
+content: "\2013";
+font-weight: bold;
+}
+
+/* \labelitemiii: \textasteriskcentered. */
+.post-body ul ul ul > li::before,
+.post-body ul ul ul > li > p:first-child::before {
+content: "\2217";
+font-weight: normal;
+}
+
+/* \labelitemiv: \textperiodcentered. */
+.post-body ul ul ul ul > li::before,
+.post-body ul ul ul ul > li > p:first-child::before {
+content: "\00B7";
+}
+
+.post-body :is(ol, ul) > li:has(> p:first-child)::before {
 content: none;
 }
 
@@ -382,24 +401,8 @@ margin-left: auto;
 margin-right: auto;
 }
 
-.post-body ol ul {
-list-style-position: outside;
-list-style-type: disc !important;
-margin-bottom: 0px !important;
-padding-left: 0;
-}
-
-.post-body ol > li > ul:first-child { 
-margin-top: 0px !important;
-}
-
-.post-body ol ul > li::before,
-.post-body ol ul > li > p:first-child::before {
-content: none;
-}
-
 .post-body ol.reference {
-padding-left: calc(var(--ol-marker-width) + var(--ol-marker-gap));
+padding-left: calc(var(--list-labelwidth) + var(--list-labelsep));
 }
 
 main.main-content > article.main-content {
@@ -577,38 +580,6 @@ font-weight: normal;
 color: #000000b5;
 }
 
-.post-body a.math-ref-link {
-color: inherit;
-text-decoration: none !important;
-}
-
-.post-body a.math-ref-link:visited {
-color: inherit;
-}
-
-.post-body a.math-ref-link:hover {
-text-decoration: none !important;
-}
-
-.post-body a.math-ref-link .math-ref-number {
-display: inline-block;
-position: relative;
-padding: 0 0.1em;
-line-height: 1;
-text-indent: 0;
-}
-
-.post-body a.math-ref-link .math-ref-number::after {
-content: "";
-position: absolute;
-top: 0.15em;
-right: 0;
-bottom: -0.02em;
-left: 0;
-border: 0.7px solid red;
-pointer-events: none;
-}
-
 .post-body mjx-container {
 contain: paint;
 overflow: clip;
@@ -712,6 +683,57 @@ margin-top: 0.4em !important;
 text-indent: 0;
 }
 
+/*
+ * Footnotes, as the article class sets them. In the text the mark is \textsuperscript of the
+ * number (7pt over 10pt, raised about 0.41em), in link blue like every other link. At the
+ * foot, \footnoterule (0.4pt thick, .4\columnwidth long), then each note in \footnotesize
+ * (8pt on 9.5pt) as \@makefntext lays it out: the number, a superscript again, set flush
+ * right in a 1.8em box, the text straight after it, and later lines back at the margin.
+ * Each note ends with kramdown's ↩ back to its mark, a link like any other.
+ */
+.post-body sup[id^="fnref:"] {
+position: relative;
+top: -0.6em;
+font-size: 0.7em;
+line-height: 0;
+vertical-align: baseline;
+}
+
+.post-body .footnotes {
+margin-top: 2lh;
+}
+
+.post-body .footnotes::before {
+content: "";
+display: block;
+width: 40%;
+margin-bottom: 0.25em;
+border-top: 0.4pt solid currentColor;
+}
+
+.post-body .footnotes > ol {
+margin: 0 !important;
+padding: 0;
+font-size: 0.9em;
+line-height: 1.25;
+}
+
+/* \@makefntext's \parindent: a note's second paragraph is indented 1em. */
+.post-body .footnotes > ol > li > p + p {
+text-indent: 1em;
+}
+
+/* The mark is 0.75 of the note's size (6pt over 8pt), so its 1.8em box is 2.4 of its own em. */
+.post-body .footnotes > ol > li > p:first-child::before {
+position: relative;
+top: -0.55em;
+width: 2.4em;
+margin-left: 0;
+font-size: 0.75em;
+text-align: right;
+text-align-last: right;
+}
+
 @media (max-width: 768px), (pointer: coarse) {
   .main-content .post-body {
     color: #1f1f1f;
@@ -811,10 +833,10 @@ figcaption {
     color: inherit;
     background-color: transparent;
   }
-  .post-body a:not(.math-ref-link) {
+  .post-body a {
     color: #7070ff !important;
   }
-  .post-body a:not(.math-ref-link):hover {
+  .post-body a:hover {
     color: #7070ff !important;
   }
   .post-body .commutative-diagram__svg use {
@@ -829,15 +851,6 @@ figcaption {
   }
   .post-body .math-label-anchor .math-statement-name {
     color: #ffffffb5;
-  }
-  .post-body a.math-ref-link {
-    color: inherit;
-  }
-  .post-body a.math-ref-link:visited {
-    color: inherit;
-  }
-  .post-body a.math-ref-link .math-ref-number::after {
-    border-color: #ff0000;
   }
   .post-body blockquote {
     color: inherit !important;

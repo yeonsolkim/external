@@ -321,6 +321,22 @@ check("every section opened is closed") do
   built.scan(/<section\b/).length == built.scan(%r{</section>}).length
 end
 
+puts "footnotes"
+source = <<~HTML
+  <h2 id="a">A</h2>
+  <p><strong>Run-in.</strong> Text<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>.</p>
+  <div class="footnotes" role="doc-endnotes">
+    <ol>
+      <li id="fn:1"><p>A note.</p></li>
+    </ol>
+  </div>
+HTML
+built = build(source)
+check("footnotes sit at the foot of the body, after every section closes") do
+  built.rindex("</section>") < built.index(%(<div class="footnotes"))
+end
+check("footnotes text is kept") { text(built) == text(source) }
+
 puts "numbering is read, not generated"
 warnings = []
 D.transform(<<~HTML, warnings)

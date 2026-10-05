@@ -321,6 +321,13 @@ module ExternalDocumentStructure
         next
       end
 
+      # Footnotes go to the foot of the page, as LaTeX sets them: outside every section.
+      if block[:type] == :element && block[:classes].include?("footnotes")
+        close_to.call(->(_unit) { true })
+        stack.last << block[:raw]
+        next
+      end
+
       descriptor = descriptor_of(block)
       # `**Existence.**` inside a proof that runs to its QED is a step of that proof.
       if descriptor && descriptor[:role] == :paragraph &&

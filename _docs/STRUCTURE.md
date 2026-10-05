@@ -25,6 +25,7 @@ as `\begin{proof}` is in LaTeX, and carries a pointer back to it.
 | `\begin{equation}` + `\tag` | `$$…\tag{…}$$` | display math (unchanged) |
 | `\ref{…}` | `Theorem 1.3.3` in prose | `<a class="math-ref-link">` (unchanged, `main.js`) |
 | `\bibliography` | `## References` | `<ol class="reference">` (unchanged) |
+| `\footnote{…}` | `text[^1]` … `[^1]: …` | `<sup id="fnref:1">` in the text; `<div class="footnotes">` at the end of the body, outside every section |
 
 Everything in the "unchanged" rows keeps working exactly as before; the plugin only adds
 wrappers around them.

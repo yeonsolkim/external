@@ -46,6 +46,43 @@
     });
   }
 
+  // The element whose ::before draws an item's label: the item itself, or the <p> a loose
+  // item opens with (post.css hangs the label from that paragraph).
+  function labelHost(listItem) {
+    var first = listItem.firstElementChild;
+
+    return first && first.tagName === 'P' ? first : listItem;
+  }
+
+  // post.css makes each list's label box as wide as its widest label.
+  function measureLabelWidth(list, listItems, labelText) {
+    if (listItems.length === 0) {
+      list.style.removeProperty('--list-labelwidth');
+      return;
+    }
+
+    var labelStyle = window.getComputedStyle(labelHost(listItems[0]), '::before');
+    var measurer = document.createElement('span');
+    measurer.style.position = 'absolute';
+    measurer.style.visibility = 'hidden';
+    measurer.style.whiteSpace = 'nowrap';
+    measurer.style.fontFamily = labelStyle.fontFamily;
+    measurer.style.fontSize = labelStyle.fontSize;
+    measurer.style.fontStyle = labelStyle.fontStyle;
+    measurer.style.fontWeight = labelStyle.fontWeight;
+    measurer.style.letterSpacing = labelStyle.letterSpacing;
+    document.body.appendChild(measurer);
+
+    var maxWidth = 0;
+    listItems.forEach(function (listItem) {
+      measurer.textContent = labelText(listItem);
+      maxWidth = Math.max(maxWidth, measurer.getBoundingClientRect().width);
+    });
+
+    document.body.removeChild(measurer);
+    list.style.setProperty('--list-labelwidth', Math.ceil(maxWidth) + 'px');
+  }
+
   function applyOrderedListMarkerPrefixes() {
     var orderedLists = document.querySelectorAll('.post-body ol');
 
@@ -64,7 +101,68 @@
         return 'reference';
       }
 
+      // kramdown's footnote list; post.css sets the bare number as a superscript.
+      if (orderedList.parentElement && orderedList.parentElement.classList.contains('footnotes')) {
+        return 'footnote';
+      }
+
       return '';
+    }
+
+    // enumerate's counters by depth, as \theenumi–\theenumiv print them: \arabic, \alph,
+    // \roman, \Alph. Only ordered lists count; an ul in between does not.
+    function enumerateDepth(orderedList) {
+      var depth = 0;
+      var element;
+
+      for (element = orderedList; element && !element.classList.contains('post-body'); element = element.parentElement) {
+        if (element.tagName === 'OL') {
+          depth += 1;
+        }
+      }
+
+      return depth;
+    }
+
+    function alphabetic(number) {
+      var text = '';
+
+      while (number > 0) {
+        text = String.fromCharCode(97 + (number - 1) % 26) + text;
+        number = Math.floor((number - 1) / 26);
+      }
+
+      return text;
+    }
+
+    function roman(number) {
+      var numerals = [
+        [1000, 'm'], [900, 'cm'], [500, 'd'], [400, 'cd'], [100, 'c'], [90, 'xc'],
+        [50, 'l'], [40, 'xl'], [10, 'x'], [9, 'ix'], [5, 'v'], [4, 'iv'], [1, 'i']
+      ];
+      var text = '';
+
+      numerals.forEach(function (numeral) {
+        while (number >= numeral[0]) {
+          text += numeral[1];
+          number -= numeral[0];
+        }
+      });
+
+      return text;
+    }
+
+    function formatCounter(number, depth) {
+      if (number < 1) {
+        return String(number);
+      }
+
+      switch ((depth - 1) % 4) {
+        case 1: return alphabetic(number);
+        case 2: return roman(number);
+        case 3: return alphabetic(number).toUpperCase();
+        default: return String(number);
+      }
     }
 
     function formatMarkerText(markerStyle, markerText) {
@@ -72,35 +170,11 @@
         return '[' + markerText + ']';
       }
 
-      return '(' + markerText + ')';
-    }
-
-    function measureMarkerWidth(orderedList, listItems) {
-      if (listItems.length === 0) {
-        orderedList.style.removeProperty('--ol-marker-width');
-        return;
+      if (markerStyle === 'footnote') {
+        return markerText;
       }
 
-      var markerStyle = window.getComputedStyle(listItems[0], '::before');
-      var measurer = document.createElement('span');
-      measurer.style.position = 'absolute';
-      measurer.style.visibility = 'hidden';
-      measurer.style.whiteSpace = 'nowrap';
-      measurer.style.fontFamily = markerStyle.fontFamily;
-      measurer.style.fontSize = markerStyle.fontSize;
-      measurer.style.fontStyle = markerStyle.fontStyle;
-      measurer.style.fontWeight = markerStyle.fontWeight;
-      measurer.style.letterSpacing = markerStyle.letterSpacing;
-      document.body.appendChild(measurer);
-
-      var maxWidth = 0;
-      listItems.forEach(function (listItem) {
-        measurer.textContent = listItem.getAttribute('data-marker-text') || '';
-        maxWidth = Math.max(maxWidth, measurer.getBoundingClientRect().width);
-      });
-
-      document.body.removeChild(measurer);
-      orderedList.style.setProperty('--ol-marker-width', Math.ceil(maxWidth) + 'px');
+      return '(' + markerText + ')';
     }
 
     orderedLists.forEach(function (orderedList) {
@@ -108,6 +182,8 @@
         orderedList.getAttribute('marker-prefix') ||
         '';
       var markerStyle = readMarkerStyle(orderedList);
+      // Bibliography and footnote numbers stay arabic wherever they sit.
+      var depth = markerStyle ? 1 : enumerateDepth(orderedList);
       var reversed = orderedList.hasAttribute('reversed');
       var start = parseInt(
         orderedList.getAttribute('start') ||
@@ -134,7 +210,7 @@
           listItem.removeAttribute('data-marker-prefix');
         }
 
-        var markerText = formatMarkerText(markerStyle, (prefix || '') + number);
+        var markerText = formatMarkerText(markerStyle, (prefix || '') + formatCounter(number, depth));
         var firstParagraph = listItem.firstElementChild;
 
         listItem.setAttribute('data-marker-text', markerText);
@@ -148,7 +224,24 @@
         number += reversed ? -1 : 1;
       });
 
-      measureMarkerWidth(orderedList, listItems);
+      measureLabelWidth(orderedList, listItems, function (listItem) {
+        return listItem.getAttribute('data-marker-text') || '';
+      });
+    });
+  }
+
+  // Itemize labels come from post.css (\labelitemi–iv by depth); measure them as above.
+  function measureItemizeLabels() {
+    document.querySelectorAll('.post-body ul').forEach(function (list) {
+      var listItems = Array.prototype.filter.call(list.children, function (child) {
+        return child.tagName === 'LI';
+      });
+
+      measureLabelWidth(list, listItems, function (listItem) {
+        var content = window.getComputedStyle(labelHost(listItem), '::before').content;
+
+        return content.charAt(0) === '"' ? content.slice(1, -1) : '';
+      });
     });
   }
 
@@ -156,6 +249,7 @@
     promoteListItemDisplayMath();
     markListItemsWithDisplayMath();
     applyOrderedListMarkerPrefixes();
+    measureItemizeLabels();
     normalizeInlineMathDelimiters();
   }
 
@@ -389,6 +483,7 @@
   window.promoteListItemDisplayMath = promoteListItemDisplayMath;
   window.markListItemsWithDisplayMath = markListItemsWithDisplayMath;
   window.applyOrderedListMarkerPrefixes = applyOrderedListMarkerPrefixes;
+  window.measureItemizeLabels = measureItemizeLabels;
   window.prepareMathDelimiters = prepareMathDelimiters;
   window.updateDisplayMathOverflow = updateDisplayMathOverflow;
   normalizeInlineMathWhenReady();

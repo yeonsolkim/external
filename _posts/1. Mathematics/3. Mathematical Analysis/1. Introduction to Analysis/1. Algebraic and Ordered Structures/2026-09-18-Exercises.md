@@ -4,7 +4,7 @@ title: "Exercises"
 date: 2026-09-18 00:00:00 +0900
 category_path:
   - 1. Mathematics
-  - 3. Analysis
+  - 3. Mathematical Analysis
   - 1. Introduction to Analysis
   - 1. Algebraic and Ordered Structures
 created_at: 2026-09-18 12:16:08 +0900
