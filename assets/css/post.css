@@ -714,6 +714,7 @@ border-top: var(--hr-style);
 
 .post-body .footnotes > ol {
 line-height: 1.25;
+--list-labelindent: 0 !important;
 }
 
 /* The text faces have no ↩, so the backlink takes it from the math face (style.scss) rather
@@ -734,6 +735,7 @@ top: -0.55em;
 font-size: 0.75em;
 text-align: right;
 text-align-last: right;
+width: 2.4em;
 }
 
 @media (max-width: 768px), (pointer: coarse) {
