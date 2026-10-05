@@ -6,7 +6,7 @@ category_path:
   - 3. English
   - 2. Dictionary
 created_at: 2026-09-07 12:58:48 +0900
-last_modified_at: 2026-10-02 10:35:36 +0900
+last_modified_at: 2026-10-05 12:51:05 +0900
 
 line_indent: false
 publish: false
@@ -38,8 +38,9 @@ publish: false
 **straightforward** (adj.): uncomplicated and easy to understand: *it is straightforward to formalize the notion of functions.*
 
 **thread**: a theme or characteristic running throughout a situation or piece of writing: *a **common thread** we will follow in this book will be to try to understand the type of a structure.*
-**common**: shared by more than one: *problems **common to** both commutities.*
+**common**: shared by more than one: *problems **common to** both communities.*
 
-**manifest**: 
+**demonstration**<sup>2</sup>: practical explanation of how something works.
 
-**demonstration**: :*computer demonstration.*
+**liable**: likely to do or to be something: *the political situation was becoming liable to change rapidly*.
+**volatile**: liable to change rapidly and unpredictably, especially for the worse: *liquid markets are less volatile then illiquid ones.*

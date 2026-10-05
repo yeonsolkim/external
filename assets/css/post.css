@@ -163,7 +163,7 @@ text-decoration: none !important;
 
 .post-body a:hover {
 color: blue !important;
-text-decoration: underline !important;
+text-decoration: none !important;
 }
 
 /* Every heading opens its own section wrapper (_docs/STRUCTURE.md), so each is a first
