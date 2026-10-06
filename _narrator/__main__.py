@@ -25,6 +25,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 from .env import load_dotenv
 from .skeleton import SkeletonError, build, render_text
+from .voice import DEFAULT_TTS_MODEL as TTS_MODEL
 
 
 def read_source(path: str) -> str:
@@ -151,6 +152,11 @@ def cmd_sample(args: argparse.Namespace) -> int:
     print("sampling %d chars of %s with %s:" % (len(text), args.section, args.model))
     stage3.samples(text, [v.strip() for v in args.voices.split(",")], args.model,
                    os.path.join(args.audio, "samples"))
+    if args.model.startswith("gpt-realtime"):
+        from . import realtime
+        for check in realtime.CHECKS:
+            print("  verbatim %.3f after %d attempt(s), %d chars" % (
+                check["ratio"], check["attempts"], check["chars"]))
     return 0
 
 
@@ -255,7 +261,7 @@ def main(argv: list) -> int:
     p.add_argument("--narration", default="_narration", help="root of the script tree")
     p.add_argument("--audio", default="_audio", help="root of the audio tree (default _audio)")
     p.add_argument("--voice", default="cedar", help="TTS voice (default cedar)")
-    p.add_argument("--model", default="gpt-4o-mini-tts", help="TTS model (default gpt-4o-mini-tts)")
+    p.add_argument("--model", default=TTS_MODEL, help="TTS model (default %s)" % TTS_MODEL)
     p.add_argument("--workers", type=int, default=4, help="parallel sections (default 4)")
     p.add_argument("--artist", default="", help="ID3 artist")
     p.add_argument("--album", default="", help="ID3 album")
@@ -267,7 +273,7 @@ def main(argv: list) -> int:
     p.add_argument("--section", required=True, help="section id whose script to sample")
     p.add_argument("--voices", default="cedar,marin,onyx,ash", help="comma-separated voices")
     p.add_argument("--chars", type=int, default=700, help="how much of the script to read (default 700)")
-    p.add_argument("--model", default="gpt-4o-mini-tts")
+    p.add_argument("--model", default=TTS_MODEL)
     p.add_argument("--narration", default="_narration")
     p.add_argument("--audio", default="_audio")
     p.set_defaults(func=cmd_sample)
@@ -278,7 +284,7 @@ def main(argv: list) -> int:
     p.add_argument("--narration", default="_narration")
     p.add_argument("--audio", default="_audio")
     p.add_argument("--voice", default=None, help="TTS voice (default: narration.voice in _config.yml, else cedar)")
-    p.add_argument("--model", default="gpt-4o-mini-tts", help="TTS model")
+    p.add_argument("--model", default=TTS_MODEL, help="TTS model (default %s)" % TTS_MODEL)
     p.add_argument("--text-model", dest="text_model", default="gpt-5.5", help="chat model for missing scripts")
     p.add_argument("--workers", type=int, default=4, help="parallel sections within a post (default 4)")
     p.add_argument("--posts", type=int, default=2, help="posts processed at the same time (default 2)")

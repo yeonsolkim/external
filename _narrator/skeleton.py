@@ -277,8 +277,8 @@ class Renderer:
         if tag in ("ol", "ul"):
             return " " + self.list_text(node) + " "
         if tag == "table":
-            self.warnings.append("table omitted")
-            return " [TABLE omitted] "
+            self.warnings.append("table omitted")      # not read, not announced
+            return " "
         return self.inline(node)
 
     def figure_cue(self, node: Node) -> str:
@@ -389,13 +389,13 @@ def _walk(node: Node, out: list, r: Renderer) -> None:
         elif tag in ("figure", "img", "svg"):
             out.append(Block("figure", r.figure_cue(child)))
         elif tag == "table":
-            r.warnings.append("table omitted")
-            out.append(Block("table", "[TABLE omitted]"))
+            r.warnings.append("table omitted")      # not read, not announced
+            out.append(Block("table", ""))
         elif tag == "pre":
             code = child.text_content().strip("\n")
             if code.count("\n") >= 3:
-                r.warnings.append("code block omitted")
-                out.append(Block("code", "[CODE omitted]"))
+                r.warnings.append("code block omitted")      # not read, not announced
+                out.append(Block("code", ""))
             else:
                 out.append(Block("code", normalize(code)))
         elif tag == "div":

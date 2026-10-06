@@ -110,6 +110,53 @@ class Publishing(unittest.TestCase):
         short = build(HTML.replace("Intro words here. " * 12, "Hi.").replace("more words. " * 10, "ok."), "p.html")
         self.assertEqual(self.pub.plan(short)["state"], "skip")
 
+    def legacy_published(self):
+        """The page as gpt-4o-mini-tts recorded it: in the bucket and in the committed manifest."""
+        keys = [voice.section_key("Script for %s." % s.id, "cedar", voice.LEGACY_TTS_MODEL)
+                for s in self.skel.sections]
+        page = voice.page_key(keys)
+        self.store.objects["o/%s.json" % page] = b"{}"
+        path = os.path.join(self.source, "audio", "2026", "01", "02", "p.json")
+        os.makedirs(os.path.dirname(path))
+        with open(path, "w") as f:
+            json.dump({"url": self.skel.url, "page_key": page}, f)
+        return page
+
+    def counting_heads(self):
+        heads = []
+        real = self.store.head
+        self.store.head = lambda key: heads.append(key) or real(key)
+        return heads
+
+    def test_legacy_recording_stays_published_for_one_head(self):
+        self.scripts()
+        page = self.legacy_published()
+        heads = self.counting_heads()
+        p = self.pub.plan(self.skel)
+        self.assertEqual((p["state"], p["model"], p["page_key"]), ("published", voice.LEGACY_TTS_MODEL, page))
+        self.assertEqual(heads, ["o/%s.json" % page])
+
+    def test_a_changed_page_is_recorded_again_with_the_current_engine(self):
+        self.scripts()
+        self.legacy_published()
+        first = self.skel.sections[0]
+        write_md(os.path.join(self.narration, "2026", "01", "02", "p", first.id + ".md"),
+                 {"section": first.id, "source": first.hash, "body": "x"}, "An edited script.")
+        p = self.pub.plan(self.skel)
+        self.assertEqual((p["state"], p["model"]), ("synthesise", voice.DEFAULT_TTS_MODEL))
+        self.assertEqual(p["to_synth"], len(self.skel.sections))      # every section: no mixed voices
+        self.assertEqual(p["keys"][1], voice.section_key("Script for %s." % self.skel.sections[1].id,
+                                                         "cedar", voice.DEFAULT_TTS_MODEL))
+
+    def test_current_engine_page_is_asked_first(self):
+        self.scripts()
+        p = self.pub.plan(self.skel)
+        self.store.objects["o/%s.json" % p["page_key"]] = b"{}"
+        heads = self.counting_heads()
+        p = self.pub.plan(self.skel)
+        self.assertEqual((p["state"], p["model"]), ("published", voice.DEFAULT_TTS_MODEL))
+        self.assertEqual(len(heads), 1)
+
     def test_publish_uploads_then_is_free(self):
         self.scripts()
         manifest = self.fake_page()

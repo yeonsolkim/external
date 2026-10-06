@@ -56,7 +56,7 @@ CHAINS. A chained relation A \\subseteq N \\subseteq M is spoken "A is contained
 FLOWS. An arrow chain whose stages are written in words (\\text{...}) shows a flow — of an order, money, or a decision — not a map or a limit: A \\longrightarrow \\text{broker} \\longrightarrow B is "from A, through the broker, to B"; \\text{present wealth} \\longrightarrow \\text{investment} \\longrightarrow \\text{future wealth} is "from present wealth, through investment, to future wealth"; a longer chain goes on "..., then to ..., and finally to ...". A flow is never read with "arrow", "maps to", or "tends to".
 MULTI-LINE DERIVATIONS are read as one connected chain: "... which equals ..., which is at most ...". Never "line one, line two".
 
-PAGE ARTIFACTS. [FIGURE: ...] and [DIAGRAM: ...] become one sentence ("The page shows a commutative diagram."). [TABLE omitted]: "The page has a table, which we do not read." [CODE omitted]: "The page has a code listing, which we do not read." Citation brackets and footnote marks are not spoken.
+PAGE ARTIFACTS. [FIGURE: ...] and [DIAGRAM: ...] become one sentence ("The page shows a commutative diagram."). Citation brackets and footnote marks are not spoken.
 
 NUMBERS AND LABELS. Keep result labels as digits with dots exactly as the author writes them ("Theorem 2.1.18") — the speech engine reads them as "two point one point eighteen". Write every other number the way it is spoken.
 

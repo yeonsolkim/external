@@ -136,7 +136,7 @@ class Synthetic(unittest.TestCase):
     def test_omissions(self):
         skel = build(wrap("<table><tr><td>1</td></tr></table><pre>a\nb\nc\nd\ne</pre>"
                           '<figure><img alt="A cat"></figure><div class="footnotes"><p>fn</p></div>'))
-        self.assertEqual(skel.sections[0].text, "[TABLE omitted]\n\n[CODE omitted]\n\n[FIGURE: A cat]")
+        self.assertEqual(skel.sections[0].text, "[FIGURE: A cat]")
         self.assertEqual(skel.warnings, ["code block omitted", "figure narrated as its caption only", "footnotes omitted", "table omitted"])
 
     def test_nbsp_and_nfc_are_normalised(self):

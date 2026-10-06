@@ -6,7 +6,7 @@ category_path:
   - 3. English
   - 2. Dictionary
 created_at: 2026-09-07 12:58:48 +0900
-last_modified_at: 2026-10-05 12:51:05 +0900
+last_modified_at: 2026-10-06 16:43:09 +0900
 
 line_indent: false
 publish: false
@@ -43,4 +43,7 @@ publish: false
 **demonstration**<sup>2</sup>: practical explanation of how something works.
 
 **liable**: likely to do or to be something: *the political situation was becoming liable to change rapidly*.
-**volatile**: liable to change rapidly and unpredictably, especially for the worse: *liquid markets are less volatile then illiquid ones.*
+**volatile**: liable to change rapidly and unpredictably, especially for the worse: *liquid markets are less volatile than illiquid ones.*
+
+**repository**: *Computing* a central location in which data is stored and managed. 
+**fetch** (v.): *Computing* go for and retrieve data, instructions, or other information from a specified location or source: *fetch updates from a remote repository*.

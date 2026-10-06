@@ -41,6 +41,34 @@ class ScriptsFor(unittest.TestCase):
 
 
 class Text(unittest.TestCase):
+    def test_legacy_keys_are_frozen(self):
+        # Recordings made with gpt-4o-mini-tts stay published only while their keys come out
+        # the same; these values were computed before the Realtime engine existed.
+        key = voice.section_key("Hello there.", "cedar", voice.LEGACY_TTS_MODEL)
+        self.assertEqual(key, "25efd3f4a739fa313c3827321b95da00172dc3fec3e2a134bb8de2aaa660a6e0")
+        self.assertEqual(voice.page_key([key]), "aa883337cf7fbe104c6ca0097ddab2a5179221bb44144f28f2debcb1016be639")
+
+    def test_realtime_key_covers_its_direction(self):
+        model = voice.DEFAULT_TTS_MODEL
+        key = voice.section_key("Hello there.", "cedar", model)
+        self.assertNotEqual(key, voice.section_key("Hello there.", "cedar", voice.LEGACY_TTS_MODEL))
+        self.assertNotEqual(key, voice.section_key("Hello there.", "cedar", model, instructions="Shout."))
+        reader = voice.realtime.READER
+        try:
+            voice.realtime.READER = reader + " Slowly."
+            self.assertNotEqual(key, voice.section_key("Hello there.", "cedar", model))
+        finally:
+            voice.realtime.READER = reader
+
+    def test_realtime_gets_labels_as_written(self):
+        body = "1.1.1 Traders.\n\nBy Theorem 2.1.18, traders trade."
+        self.assertEqual(voice.spoken_text(body, voice.DEFAULT_TTS_MODEL),
+                         "1.1.1 Traders.\n\nBy Theorem two point one point eighteen, traders trade.")
+        self.assertEqual(voice.spoken_text("12.1.3 Rings. See Lemma 2.2.1 and 2.18 units.", voice.DEFAULT_TTS_MODEL),
+                         "12.1.3 Rings. See Lemma 2.2.1 and 2.18 units.")
+        self.assertEqual(voice.spoken_text(body, voice.LEGACY_TTS_MODEL),
+                         "1 point 1 point 1 Traders.\n\nBy Theorem 2 point 1 point 18, traders trade.")
+
     def test_spoken_labels(self):
         self.assertEqual(voice.spoken_labels("By Theorem 2.1.18 and Definition 2.2.1."),
                          "By Theorem 2 point 1 point 18 and Definition 2 point 2 point 1.")

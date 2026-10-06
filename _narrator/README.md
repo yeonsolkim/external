@@ -45,9 +45,9 @@ Proof. … Therefore [MATH 43; TeX] A [/MATH] is compact in [MATH 44; TeX] M [/M
   `\tag*{\(\square\)}` on a display equation is stripped and the cue follows the block;
   `\blacksquare` → `[END SUBPROOF]`. Real labels like `\tag{$\ast$}` survive.
 - Lists render one item per line: `(1) …` (ordered, honours `start`) or `- …`.
-- Figures → `[FIGURE: caption|alt]`, TikZ → `[DIAGRAM: title]`, tables → `[TABLE omitted]`,
-  code ≥ 4 lines → `[CODE omitted]`, footnotes and citation markup dropped. Each is also a
-  document-level warning so the summary shows which pages lose content.
+- Figures → `[FIGURE: caption|alt]`, TikZ → `[DIAGRAM: title]`; tables and code of 4 lines
+  or more leave nothing (not read, not announced); footnotes and citation markup dropped. Each is also a document-level warning so the summary shows which pages lose
+  content.
 - Normalisation happens in exactly one function (`normalize`): NFC, every whitespace run
   (including NBSP) → one space. It is part of the cache key; treat it as frozen.
 
@@ -145,16 +145,34 @@ python3 -m _narrator voice  <post.html|URL> --voice cedar --artist "Yeonsol Kim"
 python3 -m unittest _narrator.tests.test_voice                   # no network, no ffmpeg
 ```
 
-Needs `ffmpeg` on PATH (`brew install ffmpeg`) and the OpenAI key. Engine `gpt-4o-mini-tts`
-(`--model`), default voice `cedar` (`--voice`); the engine gets `INSTRUCTIONS` — a formal
-lecturer, measured pace — which is part of the cache key. Cost ≈ $0.015 per minute of audio;
-*Compact Sets* is 21 min.
+Needs `ffmpeg` on PATH (`brew install ffmpeg`) and the OpenAI key. Engine
+`gpt-realtime-2.1-mini` (`--model`), default voice `cedar` (`--voice`); the engine gets
+`REALTIME_INSTRUCTIONS` — a formal lecturer in a calm, natural voice, and nothing about pace
+(asked for a measured pace, the model crawled through "1 point 1 point 3") — which is part of
+the cache key. Cost ≈ $0.024 per minute of audio; *Compact Sets* is 21 min.
+
+**The Realtime engine** (`realtime.py`, over the stdlib WebSocket client in `wsclient.py`)
+replaces `gpt-4o-mini-tts`, which OpenAI shuts down on 2027-01-06. A Realtime model is a
+conversational model, not a reader, so it is told to read the script verbatim (`READER`,
+reasoning effort `minimal`), and every call compares the model's own transcript of what it
+said with the text, word by word: under 0.97 agreement it synthesises again, and after three
+tries it refuses rather than return audio that is not the script. (`gpt-4o-mini-tts` had no
+such check, and in testing it sometimes dropped a paragraph's last sentence.) One WebSocket
+per paragraph, so no call sees another's conversation. `READER` and the reasoning effort are
+part of the cache key too. `--model gpt-4o-mini-tts` still works until the shutdown.
+
+**What gpt-4o-mini-tts recorded stays published.** Its key material is frozen (a test pins
+it), and `publish` serves a page with the engine that recorded it for as long as the page's
+scripts are the ones it read — the committed `audio/<url>.json` says which page key to ask
+the bucket for first, so a no-op run is still one HEAD per post. When any script of such a
+page changes, the whole page is recorded again with the current engine, so one episode never
+mixes two voices.
 
 **What it writes:**
 
 ```
 _audio/cache/<key>.flac + .json      one per section, lossless; key = AUDIO_VERSION | model |
-                                     voice | instructions | script text
+                                     voice | instructions | (Realtime settings) | script text
 _audio/2026/07/30/2.-Compact-Sets.mp3    the page, 128 kbps mono 44.1 kHz, ID3 title/artist/
                                           album + CHAP chapters (ffmpeg writes them; verified)
 _audio/2026/07/30/2.-Compact-Sets.json   manifest: every section with start/duration, and the
@@ -170,11 +188,14 @@ to R2 so a lost disk does not mean paying for synthesis again.
 to 0.1 s, then pieces are joined with 0.6 s of silence between paragraphs (0.3 s inside a
 split paragraph) and 1.2 s between sections. Offsets therefore come from sample counts and
 are exact. The page is loudness-normalised in two passes (`loudnorm`, −16 LUFS, −1.5 dBTP,
-linear gain so timing is untouched) and encoded once. Result labels are spelled out for
-the engine before synthesis — "Theorem 2.2.3" → "Theorem 2 point 2 point 3", and a section
+linear gain so timing is untouched) and encoded once. For gpt-4o-mini-tts, result labels are
+spelled out before synthesis — "Theorem 2.2.3" → "Theorem 2 point 2 point 3", and a section
 number that opens a line, "1.1.1 Traders." → "1 point 1 point 1 Traders." — so it can never
-say "two two three". The audio key is the script as written, so a change to this spelling
-never re-synthesises existing recordings.
+say "two two three". The Realtime engine gets them as written: it reads "1.1.1" naturally,
+and spelled out it read them slowly, word by word. Only a label with a number of two digits
+or more after a point goes in words — "Theorem 2.1.18" → "Theorem two point one point
+eighteen" — because the model read such a number digit by digit ("one eight") some of the time. The audio key is the script as written,
+so a change to this spelling never re-synthesises existing recordings.
 
 **Chapters** are every section except transitional `prose`, which folds into the chapter
 before it (the manifest still lists prose sections with their own offsets). The voice

@@ -22,6 +22,9 @@ class TTSError(Exception):
 
 
 def synth(text: str, voice: str, model: str, instructions: str = "", timeout: int = 180) -> bytes:
+    if model.startswith("gpt-realtime"):
+        from . import realtime
+        return realtime.synth(text, voice, model, instructions, timeout)
     if len(text) > MAX_INPUT_CHARS:
         raise TTSError("input of %d chars exceeds the %d limit" % (len(text), MAX_INPUT_CHARS))
     body = {"model": model, "input": text, "voice": voice, "response_format": "pcm"}

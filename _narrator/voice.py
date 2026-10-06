@@ -29,13 +29,16 @@ import threading
 from concurrent.futures import ThreadPoolExecutor
 from typing import Optional
 
-from . import tts
+from . import realtime, tts
 from .prompts import PROMPT_VERSION
 from .script import _sha, post_dir, read_md
 from .skeleton import Skeleton
 
 AUDIO_VERSION = 1
-DEFAULT_TTS_MODEL = "gpt-4o-mini-tts"
+# gpt-4o-mini-tts is shut down on 2027-01-06. Pages it recorded stay published while their
+# scripts are unchanged (publish.Publisher.engines); everything new is recorded with Realtime.
+LEGACY_TTS_MODEL = "gpt-4o-mini-tts"
+DEFAULT_TTS_MODEL = "gpt-realtime-2.1-mini"
 DEFAULT_VOICE = "cedar"
 INSTRUCTIONS = (
     "You are a university lecturer delivering a formal mathematics lecture to an audience "
@@ -44,6 +47,22 @@ INSTRUCTIONS = (
     "sentence, and a slight pause before and after each mathematical expression. Read "
     "letters that name variables as letters. Never rush a formula."
 )
+# Kept short on purpose: a Realtime model takes pace and tone direction literally — asked for
+# a measured pace and pauses around expressions, it read "1 point 1 point 3" at a crawl.
+REALTIME_INSTRUCTIONS = (
+    "You are a university lecturer recording a formal lecture for an audience that cannot see "
+    "the board. Speak in a calm, natural voice. Read letters that name variables as letters."
+)
+
+
+def is_realtime(model: str) -> bool:
+    return model.startswith("gpt-realtime")
+
+
+def instructions_for(model: str) -> str:
+    return REALTIME_INSTRUCTIONS if is_realtime(model) else INSTRUCTIONS
+
+
 PARA_GAP = 0.6         # seconds between paragraphs
 SENTENCE_GAP = 0.3     # between chunks of one long paragraph
 SECTION_GAP = 1.2      # between sections
@@ -65,13 +84,36 @@ def canonical(body: str) -> str:
     return "\n".join(line.rstrip() for line in body.strip().split("\n"))
 
 
+def spoken_text(body: str, model: str) -> str:
+    """What the engine is given: the script with its labels made unambiguous for that engine."""
+    if not is_realtime(model):
+        return spoken_labels(body)
+    return _relabel(body, _realtime_label)
+
+
 def spoken_labels(text: str) -> str:
     """'Theorem 2.2.3' -> 'Theorem 2 point 2 point 3', so the engine never says 'two two three'.
     A section number that opens a line ('1.1.1 Traders.') is spelled out the same way."""
-    def dots(match: "re.Match") -> str:
-        return match.group(1) + " point ".join(match.group(2).split("."))
-    text = re.sub(r"\b([A-Z][a-z]+ )(\d+(?:\.\d+)+)\b", dots, text)
-    return re.sub(r"(?m)^([ \t]*)(\d+(?:\.\d+)+)\b", dots, text)
+    return _relabel(text, lambda parts: " point ".join(parts))
+
+
+def _realtime_label(parts: list) -> str:
+    """A Realtime model reads '1.1.1' and 'Theorem 2.2.1' naturally as written — spelled out
+    as '1 point 1 point 1' it read them slowly, word by word. But after a point it may read a
+    number of two digits or more digit by digit, '2.1.18' as 'two point one point one eight',
+    and does so only some of the time; such a label is given in words, which it reads as said."""
+    if all(len(part) == 1 for part in parts[1:]):
+        return ".".join(parts)
+    return " point ".join(realtime.spell(int(part)) for part in parts)
+
+
+def _relabel(text: str, spoken) -> str:
+    """Rewrite every result label ('Theorem 2.2.3') and every section number that opens a line
+    ('1.1.1 Traders.') with `spoken`, which takes the label's numbers as strings."""
+    def each(match: "re.Match") -> str:
+        return match.group(1) + spoken(match.group(2).split("."))
+    text = re.sub(r"\b([A-Z][a-z]+ )(\d+(?:\.\d+)+)\b", each, text)
+    return re.sub(r"(?m)^([ \t]*)(\d+(?:\.\d+)+)\b", each, text)
 
 
 def chunks(body: str) -> list:
@@ -100,8 +142,15 @@ def chunks(body: str) -> list:
     return out
 
 
-def section_key(body: str, voice: str, model: str, instructions: str = INSTRUCTIONS) -> str:
-    material = "|".join([str(AUDIO_VERSION), model, voice, instructions, canonical(body)])
+def section_key(body: str, voice: str, model: str, instructions: Optional[str] = None) -> str:
+    """Identity of a section's recording: everything that shapes the sound. The material of a
+    gpt-4o-mini-tts key is frozen — those recordings stay published after the model is gone."""
+    if instructions is None:
+        instructions = instructions_for(model)
+    fields = [str(AUDIO_VERSION), model, voice, instructions]
+    if is_realtime(model):
+        fields.append(realtime.signature())
+    material = "|".join(fields + [canonical(body)])
     return hashlib.sha256(material.encode("utf-8")).hexdigest()
 
 
@@ -194,9 +243,11 @@ def ffmetadata(title: str, artist: str, album: str, chapters: list) -> str:
 
 
 # ----------------------------------------------------------------------------- sections
-def synth_section(body: str, voice: str, model: str, instructions: str = INSTRUCTIONS, log=print) -> tuple:
+def synth_section(body: str, voice: str, model: str, instructions: Optional[str] = None, log=print) -> tuple:
     """-> (pcm, parts) where parts = [{"chars", "start", "duration"}] within the section."""
-    pieces = chunks(spoken_labels(body))
+    if instructions is None:
+        instructions = instructions_for(model)
+    pieces = chunks(spoken_text(body, model))
     pcm = b""
     parts = []
     for text, gap in pieces:
@@ -419,11 +470,12 @@ def samples(text: str, voices: list, model: str, out_dir: str, log=print) -> lis
     paths = []
     for voice in voices:
         pcm = b""
-        for piece, gap in chunks(spoken_labels(text)):
+        for piece, gap in chunks(spoken_text(text, model)):
             if pcm:
                 pcm += silence(gap)
-            pcm += trim(tts.synth(piece, voice=voice, model=model, instructions=INSTRUCTIONS))
-        path = os.path.join(out_dir, "%s.mp3" % voice)
+            pcm += trim(tts.synth(piece, voice=voice, model=model, instructions=instructions_for(model)))
+        name = voice if model == DEFAULT_TTS_MODEL else "%s.%s" % (voice, model)
+        path = os.path.join(out_dir, "%s.mp3" % name)
         subprocess.run([ffmpeg(), "-v", "error", "-y", "-f", "s16le", "-ar", str(SR), "-ac", "1",
                         "-i", "pipe:0", "-ar", "44100", "-c:a", "libmp3lame", "-b:a", "128k", path],
                        input=pcm, check=True)

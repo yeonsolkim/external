@@ -162,33 +162,61 @@ class Publisher:
                        "edited by hand; for an edited one, merge <id>.new.md or run "
                        "`script <post> --accept <id>`" % ids)
             return {"state": "scripts", "why": why}
-        keys = [stage3.section_key(body, self.voice, self.model) for _, body in scripts]
-        page = stage3.page_key(keys)
+        candidates = self.engines(skel, scripts)
         # One HEAD decides the common case. A page the bucket already holds needs nothing
         # else — probing its sections (one HEAD each) is what made a no-op CI run take minutes.
-        remote = self.store.head("o/%s.json" % page) if self.store else None
-        if remote and not (refresh and self.manifest_is_stale(skel, scripts)):
-            return {"state": "published", "page_key": page, "scripts": scripts, "keys": keys, "local": None,
-                    "remote": True, "to_fetch": 0, "to_synth": 0, "minutes": 0.0}
-        if remote:
-            return {"state": "manifest", "page_key": page, "scripts": scripts, "keys": keys, "local": None,
-                    "remote": True, "to_fetch": 0, "to_synth": 0, "minutes": 0.0}
+        # The engine that recorded the page is asked first, so that stays one HEAD.
+        for model, keys, page in candidates:
+            if not (self.store and self.store.head("o/%s.json" % page)):
+                continue
+            state = "manifest" if refresh and self.manifest_is_stale(skel, scripts) else "published"
+            return {"state": state, "model": model, "page_key": page, "scripts": scripts, "keys": keys,
+                    "local": None, "remote": True, "to_fetch": 0, "to_synth": 0, "minutes": 0.0}
         local_mp3, local_json = stage3.page_paths(skel, self.audio_root)
-        local = None
-        if os.path.exists(local_json):
+        if os.path.exists(local_json) and os.path.exists(local_mp3):
             with open(local_json, encoding="utf-8") as handle:
                 local = json.load(handle)
-            if local.get("page_key") != page or not os.path.exists(local_mp3):
-                local = None
+            for model, keys, page in candidates:
+                if local.get("page_key") == page:
+                    return {"state": "assembled", "model": model, "page_key": page, "scripts": scripts,
+                            "keys": keys, "local": local, "remote": False, "to_fetch": 0, "to_synth": 0,
+                            "minutes": 0.0}
+        # New or changed: the whole page is recorded with the current engine, never a mix.
+        model, keys, page = next(c for c in candidates if c[0] == self.model)
         missing = [(s, b, k) for (s, b), k in zip(scripts, keys) if stage3.cached_section(self.cache_dir, k) is None]
         to_synth = missing
-        if self.store and missing and not local:
+        if self.store and missing:
             to_synth = [(s, b, k) for s, b, k in missing if not self.store.head("cache/%s.json" % k)]
         chars = sum(len(b) for _, b, _ in to_synth)
-        state = "assembled" if local else ("assemble" if not to_synth else "synthesise")
-        return {"state": state, "page_key": page, "scripts": scripts, "keys": keys, "local": local,
-                "remote": False, "to_fetch": len(missing) - len(to_synth),
-                "to_synth": len(to_synth), "minutes": chars / 900.0}
+        return {"state": "assemble" if not to_synth else "synthesise", "model": model, "page_key": page,
+                "scripts": scripts, "keys": keys, "local": None, "remote": False,
+                "to_fetch": len(missing) - len(to_synth), "to_synth": len(to_synth), "minutes": chars / 900.0}
+
+    def published_page_key(self, skel: Skeleton) -> Optional[str]:
+        """The page key in the committed site manifest, i.e. the recording the site serves now."""
+        rel = os.path.join("audio", *(url_key_from(skel.url) + ".json").split("/"))
+        path = os.path.join(self.source_dir or self.site_dir, rel)
+        if not os.path.exists(path):
+            return None
+        with open(path, encoding="utf-8") as handle:
+            return json.load(handle).get("page_key")
+
+    def engines(self, skel: Skeleton, scripts: list) -> list:
+        """[(model, section keys, page key)] this page can be served with, the likely one first.
+
+        gpt-4o-mini-tts is retired (2027-01-06), but what it recorded stays published: while a
+        page's scripts are the ones it read, its page key is the same and nothing is redone.
+        Once a script changes, the page is recorded again in full with the current engine.
+        """
+        def keyed(model: str) -> tuple:
+            keys = [stage3.section_key(body, self.voice, model) for _, body in scripts]
+            return model, keys, stage3.page_key(keys)
+
+        current = keyed(self.model)
+        if self.model == stage3.LEGACY_TTS_MODEL:
+            return [current]
+        legacy = keyed(stage3.LEGACY_TTS_MODEL)
+        return [legacy, current] if self.published_page_key(skel) == legacy[2] else [current, legacy]
 
     def publish_post(self, skel: Skeleton, max_new_minutes: float = 30.0, dry_run: bool = False,
                      refresh: bool = False, log=None) -> Optional[dict]:
@@ -203,7 +231,8 @@ class Publisher:
             log("%-50s %s%s" % (skel.url, p["why"], "" if not dry_run else " (a real run generates them first)"))
             return None
         log("%-50s %s%s" % (skel.url, p["state"], "" if p["state"] in ("published", "assembled") else
-                            " (%d to fetch, %d to synthesise ≈ %.0f min)" % (p["to_fetch"], p["to_synth"], p["minutes"])))
+                            " (%d to fetch, %d to synthesise ≈ %.0f min, %s)" % (
+                                p["to_fetch"], p["to_synth"], p["minutes"], p["model"])))
         if dry_run:
             return None
         if p["to_synth"] and p["minutes"] > max_new_minutes:
@@ -220,7 +249,7 @@ class Publisher:
             if all(metas):
                 out_mp3, out_json = stage3.page_paths(skel, self.audio_root)
                 manifest = stage3.assemble_page(skel, p["scripts"], metas, self.cache_dir, out_mp3,
-                                                out_json, self.voice, self.model,
+                                                out_json, self.voice, p["model"],
                                                 artist=self.cfg.get("author", ""),
                                                 album=self.cfg.get("site_title", ""), log=log)
                 manifest["generated"] = _dt.date.today().isoformat()
@@ -238,11 +267,11 @@ class Publisher:
                 manifest = p["local"]
                 metas = [stage3.cached_section(self.cache_dir, k) for k in p["keys"]]
             else:
-                metas = stage3.ensure_sections(p["scripts"], self.cache_dir, self.voice, self.model,
+                metas = stage3.ensure_sections(p["scripts"], self.cache_dir, self.voice, p["model"],
                                                workers=self.workers, fetch=self.fetch_section, log=log)
                 out_mp3, out_json = stage3.page_paths(skel, self.audio_root)
                 manifest = stage3.assemble_page(skel, p["scripts"], metas, self.cache_dir, out_mp3, out_json,
-                                                self.voice, self.model, artist=self.cfg.get("author", ""),
+                                                self.voice, p["model"], artist=self.cfg.get("author", ""),
                                                 album=self.cfg.get("site_title", ""), log=log)
             if self.store:
                 n = self.mirror_sections([m for m in metas if m])
