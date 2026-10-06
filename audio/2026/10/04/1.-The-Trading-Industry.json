@@ -4,14 +4,14 @@
   "lang": "en",
   "description": "1.1.1 Traders Traders are people who arrange trades for themselves, have others arrange trades on their behalf, or arrange trades for others.",
   "published_at": "2026-10-04T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/dc83764f59094821282a992323e75c595c8493f80df7d86515e49f1924dfc625.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/f853931b6cd9f60f190b7e36055573e10935a52ae0190036c92e73c620e17858.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.chapters.json",
-  "duration": 467.605,
-  "bytes": 7483521,
+  "duration": 440.769,
+  "bytes": 7054277,
   "voice": "cedar",
-  "page_key": "dc83764f59094821282a992323e75c595c8493f80df7d86515e49f1924dfc625",
-  "skeleton_hash": "ce09457359e62e309fdf5c15fd0fb6a636eb645bd82b1c2977438849c2ab61d8",
+  "page_key": "f853931b6cd9f60f190b7e36055573e10935a52ae0190036c92e73c620e17858",
+  "skeleton_hash": "dade9a7853b38ea51839c72b6af6047018299bc6ce01f5cf66fec128db932ebd",
   "generated": "2026-10-06",
   "podcast": true,
   "sections": [
@@ -21,22 +21,22 @@
       "kind": "section",
       "level": 2,
       "start": 0.0,
-      "duration": 11.357,
+      "duration": 10.232,
       "source": "d1fc3ffa5ec5d8061293f47ec568159fb2ad30dc2bd99134f3b08193ddbcdb53",
-      "audio": "7b0b8f20ebe57b25b728509df98752d80b99f10e8d255335cf14f43e62b8f4fc",
+      "audio": "a403110464fbf8bc92ca071848859d89489e6ce9e918db385f848d41082c7bd9",
       "parent": null,
       "proves": null,
-      "span": 84.729
+      "span": 89.214
     },
     {
       "id": "par-the-two-sides-of-the-trading-industry",
       "title": "The two sides of the trading industry",
       "kind": "paragraph",
       "level": 3,
-      "start": 12.557,
-      "duration": 72.172,
+      "start": 11.431,
+      "duration": 77.783,
       "source": "6cf9286a7cbb2befd140f81e3d8309f2b5cc6b67984c250d948e1b1973cb7569",
-      "audio": "308c9aad6dc5b1722fe61fc619ce1e332d6c83e6f095f7bde612b81554c2dad4",
+      "audio": "fca6cc6b0f5b0b4fad659be2d764f580e7d1b2a4cd84edfcbf4b88e6959aabc1",
       "parent": "111-traders",
       "proves": null
     },
@@ -45,23 +45,23 @@
       "title": "1.1.2 The Buy Side",
       "kind": "section",
       "level": 2,
-      "start": 85.93,
-      "duration": 15.303,
+      "start": 90.415,
+      "duration": 14.793,
       "source": "cf5702b22757e4d281005b34819e8782151af9f5caff1204ec14280ee3391c0b",
-      "audio": "524edd5bb7d33ac85ec147de09821d0c126d59962d599fab9cf9bc46ec745a0c",
+      "audio": "56a91dd62f114a07dadb1e80c6415853e3e28960a1a94372b2527d891c4578d0",
       "parent": null,
       "proves": null,
-      "span": 131.643
+      "span": 119.653
     },
     {
       "id": "par-types-of-buy-side-traders-investors-and-borrowers",
       "title": "Types of buy-side traders: Investors and borrowers",
       "kind": "paragraph",
       "level": 3,
-      "start": 102.433,
-      "duration": 48.576,
+      "start": 106.408,
+      "duration": 43.457,
       "source": "bb7d61305f1b65506e4dc632eb41efc6a896e42033928c30133c73d757417fad",
-      "audio": "b84d2f4e9367b653507fb2bd3a399e72bb5dfbf0adc7357e6089a4a7781bae00",
+      "audio": "07ff27a3d9241bd826c02a4188b81a8fe0a68c13cf9c03f5cdff6d20a379a05b",
       "parent": "112-the-buy-side",
       "proves": null
     },
@@ -70,10 +70,10 @@
       "title": "The hierarchical structure of the buy side",
       "kind": "paragraph",
       "level": 3,
-      "start": 152.209,
-      "duration": 65.364,
+      "start": 151.065,
+      "duration": 59.003,
       "source": "229d69dfaa37a5811af966ea791ddc07791ab1b4e852ffb18d65bbca2c57814e",
-      "audio": "ac447849701909cb4e331d7aee0b4cd81b775c6ac1bce83e02a0dc80168fdbb9",
+      "audio": "0673bf99a5d653f81eac5a0aa04edfdac1c127c5ede29424fe7a2523fd59472b",
       "parent": "112-the-buy-side",
       "proves": null
     },
@@ -82,10 +82,10 @@
       "title": "1.1.3 Exchanges",
       "kind": "section",
       "level": 2,
-      "start": 218.773,
-      "duration": 22.595,
+      "start": 211.267,
+      "duration": 22.41,
       "source": "5f9328f2423db53483f26a6f5af8fbb5fe42aeda62919d3ad273ca569ba30ab7",
-      "audio": "3982c28e8b14144555c8b7d88e9e50a9a13ae058feb4ddd5ee8bf319184e65a5",
+      "audio": "01214c855d95b23380d7b16b04f2ba779d2689a11190b9999e8a393d9a35a295",
       "parent": null,
       "proves": null
     },
@@ -94,23 +94,23 @@
       "title": "1.1.4 Trading Instruments",
       "kind": "section",
       "level": 2,
-      "start": 242.568,
-      "duration": 19.752,
-      "source": "7c637c99b0b1b28e28e5e4940fd0823909516b463ea4e5c99dab2eb93c69b2c1",
-      "audio": "704e1fbde928f12c4a1b0a427507acc8edd739c4ab40a4a2eecd5f7c042d4760",
+      "start": 234.877,
+      "duration": 14.341,
+      "source": "6b4da8ec688f2c732a56f311a51a3630d75f0c288307e7eb513c63170d17a610",
+      "audio": "f399ff5796cc63ae97dd01afa3fc7628b2d139b6f1bcb8bcb35c60dbcd6874e0",
       "parent": null,
       "proves": null,
-      "span": 225.037
+      "span": 205.892
     },
     {
       "id": "par-financial-assets",
       "title": "Financial assets",
       "kind": "paragraph",
       "level": 3,
-      "start": 263.52,
-      "duration": 92.951,
+      "start": 250.419,
+      "duration": 85.875,
       "source": "5a1a46c541a67424e5587a3f880f469259610c76d831aaf42c115140785fc645",
-      "audio": "4d601f093cc4604a72bc63b930623583f91f3ad43d1109f64641ef1b21e10d6d",
+      "audio": "77ec5bd00ebbd833ffd560e1fbbc43be0beca633d5dff3d84450640b1477d815",
       "parent": "114-trading-instruments",
       "proves": null
     },
@@ -119,10 +119,10 @@
       "title": "Derivatives",
       "kind": "paragraph",
       "level": 3,
-      "start": 357.672,
-      "duration": 109.933,
+      "start": 337.494,
+      "duration": 103.275,
       "source": "fb2f8d4534449d05466353fe4a2d0b12dfade97168db8f5b2c1d723df31b42bf",
-      "audio": "aba35895bbbff035096a7f580ea96b4bf7478d93392af0087375666a37faf168",
+      "audio": "d38adef1342833493da2c6cc55dd81f2bdfd60be651f01262b27b693b5881b8d",
       "parent": "114-trading-instruments",
       "proves": null
     }
@@ -132,55 +132,55 @@
       "id": "111-traders",
       "title": "1.1.1 Traders",
       "start": 0.0,
-      "end": 12.557
+      "end": 11.431
     },
     {
       "id": "par-the-two-sides-of-the-trading-industry",
       "title": "The two sides of the trading industry",
-      "start": 12.557,
-      "end": 85.93
+      "start": 11.431,
+      "end": 90.415
     },
     {
       "id": "112-the-buy-side",
       "title": "1.1.2 The Buy Side",
-      "start": 85.93,
-      "end": 102.433
+      "start": 90.415,
+      "end": 106.408
     },
     {
       "id": "par-types-of-buy-side-traders-investors-and-borrowers",
       "title": "Types of buy-side traders: Investors and borrowers",
-      "start": 102.433,
-      "end": 152.209
+      "start": 106.408,
+      "end": 151.065
     },
     {
       "id": "par-the-hierarchical-structure-of-the-buy-side",
       "title": "The hierarchical structure of the buy side",
-      "start": 152.209,
-      "end": 218.773
+      "start": 151.065,
+      "end": 211.267
     },
     {
       "id": "113-exchanges",
       "title": "1.1.3 Exchanges",
-      "start": 218.773,
-      "end": 242.568
+      "start": 211.267,
+      "end": 234.877
     },
     {
       "id": "114-trading-instruments",
       "title": "1.1.4 Trading Instruments",
-      "start": 242.568,
-      "end": 263.52
+      "start": 234.877,
+      "end": 250.419
     },
     {
       "id": "par-financial-assets",
       "title": "Financial assets",
-      "start": 263.52,
-      "end": 357.672
+      "start": 250.419,
+      "end": 337.494
     },
     {
       "id": "par-derivatives",
       "title": "Derivatives",
-      "start": 357.672,
-      "end": 467.605
+      "start": 337.494,
+      "end": 440.769
     }
   ]
 }

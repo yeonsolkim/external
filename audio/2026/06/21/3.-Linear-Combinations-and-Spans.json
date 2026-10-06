@@ -1,0 +1,372 @@
+{
+  "url": "/2026/06/21/3.-Linear-Combinations-and-Spans.html",
+  "title": "1.3 Linear Combinations and Spans",
+  "lang": "en",
+  "description": "Definitions of linear combinations and spans. We begin with the vectors that can be built from a given set of vectors by addition and scalar multiplication.",
+  "published_at": "2026-06-21T15:00:00+00:00",
+  "audio": "https://audio.yeonsolkim.com/o/de9e3dd80b87afab8d6eb4a145f63817e6efe4a0e3858febf8f8c7c457adad34.mp3",
+  "stable": "https://audio.yeonsolkim.com/2026/06/21/3.-Linear-Combinations-and-Spans.mp3",
+  "chapters_url": "https://audio.yeonsolkim.com/2026/06/21/3.-Linear-Combinations-and-Spans.chapters.json",
+  "duration": 749.234,
+  "bytes": 11989974,
+  "voice": "cedar",
+  "page_key": "de9e3dd80b87afab8d6eb4a145f63817e6efe4a0e3858febf8f8c7c457adad34",
+  "skeleton_hash": "9724670febbd83a14101d5f0685b9072abb2b001cd754e5f20c9309f1ddcad9a",
+  "generated": "2026-10-06",
+  "podcast": true,
+  "sections": [
+    {
+      "id": "par-definitions-of-linear-combinations-and-spans",
+      "title": "Definitions of linear combinations and spans",
+      "kind": "paragraph",
+      "level": 2,
+      "start": 0.0,
+      "duration": 8.494,
+      "source": "c4a3dda31534c70cfbf696db797917bcec187ce93c7ff407e0e4cbe13a899892",
+      "audio": "fa6eb4a67b38e4816dc04138ce3a0a5c820cf37b815714df81a4382f65a11b39",
+      "parent": null,
+      "proves": null,
+      "span": 333.246
+    },
+    {
+      "id": "definition-1-3-1",
+      "title": "Definition 1.3.1",
+      "kind": "definition",
+      "level": 3,
+      "start": 9.694,
+      "duration": 32.906,
+      "source": "c45c2ba8c28d004bfba781bd8ec046d52c19a6f86e1857e2544b259aa8f6247b",
+      "audio": "a2b0885abcbb8ddebd8ff3e936736a5d7a7d9bb5f5906f88487d1ab0aff2ff54",
+      "parent": "par-definitions-of-linear-combinations-and-spans",
+      "proves": null
+    },
+    {
+      "id": "definition-1-3-2",
+      "title": "Definition 1.3.2",
+      "kind": "definition",
+      "level": 3,
+      "start": 43.8,
+      "duration": 31.88,
+      "source": "215446d1e0a82b3e4eabd78c7bba2955b53d7f1076989dd6e78bbc17cbf2819a",
+      "audio": "c382a365876bde95055b6b2cf80517fe74808bdfe19da131344f3ecd1b6e3640",
+      "parent": "par-definitions-of-linear-combinations-and-spans",
+      "proves": null
+    },
+    {
+      "id": "prose-after-definition-1-3-2",
+      "title": "A subspace is closed under addition and scalar…",
+      "kind": "prose",
+      "level": 3,
+      "start": 76.88,
+      "duration": 18.034,
+      "source": "4fe545ee2dca0a138be87822b9c185f5368454a955c7f367132bad27ed2b3b4b",
+      "audio": "ebdd09a69dbfd2ea7ad253ef650df3018661136e10c0eda26984c2c645c541e2",
+      "parent": "par-definitions-of-linear-combinations-and-spans",
+      "proves": null
+    },
+    {
+      "id": "proposition-1-3-3",
+      "title": "Proposition 1.3.3",
+      "kind": "proposition",
+      "level": 3,
+      "start": 96.114,
+      "duration": 8.431,
+      "source": "31f1486f1a1b84777c93976582ddbbab18bdd427409b70e702b63436bb9cb030",
+      "audio": "a80de681522a987924353f0e64fc1bcca815e99cac2539ffc9263774eb367f44",
+      "parent": "par-definitions-of-linear-combinations-and-spans",
+      "proves": null
+    },
+    {
+      "id": "proof-proposition-1-3-3",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 105.745,
+      "duration": 34.222,
+      "source": "e658b8d3789ffa7a208d821fc3b75089c79adc01f2e6dd1094a8ec7ce135964a",
+      "audio": "df6612782f81b20762a3f277cad1677cf01e5c8ad0b4968f18dd39d049f5b5ec",
+      "parent": "par-definitions-of-linear-combinations-and-spans",
+      "proves": "proposition-1-3-3"
+    },
+    {
+      "id": "example-1-3-4",
+      "title": "Example 1.3.4",
+      "kind": "example",
+      "level": 3,
+      "start": 141.167,
+      "duration": 23.247,
+      "source": "3511302e84c6fbb172470d30e8431354713c87e6dcbec9c5b61b3b29538fbe31",
+      "audio": "d5dd3f716f1ff9a55fd9cf377792612de1e51c991484e73b969020e1a41f7ffd",
+      "parent": "par-definitions-of-linear-combinations-and-spans",
+      "proves": null
+    },
+    {
+      "id": "example-1-3-5",
+      "title": "Example 1.3.5",
+      "kind": "example",
+      "level": 3,
+      "start": 165.614,
+      "duration": 117.193,
+      "source": "abf9ef4b0660e95f6d25d8b918186094fcd0b01694fc1222e9c6ad0dde4e342f",
+      "audio": "8ff5de287fe76d42a202931594fa3a56ab8aadccd2ac8cecc6fad61055ffa9fd",
+      "parent": "par-definitions-of-linear-combinations-and-spans",
+      "proves": null
+    },
+    {
+      "id": "example-1-3-6",
+      "title": "Example 1.3.6",
+      "kind": "example",
+      "level": 3,
+      "start": 284.007,
+      "duration": 49.239,
+      "source": "f0e4adfe0c1177bdae66f68469cb1e29312380954f1bd780c8d16b74b1a7c754",
+      "audio": "da7a5d348bc1269f066aab6f190249582d67d663d450156ebce41dc9d89928ba",
+      "parent": "par-definitions-of-linear-combinations-and-spans",
+      "proves": null
+    },
+    {
+      "id": "par-characterization-of-span-the-smallest-containing-subspace",
+      "title": "Characterization of span: The smallest containing subspace",
+      "kind": "paragraph",
+      "level": 2,
+      "start": 334.446,
+      "duration": 18.189,
+      "source": "51124d4bfee2638005584692b4422297ebeb843192314e596d8eb493b0db376e",
+      "audio": "5f135a14501681368af1acb5f8eac807299c49d3de0494baf190cb18a4f8b815",
+      "parent": null,
+      "proves": null,
+      "span": 138.995
+    },
+    {
+      "id": "theorem-1-3-7",
+      "title": "Theorem 1.3.7",
+      "kind": "theorem",
+      "level": 3,
+      "start": 353.835,
+      "duration": 15.759,
+      "source": "976059d2e81ab9758687907104580413c5d56d26f3609674180711d3944c29c5",
+      "audio": "ba8ad65edc2f145977f794034730412ac7edc8787ce4df4d092d3c014bc47e0b",
+      "parent": "par-characterization-of-span-the-smallest-containing-subspace",
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-1-3-7",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 370.794,
+      "duration": 102.647,
+      "source": "5e2792f0a94d797ef48644287fd407122a90f87199ba046f808bcc9c50a0d0e8",
+      "audio": "18966fe79005ff2c098fc1908b71f8c788eacfe904032fdb522885a30faa2c95",
+      "parent": "par-characterization-of-span-the-smallest-containing-subspace",
+      "proves": "theorem-1-3-7"
+    },
+    {
+      "id": "par-span-a-closure-operator",
+      "title": "Span: A closure operator",
+      "kind": "paragraph",
+      "level": 2,
+      "start": 474.641,
+      "duration": 42.795,
+      "source": "f6aebffcde9f306e1a091355209034f4fb37e9362e643b5fd9026f97a2ba237f",
+      "audio": "8aaf9f45855cdd6f584b31587d2cd22be150f7a4c346d72ede732521a2c4b4fa",
+      "parent": null,
+      "proves": null,
+      "span": 274.593
+    },
+    {
+      "id": "definition-1-3-8",
+      "title": "Definition 1.3.8",
+      "kind": "definition",
+      "level": 3,
+      "start": 518.637,
+      "duration": 27.982,
+      "source": "81297e1c848ad35ffde133ffc89bcaef21e0392166f80cd1500cff5b5d2dc054",
+      "audio": "c537707f152b835905953fe22ef1ac9f74f3e741860b0d4aaabdae3129ecca9a",
+      "parent": "par-span-a-closure-operator",
+      "proves": null
+    },
+    {
+      "id": "definition-1-3-9",
+      "title": "Definition 1.3.9",
+      "kind": "definition",
+      "level": 3,
+      "start": 547.819,
+      "duration": 15.177,
+      "source": "3a51afb28a263761ea3c15a4fca71c491fb5aea3354b2197827a875ee6433439",
+      "audio": "d7229fb3e5f7c197839172349308ff641228ce5a5ea917ecfa21ec24450f9015",
+      "parent": "par-span-a-closure-operator",
+      "proves": null
+    },
+    {
+      "id": "theorem-1-3-10",
+      "title": "Theorem 1.3.10",
+      "kind": "theorem",
+      "level": 3,
+      "start": 564.196,
+      "duration": 19.752,
+      "source": "e13113e89ebab67ace7b2b879934452976ba21737c35b1b44ba53d15e9d025de",
+      "audio": "95658bfd848d39351e2a89dda754a81bdb6f6aaf84c383f60563409328de5445",
+      "parent": "par-span-a-closure-operator",
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-1-3-10",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 585.148,
+      "duration": 58.848,
+      "source": "4742347fb6ce43d1573a111d0ea8478311a158b8b281c0c80c8d1c7ede482a64",
+      "audio": "5a339f0f5cf3f70b9376dea48f4d3f474a60a1a6e7ef1930bf99f5730c3da8f6",
+      "parent": "par-span-a-closure-operator",
+      "proves": "theorem-1-3-10"
+    },
+    {
+      "id": "theorem-1-3-11",
+      "title": "Theorem 1.3.11",
+      "kind": "theorem",
+      "level": 3,
+      "start": 645.196,
+      "duration": 20.811,
+      "source": "955d92e3f9893c49b0443474510c91011f8547093a46fee3f7f02f853bc85903",
+      "audio": "f0fd0f6f37ab0471ec82226e310c0613fbdb21e822713797430a909d5f6c7120",
+      "parent": "par-span-a-closure-operator",
+      "proves": null
+    },
+    {
+      "id": "theorem-1-3-12",
+      "title": "Theorem 1.3.12",
+      "kind": "theorem",
+      "level": 3,
+      "start": 667.208,
+      "duration": 16.945,
+      "source": "8f69ab947d4f83a5b76f60b9609f94b8541f2ad2b4766981d06d329f2d58f790",
+      "audio": "291839c071cf7a25b4ff74922822bd10d9900cf526155d5e9293a9fb60c1bb28",
+      "parent": "par-span-a-closure-operator",
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-1-3-12",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 685.353,
+      "duration": 48.472,
+      "source": "d2f14fe9e65ff4b15f690da60890ea36cc3a5937c82db379744bca03fa784da1",
+      "audio": "dc2ae91f3c6253e91a2179a94b41b949d53eee2a50730ddc9b0d0da42875306e",
+      "parent": "par-span-a-closure-operator",
+      "proves": "theorem-1-3-12"
+    },
+    {
+      "id": "proposition-1-3-13",
+      "title": "Proposition 1.3.13",
+      "kind": "proposition",
+      "level": 3,
+      "start": 735.025,
+      "duration": 14.209,
+      "source": "8671dea84e8c14c8ad030a2b7c26c6ce2d5b3317cd18a76ba2e034532f9ed4c8",
+      "audio": "4e1ce30afb0c0c73e37d39e301a94cda60491e881057319e9577a96365072f4f",
+      "parent": "par-span-a-closure-operator",
+      "proves": null
+    }
+  ],
+  "chapters": [
+    {
+      "id": "par-definitions-of-linear-combinations-and-spans",
+      "title": "Definitions of linear combinations and spans",
+      "start": 0.0,
+      "end": 9.694
+    },
+    {
+      "id": "definition-1-3-1",
+      "title": "Definition 1.3.1",
+      "start": 9.694,
+      "end": 43.8
+    },
+    {
+      "id": "definition-1-3-2",
+      "title": "Definition 1.3.2",
+      "start": 43.8,
+      "end": 96.114
+    },
+    {
+      "id": "proposition-1-3-3",
+      "title": "Proposition 1.3.3",
+      "start": 96.114,
+      "end": 141.167
+    },
+    {
+      "id": "example-1-3-4",
+      "title": "Example 1.3.4",
+      "start": 141.167,
+      "end": 165.614
+    },
+    {
+      "id": "example-1-3-5",
+      "title": "Example 1.3.5",
+      "start": 165.614,
+      "end": 284.007
+    },
+    {
+      "id": "example-1-3-6",
+      "title": "Example 1.3.6",
+      "start": 284.007,
+      "end": 334.446
+    },
+    {
+      "id": "par-characterization-of-span-the-smallest-containing-subspace",
+      "title": "Characterization of span: The smallest containing subspace",
+      "start": 334.446,
+      "end": 353.835
+    },
+    {
+      "id": "theorem-1-3-7",
+      "title": "Theorem 1.3.7",
+      "start": 353.835,
+      "end": 474.641
+    },
+    {
+      "id": "par-span-a-closure-operator",
+      "title": "Span: A closure operator",
+      "start": 474.641,
+      "end": 518.637
+    },
+    {
+      "id": "definition-1-3-8",
+      "title": "Definition 1.3.8",
+      "start": 518.637,
+      "end": 547.819
+    },
+    {
+      "id": "definition-1-3-9",
+      "title": "Definition 1.3.9",
+      "start": 547.819,
+      "end": 564.196
+    },
+    {
+      "id": "theorem-1-3-10",
+      "title": "Theorem 1.3.10",
+      "start": 564.196,
+      "end": 645.196
+    },
+    {
+      "id": "theorem-1-3-11",
+      "title": "Theorem 1.3.11",
+      "start": 645.196,
+      "end": 667.208
+    },
+    {
+      "id": "theorem-1-3-12",
+      "title": "Theorem 1.3.12",
+      "start": 667.208,
+      "end": 735.025
+    },
+    {
+      "id": "proposition-1-3-13",
+      "title": "Proposition 1.3.13",
+      "start": 735.025,
+      "end": 749.234
+    }
+  ]
+}
