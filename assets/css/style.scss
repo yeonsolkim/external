@@ -139,6 +139,26 @@ body {
   font-family: var(--reading-serif);
 }
 
+/* Sticky footer: main takes up the slack, so on a short page the footer sits at the
+   bottom of the viewport instead of right under the content. */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+main.main-content {
+  flex: 1 0 auto;
+}
+
+/* As flex items with auto side margins these would shrink to fit their content. */
+.breadcrumb-nav,
+main.main-content,
+.site-footer {
+  width: 100%;
+}
+
 .main-content {
   word-wrap: break-word;
 }
@@ -502,12 +522,35 @@ blockquote mjx-container {
 }
 
 /* Footer */
+/* Sits below main, whose bottom padding is the gap above it; its own bottom padding
+   matches that, as main's used to when the footer was inside it. */
 .site-footer {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  color: #575757c2 !important;
-  font-size: 0.85rem !important;
+  max-width: var(--site-max-width);
+  margin: 0 auto;
+  padding: 0 0 2rem;
+  color: #575757ed !important;
+  font-size: 0.8rem !important;
   border-top: 0 !important;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Quiet like the breadcrumbs: footer grey, underlined only on hover. */
+.site-footer a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.site-footer a:hover {
+  text-decoration: underline !important;
+  text-underline-offset: 0.15em;
 }
 
 /* Responsive */
@@ -548,6 +591,11 @@ blockquote mjx-container {
 
   .main-content {
     padding: 1.5rem 1rem !important;
+  }
+
+  /* main's bottom padding is 1.5rem here; top up the gap above to the desktop 2rem. */
+  .site-footer {
+    padding: 0.5rem 1rem 1.5rem;
   }
 
   .main-content .post-table-scroll {

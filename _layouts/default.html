@@ -37,8 +37,11 @@
   {% endunless %}
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ asset_version }}">
 
-  {% if page.layout == "post" %}
+  {% if page.layout == "post" or page.layout == "page" %}
     <link rel="stylesheet" href="{{ '/assets/css/post.css' | relative_url }}?v={{ asset_version }}">
+  {% endif %}
+
+  {% if page.layout == "post" %}
     <link rel="stylesheet" href="{{ '/assets/css/narration.css' | relative_url }}?v={{ asset_version }}">
     {% if page.publish == true %}<meta name="narrate" content="true">{% endif %}
   {% endif %}
@@ -178,11 +181,26 @@
 
   <main id="content" class="main-content" role="main">
     {{ content }}
-
-    <footer class="site-footer">
-      <p>&copy; {{ "now" | date: "%Y" }} Yeonsol Kim. All rights reserved.</p>
-    </footer>
   </main>
+
+  <footer class="site-footer">
+    <span>
+      &copy; {% include copyright_years.html %} Yeonsol Kim
+    </span>
+
+    <span>
+      Content licensed under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">
+        CC BY-NC-SA 4.0
+      </a>
+    </span>
+
+    <nav class="footer-nav" aria-label="Site">
+      <a href="{{ '/about/' | relative_url }}">About</a>
+      <a href="{{ '/contact/' | relative_url }}">Contact</a>
+      <a href="{{ '/license/' | relative_url }}">License</a>
+    </nav>
+  </footer>
 
   {% if page.index_page or page.layout == "post" %}
     <script src="{{ '/assets/js/edited-time.js' | relative_url }}?v={{ asset_version }}" defer></script>

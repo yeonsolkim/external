@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+{%- comment -%}
+  A standalone page (About, Contact, License) set like a post: same title, rule and body type,
+  without the post scripts. Without main.js an <ol> gets no labels, so these pages use <ul>.
+  The article is not class "post": _narrator treats every <article class="post"> as a post.
+{%- endcomment -%}
+<article class="page">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <hr class="post-header-divider">
+
+  <div class="post-body">
+    {{ content }}
+  </div>
+</article>

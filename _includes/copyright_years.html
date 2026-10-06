@@ -1,0 +1,8 @@
+{%- comment -%}
+  The years of the copyright notice: the year of the oldest post, then the build year once it
+  differs ("2026", later "2026–2027").
+{%- endcomment -%}
+{%- assign copyright_last_year = site.time | date: "%Y" -%}
+{%- assign copyright_first_year = site.posts.last.date | date: "%Y" | default: copyright_last_year -%}
+{{- copyright_first_year -}}
+{%- if copyright_last_year != copyright_first_year -%}–{{- copyright_last_year -}}{%- endif -%}
