@@ -45,6 +45,8 @@ class Text(unittest.TestCase):
         self.assertEqual(voice.spoken_labels("By Theorem 2.1.18 and Definition 2.2.1."),
                          "By Theorem 2 point 1 point 18 and Definition 2 point 2 point 1.")
         self.assertEqual(voice.spoken_labels("about 2.5 units and Theorem 3."), "about 2.5 units and Theorem 3.")
+        self.assertEqual(voice.spoken_labels("1.1.1 Traders.\n\nTraders hold 2.5 units."),
+                         "1 point 1 point 1 Traders.\n\nTraders hold 2.5 units.")
 
     def test_chunks_paragraphs(self):
         out = voice.chunks("One.\n\nTwo.\n  \nThree.\n")

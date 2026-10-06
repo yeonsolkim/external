@@ -66,10 +66,12 @@ def canonical(body: str) -> str:
 
 
 def spoken_labels(text: str) -> str:
-    """'Theorem 2.2.3' -> 'Theorem 2 point 2 point 3', so the engine never says 'two two three'."""
+    """'Theorem 2.2.3' -> 'Theorem 2 point 2 point 3', so the engine never says 'two two three'.
+    A section number that opens a line ('1.1.1 Traders.') is spelled out the same way."""
     def dots(match: "re.Match") -> str:
         return match.group(1) + " point ".join(match.group(2).split("."))
-    return re.sub(r"\b([A-Z][a-z]+ )(\d+(?:\.\d+)+)\b", dots, text)
+    text = re.sub(r"\b([A-Z][a-z]+ )(\d+(?:\.\d+)+)\b", dots, text)
+    return re.sub(r"(?m)^([ \t]*)(\d+(?:\.\d+)+)\b", dots, text)
 
 
 def chunks(body: str) -> list:

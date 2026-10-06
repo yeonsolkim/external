@@ -128,7 +128,9 @@ present tense, the author's order and wording, every equation in words, and noth
 except what a lecturer needs to speak structure — "Theorem 2.2.20, the Heine–Borel
 theorem.", "Proof.", "This completes the proof." for `[END PROOF]`, a lead-in for a display
 equation, "We refer to this inclusion as star." after a labelled equation (named after the
-sentence that contains it), list items by number. The notation glossary is passed to every
+sentence that contains it), list items by number. "We" is only for what the lecturer adds: the
+author's "you" stays "you". An arrow chain between stages written in words is a flow — "from
+A, through the broker, to B" — never "arrow" or "maps to". The notation glossary is passed to every
 section so readings stay consistent; each entry is `symbol — spoken name (note)` — the
 name is what is said, the note says when a role word ("the cover U") is needed, and
 styled letters are named by role, never "bold x". Bump `PROMPT_VERSION` when a change
@@ -169,8 +171,10 @@ to 0.1 s, then pieces are joined with 0.6 s of silence between paragraphs (0.3 s
 split paragraph) and 1.2 s between sections. Offsets therefore come from sample counts and
 are exact. The page is loudness-normalised in two passes (`loudnorm`, −16 LUFS, −1.5 dBTP,
 linear gain so timing is untouched) and encoded once. Result labels are spelled out for
-the engine before synthesis — "Theorem 2.2.3" → "Theorem 2 point 2 point 3" — so it can
-never say "two two three".
+the engine before synthesis — "Theorem 2.2.3" → "Theorem 2 point 2 point 3", and a section
+number that opens a line, "1.1.1 Traders." → "1 point 1 point 1 Traders." — so it can never
+say "two two three". The audio key is the script as written, so a change to this spelling
+never re-synthesises existing recordings.
 
 **Chapters** are every section except transitional `prose`, which folds into the chapter
 before it (the manifest still lists prose sections with their own offsets). The voice
