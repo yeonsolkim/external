@@ -2,7 +2,7 @@
   "url": "/2026/06/21/3.-Linear-Combinations-and-Spans.html",
   "title": "1.3 Linear Combinations and Spans",
   "lang": "en",
-  "hash": "9724670febbd83a14101d5f0685b9072abb2b001cd754e5f20c9309f1ddcad9a",
+  "hash": "fcac63e345b929a6fa351e49eb17352016b304b2b56449021dd51aef27c74122",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
@@ -234,13 +234,26 @@
       "title": "Theorem 1.3.11",
       "kind": "theorem",
       "level": 3,
-      "source": "955d92e3f9893c49b0443474510c91011f8547093a46fee3f7f02f853bc85903",
+      "source": "597603ee3d784e04ecacfc28ae8329ab6ae372b09c96fca4fdc4882767100fa7",
       "skip": null,
       "file": "theorem-1-3-11.md",
       "current": true,
       "edited": false,
-      "words": 60,
-      "math": 5
+      "words": 63,
+      "math": 6
+    },
+    {
+      "id": "proof-theorem-1-3-11",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "source": "22b5626c83a42d2daff8737f484c1da2b9a1206f17305ed2ee29cd6cec2f2ae7",
+      "skip": null,
+      "file": "proof-theorem-1-3-11.md",
+      "current": true,
+      "edited": false,
+      "words": 183,
+      "math": 20
     },
     {
       "id": "theorem-1-3-12",

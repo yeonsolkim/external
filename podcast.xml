@@ -116,8 +116,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/06/21/3.-Linear-Combinations-and-Spans.html</guid>
 <pubDate>Sun, 21 Jun 2026 15:00:00 +0000</pubDate>
 <description>Definitions of linear combinations and spans. We begin with the vectors that can be built from a given set of vectors by addition and scalar multiplication. Read the page at https://yeonsolkim.com/2026/06/21/3.-Linear-Combinations-and-Spans.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/06/21/3.-Linear-Combinations-and-Spans.mp3" length="11989974" type="audio/mpeg"/>
-<itunes:duration>0:12:29</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/06/21/3.-Linear-Combinations-and-Spans.mp3" length="12958803" type="audio/mpeg"/>
+<itunes:duration>0:13:30</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/06/21/3.-Linear-Combinations-and-Spans.chapters.json" type="application/json+chapters"/>
 </item>
@@ -127,8 +127,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</guid>
 <pubDate>Thu, 18 Jun 2026 15:00:00 +0000</pubDate>
 <description>Within a vector space, we often focus on elements that satisfy a particular condition. The important question is whether the condition survives the operations of the larger space: do addition and scalar multiplication keep us among elements satisfying that condition? If they do, and the zero vector also satisfies the condition, the collection forms a vector space on its own. Such a collection is called a subspace. Read the page at https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.mp3" length="21802132" type="audio/mpeg"/>
-<itunes:duration>0:22:42</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.mp3" length="20690778" type="audio/mpeg"/>
+<itunes:duration>0:21:33</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.chapters.json" type="application/json+chapters"/>
 </item>
