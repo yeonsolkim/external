@@ -10,7 +10,18 @@
 <itunes:explicit>false</itunes:explicit>
 <itunes:type>episodic</itunes:type>
 <itunes:category text="Science"/>
-<lastBuildDate>Sat, 03 Oct 2026 00:00:00 +0000</lastBuildDate>
+<lastBuildDate>Tue, 06 Oct 2026 00:00:00 +0000</lastBuildDate>
+<item>
+<title>1.1 The Trading Industry</title>
+<link>https://yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.html</link>
+<guid isPermaLink="true">https://yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.html</guid>
+<pubDate>Sun, 04 Oct 2026 15:00:00 +0000</pubDate>
+<description>1.1.1 Traders Traders are people who arrange trades for themselves, have others arrange trades on their behalf, or arrange trades for others. Read the page at https://yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.html</description>
+<enclosure url="https://audio.yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.mp3" length="7483521" type="audio/mpeg"/>
+<itunes:duration>0:07:48</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.chapters.json" type="application/json+chapters"/>
+</item>
 <item>
 <title>3.4 Limit Superior and Limit Inferior</title>
 <link>https://yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html</link>
@@ -27,9 +38,9 @@
 <link>https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</link>
 <guid isPermaLink="true">https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</guid>
 <pubDate>Wed, 09 Sep 2026 15:00:00 +0000</pubDate>
-<description>Convergence describes the asymptotic behavior of a sequence by relating its terms to a point of the ambient space. This raises a natural question. How much of this asymptotic behavior can be recognized from the terms of the sequence themselves, without first specifying or establishing the existence of such a point? The concept of Cauchyness isolates precisely this internal aspect of convergence. Instead of comparing the terms x_n with a separate point x, it compares sufficiently late terms with one another and asks whether they eventually become arbitrarily close. Read the page at https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.mp3" length="9070765" type="audio/mpeg"/>
-<itunes:duration>0:09:27</itunes:duration>
+<description>Convergence describes the asymptotic behavior of a sequence by relating its terms to a point of the ambient space. This raises a natural question. How much of this asymptotic behavior can be recognized from the terms of the sequence themselves, without first specifying or establishing the existence of such a point? The concept of Cauchyness1 isolates precisely this internal aspect of convergence. Instead of comparing the terms x_n with a separate point x, it compares sufficiently late terms with one another and asks whether they eventually become arbitrarily close. In the term Cauchyness, “Cauchy” refers to the French mathematician Augustin-Louis Cauchy (1789–1857). He was one of the major figures in the development of rigorous mathematical analysis, making fundamental contributions to limits, continuity, infinite series, and differential equations. In mathematical English, his surname is usually pronounced /ˈkoʊʃi/. ↩ Read the page at https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</description>
+<enclosure url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.mp3" length="9278491" type="audio/mpeg"/>
+<itunes:duration>0:09:40</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.chapters.json" type="application/json+chapters"/>
 </item>
@@ -61,8 +72,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</guid>
 <pubDate>Mon, 31 Aug 2026 15:00:00 +0000</pubDate>
 <description>We now use the metric structure to describe the asymptotic behavior of an ordered family of points. To say that a sequence (x_n) of points in M converges to x means that its terms eventually lie as close to x as we wish. Read the page at https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.mp3" length="20935552" type="audio/mpeg"/>
-<itunes:duration>0:21:48</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.mp3" length="20952688" type="audio/mpeg"/>
+<itunes:duration>0:21:49</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.chapters.json" type="application/json+chapters"/>
 </item>
@@ -83,8 +94,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html</guid>
 <pubDate>Thu, 30 Jul 2026 15:00:00 +0000</pubDate>
 <description>We now consider how a collection of open sets can cover a set A as a whole. Such a collection may contain infinitely many sets, and this raises a natural question. Can finitely many members of the collection already cover A? Compactness formalizes the sets for which the answer is always yes. Read the page at https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.mp3" length="20087056" type="audio/mpeg"/>
-<itunes:duration>0:20:55</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.mp3" length="20102521" type="audio/mpeg"/>
+<itunes:duration>0:20:56</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.chapters.json" type="application/json+chapters"/>
 </item>
@@ -105,8 +116,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</guid>
 <pubDate>Thu, 18 Jun 2026 15:00:00 +0000</pubDate>
 <description>Within a vector space, we often focus on elements that satisfy a particular condition. The important question is whether the condition survives the operations of the larger space: do addition and scalar multiplication keep us among elements satisfying that condition? If they do, and the zero vector also satisfies the condition, the collection forms a vector space on its own. Such a collection is called a subspace. Read the page at https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.mp3" length="22181991" type="audio/mpeg"/>
-<itunes:duration>0:23:06</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.mp3" length="21802132" type="audio/mpeg"/>
+<itunes:duration>0:22:42</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.chapters.json" type="application/json+chapters"/>
 </item>

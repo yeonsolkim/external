@@ -2,11 +2,11 @@
   "url": "/2026/09/09/3.-Cauchy-Sequences.html",
   "title": "3.3 Cauchy Sequences",
   "lang": "en",
-  "hash": "d034b8b5406fd8d05741435dc01c2b29bf8dfc03edfb770f6ef38b1664783002",
+  "hash": "77a93fcb1e458b214ae8c3dc64a1e6921dc4cd503a86f1e267e52e93f6951862",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-09-30",
+  "updated": "2026-10-06",
   "sections": [
     {
       "id": "introduction",
@@ -143,12 +143,12 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "source": "327c97cda5a9f163a5cae9804584a2d2742f57df87bf4bbf35353b6fa72aa110",
+      "source": "3497431e543fc0f86a9ee845395812a3d525c017cdcd3001eb7db951bd5cd2f0",
       "skip": null,
       "file": "proof-theorem-3-3-5.md",
       "current": true,
       "edited": false,
-      "words": 272,
+      "words": 268,
       "math": 29
     },
     {

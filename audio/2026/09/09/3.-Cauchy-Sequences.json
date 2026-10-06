@@ -2,17 +2,17 @@
   "url": "/2026/09/09/3.-Cauchy-Sequences.html",
   "title": "3.3 Cauchy Sequences",
   "lang": "en",
-  "description": "Convergence describes the asymptotic behavior of a sequence by relating its terms to a point of the ambient space. This raises a natural question. How much of this asymptotic behavior can be recognized from the terms of the sequence themselves, without first specifying or establishing the existence of such a point? The concept of Cauchyness isolates precisely this internal aspect of convergence. Instead of comparing the terms $x_n$ with a separate point $x$, it compares sufficiently late terms with one another and asks whether they eventually become arbitrarily close.",
+  "description": "Convergence describes the asymptotic behavior of a sequence by relating its terms to a point of the ambient space. This raises a natural question. How much of this asymptotic behavior can be recognized from the terms of the sequence themselves, without first specifying or establishing the existence of such a point? The concept of Cauchyness1 isolates precisely this internal aspect of convergence. Instead of comparing the terms $x_n$ with a separate point $x$, it compares sufficiently late terms with one another and asks whether they eventually become arbitrarily close. In the term Cauchyness, “Cauchy” refers to the French mathematician Augustin-Louis Cauchy (1789–1857). He was one of the major figures in the development of rigorous mathematical analysis, making fundamental contributions to limits, continuity, infinite series, and differential equations. In mathematical English, his surname is usually pronounced /ˈkoʊʃi/. ↩",
   "published_at": "2026-09-09T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/38c2f0bd69ce15fa7e29b16c800345f9119c8ed4e708012f6bc061e4ba000ffe.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/d648e0714bafb4f5e580d6b99280d7b8446f486cfb8e390d687b97a2d7cbf149.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.chapters.json",
-  "duration": 566.82,
-  "bytes": 9070765,
+  "duration": 579.792,
+  "bytes": 9278491,
   "voice": "cedar",
-  "page_key": "38c2f0bd69ce15fa7e29b16c800345f9119c8ed4e708012f6bc061e4ba000ffe",
-  "skeleton_hash": "d034b8b5406fd8d05741435dc01c2b29bf8dfc03edfb770f6ef38b1664783002",
-  "generated": "2026-09-30",
+  "page_key": "d648e0714bafb4f5e580d6b99280d7b8446f486cfb8e390d687b97a2d7cbf149",
+  "skeleton_hash": "77a93fcb1e458b214ae8c3dc64a1e6921dc4cd503a86f1e267e52e93f6951862",
+  "generated": "2026-10-06",
   "podcast": true,
   "sections": [
     {
@@ -141,9 +141,9 @@
       "kind": "proof",
       "level": 2,
       "start": 334.522,
-      "duration": 107.545,
-      "source": "327c97cda5a9f163a5cae9804584a2d2742f57df87bf4bbf35353b6fa72aa110",
-      "audio": "3a31cb8d4cc907f130fe064d57a5b5cc44519933ef32d02bc1387ba6e832ea3f",
+      "duration": 120.517,
+      "source": "3497431e543fc0f86a9ee845395812a3d525c017cdcd3001eb7db951bd5cd2f0",
+      "audio": "e1c205ddc19061c49ee4966bad811278a5386e17858fc41210d62a14dec470d8",
       "parent": null,
       "proves": "theorem-3-3-5"
     },
@@ -152,7 +152,7 @@
       "title": "A Euclidean space … is not compact, so Theorem 3.3.5 cannot…",
       "kind": "prose",
       "level": 2,
-      "start": 443.267,
+      "start": 456.24,
       "duration": 18.45,
       "source": "1260087d57e1adec81c3c0e8cc0387056d88609ad9f2ddd1cc59704e26f81661",
       "audio": "6c0dccb07b7534f0954f0d3f322dec2ced045aae24d6036cc48bd0df309b304d",
@@ -164,7 +164,7 @@
       "title": "Corollary 3.3.6",
       "kind": "corollary",
       "level": 2,
-      "start": 462.917,
+      "start": 475.89,
       "duration": 11.15,
       "source": "6c1166b76a0534dcc01d84c0c875199342dc366e67bc97921d6ee7fb8fa08a91",
       "audio": "6d0f6de862074e821c03750ae88ccec7a8e9a859bdb6da73323adeb4980e3daa",
@@ -176,7 +176,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 475.267,
+      "start": 488.24,
       "duration": 48.952,
       "source": "1434250e4908f9c19ce53f220f846022be1ad0123285b212ebfe1f8ab3b7b8a5",
       "audio": "bef7ed0ed8c2dab00c8659b01d459aaa3d160be3e597205548a46e53689a4227",
@@ -188,7 +188,7 @@
       "title": "The argument in … reveals a distinction that is more…",
       "kind": "prose",
       "level": 2,
-      "start": 525.419,
+      "start": 538.392,
       "duration": 29.0,
       "source": "d989ab9e981e0d589735bbf3066379e91ae7b299e8333ec43544157a94a1b9a9",
       "audio": "3104cc95c19627ca26a9907267cdee7993445d312103f2d6b6589a9b37b11f5e",
@@ -200,7 +200,7 @@
       "title": "Definition 3.3.7",
       "kind": "definition",
       "level": 2,
-      "start": 555.62,
+      "start": 568.592,
       "duration": 11.2,
       "source": "26b1f23413b9a22cb98eda2d1e418585e17ca2ab3433412f9401d9585a1a2097",
       "audio": "e4144d326fc54a41e2a4e75276c1f0f66b3c4d15eace27ada02c61f066c0f9a1",
@@ -243,19 +243,19 @@
       "id": "theorem-3-3-5",
       "title": "Theorem 3.3.5",
       "start": 314.382,
-      "end": 462.917
+      "end": 475.89
     },
     {
       "id": "corollary-3-3-6",
       "title": "Corollary 3.3.6",
-      "start": 462.917,
-      "end": 555.62
+      "start": 475.89,
+      "end": 568.592
     },
     {
       "id": "definition-3-3-7",
       "title": "Definition 3.3.7",
-      "start": 555.62,
-      "end": 566.82
+      "start": 568.592,
+      "end": 579.792
     }
   ]
 }

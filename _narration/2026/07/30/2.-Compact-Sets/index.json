@@ -2,11 +2,11 @@
   "url": "/2026/07/30/2.-Compact-Sets.html",
   "title": "2.2 Compact Sets",
   "lang": "en",
-  "hash": "6a459f2cddc9dafde6e7a0aee2268b65e19f0b962351f2331b0953744e39219d",
+  "hash": "ddb6c6e834939346591a97d153228d67c85ab7a258ca3cdca808652f5dca2789",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-09-29",
+  "updated": "2026-10-06",
   "sections": [
     {
       "id": "introduction",
@@ -208,12 +208,12 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "source": "9ac1f4cf721cb237b3e6463ee247d8ca1ddb025e86a369be8239218f4ae95be3",
+      "source": "b0a2e506cec5e0c0e76d5ba56147f2b5738f7ea8d0405aae523d57aa01924e4c",
       "skip": null,
       "file": "proof-corollary-2-2-8.md",
       "current": true,
       "edited": false,
-      "words": 62,
+      "words": 60,
       "math": 6
     },
     {
