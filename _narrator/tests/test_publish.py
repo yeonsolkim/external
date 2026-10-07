@@ -67,7 +67,7 @@ class Publishing(unittest.TestCase):
 
     def fake_page(self):
         """A page 'assembled' earlier: cache metas + mp3 + manifest with the right page_key."""
-        keys = [voice.section_key("Script for %s." % s.id, "cedar", "gpt-4o-mini-tts") for s in self.skel.sections]
+        keys = [voice.section_key("Script for %s." % s.id, "cedar", voice.DEFAULT_TTS_MODEL) for s in self.skel.sections]
         cache = os.path.join(self.audio, "cache")
         os.makedirs(cache)
         for k in keys:
@@ -80,7 +80,7 @@ class Publishing(unittest.TestCase):
         with open(mp3, "wb") as f:
             f.write(b"mp3bytes")
         manifest = {"url": self.skel.url, "title": "P", "lang": "en", "page_key": voice.page_key(keys),
-                    "audio": "p.mp3", "duration": 2.0, "bytes": 8, "voice": "cedar", "model": "gpt-4o-mini-tts",
+                    "audio": "p.mp3", "duration": 2.0, "bytes": 8, "voice": "cedar", "model": voice.DEFAULT_TTS_MODEL,
                     "audio_version": voice.AUDIO_VERSION, "skeleton_hash": self.skel.hash,
                     "sections": [{"id": s.id, "title": s.title, "kind": s.kind, "level": 2, "start": 0, "duration": 1}
                                  for s in self.skel.sections],
@@ -110,45 +110,35 @@ class Publishing(unittest.TestCase):
         short = build(HTML.replace("Intro words here. " * 12, "Hi.").replace("more words. " * 10, "ok."), "p.html")
         self.assertEqual(self.pub.plan(short)["state"], "skip")
 
-    def legacy_published(self):
-        """The page as gpt-4o-mini-tts recorded it: in the bucket and in the committed manifest."""
-        keys = [voice.section_key("Script for %s." % s.id, "cedar", voice.LEGACY_TTS_MODEL)
-                for s in self.skel.sections]
-        page = voice.page_key(keys)
-        self.store.objects["o/%s.json" % page] = b"{}"
-        path = os.path.join(self.source, "audio", "2026", "01", "02", "p.json")
-        os.makedirs(os.path.dirname(path))
-        with open(path, "w") as f:
-            json.dump({"url": self.skel.url, "page_key": page}, f)
-        return page
-
     def counting_heads(self):
         heads = []
         real = self.store.head
         self.store.head = lambda key: heads.append(key) or real(key)
         return heads
 
-    def test_legacy_recording_stays_published_for_one_head(self):
+    def test_a_legacy_recording_is_recorded_again_with_the_current_engine(self):
+        """gpt-4o-mini-tts recorded the page, in the bucket and in the committed manifest, from
+        the scripts as they are now: every section is recorded again, the old page never asked for."""
         self.scripts()
-        page = self.legacy_published()
+        keys = [voice.section_key("Script for %s." % s.id, "cedar", voice.LEGACY_TTS_MODEL)
+                for s in self.skel.sections]
+        legacy = voice.page_key(keys)
+        self.store.objects["o/%s.json" % legacy] = b"{}"
+        for k in keys:
+            self.store.objects["cache/%s.json" % k] = b"{}"
+        path = os.path.join(self.source, "audio", "2026", "01", "02", "p.json")
+        os.makedirs(os.path.dirname(path))
+        with open(path, "w") as f:
+            json.dump({"url": self.skel.url, "page_key": legacy}, f)
         heads = self.counting_heads()
         p = self.pub.plan(self.skel)
-        self.assertEqual((p["state"], p["model"], p["page_key"]), ("published", voice.LEGACY_TTS_MODEL, page))
-        self.assertEqual(heads, ["o/%s.json" % page])
-
-    def test_a_changed_page_is_recorded_again_with_the_current_engine(self):
-        self.scripts()
-        self.legacy_published()
-        first = self.skel.sections[0]
-        write_md(os.path.join(self.narration, "2026", "01", "02", "p", first.id + ".md"),
-                 {"section": first.id, "source": first.hash, "body": "x"}, "An edited script.")
-        p = self.pub.plan(self.skel)
         self.assertEqual((p["state"], p["model"]), ("synthesise", voice.DEFAULT_TTS_MODEL))
-        self.assertEqual(p["to_synth"], len(self.skel.sections))      # every section: no mixed voices
+        self.assertEqual(p["to_synth"], len(self.skel.sections))
         self.assertEqual(p["keys"][1], voice.section_key("Script for %s." % self.skel.sections[1].id,
                                                          "cedar", voice.DEFAULT_TTS_MODEL))
+        self.assertNotIn("o/%s.json" % legacy, heads)
 
-    def test_current_engine_page_is_asked_first(self):
+    def test_a_current_recording_stays_published_for_one_head(self):
         self.scripts()
         p = self.pub.plan(self.skel)
         self.store.objects["o/%s.json" % p["page_key"]] = b"{}"
@@ -267,7 +257,7 @@ class Parallel(unittest.TestCase):
                 keys = []
                 for s in sk.sections:
                     write_md(os.path.join(d, s.id + ".md"), {"section": s.id, "source": s.hash, "body": "x"}, "Script %s." % s.id)
-                    keys.append(voice.section_key("Script %s." % s.id, "cedar", "gpt-4o-mini-tts"))
+                    keys.append(voice.section_key("Script %s." % s.id, "cedar", voice.DEFAULT_TTS_MODEL))
                 cache = os.path.join(root, "_audio", "cache"); os.makedirs(cache, exist_ok=True)
                 for k in keys:
                     with open(os.path.join(cache, k + ".flac"), "wb") as f:
@@ -279,7 +269,7 @@ class Parallel(unittest.TestCase):
                     f.write(b"mp3")
                 with open(js, "w") as f:
                     json.dump({"url": sk.url, "title": "P", "lang": "en", "page_key": voice.page_key(keys), "audio": "p.mp3",
-                               "duration": 2.0, "bytes": 3, "voice": "cedar", "model": "gpt-4o-mini-tts", "audio_version": voice.AUDIO_VERSION,
+                               "duration": 2.0, "bytes": 3, "voice": "cedar", "model": voice.DEFAULT_TTS_MODEL, "audio_version": voice.AUDIO_VERSION,
                                "skeleton_hash": sk.hash, "sections": [], "chapters": []}, f)
             with ThreadPoolExecutor(max_workers=2) as pool:
                 results = list(pool.map(lambda sk: pub.publish_post(sk), skels))

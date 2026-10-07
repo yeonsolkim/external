@@ -161,12 +161,18 @@ such check, and in testing it sometimes dropped a paragraph's last sentence.) On
 per paragraph, so no call sees another's conversation. `READER` and the reasoning effort are
 part of the cache key too. `--model gpt-4o-mini-tts` still works until the shutdown.
 
-**What gpt-4o-mini-tts recorded stays published.** Its key material is frozen (a test pins
-it), and `publish` serves a page with the engine that recorded it for as long as the page's
-scripts are the ones it read — the committed `audio/<url>.json` says which page key to ask
-the bucket for first, so a no-op run is still one HEAD per post. When any script of such a
-page changes, the whole page is recorded again with the current engine, so one episode never
-mixes two voices.
+**Rate limit.** The organisation may spend 40,000 tokens a minute on these models. Two posts
+at four sections each — eight calls at once — ran into it (a CI run failed on 2026-10-06);
+one post's four calls never have. So at most four calls run at once (`MAX_SESSIONS`), however
+many posts and workers are in flight, and a call that is rate limited anyway waits — 5 s,
+doubling up to a minute, jittered — and tries again, up to eight times. A wait is not one of
+the three reading attempts.
+
+**What gpt-4o-mini-tts recorded is recorded again.** The engine is part of every section key,
+so `publish` looks for a page under its Realtime key only: a page gpt-4o-mini-tts recorded is
+not found there and is recorded again with Realtime, while one Realtime has recorded stays
+published for one HEAD. Until the new recording is uploaded, the committed `audio/<url>.json`
+keeps serving the old one.
 
 **What it writes:**
 
@@ -226,7 +232,8 @@ cache/<section key>.flac + .json         mirror of the section cache
 ```
 
 Posts are processed **two at a time** (`--posts N`) with four sections in flight per post
-(`--workers`), so one post's upload overlaps another's synthesis; the section cache is
+(`--workers`), so one post's upload overlaps another's synthesis — their Realtime calls share
+four sessions (stage 3, rate limit); the section cache is
 written atomically and a key is synthesised at most once even when two posts race for it.
 Output lines carry the post's slug when more than one post is being handled.
 

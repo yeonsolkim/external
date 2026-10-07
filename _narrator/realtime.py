@@ -7,13 +7,20 @@ paragraph, it may paraphrase it or answer it. So every call compares the model's
 transcript of what it said with the text, word by word (`similarity`), synthesises again
 when they differ, and refuses — rather than return audio that is not the script — after
 ATTEMPTS tries. One WebSocket per call, so no call sees another's conversation.
+
+The organisation's limit on these models is 40,000 tokens per minute. Two posts at four
+sections each — eight calls at once — ran into it (2026-10-06); one post's four calls never
+have. So at most MAX_SESSIONS calls run at once, however many posts are in flight, and a call
+that is rate limited anyway waits and tries again; a wait is not a reading attempt.
 """
 from __future__ import annotations
 
 import base64
 import difflib
 import json
+import random
 import re
+import threading
 import time
 
 from . import tts
@@ -30,7 +37,16 @@ READER = (
 REASONING = "minimal"
 VERBATIM_RATIO = 0.97      # word-level agreement between the script and what was said
 ATTEMPTS = 3
+MAX_SESSIONS = 4           # calls at once, across every post being published
+RATE_LIMIT_WAIT = 5.0      # seconds before the first retry after a rate limit; doubles, up to a minute
+RATE_LIMIT_RETRIES = 8
 CHECKS: list = []          # one record per call: chars, ratio, attempts, transcript, usage
+
+_sessions = threading.BoundedSemaphore(MAX_SESSIONS)
+
+
+class RateLimited(tts.TTSError):
+    """The organisation's token budget is spent for the moment; waiting is the fix."""
 
 
 def signature() -> str:
@@ -91,7 +107,7 @@ def _once(text: str, voice: str, model: str, instructions: str, timeout: float) 
                 raise tts.TTSError("%s: connection closed before the response finished" % model)
             kind = event.get("type", "")
             if kind == "error":
-                raise tts.TTSError("%s: %s" % (model, event.get("error", {}).get("message", event)))
+                raise _failure(model, event)
             if kind == "session.updated" and not sent:
                 ws.send_json({"type": "conversation.item.create", "item": {
                     "type": "message", "role": "user", "content": [{"type": "input_text", "text": text}]}})
@@ -113,14 +129,33 @@ def _once(text: str, voice: str, model: str, instructions: str, timeout: float) 
     return bytes(pcm), "".join(said), usage
 
 
+def _failure(model: str, event: dict) -> tts.TTSError:
+    """The exception for an `error` event: a rate limit is worth waiting out, anything else is final."""
+    error = event.get("error", {})
+    message = "%s: %s" % (model, error.get("message", event))
+    if error.get("code") == "rate_limit_exceeded" or "Rate limit reached" in message:
+        return RateLimited(message)
+    return tts.TTSError(message)
+
+
 def synth(text: str, voice: str, model: str, instructions: str = "", timeout: float = 180) -> bytes:
     best = None
     attempt = 0
     errors = 0
     delay = 2.0
+    limited = 0
     while attempt < ATTEMPTS:
         try:
-            pcm, said, usage = _once(text, voice, model, instructions, timeout)
+            with _sessions:
+                pcm, said, usage = _once(text, voice, model, instructions, timeout)
+        except RateLimited:
+            limited += 1
+            if limited > RATE_LIMIT_RETRIES:
+                raise
+            # Jittered, so calls limited together do not all come back together.
+            wait = min(RATE_LIMIT_WAIT * 2 ** (limited - 1), 60.0)
+            time.sleep(wait * random.uniform(0.5, 1.5))
+            continue
         except (WebSocketError, OSError) as error:
             errors += 1
             if errors > 5:

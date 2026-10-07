@@ -41,13 +41,6 @@ class ScriptsFor(unittest.TestCase):
 
 
 class Text(unittest.TestCase):
-    def test_legacy_keys_are_frozen(self):
-        # Recordings made with gpt-4o-mini-tts stay published only while their keys come out
-        # the same; these values were computed before the Realtime engine existed.
-        key = voice.section_key("Hello there.", "cedar", voice.LEGACY_TTS_MODEL)
-        self.assertEqual(key, "25efd3f4a739fa313c3827321b95da00172dc3fec3e2a134bb8de2aaa660a6e0")
-        self.assertEqual(voice.page_key([key]), "aa883337cf7fbe104c6ca0097ddab2a5179221bb44144f28f2debcb1016be639")
-
     def test_realtime_key_covers_its_direction(self):
         model = voice.DEFAULT_TTS_MODEL
         key = voice.section_key("Hello there.", "cedar", model)

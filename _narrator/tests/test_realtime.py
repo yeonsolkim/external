@@ -1,8 +1,13 @@
-"""The Realtime TTS path without the network: WebSocket framing and the verbatim check."""
+"""The Realtime TTS path without the network: WebSocket framing, the verbatim check and the
+rate limit."""
 import struct
+import threading
+import time
 import unittest
+from concurrent.futures import ThreadPoolExecutor
+from unittest import mock
 
-from _narrator import realtime, wsclient
+from _narrator import realtime, tts, wsclient
 
 
 class FakeSocket:
@@ -70,6 +75,71 @@ class Verbatim(unittest.TestCase):
                         realtime.VERBATIM_RATIO)
         self.assertLess(realtime.similarity(script, script + " Would you like to know more about exchanges?"),
                         realtime.VERBATIM_RATIO)
+
+
+LIMITED = {"type": "error", "error": {"message": (
+    "Rate limit reached for gpt-realtime-2.1-mini (for limit gpt-4o-mini-realtime) in organization "
+    "org-x on tokens per min (TPM): Limit 40000, Used 40000, Requested 1. Please try again in 1ms.")}}
+
+
+class RateLimit(unittest.TestCase):
+    def synth(self, once):
+        """synth() over a fake call, with the waits recorded instead of slept."""
+        with mock.patch.object(realtime, "_once", once), mock.patch.object(realtime, "time") as clock, \
+                mock.patch.object(realtime, "random") as rnd:
+            rnd.uniform.return_value = 1.0
+            try:
+                return realtime.synth("Read this.", "cedar", "gpt-realtime-2.1-mini")
+            finally:
+                self.waits = [c.args[0] for c in clock.sleep.call_args_list]
+
+    def test_a_rate_limit_is_told_from_other_errors(self):
+        self.assertIsInstance(realtime._failure("m", LIMITED), realtime.RateLimited)
+        coded = {"type": "error", "error": {"code": "rate_limit_exceeded", "message": "Slow down."}}
+        self.assertIsInstance(realtime._failure("m", coded), realtime.RateLimited)
+        other = realtime._failure("m", {"type": "error", "error": {"message": "Invalid voice."}})
+        self.assertIsInstance(other, tts.TTSError)
+        self.assertNotIsInstance(other, realtime.RateLimited)
+
+    def test_a_rate_limit_is_waited_out_and_is_not_a_reading_attempt(self):
+        calls = []
+
+        def once(text, *_):
+            calls.append(text)
+            if len(calls) <= realtime.ATTEMPTS:
+                raise realtime._failure("m", LIMITED)
+            return b"\x00\x01" * 8, text, {}
+
+        self.assertEqual(self.synth(once), b"\x00\x01" * 8)
+        self.assertEqual(len(calls), realtime.ATTEMPTS + 1)
+        self.assertEqual(self.waits, [5.0, 10.0, 20.0])
+
+    def test_a_rate_limit_that_does_not_lift_is_an_error(self):
+        def once(text, *_):
+            raise realtime._failure("m", LIMITED)
+
+        with self.assertRaises(realtime.RateLimited):
+            self.synth(once)
+        self.assertEqual(len(self.waits), realtime.RATE_LIMIT_RETRIES)
+        self.assertEqual(max(self.waits), 60.0)
+
+    def test_at_most_max_sessions_calls_run_at_once(self):
+        lock, running, peak = threading.Lock(), [0], [0]
+
+        def once(text, *_):
+            with lock:
+                running[0] += 1
+                peak[0] = max(peak[0], running[0])
+            time.sleep(0.02)
+            with lock:
+                running[0] -= 1
+            return b"\x00\x01", text, {}
+
+        with mock.patch.object(realtime, "_once", once):
+            with ThreadPoolExecutor(max_workers=2 * realtime.MAX_SESSIONS) as pool:
+                list(pool.map(lambda i: realtime.synth("Read %d." % i, "cedar", "m"),
+                              range(4 * realtime.MAX_SESSIONS)))
+        self.assertLessEqual(peak[0], realtime.MAX_SESSIONS)
 
 
 if __name__ == "__main__":

@@ -162,61 +162,32 @@ class Publisher:
                        "edited by hand; for an edited one, merge <id>.new.md or run "
                        "`script <post> --accept <id>`" % ids)
             return {"state": "scripts", "why": why}
-        candidates = self.engines(skel, scripts)
+        # The engine is part of every section key, so a page another engine recorded
+        # (gpt-4o-mini-tts) is not found below and is recorded again with this one.
+        keys = [stage3.section_key(body, self.voice, self.model) for _, body in scripts]
+        page = stage3.page_key(keys)
         # One HEAD decides the common case. A page the bucket already holds needs nothing
         # else — probing its sections (one HEAD each) is what made a no-op CI run take minutes.
-        # The engine that recorded the page is asked first, so that stays one HEAD.
-        for model, keys, page in candidates:
-            if not (self.store and self.store.head("o/%s.json" % page)):
-                continue
+        if self.store and self.store.head("o/%s.json" % page):
             state = "manifest" if refresh and self.manifest_is_stale(skel, scripts) else "published"
-            return {"state": state, "model": model, "page_key": page, "scripts": scripts, "keys": keys,
+            return {"state": state, "model": self.model, "page_key": page, "scripts": scripts, "keys": keys,
                     "local": None, "remote": True, "to_fetch": 0, "to_synth": 0, "minutes": 0.0}
         local_mp3, local_json = stage3.page_paths(skel, self.audio_root)
         if os.path.exists(local_json) and os.path.exists(local_mp3):
             with open(local_json, encoding="utf-8") as handle:
                 local = json.load(handle)
-            for model, keys, page in candidates:
-                if local.get("page_key") == page:
-                    return {"state": "assembled", "model": model, "page_key": page, "scripts": scripts,
-                            "keys": keys, "local": local, "remote": False, "to_fetch": 0, "to_synth": 0,
-                            "minutes": 0.0}
-        # New or changed: the whole page is recorded with the current engine, never a mix.
-        model, keys, page = next(c for c in candidates if c[0] == self.model)
+            if local.get("page_key") == page:
+                return {"state": "assembled", "model": self.model, "page_key": page, "scripts": scripts,
+                        "keys": keys, "local": local, "remote": False, "to_fetch": 0, "to_synth": 0,
+                        "minutes": 0.0}
         missing = [(s, b, k) for (s, b), k in zip(scripts, keys) if stage3.cached_section(self.cache_dir, k) is None]
         to_synth = missing
         if self.store and missing:
             to_synth = [(s, b, k) for s, b, k in missing if not self.store.head("cache/%s.json" % k)]
         chars = sum(len(b) for _, b, _ in to_synth)
-        return {"state": "assemble" if not to_synth else "synthesise", "model": model, "page_key": page,
+        return {"state": "assemble" if not to_synth else "synthesise", "model": self.model, "page_key": page,
                 "scripts": scripts, "keys": keys, "local": None, "remote": False,
                 "to_fetch": len(missing) - len(to_synth), "to_synth": len(to_synth), "minutes": chars / 900.0}
-
-    def published_page_key(self, skel: Skeleton) -> Optional[str]:
-        """The page key in the committed site manifest, i.e. the recording the site serves now."""
-        rel = os.path.join("audio", *(url_key_from(skel.url) + ".json").split("/"))
-        path = os.path.join(self.source_dir or self.site_dir, rel)
-        if not os.path.exists(path):
-            return None
-        with open(path, encoding="utf-8") as handle:
-            return json.load(handle).get("page_key")
-
-    def engines(self, skel: Skeleton, scripts: list) -> list:
-        """[(model, section keys, page key)] this page can be served with, the likely one first.
-
-        gpt-4o-mini-tts is retired (2027-01-06), but what it recorded stays published: while a
-        page's scripts are the ones it read, its page key is the same and nothing is redone.
-        Once a script changes, the page is recorded again in full with the current engine.
-        """
-        def keyed(model: str) -> tuple:
-            keys = [stage3.section_key(body, self.voice, model) for _, body in scripts]
-            return model, keys, stage3.page_key(keys)
-
-        current = keyed(self.model)
-        if self.model == stage3.LEGACY_TTS_MODEL:
-            return [current]
-        legacy = keyed(stage3.LEGACY_TTS_MODEL)
-        return [legacy, current] if self.published_page_key(skel) == legacy[2] else [current, legacy]
 
     def publish_post(self, skel: Skeleton, max_new_minutes: float = 30.0, dry_run: bool = False,
                      refresh: bool = False, log=None) -> Optional[dict]:

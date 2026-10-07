@@ -35,8 +35,9 @@ from .script import _sha, post_dir, read_md
 from .skeleton import Skeleton
 
 AUDIO_VERSION = 1
-# gpt-4o-mini-tts is shut down on 2027-01-06. Pages it recorded stay published while their
-# scripts are unchanged (publish.Publisher.engines); everything new is recorded with Realtime.
+# gpt-4o-mini-tts is shut down on 2027-01-06 (`--model gpt-4o-mini-tts` works until then). What
+# it recorded is recorded again with Realtime: the engine is part of every key, so `publish`
+# does not find those pages under the Realtime keys.
 LEGACY_TTS_MODEL = "gpt-4o-mini-tts"
 DEFAULT_TTS_MODEL = "gpt-realtime-2.1-mini"
 DEFAULT_VOICE = "cedar"
@@ -143,8 +144,7 @@ def chunks(body: str) -> list:
 
 
 def section_key(body: str, voice: str, model: str, instructions: Optional[str] = None) -> str:
-    """Identity of a section's recording: everything that shapes the sound. The material of a
-    gpt-4o-mini-tts key is frozen — those recordings stay published after the model is gone."""
+    """Identity of a section's recording: everything that shapes the sound, the engine included."""
     if instructions is None:
         instructions = instructions_for(model)
     fields = [str(AUDIO_VERSION), model, voice, instructions]
