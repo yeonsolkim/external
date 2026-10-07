@@ -75,13 +75,20 @@ jobs:
         with:
           python-version: "3.12"
 
+      # Narration never holds back the site: each narration step may fail (continue-on-error),
+      # "Narration — report a failure" turns that into a warning, and the site deploys either way.
+      # A failed step stops only what depends on it — nothing is paid for without passing tests
+      # and ffmpeg.
       - name: Narration — tests
+        id: narration-tests
+        continue-on-error: true
         run: python3 -m unittest discover -s _narrator/tests -t .
 
       # A dry run (a few seconds, one request per published post) decides whether anything
       # needs generating; ffmpeg and the real run happen only then.
       - name: Narration — plan
         id: narration-plan
+        continue-on-error: true
         env:
           HAS_STORE: ${{ secrets.S3_BUCKET }}
           S3_ENDPOINT: ${{ secrets.S3_ENDPOINT }}
@@ -93,7 +100,7 @@ jobs:
           # audio — used when a regeneration is already running somewhere else, so the two
           # do not both generate scripts and pay for the same speech twice.
           MESSAGE: ${{ github.event.head_commit.message }}
-        if: env.HAS_STORE != ''
+        if: env.HAS_STORE != '' && steps.narration-tests.outcome == 'success'
         run: |
           case "$MESSAGE" in
             *"[skip narration]"*)
@@ -110,12 +117,16 @@ jobs:
           fi
 
       - name: Narration — ffmpeg
+        id: narration-ffmpeg
+        continue-on-error: true
         if: steps.narration-plan.outputs.work == 'true'
         run: |
           sudo apt-get update
           sudo apt-get install --yes --no-install-recommends ffmpeg
 
       - name: Narration — publish
+        id: narration-publish
+        continue-on-error: true
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           S3_ENDPOINT: ${{ secrets.S3_ENDPOINT }}
@@ -124,14 +135,16 @@ jobs:
           S3_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
           S3_REGION: auto
           PYTHONUNBUFFERED: "1"
-        if: steps.narration-plan.outputs.work == 'true'
+        if: steps.narration-plan.outputs.work == 'true' && steps.narration-ffmpeg.outcome == 'success'
         # New speech per post is capped; raise it deliberately for a big backfill.
         run: python3 -m _narrator publish _site --max-new-minutes 60
 
       # Also after a failed publish: the scripts it wrote and the posts it finished are kept, so
       # the next run (a push or Run workflow — not Re-run, which checks out the old commit)
-      # carries on instead of paying for them again. The site still deploys only on success.
+      # carries on instead of paying for them again.
       - name: Narration — commit generated scripts
+        id: narration-commit
+        continue-on-error: true
         if: ${{ !cancelled() && steps.narration-plan.outputs.work == 'true' }}
         run: |
           if [ -n "$(git status --porcelain _narration audio podcast.xml)" ]; then
@@ -141,6 +154,16 @@ jobs:
             git commit -m "narration: generated scripts and audio index [skip ci]"
             git push
           fi
+
+      - name: Narration — report a failure
+        if: >-
+          steps.narration-tests.outcome == 'failure' || steps.narration-plan.outcome == 'failure' ||
+          steps.narration-ffmpeg.outcome == 'failure' || steps.narration-publish.outcome == 'failure' ||
+          steps.narration-commit.outcome == 'failure'
+        run: >-
+          echo "::warning title=Narration failed::A narration step failed (see the build job). The
+          site deployed anyway; the posts it did not finish keep their previous audio and are
+          retried on the next run."
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
