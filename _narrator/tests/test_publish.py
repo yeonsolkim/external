@@ -3,8 +3,9 @@ import json
 import os
 import tempfile
 import unittest
+from unittest import mock
 
-from _narrator import feed, publish, siteconfig, voice
+from _narrator import feed, publish, siteconfig, tts, voice
 from _narrator.script import write_md
 from _narrator.skeleton import build
 
@@ -146,6 +147,29 @@ class Publishing(unittest.TestCase):
         p = self.pub.plan(self.skel)
         self.assertEqual((p["state"], p["model"]), ("published", voice.DEFAULT_TTS_MODEL))
         self.assertEqual(len(heads), 1)
+
+    def test_a_failed_reading_keeps_the_sections_already_recorded(self):
+        self.scripts()
+
+        def synth(text, voice, model, instructions="", timeout=0):
+            if "theorem" in text:
+                raise tts.TTSError("not read verbatim after 3 attempts")
+            return b"\x00\x10" * 2400
+
+        def flac(pcm, path):
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            with open(path, "wb") as f:
+                f.write(pcm)
+
+        with mock.patch.object(voice.tts, "synth", synth), mock.patch.object(voice, "encode_flac", flac):
+            with self.assertRaises(tts.TTSError):
+                self.pub.publish_post(self.skel)
+        recorded = voice.section_key("Script for introduction.", "cedar", voice.DEFAULT_TTS_MODEL)
+        failed = voice.section_key("Script for theorem-1.", "cedar", voice.DEFAULT_TTS_MODEL)
+        self.assertIn("cache/%s.flac" % recorded, self.store.objects)
+        self.assertIn("cache/%s.json" % recorded, self.store.objects)
+        self.assertNotIn("cache/%s.json" % failed, self.store.objects)
+        self.assertFalse([k for k in self.store.objects if k.startswith("o/")])    # no page was published
 
     def test_publish_uploads_then_is_free(self):
         self.scripts()

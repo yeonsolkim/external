@@ -79,11 +79,13 @@ def spell(n: int) -> str:
 
 
 def _words(text: str) -> list:
-    """Lower-case words, numbers spelled out and 'point' dropped, so "1 point 1 point 1",
-    "1.1.1" and "one point one point one" compare equal."""
+    """Lower-case words, numbers spelled out and 'point' and 'sub' dropped, so "1 point 1 point 1",
+    "1.1.1" and "one point one point one" compare equal, and so do "x n" and "x sub n": the
+    script says "x n" for x_n, as the lecture prompt asks, and the model voices the subscript
+    anyway — in a short, symbol-dense definition often enough to fail a reading that was fine."""
     text = text.lower().replace("%", " percent ").replace("’", "'")
     text = re.sub(r"\d+", lambda m: " %s " % spell(int(m.group(0))), text)
-    return [w for w in re.findall(r"[a-z]+(?:'[a-z]+)?", text) if w != "point"]
+    return [w for w in re.findall(r"[a-z]+(?:'[a-z]+)?", text) if w not in ("point", "sub")]
 
 
 def _once(text: str, voice: str, model: str, instructions: str, timeout: float) -> tuple:

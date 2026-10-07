@@ -69,6 +69,12 @@ class Verbatim(unittest.TestCase):
         self.assertEqual(realtime.similarity("1 point 1 point 1 Traders.", "1.1.1 traders"), 1.0)
         self.assertEqual(realtime.similarity("sixty percent of 10 thousand", "60% of ten thousand"), 1.0)
 
+    def test_a_voiced_subscript_is_not_a_misreading(self):
+        # The model says "x sub n" where the script, as the lecture prompt asks, says "x n".
+        script = "A sequence x n in R is increasing if x n is at most x sub n plus one."
+        said = "A sequence x sub n in R is increasing if x sub n is at most x sub n plus one."
+        self.assertEqual(realtime.similarity(script, said), 1.0)
+
     def test_an_answer_is_not_a_reading(self):
         script = "Exchanges provide forums where traders meet to arrange trades."
         self.assertLess(realtime.similarity(script, "Sure! Exchanges are places where people trade."),

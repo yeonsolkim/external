@@ -34,6 +34,7 @@ from . import feed as feedmod
 from . import voice as stage3
 from .skeleton import Skeleton
 from .store import Store
+from .tts import TTSError
 
 IMMUTABLE = "public, max-age=31536000, immutable"
 ALIAS = "public, max-age=300"
@@ -238,8 +239,16 @@ class Publisher:
                 manifest = p["local"]
                 metas = [stage3.cached_section(self.cache_dir, k) for k in p["keys"]]
             else:
-                metas = stage3.ensure_sections(p["scripts"], self.cache_dir, self.voice, p["model"],
-                                               workers=self.workers, fetch=self.fetch_section, log=log)
+                try:
+                    metas = stage3.ensure_sections(p["scripts"], self.cache_dir, self.voice, p["model"],
+                                                   workers=self.workers, fetch=self.fetch_section, log=log)
+                except TTSError:
+                    # What was paid for is kept: the sections recorded before the failure go to
+                    # the mirror, so the next run (CI or another machine) fetches them.
+                    done = [stage3.cached_section(self.cache_dir, k) for k in p["keys"]]
+                    if self.mirror_sections([m for m in done if m]):
+                        log("  mirrored the sections recorded before the failure")
+                    raise
                 out_mp3, out_json = stage3.page_paths(skel, self.audio_root)
                 manifest = stage3.assemble_page(skel, p["scripts"], metas, self.cache_dir, out_mp3, out_json,
                                                 self.voice, p["model"], artist=self.cfg.get("author", ""),

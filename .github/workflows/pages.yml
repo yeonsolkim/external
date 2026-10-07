@@ -128,8 +128,11 @@ jobs:
         # New speech per post is capped; raise it deliberately for a big backfill.
         run: python3 -m _narrator publish _site --max-new-minutes 60
 
+      # Also after a failed publish: the scripts it wrote and the posts it finished are kept, so
+      # the next run (a push or Run workflow — not Re-run, which checks out the old commit)
+      # carries on instead of paying for them again. The site still deploys only on success.
       - name: Narration — commit generated scripts
-        if: steps.narration-plan.outputs.work == 'true'
+        if: ${{ !cancelled() && steps.narration-plan.outputs.work == 'true' }}
         run: |
           if [ -n "$(git status --porcelain _narration audio podcast.xml)" ]; then
             git config user.name "github-actions[bot]"

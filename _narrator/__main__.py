@@ -162,7 +162,9 @@ def cmd_sample(args: argparse.Namespace) -> int:
 
 def cmd_publish(args: argparse.Namespace) -> int:
     from . import publish as stage4, script as stage2, siteconfig
+    from .llm import LLMError
     from .store import Store, StoreError
+    from .tts import TTSError
     load_dotenv()
     cfg = siteconfig.load()
     if not cfg["site_url"]:
@@ -186,7 +188,11 @@ def cmd_publish(args: argparse.Namespace) -> int:
             print((prefix + message) if message.startswith("  ") or not prefix else prefix + message)
 
     def one(source: str) -> bool:
-        """Publish one post; returns False on a failure worth reporting."""
+        """Publish one post; returns False on a failure worth reporting.
+
+        A post that fails — a paragraph the engine will not read verbatim, an API that gives
+        up — is reported and left with the audio it had; the other posts go on, and what was
+        generated for them stays (CI commits it even when this step fails)."""
         try:
             skel = build(read_source(source), source)
         except SkeletonError as error:
@@ -195,14 +201,14 @@ def cmd_publish(args: argparse.Namespace) -> int:
         tag = "[%s] " % os.path.basename(skel.url).replace(".html", "")[:28] if len(sources) > 1 else ""
         log = lambda m: say(tag, m)
         state = pub.plan(skel, refresh=args.refresh)["state"]
-        if state == "scripts" and not args.no_scripts and not args.dry_run and skel.words >= stage4.MIN_WORDS:
-            log("%-50s generating scripts" % skel.url)
-            stage2.run(skel, stage2.post_dir(args.narration, skel), model=args.text_model, workers=args.workers,
-                       log=lambda m: log("  " + m))
         try:
+            if state == "scripts" and not args.no_scripts and not args.dry_run and skel.words >= stage4.MIN_WORDS:
+                log("%-50s generating scripts" % skel.url)
+                stage2.run(skel, stage2.post_dir(args.narration, skel), model=args.text_model,
+                           workers=args.workers, log=lambda m: log("  " + m))
             pub.publish_post(skel, max_new_minutes=args.max_new_minutes, dry_run=args.dry_run,
                              refresh=args.refresh, log=log)
-        except (stage4.PublishError, StoreError) as error:
+        except (stage4.PublishError, StoreError, TTSError, LLMError) as error:
             say(tag, "  !! %s" % error)
             return False
         return True
