@@ -598,6 +598,12 @@ blockquote mjx-container {
     padding: 0.5rem 1rem 1.5rem;
   }
 
+  /* Only without the license sentence does the footer fit one line on a phone (292px of the
+     342px an iPhone SE leaves); the License link still leads to the terms. */
+  .footer-license {
+    display: none;
+  }
+
   .main-content .post-table-scroll {
     overflow-x: auto;
     overflow-y: hidden;
