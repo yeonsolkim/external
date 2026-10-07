@@ -58,7 +58,7 @@ $$
 $$ |z_1+z_2+\cdots +z_n| \le |z_1| + |z_2| + \cdots + |z_n|.$$
 
 *Proof.* The case $n=1$ is immediate, since $\vert{}z_1\vert{} \le \vert{}z_1\vert{}.$ The case $n=2$ holds by Theorem 1.3.11.
-Now we suppose that for some $n\ge 3,$
+Now we suppose that for some $n\ge 2,$
 
 $$\vert{}z_1+\cdots+z_n\vert{} \le \vert{}z_1\vert{}+\cdots+\vert{}z_n\vert{}.$$
 
