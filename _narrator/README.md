@@ -122,6 +122,9 @@ the post is not re-published and the site keeps the previous audio. The glossary
 keyed by the document's set of distinct equations (prose edits never touch it), and a
 glossary change does **not** cascade into existing scripts: a reviewed section does not
 get worse because an equation was added elsewhere. `--force` re-reads with the new glossary.
+CI never forces; to have it write a post's scripts afresh — glossary included, hand edits
+gone — delete the post's `_narration/<url>/` directory, and `publish` generates them before
+it records.
 
 **The prompt** (`prompts.py`, `lecture-v2`) writes a formal lecture: first person plural,
 present tense, the author's order and wording, every equation in words, and nothing added
