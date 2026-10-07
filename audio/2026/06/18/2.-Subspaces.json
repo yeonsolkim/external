@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "Within a vector space, we often focus on elements that satisfy a particular condition. The important question is whether the condition survives the operations of the larger space: do addition and scalar multiplication keep us among elements satisfying that condition? If they do, and the zero vector also satisfies the condition, the collection forms a vector space on its own. Such a collection is called a subspace.",
   "published_at": "2026-06-18T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/babc644ebb66a937d13f09cfeb59e0a8c5468617a945c6a4608e99f84cbd5b6b.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/d488482eb4b28be0acf3dc7a113d1894cdffabc2661da940a9290af092402436.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.chapters.json",
-  "duration": 1293.019,
-  "bytes": 20690778,
+  "duration": 1291.377,
+  "bytes": 20664447,
   "voice": "cedar",
-  "page_key": "babc644ebb66a937d13f09cfeb59e0a8c5468617a945c6a4608e99f84cbd5b6b",
-  "skeleton_hash": "4ef4eb40837f549c7fa4513006ae97494db3f21ae70c628be8e297393770997e",
-  "generated": "2026-10-06",
+  "page_key": "d488482eb4b28be0acf3dc7a113d1894cdffabc2661da940a9290af092402436",
+  "skeleton_hash": "298a7fad70323f2c5e35da1df5e6597344ba524685eee843babb7059c80e2c4f",
+  "generated": "2026-10-07",
   "podcast": true,
   "sections": [
     {
@@ -225,9 +225,9 @@
       "kind": "definition",
       "level": 2,
       "start": 532.558,
-      "duration": 19.282,
-      "source": "a7eeab63e6b4237ec5528571787217ab7647afd41079474a544d66c07ef29243",
-      "audio": "87cd0a42d12b17cac1433e05cca1a680aa7d729de6f4ac0796f7bf07cdf2f6ce",
+      "duration": 17.64,
+      "source": "3f6bc6ee5d6fde9301779257a58bf329ebd8b0134bfd3ab11d7594e9d909dd22",
+      "audio": "b66c890526f532003c1693920208ffe3d9eebb4ce165807b9e60a7715e225418",
       "parent": null,
       "proves": null
     },
@@ -236,7 +236,7 @@
       "title": "Theorem 1.2.12",
       "kind": "theorem",
       "level": 2,
-      "start": 553.039,
+      "start": 551.398,
       "duration": 21.995,
       "source": "4de8f6b39a5633ab645c8da0f97f41a87aef98834b343ab73e44a414745704ff",
       "audio": "4d282b1940c173fa478b54883a2ac86a63b2c44ad7d3d337a9464a8f083a33b3",
@@ -248,7 +248,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 576.234,
+      "start": 574.593,
       "duration": 83.541,
       "source": "e0e4bd33008686693030cdaaba3ee7c6fb00e254f086c88e5df8e4ac901584e2",
       "audio": "8f92b9a0aa58ae72c16aa23e746a23a2578d26911d6335e97997ee600e0f667f",
@@ -260,7 +260,7 @@
       "title": "The preceding theorem shows that … is the smallest subspace…",
       "kind": "prose",
       "level": 2,
-      "start": 660.975,
+      "start": 659.334,
       "duration": 36.262,
       "source": "8502ce9aabb24a49341f24b53d55885fecf7899b8384cea598e7530bdac0d5d8",
       "audio": "b76e5cfeaa3e069d860c949b0c3eb9d4185176e944a02e77280a8750fc202b17",
@@ -272,7 +272,7 @@
       "title": "Definition 1.2.13",
       "kind": "definition",
       "level": 2,
-      "start": 698.437,
+      "start": 696.796,
       "duration": 17.697,
       "source": "c5df3d3b972e2bbd14616d25fe1d3ef99189a8c7b302dca523a7128ec3ab3739",
       "audio": "005b96c6ce5dd81c70cac1e246d9ae431b61b9f1cfa9a3fa18577a43792948ae",
@@ -284,7 +284,7 @@
       "title": "Theorem 1.2.14",
       "kind": "theorem",
       "level": 2,
-      "start": 717.334,
+      "start": 715.692,
       "duration": 20.296,
       "source": "e277b40de349052c2f17dda51584ab243b0b7e8e45f2caadc897fca76b880e8d",
       "audio": "4c1cf498ce0b1ab09e3c7be0e66e5adebfbf682cfe616156739d2f8ae15a61bb",
@@ -296,7 +296,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 738.83,
+      "start": 737.189,
       "duration": 59.539,
       "source": "6ba1d001ce19d68505cc2b81482814491d4ec466597ccb370a5c5e4bb3338888",
       "audio": "7565ed1d07614c41e9f0f514f0875c6ad076d0b168c6912af6349ab5b3daad3b",
@@ -308,7 +308,7 @@
       "title": "The sum and direct sum describe how subspaces combine…",
       "kind": "prose",
       "level": 2,
-      "start": 799.569,
+      "start": 797.928,
       "duration": 20.239,
       "source": "e49408b5452b93b5bfcada05fc4852d778d1d5d23bd7a95e88e5002b2d7ab6ef",
       "audio": "5a6665f10e98e00d7d236c56c00abff0297ee9e68f884a0f6b9d446c07119f34",
@@ -320,7 +320,7 @@
       "title": "Definition 1.2.15",
       "kind": "definition",
       "level": 2,
-      "start": 821.008,
+      "start": 819.367,
       "duration": 21.876,
       "source": "05c362fd98e5a1e7a39d10ef1217002510a3f7df2014d8701ff2889b633bf9b9",
       "audio": "0e87ef298a9df6256e95b267cc95e90591cc7a83dd19dc892c6a40e3446ebd3f",
@@ -332,7 +332,7 @@
       "title": "It follows from the definition that ….",
       "kind": "prose",
       "level": 2,
-      "start": 844.084,
+      "start": 842.443,
       "duration": 12.185,
       "source": "f5b5291fcad35bc9254bc4d70a580d7dab3300ae1c7f3262ee9366656f56bd35",
       "audio": "c69d87b41bfaa72c8959153b0be69607b7107866d971ae7b8e6aaf7d964edbce",
@@ -344,7 +344,7 @@
       "title": "Proposition 1.2.16",
       "kind": "proposition",
       "level": 2,
-      "start": 857.469,
+      "start": 855.828,
       "duration": 15.658,
       "source": "00f3e5fe9cabc2a484d63eecfdcebfa30ba3c3fea244bd00593343aa401baf5f",
       "audio": "500e09ab92167e797b960a836bde2f6666ffefa1c4c02f27a67ded36ffee4924",
@@ -356,7 +356,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 874.327,
+      "start": 872.686,
       "duration": 65.17,
       "source": "5c2fe10b1e685f87d18b409d042b937a31e85fbea2d670ece2c2751a84d3280f",
       "audio": "2bf9147c6bc87563afd8639915836b0e2a2510b07c5bb0bfa2394636e12f212d",
@@ -368,7 +368,7 @@
       "title": "The cosets therefore partition …: each vector belongs to…",
       "kind": "prose",
       "level": 2,
-      "start": 940.697,
+      "start": 939.055,
       "duration": 35.902,
       "source": "4fb29f37270856361c2b2bde5e312867c9b8d2474b213e6243dfd2275e2144bf",
       "audio": "4258979c7d3bb5122169a7c5530cd2ee6b3cf867ff896df7c62721443636c857",
@@ -380,7 +380,7 @@
       "title": "Definition 1.2.17",
       "kind": "definition",
       "level": 2,
-      "start": 977.799,
+      "start": 976.157,
       "duration": 35.745,
       "source": "ce0518c450b97acf54752fdec27b626e9bc078dfc096faa3e2559a0c3ff1ca7f",
       "audio": "c37e97543541e47dc79eb7beda70651be5c659427975abee6ba4c5cdff61d472",
@@ -392,7 +392,7 @@
       "title": "Since a coset can have more than one representative, these…",
       "kind": "prose",
       "level": 2,
-      "start": 1014.744,
+      "start": 1013.102,
       "duration": 7.085,
       "source": "84bcf1e4ac58714137b27beaba02d33729dc6f5ae7f15d057f83cfe837df3514",
       "audio": "627960f5d711d6fb9b55a824e5a5f5526c0c1e665be499bdd75f9d272dab9034",
@@ -404,7 +404,7 @@
       "title": "Theorem 1.2.18",
       "kind": "theorem",
       "level": 2,
-      "start": 1023.029,
+      "start": 1021.387,
       "duration": 18.425,
       "source": "f5984daee7bf32e06e0d9bc23fcff7cec385b87f1924935f7dd0fc2231c1bd95",
       "audio": "05cb2a070d3f40bbb456a38198bddfbbc1d07cbf5b2b2a9f5d36d4dfd1110439",
@@ -416,7 +416,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 1042.653,
+      "start": 1041.012,
       "duration": 181.173,
       "source": "cdd3369021a9da9487e7f0106f9e9d400535e3bffd5756101de5ba3335ce3cda",
       "audio": "19c5dd79ec41a772bc9ac299db10364c2c7d3354ca7def5399f7de16d4aaf173",
@@ -428,7 +428,7 @@
       "title": "Example 1.2.19",
       "kind": "example",
       "level": 2,
-      "start": 1225.026,
+      "start": 1223.384,
       "duration": 67.993,
       "source": "e7a775db23a058fde36efc03432a52e250aacede5775ad4d2b707ad24130b8ff",
       "audio": "eb8e5db2b7580a7a90c992702434f9c4144a21c089a60490b6e63b12497fa866",
@@ -507,55 +507,55 @@
       "id": "definition-1-2-11",
       "title": "Definition 1.2.11",
       "start": 532.558,
-      "end": 553.039
+      "end": 551.398
     },
     {
       "id": "theorem-1-2-12",
       "title": "Theorem 1.2.12",
-      "start": 553.039,
-      "end": 698.437
+      "start": 551.398,
+      "end": 696.796
     },
     {
       "id": "definition-1-2-13",
       "title": "Definition 1.2.13",
-      "start": 698.437,
-      "end": 717.334
+      "start": 696.796,
+      "end": 715.692
     },
     {
       "id": "theorem-1-2-14",
       "title": "Theorem 1.2.14",
-      "start": 717.334,
-      "end": 821.008
+      "start": 715.692,
+      "end": 819.367
     },
     {
       "id": "definition-1-2-15",
       "title": "Definition 1.2.15",
-      "start": 821.008,
-      "end": 857.469
+      "start": 819.367,
+      "end": 855.828
     },
     {
       "id": "proposition-1-2-16",
       "title": "Proposition 1.2.16",
-      "start": 857.469,
-      "end": 977.799
+      "start": 855.828,
+      "end": 976.157
     },
     {
       "id": "definition-1-2-17",
       "title": "Definition 1.2.17",
-      "start": 977.799,
-      "end": 1023.029
+      "start": 976.157,
+      "end": 1021.387
     },
     {
       "id": "theorem-1-2-18",
       "title": "Theorem 1.2.18",
-      "start": 1023.029,
-      "end": 1225.026
+      "start": 1021.387,
+      "end": 1223.384
     },
     {
       "id": "example-1-2-19",
       "title": "Example 1.2.19",
-      "start": 1225.026,
-      "end": 1293.019
+      "start": 1223.384,
+      "end": 1291.377
     }
   ]
 }

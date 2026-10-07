@@ -2,11 +2,11 @@
   "url": "/2026/06/18/2.-Subspaces.html",
   "title": "1.2 Subspaces",
   "lang": "en",
-  "hash": "4ef4eb40837f549c7fa4513006ae97494db3f21ae70c628be8e297393770997e",
+  "hash": "298a7fad70323f2c5e35da1df5e6597344ba524685eee843babb7059c80e2c4f",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-06",
+  "updated": "2026-10-07",
   "sections": [
     {
       "id": "introduction",
@@ -234,13 +234,13 @@
       "title": "Definition 1.2.11",
       "kind": "definition",
       "level": 2,
-      "source": "a7eeab63e6b4237ec5528571787217ab7647afd41079474a544d66c07ef29243",
+      "source": "3f6bc6ee5d6fde9301779257a58bf329ebd8b0134bfd3ab11d7594e9d909dd22",
       "skip": null,
       "file": "definition-1-2-11.md",
       "current": true,
       "edited": false,
-      "words": 61,
-      "math": 7
+      "words": 56,
+      "math": 6
     },
     {
       "id": "theorem-1-2-12",
