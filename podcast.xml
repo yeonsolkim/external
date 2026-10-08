@@ -122,6 +122,17 @@
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/07/10/1.-Outcomes,-Events,-and-Counting.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
+<title>1.3 Linear Combinations and Spans</title>
+<link>https://yeonsolkim.com/2026/06/21/3.-Linear-Combinations-and-Spans.html</link>
+<guid isPermaLink="true">https://yeonsolkim.com/2026/06/21/3.-Linear-Combinations-and-Spans.html</guid>
+<pubDate>Sun, 21 Jun 2026 15:00:00 +0000</pubDate>
+<description>Definitions of linear combinations and spans. We begin with the vectors that can be built from a given set of vectors by addition and scalar multiplication. Read the page at https://yeonsolkim.com/2026/06/21/3.-Linear-Combinations-and-Spans.html</description>
+<enclosure url="https://audio.yeonsolkim.com/2026/06/21/3.-Linear-Combinations-and-Spans.mp3" length="17199441" type="audio/mpeg"/>
+<itunes:duration>0:17:55</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/2026/06/21/3.-Linear-Combinations-and-Spans.chapters.json" type="application/json+chapters"/>
+</item>
+<item>
 <title>1.2 Subspaces</title>
 <link>https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</link>
 <guid isPermaLink="true">https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</guid>

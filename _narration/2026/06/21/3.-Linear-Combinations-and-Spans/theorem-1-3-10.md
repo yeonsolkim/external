@@ -4,13 +4,13 @@ title: Theorem 1.3.10
 kind: theorem
 document: 1.3 Linear Combinations and Spans
 url: /2026/06/21/3.-Linear-Combinations-and-Spans.html
-source: e13113e89ebab67ace7b2b879934452976ba21737c35b1b44ba53d15e9d025de
+source: b08ee9606d00d5ded13b5753ef6680b57d4c31fbb23031ef7a4e8026fe55e77a
 skeleton: 4
 prompt: lecture-v4
 model: gpt-5.5
-generated: 2026-10-06
-body: b535d11dc4f8b6ae546eef9c08e98a74ebe8505809eb9f4a5fe2c4f579c9a720
-words: 59
+generated: 2026-10-08
+body: 3cafe39ae3f6b8da9652f882728bc0f3276e8cfe2041a132c9e82b5bd5b1756a
+words: 70
 ---
 
-Theorem 1.3.10. An operator closure on the collection of subsets of a set X is a closure operator on X if and only if S is contained in C if and only if the closure of S is contained in C, for any closed set C and any subset S of X. We refer to this equivalence as star.
+Theorem 1.3.10. Let X be a set. An operator closure, from the power set of X to the power set of X, is a closure operator on X if and only if S is contained in the closure of T if and only if the closure of S is contained in the closure of T, for any S and T contained in X. We refer to this equivalence as star.
