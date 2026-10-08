@@ -8,7 +8,7 @@ category_path:
   - 1. Introduction to Analysis
   - 2. Metric Spaces
 created_at: 2026-08-31 15:32:11 +0900
-last_modified_at: 2026-09-22 10:06:55 +0900
+last_modified_at: 2026-10-08 09:26:06 +0900
 
 publish: false
 ---
@@ -32,3 +32,8 @@ publish: false
 2. if $B = \bigcup_{i=1}^{\infty} A_i$, then $\bigcup_{i=1}^{\infty}\overline {A_i}\subseteq \overline B$.
 
 **Exercise 4.** Let $K\subseteq \mathbb R$ consist of $0$ and the numbers $1,1/2,1/3,\ldots.$ Prove that $K$ is compact without using the Heine–Borel theorem.
+
+
+## References
+1. Rudin, W. (1976). *Principles of mathematical analysis* (3rd ed.). McGraw-Hill Education.
+{:reference}

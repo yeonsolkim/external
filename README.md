@@ -334,13 +334,33 @@ Two Quick Actions in `~/Library/Services` run `scripts/site.zsh`; the same comma
 from a terminal (`zsh scripts/site.zsh preview`).
 
 - **Site - Preview** (`preview`): catch up with `origin/main` (CI's narration commits),
-  sync the post front matter, rebuild, and restart `jekyll serve` on :4000. It reports
-  build warnings and what CI would narrate. It never commits and never spends anything.
-- **Site - Publish** (`publish`): catch up, sync the front matter, validate (a build into
-  `~/Library/Caches/External-Jekyll/publish-site` and every test), stage everything, commit
-  with a message summarised from the staged files (`scripts/commit_summary.py`), and push.
-  The local server is left alone. A background `follow` then waits for the CI run, reports
-  the deploy, and pulls the narration commit CI makes back.
+  sync the post front matter, check the spelling of the posts, rebuild, and restart
+  `jekyll serve` on :4000. It reports build warnings and what CI would narrate. It never
+  commits and never spends anything.
+- **Site - Publish** (`publish`): catch up, sync the front matter, check the spelling,
+  validate (a build into `~/Library/Caches/External-Jekyll/publish-site` and every test),
+  stage everything, commit with a message summarised from the staged files
+  (`scripts/commit_summary.py`), and push. The local server is left alone. A background
+  `follow` then waits for the CI run, reports the deploy, and pulls the narration commit CI
+  makes back.
+
+The spelling check (`scripts/check_spelling.py`) asks the macOS spelling dictionary, in US
+and British English, about every word of each post: its file name, title and text. Only
+prose is read: math (with what is attached to it, as in `$n$th` or `$n$-ary`), code, HTML,
+Liquid, link targets, numbers, non-Latin words and pronunciations (between slashes, `/mi/`,
+or written in IPA) are skipped. Each word is reported once per post: Preview shows it in a
+notification at once, and Publish stops on it, since the text is read aloud by the
+narration and a file name becomes the URL. Either way a page opens with what is new
+(`~/Library/Caches/External-Jekyll/spelling.html`): by post, each word with the checker's
+guesses, where it occurs and the line it is in, and a link that opens the post in Obsidian.
+Leave the word as it is and the next run passes; fix it and the post drops out of the record
+(`~/Library/Caches/External-Jekyll/spelling.json`; delete it to hear everything again). A
+renamed file counts as a new post. A term that should pass everywhere can go into the macOS
+user dictionary (Learn Spelling in any app); for many at once, add them to
+`scripts/spelling_words.txt` (the names and mathematical terms macOS lacks) and run
+`python3 scripts/learn_spelling.py` (`--dry-run` to see what it would learn, `--forget` to
+take the list back out). `python3 scripts/check_spelling.py` lists every word the
+dictionary lacks, recording nothing.
 
 Publish stops before committing when a staged file looks like a secret, is over 5 MB, is a
 new top-level path, or still has conflict markers; it unstages everything and lists them in

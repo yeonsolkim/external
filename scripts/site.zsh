@@ -3,9 +3,11 @@
 # "Site - Publish" (~/Library/Services), which only call this file:
 #
 #   zsh scripts/site.zsh preview   Catch up with origin (CI's narration commits), sync the post
-#                                  front matter, rebuild, restart `jekyll serve` on :4000.
+#                                  front matter, check the spelling of the posts, rebuild,
+#                                  restart `jekyll serve` on :4000.
 #                                  Costs nothing and commits nothing.
-#   zsh scripts/site.zsh publish   Catch up with origin, sync the front matter, validate (a
+#   zsh scripts/site.zsh publish   Catch up with origin, sync the front matter, check the
+#                                  spelling (a word not reported before stops it), validate (a
 #                                  build into a scratch directory + the tests), commit what
 #                                  changed with a summarised message (scripts/commit_summary.py),
 #                                  push, and follow the CI run in the background. The local
@@ -58,10 +60,19 @@ notify() {  # notify MESSAGE — quoting is safe: the text goes in as an argumen
     -e 'end run' "$1" "$title" >/dev/null 2>&1 || true
 }
 
-fail() {  # fail MESSAGE — report, show the log, stop
+show() {  # show FILE — open it to read: the log in Console, anything else in its own app
+  [[ -n "${SITE_QUIET:-}" ]] && return 0             # tests: nothing opens
+  if [[ "$1" == "$log" ]]; then
+    /usr/bin/open -a Console "$1" 2>/dev/null || true
+  else
+    /usr/bin/open "$1" 2>/dev/null || true
+  fi
+}
+
+fail() {  # fail MESSAGE [FILE] — report, show FILE (the log by default), stop
   say "FAILED: $1"
   notify "Failed: $1"
-  [[ -z "${SITE_QUIET:-}" ]] && { /usr/bin/open -a Console "$log" 2>/dev/null || true; }
+  show "${2:-$log}"
   exit 1
 }
 
@@ -127,6 +138,32 @@ sync_front_matter() {
   python3 scripts/sync_posts_front_matter.py --stabilize >>"$log" 2>&1 ||
     fail "Obsidian is still saving a post. Stop editing and run again."
   step_done
+}
+
+# -- spelling ----------------------------------------------------------------------------------
+# Words of the posts' file names, titles and text that the macOS dictionary lacks
+# (scripts/check_spelling.py). The record makes it one report per word and post: a word left
+# as it was after the report passes from then on. What is new is also written to a page, by
+# post and with each word in its line, for show.
+spelling_record="$cache_dir/spelling.json"
+spelling_page="$cache_dir/spelling.html"
+
+spelling_report() {  # spelling_report NOTE — prints the first new finding (+N more); all of
+                     # them go to the log, and to $spelling_page under NOTE
+  step "spelling"
+  local found
+  if ! found=$(python3 scripts/check_spelling.py --state "$spelling_record" \
+                 --report "$spelling_page" --note "$1" 2>>"$log"); then
+    step_done "check failed, skipped"
+    return 0
+  fi
+  local -a lines=("${(@f)found}")
+  [[ -n "$found" ]] && print -r -- "$found" >>"$log"
+  step_done "${found:+${#lines} post(s) reported}"
+  [[ -z "$found" ]] && return 0
+  local more=""
+  (( ${#lines} > 1 )) && more=" (+$(( ${#lines} - 1 )) more)"
+  print -r -- "${lines[1]}$more"
 }
 
 # -- local server ------------------------------------------------------------------------------
@@ -214,6 +251,15 @@ preview() {
 
   sync_front_matter
 
+  # Told at once rather than with the notes at the end: it is reported only this once, and a
+  # failure further on would never show the notes.
+  local typo
+  typo=$(spelling_report "Each word is reported once: leave it as it is and it passes from now on, or fix it.")
+  if [[ -n "$typo" ]]; then
+    notify "Check the spelling: $typo"
+    show "$spelling_page"
+  fi
+
   step "stop server"; stop_server; step_done
 
   step "jekyll build"
@@ -283,6 +329,12 @@ publish() {
   (( rc )) && fail "$(catch_up_message $rc)"
 
   sync_front_matter
+
+  # A typo goes out with the page and into its narration (a file name's into the URL), so
+  # stop before it does.
+  local typo
+  typo=$(spelling_report "Publish stopped before committing: fix these, or publish again to keep them.")
+  [[ -n "$typo" ]] && fail "check the spelling: $typo. Fix it, or publish again to keep it." "$spelling_page"
 
   step "validate: build into $publish_site"
   local built=0

@@ -18,10 +18,15 @@ markdown: kramdown
 kramdown:
   math_engine: mathjax
 
-# LICENSE is for the repository, not the site. Built, it would land on _site/LICENSE, which a
-# case-insensitive disk (macOS's default) treats as the License page's _site/license/.
+# Files for the repository, not the site. Built, LICENSE would land on _site/LICENSE, which a
+# case-insensitive disk (macOS's default) treats as the License page's _site/license/; the
+# others would be served as they are: README.md (no front matter), scripts/ (the local
+# workflows' tools) and templates/ (Obsidian's note templates).
 exclude:
   - LICENSE
+  - README.md
+  - scripts/
+  - templates/
 
 # Audio narration (_narrator/): podcast + in-page player. AUDIO_BASE_URL in the env overrides audio_url.
 narration:

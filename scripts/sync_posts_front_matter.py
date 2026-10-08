@@ -177,17 +177,18 @@ def sync_post(path: Path) -> tuple[Path, bool]:
     return path, True
 
 
+def post_paths(posts_root: Path) -> list[Path]:
+    return [
+        path
+        for path in sorted(posts_root.rglob("*"))
+        if path.is_file() and path.suffix in {".md", ".markdown"} and "templates" not in path.parts
+    ]
+
+
 def sync_all_posts() -> bool:
     changed = False
 
-    for path in sorted(POSTS_ROOT.rglob("*")):
-        if not path.is_file():
-            continue
-        if path.suffix not in {".md", ".markdown"}:
-            continue
-        if "templates" in path.parts:
-            continue
-
+    for path in post_paths(POSTS_ROOT):
         _, did_change = sync_post(path)
         changed = changed or did_change
 

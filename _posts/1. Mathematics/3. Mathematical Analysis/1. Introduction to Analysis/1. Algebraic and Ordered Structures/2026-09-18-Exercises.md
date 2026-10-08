@@ -8,7 +8,7 @@ category_path:
   - 1. Introduction to Analysis
   - 1. Algebraic and Ordered Structures
 created_at: 2026-09-18 12:16:08 +0900
-last_modified_at: 2026-09-29 09:12:25 +0900
+last_modified_at: 2026-10-08 10:48:13 +0900
 
 publish: false
 ---
@@ -38,7 +38,7 @@ $$
 *Proof.* (1) We have $0\le 1^2.$ Since $1^2 = 1\cdot 1= 1$ and $0\ne 1,$ $0<1.$
 (2) Suppose, for contradiction, that $-x\le -y.$ Since $x<y,$ it follows that $x+(-x)<y+(-y),$ which contradicts $x+(-x)=y+(-y).$ Hence $-y<-x.$
 (3) Suppose, for contradiction, that $y\le 0.$ If $y=0,$ then $x\cdot y = 0,$ which contradicts $0<x\cdot y.$ If $y<0,$ then $0<-y,$ by (1). Thus $0<x\cdot (-y).$ It yields $0<-(x\cdot y),$ since $x\cdot(-y)= -(x\cdot y).$ Therefore $x\cdot y<0,$ which contradicts $0<x\cdot y.$ Consequently, it is concluded that $0<y.$
-(4) If $1/x\le 1/y$ then $x\cdot(1/x)<y\cdot(1/x)\le y\cdot(1/y).$ If follows that $x\cdot(1/x)<y\cdot (1/y),$ which contradicts $x\cdot(1/x)=1=y\cdot(1/y).$ Therefore it is concluded that $1/y< 1/x.$
+(4) If $1/x\le 1/y$ then $x\cdot(1/x)<y\cdot(1/x)\le y\cdot(1/y).$ If follows that $x\cdot(1/x)<y\cdot (1/y),$ which contradicts $x\cdot(1/x)=1=y\cdot(1/y).$ Therefore $1/y< 1/x.$
 (5) Since $(1/2)\cdot (1+1) = 1,$ we have $((x+y)/2)\cdot(1+1) = x+y.$ We also have $x\cdot (1+1)= x + x$ and $y\cdot (1+1)  =y+y.$ Since $x<y$ implies $x+x<x+y<y+y,$ we finally get $x<(x+y)/2<y.$ <span class="qed">$\square$</span>
 
 **Exercise 1.3.** Let $r\in \mathbb Q,r\ne 0,$ and $x\notin \mathbb Q.$ Prove that $r+x\notin \mathbb Q$ and $r\cdot x\notin \mathbb Q.$
@@ -93,3 +93,8 @@ a^2+b^2-2\operatorname{Re} (x\overline y)
 $$
 
 we have $(a-b)^2\le c^2.$ Taking square roots yields $\big\vert|x|-|y|\big\vert\le |x-y|.$ <span class="qed">$\square$</span>
+
+
+## References
+1. Rudin, W. (1976). *Principles of mathematical analysis* (3rd ed.). McGraw-Hill Education.
+{:reference}
