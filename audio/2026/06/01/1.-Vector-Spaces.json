@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "Tuples, matrices, functions, and polynomials are different kinds of objects, yet each can be added to another of its kind and can be multiplied by a scalar. A vector space captures the rules the operations share: addition forms an abelian group, and scalar multiplication by a field works consistently with addition and field arithmetic. This common structure lets us study the fundamental principles such as linear independence, transformation and dimension without depending on what the vectors themselves look like.",
   "published_at": "2026-06-01T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/5a693ce35502cb0c852b728c7285d5ac2611bb9e2134d56f4cb2cc7def0b430b.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/1519db6068f1c56631560df4081e48726fe130179e2161cece5434a329c1be8d.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.chapters.json",
-  "duration": 490.567,
-  "bytes": 7850674,
+  "duration": 475.377,
+  "bytes": 7607840,
   "voice": "cedar",
-  "page_key": "5a693ce35502cb0c852b728c7285d5ac2611bb9e2134d56f4cb2cc7def0b430b",
+  "page_key": "1519db6068f1c56631560df4081e48726fe130179e2161cece5434a329c1be8d",
   "skeleton_hash": "2de49226605be68cf2bb1eba17ffcfb3ed2c2f16eb8bccaaee305d7f6060176b",
-  "generated": "2026-10-01",
+  "generated": "2026-10-07",
   "podcast": true,
   "sections": [
     {
@@ -21,9 +21,9 @@
       "kind": "introduction",
       "level": 2,
       "start": 0.0,
-      "duration": 30.649,
+      "duration": 30.381,
       "source": "7cf6f89c1837657aef7c88a07a119b66606b816ab1ed12d7aecbc5a536afc5bb",
-      "audio": "9f5aa7820fba25284bf3f81c86ae925ce153f60b0a3c798708b894d024752d2a",
+      "audio": "3cba78771115433daee0ed8a171b39760d6eaee3f388de30125d57955af79f81",
       "parent": null,
       "proves": null
     },
@@ -32,10 +32,10 @@
       "title": "Definition 1.1.1",
       "kind": "definition",
       "level": 2,
-      "start": 31.849,
-      "duration": 39.763,
+      "start": 31.581,
+      "duration": 34.767,
       "source": "2bcec1c11331e756af0787b9350e6218dc98eeccb8017eef21862d5ececb290a",
-      "audio": "07fbeadf36d085efc490c9c794d2fe63d278a41cc642a362de07ca84db008092",
+      "audio": "ec58c8d8148166e237b71d2a9eb9e65e09b395b748a1db0e229b6a8616df9fc1",
       "parent": null,
       "proves": null
     },
@@ -44,10 +44,10 @@
       "title": "Example 1.1.2",
       "kind": "example",
       "level": 2,
-      "start": 72.811,
-      "duration": 53.997,
+      "start": 67.548,
+      "duration": 51.129,
       "source": "4fc0cc437d2d48c34349806ee9657ad2d2fcf79e76b2fc62595003af1709f43e",
-      "audio": "08232c7152f287b3f41d23b10bed66ebdf47abafade37618bd668d725b734e42",
+      "audio": "4815252a85b167f328eab18194478d0d006e6db252d474fca4f1b876898592bc",
       "parent": null,
       "proves": null
     },
@@ -56,10 +56,10 @@
       "title": "Example 1.1.3",
       "kind": "example",
       "level": 2,
-      "start": 128.009,
-      "duration": 86.885,
+      "start": 119.877,
+      "duration": 84.376,
       "source": "bf687b0004d6a10c9bf287f5c73932e0a241bb7faf71fead2866b22fb9592f9e",
-      "audio": "7b5337dd028aef79098c21c3ce47784add85ea0f8040212c81bda4ac63632a85",
+      "audio": "29cc01aa4bed770477639e01843486d59d8ab352f45e7a89d25c301e604380ba",
       "parent": null,
       "proves": null
     },
@@ -68,10 +68,10 @@
       "title": "Example 1.1.4",
       "kind": "example",
       "level": 2,
-      "start": 216.094,
-      "duration": 42.962,
+      "start": 205.453,
+      "duration": 38.475,
       "source": "53d3ddc38d12f39df0dc48069d545ab7145167d8f23312c95340ef25a4e70ef5",
-      "audio": "3b729814e60986a964b817c7f442dda5339070382b3bb92e43efad343a21942e",
+      "audio": "46080f40625fc33a4b796f4510fd56ca86c6c28c3c9eba2b2ae9b181d78e95a8",
       "parent": null,
       "proves": null
     },
@@ -80,10 +80,10 @@
       "title": "Example 1.1.5",
       "kind": "example",
       "level": 2,
-      "start": 260.256,
-      "duration": 124.636,
+      "start": 245.128,
+      "duration": 130.393,
       "source": "18eca061f5f42cef5cd33fe7cfc623092b06122c2ddd05aaeb30004ee947cedc",
-      "audio": "fe6cf47c626035ee2852d16c3c4c3f65f04f285e6edb7924c4d25e5d831dfc15",
+      "audio": "6b9078a1008206129669e103345e06791612a45734dd999b025e3f83df23055d",
       "parent": null,
       "proves": null
     },
@@ -92,10 +92,10 @@
       "title": "Theorem 1.1.6",
       "kind": "theorem",
       "level": 2,
-      "start": 386.092,
-      "duration": 29.25,
+      "start": 376.721,
+      "duration": 24.737,
       "source": "1113df36dab12e52b9b46b59ec4128774c681f85977eea46ad6a3380af700bc8",
-      "audio": "943ee1b85ac4fcdceaa67bb7b9b68d376136aa1db7ad0b9b3cbf44c8b7248f7f",
+      "audio": "5bd08bddc5b1edfd6c28a6bf51078ad7044d3b53e8bb9cb0bd3e01b811fc1fa6",
       "parent": null,
       "proves": null
     },
@@ -104,10 +104,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 416.542,
-      "duration": 74.026,
+      "start": 402.659,
+      "duration": 72.718,
       "source": "439804550d3638189325239dc3b53569af875aeff26225ae1717313967de8e97",
-      "audio": "5444f9205f906d3c99e6e3605390c844b7b03a65ead908a980ef34ed1c59883e",
+      "audio": "0c6858de4c44532e02b3c93e31414dd85560bc90b66ab2969b48bf386c76b51b",
       "parent": null,
       "proves": "theorem-1-1-6"
     }
@@ -117,43 +117,43 @@
       "id": "introduction",
       "title": "Introduction",
       "start": 0.0,
-      "end": 31.849
+      "end": 31.581
     },
     {
       "id": "definition-1-1-1",
       "title": "Definition 1.1.1",
-      "start": 31.849,
-      "end": 72.811
+      "start": 31.581,
+      "end": 67.548
     },
     {
       "id": "example-1-1-2",
       "title": "Example 1.1.2",
-      "start": 72.811,
-      "end": 128.009
+      "start": 67.548,
+      "end": 119.877
     },
     {
       "id": "example-1-1-3",
       "title": "Example 1.1.3",
-      "start": 128.009,
-      "end": 216.094
+      "start": 119.877,
+      "end": 205.453
     },
     {
       "id": "example-1-1-4",
       "title": "Example 1.1.4",
-      "start": 216.094,
-      "end": 260.256
+      "start": 205.453,
+      "end": 245.128
     },
     {
       "id": "example-1-1-5",
       "title": "Example 1.1.5",
-      "start": 260.256,
-      "end": 386.092
+      "start": 245.128,
+      "end": 376.721
     },
     {
       "id": "theorem-1-1-6",
       "title": "Theorem 1.1.6",
-      "start": 386.092,
-      "end": 490.567
+      "start": 376.721,
+      "end": 475.377
     }
   ]
 }

@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "Theorem 2.2.17 guarantees that an infinite subset of a compact set has at least one limit point. However, this is a somewhere statement, not an everywhere statement: it does not say that every point of the set participates in the accumulation. An infinite compact set may still contain many isolated points. Perfectness imposes a much stronger local picture: a perfect set has accumulation everywhere within the set.",
   "published_at": "2026-08-05T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/2d90b0b424e66c667693523db45ea2b6336bd73bbc30c23804d43ece58387848.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/a4b9a8a39ade10f2f41df1d32c9aaf5f525d8d5acaabd5f95640a3aa0c007f84.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/08/05/3.-Perfect-Sets.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/08/05/3.-Perfect-Sets.chapters.json",
-  "duration": 384.445,
-  "bytes": 6152820,
+  "duration": 357.81,
+  "bytes": 5726501,
   "voice": "cedar",
-  "page_key": "2d90b0b424e66c667693523db45ea2b6336bd73bbc30c23804d43ece58387848",
+  "page_key": "a4b9a8a39ade10f2f41df1d32c9aaf5f525d8d5acaabd5f95640a3aa0c007f84",
   "skeleton_hash": "d537730d4b8c6bd76cc7cc1ce5569434b22398bfdc48d21e9fc8f0314b7c9787",
-  "generated": "2026-10-03",
+  "generated": "2026-10-07",
   "podcast": true,
   "sections": [
     {
@@ -21,9 +21,9 @@
       "kind": "introduction",
       "level": 2,
       "start": 0.0,
-      "duration": 27.089,
+      "duration": 25.389,
       "source": "69b4b32b70a032570030c9f467b4afb20a477c54a22668a6b53c71d1950814a3",
-      "audio": "e9f5e5f892c9a756e09b86e78ea157f1bd5ed50ebeb2cc9422605d4b644daa57",
+      "audio": "0c2ddb8f436e2292671127c33f767d5a653cbdd5cf2b98cc8bc1dee1ef62c1eb",
       "parent": null,
       "proves": null
     },
@@ -32,10 +32,10 @@
       "title": "Definition 2.3.1",
       "kind": "definition",
       "level": 2,
-      "start": 28.289,
-      "duration": 38.605,
+      "start": 26.589,
+      "duration": 35.6,
       "source": "ffdfc041948527e8bdadf769a63d72a0a0b318ebf422cd5c6df20de908d63aa9",
-      "audio": "89ad1b8be46384b8860b1d0d364a2f6b1463f3df0d571345d6fae748865dddae",
+      "audio": "c6cb8b72d011be38c7d4b1b7d71a44c9d22b59273c2eefa55c7069ceed830126",
       "parent": null,
       "proves": null
     },
@@ -44,10 +44,10 @@
       "title": "Remark 2.3.2",
       "kind": "remark",
       "level": 2,
-      "start": 68.093,
-      "duration": 36.992,
+      "start": 63.389,
+      "duration": 35.816,
       "source": "6b744785670c48d97ea93783a225f415e4fd8c3464f538b703ded0e398de46d2",
-      "audio": "3a5e9d5ad023a7adc8b5321446d4796f301b776d4803612f480a0ef951ed9c40",
+      "audio": "e8e86a0ea0d39bc874de44d4fcd7f2e3874ac6dec1566bf898755a7bc8241e2d",
       "parent": null,
       "proves": null
     },
@@ -56,10 +56,10 @@
       "title": "This example of … also shows that having no isolated points…",
       "kind": "prose",
       "level": 2,
-      "start": 106.285,
-      "duration": 18.51,
+      "start": 100.404,
+      "duration": 18.954,
       "source": "190ddd1bb88eaf2ef1c6803ec05e17d187bdfbe047ce7e5942a108dc03eea814",
-      "audio": "287d6efcdcf139a203b585e8ea508479c585c015432ec11ff8e1f92f4200475b",
+      "audio": "1574468cea24ac41cad6259b74669e43c386815121d8f13546528df7a4b31b66",
       "parent": null,
       "proves": null
     },
@@ -68,10 +68,10 @@
       "title": "Theorem 2.3.3",
       "kind": "theorem",
       "level": 2,
-      "start": 125.996,
-      "duration": 6.141,
+      "start": 120.558,
+      "duration": 5.848,
       "source": "1eda1ff1a5e44d5953d7097f6687cffa52cc867a5b9bde6068471bcfb1bb347b",
-      "audio": "3037b9e4c0a4c22b498c674af15ebd8a59e97f3e9a79fcf1deab41b17c2cbc29",
+      "audio": "8188b3c0d86a5cbee6dd0a28200ba3a9a2daddc4dccd8dcc4c748688d6ed357c",
       "parent": null,
       "proves": null
     },
@@ -80,10 +80,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 133.337,
-      "duration": 109.961,
+      "start": 127.605,
+      "duration": 99.648,
       "source": "3023ec2d09a39544248539f188ac66a4e37c6555b079771b0f3daa68b9cf5b79",
-      "audio": "20caa18c8704f1b0eff5ae43d9842eb0aea64aa515e03fb5a896c99c48383b3b",
+      "audio": "d5769613263bcf9170cbcec66a346d62f504d3762b757cf85d7649ec92ff4741",
       "parent": null,
       "proves": "theorem-2-3-3"
     },
@@ -92,10 +92,10 @@
       "title": "The theorem gives a strong conclusion from perfectness, but…",
       "kind": "prose",
       "level": 2,
-      "start": 244.498,
-      "duration": 13.54,
+      "start": 228.454,
+      "duration": 12.048,
       "source": "4f91793c6fb165e354b2da1fb0edc39427d82ce3f4ebd035da97d9136c7105a5",
-      "audio": "885bc3917269711504581a6286551dc284ecab2ee3906da50210cf015c38ff62",
+      "audio": "750ba9e0453dc542335fcff3918be74df5be826c3a6f6a123b0d5edebcd1d3ca",
       "parent": null,
       "proves": null
     },
@@ -104,10 +104,10 @@
       "title": "Definition 2.3.4 (Cantor set)",
       "kind": "definition",
       "level": 2,
-      "start": 259.238,
-      "duration": 51.769,
+      "start": 241.702,
+      "duration": 46.825,
       "source": "89e81d2703328611c82c12a9ba0f23d1d2c3668c8800218bc3fd7acc0afc1fff",
-      "audio": "40c0f211ad35fe3411a178851f48d36e7adef23cdffb87b3dbed9bc6336b0508",
+      "audio": "07875d2d0d47e60bc923835479df6e374618f68b0867494b806b1bab454dce13",
       "parent": null,
       "proves": null
     },
@@ -116,10 +116,10 @@
       "title": "At every finite stage it becomes increasingly fragmented,…",
       "kind": "prose",
       "level": 2,
-      "start": 312.207,
-      "duration": 72.238,
+      "start": 289.727,
+      "duration": 68.084,
       "source": "6ca840db6bc96164576a45d5c499fca530ec2e98be21a4ede93c6ef76bfb68c1",
-      "audio": "680208fae1442883b9ad5be592a416d5aede2a46f1e0248588eee69b4f76dcbd",
+      "audio": "a6d4e1981fe16e37ee9a6f9f20f114e66b2bad42f0e074f3d67d6ac7e339cc78",
       "parent": null,
       "proves": null
     }
@@ -129,31 +129,31 @@
       "id": "introduction",
       "title": "Introduction",
       "start": 0.0,
-      "end": 28.289
+      "end": 26.589
     },
     {
       "id": "definition-2-3-1",
       "title": "Definition 2.3.1",
-      "start": 28.289,
-      "end": 68.093
+      "start": 26.589,
+      "end": 63.389
     },
     {
       "id": "remark-2-3-2",
       "title": "Remark 2.3.2",
-      "start": 68.093,
-      "end": 125.996
+      "start": 63.389,
+      "end": 120.558
     },
     {
       "id": "theorem-2-3-3",
       "title": "Theorem 2.3.3",
-      "start": 125.996,
-      "end": 259.238
+      "start": 120.558,
+      "end": 241.702
     },
     {
       "id": "definition-2-3-4",
       "title": "Definition 2.3.4 (Cantor set)",
-      "start": 259.238,
-      "end": 384.445
+      "start": 241.702,
+      "end": 357.81
     }
   ]
 }
