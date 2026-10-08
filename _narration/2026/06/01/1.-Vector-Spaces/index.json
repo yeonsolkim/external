@@ -2,11 +2,11 @@
   "url": "/2026/06/01/1.-Vector-Spaces.html",
   "title": "1.1 Vector Spaces",
   "lang": "en",
-  "hash": "2de49226605be68cf2bb1eba17ffcfb3ed2c2f16eb8bccaaee305d7f6060176b",
+  "hash": "62e424a5a08faf01f86f18ee1e822a739890e5d01f7b695f1cef1d6d1208571e",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-07",
+  "updated": "2026-10-08",
   "sections": [
     {
       "id": "introduction",
@@ -52,12 +52,12 @@
       "title": "Example 1.1.3",
       "kind": "example",
       "level": 2,
-      "source": "bf687b0004d6a10c9bf287f5c73932e0a241bb7faf71fead2866b22fb9592f9e",
+      "source": "8a8fcf528a00e4d81f5c4c99bb1af63e21398537bfdf18133afccd4b7e9c4e49",
       "skip": null,
       "file": "example-1-1-3.md",
       "current": true,
       "edited": false,
-      "words": 275,
+      "words": 276,
       "math": 23
     },
     {
@@ -78,7 +78,7 @@
       "title": "Example 1.1.5",
       "kind": "example",
       "level": 2,
-      "source": "18eca061f5f42cef5cd33fe7cfc623092b06122c2ddd05aaeb30004ee947cedc",
+      "source": "9d37c1deb98cb38b9840056c9431f2f55c8c6d02963eb008311d52366357db48",
       "skip": null,
       "file": "example-1-1-5.md",
       "current": true,

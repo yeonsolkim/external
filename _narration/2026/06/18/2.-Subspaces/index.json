@@ -2,11 +2,11 @@
   "url": "/2026/06/18/2.-Subspaces.html",
   "title": "1.2 Subspaces",
   "lang": "en",
-  "hash": "298a7fad70323f2c5e35da1df5e6597344ba524685eee843babb7059c80e2c4f",
+  "hash": "3be08bfd0314ce62b3cd41ca701af7e6c06dcc024acea58b81a39c698b8b765c",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-07",
+  "updated": "2026-10-08",
   "sections": [
     {
       "id": "introduction",
@@ -78,12 +78,12 @@
       "title": "Example 1.2.3",
       "kind": "example",
       "level": 2,
-      "source": "80839cc669a4e02cccf673b6145d03345412fb41f4f12399c730c1586ee0e7f3",
+      "source": "ac190d8043b323d4ebcbc10e5a4befd3513166dbc602490320feb7cdec56f26e",
       "skip": null,
       "file": "example-1-2-3.md",
       "current": true,
       "edited": false,
-      "words": 290,
+      "words": 291,
       "math": 35
     },
     {
@@ -221,7 +221,7 @@
       "title": "We have seen that the union itself is not an operation that…",
       "kind": "prose",
       "level": 2,
-      "source": "d00afabea038cf2a78f83fca7faac7e4f06a124ec3ccb70eeaf7ce527eace6fe",
+      "source": "0e6b7f0fc7770ec75ae59dd045e3042ca94c2698e09d8eb572557a587184df99",
       "skip": null,
       "file": "prose-after-proof-proposition-1-2-10.md",
       "current": true,
@@ -325,12 +325,12 @@
       "title": "The sum and direct sum describe how subspaces combine…",
       "kind": "prose",
       "level": 2,
-      "source": "e49408b5452b93b5bfcada05fc4852d778d1d5d23bd7a95e88e5002b2d7ab6ef",
+      "source": "721d87ee733a4d9cf8742866db9ac00107766cbf9c84193f060791aa085b6b82",
       "skip": null,
       "file": "prose-after-proof-theorem-1-2-14.md",
       "current": true,
       "edited": false,
-      "words": 95,
+      "words": 94,
       "math": 9
     },
     {

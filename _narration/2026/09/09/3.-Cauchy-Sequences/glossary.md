@@ -1,25 +1,20 @@
 ---
 document: 3.3 Cauchy Sequences
 url: /2026/09/09/3.-Cauchy-Sequences.html
-source: 10455b7fca1688187a13010c99fb497d2cf5c546289ba2f93d0e879040bbb179
+source: 73d7fcb009ba582b5b2142b163d9fdf8bef41ce667b2bdc6925b34732bdb8875
 prompt: lecture-v4
 model: gpt-5.5
-generated: 2026-10-07
-body: 19481745b0f31735e096222c3ffacce360b9371e4a04e0a0d0942338bdedc1da
+generated: 2026-10-08
+body: ae3c33c448febf09637ada3e155109fd32b636721e93c2cbc80ab9116ade6e92
 ---
 
-\mathbb Z^{+} — positive integers (indices start at 1)
-
-\operatorname{diam}{A} — diameter of A (supremum of distances between points of A)
-
-E_k — E k (tail set \{x_n:n\ge k\}; say “tail E k” if needed)
-
+\operatorname{diam} A — diameter of A (supremum of distances between points of A)
+\mathbb Z^{+} — positive integers (indices n, m, k start at 1)
+E_k — E k (the tail set \{x_n:n\ge k\}; say “the tail E k” if needed)
+K_n — K n (nested compact sets; say “the compact set K n” if needed)
 \overline A — closure of A (also \overline{E_k}, closure of the tail)
-
+\mathbf x_n — x n (points in \mathbb R^k; say “the point x n” if scalar coordinates could be meant)
 \mathbb R^k — R k (Euclidean k-space)
-
-\mathbf x_n — x n (a point of R k; say “the point x n” if needed against general sequence terms x_n)
-
-k-cell — k-cell (compact cell in R k)
-
-I — I (a k-cell; say “cell I” if needed)
+k-cell — k-cell (compact rectangle-like cell in \mathbb R^k)
+I — I (a compact k-cell; say “the cell I” if needed)
+Cauchy criterion for convergence — Cauchy criterion (Corollary 3.3.6)

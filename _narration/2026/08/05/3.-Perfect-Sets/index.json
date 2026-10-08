@@ -2,11 +2,11 @@
   "url": "/2026/08/05/3.-Perfect-Sets.html",
   "title": "2.3 Perfect Sets",
   "lang": "en",
-  "hash": "d537730d4b8c6bd76cc7cc1ce5569434b22398bfdc48d21e9fc8f0314b7c9787",
+  "hash": "2e3cf43becd8922ab02601543090fe6de55adee667afa45fd75f5b6640eb9da1",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-07",
+  "updated": "2026-10-08",
   "sections": [
     {
       "id": "introduction",
@@ -39,7 +39,7 @@
       "title": "Remark 2.3.2",
       "kind": "remark",
       "level": 2,
-      "source": "6b744785670c48d97ea93783a225f415e4fd8c3464f538b703ded0e398de46d2",
+      "source": "54857cbbf48b5162826fd0f6b43297b7912b93aa4651fb42bce3efe08e69f3eb",
       "skip": null,
       "file": "remark-2-3-2.md",
       "current": true,

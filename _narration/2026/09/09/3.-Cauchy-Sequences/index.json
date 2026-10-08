@@ -2,11 +2,11 @@
   "url": "/2026/09/09/3.-Cauchy-Sequences.html",
   "title": "3.3 Cauchy Sequences",
   "lang": "en",
-  "hash": "c8e849e514755db775f7b14595950e9757b4256477bf603af644f8e1ea3b7443",
+  "hash": "45838b0c07aca1a5940ddd03175bf3008c88c1646ca853a9a722e2af29a4aa7c",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-07",
+  "updated": "2026-10-08",
   "sections": [
     {
       "id": "introduction",
@@ -91,12 +91,12 @@
       "title": "The preceding results focus on describing Cauchyness itself.",
       "kind": "prose",
       "level": 2,
-      "source": "777fc118ec1aaef0ebc43efd46fb76e14e9d16ec8b706f7478142b03e1d66232",
+      "source": "95fe75a021705d11b85bb36a440b3fa45210f0d84ce4601020c0dd0a5b167a99",
       "skip": null,
       "file": "prose-after-proof-theorem-3-3-3.md",
       "current": true,
       "edited": false,
-      "words": 60,
+      "words": 59,
       "math": 0
     },
     {
@@ -143,7 +143,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "source": "3497431e543fc0f86a9ee845395812a3d525c017cdcd3001eb7db951bd5cd2f0",
+      "source": "7e2026b21cc38301e0173bcdcf912f2a3b9d27fbc7d87d9d1120b3836cf0a2d6",
       "skip": null,
       "file": "proof-theorem-3-3-5.md",
       "current": true,
@@ -182,13 +182,13 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "source": "1434250e4908f9c19ce53f220f846022be1ad0123285b212ebfe1f8ab3b7b8a5",
+      "source": "28315fdd24673d634ddd6014eb9fc82d2e3bac1b011ba13d5564c380088ad115",
       "skip": null,
       "file": "proof-corollary-3-3-6.md",
       "current": true,
       "edited": false,
-      "words": 117,
-      "math": 11
+      "words": 98,
+      "math": 8
     },
     {
       "id": "prose-after-proof-corollary-3-3-6",

@@ -39,21 +39,21 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</guid>
 <pubDate>Wed, 09 Sep 2026 15:00:00 +0000</pubDate>
 <description>Convergence describes the asymptotic behavior of a sequence by relating its terms to a point of the ambient space. This raises a natural question. How much of this asymptotic behavior can be recognized from the terms of the sequence themselves, without first specifying or establishing the existence of such a point? The concept of Cauchyness1 isolates precisely this internal aspect of convergence. Instead of comparing the terms x_n with a separate point x, it compares sufficiently late terms with one another and asks whether they eventually become arbitrarily close. In the term Cauchyness, “Cauchy” refers to the French mathematician Augustin-Louis Cauchy (1789–1857). He was one of the major figures in the development of rigorous mathematical analysis, making fundamental contributions to limits, continuity, infinite series, and differential equations. In mathematical English, his surname is usually pronounced /ˈkoʊʃi/. ↩ Read the page at https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.mp3" length="8830438" type="audio/mpeg"/>
-<itunes:duration>0:09:12</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.mp3" length="8695855" type="audio/mpeg"/>
+<itunes:duration>0:09:03</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
-<title>3.2 Subsequenes</title>
-<link>https://yeonsolkim.com/2026/09/03/2.-Subsequenes.html</link>
-<guid isPermaLink="true">https://yeonsolkim.com/2026/09/03/2.-Subsequenes.html</guid>
+<title>3.2 Subsequences</title>
+<link>https://yeonsolkim.com/2026/09/03/2.-Subsequences.html</link>
+<guid isPermaLink="true">https://yeonsolkim.com/2026/09/03/2.-Subsequences.html</guid>
 <pubDate>Thu, 03 Sep 2026 15:00:00 +0000</pubDate>
-<description>A sequence may fail to converge as a whole while some of its terms still exhibit convergent behavior. To capture such behavior, we introduce the notion of a subsequence. Read the page at https://yeonsolkim.com/2026/09/03/2.-Subsequenes.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/09/03/2.-Subsequenes.mp3" length="4785798" type="audio/mpeg"/>
-<itunes:duration>0:04:59</itunes:duration>
+<description>A sequence may fail to converge as a whole while some of its terms still exhibit convergent behavior. To capture such behavior, we introduce the notion of a subsequence. Read the page at https://yeonsolkim.com/2026/09/03/2.-Subsequences.html</description>
+<enclosure url="https://audio.yeonsolkim.com/2026/09/03/2.-Subsequences.mp3" length="4552996" type="audio/mpeg"/>
+<itunes:duration>0:04:44</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
-<podcast:chapters url="https://audio.yeonsolkim.com/2026/09/03/2.-Subsequenes.chapters.json" type="application/json+chapters"/>
+<podcast:chapters url="https://audio.yeonsolkim.com/2026/09/03/2.-Subsequences.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
 <title>2.4 Connected Sets</title>
@@ -83,8 +83,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/08/05/3.-Perfect-Sets.html</guid>
 <pubDate>Wed, 05 Aug 2026 15:00:00 +0000</pubDate>
 <description>Theorem 2.2.17 guarantees that an infinite subset of a compact set has at least one limit point. However, this is a somewhere statement, not an everywhere statement: it does not say that every point of the set participates in the accumulation. An infinite compact set may still contain many isolated points. Perfectness imposes a much stronger local picture: a perfect set has accumulation everywhere within the set. Read the page at https://yeonsolkim.com/2026/08/05/3.-Perfect-Sets.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/08/05/3.-Perfect-Sets.mp3" length="5726501" type="audio/mpeg"/>
-<itunes:duration>0:05:58</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/08/05/3.-Perfect-Sets.mp3" length="5762028" type="audio/mpeg"/>
+<itunes:duration>0:06:00</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/08/05/3.-Perfect-Sets.chapters.json" type="application/json+chapters"/>
 </item>
@@ -94,8 +94,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html</guid>
 <pubDate>Thu, 30 Jul 2026 15:00:00 +0000</pubDate>
 <description>We now consider how a collection of open sets can cover a set A as a whole. Such a collection may contain infinitely many sets, and this raises a natural question. Can finitely many members of the collection already cover A? Compactness formalizes the sets for which the answer is always yes. Read the page at https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.mp3" length="18839448" type="audio/mpeg"/>
-<itunes:duration>0:19:37</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.mp3" length="18872885" type="audio/mpeg"/>
+<itunes:duration>0:19:39</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.chapters.json" type="application/json+chapters"/>
 </item>
@@ -105,10 +105,21 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.html</guid>
 <pubDate>Fri, 24 Jul 2026 15:00:00 +0000</pubDate>
 <description>A great deal of analysis on \mathbb R, \mathbb C, and \mathbb R^k depends not on their full algebraic structure, but only on the notion of distance between points. This suggests isolating the notion of distance from the particular nature of the points themselves. Accordingly, let M be a nonempty set. We temporarily forget what its elements are and retain only a function d:M\times M\to\mathbb R, where d(x,y) is intended to represent the distance between x and y. Not every such function can reasonably be interpreted as a distance. A distance should be nonnegative; distinct points should have positive distance from one another; the distance from x to y should be the same as the distance from y to x; and traveling directly from x to z should be no longer than traveling from x to z through an intermediate point y. These requirements are abstracted into the following axioms. Read the page at https://yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.mp3" length="21993212" type="audio/mpeg"/>
-<itunes:duration>0:22:54</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.mp3" length="21998227" type="audio/mpeg"/>
+<itunes:duration>0:22:55</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.chapters.json" type="application/json+chapters"/>
+</item>
+<item>
+<title>1.1 Outcomes, Events, and Counting</title>
+<link>https://yeonsolkim.com/2026/07/10/1.-Outcomes,-Events,-and-Counting.html</link>
+<guid isPermaLink="true">https://yeonsolkim.com/2026/07/10/1.-Outcomes,-Events,-and-Counting.html</guid>
+<pubDate>Fri, 10 Jul 2026 15:00:00 +0000</pubDate>
+<description>Definition 1.1.1. An outcome is one particular possible result of an experiment. The sample space, usually denoted by \Omega, is the nonempty set consisting of all possible outcomes. An event is a subset of the sample space. For example, if one die is rolled, the event that an even number appears is Read the page at https://yeonsolkim.com/2026/07/10/1.-Outcomes,-Events,-and-Counting.html</description>
+<enclosure url="https://audio.yeonsolkim.com/2026/07/10/1.-Outcomes,-Events,-and-Counting.mp3" length="13024260" type="audio/mpeg"/>
+<itunes:duration>0:13:34</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/2026/07/10/1.-Outcomes,-Events,-and-Counting.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
 <title>1.2 Subspaces</title>
@@ -116,8 +127,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</guid>
 <pubDate>Thu, 18 Jun 2026 15:00:00 +0000</pubDate>
 <description>Within a vector space, we often focus on elements that satisfy a particular condition. The important question is whether the condition survives the operations of the larger space: do addition and scalar multiplication keep us among elements satisfying that condition? If they do, and the zero vector also satisfies the condition, the collection forms a vector space on its own. Such a collection is called a subspace. Read the page at https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.mp3" length="20664447" type="audio/mpeg"/>
-<itunes:duration>0:21:31</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.mp3" length="20714184" type="audio/mpeg"/>
+<itunes:duration>0:21:34</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.chapters.json" type="application/json+chapters"/>
 </item>
@@ -127,8 +138,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/06/01/1.-Vector-Spaces.html</guid>
 <pubDate>Mon, 01 Jun 2026 15:00:00 +0000</pubDate>
 <description>Tuples, matrices, functions, and polynomials are different kinds of objects, yet each can be added to another of its kind and can be multiplied by a scalar. A vector space captures the rules the operations share: addition forms an abelian group, and scalar multiplication by a field works consistently with addition and field arithmetic. This common structure lets us study the fundamental principles such as linear independence, transformation and dimension without depending on what the vectors themselves look like. Read the page at https://yeonsolkim.com/2026/06/01/1.-Vector-Spaces.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.mp3" length="7607840" type="audio/mpeg"/>
-<itunes:duration>0:07:55</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.mp3" length="7560610" type="audio/mpeg"/>
+<itunes:duration>0:07:52</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.chapters.json" type="application/json+chapters"/>
 </item>

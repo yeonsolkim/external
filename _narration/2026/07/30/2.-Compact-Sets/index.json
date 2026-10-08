@@ -2,11 +2,11 @@
   "url": "/2026/07/30/2.-Compact-Sets.html",
   "title": "2.2 Compact Sets",
   "lang": "en",
-  "hash": "56c42f1a4059243d14c0686f1ea657705f8b4d599a21b917abf772831d152568",
+  "hash": "6405c1e855b6ebe32fb02ef49e385b5230db9d588c64922b08675c16ad34ac76",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-07",
+  "updated": "2026-10-08",
   "sections": [
     {
       "id": "introduction",
@@ -156,7 +156,7 @@
       "title": "Remark 2.2.6",
       "kind": "remark",
       "level": 2,
-      "source": "bcaf6622ac668101b3f595ced0a2e11c94ede39b40a941910416321da96f5829",
+      "source": "1fbed0ca11bf5b213412f728bad74efa11517ff2e1aaffa405d04314d59fdd8a",
       "skip": null,
       "file": "remark-2-2-6.md",
       "current": true,

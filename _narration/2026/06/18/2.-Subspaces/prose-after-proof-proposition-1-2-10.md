@@ -4,13 +4,13 @@ title: We have seen that the union itself is not an operation that…
 kind: prose
 document: 1.2 Subspaces
 url: /2026/06/18/2.-Subspaces.html
-source: d00afabea038cf2a78f83fca7faac7e4f06a124ec3ccb70eeaf7ce527eace6fe
+source: 0e6b7f0fc7770ec75ae59dd045e3042ca94c2698e09d8eb572557a587184df99
 skeleton: 4
 prompt: lecture-v4
 model: gpt-5.5
-generated: 2026-10-06
-body: 732a31e87ef6cd5d759598d4f6fee927bdc33e071155437e79f35d1bd8a17fa0
+generated: 2026-10-08
+body: 267223550af36233e1c93ecbf8efb27c904e46fe8d75d3084808e181df315f41
 words: 59
 ---
 
-We have seen that the union itself is not an operation that generates a subspace. There is, however, a natural way to combine two subspaces W one and W two to obtain a subspace containing both W one and W two. The key to finding such an operation is to assure that the result must be closed under addition.
+We have seen that the union itself is not an operation that generates a subspace. There is, however, a natural way to combine two subspaces W one and W two to obtain a subspace containing both W one and W two. The key to finding such an operation is to ensure that the result must be closed under addition.
