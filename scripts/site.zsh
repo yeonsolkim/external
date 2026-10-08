@@ -379,10 +379,12 @@ follow() {
               /usr/bin/grep -E '\.md$' | /usr/bin/grep -vE '/glossary\.md$|\.new\.md$' | wc -l | tr -d ' ')
   fi
 
-  # A narration step may fail without holding back the deploy (pages.yml); name it if one did.
+  # A narration step may fail without holding back the deploy (pages.yml). The API reports such
+  # a continue-on-error step as a success, so look for the step that runs only after a failure.
   local narration
   narration=$(/usr/bin/timeout 20 gh run view "$run" --json jobs \
-                --jq '[.jobs[].steps[]? | select(.conclusion == "failure") | .name] | first // empty' 2>>"$log")
+                --jq '[.jobs[].steps[]? | select((.name | contains("report a failure")) and .conclusion == "success")]
+                      | if length > 0 then "narration failed (see the run)" else empty end' 2>>"$log")
 
   local pulled=""
   if take_lock 600; then
@@ -392,8 +394,8 @@ follow() {
   else
     pulled=" · not pulled: another run is busy"
   fi
-  say "CI success; narration scripts: $scripts${narration:+; $narration failed}${pulled}"
-  notify "Deployed$( (( scripts )) && print " · ${scripts} narration script(s) generated")${narration:+ · $narration failed}${pulled}"
+  say "CI success; narration scripts: $scripts${narration:+; $narration}${pulled}"
+  notify "Deployed$( (( scripts )) && print " · ${scripts} narration script(s) generated")${narration:+ · $narration}${pulled}"
 }
 
 # The lock is released however the run ends; a signal becomes an exit so the trap runs.
