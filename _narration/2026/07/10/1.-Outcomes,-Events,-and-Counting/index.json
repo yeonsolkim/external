@@ -6,7 +6,7 @@
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-08",
+  "updated": "2026-10-09",
   "sections": [
     {
       "id": "definition-1-1-1",
@@ -95,7 +95,7 @@
       "skip": null,
       "file": "definition-1-1-5.md",
       "current": true,
-      "edited": false,
+      "edited": true,
       "words": 84,
       "math": 7
     },

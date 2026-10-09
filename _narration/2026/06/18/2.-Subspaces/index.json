@@ -6,7 +6,7 @@
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-08",
+  "updated": "2026-10-09",
   "sections": [
     {
       "id": "introduction",
@@ -30,7 +30,7 @@
       "skip": null,
       "file": "definition-1-2-1.md",
       "current": true,
-      "edited": false,
+      "edited": true,
       "words": 79,
       "math": 8
     },
@@ -134,7 +134,7 @@
       "skip": null,
       "file": "example-1-2-7.md",
       "current": true,
-      "edited": false,
+      "edited": true,
       "words": 90,
       "math": 8
     },

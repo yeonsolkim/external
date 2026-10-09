@@ -13,4 +13,4 @@ body: 3a4bcf7ab0858bd61402a0704a671acec82429672d14594ec5c75e89e7b0fa4e
 words: 52
 ---
 
-Definition 3.3.2. Let A be a nonempty subset of a metric space M, and let S be the set of all reals of the form d of x and y where x and y are in A. The supremum of S is called the diameter of A, denoted by diameter of A.
+Definition 3.3.2. Let A be a nonempty subset of a metric space M, and let S be the set of all reals of the form d of x and y where x and y are in A. The supremum of S is called the diameter of A, denoted by diam A.

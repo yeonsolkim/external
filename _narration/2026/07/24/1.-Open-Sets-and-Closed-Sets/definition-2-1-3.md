@@ -13,8 +13,8 @@ body: 247dbe9bfcaaecd5769265cc9ba068306f9dc4fcd7223fa98d39350b13725d03
 words: 178
 ---
 
-Definition 2.1.3. Let M be a metric space, let a belong to M, and let r be greater than zero. The open ball of radius r centered at a is the set, the open ball of radius r about a, defined by the open ball of radius r about a equals the set of all x in M such that d of x and a is less than r.
+Definition 2.1.3. Let M be a metric space, let a belong to M, and let r be greater than zero. The open ball of radius r centered at a is the set B r of a, defined by B r of a equals the set of all x in M such that d of x and a is less than r.
 
-The closed ball of radius r centered at a is the set, the closed ball of radius r about a, defined by the closed ball of radius r about a equals the set of all x in M such that d of x and a is less than or equal to r.
+The closed ball of radius r centered at a is the set B bar r of a, defined by B bar r of a equals the set of all x in M such that d of x and a is less than or equal to r.
 
-The punctured open ball of radius r centered at a is the set, the punctured open ball of radius r about a, defined by the punctured open ball of radius r about a equals the set of all x in M such that zero is less than d of x and a, which is less than r.
+The punctured open ball of radius r centered at a is the set B star r of a, defined by B star r of a equals the set of all x in M such that zero is less than d of x and a, which is less than r.

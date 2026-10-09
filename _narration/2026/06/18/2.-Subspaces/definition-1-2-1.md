@@ -13,4 +13,4 @@ body: b799b3b7873ff00796a3b0ae7ad1b0e4f577fef5f2825f6a64881b1e4cbc3c27
 words: 49
 ---
 
-Definition 1.2.1. Let V be a vector space over a field F. A subset W of V is called a subspace if W is a vector space under the operations inherited from V. Note that the zero subspace is a subspace; it is called the zero subspace of V.
+Definition 1.2.1. Let V be a vector space over a field F. A subset W of V is called a subspace if W is a vector space under the operations inherited from V. Note that the set containing only the zero vector of V is a subspace; it is called the zero subspace of V.

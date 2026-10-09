@@ -13,6 +13,6 @@ body: 8c2f94d729ccccbc1c9f687c8d2bc1b2a21a0002a1e31426feef815ad740908f
 words: 97
 ---
 
-Definition 1.3.2. Let V be a vector space over F, and let S be a subset of V. If S is nonempty, the span of S is the set the span of S defined by the span of S equals the set of all v in V such that v is a linear combination of the vectors in S.
+Definition 1.3.2. Let V be a vector space over F, and let S be a subset of V. If S is nonempty, the span of S is the set span of S, defined by span of S equals the set of all v in V such that v is a linear combination of the vectors in S.
 
 In addition, we define the span of the empty set equals the set containing the zero vector. If W is a subspace of V and the span of S equals W, then we say that S generates W.
