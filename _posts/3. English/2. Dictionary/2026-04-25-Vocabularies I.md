@@ -6,7 +6,7 @@ category_path:
   - 3. English
   - 2. Dictionary
 created_at: 2026-08-10 15:41:50 +0900
-last_modified_at: 2026-10-08 11:03:23 +0900
+last_modified_at: 2026-10-09 18:14:12 +0900
 
 line_indent: false
 publish: false
@@ -266,12 +266,13 @@ publish: false
 <b>break in</b>: force entry to (a building).
 <b>invade</b>: (of an armed force) enter a region so as to subjugate it.
 
-<b>property</b><sup>1</sup>:  a quality belongs to something.
+<b>property</b><sup>1</sup>:  a quality of something: *this metal has three important properties*.
 <b>hallmark</b>: a distinctive quality by which someone or something is easily recognized.
 <b>feature</b>: a noticeable property<sup>1</sup>.
-<b>characteristic</b>: a typical quality of a type<sup>1</sup>.
-<b>trait</b>: a distinguishing quality belongs to a person.
-**nature**<sup>2</sup>: *\|in singular\|* the inherent features of something: *I realized the nature of the problems.*
+<b>trait</b>: a distinguishing quality belongs to a *person*.
+**nature**<sup>2</sup>: *in singular* the inherent features of something: *I realized the nature of the problems.*
+**character**: the distinctive nature of something<sup>2</sup>. 
+<b>characteristic</b>: a *typical* quality of a type<sup>1</sup>.
 
 <b>property</b><sup>2</sup>: something that is owned by a person or group.
 <b>asset</b>: a useful or valuable thing or person.
