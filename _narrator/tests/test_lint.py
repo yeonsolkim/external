@@ -34,6 +34,42 @@ class Problems(unittest.TestCase):
         # "par", "bar", "brace yourself" … only the phrases lecturers must not say are caught.
         self.assertEqual(lint.problems("On a par with the bar exam, the barrier holds."), [])
 
+    def test_a_term_said_again_for_its_notation(self):
+        for text in (
+                "If every entry equals zero, the matrix is called the zero matrix, denoted by the zero matrix.",
+                "The closure of A in M is the set of all closure points of A, denoted by the closure of A.",
+                "The interior of A denotes the interior of A in M, the set of all interior points of A in M.",
+                "The open ball of radius r centered at a is the set, the open ball of radius r about a, defined "
+                "by the open ball of radius r about a equals the set of all x in M such that d of x and a is less than r.",
+                "Note that the zero subspace is a subspace; it is called the zero subspace of V.",
+                "The set closure of S is called the closure of S."):
+            found = lint.problems(text)
+            self.assertEqual(len(found), 1, text)
+            self.assertIn("term said again for its notation", found[0])
+
+    def test_the_notation_said_as_written(self):
+        for text in (
+                "If every entry equals zero, the matrix is called the zero matrix, denoted by capital O.",
+                "The closure of A in M is the set of all closure points of A, denoted by A bar.",
+                "Int A denotes the interior of A in M, the set of all interior points of A in M.",
+                # A notation repeated on purpose: only the names of marks repeat.
+                "The closed ball of radius r centered at a is the set B bar r of a, defined by B bar r of a "
+                "equals the set of all x in M such that d of x and a is at most r.",
+                # Words that meet across a comma ("n, the factorial") are not a repetition.
+                "For a positive integer n, the factorial of n is defined by n factorial equals n times the "
+                "quantity n minus one, and so on, down to two times one.",
+                "If W one intersect W two equals the zero subspace, then the sum of W one and W two is called "
+                "the direct sum, which is denoted by W one direct sum W two."):
+            self.assertEqual(lint.problems(text), [], text)
+
+    def test_accepted_repetitions(self):
+        for text in (
+                "Two functions f and g are equal if f of x equals g of x for all x in S, and the zero function "
+                "is defined by the zero function of x equals zero for all x in S.",
+                "If S is nonempty, the span of S is the set span of S, defined by span of S equals the set of "
+                "all v in V such that v is a linear combination of the vectors in S."):
+            self.assertEqual(lint.problems(text), [], text)
+
     def test_the_tree_skips_glossaries_and_drafts(self):
         with tempfile.TemporaryDirectory() as tmp:
             for name, body in (("a.md", "x comma y"), ("glossary.md", r"\mathcal U — U"),
@@ -95,6 +131,14 @@ class Retry(unittest.TestCase):
     def test_a_retry_that_is_no_better_is_dropped(self):
         scripts = self.run_with(["x comma y.", "x comma y comma z."])
         self.assertIn("x comma y.", scripts.values())
+
+    def test_a_term_said_again_is_retried(self):
+        scripts = self.run_with(["The matrix is called the zero matrix, denoted by the zero matrix.",
+                                 "The matrix is called the zero matrix, denoted by capital O."])
+        self.assertIn("The matrix is called the zero matrix, denoted by capital O.", scripts.values())
+        retries = [c for c in self.lecture_calls() if "YOUR PREVIOUS DRAFT" in c]
+        self.assertIn("term said again for its notation", retries[0])
+        self.assertIn("the notation is said as written", retries[0])
 
 
 if __name__ == "__main__":

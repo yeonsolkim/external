@@ -222,8 +222,9 @@ def run(skel: Skeleton, out_dir: str, model: str = DEFAULT_MODEL, force: bool = 
             # One more try, told what slipped; the better of the two drafts is kept.
             retry = llm.chat(LECTURE_SYSTEM, user + "\n\n---\nYOUR PREVIOUS DRAFT of this section "
                              "had these problems: " + "; ".join(found) + ". Write the section "
-                             "again: no typographical mark or TeX is spoken (principle 1), and "
-                             "no paragraph ends inside a sentence.",
+                             "again: no typographical mark or TeX is spoken (principle 1), no "
+                             "paragraph ends inside a sentence, and where the text introduces a "
+                             "notation, the notation is said as written, not its term a second time.",
                              model=model, max_tokens=8000, reasoning=reasoning)
             if len(lint.problems(retry)) < len(found):
                 script = retry

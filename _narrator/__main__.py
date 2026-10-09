@@ -3,7 +3,7 @@
     python3 -m _narrator skeleton _site               [--json out-dir]
     python3 -m _narrator script   <post.html | URL>  [--dry-run] [--force] [--only id,id] [--model M]
     python3 -m _narrator lecture  <post.html | URL>  [--out file]     # assembled script, for review
-    python3 -m _narrator lint     [_narration]       # scripts that speak typography or keep TeX
+    python3 -m _narrator lint     [_narration]       # scripts that speak typography, keep TeX, or say a term for its notation
     python3 -m _narrator voice    <post.html | URL>  [--voice V] [--dry-run]   # scripts -> _audio/<url>.mp3 + .json
     python3 -m _narrator sample   <post.html | URL>  --section theorem-2-2-3 [--voices a,b,c]
     python3 -m _narrator publish  <post.html | URL | _site> [--site _site] [--dry-run] [--max-new-minutes 30]
@@ -258,7 +258,8 @@ def main(argv: list) -> int:
     p.add_argument("--out-file", dest="out_file", help="write here instead of stdout")
     p.set_defaults(func=cmd_lecture)
 
-    p = sub.add_parser("lint", help="scripts that speak a typographical mark or keep TeX (no LLM)")
+    p = sub.add_parser("lint", help="scripts that speak a typographical mark, keep TeX, or say a term again "
+                                    "for its notation (no LLM)")
     p.add_argument("root", nargs="?", default="_narration", help="root of the script tree (default _narration)")
     p.set_defaults(func=cmd_lint)
 
