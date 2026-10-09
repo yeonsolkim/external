@@ -75,6 +75,17 @@ class Verbatim(unittest.TestCase):
         said = "A sequence x sub n in R is increasing if x sub n is at most x sub n plus one."
         self.assertEqual(realtime.similarity(script, said), 1.0)
 
+    def test_a_symbol_spelled_letter_by_letter_is_one_word(self):
+        # The script spells \operatorname{cl} "c l"; the transcript may run the letters together.
+        script = "Since c l is extensive, S is contained in c l of S, so c l of S equals S; c l is idempotent."
+        for said in ("Since CL is extensive, S is contained in CL of S, so CL of S equals S; CL is idempotent.",
+                     "Since C-L is extensive, S is contained in C L of S, so cl of S equals S; C L is idempotent."):
+            self.assertEqual(realtime.similarity(script, said), 1.0)
+        # Saying the concept for the symbol is still a misreading.
+        self.assertLess(realtime.similarity(script, "Since closure is extensive, S is contained in the "
+                                                    "closure of S, so the closure of S equals S."),
+                        realtime.VERBATIM_RATIO)
+
     def test_an_answer_is_not_a_reading(self):
         script = "Exchanges provide forums where traders meet to arrange trades."
         self.assertLess(realtime.similarity(script, "Sure! Exchanges are places where people trade."),

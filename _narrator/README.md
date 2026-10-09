@@ -162,7 +162,9 @@ said with the text, word by word: under 0.97 agreement it synthesises again, and
 tries it refuses rather than return audio that is not the script. Numbers compare spelled out,
 and "point" and "sub" are ignored: the model voices labels and subscripts its own way ("x sub
 n" where the script says "x n"), which once failed a short definition three times at 0.95.
-(`gpt-4o-mini-tts` had no
+A run of single letters is one word, up to punctuation, so a symbol the script spells ("c l of
+S") passes however the transcript writes it ("CL of S"); without that, one "CL" fails a short
+paragraph. (`gpt-4o-mini-tts` had no
 such check, and in testing it sometimes dropped a paragraph's last sentence.) One WebSocket
 per paragraph, so no call sees another's conversation. `READER` and the reasoning effort are
 part of the cache key too. `--model gpt-4o-mini-tts` still works until the shutdown.

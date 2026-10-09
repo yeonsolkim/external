@@ -82,10 +82,21 @@ def _words(text: str) -> list:
     """Lower-case words, numbers spelled out and 'point' and 'sub' dropped, so "1 point 1 point 1",
     "1.1.1" and "one point one point one" compare equal, and so do "x n" and "x sub n": the
     script says "x n" for x_n, as the lecture prompt asks, and the model voices the subscript
-    anyway — in a short, symbol-dense definition often enough to fail a reading that was fine."""
+    anyway — in a short, symbol-dense definition often enough to fail a reading that was fine.
+    A run of single letters is one word, so a symbol spelled letter by letter compares equal
+    however the transcript writes it: "c l of S" (\\operatorname{cl}) and "CL of S". A run
+    stops at punctuation, so "S; c l is" stays "S" and "cl", as "S; CL is" does."""
     text = text.lower().replace("%", " percent ").replace("’", "'")
     text = re.sub(r"\d+", lambda m: " %s " % spell(int(m.group(0))), text)
-    return [w for w in re.findall(r"[a-z]+(?:'[a-z]+)?", text) if w not in ("point", "sub")]
+    joined = []
+    for phrase in re.split(r"[^\w\s'-]+", text):
+        words = [w for w in re.findall(r"[a-z]+(?:'[a-z]+)?", phrase) if w not in ("point", "sub")]
+        for i, word in enumerate(words):
+            if len(word) == 1 and i and len(words[i - 1]) == 1:
+                joined[-1] += word
+            else:
+                joined.append(word)
+    return joined
 
 
 def _once(text: str, voice: str, model: str, instructions: str, timeout: float) -> tuple:
