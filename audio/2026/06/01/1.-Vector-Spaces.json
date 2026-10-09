@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "Tuples, matrices, functions, and polynomials are different kinds of objects, yet each can be added to another of its kind and can be multiplied by a scalar. A vector space captures the rules the operations share: addition forms an abelian group, and scalar multiplication by a field works consistently with addition and field arithmetic. This common structure lets us study the fundamental principles such as linear independence, transformation and dimension without depending on what the vectors themselves look like.",
   "published_at": "2026-06-01T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/6bd203f89fa9d59b3737bb11a32c2a3a110fd9e50cc2cdb21753b78cfb71ec2e.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/204a62679c9d0537473a75d4d6d8776638fd298e048ac1efc068b3075212d267.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.chapters.json",
-  "duration": 472.451,
-  "bytes": 7560610,
+  "duration": 476.092,
+  "bytes": 7619125,
   "voice": "cedar",
-  "page_key": "6bd203f89fa9d59b3737bb11a32c2a3a110fd9e50cc2cdb21753b78cfb71ec2e",
+  "page_key": "204a62679c9d0537473a75d4d6d8776638fd298e048ac1efc068b3075212d267",
   "skeleton_hash": "62e424a5a08faf01f86f18ee1e822a739890e5d01f7b695f1cef1d6d1208571e",
-  "generated": "2026-10-08",
+  "generated": "2026-10-09",
   "podcast": true,
   "sections": [
     {
@@ -57,9 +57,9 @@
       "kind": "example",
       "level": 2,
       "start": 119.877,
-      "duration": 79.348,
+      "duration": 82.99,
       "source": "8a8fcf528a00e4d81f5c4c99bb1af63e21398537bfdf18133afccd4b7e9c4e49",
-      "audio": "bf7b1bb4c2131b940ac34dbe2f62aa009a6ae180f94982ac5593388124b998d7",
+      "audio": "dfa9a09260fa69569d315120b687fb30a135a91cd7a3af62d121bfdcfb5ce96b",
       "parent": null,
       "proves": null
     },
@@ -68,7 +68,7 @@
       "title": "Example 1.1.4",
       "kind": "example",
       "level": 2,
-      "start": 200.425,
+      "start": 204.067,
       "duration": 38.475,
       "source": "53d3ddc38d12f39df0dc48069d545ab7145167d8f23312c95340ef25a4e70ef5",
       "audio": "46080f40625fc33a4b796f4510fd56ca86c6c28c3c9eba2b2ae9b181d78e95a8",
@@ -80,7 +80,7 @@
       "title": "Example 1.1.5",
       "kind": "example",
       "level": 2,
-      "start": 240.1,
+      "start": 243.742,
       "duration": 132.494,
       "source": "9d37c1deb98cb38b9840056c9431f2f55c8c6d02963eb008311d52366357db48",
       "audio": "e5064dc0a260dad17aa63856d54d37f49fcd613f06cac125c0741dbacc5316ac",
@@ -92,7 +92,7 @@
       "title": "Theorem 1.1.6",
       "kind": "theorem",
       "level": 2,
-      "start": 373.795,
+      "start": 377.437,
       "duration": 24.737,
       "source": "1113df36dab12e52b9b46b59ec4128774c681f85977eea46ad6a3380af700bc8",
       "audio": "5bd08bddc5b1edfd6c28a6bf51078ad7044d3b53e8bb9cb0bd3e01b811fc1fa6",
@@ -104,7 +104,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 399.732,
+      "start": 403.374,
       "duration": 72.718,
       "source": "439804550d3638189325239dc3b53569af875aeff26225ae1717313967de8e97",
       "audio": "0c6858de4c44532e02b3c93e31414dd85560bc90b66ab2969b48bf386c76b51b",
@@ -135,25 +135,25 @@
       "id": "example-1-1-3",
       "title": "Example 1.1.3",
       "start": 119.877,
-      "end": 200.425
+      "end": 204.067
     },
     {
       "id": "example-1-1-4",
       "title": "Example 1.1.4",
-      "start": 200.425,
-      "end": 240.1
+      "start": 204.067,
+      "end": 243.742
     },
     {
       "id": "example-1-1-5",
       "title": "Example 1.1.5",
-      "start": 240.1,
-      "end": 373.795
+      "start": 243.742,
+      "end": 377.437
     },
     {
       "id": "theorem-1-1-6",
       "title": "Theorem 1.1.6",
-      "start": 373.795,
-      "end": 472.451
+      "start": 377.437,
+      "end": 476.092
     }
   ]
 }

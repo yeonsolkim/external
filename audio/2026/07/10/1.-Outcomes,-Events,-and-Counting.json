@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "Definition 1.1.1. An outcome is one particular possible result of an experiment. The sample space, usually denoted by $\\Omega$, is the nonempty set consisting of all possible outcomes. An event is a subset of the sample space. For example, if one die is rolled, the event that an even number appears is",
   "published_at": "2026-07-10T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/58d1e1956dc4cb374a510df6924e35c20ff8f3894b8e4be3d95bb35a929ddcf9.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/52fc636292e487872a475d035e5045d37042b09c5d8fac64171f99da6fe4f35a.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/07/10/1.-Outcomes,-Events,-and-Counting.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/07/10/1.-Outcomes,-Events,-and-Counting.chapters.json",
-  "duration": 813.886,
-  "bytes": 13024260,
+  "duration": 813.923,
+  "bytes": 13024678,
   "voice": "cedar",
-  "page_key": "58d1e1956dc4cb374a510df6924e35c20ff8f3894b8e4be3d95bb35a929ddcf9",
+  "page_key": "52fc636292e487872a475d035e5045d37042b09c5d8fac64171f99da6fe4f35a",
   "skeleton_hash": "ff13656999fd5e9a18d35d3cbfd1d9073849ec799c896c59a91bd76815aae5ae",
-  "generated": "2026-10-08",
+  "generated": "2026-10-09",
   "podcast": true,
   "sections": [
     {
@@ -93,9 +93,9 @@
       "kind": "definition",
       "level": 2,
       "start": 231.221,
-      "duration": 21.848,
+      "duration": 21.885,
       "source": "8909c6a227a908a9bdd0045dd3a359ae13961f104a1537e02be55a1d946312cf",
-      "audio": "a348595daa2898f9718efe4012f5d80b2bf65d7b258fbcec3e54450bc1817bb0",
+      "audio": "f2653ffb2bd54e9896f848b14e09d7b2cfa15055a9898974782530c2c6918e7f",
       "parent": null,
       "proves": null
     },
@@ -104,7 +104,7 @@
       "title": "Theorem 1.1.6 (Multiplication rule)",
       "kind": "theorem",
       "level": 2,
-      "start": 254.269,
+      "start": 254.306,
       "duration": 23.301,
       "source": "23d219ed1b548faa00951101610a08b7a310d7687254b65332b868bcc3866957",
       "audio": "0e075563c882b6a28c9d01439415fc5ccbc5c12085d8da408ee3f6908dbccbce",
@@ -116,7 +116,7 @@
       "title": "The multiplication rule also extends to any finite number…",
       "kind": "prose",
       "level": 2,
-      "start": 278.77,
+      "start": 278.807,
       "duration": 27.533,
       "source": "aab6d4d4ade4a421405797e78045d39f83cef4a6a855a1f73353f09ea28118d1",
       "audio": "aab63e807a24802fe70bbfebc3a25721c596f8cd1acc93449042b15e7270c76e",
@@ -128,7 +128,7 @@
       "title": "Definition 1.1.7",
       "kind": "definition",
       "level": 2,
-      "start": 307.503,
+      "start": 307.54,
       "duration": 35.644,
       "source": "0258040b0473f2d2cdaa3773c487c1086e7ecf803eb82150ebb65274aa001681",
       "audio": "3fa78b5b8dbffbf2d17541dad8cea7d7993e8e7451b09a26eeccd628e896676a",
@@ -140,7 +140,7 @@
       "title": "Definition 1.1.8",
       "kind": "definition",
       "level": 2,
-      "start": 344.347,
+      "start": 344.384,
       "duration": 12.697,
       "source": "6740a85793883984ba734ce4e8d8330420bb78ac6600fc24b1904f7e799e013a",
       "audio": "0e376cf819dbf7898a50c93f8f2e84b53d8984347f03b091effc8cd0e95f0da5",
@@ -152,7 +152,7 @@
       "title": "The first object can be chosen in … ways, the second in ……",
       "kind": "prose",
       "level": 2,
-      "start": 358.244,
+      "start": 358.281,
       "duration": 25.405,
       "source": "99fa8d87189317e0743f40f452e4d62e65631a1854a81338366d55e3d9429644",
       "audio": "c0894bfd5fe38c11a593cb338a4a5c2df9d1c77d23b8e21eedd361c82fe0f25d",
@@ -164,7 +164,7 @@
       "title": "Definition 1.1.9",
       "kind": "definition",
       "level": 2,
-      "start": 384.849,
+      "start": 384.886,
       "duration": 21.296,
       "source": "203f65915837fe50e606c4cb6ff1688216a3ff9e1b876d53027f033b5fe97ad2",
       "audio": "dad13a8eada760d5099f94a9b1c0b62a30bab531c8f8def6fd5d91ca1df2b52d",
@@ -176,7 +176,7 @@
       "title": "Each …-combination gives rise to …!",
       "kind": "prose",
       "level": 2,
-      "start": 407.345,
+      "start": 407.382,
       "duration": 32.566,
       "source": "e372a07f49210a70c40ce0918f8790aba2e2fa472c5ea39173104f6a781ea9bc",
       "audio": "9286e2483511a999f72f59cd4110055130f375e6988998b84fe97f0938c64827",
@@ -188,7 +188,7 @@
       "title": "Theorem 1.1.10 (Pascal’s identity)",
       "kind": "theorem",
       "level": 2,
-      "start": 441.111,
+      "start": 441.148,
       "duration": 13.245,
       "source": "025e583e6a4546b07e4f89ea1811986545c5e79affed86d47fb46aa72c164dda",
       "audio": "c2e37ff62708112f812d30becda973e4bd4b4db6b51d073af4fc6740a6e4e127",
@@ -200,7 +200,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 455.556,
+      "start": 455.594,
       "duration": 28.628,
       "source": "a64779c09717ac32ec9c83b24b013b64b65a3b92819492757113c60d59c060a3",
       "audio": "6b11247e0bd7d5a4173b3094ae32113402c63d96633dedfe8c1a6cfadfd01b58",
@@ -212,7 +212,7 @@
       "title": "Theorem 1.1.11 (Binomial theorem)",
       "kind": "theorem",
       "level": 2,
-      "start": 485.384,
+      "start": 485.422,
       "duration": 18.848,
       "source": "af10e3daad1cf25adf6f9e72f5b0dee15242ebc827833da13045d700e81fff88",
       "audio": "df519553c1f3b2dd00a0ca1679a8a8839f88e7eb4157cec5de74789782a8e2fe",
@@ -224,7 +224,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 505.433,
+      "start": 505.47,
       "duration": 272.462,
       "source": "fe2ad52ae466dfaf8aa7a76d35bfb7816d910017441d8ccdc0258fcb027114b7",
       "audio": "3b8bfb4ba237e9c6d5893c7135695a4f6d7bf76d0cc68c637baed571c7e342dd",
@@ -236,7 +236,7 @@
       "title": "Corollary 1.1.12",
       "kind": "corollary",
       "level": 2,
-      "start": 779.095,
+      "start": 779.132,
       "duration": 12.79,
       "source": "dfd608a4fc85f63c03a3b0822073d981d4069212755a5fa632432b3076b3b909",
       "audio": "f036df38cecf830228855801308999904a92801a38bc68e6916e6012f427cd62",
@@ -248,7 +248,7 @@
       "title": "Since every subset of an …-element set has a unique…",
       "kind": "prose",
       "level": 2,
-      "start": 793.084,
+      "start": 793.122,
       "duration": 20.802,
       "source": "8d6c97681852b667b1a436dc4e1d7c48a73fd05600fa9015b4d3694e0d160b36",
       "audio": "1dca0ce804cc75772fefba782bb2e0426164f67aae95d7161cf01c6ab6bf3136",
@@ -285,49 +285,49 @@
       "id": "definition-1-1-5",
       "title": "Definition 1.1.5",
       "start": 231.221,
-      "end": 254.269
+      "end": 254.306
     },
     {
       "id": "theorem-1-1-6",
       "title": "Theorem 1.1.6 (Multiplication rule)",
-      "start": 254.269,
-      "end": 307.503
+      "start": 254.306,
+      "end": 307.54
     },
     {
       "id": "definition-1-1-7",
       "title": "Definition 1.1.7",
-      "start": 307.503,
-      "end": 344.347
+      "start": 307.54,
+      "end": 344.384
     },
     {
       "id": "definition-1-1-8",
       "title": "Definition 1.1.8",
-      "start": 344.347,
-      "end": 384.849
+      "start": 344.384,
+      "end": 384.886
     },
     {
       "id": "definition-1-1-9",
       "title": "Definition 1.1.9",
-      "start": 384.849,
-      "end": 441.111
+      "start": 384.886,
+      "end": 441.148
     },
     {
       "id": "theorem-1-1-10",
       "title": "Theorem 1.1.10 (Pascal’s identity)",
-      "start": 441.111,
-      "end": 485.384
+      "start": 441.148,
+      "end": 485.422
     },
     {
       "id": "theorem-1-1-11",
       "title": "Theorem 1.1.11 (Binomial theorem)",
-      "start": 485.384,
-      "end": 779.095
+      "start": 485.422,
+      "end": 779.132
     },
     {
       "id": "corollary-1-1-12",
       "title": "Corollary 1.1.12",
-      "start": 779.095,
-      "end": 813.886
+      "start": 779.132,
+      "end": 813.923
     }
   ]
 }

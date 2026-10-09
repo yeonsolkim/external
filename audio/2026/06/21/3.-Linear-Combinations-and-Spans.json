@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "Definitions of linear combinations and spans. We begin with the vectors that can be built from a given set of vectors by addition and scalar multiplication.",
   "published_at": "2026-06-21T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/50f1ce4afd242229f05e600d79a5231cd8a3b5515e9cb2a84dd31185d53f6f13.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/3192ffc22d517ce3c8efb933f159edb4f34955a16b4b84b248a26ec422fb72c1.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/06/21/3.-Linear-Combinations-and-Spans.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/06/21/3.-Linear-Combinations-and-Spans.chapters.json",
-  "duration": 1074.826,
-  "bytes": 17199441,
+  "duration": 1058.597,
+  "bytes": 16939888,
   "voice": "cedar",
-  "page_key": "50f1ce4afd242229f05e600d79a5231cd8a3b5515e9cb2a84dd31185d53f6f13",
+  "page_key": "3192ffc22d517ce3c8efb933f159edb4f34955a16b4b84b248a26ec422fb72c1",
   "skeleton_hash": "33eeee32b9d678452a0b2cb6f0681660b2c8e8692fb9571c2b7c1cee9924bef7",
-  "generated": "2026-10-08",
+  "generated": "2026-10-09",
   "podcast": true,
   "sections": [
     {
@@ -26,7 +26,7 @@
       "audio": "fa6eb4a67b38e4816dc04138ce3a0a5c820cf37b815714df81a4382f65a11b39",
       "parent": null,
       "proves": null,
-      "span": 333.246
+      "span": 329.556
     },
     {
       "id": "definition-1-3-1",
@@ -46,9 +46,9 @@
       "kind": "definition",
       "level": 3,
       "start": 43.8,
-      "duration": 31.88,
+      "duration": 28.191,
       "source": "215446d1e0a82b3e4eabd78c7bba2955b53d7f1076989dd6e78bbc17cbf2819a",
-      "audio": "c382a365876bde95055b6b2cf80517fe74808bdfe19da131344f3ecd1b6e3640",
+      "audio": "a9e4393b5a28eb777b71131521d037876ddfcd1d3dcc2c931bae9096ad6cfd0f",
       "parent": "par-definitions-of-linear-combinations-and-spans",
       "proves": null
     },
@@ -57,7 +57,7 @@
       "title": "A subspace is closed under addition and scalar…",
       "kind": "prose",
       "level": 3,
-      "start": 76.88,
+      "start": 73.191,
       "duration": 18.034,
       "source": "4fe545ee2dca0a138be87822b9c185f5368454a955c7f367132bad27ed2b3b4b",
       "audio": "ebdd09a69dbfd2ea7ad253ef650df3018661136e10c0eda26984c2c645c541e2",
@@ -69,7 +69,7 @@
       "title": "Proposition 1.3.3",
       "kind": "proposition",
       "level": 3,
-      "start": 96.114,
+      "start": 92.425,
       "duration": 8.431,
       "source": "31f1486f1a1b84777c93976582ddbbab18bdd427409b70e702b63436bb9cb030",
       "audio": "a80de681522a987924353f0e64fc1bcca815e99cac2539ffc9263774eb367f44",
@@ -81,7 +81,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 3,
-      "start": 105.745,
+      "start": 102.055,
       "duration": 34.222,
       "source": "e658b8d3789ffa7a208d821fc3b75089c79adc01f2e6dd1094a8ec7ce135964a",
       "audio": "df6612782f81b20762a3f277cad1677cf01e5c8ad0b4968f18dd39d049f5b5ec",
@@ -93,7 +93,7 @@
       "title": "Example 1.3.4",
       "kind": "example",
       "level": 3,
-      "start": 141.167,
+      "start": 137.477,
       "duration": 23.247,
       "source": "3511302e84c6fbb172470d30e8431354713c87e6dcbec9c5b61b3b29538fbe31",
       "audio": "d5dd3f716f1ff9a55fd9cf377792612de1e51c991484e73b969020e1a41f7ffd",
@@ -105,7 +105,7 @@
       "title": "Example 1.3.5",
       "kind": "example",
       "level": 3,
-      "start": 165.614,
+      "start": 161.924,
       "duration": 117.193,
       "source": "abf9ef4b0660e95f6d25d8b918186094fcd0b01694fc1222e9c6ad0dde4e342f",
       "audio": "8ff5de287fe76d42a202931594fa3a56ab8aadccd2ac8cecc6fad61055ffa9fd",
@@ -117,7 +117,7 @@
       "title": "Example 1.3.6",
       "kind": "example",
       "level": 3,
-      "start": 284.007,
+      "start": 280.317,
       "duration": 49.239,
       "source": "f0e4adfe0c1177bdae66f68469cb1e29312380954f1bd780c8d16b74b1a7c754",
       "audio": "da7a5d348bc1269f066aab6f190249582d67d663d450156ebce41dc9d89928ba",
@@ -129,23 +129,23 @@
       "title": "Span as a closure operator",
       "kind": "paragraph",
       "level": 2,
-      "start": 334.446,
+      "start": 330.756,
       "duration": 48.122,
       "source": "5e63e8c0e7e6249f9f0218104d93fad6ccf0a5a1507b70a90353685f88a087df",
       "audio": "7bb92102dc392c80d15bafd513bce5468165afd49d7bfc2a945862b54bd044b6",
       "parent": null,
       "proves": null,
-      "span": 740.381
+      "span": 727.841
     },
     {
       "id": "definition-1-3-7",
       "title": "Definition 1.3.7",
       "kind": "definition",
       "level": 3,
-      "start": 383.767,
-      "duration": 29.03,
+      "start": 380.078,
+      "duration": 30.143,
       "source": "1efc6f38ac15f9c04dd45e8fd6cad5af211b3c1e6dabcd4e691818dfd9d84fed",
-      "audio": "ed58d04ab8b8127c08678c3f2c5ea7e93b743811d504031f732dfd23523b3480",
+      "audio": "8104a9fdf298089d684c8dfd7c43b0d3d53227b55db3648ece0de3504f797471",
       "parent": "par-span-as-a-closure-operator",
       "proves": null
     },
@@ -154,10 +154,10 @@
       "title": "Definition 1.3.8",
       "kind": "definition",
       "level": 3,
-      "start": 413.997,
-      "duration": 13.895,
+      "start": 411.421,
+      "duration": 15.527,
       "source": "14881d5fd73066599cf78f41eef61e0dc86eed584a368f675400db44a02c586b",
-      "audio": "f7bb2c091ee5d076215fec7aeccda147de37f0279385e37076af86ae66896c5e",
+      "audio": "5a8f74febc868d4936b79a846a4d87b1781ec196a475aa8d426298928fa40d59",
       "parent": "par-span-as-a-closure-operator",
       "proves": null
     },
@@ -166,10 +166,10 @@
       "title": "Proposition 1.3.9",
       "kind": "proposition",
       "level": 3,
-      "start": 429.093,
-      "duration": 21.298,
+      "start": 428.148,
+      "duration": 20.095,
       "source": "f30cead6511f462eb4ea54acd741cfc4ca15608cbbb78b834bd3e5d630349cab",
-      "audio": "73ce850c3e569add7caa3fece4daf5b3916e623a77d9e2eef724e9691af2ebdc",
+      "audio": "5c0c2543ac376e698c4524c34a32b5810a1b33f9c25678184c874d80814e6a7a",
       "parent": "par-span-as-a-closure-operator",
       "proves": null
     },
@@ -178,10 +178,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 3,
-      "start": 451.591,
-      "duration": 46.802,
+      "start": 449.443,
+      "duration": 44.648,
       "source": "df96cfd8c065005225117c3d50f30f4da921a3dd533506252bdf0e7f32d776db",
-      "audio": "c55dd837f09ccf38a442dbb226ac1293f224bedf2c1d8c6af4b88e83b9299eda",
+      "audio": "6a25c238f7287f4b1774554b055c326353a78bfd947b01f30a8c635545c48a79",
       "parent": "par-span-as-a-closure-operator",
       "proves": "proposition-1-3-9"
     },
@@ -190,7 +190,7 @@
       "title": "The closure axioms can be expressed as a single inclusion…",
       "kind": "prose",
       "level": 3,
-      "start": 499.592,
+      "start": 495.291,
       "duration": 9.355,
       "source": "6d6cdffed05ff14454975c98fad18fbfd49f05e0d3e5af03f232da176496a0b0",
       "audio": "0e914c139ef044d95120730465b12682b0265fa6ffd0bf164c6c1ff0cf57e560",
@@ -202,10 +202,10 @@
       "title": "Theorem 1.3.10",
       "kind": "theorem",
       "level": 3,
-      "start": 510.148,
-      "duration": 21.917,
+      "start": 505.846,
+      "duration": 22.072,
       "source": "b08ee9606d00d5ded13b5753ef6680b57d4c31fbb23031ef7a4e8026fe55e77a",
-      "audio": "49a819c9d01d51d48b05e8ec74b339bd37b6af5c180cb5f7e3d69500bfdc3f35",
+      "audio": "7a13c989feff0fc3ab559e92a8ae96176db04024a37ff59fc0602dd1b344fdfb",
       "parent": "par-span-as-a-closure-operator",
       "proves": null
     },
@@ -214,10 +214,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 3,
-      "start": 533.265,
-      "duration": 63.053,
+      "start": 529.118,
+      "duration": 49.692,
       "source": "486c70a000e94332771c8686768563cbd0c6a3c034c0a765525d0a3846be195b",
-      "audio": "abae6963b955f08d9bb18e5982b68731c5edd103385d26c2c4b0355aae435e19",
+      "audio": "7eb7a5c0bbff804e60551fd2abe92d976f429e530b8b36a076328b31482673ec",
       "parent": "par-span-as-a-closure-operator",
       "proves": "theorem-1-3-10"
     },
@@ -226,7 +226,7 @@
       "title": "We now turn from the behavior of the operator to the…",
       "kind": "prose",
       "level": 3,
-      "start": 597.518,
+      "start": 580.01,
       "duration": 24.396,
       "source": "149a01a5941999a286286a57922af41db25bf24f0535e14e76e3902771ae8376",
       "audio": "ac68e3e84f576d11970fbe9c790a72fc953b01ceb4dc0e830aff6806860fdf6b",
@@ -238,10 +238,10 @@
       "title": "Theorem 1.3.11",
       "kind": "theorem",
       "level": 3,
-      "start": 623.114,
-      "duration": 9.349,
+      "start": 605.606,
+      "duration": 10.136,
       "source": "577368c4de81571597cedabe58ad589e1882ef401b1a88459304857a76f37024",
-      "audio": "7262b790445ff775d2a07f17b9aadf6779f22a648563b4ef1e57e5ec9b08db0e",
+      "audio": "89e3d1fefc70a17c30d5a18563bd639041621b19f228765a36dd8381b777d5a0",
       "parent": "par-span-as-a-closure-operator",
       "proves": null
     },
@@ -250,10 +250,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 3,
-      "start": 633.662,
-      "duration": 55.128,
+      "start": 616.942,
+      "duration": 57.593,
       "source": "22f44c01fb2b91c00637f3cad5f3a1cd36141da97267952391527d6b46e4a72c",
-      "audio": "1b926f215a768ed46b26e49d56496bdb23c77adf70605dc2a35394c7e9aca359",
+      "audio": "4f0ce830b29a577ff2b254308293d41faa16fc164964e9177f28190d4a95fc88",
       "parent": "par-span-as-a-closure-operator",
       "proves": "theorem-1-3-11"
     },
@@ -262,10 +262,10 @@
       "title": "We now reverse the point of view: once … is known, the…",
       "kind": "prose",
       "level": 3,
-      "start": 689.991,
-      "duration": 17.235,
+      "start": 675.735,
+      "duration": 17.662,
       "source": "b793ac3b104c05c2dd1f81d5a18e015ff6fb3d8cd7537abad05d0709f8edf7bc",
-      "audio": "f9c66f47910214b4dc3d2550e64b4b78dbbfc822eb81a6733585f37b726cbd10",
+      "audio": "2b929909c1194ed63982cddd229e8746f870f4235029336507974296828bf0be",
       "parent": "par-span-as-a-closure-operator",
       "proves": null
     },
@@ -274,10 +274,10 @@
       "title": "Theorem 1.3.12",
       "kind": "theorem",
       "level": 3,
-      "start": 708.426,
-      "duration": 18.877,
+      "start": 694.597,
+      "duration": 18.522,
       "source": "d26c2140d388477e8f65ebd93ba74e23c14f31e1704f756ff170d618c04263d4",
-      "audio": "8ec13d0301ec0240c14d3ba8fefb8bdb1fb96c8d0cae775960123aa9f21eaa8d",
+      "audio": "6d0467349867521e1e62f66f2569674c45e0ba65010f001106b65a54988c11b2",
       "parent": "par-span-as-a-closure-operator",
       "proves": null
     },
@@ -286,10 +286,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 3,
-      "start": 728.503,
-      "duration": 30.343,
+      "start": 714.319,
+      "duration": 28.589,
       "source": "13aef64b58dca404768b9b77b6b0b94f021c139e43a725191db82530ae0684f8",
-      "audio": "c8ee86e7ce0207f938bdfd96bafdfb797ff3e0f63184e6c4a5d50cc8f55683a7",
+      "audio": "46a9e69c50f039c59442c97164f650fc0180db16c377615e2fab1570c9917a17",
       "parent": "par-span-as-a-closure-operator",
       "proves": "theorem-1-3-12"
     },
@@ -298,10 +298,10 @@
       "title": "For a fixed …, Theorem 1.3.12 also has a pointwise…",
       "kind": "prose",
       "level": 3,
-      "start": 760.046,
-      "duration": 20.409,
+      "start": 744.108,
+      "duration": 20.117,
       "source": "f61e73489bdd074c239846b0268bde0381825833dd4b458f1b9db5735963ee68",
-      "audio": "1f0c0d4bc70c120c2d842fb537fe97bdfb7a2d1d6952a4d8ae255fe53327b6d1",
+      "audio": "5f6551b51d4aaefb7b2df21958626b5cc3f9f6d2b5d776dfbdda32b803b23c56",
       "parent": "par-span-as-a-closure-operator",
       "proves": null
     },
@@ -310,7 +310,7 @@
       "title": "Theorem 1.3.13",
       "kind": "theorem",
       "level": 3,
-      "start": 781.655,
+      "start": 765.425,
       "duration": 16.95,
       "source": "0488ea4f601c2b0ae4809800f1d1381309c085b5c05bc9d75cd21ed0c819a470",
       "audio": "796ecd672c5955e76d572461e1ec95990fd79ec8f7af27448c97aaebb9930dd5",
@@ -322,7 +322,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 3,
-      "start": 799.805,
+      "start": 783.575,
       "duration": 157.221,
       "source": "429d319fd0f0d0ae378009336708ecdc5391cb099a6b3a64099ff42030badec4",
       "audio": "6f0b159b46c5d7b01954f57734f6e6810a12f8804961f5df65fe2cf31b1817be",
@@ -334,7 +334,7 @@
       "title": "Since span is a closure operator whose closed sets are…",
       "kind": "prose",
       "level": 3,
-      "start": 958.226,
+      "start": 941.996,
       "duration": 9.255,
       "source": "1515597603146d063a7320eae4a4395f84a89c55d122336ce207fa634f769fcf",
       "audio": "f9b380a7d99e70aacc2ae787639e127aa824002ae3722c7e4139183c6d82ee24",
@@ -346,7 +346,7 @@
       "title": "Corollary 1.3.14",
       "kind": "corollary",
       "level": 3,
-      "start": 968.681,
+      "start": 952.451,
       "duration": 13.06,
       "source": "f87520b9ffdb15a2b6a4f1a4f2d65d90856e60badd447610411c4a6445b706d9",
       "audio": "b9efe7ee82260e188ac0242f7da7529423102e2ac412ed474528ec073f896c9a",
@@ -358,7 +358,7 @@
       "title": "In general closure-operator theory, to combine two closed…",
       "kind": "prose",
       "level": 3,
-      "start": 982.941,
+      "start": 966.711,
       "duration": 43.995,
       "source": "89141f99c7a1c11b9c0e3e78ebbdb6f5e0fadf1f9fc59389755be57082d1463a",
       "audio": "36da87373eac4b7f0e3c60b65abd5067b765cc07ad3c0677118992e17d393ff1",
@@ -370,7 +370,7 @@
       "title": "Corollary 1.3.15",
       "kind": "corollary",
       "level": 3,
-      "start": 1028.136,
+      "start": 1011.906,
       "duration": 10.251,
       "source": "fa4cbbbd11cf86f89fdfb69b3cb6a0695a68342534111937988897318b52408f",
       "audio": "1b389a71b03dff7a292f28170426d3426134a51ca120db6dca48f05d05f08961",
@@ -382,7 +382,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 3,
-      "start": 1039.587,
+      "start": 1023.357,
       "duration": 35.24,
       "source": "396fd601a2cac299cadb44a45157e8e2708bd87d2c7f548c7a334b0f99696250",
       "audio": "e4d97214d67579a5e2cea4066d73186cfc27c833bbb30d87bfbadf1bb2357fe6",
@@ -407,91 +407,91 @@
       "id": "definition-1-3-2",
       "title": "Definition 1.3.2",
       "start": 43.8,
-      "end": 96.114
+      "end": 92.425
     },
     {
       "id": "proposition-1-3-3",
       "title": "Proposition 1.3.3",
-      "start": 96.114,
-      "end": 141.167
+      "start": 92.425,
+      "end": 137.477
     },
     {
       "id": "example-1-3-4",
       "title": "Example 1.3.4",
-      "start": 141.167,
-      "end": 165.614
+      "start": 137.477,
+      "end": 161.924
     },
     {
       "id": "example-1-3-5",
       "title": "Example 1.3.5",
-      "start": 165.614,
-      "end": 284.007
+      "start": 161.924,
+      "end": 280.317
     },
     {
       "id": "example-1-3-6",
       "title": "Example 1.3.6",
-      "start": 284.007,
-      "end": 334.446
+      "start": 280.317,
+      "end": 330.756
     },
     {
       "id": "par-span-as-a-closure-operator",
       "title": "Span as a closure operator",
-      "start": 334.446,
-      "end": 383.767
+      "start": 330.756,
+      "end": 380.078
     },
     {
       "id": "definition-1-3-7",
       "title": "Definition 1.3.7",
-      "start": 383.767,
-      "end": 413.997
+      "start": 380.078,
+      "end": 411.421
     },
     {
       "id": "definition-1-3-8",
       "title": "Definition 1.3.8",
-      "start": 413.997,
-      "end": 429.093
+      "start": 411.421,
+      "end": 428.148
     },
     {
       "id": "proposition-1-3-9",
       "title": "Proposition 1.3.9",
-      "start": 429.093,
-      "end": 510.148
+      "start": 428.148,
+      "end": 505.846
     },
     {
       "id": "theorem-1-3-10",
       "title": "Theorem 1.3.10",
-      "start": 510.148,
-      "end": 623.114
+      "start": 505.846,
+      "end": 605.606
     },
     {
       "id": "theorem-1-3-11",
       "title": "Theorem 1.3.11",
-      "start": 623.114,
-      "end": 708.426
+      "start": 605.606,
+      "end": 694.597
     },
     {
       "id": "theorem-1-3-12",
       "title": "Theorem 1.3.12",
-      "start": 708.426,
-      "end": 781.655
+      "start": 694.597,
+      "end": 765.425
     },
     {
       "id": "theorem-1-3-13",
       "title": "Theorem 1.3.13",
-      "start": 781.655,
-      "end": 968.681
+      "start": 765.425,
+      "end": 952.451
     },
     {
       "id": "corollary-1-3-14",
       "title": "Corollary 1.3.14",
-      "start": 968.681,
-      "end": 1028.136
+      "start": 952.451,
+      "end": 1011.906
     },
     {
       "id": "corollary-1-3-15",
       "title": "Corollary 1.3.15",
-      "start": 1028.136,
-      "end": 1074.826
+      "start": 1011.906,
+      "end": 1058.597
     }
   ]
 }
