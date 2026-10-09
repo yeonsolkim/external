@@ -11,6 +11,7 @@ model: gpt-5.5
 generated: 2026-10-08
 body: 07526cc7db64b1d86506a9ae0fa042acb45a984198dbc68a59cfed0d06b628bf
 words: 182
+stale: true
 ---
 
 Proof. First, since S and T are contained in S union T, monotonicity gives c l of S is contained in c l of the union of S and T, and c l of T is contained in c l of the union of S and T. Hence the union of c l of S and c l of T is contained in c l of the union of S and T. Second, since S is contained in c l of S and T is contained in c l of T, we have S union T is contained in the union of c l of S and c l of T. The inclusion c l of the union of S and T is contained in c l of the union of c l of S and c l of T follows from monotonicity. Since the union of c l of S and c l of T is contained in c l of the union of S and T by part one, monotonicity and idempotence gives the reverse inclusion. This completes the proof.

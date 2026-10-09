@@ -2,7 +2,7 @@
   "url": "/2026/06/18/2.-Subspaces.html",
   "title": "1.2 Subspaces",
   "lang": "en",
-  "hash": "3be08bfd0314ce62b3cd41ca701af7e6c06dcc024acea58b81a39c698b8b765c",
+  "hash": "b5945acd01c3bea7aff0f608ca98c8697c67fc457554e8f0d2372a96e4f3f27f",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
@@ -169,12 +169,12 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "source": "e2356082dd9b8714d6f3ac305bde4c3decc30a8f9aa5b6180cf4234ff3eaeed0",
+      "source": "f4483b329f9578f323e2805c5859069f783384e855c83c5966fbc8d06f135c08",
       "skip": null,
       "file": "proof-theorem-1-2-9.md",
       "current": true,
       "edited": false,
-      "words": 161,
+      "words": 160,
       "math": 19
     },
     {
