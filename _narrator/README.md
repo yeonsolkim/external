@@ -131,13 +131,20 @@ present tense, the author's order and wording, every equation in words, and noth
 except what a lecturer needs to speak structure — "Theorem 2.2.20, the Heine–Borel
 theorem.", "Proof.", "This completes the proof." for `[END PROOF]`, a lead-in for a display
 equation, "We refer to this inclusion as star." after a labelled equation (named after the
-sentence that contains it), list items by number. "We" is only for what the lecturer adds: the
-author's "you" stays "you". An arrow chain between stages written in words is a flow — "from
-A, through the broker, to B" — never "arrow" or "maps to". The notation glossary is passed to every
-section so readings stay consistent; each entry is `symbol — spoken name (note)` — the
-name is what is said, the note says when a role word ("the cover U") is needed, and
-styled letters are named by role, never "bold x". Bump `PROMPT_VERSION` when a change
-should regenerate the unedited scripts; leave it for changes that only matter going forward.
+sentence that contains it), list items by number, each its own sentence, with a name the author
+gives an item said first ("First, extensive: S is contained in c l of S.") and a condition that
+covers every item moved into the sentence that opens the list. "We" is only for what the
+lecturer adds: the author's "you" stays "you". An arrow chain between stages written in words
+is a flow — "from A, through the broker, to B" — never "arrow" or "maps to". The notation
+glossary is passed to every section so readings stay consistent; each entry is
+`symbol — spoken name (note)` — the name is what is said, the note says when a role word ("the
+cover U") is needed, and styled letters are named by role, never "bold x". Notation the text
+introduces is heard as notation: a name the text gives an object is read as written throughout
+("c l of S" for `\operatorname{cl}(S)`, never "closure", the word the text defines with it),
+and fixed notation keeps its phrase while its note gives the reading for the sentence that
+introduces it ("denoted by A bar", not "the closure of A, denoted by the closure of A"). Bump
+`PROMPT_VERSION` when a change should regenerate the unedited scripts; leave it for changes
+that only matter going forward.
 
 ## Stage 3 — voice
 
