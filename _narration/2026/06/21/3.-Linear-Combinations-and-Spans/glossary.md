@@ -9,8 +9,8 @@ body: 28af895589c6b0cea178a907305dbce0f4953793cb1ef35d837702fca04df6e8
 ---
 
 \operatorname{span}(S) — span of S (set of finite linear combinations of vectors in S)
-\operatorname{cl}(S) — closure of S (value of the closure operator)
-\operatorname{cl} — closure (the closure operator)
+\operatorname{cl}(S) — c l of S (the operator c l applied to S; Definition 1.3.8 calls this set the closure of S, but the symbol is still read as written)
+\operatorname{cl} — c l (the name the text gives an operator, read as written like a letter; never "closure", the concept Definitions 1.3.7 and 1.3.8 define with it)
 \mathcal P(X) — power set of X (collection of all subsets of X)
 0_V — zero in V (zero vector of the vector space V)
 F_n[x] — F n of x (polynomials over F of degree at most n)

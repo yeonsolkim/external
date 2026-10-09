@@ -13,4 +13,4 @@ body: c48aec11c4c083a342ceb89bc51d0f209d3342105370785c13ef545438b4c4b4
 words: 57
 ---
 
-For a fixed S contained in X, Theorem 1.3.12 also has a pointwise interpretation. The closure of S is itself closed, contains S, and is contained in every closed set containing S. Hence the closure of S is the smallest closed set containing S. We now show that span is a closure operator on a vector space.
+For a fixed S contained in X, Theorem 1.3.12 also has a pointwise interpretation. The closure c l of S is itself closed, contains S, and is contained in every closed set containing S. Hence c l of S is the smallest closed set containing S. We now show that span is a closure operator on a vector space.

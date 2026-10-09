@@ -13,4 +13,4 @@ body: 3d94045554add40de9c224cb0c842b704e57a0cb02f845f494f2f7e9dac0bdc7
 words: 56
 ---
 
-Theorem 1.3.12. Let closure be a closure operator on a set X, and let the collection C be the collection of all closed subsets of X. Then, for all S contained in X, we have the closure of S equals the intersection of all closed sets C in the collection C such that C contains S.
+Theorem 1.3.12. Let c l be a closure operator on a set X, and let the collection C be the collection of all closed subsets of X. Then, for all S contained in X, we have c l of S equals the intersection of all closed sets C in the collection C such that C contains S.

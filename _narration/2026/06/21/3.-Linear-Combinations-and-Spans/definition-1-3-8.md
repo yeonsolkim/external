@@ -13,4 +13,4 @@ body: ed0791f73e3f0d60fae433037283ab5fe71aeb5b1bcd0078681b2454e732e62e
 words: 44
 ---
 
-Definition 1.3.8. Let closure be a closure operator on a set X, and let S be a subset of X. The set closure of S is called the closure of S. If S equals closure of S, then S is called a closed set.
+Definition 1.3.8. Let c l be a closure operator on a set X, and let S be a subset of X. The set c l of S is called the closure of S. If S equals c l of S, then S is called a closed set.

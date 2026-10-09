@@ -13,4 +13,4 @@ body: 3cafe39ae3f6b8da9652f882728bc0f3276e8cfe2041a132c9e82b5bd5b1756a
 words: 70
 ---
 
-Theorem 1.3.10. Let X be a set. An operator closure, from the power set of X to the power set of X, is a closure operator on X if and only if S is contained in the closure of T if and only if the closure of S is contained in the closure of T, for any S and T contained in X. We refer to this equivalence as star.
+Theorem 1.3.10. Let X be a set. An operator c l, from the power set of X to the power set of X, is a closure operator on X if and only if the following equivalence holds for any S and T contained in X: S is contained in c l of T if and only if c l of S is contained in c l of T. We refer to this equivalence as star.

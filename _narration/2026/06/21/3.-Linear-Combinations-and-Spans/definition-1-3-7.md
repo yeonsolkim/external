@@ -13,4 +13,10 @@ body: 0176a567d9778d6867823db4e214fb2d36e4ad1d4573150e0305dac48d1fab18
 words: 82
 ---
 
-Definition 1.3.7. An operator closure on the collection of subsets of a set X is called a closure operator on X if it satisfies the following axioms: For all S and T contained in X, property one: S is contained in the closure of S, extensive; property two: if S is contained in T, then the closure of S is contained in the closure of T, monotone; property three: the closure of the closure of S equals the closure of S, idempotent.
+Definition 1.3.7. An operator c l on the collection of subsets of a set X is called a closure operator on X if it satisfies the following axioms, for all S and T contained in X.
+
+First, extensive: S is contained in c l of S.
+
+Second, monotone: if S is contained in T, then c l of S is contained in c l of T.
+
+Third, idempotent: c l of c l of S equals c l of S.

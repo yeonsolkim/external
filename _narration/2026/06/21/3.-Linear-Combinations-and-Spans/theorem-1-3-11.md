@@ -13,4 +13,4 @@ body: 64e9e595c2c3027628c2129ffa6bde898c7bd7c60200dd45492e8c4b914167e1
 words: 25
 ---
 
-Theorem 1.3.11. Let closure be a closure operator on a set X. The collection C of all closed subsets of X is a Moore collection.
+Theorem 1.3.11. Let c l be a closure operator on a set X. The collection C of all closed subsets of X is a Moore collection.

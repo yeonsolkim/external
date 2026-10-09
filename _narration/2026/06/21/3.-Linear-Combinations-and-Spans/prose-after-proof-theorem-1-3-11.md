@@ -13,4 +13,4 @@ body: fd39f14b129d3c8db43fa8e40ce693bfc6122d203c12650395d0edd4e113d53d
 words: 49
 ---
 
-We now reverse the point of view: once the collection C is known, the value closure of S can be recovered for every S contained in X by intersecting all members of the collection C that contain S. Thus the collection of closed sets completely determines the closure operator.
+We now reverse the point of view: once the collection C is known, the value c l of S can be recovered for every S contained in X by intersecting all members of the collection C that contain S. Thus the collection of closed sets completely determines the closure operator.
