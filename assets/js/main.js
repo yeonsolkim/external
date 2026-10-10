@@ -329,6 +329,95 @@
     labelEnd.parentNode.insertBefore(gap, reference);
   }
 
+  function getLabelEndBeforeGap(gap) {
+    var node = gap.previousSibling;
+
+    while (
+      node &&
+      (node.nodeType === Node.COMMENT_NODE ||
+        (node.nodeType === Node.TEXT_NODE && normalizeSpace(node.nodeValue || '') === ''))
+    ) {
+      node = node.previousSibling;
+    }
+
+    return node;
+  }
+
+  function gapBeginsLine(gap) {
+    var labelEnd = getLabelEndBeforeGap(gap);
+    var range;
+    var rects;
+
+    if (!labelEnd) {
+      return false;
+    }
+
+    if (labelEnd.nodeType === Node.TEXT_NODE) {
+      range = document.createRange();
+      range.selectNodeContents(labelEnd);
+      rects = range.getClientRects();
+    } else {
+      rects = labelEnd.getClientRects();
+    }
+
+    // The empty gap sits on its line's baseline, below the label's last line if it wrapped.
+    return rects.length > 0 &&
+      gap.getBoundingClientRect().top >= rects[rects.length - 1].bottom;
+  }
+
+  // amsthm keeps the space after a head (\thm@headsep) in the head's box, so it never begins a
+  // line. A gap the line breaks before would indent the next line; it ends the label's line
+  // instead (post.css).
+  function settleLabelGaps(postBody) {
+    var gaps = Array.prototype.slice.call(postBody.querySelectorAll('.math-label-gap'));
+
+    gaps.forEach(function (gap) {
+      gap.classList.remove('math-label-gap--break');
+    });
+
+    gaps.filter(gapBeginsLine).forEach(function (gap) {
+      gap.classList.add('math-label-gap--break');
+    });
+  }
+
+  // Where the lines break changes with the fonts and the width of the text, so the gaps are
+  // settled again whenever either does.
+  function initLabelGapBreaks(postBody) {
+    var width = -1;
+    var frame = 0;
+
+    function settle() {
+      frame = 0;
+      settleLabelGaps(postBody);
+    }
+
+    if (!postBody.querySelector('.math-label-gap')) {
+      return;
+    }
+
+    settleLabelGaps(postBody);
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(settle);
+    }
+
+    if (typeof window.ResizeObserver === 'function') {
+      new window.ResizeObserver(function (entries) {
+        var nextWidth = entries[0].contentRect.width;
+
+        if (nextWidth === width) {
+          return;
+        }
+
+        width = nextWidth;
+
+        if (!frame) {
+          frame = window.requestAnimationFrame(settle);
+        }
+      }).observe(postBody);
+    }
+  }
+
   function addMathLabelGaps(postBody) {
     var labels = postBody.querySelectorAll('strong, b, em, i');
 
@@ -351,6 +440,39 @@
     });
   }
 
+  // A label's spaces keep their width on a justified line (post.css). Safari lacks
+  // text-justify, so there they become U+2004 THREE-PER-EM SPACE, which New Computer Modern
+  // sets at the width of its word space and justification never stretches. The TeX of inline
+  // math is left for MathJax, which has not read it yet.
+  function fixLabelSpaces(postBody) {
+    if (window.CSS && CSS.supports && CSS.supports('text-justify', 'none')) {
+      return;
+    }
+
+    postBody.querySelectorAll('.math-label-anchor, .math-proof-marker').forEach(function (label) {
+      var walker = document.createTreeWalker(label, NodeFilter.SHOW_TEXT);
+      var nodes = [];
+      var node;
+
+      while ((node = walker.nextNode())) {
+        nodes.push(node);
+      }
+
+      nodes.forEach(function (textNode, index) {
+        if (shouldSkipTypographyTextNode(textNode) || textNode.parentElement.closest('.math-inline')) {
+          return;
+        }
+
+        textNode.nodeValue = textNode.nodeValue.replace(/ +/g, function (spaces, offset, text) {
+          var atLabelEdge = (index === 0 && offset === 0) ||
+            (index === nodes.length - 1 && offset + spaces.length === text.length);
+
+          return atLabelEdge ? spaces : '\u2004';
+        });
+      });
+    });
+  }
+
   function initPostTypographySpacing() {
     var postBody = getPostBody();
 
@@ -361,6 +483,7 @@
     postBody.setAttribute('data-typography-spacing', 'true');
     removeSpaceAfterEmSpace(postBody);
     addMathLabelGaps(postBody);
+    fixLabelSpaces(postBody);
   }
 
   function getTextBeforeNode(container, node) {
@@ -828,6 +951,8 @@
       if (typeof window.updateDisplayMathOverflow === 'function') {
         window.updateDisplayMathOverflow();
       }
+
+      initLabelGapBreaks(postBody);
     };
 
     if (window.postPreparation && typeof window.postPreparation.whenMathReady === 'function') {

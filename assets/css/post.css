@@ -561,6 +561,20 @@ display: inline-block;
 width: 0.5em;
 }
 
+/* A gap the line breaks before ends the label's line instead of indenting the next (main.js). */
+.post-body .math-label-gap--break {
+display: block;
+}
+
+/* A label keeps its natural spacing on a justified line, as amsthm's head does in its box
+   (\sbox\@labels): only the text after it is stretched. text-justify: none takes the label's
+   spaces out of justification in Chrome 145+ and Firefox; in Safari, which lacks it, main.js
+   sets them as fixed-width spaces instead. */
+.post-body .math-label-anchor,
+.post-body .math-proof-marker {
+text-justify: none;
+}
+
 .post-body .math-statement-italic {
 font-style: italic;
 }
