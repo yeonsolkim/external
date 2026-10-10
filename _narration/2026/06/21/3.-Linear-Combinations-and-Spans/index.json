@@ -2,11 +2,11 @@
   "url": "/2026/06/21/3.-Linear-Combinations-and-Spans.html",
   "title": "1.3 Linear Combinations and Spans",
   "lang": "en",
-  "hash": "2d7692acf96149fa22e125d9f6b7a26fdc3dcf06138e4c9769751128a69f8be5",
+  "hash": "b116b510bdefb3746b1cdf6f639e5140a3e661e1c0ef303a33e672439fb99999",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-09",
+  "updated": "2026-10-10",
   "sections": [
     {
       "id": "par-definitions-of-linear-combinations-and-spans",
@@ -104,12 +104,12 @@
       "title": "Example 1.3.5",
       "kind": "example",
       "level": 3,
-      "source": "549b9bffc32a15249ee43042bda4c2e281bccaa4360afb9fbbc1f47a1c836e7a",
+      "source": "bed7d7d333d587eaa330483359944ec4b19d65d07953584054c4e35fb93b8097",
       "skip": null,
       "file": "example-1-3-5.md",
       "current": true,
       "edited": false,
-      "words": 202,
+      "words": 203,
       "math": 8
     },
     {
@@ -412,29 +412,29 @@
       "math": 6
     },
     {
-      "id": "prose-after-proof-corollary-1-3-15",
-      "title": "The span operator has two further properties that…",
-      "kind": "prose",
-      "level": 3,
-      "source": "5bb91c6f670c3c67cb16715704e0d13b2584cd6b0fa7a410682e16f5ef8874fd",
+      "id": "par-further-properties-of-the-span-operator",
+      "title": "Further properties of the span operator",
+      "kind": "paragraph",
+      "level": 2,
+      "source": "7672cb150c3a568f534a1b0d9b51c8cfe4635c3208c08ebd7244630121b551b7",
       "skip": null,
-      "file": "prose-after-proof-corollary-1-3-15.md",
+      "file": "par-further-properties-of-the-span-operator.md",
       "current": true,
       "edited": false,
-      "words": 57,
+      "words": 63,
       "math": 0
     },
     {
       "id": "proposition-1-3-16",
-      "title": "Proposition 1.3.16",
+      "title": "Proposition 1.3.16 (Finite character)",
       "kind": "proposition",
       "level": 3,
-      "source": "0b45f92d7956472925bc38eb43bcba8adf2fb0f5c6d73e52dbc2173a33abb894",
+      "source": "012af737788d32ec2030d5e81c647191de0e11a407f007765df9b21b92ccb515",
       "skip": null,
       "file": "proposition-1-3-16.md",
       "current": true,
       "edited": false,
-      "words": 56,
+      "words": 58,
       "math": 6
     },
     {

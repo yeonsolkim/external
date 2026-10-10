@@ -2,11 +2,11 @@
   "url": "/2026/06/01/1.-Vector-Spaces.html",
   "title": "1.1 Vector Spaces",
   "lang": "en",
-  "hash": "62e424a5a08faf01f86f18ee1e822a739890e5d01f7b695f1cef1d6d1208571e",
+  "hash": "9f0fda91c3fac34645a3abad88d5c72217e3ece1c5587f9d7cd7e634c14fa84f",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-09",
+  "updated": "2026-10-10",
   "sections": [
     {
       "id": "introduction",
@@ -52,10 +52,10 @@
       "title": "Example 1.1.3",
       "kind": "example",
       "level": 2,
-      "source": "8a8fcf528a00e4d81f5c4c99bb1af63e21398537bfdf18133afccd4b7e9c4e49",
+      "source": "e6699ffd11e430e5d00befaf82ee27036cd0e8a88228d92c6038b3f00e05605b",
       "skip": null,
       "file": "example-1-1-3.md",
-      "current": true,
+      "current": false,
       "edited": true,
       "words": 276,
       "math": 23
