@@ -346,6 +346,45 @@ D.transform(<<~HTML, warnings)
 HTML
 check("statements share a counter, exercises keep their own") { warnings.empty? }
 
+puts "bare exercise numbers"
+warnings = []
+bare_exercises = D.transform(<<~HTML, warnings)
+  <h2 id="introduction">Introduction</h2>
+  <p><strong>1.</strong> A numbered part.</p>
+  <h2 id="exercises">Exercises</h2>
+  <p><strong>1.</strong> First exercise.</p>
+  <p><em>Proof.</em> Argument. <span data-environment-end="proof">QED</span></p>
+  <p><strong>2.</strong> Second exercise.</p>
+  <h2 id="notes">Notes</h2>
+  <p><strong>2.</strong> Another numbered part.</p>
+HTML
+check("bare integers are exercises only inside the Exercises heading") do
+  tree(bare_exercises) == ["section", "  subsection 1", "section", "  exercise 1",
+                           "  proof", "  exercise 2", "section", "  subsection 2"] && warnings.empty?
+end
+check("a bare exercise keeps its anchor and its proof association") do
+  bare_exercises.include?('id="exercise-1" class="math-label-anchor">1.</strong>') &&
+    bare_exercises.include?('data-proves="exercise-1"') &&
+    bare_exercises.include?('id="proof-exercise-1"')
+end
+check("numbered titles and dotted numbers remain sections under Exercises") do
+  tree(build('<h2 id="exercises">Exercises</h2>' \
+             '<p><strong>1. Hints.</strong> A part.</p>' \
+             '<p><strong>1.1.</strong> A subpart.</p>')) ==
+    ["section", "  subsection 1", "    subsubsection 1.1"]
+end
+exercise_document = Struct.new(:data, :content, :collection, :relative_path).new(
+  { "title" => "Exercises" },
+  '<p><strong>1.</strong> Do it.</p><p><em>Proof.</em> Argument.</p>' \
+    '<h2 id="references">References</h2><p><strong>2.</strong> A numbered part.</p>',
+  Struct.new(:label).new("posts"), "exercises.md"
+)
+D.process(exercise_document)
+check("an Exercises post recognises bare numbers before its first heading") do
+  tree(exercise_document.content) == ["exercise 1", "proof", "section", "  subsection 2"] &&
+    exercise_document.content.include?('data-proves="exercise-1"')
+end
+
 warnings = []
 D.transform(%(<p><strong>Theorem 3.</strong> a</p><p><strong>Definition 2.</strong> b</p>), warnings)
 check("a number that goes backwards is reported") { warnings.length == 1 }

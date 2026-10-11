@@ -24,6 +24,7 @@ module ExternalDocumentStructure
   # Statements share one counter (\newtheorem{...}[shared]); exercises keep their own, which
   # is what the posts actually do — Definition 1.1.9 is followed by Exercise 1.1.2.
   OWN_COUNTER = %w[Exercise].freeze
+  EXERCISE_TITLE_RE = /\AExercises?\z/i.freeze
 
   # `**Theorem 1.1.6 (Multiplication rule).**` — a name inside the label, as the optional
   # argument of `\begin{theorem}[…]`. It runs from the first parenthesis to the last, so a
@@ -152,7 +153,7 @@ module ExternalDocumentStructure
       open_tag: "<#{match[1]}#{match[2]}>", rest: match.post_match }
   end
 
-  def descriptor_of(block)
+  def descriptor_of(block, exercises: false)
     label = label_of(block)
     return nil unless label
 
@@ -162,6 +163,13 @@ module ExternalDocumentStructure
     end
 
     if (numbered = label[:text].match(NUMBERED_RE))
+      # A bare number under Exercises is an exercise, with the same id and proof
+      # association as `Exercise 1.`. Numbered titles still introduce sections.
+      if exercises && numbered[1].match?(/\A\d+\z/) && numbered[2].nil?
+        return { role: :environment, kind: "Exercise", number: numbered[1], label: label,
+                 name: nil, name_in_label: false }
+      end
+
       return { role: :section, number: numbered[1], title: numbered[2].to_s.sub(/\.\z/, ""), label: label }
     end
 
@@ -295,7 +303,7 @@ module ExternalDocumentStructure
          .map { |name, value| %( #{name}="#{value.to_s.gsub('"', "&quot;")}") }.join
   end
 
-  def transform(html, warnings)
+  def transform(html, warnings, exercise_page: false)
     blocks = split_blocks(html)
     root = Unit.new(:root)
     stack = [root]
@@ -328,7 +336,12 @@ module ExternalDocumentStructure
         next
       end
 
-      descriptor = descriptor_of(block)
+      headings = stack.select do |unit|
+        unit.role == :section && unit.attrs["class"].to_s.split.include?("doc-section--heading")
+      end
+      exercises = headings.any? { |unit| unit.attrs["data-title"].to_s.match?(EXERCISE_TITLE_RE) } ||
+                  (exercise_page && headings.empty?)
+      descriptor = descriptor_of(block, exercises: exercises)
       # `**Existence.**` inside a proof that runs to its QED is a step of that proof.
       if descriptor && descriptor[:role] == :paragraph &&
          stack.any? { |unit| unit.role == :proof && unit.attrs[:hosts] }
@@ -556,7 +569,8 @@ module ExternalDocumentStructure
     return if document.content.to_s.strip.empty?
 
     warnings = []
-    document.content = transform(document.content, warnings)
+    exercise_page = document.data["title"].to_s.match?(EXERCISE_TITLE_RE)
+    document.content = transform(document.content, warnings, exercise_page: exercise_page)
     document.data["document_structure"] = true
     warnings.each do |warning|
       Jekyll.logger.warn "Structure:", "#{document.relative_path}: #{warning}"

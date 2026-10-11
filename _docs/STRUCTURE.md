@@ -18,6 +18,7 @@ as `\begin{proof}` is in LaTeX, and carries a pointer back to it.
 | `\subsubsection{T}` | `**3.1. T.**` | same, nested under `3.` |
 | `\paragraph{T}` (run-in, unnumbered) | `**T.**` | `<section class="doc-section doc-section--run-in" data-doc="paragraph">`, label `role="heading"` |
 | `\begin{theorem}` … | `**Theorem 1.3.3.** …` | `<section class="math-environment math-environment--theorem" data-doc="theorem">` |
+| `\begin{exercise}` … | `**1.** …` under `## Exercises` or at the start of a post titled `Exercises` | `<section class="math-environment math-environment--exercise" data-doc="exercise">` |
 | `\begin{theorem}[N]` … | `**Theorem 1.1.6 (N).** …` | same, `data-name="N"`; in the label, `<span class="math-statement-name">(N)</span>` |
 | `\begin{proof}` … `\qed` | `*Proof.* … $\square$` | `<section class="math-environment math-environment--proof" data-proves="…">` |
 | `\begin{enumerate}` | `1. …` | `<ol>` (unchanged) |
@@ -51,6 +52,11 @@ nothing.
 
 Kinds (as counted in the corpus): Definition 103, Theorem 66, Exercise 30, Example 15,
 Proposition 13, Corollary 8, Remark 7, Axiom 7, Lemma 6, Principle 2, Notation 1, Rule 1.
+
+An exercise may use just a bold integer and a period: `**1.**`. Under an `Exercises`
+heading, or before the first heading in a post titled `Exercises`, this is an Exercise
+environment and keeps its `exercise-1` id and proof association. A numbered title such as
+`**1. Hints.**`, or a bare number outside that context, still introduces a section.
 
 An environment may carry a name, written inside the label as the optional argument of
 `\begin{theorem}[…]`: `**Theorem 1.1.6 (Multiplication rule).**`. The name runs from the
