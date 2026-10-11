@@ -171,7 +171,9 @@ and "point" and "sub" are ignored: the model voices labels and subscripts its ow
 n" where the script says "x n"), which once failed a short definition three times at 0.95.
 A run of single letters is one word, up to punctuation, so a symbol the script spells ("c l of
 S") passes however the transcript writes it ("CL of S"); without that, one "CL" fails a short
-paragraph. (`gpt-4o-mini-tts` had no
+paragraph. The articles "the" and "an" are ignored as well: the model adds one where a script
+leaves it out ("to the span of S" for "to span of S"), which failed the proof of Theorem 1.3.18
+three times at 0.97; "a" counts, since it also names a scalar. (`gpt-4o-mini-tts` had no
 such check, and in testing it sometimes dropped a paragraph's last sentence.) One WebSocket
 per paragraph, so no call sees another's conversation. `READER` and the reasoning effort are
 part of the cache key too. `--model gpt-4o-mini-tts` still works until the shutdown.

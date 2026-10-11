@@ -85,12 +85,16 @@ def _words(text: str) -> list:
     anyway — in a short, symbol-dense definition often enough to fail a reading that was fine.
     A run of single letters is one word, so a symbol spelled letter by letter compares equal
     however the transcript writes it: "c l of S" (\\operatorname{cl}) and "CL of S". A run
-    stops at punctuation, so "S; c l is" stays "S" and "cl", as "S; CL is" does."""
+    stops at punctuation, so "S; c l is" stays "S" and "cl", as "S; CL is" does.
+    The articles "the" and "an" are dropped too: the model adds one where a script leaves it
+    out ("u belongs to the span of S" for "to span of S"), which failed a short paragraph
+    three times at 0.97. "A" still counts, since it also names a scalar ("s plus a v")."""
     text = text.lower().replace("%", " percent ").replace("’", "'")
     text = re.sub(r"\d+", lambda m: " %s " % spell(int(m.group(0))), text)
     joined = []
     for phrase in re.split(r"[^\w\s'-]+", text):
-        words = [w for w in re.findall(r"[a-z]+(?:'[a-z]+)?", phrase) if w not in ("point", "sub")]
+        words = [w for w in re.findall(r"[a-z]+(?:'[a-z]+)?", phrase)
+                 if w not in ("point", "sub", "the", "an")]
         for i, word in enumerate(words):
             if len(word) == 1 and i and len(words[i - 1]) == 1:
                 joined[-1] += word

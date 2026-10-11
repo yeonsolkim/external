@@ -86,6 +86,16 @@ class Verbatim(unittest.TestCase):
                                                     "closure of S, so the closure of S equals S."),
                         realtime.VERBATIM_RATIO)
 
+    def test_an_article_the_model_adds_is_not_a_misreading(self):
+        # CI run 303: the model said "the span of S" three times where the script says "span of S".
+        script = ("Second, since u belongs to span of S union the set containing v, S union the set "
+                  "containing u is contained in span of S union the set containing v.")
+        said = ("Second, since u belongs to the span of S union the set containing v, S union the set "
+                "containing u is contained in the span of S union the set containing v.")
+        self.assertEqual(realtime.similarity(script, said), 1.0)
+        # "a" is not dropped: it also names a scalar.
+        self.assertLess(realtime.similarity("u equals s plus a v.", "u equals s plus v."), 1.0)
+
     def test_an_answer_is_not_a_reading(self):
         script = "Exchanges provide forums where traders meet to arrange trades."
         self.assertLess(realtime.similarity(script, "Sure! Exchanges are places where people trade."),
