@@ -477,20 +477,20 @@
       "math": 0
     },
     {
-      "id": "exercise-1-2-1",
-      "title": "Exercise 1.2.1",
+      "id": "exercise-1",
+      "title": "Exercise 1",
       "kind": "exercise",
       "level": 3,
-      "source": "7808018cef2629972577ac49b9f8ed1a67e80602c19b38760c921fa91663cb3f",
+      "source": "dfd3e6442311d0cc44cb069e638d1a08b32c146fa3e22f87c8ffce3d9276eb99",
       "skip": "exercises",
       "file": null,
       "current": false,
       "edited": false,
-      "words": 29,
+      "words": 28,
       "math": 3
     },
     {
-      "id": "proof-exercise-1-2-1",
+      "id": "proof-exercise-1",
       "title": "Proof",
       "kind": "proof",
       "level": 3,
@@ -503,16 +503,16 @@
       "math": 4
     },
     {
-      "id": "exercise-1-2-2",
-      "title": "Exercise 1.2.2",
+      "id": "exercise-2",
+      "title": "Exercise 2",
       "kind": "exercise",
       "level": 3,
-      "source": "dbdee4535c69a9f0ee2f2be083b08d2ef288da2c891ed0e5524dbadcc1bb8dd9",
+      "source": "43d201f5ba104a950605391eaa533f26a50f7c273b6cdf79b9694ad36554ca38",
       "skip": "exercises",
       "file": null,
       "current": false,
       "edited": false,
-      "words": 20,
+      "words": 19,
       "math": 2
     },
     {

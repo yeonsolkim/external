@@ -126,20 +126,20 @@
       "math": 0
     },
     {
-      "id": "exercise-1-1-1",
-      "title": "Exercise 1.1.1",
+      "id": "exercise-1",
+      "title": "Exercise 1",
       "kind": "exercise",
       "level": 3,
-      "source": "e9b748b48002aeedc176d1ebd20fe781287587988a6c41a770213d7181405e88",
+      "source": "e6a8fed24458ea290c28f903fa7df4d08ce146520bc92851a55e931da4a2a13f",
       "skip": "exercises",
       "file": null,
       "current": false,
       "edited": false,
-      "words": 27,
+      "words": 26,
       "math": 3
     },
     {
-      "id": "proof-exercise-1-1-1",
+      "id": "proof-exercise-1",
       "title": "Proof",
       "kind": "proof",
       "level": 3,
@@ -191,20 +191,20 @@
       "math": 3
     },
     {
-      "id": "exercise-1-1-2",
-      "title": "Exercise 1.1.2",
+      "id": "exercise-2",
+      "title": "Exercise 2",
       "kind": "exercise",
       "level": 3,
-      "source": "cbf170a63ea859d15d7d6dad0199db77a4e977d6448c11c1b11b974c8f488019",
+      "source": "7cdae365a744ab4491005f3661dc644fa36178645d79544b50eb1fab384e0f32",
       "skip": "exercises",
       "file": null,
       "current": false,
       "edited": false,
-      "words": 28,
+      "words": 27,
       "math": 3
     },
     {
-      "id": "proof-exercise-1-1-2",
+      "id": "proof-exercise-2",
       "title": "Proof",
       "kind": "proof",
       "level": 3,

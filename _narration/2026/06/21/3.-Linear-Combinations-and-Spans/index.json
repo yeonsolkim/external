@@ -503,29 +503,29 @@
       "math": 0
     },
     {
-      "id": "exercise-1-3-1",
-      "title": "Exercise 1.3.1",
+      "id": "exercise-1",
+      "title": "Exercise 1",
       "kind": "exercise",
       "level": 3,
-      "source": "e1fbe0a0618d6976f55b798eb22cc89aaac4bf1b567e093cc3e162dcba0ce0ac",
+      "source": "20d802297aeab179cc810bc54d1e1a4743601863d81bacc651014b067268baf1",
       "skip": "exercises",
       "file": null,
       "current": false,
       "edited": false,
-      "words": 53,
+      "words": 52,
       "math": 5
     },
     {
-      "id": "exercise-1-3-2",
-      "title": "Exercise 1.3.2",
+      "id": "exercise-2",
+      "title": "Exercise 2",
       "kind": "exercise",
       "level": 3,
-      "source": "f18a425f0f0b1248f7feb7ea74f145ae4b95a030e9ea49ceac9632b242271149",
+      "source": "941370a49b84334b08f4537dad4f451fe942dfccac38d0a9112661b35980dc19",
       "skip": "exercises",
       "file": null,
       "current": false,
       "edited": false,
-      "words": 127,
+      "words": 126,
       "math": 13
     },
     {
