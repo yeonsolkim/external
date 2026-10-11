@@ -10,7 +10,7 @@
 <itunes:explicit>false</itunes:explicit>
 <itunes:type>episodic</itunes:type>
 <itunes:category text="Science"/>
-<lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+<lastBuildDate>Sun, 11 Oct 2026 00:00:00 +0000</lastBuildDate>
 <item>
 <title>1.1 The Trading Industry</title>
 <link>https://yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.html</link>
@@ -138,8 +138,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</guid>
 <pubDate>Thu, 18 Jun 2026 15:00:00 +0000</pubDate>
 <description>Within a vector space, we often focus on elements that satisfy a particular condition. The important question is whether the condition survives the operations of the larger space: do addition and scalar multiplication keep us among elements satisfying that condition? If they do, and the zero vector also satisfies the condition, the collection forms a vector space on its own. Such a collection is called a subspace. Read the page at https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.mp3" length="20693286" type="audio/mpeg"/>
-<itunes:duration>0:21:33</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.mp3" length="20640623" type="audio/mpeg"/>
+<itunes:duration>0:21:30</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.chapters.json" type="application/json+chapters"/>
 </item>
@@ -149,7 +149,7 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/06/01/1.-Vector-Spaces.html</guid>
 <pubDate>Mon, 01 Jun 2026 15:00:00 +0000</pubDate>
 <description>Tuples, matrices, functions, and polynomials are different kinds of objects, yet each can be added to another of its kind and can be multiplied by a scalar. A vector space captures the rules the operations share: addition forms an abelian group, and scalar multiplication by a field works consistently with addition and field arithmetic. This common structure lets us study the fundamental principles such as linear independence, transformation and dimension without depending on what the vectors themselves look like. Read the page at https://yeonsolkim.com/2026/06/01/1.-Vector-Spaces.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.mp3" length="7619125" type="audio/mpeg"/>
+<enclosure url="https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.mp3" length="7618707" type="audio/mpeg"/>
 <itunes:duration>0:07:56</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.chapters.json" type="application/json+chapters"/>
