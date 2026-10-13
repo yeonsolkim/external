@@ -57,7 +57,7 @@ module ExternalTikzcdRenderer
 
         if opening[:language] == "tikzcd"
           source = lines[(index + 1)...closing_index].join
-          output << render_diagram(tikzcd_environment(source))
+          output << render_diagram(tikzcd_environment(source), opening[:indentation])
         else
           output << lines[index..closing_index].join
         end
@@ -72,12 +72,13 @@ module ExternalTikzcdRenderer
     private
 
     def opening_fence(line)
-      match = line.match(/\A {0,3}(`{3,}|~{3,})([^\r\n]*)\r?\n?\z/)
+      match = line.match(/\A( {0,3})(`{3,}|~{3,})([^\r\n]*)\r?\n?\z/)
       return unless match
 
       {
-        fence: match[1],
-        language: match[2].strip.split(/\s+/, 2).first
+        indentation: match[1],
+        fence: match[2],
+        language: match[3].strip.split(/\s+/, 2).first
       }
     end
 
@@ -93,12 +94,14 @@ module ExternalTikzcdRenderer
     def render_display_tikzcd(markdown)
       markdown.gsub(DISPLAY_MATH_PATTERN) do |display_math|
         body = Regexp.last_match(:body)
+        # The indentation of the line the formula opens on, as in a list item.
+        indentation = Regexp.last_match.pre_match.rpartition("\n").last[/\A[ \t]*/]
         environment_match = body.match(TIKZCD_ENVIRONMENT_PATTERN)
 
         if environment_match
-          render_diagram(environment_match[:environment])
+          render_diagram(environment_match[:environment], indentation)
         elsif body.match?(TIKZCD_BEGIN_PATTERN)
-          render_diagram(display_formula(body))
+          render_diagram(display_formula(body), indentation)
         else
           display_math
         end
@@ -120,12 +123,15 @@ module ExternalTikzcdRenderer
       LATEX
     end
 
-    def render_diagram(environment)
+    # The figure keeps the indentation of the source it replaces, so a diagram in a list item
+    # stays in that item. Unindented, it would end the list, and kramdown would start the
+    # items after it as a new list, numbered from 1 again.
+    def render_diagram(environment, indentation = "")
       @diagram_index += 1
       svg, digest = cached_svg(environment)
       svg = prepare_inline_svg(svg, digest, @diagram_index)
 
-      <<~HTML
+      <<~HTML.gsub(/^(?=.)/) { indentation }
 
         <figure class="commutative-diagram" data-tikzcd-hash="#{digest[0, 12]}">
         #{svg}

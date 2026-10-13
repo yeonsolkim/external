@@ -6,7 +6,7 @@ category_path:
   - 1. Mathematics
   - 6. Others
 created_at: 2026-09-27 16:02:08 +0900
-last_modified_at: 2026-09-29 08:45:43 +0900
+last_modified_at: 2026-10-12 14:59:19 +0900
 
 publish: false
 ---
@@ -92,8 +92,8 @@ $$
 If a function from $Y$ to $X$ is both a left-inverse and right-inverse of $f$, then it is called the *inverse* of $f$.
 
 **Proposition 1.** Let $X\ne \varnothing$, and let $f:X\to Y$ be a function.
-1. $f$ is injective if and only if it has a left-inverse.
-2. $f$ is surjective if and only if it has a right-inverse.
+1. The function $f$ is injective if and only if it has a left-inverse.
+2. The function $f$ is surjective if and only if it has a right-inverse.
 
 
 **4. Cartesian product.**

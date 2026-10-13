@@ -8,7 +8,7 @@ category_path:
   - 1. Introduction to Analysis
   - 2. Metric Spaces
 created_at: 2026-08-31 15:32:11 +0900
-last_modified_at: 2026-10-11 18:08:14 +0900
+last_modified_at: 2026-10-12 14:59:19 +0900
 
 publish: false
 ---
@@ -19,9 +19,9 @@ publish: false
 
 **2.** Let $(M,d)$ be a metric space and let $A\subseteq M$. Prove that
 
-1. $A$ is open if and only if $A\cap\partial A=\varnothing$;
-2. $A$ is closed if and only if $\partial A\subseteq A$;
-3. $A$ is dense in $M$ if and only if $\operatorname{ext} A = \varnothing$;
+1. the set $A$ is open if and only if $A\cap\partial A=\varnothing$;
+2. the set $A$ is closed if and only if $\partial A\subseteq A$;
+3. the set $A$ is dense in $M$ if and only if $\operatorname{ext} A = \varnothing$;
 
 *Solution.* (1) Suppose $A$ is open. Since $\operatorname{int} A$ and $\partial A$ is disjoint, $A\subseteq \operatorname{int} A$ implies $A\cap \partial A = \varnothing.$ Conversely, suppose $A\cap \partial A = \varnothing.$ Then $x\in A$ implies $x\notin \partial A,$ so that $x\in \operatorname{int} A$ or $x\in \operatorname{ext} A.$ Since $A$ and $\operatorname{ext} A$ are disjoint, $x\in \operatorname{int} A.$ Hence $A\subseteq \operatorname{int} A,$ so $A$ is open.
 (2) If $\partial A\subseteq A,$ then $\operatorname{int} A \cup \partial A \subseteq A.$ Hence $A'\subseteq \overline A \subseteq A.$ Thus $A$ is closed. Conversely, if $A'\subseteq A$ then $\overline A\subseteq A.$ Hence $\partial A \subseteq \overline A \subseteq A.$
