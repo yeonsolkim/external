@@ -2,11 +2,11 @@
   "url": "/2026/06/18/2.-Subspaces.html",
   "title": "1.2 Subspaces",
   "lang": "en",
-  "hash": "0f5a1ebba98d0a35f1663e9557df5961e032f6a61440a829cffde86645e497a9",
+  "hash": "1b879b8f7545e9f22f8640f498daa40c4fc49791877ed53f5d6257d8ed29c4d4",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-11",
+  "updated": "2026-10-13",
   "sections": [
     {
       "id": "introduction",
@@ -52,12 +52,12 @@
       "title": "Theorem 1.2.2",
       "kind": "theorem",
       "level": 2,
-      "source": "7a86113410c1fcec36af48f4ecf2dca67c5f1ac2553f7dca0787adf54ceaa43a",
+      "source": "ae288cb4f8fab1293fefe161ed357de552444cf5b81a2f9034ecd3e505d136f8",
       "skip": null,
       "file": "theorem-1-2-2.md",
       "current": true,
       "edited": false,
-      "words": 105,
+      "words": 111,
       "math": 13
     },
     {
@@ -247,12 +247,12 @@
       "title": "Theorem 1.2.12",
       "kind": "theorem",
       "level": 2,
-      "source": "4de8f6b39a5633ab645c8da0f97f41a87aef98834b343ab73e44a414745704ff",
+      "source": "5f1d2e4f90e2f14ee070874ec72fa7a99ed96073ac3920064462e33290d12a41",
       "skip": null,
       "file": "theorem-1-2-12.md",
       "current": true,
       "edited": false,
-      "words": 83,
+      "words": 85,
       "math": 11
     },
     {
@@ -270,10 +270,10 @@
     },
     {
       "id": "prose-after-proof-theorem-1-2-12",
-      "title": "The preceding theorem shows that … is the smallest subspace…",
+      "title": "The preceding theorem shows that … is the minimal subspace…",
       "kind": "prose",
       "level": 2,
-      "source": "8502ce9aabb24a49341f24b53d55885fecf7899b8384cea598e7530bdac0d5d8",
+      "source": "4c84ab98071f1b36b3dabce3d72848bb97a581528dc192955f8f676ae30727e6",
       "skip": null,
       "file": "prose-after-proof-theorem-1-2-12.md",
       "current": true,

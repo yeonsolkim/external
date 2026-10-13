@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "We now consider how a collection of open sets can cover a set $A$ as a whole. Such a collection may contain infinitely many sets, and this raises a natural question. Can finitely many members of the collection already cover $A$? Compactness formalizes the sets for which the answer is always yes.",
   "published_at": "2026-07-30T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/23b75bf548d84f2a37ce487a9e59c72db5f40ed926b5863055b5961e155c5878.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/52864dcb51845a758b41af3482e87b410121a7bffb19529fcbc3ac026ecbcea7.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.chapters.json",
-  "duration": 1179.389,
-  "bytes": 18872885,
+  "duration": 1167.814,
+  "bytes": 18687729,
   "voice": "cedar",
-  "page_key": "23b75bf548d84f2a37ce487a9e59c72db5f40ed926b5863055b5961e155c5878",
-  "skeleton_hash": "6405c1e855b6ebe32fb02ef49e385b5230db9d588c64922b08675c16ad34ac76",
-  "generated": "2026-10-08",
+  "page_key": "52864dcb51845a758b41af3482e87b410121a7bffb19529fcbc3ac026ecbcea7",
+  "skeleton_hash": "08219375fd68917e265463e8f1d8913f1037c1c2c42f519ef8c114cf70bceadf",
+  "generated": "2026-10-13",
   "podcast": true,
   "sections": [
     {
@@ -429,9 +429,9 @@
       "kind": "proof",
       "level": 2,
       "start": 857.418,
-      "duration": 117.261,
-      "source": "20d7b27582f1b5407c7e96432636bc8b24c444592f2f5bf27dce11583a78445c",
-      "audio": "302865a2fd030d45db4de33b4396c785d937a7319b09eb9ce425934128c98dd1",
+      "duration": 105.686,
+      "source": "af56acabaaca6645de4d0b92773bf94e3a8ea465e07253bf30d017cf0644abdf",
+      "audio": "a768fbbc580077a17d6d64bebf0f313473f8f465e0aab62fde3bf5a9177e3ad9",
       "parent": null,
       "proves": "theorem-2-2-16"
     },
@@ -440,7 +440,7 @@
       "title": "We next examine the relation between having a limit point…",
       "kind": "prose",
       "level": 2,
-      "start": 975.879,
+      "start": 964.304,
       "duration": 12.905,
       "source": "f5931129f9c25feb7422647c86ed5d25bde260d4b7ab7b2c8c9d4aa5b3de749e",
       "audio": "b80ab1c1164754e1adbae137d78ea2fba37dd3aa1bda140bba53abf2b118dc88",
@@ -452,7 +452,7 @@
       "title": "Theorem 2.2.17",
       "kind": "theorem",
       "level": 2,
-      "start": 989.984,
+      "start": 978.409,
       "duration": 8.493,
       "source": "ddb870b94b4bcc68373f89455211aa96aafd0886d5f95320776a5923a78065a5",
       "audio": "1885ec98c4c6059558002ef449693aaffaf9103158baf5f8a406356a5a2000ff",
@@ -464,7 +464,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 999.677,
+      "start": 988.101,
       "duration": 36.399,
       "source": "db33561e410cc09c2ab8a172a2db241948fc20aa1ee0718a72c5e1a539658fc0",
       "audio": "d01cae77bfd4d1a83d7effbefec6859d7ff416acd33ac1d54d8a800149a6a3cd",
@@ -476,7 +476,7 @@
       "title": "The theorem states that every infinite subset of a compact…",
       "kind": "prose",
       "level": 2,
-      "start": 1037.276,
+      "start": 1025.701,
       "duration": 19.395,
       "source": "8f2d8b4a95cbb42d95abd434cebf80e5a5df5bb1142899c4b180d6d190705fa1",
       "audio": "8b0ee7c28f19de1d706ac0c176b3aa36652c2a531af52f4dfaf8ba944aa50522",
@@ -488,7 +488,7 @@
       "title": "Corollary 2.2.18 (Bolzano–Weierstrass theorem)",
       "kind": "corollary",
       "level": 2,
-      "start": 1057.871,
+      "start": 1046.296,
       "duration": 9.745,
       "source": "f3bae1a0e34298d3bea568beaabbc1ee9aef98a24c89cc746d2ab918efb012a8",
       "audio": "0a6a0ecb02c9d5e28c22e0ce9f7e09ebae800e970aa2153e773dc6ca539e6354",
@@ -500,7 +500,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 1068.816,
+      "start": 1057.241,
       "duration": 17.14,
       "source": "9ae4040b22d3e493b8e2b918e49f9ef04f28db0b37e92d97d732053eda7776b4",
       "audio": "e0d5f3c07e0f64add333fc0e008dd762803f1008dfa8084942a0e3240a2c44e0",
@@ -512,7 +512,7 @@
       "title": "In Euclidean space, the somewhat abstract notion of…",
       "kind": "prose",
       "level": 2,
-      "start": 1087.156,
+      "start": 1075.581,
       "duration": 8.374,
       "source": "058b255c48a334c6cf80bca869e1465a859ce228e6da16d7e92b8371db0af540",
       "audio": "1225ba343d59e8578c8be1a6205f9dac2688de038893b1d50aebc01ae7372dd3",
@@ -524,7 +524,7 @@
       "title": "Definition 2.2.19",
       "kind": "definition",
       "level": 2,
-      "start": 1096.73,
+      "start": 1085.155,
       "duration": 15.079,
       "source": "cbeac45dd307d34efd4b92b47b4808293ecf8f9461ce4be1bccb874c70be6532",
       "audio": "6e2bf4fbdf662c7bf0a431ce53750ec69f3148abb61c6f9adca5e84f790e2aaf",
@@ -536,7 +536,7 @@
       "title": "Theorem 2.2.20 (Heine–Borel theorem)",
       "kind": "theorem",
       "level": 2,
-      "start": 1113.01,
+      "start": 1101.434,
       "duration": 9.385,
       "source": "c967a284eda746f6e7e52f5795f142a28cfb5b321a65ced0438cf6f204689162",
       "audio": "34f416c77452dd1502244ebac004b0e597e7f6097d9cb97f82238325156d7a8e",
@@ -548,7 +548,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 1123.595,
+      "start": 1112.019,
       "duration": 55.794,
       "source": "dd6fc5f03af7628fcf8015599abc9882da2115affa56f68acb02bec0ed759b4c",
       "audio": "4d6733f4cd50a97ebd69e744b9c5ea938b3af4f0076c1979363d484e063e9d2d",
@@ -657,31 +657,31 @@
       "id": "theorem-2-2-16",
       "title": "Theorem 2.2.16",
       "start": 851.541,
-      "end": 989.984
+      "end": 978.409
     },
     {
       "id": "theorem-2-2-17",
       "title": "Theorem 2.2.17",
-      "start": 989.984,
-      "end": 1057.871
+      "start": 978.409,
+      "end": 1046.296
     },
     {
       "id": "corollary-2-2-18",
       "title": "Corollary 2.2.18 (Bolzano–Weierstrass theorem)",
-      "start": 1057.871,
-      "end": 1096.73
+      "start": 1046.296,
+      "end": 1085.155
     },
     {
       "id": "definition-2-2-19",
       "title": "Definition 2.2.19",
-      "start": 1096.73,
-      "end": 1113.01
+      "start": 1085.155,
+      "end": 1101.434
     },
     {
       "id": "theorem-2-2-20",
       "title": "Theorem 2.2.20 (Heine–Borel theorem)",
-      "start": 1113.01,
-      "end": 1179.389
+      "start": 1101.434,
+      "end": 1167.814
     }
   ]
 }

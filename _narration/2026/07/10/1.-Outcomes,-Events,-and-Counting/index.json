@@ -2,11 +2,11 @@
   "url": "/2026/07/10/1.-Outcomes,-Events,-and-Counting.html",
   "title": "1.1 Outcomes, Events, and Counting",
   "lang": "en",
-  "hash": "ff13656999fd5e9a18d35d3cbfd1d9073849ec799c896c59a91bd76815aae5ae",
+  "hash": "5857c76d24dff4d0f80fce8ebbd4ed39c3d2b4d93bad71fd3509c6fb4d64af48",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-09",
+  "updated": "2026-10-13",
   "sections": [
     {
       "id": "definition-1-1-1",
@@ -26,12 +26,12 @@
       "title": "Definition 1.1.2",
       "kind": "definition",
       "level": 2,
-      "source": "26bb3a84a73ea9a08bb694d377cf5efc917471df5ebe10193d3bdb80ada8b235",
+      "source": "d8d56ce0724ef3d0fa560992e1e9fdd7c4bebaceed74643c1425c31c79a8e4d7",
       "skip": null,
       "file": "definition-1-1-2.md",
       "current": true,
       "edited": false,
-      "words": 295,
+      "words": 297,
       "math": 27
     },
     {

@@ -2,11 +2,11 @@
   "url": "/2026/07/24/1.-Open-Sets-and-Closed-Sets.html",
   "title": "2.1 Open Sets and Closed Sets",
   "lang": "en",
-  "hash": "58fbbddb3b6832ea1399c02f9ec5161485adfeee520b1cb0a80ed16e9b0452ec",
+  "hash": "e09994f3338aef7cdfca3b629d3b802377dbdf4823520df68dc25f146db14562",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-09",
+  "updated": "2026-10-13",
   "sections": [
     {
       "id": "introduction",
@@ -26,12 +26,12 @@
       "title": "Definition 2.1.1",
       "kind": "definition",
       "level": 2,
-      "source": "9cf57feab97355b820e4101f8235e66521b7893302afd687980d688f022eaf72",
+      "source": "dd8c00f6931737b91cc3b5d2e011f68617fbb9c597444c078aa36579e341ad61",
       "skip": null,
       "file": "definition-2-1-1.md",
       "current": true,
       "edited": false,
-      "words": 98,
+      "words": 101,
       "math": 11
     },
     {
@@ -91,12 +91,12 @@
       "title": "Definition 2.1.4",
       "kind": "definition",
       "level": 2,
-      "source": "b1a51b87212bdf8ca3ebaf61f59fcc35e4c9ab09fcca844be6b7bf5e2625d9ce",
+      "source": "9397cb90e0ad627d50158977e5cd66df069b21906a72b154526f3676f38757f3",
       "skip": null,
       "file": "definition-2-1-4.md",
-      "current": true,
+      "current": false,
       "edited": true,
-      "words": 291,
+      "words": 295,
       "math": 35
     },
     {
@@ -143,12 +143,12 @@
       "title": "Definition 2.1.6",
       "kind": "definition",
       "level": 2,
-      "source": "6e9c0433a48c06bb1b0953793cf104ae56d5553ac4ab220706cfb6918639294e",
+      "source": "132fc7992be62544a55ece3f1f6ae2adb230db955a952c35fc2088aec772971f",
       "skip": null,
       "file": "definition-2-1-6.md",
-      "current": true,
+      "current": false,
       "edited": true,
-      "words": 223,
+      "words": 225,
       "math": 25
     },
     {
@@ -273,12 +273,12 @@
       "title": "Definition 2.1.12",
       "kind": "definition",
       "level": 2,
-      "source": "2de367f5b12204a329c5e12f58d1a5b6f89dc4d68883e1d2758187941d695f04",
+      "source": "1d8e7d12145206087c400f532f6745c5f2e15484c745f9b650584ae28b5933f6",
       "skip": null,
       "file": "definition-2-1-12.md",
       "current": true,
       "edited": false,
-      "words": 127,
+      "words": 131,
       "math": 10
     },
     {
@@ -312,12 +312,12 @@
       "title": "Theorem 2.1.14",
       "kind": "theorem",
       "level": 2,
-      "source": "005219b8961b377df3b8a7a0cdb8bd7d65108014409ec25b5fef89b1d3f5b347",
+      "source": "79ba589292fc635154cca8559222cc1a7a7183963a6db698e8d1b2bafe14af1e",
       "skip": null,
       "file": "theorem-2-1-14.md",
       "current": true,
       "edited": false,
-      "words": 38,
+      "words": 40,
       "math": 4
     },
     {

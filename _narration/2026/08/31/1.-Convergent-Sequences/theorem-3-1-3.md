@@ -4,11 +4,11 @@ title: Theorem 3.1.3
 kind: theorem
 document: 3.1 Convergent Sequences
 url: /2026/08/31/1.-Convergent-Sequences.html
-source: 13a4d198b65c859a02f57616df504b8ae58f5d1b0bde1721a2f7089b88a5c7be
+source: 3355e2af282f69daced684ce148bf85aa073b06303306c14c43734c696ea7c53
 skeleton: 4
 prompt: lecture-v4
 model: gpt-5.5
-generated: 2026-10-07
+generated: 2026-10-13
 body: 0ca727c7afadca7a576fddd2257f65ef3283b798fe2a4b9ab7f8e2ea2b6ebdd3
 words: 109
 ---

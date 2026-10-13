@@ -2,11 +2,11 @@
   "url": "/2026/06/01/1.-Vector-Spaces.html",
   "title": "1.1 Vector Spaces",
   "lang": "en",
-  "hash": "9f0fda91c3fac34645a3abad88d5c72217e3ece1c5587f9d7cd7e634c14fa84f",
+  "hash": "0de5402936a9d4e2470d2f0888fcdcf32d8bc91a2dcb07b842681ac908869351",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-11",
+  "updated": "2026-10-13",
   "sections": [
     {
       "id": "introduction",
@@ -52,10 +52,10 @@
       "title": "Example 1.1.3",
       "kind": "example",
       "level": 2,
-      "source": "e6699ffd11e430e5d00befaf82ee27036cd0e8a88228d92c6038b3f00e05605b",
+      "source": "f21cb23c383b186b3d59fecd562f1125cdff8335c2a1b70cfd9f8c7fffef1fe9",
       "skip": null,
       "file": "example-1-1-3.md",
-      "current": true,
+      "current": false,
       "edited": true,
       "words": 276,
       "math": 23
@@ -91,12 +91,12 @@
       "title": "Theorem 1.1.6",
       "kind": "theorem",
       "level": 2,
-      "source": "1113df36dab12e52b9b46b59ec4128774c681f85977eea46ad6a3380af700bc8",
+      "source": "7f4f6866e959dc480f163675cb92b06d3a60179df54fee8bf197bbcc1589a1d2",
       "skip": null,
       "file": "theorem-1-1-6.md",
       "current": true,
       "edited": false,
-      "words": 70,
+      "words": 76,
       "math": 9
     },
     {
@@ -104,12 +104,12 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "source": "439804550d3638189325239dc3b53569af875aeff26225ae1717313967de8e97",
+      "source": "2901573fff2db4faa9920f781121585ea21d0c7d4f781b01dcc89892e711ddd0",
       "skip": null,
       "file": "proof-theorem-1-1-6.md",
       "current": true,
       "edited": false,
-      "words": 119,
+      "words": 121,
       "math": 13
     },
     {
@@ -143,12 +143,12 @@
       "title": "Proof",
       "kind": "proof",
       "level": 3,
-      "source": "9d01043c1a20ca63e8a08e42de39cadd0ab800e4a25937d9f7047e471e9e10f9",
+      "source": "19a84216dfd488f98c9f3e374945ddf2b28cb8fde8eff72dfc7de8974ef96025",
       "skip": "exercises",
       "file": null,
       "current": false,
       "edited": false,
-      "words": 45,
+      "words": 47,
       "math": 6
     },
     {

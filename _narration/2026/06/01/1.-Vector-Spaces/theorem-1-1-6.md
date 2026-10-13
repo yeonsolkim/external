@@ -4,19 +4,19 @@ title: Theorem 1.1.6
 kind: theorem
 document: 1.1 Vector Spaces
 url: /2026/06/01/1.-Vector-Spaces.html
-source: 1113df36dab12e52b9b46b59ec4128774c681f85977eea46ad6a3380af700bc8
+source: 7f4f6866e959dc480f163675cb92b06d3a60179df54fee8bf197bbcc1589a1d2
 skeleton: 4
 prompt: lecture-v4
 model: gpt-5.5
-generated: 2026-10-07
-body: 49af599af00a8c4c5d75c49981cba349d374b0e80dc9de9ec261d1f736a49024
-words: 64
+generated: 2026-10-13
+body: 2f5e8ee0e315ad01b36f68a66b9b3803ff533f8078e5eae9bd992e94d056b24d
+words: 77
 ---
 
 Theorem 1.1.6. Let V be a vector space over a field F.
 
-First, zero times u equals zero V for all u in V.
+First, for all u in V, we have scalar zero times u equals zero vector.
 
-Second, negative a times u equals the negative of a u, which equals a times negative u, for each a in F and each u in V.
+Second, for each a in F and each u in V, we have the quantity negative a times u equals the negative of the quantity a u, which equals a times the quantity negative u.
 
-Third, a times zero V equals zero V for all a in F.
+Third, for all a in F, we have a times zero vector equals zero vector.

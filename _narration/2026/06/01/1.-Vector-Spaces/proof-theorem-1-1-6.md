@@ -4,17 +4,17 @@ title: Proof
 kind: proof
 document: 1.1 Vector Spaces
 url: /2026/06/01/1.-Vector-Spaces.html
-source: 439804550d3638189325239dc3b53569af875aeff26225ae1717313967de8e97
+source: 2901573fff2db4faa9920f781121585ea21d0c7d4f781b01dcc89892e711ddd0
 skeleton: 4
 prompt: lecture-v4
 model: gpt-5.5
-generated: 2026-10-07
-body: ed6c7f51b0588883a417eaa555f6f165260f3a19e9d9cc93a18f6ed173621b72
-words: 229
+generated: 2026-10-13
+body: b9d7634e56603c8c43adfc59c675f6c7929d5e663404af8d218ef361e52147d6
+words: 234
 ---
 
-Proof. Part one. The zero vector is unique. Given a vector a u, we have a u plus zero times u equals the quantity a plus zero, times u, which equals a u. Thus zero times u is the zero vector.
+Proof. First, The zero vector is unique. Given a vector a times u, we have a times u plus zero times u equals the quantity a plus zero, times u, which equals a times u. Thus zero times u is the zero vector.
 
-Part two. The vector negative of a u is the unique element such that a u plus the negative of a u equals zero V, the additive inverse of a u. But we know that a u plus the quantity negative a times u equals the quantity a plus negative a, times u, which equals zero times u, which equals zero V. Thus the quantity negative a times u equals the negative of a u. It follows that the negative of a u equals the quantity negative a times u, which equals the quantity negative one times a, times u, which equals negative one times the quantity a u. Thus we have negative one times u equals negative u. Finally we get the quantity negative a times u equals the quantity a times negative one, times u, which equals a times the quantity negative one times u, which equals a times negative u.
+Second, The vector the negative of a times u is the unique element such that a times u plus the negative of a times u equals zero vector, the additive inverse of a times u. But we know that a times u plus negative a times u equals the quantity a plus negative a, times u, which equals zero times u, which equals zero vector. Thus negative a times u equals the negative of a times u. It follows that the negative of a times u equals negative a times u, which equals the quantity negative one times a, times u, which equals negative one times the quantity a times u. Thus we have negative one times u equals negative u. Finally we get negative a times u equals the quantity a times negative one, times u, which equals a times the quantity negative one times u, which equals a times negative u.
 
-Part three. a u plus a times zero V equals a times the quantity u plus zero V, which equals a u. Thus a times zero V is the zero vector. This completes the proof.
+Third, We have a times u plus a times zero vector equals a times the quantity u plus zero vector, which equals a times u. Thus a times zero vector is the zero vector. This completes the proof.

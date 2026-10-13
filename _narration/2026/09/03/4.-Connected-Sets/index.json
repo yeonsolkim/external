@@ -2,11 +2,11 @@
   "url": "/2026/09/03/4.-Connected-Sets.html",
   "title": "2.4 Connected Sets",
   "lang": "en",
-  "hash": "fcd772608fdcae5302425b4661debe248e397c0a342aa3290bd99a0335c2b245",
+  "hash": "b8cd8eb39df398d5c173d13c68f913e9eeca752a01dd284eb0e40b9ad08aecad",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-07",
+  "updated": "2026-10-13",
   "sections": [
     {
       "id": "introduction",
@@ -52,12 +52,12 @@
       "title": "Definition 2.4.2",
       "kind": "definition",
       "level": 2,
-      "source": "866ce84fa9ccb0937c649ee2ac32c8b8d266e64f4a2b542c4a6cdbf9fbb1bcb0",
+      "source": "a2b1eccea9a08862d4ab5bd82306b363e7147d21140ef00c08e20a6eb399f467",
       "skip": null,
       "file": "definition-2-4-2.md",
       "current": true,
       "edited": false,
-      "words": 57,
+      "words": 59,
       "math": 4
     },
     {
