@@ -128,11 +128,10 @@ Switching later to a block heading is then a CSS-only decision.
 
 An unnumbered run-in heading is marked the same way, one level below the section it sits
 in: `aria-level="2"` in the body (beside `## Exercises`), `3` under an `##` heading, `4`
-under `**3. T.**`. A numbered section is itself a unit that states things, so its
-paragraphs are flush like an environment's; a run-in heading only groups statements and
-prose, so its wrapper is laid out like an `##` section's — its first paragraph, the one that
-carries the heading, flush, the rest indented (`.doc-section--run-in` in `post.css` and
-`main.js`).
+under `**3. T.**`. A run-in heading, numbered or not, groups statements and prose, so its
+wrapper is laid out like an `##` section's — its first paragraph, the one that carries the
+heading, flush, the rest indented (`.doc-section` in `post.css` and `main.js`). Only an
+environment's or a proof's paragraphs are flush by default.
 
 ## 6. The shape produced
 

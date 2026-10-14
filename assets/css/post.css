@@ -469,7 +469,7 @@ white-space: normal;
 }
 
 /* Each source soft line becomes a real paragraph in the enhanced DOM. */
-.post-body[data-semantic-units="true"] :is(.post-body, .doc-section--heading, .doc-section--run-in) > p.semantic-paragraph,
+.post-body[data-semantic-units="true"] :is(.post-body, .doc-section) > p.semantic-paragraph,
 .post-body[data-semantic-units="true"] > p.semantic-paragraph {
 margin-top: 0 !important;
 margin-bottom: 0 !important;
@@ -477,18 +477,18 @@ text-indent: 1em;
 }
 
 /* A single blank line after display math continues the preceding paragraph. */
-.post-body[data-semantic-units="true"] :is(.doc-section--heading, .doc-section--run-in) > p.semantic-paragraph[data-paragraph-continuation="display"],
+.post-body[data-semantic-units="true"] .doc-section > p.semantic-paragraph[data-paragraph-continuation="display"],
 .post-body[data-semantic-units="true"] > p.semantic-paragraph[data-paragraph-continuation="display"] {
 text-indent: 0;
 }
 
-.post-body[data-semantic-units="true"] :is(.doc-section--heading, .doc-section--run-in) > p.semantic-paragraph--section-opening,
+.post-body[data-semantic-units="true"] .doc-section > p.semantic-paragraph--section-opening,
 .post-body[data-semantic-units="true"] > p.semantic-paragraph--section-opening {
 text-indent: 0;
 }
 
 /* Dictionary-style posts retain their opt-out from line indentation. */
-.post-body[data-line-indent="false"][data-semantic-units="true"] :is(.doc-section--heading, .doc-section--run-in) > p.semantic-paragraph,
+.post-body[data-line-indent="false"][data-semantic-units="true"] .doc-section > p.semantic-paragraph,
 .post-body[data-line-indent="false"][data-semantic-units="true"] > p.semantic-paragraph {
 text-indent: 0;
 }
@@ -526,14 +526,14 @@ padding: 0;
 margin-top: 1lh;
 }
 
-.post-body :is(.math-environment, .doc-section--numbered) > p.math-environment__paragraph {
+.post-body .math-environment > p.math-environment__paragraph {
 margin-top: 0 !important;
 margin-bottom: 0 !important;
 text-indent: 0;
 }
 
 /* Soft continuations and two-blank structural continuations are indented. */
-.post-body :is(.math-environment, .doc-section--numbered) > p.math-environment__paragraph:is(
+.post-body .math-environment > p.math-environment__paragraph:is(
   [data-paragraph-continuation="soft"],
   [data-paragraph-continuation="structural"]
 ) {
@@ -693,7 +693,7 @@ margin-top: 0.4em !important;
 
 /* One blank line after \end{quote} continues the paragraph; two start a new, indented one
    (the post-structural-continuation marker then stands between them). */
-.post-body[data-semantic-units="true"] :is(.post-body, .doc-section--heading, .doc-section--run-in) > blockquote + p.semantic-paragraph {
+.post-body[data-semantic-units="true"] :is(.post-body, .doc-section) > blockquote + p.semantic-paragraph {
 text-indent: 0;
 }
 

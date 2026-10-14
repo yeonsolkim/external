@@ -918,8 +918,9 @@
 
     if (structured) {
       containers.forEach(function (container) {
-        // A heading section, block or run-in, holds body prose; the rest are statements.
-        if (container !== postBody && !container.matches('.doc-section--heading, .doc-section--run-in')) {
+        // Every section, block or run-in, numbered or not, holds body prose; only environments
+        // and proofs are statements.
+        if (container.matches('.math-environment')) {
           decorateEnvironmentParagraphs(container);
         }
       });
@@ -929,9 +930,10 @@
 
     containers.forEach(markDisplayMathContinuations);
     // Each heading opens its own wrapper, so the paragraph after it is found there. A run-in
-    // heading's own paragraph is the first one in its wrapper, so it opens flush.
+    // heading's own paragraph, numbered or not, is the first one in its wrapper, so it opens
+    // flush.
     [postBody]
-      .concat(Array.prototype.slice.call(postBody.querySelectorAll('.doc-section--heading, .doc-section--run-in')))
+      .concat(Array.prototype.slice.call(postBody.querySelectorAll('.doc-section')))
       .forEach(markSectionOpeningParagraphs);
     postBody.setAttribute('data-semantic-units', 'true');
   }

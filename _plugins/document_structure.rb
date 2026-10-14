@@ -251,12 +251,11 @@ module ExternalDocumentStructure
     block[:type] == :text && block[:raw].match?(/\\\[|\$\$|\\begin\{/)
   end
 
-  # Paragraphs in an environment, a proof or a numbered section are flush by default, so
-  # only there does a structural continuation need marking; in the body and under an `##`
-  # heading every paragraph is indented already.
+  # Paragraphs in an environment or a proof are flush by default, so only there does a
+  # structural continuation need marking; in the body and in every section, `##`, run-in or
+  # numbered, every paragraph is indented already.
   def indenting_unit?(unit)
-    %i[environment proof].include?(unit.role) ||
-      (unit.role == :section && unit.depth.positive? && unit.depth < RUN_IN_DEPTH)
+    %i[environment proof].include?(unit.role)
   end
 
   def blank?(block)

@@ -307,6 +307,15 @@ HTML
 check("its prose is body prose, so a structural continuation is not marked") do
   !prose.include?("data-paragraph-continuation")
 end
+numbered_prose = build(<<~HTML)
+  <p><strong>1. A part.</strong> It contains</p>
+  <ol><li>x</li></ol>
+  #{MARK}
+  <p>A new paragraph.</p>
+HTML
+check("a numbered section's prose is body prose too, so it is not marked either") do
+  !numbered_prose.include?("data-paragraph-continuation")
+end
 
 puts "what must not change"
 source = <<~HTML
