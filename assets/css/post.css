@@ -205,7 +205,7 @@ max-width: 100%;
 .post-body .commutative-diagram {
 display: block;
 max-width: 100%;
-margin: 0.9rem 0 0.6rem;
+margin: 1rem 0 0.7rem;
 padding: 0;
 overflow-x: auto;
 overflow-y: hidden;
@@ -629,7 +629,7 @@ display: block;
 max-width: 100%;
 overflow-x: hidden;
 overflow-y: hidden;
-margin: 0.9rem 0 0.6rem;
+margin: 1rem 0 0.7rem;
 padding: 0;
 box-sizing: border-box;
 }
