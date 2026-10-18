@@ -2,11 +2,11 @@
   "url": "/2026/06/18/2.-Subspaces.html",
   "title": "1.2 Subspaces",
   "lang": "en",
-  "hash": "1b879b8f7545e9f22f8640f498daa40c4fc49791877ed53f5d6257d8ed29c4d4",
+  "hash": "e347d1b4190c43d899f42c5d7ed57d9f99c05f16c831dff4773a425a460b30be",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-13",
+  "updated": "2026-10-18",
   "sections": [
     {
       "id": "introduction",
@@ -78,7 +78,7 @@
       "title": "Example 1.2.3",
       "kind": "example",
       "level": 2,
-      "source": "d8671690a9b9c3a6f9f05a775d0434f67782807cde2e49cdb2213f2ca0cd6174",
+      "source": "bed5c7c8569c05be617e8e0304db031047e184074768c82c899f194572889d85",
       "skip": null,
       "file": "example-1-2-3.md",
       "current": true,

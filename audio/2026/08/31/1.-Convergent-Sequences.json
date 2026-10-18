@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "We now use the metric structure to describe the asymptotic behavior of an ordered family of points. To say that a sequence $(x_n)$ of points in $M$ converges to $x$ means that its terms eventually lie as close to $x$ as we wish.",
   "published_at": "2026-08-31T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/3cd9e45bbe1a2651f844d13d0848dfef8e3fa0bcba2ac74711b569eac631c97f.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/2848953023186d1333a5f1e375267daa90cd7472fd2d0cf529a13007c3fc1243.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.chapters.json",
-  "duration": 1180.167,
-  "bytes": 18884626,
+  "duration": 1160.212,
+  "bytes": 18565306,
   "voice": "cedar",
-  "page_key": "3cd9e45bbe1a2651f844d13d0848dfef8e3fa0bcba2ac74711b569eac631c97f",
-  "skeleton_hash": "b2242d0070d073b0a147841c85148cba48464fbf652ff2d22a2e20c16f577491",
-  "generated": "2026-10-13",
+  "page_key": "2848953023186d1333a5f1e375267daa90cd7472fd2d0cf529a13007c3fc1243",
+  "skeleton_hash": "fe041db4e3f74a26087c5f1f78d628bd4b271f8793a64cc7c0263ac448b51542",
+  "generated": "2026-10-18",
   "podcast": true,
   "sections": [
     {
@@ -298,9 +298,9 @@
       "kind": "proof",
       "level": 2,
       "start": 921.716,
-      "duration": 189.444,
-      "source": "86d0814105f67b46e2c9674a9500437bb812c39fd446db9781a737b352602959",
-      "audio": "7868e50be5e7c5616d76a10917705a782bb2142b980b9d23f3d82d6504f99c06",
+      "duration": 169.489,
+      "source": "591e6a4064f37b4a81f48a00570b51828c66dcb61f894a5b9f1ceee0533146e4",
+      "audio": "27d9f7975d423461fe22343f9ac18d7c25aecc41c3bd72b48af1f38a85ee4788",
       "parent": null,
       "proves": "theorem-3-1-10"
     },
@@ -309,7 +309,7 @@
       "title": "Taken together, these assertions describe several basic…",
       "kind": "prose",
       "level": 2,
-      "start": 1112.359,
+      "start": 1092.404,
       "duration": 67.808,
       "source": "b6627df850b7c141e1bd9deeaed10814129642906eaf14f770b24cc50d43a5d3",
       "audio": "a83ea531d9366840d489e06613b816a99c7f50f86db5b1ca6380ad04ace981cb",
@@ -382,7 +382,7 @@
       "id": "theorem-3-1-10",
       "title": "Theorem 3.1.10",
       "start": 879.242,
-      "end": 1180.167
+      "end": 1160.212
     }
   ]
 }
