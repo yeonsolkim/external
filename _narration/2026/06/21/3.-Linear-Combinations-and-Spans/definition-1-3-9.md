@@ -4,13 +4,15 @@ title: Definition 1.3.9
 kind: definition
 document: 1.3 Linear Combinations and Spans
 url: /2026/06/21/3.-Linear-Combinations-and-Spans.html
-source: 3a51afb28a263761ea3c15a4fca71c491fb5aea3354b2197827a875ee6433439
+source: b10507a493ac90b41e4a8e9075f1ec9aa93d5186a0077d918f0e7da9d5af6a6b
 skeleton: 4
 prompt: lecture-v4
 model: gpt-5.5
-generated: 2026-10-06
-body: 7f43a36f0443a2271d355f7802fc0d7f66147e5c2d5b659a44b9e55590a74da0
-words: 45
+generated: 2026-10-19
+body: 7e09fe1d0898f8971f2ee394937aa675e37eb7e98d1196a8bb0971297de34746
+words: 69
 ---
 
-Definition 1.3.9. Let closure be a closure operator on a set X, and let S be contained in X. The set the closure of S is called the closure of S. If S equals the closure of S, then S is called a closed set.
+Definition 1.3.9. Let V be a vector space over F, and let S be contained in V. The span of S is the set span of S equals the set of v in V such that v is a linear combination of vectors in S.
+
+If W is a subspace of V and span of S equals W, then the set S is called a generating set for W.

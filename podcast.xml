@@ -10,7 +10,18 @@
 <itunes:explicit>false</itunes:explicit>
 <itunes:type>episodic</itunes:type>
 <itunes:category text="Science"/>
-<lastBuildDate>Sun, 18 Oct 2026 00:00:00 +0000</lastBuildDate>
+<lastBuildDate>Mon, 19 Oct 2026 00:00:00 +0000</lastBuildDate>
+<item>
+<title>1.4 The Span Operator</title>
+<link>https://yeonsolkim.com/2026/10/14/4.-The-Span-Operator.html</link>
+<guid isPermaLink="true">https://yeonsolkim.com/2026/10/14/4.-The-Span-Operator.html</guid>
+<pubDate>Wed, 14 Oct 2026 15:00:00 +0000</pubDate>
+<description>Span as a closure operator. A function maps each input to the output. Viewing it as an operator emphasizes how it transforms mathematical objects. When an operator maps a collection of objects to itself, we can compose it with itself and apply it repeatedly. This leads us to study how an object changes under one application, what happens under successive applications, and which objects remain unchanged. Taking the span of a set can be viewed as an operator, specifically as a closure operator on the power set of a vector space. We begin by studying a closure operator through its relation to inclusion and its behavior under iteration, and then use the general properties of this transformation to describe the span operator. Read the page at https://yeonsolkim.com/2026/10/14/4.-The-Span-Operator.html</description>
+<enclosure url="https://audio.yeonsolkim.com/2026/10/14/4.-The-Span-Operator.mp3" length="16690220" type="audio/mpeg"/>
+<itunes:duration>0:17:23</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/2026/10/14/4.-The-Span-Operator.chapters.json" type="application/json+chapters"/>
+</item>
 <item>
 <title>1.1 The Trading Industry</title>
 <link>https://yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.html</link>
@@ -76,6 +87,17 @@
 <itunes:duration>0:19:20</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.chapters.json" type="application/json+chapters"/>
+</item>
+<item>
+<title>1.5 Linear Dependence and Linear Independence</title>
+<link>https://yeonsolkim.com/2026/08/17/5.-Linear-Dependence-and-Linear-Independence.html</link>
+<guid isPermaLink="true">https://yeonsolkim.com/2026/08/17/5.-Linear-Dependence-and-Linear-Independence.html</guid>
+<pubDate>Mon, 17 Aug 2026 15:00:00 +0000</pubDate>
+<description>Some vectors of a generating set may be unnecessary to form the same span: removing one of them may leave the span unchanged. In this sense, a generating set may contain redundant vectors. Read the page at https://yeonsolkim.com/2026/08/17/5.-Linear-Dependence-and-Linear-Independence.html</description>
+<enclosure url="https://audio.yeonsolkim.com/2026/08/17/5.-Linear-Dependence-and-Linear-Independence.mp3" length="12153783" type="audio/mpeg"/>
+<itunes:duration>0:12:40</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/2026/08/17/5.-Linear-Dependence-and-Linear-Independence.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
 <title>2.3 Perfect Sets</title>

@@ -1,0 +1,345 @@
+{
+  "url": "/2026/08/17/5.-Linear-Dependence-and-Linear-Independence.html",
+  "title": "1.5 Linear Dependence and Linear Independence",
+  "lang": "en",
+  "description": "Some vectors of a generating set may be unnecessary to form the same span: removing one of them may leave the span unchanged. In this sense, a generating set may contain redundant vectors.",
+  "published_at": "2026-08-17T15:00:00+00:00",
+  "audio": "https://audio.yeonsolkim.com/o/aa6463cec936c21cc52579f8c26019b742c070a47ca4882f8342cb867aa9f46a.mp3",
+  "stable": "https://audio.yeonsolkim.com/2026/08/17/5.-Linear-Dependence-and-Linear-Independence.mp3",
+  "chapters_url": "https://audio.yeonsolkim.com/2026/08/17/5.-Linear-Dependence-and-Linear-Independence.chapters.json",
+  "duration": 759.507,
+  "bytes": 12153783,
+  "voice": "cedar",
+  "page_key": "aa6463cec936c21cc52579f8c26019b742c070a47ca4882f8342cb867aa9f46a",
+  "skeleton_hash": "055f2d8886f3b2848fb2e585150829d5e8b2938872218666196961b33ebed368",
+  "generated": "2026-10-19",
+  "podcast": true,
+  "sections": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "kind": "introduction",
+      "level": 2,
+      "start": 0.0,
+      "duration": 11.067,
+      "source": "b7732a45076a4d30ce11ed165b7ec7706d693b756353add9841c092b6d8380ca",
+      "audio": "ac2a32925d061149d044806d08063354737077fa4e9aa1a6cf4cc4fadffacad2",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "example-1-5-1",
+      "title": "Example 1.5.1",
+      "kind": "example",
+      "level": 2,
+      "start": 12.267,
+      "duration": 34.093,
+      "source": "4e74da181b5ed7c63702a2c72624f09c46771f87634fab6269028d9f05c29d55",
+      "audio": "ac5936f55fdd58f7e7c95581775c68521b6a962638dd012ec1eb9efbbcb54883",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "prose-after-example-1-5-1",
+      "title": "This observation motivates the following definition, which…",
+      "kind": "prose",
+      "level": 2,
+      "start": 47.56,
+      "duration": 7.504,
+      "source": "ecd50b44c86669ed94603933fc303532921a3d282c05213bea6070bc6f2d456c",
+      "audio": "c924ea934313ac71dc24077b4254bc8200b480dc87da241d123b539bb570325d",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "definition-1-5-2",
+      "title": "Definition 1.5.2",
+      "kind": "definition",
+      "level": 2,
+      "start": 56.265,
+      "duration": 16.787,
+      "source": "f5cf6f0157e25351999fbc31f87d34e1b76198b0efcd44e9058390bacd1b3530",
+      "audio": "056db64eed1a080f2375d17d3f54d6e70decea62f3a26208bbb4df14f529ee36",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "prose-after-definition-1-5-2",
+      "title": "The same phenomenon can be described in terms of individual…",
+      "kind": "prose",
+      "level": 2,
+      "start": 74.252,
+      "duration": 10.045,
+      "source": "91ce6323946c55159b52e916005732a6251273d69a5b57f2905856cb332ed5e8",
+      "audio": "85b2cd8fc728ba4d8911c5f6f6306d2eae87e5fa53b8b0be6f7b3486b94889fa",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proposition-1-5-3",
+      "title": "Proposition 1.5.3",
+      "kind": "proposition",
+      "level": 2,
+      "start": 85.497,
+      "duration": 13.212,
+      "source": "4e104008bddbbd1289f9dfa3994bc7769154d5490b037a914c888012b7d4f424",
+      "audio": "76564fc61f5b49b8a4375ebf7a3ce125c9dc1859284f57f210e5a18ed347682c",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-proposition-1-5-3",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 99.909,
+      "duration": 27.252,
+      "source": "083682e864401a5d40eac0fd455c543e24cb82037f09ec8fe29b30ae7c7e34a8",
+      "audio": "d6c35634a63638f9b29d19f3c7e7169c97b8c1ded923bdc946c198b8352ef73e",
+      "parent": null,
+      "proves": "proposition-1-5-3"
+    },
+    {
+      "id": "prose-after-proof-proposition-1-5-3",
+      "title": "This characterization immediately yields a basic property…",
+      "kind": "prose",
+      "level": 2,
+      "start": 128.36,
+      "duration": 8.199,
+      "source": "78c6c852b4d0453a9fab2f16153540734cc9b5c78ec2462cc6c1ec9752deebd8",
+      "audio": "777e3c2801b066171d413da87fdff370d311b60189224f8548ed87778f440f45",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proposition-1-5-4",
+      "title": "Proposition 1.5.4",
+      "kind": "proposition",
+      "level": 2,
+      "start": 137.759,
+      "duration": 16.851,
+      "source": "9509a173142e485e501c2a6f59dbeaec7b9da04264bfc5256d5234ec5c86a1b9",
+      "audio": "a046f161237538af1006562c46d0f9a7e04f37fc82e45b6083d43bc198af94f4",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-proposition-1-5-4",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 155.81,
+      "duration": 30.888,
+      "source": "e110f9ed65ec2d3c3b110997c25061ac49387bb9036f082ca5c848a3e5afa457",
+      "audio": "e711e45d39297cd1b3fa0ad1a65cfb5a07de47560f7910937b8bac4fd1fe0102",
+      "parent": null,
+      "proves": "proposition-1-5-4"
+    },
+    {
+      "id": "prose-after-proof-proposition-1-5-4",
+      "title": "Proposition 1.5.4(2) shows that linear independence is…",
+      "kind": "prose",
+      "level": 2,
+      "start": 187.898,
+      "duration": 26.047,
+      "source": "beb23df4c77f6a76786fccab6c16c952bfe77012269e21e0c5a8855efc4aa849",
+      "audio": "36f3f2ab72e393c92d631837e4a85c3ba1b9b9e0cced3fe9121ce9f68c38f899",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "theorem-1-5-5",
+      "title": "Theorem 1.5.5",
+      "kind": "theorem",
+      "level": 2,
+      "start": 215.145,
+      "duration": 16.467,
+      "source": "e87c2ed3bbc5e086cf0baf2c39f77a5f78f391ecad74f8ffe2ea1dff2e90cd2d",
+      "audio": "709cb5525eb63dca70fc131aa2e2674242b7acba27753720efd129478ab92c22",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-1-5-5",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 232.813,
+      "duration": 82.837,
+      "source": "ec79a534a23e974b14e6c9702df5c245fb1232ad42227201135c66a2da49c761",
+      "audio": "a84e181096333671a341453a8310acb1c01b71326d2b3e7d0e3a9d33ab9277e9",
+      "parent": null,
+      "proves": "theorem-1-5-5"
+    },
+    {
+      "id": "prose-after-proof-theorem-1-5-5",
+      "title": "In the language of linear algebra, the redundancy of a…",
+      "kind": "prose",
+      "level": 2,
+      "start": 316.849,
+      "duration": 29.752,
+      "source": "51f6c453e261fe699b0a1750ce0f6b2eb495afbd418ce5e7363f5c6cd84d5a59",
+      "audio": "2377135f3b710cb464560b7c2a05c3438c6756a4d117d023fad7279cbf809360",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "theorem-1-5-6",
+      "title": "Theorem 1.5.6",
+      "kind": "theorem",
+      "level": 2,
+      "start": 347.801,
+      "duration": 12.942,
+      "source": "763328a450e0405aea228bfa9378b620e353913c689b767cc064f9b02661adbf",
+      "audio": "5685b62deb6bd5c0139a2925875825793fe64feda0c97d281be148443d5e5a8b",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-1-5-6",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 361.943,
+      "duration": 118.76,
+      "source": "a1c0d91ed21bdb57ea3619f7c9dfcebe9aba7121e7fbb0311293e8f6ea6caf2e",
+      "audio": "cbca5305d9c0794001b688d5cc052dc38438d442fa4f780bef267e2371c510a9",
+      "parent": null,
+      "proves": "theorem-1-5-6"
+    },
+    {
+      "id": "prose-after-proof-theorem-1-5-6",
+      "title": "The notion of linear independence also can be formulated in…",
+      "kind": "prose",
+      "level": 2,
+      "start": 481.903,
+      "duration": 7.792,
+      "source": "51aaf2028354bae57ef0445ca79b148daf070302614cd92f3ea3d4cac5d6434c",
+      "audio": "90148d2ac1221659403f3728b0a1261c41032ac6330ceae8b09986a19d65c509",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "corollary-1-5-7",
+      "title": "Corollary 1.5.7",
+      "kind": "corollary",
+      "level": 2,
+      "start": 490.896,
+      "duration": 12.712,
+      "source": "58da32fd69b516ed91a37657f98afd7713bb341a0aed10870263ccf8dc8d89e8",
+      "audio": "5376d67496c54e6beacfaaef8f67f1a3a543d1370ad87c2a28453ebc32298fc4",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-corollary-1-5-7",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 504.808,
+      "duration": 69.28,
+      "source": "7f7ab6bab8c1a12c77843827f14b6a7570dd2a1a68575372de456ab4aa9191c7",
+      "audio": "0d0a4020a27a56062e9ebce0b373dd3df2c31c99e7052103acea618cf198fb5d",
+      "parent": null,
+      "proves": "corollary-1-5-7"
+    },
+    {
+      "id": "proposition-1-5-8",
+      "title": "Proposition 1.5.8",
+      "kind": "proposition",
+      "level": 2,
+      "start": 575.288,
+      "duration": 21.543,
+      "source": "cea8504f0d0068304e555841932658dd7ace3f91584977d7baabf190446075a1",
+      "audio": "e6982f8892cabd1e5ba5c4809ef362f3636d0ce686b6fbbafc76eb145d02bb62",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-proposition-1-5-8",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 598.031,
+      "duration": 83.606,
+      "source": "1fbc8cc3bbd003b686a5c3d87c9a435e3de585c3344b78a1b6d0e96cd6adb943",
+      "audio": "da9695cc9b09d39524e3a7ce0756e0bd05beeaca7854e5a675cc4e98179f8700",
+      "parent": null,
+      "proves": "proposition-1-5-8"
+    },
+    {
+      "id": "example-1-5-9",
+      "title": "Example 1.5.9",
+      "kind": "example",
+      "level": 2,
+      "start": 682.837,
+      "duration": 76.67,
+      "source": "aefa317642d5e155ead43f68bc3f67ff95a83ad475cce3702a8c4ce48984d0eb",
+      "audio": "89c8b700105cbb5f4a7a30d08ea1c4f3993bfa689068a1d684fcb39ab22e2150",
+      "parent": null,
+      "proves": null
+    }
+  ],
+  "chapters": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "start": 0.0,
+      "end": 12.267
+    },
+    {
+      "id": "example-1-5-1",
+      "title": "Example 1.5.1",
+      "start": 12.267,
+      "end": 56.265
+    },
+    {
+      "id": "definition-1-5-2",
+      "title": "Definition 1.5.2",
+      "start": 56.265,
+      "end": 85.497
+    },
+    {
+      "id": "proposition-1-5-3",
+      "title": "Proposition 1.5.3",
+      "start": 85.497,
+      "end": 137.759
+    },
+    {
+      "id": "proposition-1-5-4",
+      "title": "Proposition 1.5.4",
+      "start": 137.759,
+      "end": 215.145
+    },
+    {
+      "id": "theorem-1-5-5",
+      "title": "Theorem 1.5.5",
+      "start": 215.145,
+      "end": 347.801
+    },
+    {
+      "id": "theorem-1-5-6",
+      "title": "Theorem 1.5.6",
+      "start": 347.801,
+      "end": 490.896
+    },
+    {
+      "id": "corollary-1-5-7",
+      "title": "Corollary 1.5.7",
+      "start": 490.896,
+      "end": 575.288
+    },
+    {
+      "id": "proposition-1-5-8",
+      "title": "Proposition 1.5.8",
+      "start": 575.288,
+      "end": 682.837
+    },
+    {
+      "id": "example-1-5-9",
+      "title": "Example 1.5.9",
+      "start": 682.837,
+      "end": 759.507
+    }
+  ]
+}
