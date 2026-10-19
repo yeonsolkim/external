@@ -6,7 +6,7 @@ category_path:
   - 3. English
   - 2. Dictionary
 created_at: 2026-08-10 14:55:42 +0900
-last_modified_at: 2026-10-02 11:12:34 +0900
+last_modified_at: 2026-10-19 14:36:23 +0900
 
 publish: false
 ---
@@ -19,7 +19,6 @@ publish: false
 
 ### could
 1. polite proposal: *to ensure that you don't forget to do it, you could mark the margin of this guide with a tick as you complete it.*
-2. 
 
 ### may
 1. permission.
@@ -31,9 +30,10 @@ publish: false
 2. necessity: *I have to call my mom.*
 3. strong conjecture: *He must be hungry.*
 
-### should, ought
+### should
 1. expectation based on common sense: *it should be obvious that humans walk on two feet.*
 2. duty.
+3. advice: *you should feel free to explore other processes within the tool.*
 
 ### will
 1. volition: *I will lose weight.*
