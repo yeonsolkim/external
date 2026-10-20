@@ -2,11 +2,11 @@
   "url": "/2026/10/14/4.-The-Span-Operator.html",
   "title": "1.4 The Span Operator",
   "lang": "en",
-  "hash": "14b63fadeee19923442e2f5009be32b7c13e2bd1f79c92250106bde7bdc7ea18",
+  "hash": "c57a430cbbddb2b05a0a1055c5cc19876f50ea3488903e63f7712f18289abb88",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-19",
+  "updated": "2026-10-20",
   "sections": [
     {
       "id": "par-span-as-a-closure-operator",
@@ -345,6 +345,19 @@
       "edited": false,
       "words": 56,
       "math": 6
+    },
+    {
+      "id": "proof-proposition-1-4-11",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "source": "e93ef71f98fbbfc9528d482e8e9fca96b01470f54a8b8511a0f4f7915b87193d",
+      "skip": null,
+      "file": "proof-proposition-1-4-11.md",
+      "current": true,
+      "edited": false,
+      "words": 89,
+      "math": 10
     },
     {
       "id": "example-1-4-12",

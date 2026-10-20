@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "Span as a closure operator. A function maps each input to the output. Viewing it as an operator emphasizes how it transforms mathematical objects. When an operator maps a collection of objects to itself, we can compose it with itself and apply it repeatedly. This leads us to study how an object changes under one application, what happens under successive applications, and which objects remain unchanged. Taking the span of a set can be viewed as an operator, specifically as a closure operator on the power set of a vector space. We begin by studying a closure operator through its relation to inclusion and its behavior under iteration, and then use the general properties of this transformation to describe the span operator.",
   "published_at": "2026-10-14T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/2c6279366935447199bcee0a0b4444380b9de8c88fe500067046af02d62a922d.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/6535f4752d4138452a85632c6e34c759a225bc586c3a1078e6dae72448602b3b.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/10/14/4.-The-Span-Operator.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/10/14/4.-The-Span-Operator.chapters.json",
-  "duration": 1043.01,
-  "bytes": 16690220,
+  "duration": 1080.722,
+  "bytes": 17293753,
   "voice": "cedar",
-  "page_key": "2c6279366935447199bcee0a0b4444380b9de8c88fe500067046af02d62a922d",
-  "skeleton_hash": "14b63fadeee19923442e2f5009be32b7c13e2bd1f79c92250106bde7bdc7ea18",
-  "generated": "2026-10-19",
+  "page_key": "6535f4752d4138452a85632c6e34c759a225bc586c3a1078e6dae72448602b3b",
+  "skeleton_hash": "c57a430cbbddb2b05a0a1055c5cc19876f50ea3488903e63f7712f18289abb88",
+  "generated": "2026-10-20",
   "podcast": true,
   "sections": [
     {
@@ -315,7 +315,7 @@
       "audio": "10989706a123ce12fba46325068dafa4a90e71d8f473fb12d8fc0afbe27b336e",
       "parent": null,
       "proves": null,
-      "span": 227.35
+      "span": 265.062
     },
     {
       "id": "proposition-1-4-11",
@@ -330,11 +330,23 @@
       "proves": null
     },
     {
+      "id": "proof-proposition-1-4-11",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 857.586,
+      "duration": 36.512,
+      "source": "e93ef71f98fbbfc9528d482e8e9fca96b01470f54a8b8511a0f4f7915b87193d",
+      "audio": "2e833765e6b77872b74f846a3448d86af7fc4c64635c0ab6c9fc7900f2c98ee9",
+      "parent": "par-further-properties-of-the-span-operator",
+      "proves": "proposition-1-4-11"
+    },
+    {
       "id": "example-1-4-12",
       "title": "Example 1.4.12",
       "kind": "example",
       "level": 3,
-      "start": 857.586,
+      "start": 895.298,
       "duration": 33.6,
       "source": "276b698ef4d23b4ac9539c6639bc984083543e4153965498417f5834eba79f31",
       "audio": "fde09fcf55dbfb2cf59e6d1a0676f14ea8aefe804165767bbdc2b8fe9ae069dd",
@@ -346,7 +358,7 @@
       "title": "Fix a subset … of ….",
       "kind": "prose",
       "level": 3,
-      "start": 892.386,
+      "start": 930.098,
       "duration": 45.938,
       "source": "8028adbb401cb5f896aa001b5359b19caac60eb5579249088a9b43fde9530cc9",
       "audio": "bceec3dffed0155366991e5aa22664870c5bfc04ab14eaf54fa8c5911aae2341",
@@ -358,7 +370,7 @@
       "title": "Theorem 1.4.13",
       "kind": "theorem",
       "level": 3,
-      "start": 939.524,
+      "start": 977.236,
       "duration": 30.545,
       "source": "cac25616ce6c87bc9dad787711219bf01e8f049b3b7ca3481fb8dbe1683d3587",
       "audio": "415dc0759868c51dd18337ae21e221f8a956fcb486e79a3ea2a704fcc7ef2e7e",
@@ -370,7 +382,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 3,
-      "start": 971.269,
+      "start": 1008.981,
       "duration": 71.742,
       "source": "fe1edde43dec0b587aad8cc961afa27bc2a1ee18d3ab353bcc863827b95faaf8",
       "audio": "c236cbbfdefcda4f10e811ee4e91d3230c01f12f70ce10d029f58b346463fbb0",
@@ -455,19 +467,19 @@
       "id": "proposition-1-4-11",
       "title": "Proposition 1.4.11",
       "start": 840.988,
-      "end": 857.586
+      "end": 895.298
     },
     {
       "id": "example-1-4-12",
       "title": "Example 1.4.12",
-      "start": 857.586,
-      "end": 939.524
+      "start": 895.298,
+      "end": 977.236
     },
     {
       "id": "theorem-1-4-13",
       "title": "Theorem 1.4.13",
-      "start": 939.524,
-      "end": 1043.01
+      "start": 977.236,
+      "end": 1080.722
     }
   ]
 }
