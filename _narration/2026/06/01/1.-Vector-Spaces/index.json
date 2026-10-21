@@ -2,11 +2,11 @@
   "url": "/2026/06/01/1.-Vector-Spaces.html",
   "title": "1.1 Vector Spaces",
   "lang": "en",
-  "hash": "0de5402936a9d4e2470d2f0888fcdcf32d8bc91a2dcb07b842681ac908869351",
+  "hash": "2a49e6bdf8e33e41ef0082564b00fccf72aeec6959fb303916a836f8533ed348",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "sections": [
     {
       "id": "introduction",
@@ -26,12 +26,12 @@
       "title": "Definition 1.1.1",
       "kind": "definition",
       "level": 2,
-      "source": "2bcec1c11331e756af0787b9350e6218dc98eeccb8017eef21862d5ececb290a",
+      "source": "5e41abee37f81854ea9735701443723a45cbd953bdb975b98620bf881aac5183",
       "skip": null,
       "file": "definition-1-1-1.md",
       "current": true,
       "edited": false,
-      "words": 104,
+      "words": 105,
       "math": 10
     },
     {
@@ -215,19 +215,6 @@
       "edited": false,
       "words": 29,
       "math": 4
-    },
-    {
-      "id": "references",
-      "title": "References",
-      "kind": "section",
-      "level": 2,
-      "source": "392cf20136a9b5afebba8e6aa8f61cb8830ea6c883630575920833adad48c66d",
-      "skip": "exercises",
-      "file": null,
-      "current": false,
-      "edited": false,
-      "words": 22,
-      "math": 0
     }
   ]
 }

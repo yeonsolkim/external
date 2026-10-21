@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "1.1.1 Traders Traders are people who arrange trades for themselves, have others arrange trades on their behalf, or arrange trades for others.",
   "published_at": "2026-10-04T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/f853931b6cd9f60f190b7e36055573e10935a52ae0190036c92e73c620e17858.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/6887f057cb38ea6c8dfaa9e080831722fa0e3f34e41bf37d7b543678b15a1338.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.chapters.json",
-  "duration": 440.769,
-  "bytes": 7054277,
+  "duration": 427.055,
+  "bytes": 6834848,
   "voice": "cedar",
-  "page_key": "f853931b6cd9f60f190b7e36055573e10935a52ae0190036c92e73c620e17858",
-  "skeleton_hash": "dade9a7853b38ea51839c72b6af6047018299bc6ce01f5cf66fec128db932ebd",
-  "generated": "2026-10-06",
+  "page_key": "6887f057cb38ea6c8dfaa9e080831722fa0e3f34e41bf37d7b543678b15a1338",
+  "skeleton_hash": "1ea385b199b5c83e70db98f10ca7ecb9d59fe1d3f987830efb3d780d3b48fad5",
+  "generated": "2026-10-21",
   "podcast": true,
   "sections": [
     {
@@ -100,7 +100,7 @@
       "audio": "f399ff5796cc63ae97dd01afa3fc7628b2d139b6f1bcb8bcb35c60dbcd6874e0",
       "parent": null,
       "proves": null,
-      "span": 205.892
+      "span": 192.178
     },
     {
       "id": "par-financial-assets",
@@ -108,9 +108,9 @@
       "kind": "paragraph",
       "level": 3,
       "start": 250.419,
-      "duration": 85.875,
-      "source": "5a1a46c541a67424e5587a3f880f469259610c76d831aaf42c115140785fc645",
-      "audio": "77ec5bd00ebbd833ffd560e1fbbc43be0beca633d5dff3d84450640b1477d815",
+      "duration": 79.929,
+      "source": "1b5e9fe0351c3d3393e20a0c1fd11d459f056d7c2f872bd1c82c41966fb55a83",
+      "audio": "b412d108ebf1c82c8099552def77bee4117029559912189dafca4efcf31b4fcd",
       "parent": "114-trading-instruments",
       "proves": null
     },
@@ -119,10 +119,10 @@
       "title": "Derivatives",
       "kind": "paragraph",
       "level": 3,
-      "start": 337.494,
-      "duration": 103.275,
-      "source": "fb2f8d4534449d05466353fe4a2d0b12dfade97168db8f5b2c1d723df31b42bf",
-      "audio": "d38adef1342833493da2c6cc55dd81f2bdfd60be651f01262b27b693b5881b8d",
+      "start": 331.547,
+      "duration": 95.508,
+      "source": "8dc3a55adabdb93d25ccea65a445c5e79cd63833683f3198578d221040f9e9b3",
+      "audio": "b39a93444860422bd5630749001b9fb5827a2ed020d32f2965e613e5c223f468",
       "parent": "114-trading-instruments",
       "proves": null
     }
@@ -174,13 +174,13 @@
       "id": "par-financial-assets",
       "title": "Financial assets",
       "start": 250.419,
-      "end": 337.494
+      "end": 331.547
     },
     {
       "id": "par-derivatives",
       "title": "Derivatives",
-      "start": 337.494,
-      "end": 440.769
+      "start": 331.547,
+      "end": 427.055
     }
   ]
 }

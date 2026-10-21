@@ -2,11 +2,11 @@
   "url": "/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html",
   "title": "3.4 Limit Superior and Limit Inferior",
   "lang": "en",
-  "hash": "eedb72bf4e448fd1b1195fb6606555d8d85c36ec112b5aaa14e162b862779fd4",
+  "hash": "a92286c763c29785d1b71c7de5a890887f4f4c4eb6787a2fc2b82af968076121",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-08",
+  "updated": "2026-10-21",
   "sections": [
     {
       "id": "introduction",
@@ -195,7 +195,7 @@
       "title": "Theorem 3.4.7",
       "kind": "theorem",
       "level": 2,
-      "source": "6d4e054cbfa8a830818a309af3bb24d38503e532999e2c2f3789dd86ee6a2e5d",
+      "source": "73635c45155a049e265efaeb24d7bccab8bebacb863233d3df99419caec90127",
       "skip": null,
       "file": "theorem-3-4-7.md",
       "current": true,
@@ -215,19 +215,6 @@
       "edited": false,
       "words": 149,
       "math": 15
-    },
-    {
-      "id": "references",
-      "title": "References",
-      "kind": "section",
-      "level": 2,
-      "source": "e601fa03dec22e980b98b103392a8c94c3870774f2306b0a412be5e94f3fd455",
-      "skip": "reference list",
-      "file": null,
-      "current": false,
-      "edited": false,
-      "words": 13,
-      "math": 0
     }
   ]
 }

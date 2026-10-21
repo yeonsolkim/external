@@ -2,11 +2,11 @@
   "url": "/2026/07/30/2.-Compact-Sets.html",
   "title": "2.2 Compact Sets",
   "lang": "en",
-  "hash": "08219375fd68917e265463e8f1d8913f1037c1c2c42f519ef8c114cf70bceadf",
+  "hash": "5de36c67738dc7a3e143b94cbaca9c85a3e014d5297d72c9d4dfd3aca2932b1b",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-13",
+  "updated": "2026-10-21",
   "sections": [
     {
       "id": "introduction",
@@ -455,7 +455,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "source": "af56acabaaca6645de4d0b92773bf94e3a8ea465e07253bf30d017cf0644abdf",
+      "source": "900e94a4aa5a3387d16d54464944588a761b61899655e06e5cf4a10173e84911",
       "skip": null,
       "file": "proof-theorem-2-2-16.md",
       "current": true,
@@ -592,19 +592,6 @@
       "edited": false,
       "words": 216,
       "math": 23
-    },
-    {
-      "id": "references",
-      "title": "References",
-      "kind": "section",
-      "level": 2,
-      "source": "e601fa03dec22e980b98b103392a8c94c3870774f2306b0a412be5e94f3fd455",
-      "skip": "reference list",
-      "file": null,
-      "current": false,
-      "edited": false,
-      "words": 13,
-      "math": 0
     }
   ]
 }

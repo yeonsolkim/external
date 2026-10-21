@@ -2,11 +2,11 @@
   "url": "/2026/09/09/3.-Cauchy-Sequences.html",
   "title": "3.3 Cauchy Sequences",
   "lang": "en",
-  "hash": "45838b0c07aca1a5940ddd03175bf3008c88c1646ca853a9a722e2af29a4aa7c",
+  "hash": "d97e25d2823059cdef37908ad1640e51bcd6adba403952ae81d977101861eba5",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-09",
+  "updated": "2026-10-21",
   "sections": [
     {
       "id": "introduction",
@@ -104,7 +104,7 @@
       "title": "Lemma 3.3.4",
       "kind": "lemma",
       "level": 2,
-      "source": "baa16db425401a7e87a46f87bc561cc1888b721e9b1ca3d5a8fa849c8b907f79",
+      "source": "a97cf4ed319b34007613dd4403382c7bc9425c648049b5cfac76b1a5083ae37a",
       "skip": null,
       "file": "lemma-3-3-4.md",
       "current": true,
@@ -215,19 +215,6 @@
       "edited": false,
       "words": 40,
       "math": 4
-    },
-    {
-      "id": "references",
-      "title": "References",
-      "kind": "section",
-      "level": 2,
-      "source": "e601fa03dec22e980b98b103392a8c94c3870774f2306b0a412be5e94f3fd455",
-      "skip": "reference list",
-      "file": null,
-      "current": false,
-      "edited": false,
-      "words": 13,
-      "math": 0
     }
   ]
 }

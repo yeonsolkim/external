@@ -2,11 +2,11 @@
   "url": "/2026/10/14/4.-The-Span-Operator.html",
   "title": "1.4 The Span Operator",
   "lang": "en",
-  "hash": "c57a430cbbddb2b05a0a1055c5cc19876f50ea3488903e63f7712f18289abb88",
+  "hash": "3379779abc06b2d7e0606deb7145852076e6d7f62ce21d5d74545c2c2e9d065f",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "sections": [
     {
       "id": "par-span-as-a-closure-operator",
@@ -26,7 +26,7 @@
       "title": "Definition 1.4.1",
       "kind": "definition",
       "level": 3,
-      "source": "41eb4e876843824c2dd3042cf4b214e7298edcc6b24976bb6af53a6b0da74447",
+      "source": "6648e5ee5af7bd681f39768a2dad50fa699bcb3c8b68c6b40796dd5fdeb58499",
       "skip": null,
       "file": "definition-1-4-1.md",
       "current": true,
@@ -390,7 +390,7 @@
       "title": "Theorem 1.4.13",
       "kind": "theorem",
       "level": 3,
-      "source": "cac25616ce6c87bc9dad787711219bf01e8f049b3b7ca3481fb8dbe1683d3587",
+      "source": "cfb68104a5a1444609e51a2336b6ac00c2651a996c295d3fd64393666213bcb0",
       "skip": null,
       "file": "theorem-1-4-13.md",
       "current": true,
@@ -449,19 +449,6 @@
       "edited": false,
       "words": 126,
       "math": 13
-    },
-    {
-      "id": "references",
-      "title": "References",
-      "kind": "section",
-      "level": 2,
-      "source": "6a080655a82ecb356985d357f0a5c088eb506693ea467e8af71a9e841cb519ee",
-      "skip": "exercises",
-      "file": null,
-      "current": false,
-      "edited": false,
-      "words": 39,
-      "math": 0
     }
   ]
 }

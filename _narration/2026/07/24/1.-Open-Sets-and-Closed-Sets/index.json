@@ -2,11 +2,11 @@
   "url": "/2026/07/24/1.-Open-Sets-and-Closed-Sets.html",
   "title": "2.1 Open Sets and Closed Sets",
   "lang": "en",
-  "hash": "e09994f3338aef7cdfca3b629d3b802377dbdf4823520df68dc25f146db14562",
+  "hash": "104f53967966c2671fd3cabe34fdd720f2a421b50904f55873673478ac0f1bd7",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "sections": [
     {
       "id": "introduction",
@@ -26,12 +26,12 @@
       "title": "Definition 2.1.1",
       "kind": "definition",
       "level": 2,
-      "source": "dd8c00f6931737b91cc3b5d2e011f68617fbb9c597444c078aa36579e341ad61",
+      "source": "02ae565502aea3b8798b53db2a63b54aa8931d7ad39af2ebd301c257c67432b6",
       "skip": null,
       "file": "definition-2-1-1.md",
       "current": true,
       "edited": false,
-      "words": 101,
+      "words": 100,
       "math": 11
     },
     {
@@ -234,7 +234,7 @@
       "title": "Proposition 2.1.11",
       "kind": "proposition",
       "level": 2,
-      "source": "ad613dee3c6bc9adbf64006bd0db4351567630452dc85a899b5aa8b92585c2b7",
+      "source": "bbd8296fdc5b5ac41e9e1481b16627950023c395a9513bb059a8a1e4db90f3bc",
       "skip": null,
       "file": "proposition-2-1-11.md",
       "current": true,
@@ -488,19 +488,6 @@
       "edited": false,
       "words": 81,
       "math": 6
-    },
-    {
-      "id": "references",
-      "title": "References",
-      "kind": "section",
-      "level": 2,
-      "source": "1ac8cd187e81f9ad982008ad9ec3ee974d9b8b886332c5c4c2840256188e94da",
-      "skip": "reference list",
-      "file": null,
-      "current": false,
-      "edited": false,
-      "words": 22,
-      "math": 0
     }
   ]
 }

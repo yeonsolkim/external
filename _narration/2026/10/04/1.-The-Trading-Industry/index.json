@@ -2,11 +2,11 @@
   "url": "/2026/10/04/1.-The-Trading-Industry.html",
   "title": "1.1 The Trading Industry",
   "lang": "en",
-  "hash": "dade9a7853b38ea51839c72b6af6047018299bc6ce01f5cf66fec128db932ebd",
+  "hash": "1ea385b199b5c83e70db98f10ca7ecb9d59fe1d3f987830efb3d780d3b48fad5",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-06",
+  "updated": "2026-10-21",
   "sections": [
     {
       "id": "111-traders",
@@ -104,7 +104,7 @@
       "title": "Financial assets",
       "kind": "paragraph",
       "level": 3,
-      "source": "5a1a46c541a67424e5587a3f880f469259610c76d831aaf42c115140785fc645",
+      "source": "1b5e9fe0351c3d3393e20a0c1fd11d459f056d7c2f872bd1c82c41966fb55a83",
       "skip": null,
       "file": "par-financial-assets.md",
       "current": true,
@@ -117,25 +117,12 @@
       "title": "Derivatives",
       "kind": "paragraph",
       "level": 3,
-      "source": "fb2f8d4534449d05466353fe4a2d0b12dfade97168db8f5b2c1d723df31b42bf",
+      "source": "8dc3a55adabdb93d25ccea65a445c5e79cd63833683f3198578d221040f9e9b3",
       "skip": null,
       "file": "par-derivatives.md",
       "current": true,
       "edited": false,
-      "words": 285,
-      "math": 0
-    },
-    {
-      "id": "references",
-      "title": "References",
-      "kind": "section",
-      "level": 2,
-      "source": "10889eb274e81566b4850c1ff6bb803c9b09bc9d695bc175c42487fb90e0f096",
-      "skip": "reference list",
-      "file": null,
-      "current": false,
-      "edited": false,
-      "words": 16,
+      "words": 289,
       "math": 0
     }
   ]

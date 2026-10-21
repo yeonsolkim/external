@@ -4,15 +4,15 @@
   "lang": "en",
   "description": "We first extend the notion of convergence by allowing the values $+\\infty$ and $-\\infty$. We then associate with each tail of a sequence its supremum and infimum. The limiting behavior of these tail bounds leads to the notions of limit superior and limit inferior. Throughout this section, all suprema and infima are understood to be taken in $\\overline{\\mathbb R}$",
   "published_at": "2026-09-12T15:00:00+00:00",
-  "audio": "https://audio.yeonsolkim.com/o/2d8c5191a521014b1db919e4d3def1e9b25979d0418d94b8769bb558346a6fe0.mp3",
+  "audio": "https://audio.yeonsolkim.com/o/ea488100ccb6744f1e42972beae9df3930ac353d0b0bde8ed5db31e32c251376.mp3",
   "stable": "https://audio.yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.mp3",
   "chapters_url": "https://audio.yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.chapters.json",
-  "duration": 730.363,
-  "bytes": 11687621,
+  "duration": 729.313,
+  "bytes": 11670903,
   "voice": "cedar",
-  "page_key": "2d8c5191a521014b1db919e4d3def1e9b25979d0418d94b8769bb558346a6fe0",
-  "skeleton_hash": "eedb72bf4e448fd1b1195fb6606555d8d85c36ec112b5aaa14e162b862779fd4",
-  "generated": "2026-10-08",
+  "page_key": "ea488100ccb6744f1e42972beae9df3930ac353d0b0bde8ed5db31e32c251376",
+  "skeleton_hash": "a92286c763c29785d1b71c7de5a890887f4f4c4eb6787a2fc2b82af968076121",
+  "generated": "2026-10-21",
   "podcast": true,
   "sections": [
     {
@@ -189,9 +189,9 @@
       "kind": "theorem",
       "level": 2,
       "start": 603.638,
-      "duration": 21.552,
-      "source": "6d4e054cbfa8a830818a309af3bb24d38503e532999e2c2f3789dd86ee6a2e5d",
-      "audio": "75f7ab6e78caddc8e2557146a621e0723d08b7497c14bf42e07dc6a4d823c8dd",
+      "duration": 20.501,
+      "source": "73635c45155a049e265efaeb24d7bccab8bebacb863233d3df99419caec90127",
+      "audio": "2896a43f6a5abcf84d10204fb23bb0a2ac96202c9e4f14a8b5aa33027ce0599a",
       "parent": null,
       "proves": null
     },
@@ -200,7 +200,7 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "start": 626.389,
+      "start": 625.339,
       "duration": 103.974,
       "source": "eef5c18f6cf6223462af012eaae3c43e3041693f07d882af62dffc8cbf743bc7",
       "audio": "15e730fc65a2aaf3e1afbe53e6bb53d4a9f5d5d9dd163dc227ae73afdc8e3a77",
@@ -255,7 +255,7 @@
       "id": "theorem-3-4-7",
       "title": "Theorem 3.4.7",
       "start": 603.638,
-      "end": 730.363
+      "end": 729.313
     }
   ]
 }

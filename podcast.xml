@@ -10,15 +10,15 @@
 <itunes:explicit>false</itunes:explicit>
 <itunes:type>episodic</itunes:type>
 <itunes:category text="Science"/>
-<lastBuildDate>Tue, 20 Oct 2026 00:00:00 +0000</lastBuildDate>
+<lastBuildDate>Wed, 21 Oct 2026 00:00:00 +0000</lastBuildDate>
 <item>
 <title>1.4 The Span Operator</title>
 <link>https://yeonsolkim.com/2026/10/14/4.-The-Span-Operator.html</link>
 <guid isPermaLink="true">https://yeonsolkim.com/2026/10/14/4.-The-Span-Operator.html</guid>
 <pubDate>Wed, 14 Oct 2026 15:00:00 +0000</pubDate>
 <description>Span as a closure operator. A function maps each input to the output. Viewing it as an operator emphasizes how it transforms mathematical objects. When an operator maps a collection of objects to itself, we can compose it with itself and apply it repeatedly. This leads us to study how an object changes under one application, what happens under successive applications, and which objects remain unchanged. Taking the span of a set can be viewed as an operator, specifically as a closure operator on the power set of a vector space. We begin by studying a closure operator through its relation to inclusion and its behavior under iteration, and then use the general properties of this transformation to describe the span operator. Read the page at https://yeonsolkim.com/2026/10/14/4.-The-Span-Operator.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/10/14/4.-The-Span-Operator.mp3" length="17293753" type="audio/mpeg"/>
-<itunes:duration>0:18:01</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/10/14/4.-The-Span-Operator.mp3" length="17340146" type="audio/mpeg"/>
+<itunes:duration>0:18:04</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/10/14/4.-The-Span-Operator.chapters.json" type="application/json+chapters"/>
 </item>
@@ -28,8 +28,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.html</guid>
 <pubDate>Sun, 04 Oct 2026 15:00:00 +0000</pubDate>
 <description>1.1.1 Traders Traders are people who arrange trades for themselves, have others arrange trades on their behalf, or arrange trades for others. Read the page at https://yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.mp3" length="7054277" type="audio/mpeg"/>
-<itunes:duration>0:07:21</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.mp3" length="6834848" type="audio/mpeg"/>
+<itunes:duration>0:07:07</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.chapters.json" type="application/json+chapters"/>
 </item>
@@ -39,8 +39,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html</guid>
 <pubDate>Sat, 12 Sep 2026 15:00:00 +0000</pubDate>
 <description>We first extend the notion of convergence by allowing the values +\infty and -\infty. We then associate with each tail of a sequence its supremum and infimum. The limiting behavior of these tail bounds leads to the notions of limit superior and limit inferior. Throughout this section, all suprema and infima are understood to be taken in \overline{\mathbb R} Read the page at https://yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.mp3" length="11687621" type="audio/mpeg"/>
-<itunes:duration>0:12:10</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.mp3" length="11670903" type="audio/mpeg"/>
+<itunes:duration>0:12:09</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.chapters.json" type="application/json+chapters"/>
 </item>
@@ -50,21 +50,10 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</guid>
 <pubDate>Wed, 09 Sep 2026 15:00:00 +0000</pubDate>
 <description>Convergence describes the asymptotic behavior of a sequence by relating its terms to a point of the ambient space. This raises a natural question. How much of this asymptotic behavior can be recognized from the terms of the sequence themselves, without first specifying or establishing the existence of such a point? The concept of Cauchyness1 isolates precisely this internal aspect of convergence. Instead of comparing the terms x_n with a separate point x, it compares sufficiently late terms with one another and asks whether they eventually become arbitrarily close. In the term Cauchyness, “Cauchy” refers to the French mathematician Augustin-Louis Cauchy (1789–1857). He was one of the major figures in the development of rigorous mathematical analysis, making fundamental contributions to limits, continuity, infinite series, and differential equations. In mathematical English, his surname is usually pronounced /ˈkoʊʃi/. ↩ Read the page at https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.mp3" length="8682481" type="audio/mpeg"/>
-<itunes:duration>0:09:03</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.mp3" length="8660747" type="audio/mpeg"/>
+<itunes:duration>0:09:01</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.chapters.json" type="application/json+chapters"/>
-</item>
-<item>
-<title>3.2 Subsequences</title>
-<link>https://yeonsolkim.com/2026/09/03/2.-Subsequences.html</link>
-<guid isPermaLink="true">https://yeonsolkim.com/2026/09/03/2.-Subsequences.html</guid>
-<pubDate>Thu, 03 Sep 2026 15:00:00 +0000</pubDate>
-<description>A sequence may fail to converge as a whole while some of its terms still exhibit convergent behavior. To capture such behavior, we introduce the notion of a subsequence. Read the page at https://yeonsolkim.com/2026/09/03/2.-Subsequences.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/09/03/2.-Subsequences.mp3" length="4552996" type="audio/mpeg"/>
-<itunes:duration>0:04:44</itunes:duration>
-<itunes:episodeType>full</itunes:episodeType>
-<podcast:chapters url="https://audio.yeonsolkim.com/2026/09/03/2.-Subsequences.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
 <title>2.4 Connected Sets</title>
@@ -76,6 +65,17 @@
 <itunes:duration>0:05:49</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/09/03/4.-Connected-Sets.chapters.json" type="application/json+chapters"/>
+</item>
+<item>
+<title>3.2 Subsequences</title>
+<link>https://yeonsolkim.com/2026/09/03/2.-Subsequences.html</link>
+<guid isPermaLink="true">https://yeonsolkim.com/2026/09/03/2.-Subsequences.html</guid>
+<pubDate>Thu, 03 Sep 2026 15:00:00 +0000</pubDate>
+<description>A sequence may fail to converge as a whole while some of its terms still exhibit convergent behavior. To capture such behavior, we introduce the notion of a subsequence. Read the page at https://yeonsolkim.com/2026/09/03/2.-Subsequences.html</description>
+<enclosure url="https://audio.yeonsolkim.com/2026/09/03/2.-Subsequences.mp3" length="4552996" type="audio/mpeg"/>
+<itunes:duration>0:04:44</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/2026/09/03/2.-Subsequences.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
 <title>3.1 Convergent Sequences</title>
@@ -116,8 +116,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html</guid>
 <pubDate>Thu, 30 Jul 2026 15:00:00 +0000</pubDate>
 <description>We now consider how a collection of open sets can cover a set A as a whole. Such a collection may contain infinitely many sets, and this raises a natural question. Can finitely many members of the collection already cover A? Compactness formalizes the sets for which the answer is always yes. Read the page at https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.mp3" length="18687729" type="audio/mpeg"/>
-<itunes:duration>0:19:28</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.mp3" length="18817296" type="audio/mpeg"/>
+<itunes:duration>0:19:36</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.chapters.json" type="application/json+chapters"/>
 </item>
@@ -149,8 +149,8 @@
 <guid isPermaLink="true">https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</guid>
 <pubDate>Thu, 18 Jun 2026 15:00:00 +0000</pubDate>
 <description>Within a vector space, we often focus on elements that satisfy a particular condition. The important question is whether the condition survives the operations of the larger space: do addition and scalar multiplication keep us among elements satisfying that condition? If they do, and the zero vector also satisfies the condition, the collection forms a vector space on its own. Such a collection is called a subspace. Read the page at https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.mp3" length="20643967" type="audio/mpeg"/>
-<itunes:duration>0:21:30</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.mp3" length="20617635" type="audio/mpeg"/>
+<itunes:duration>0:21:28</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.chapters.json" type="application/json+chapters"/>
 </item>
