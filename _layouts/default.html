@@ -53,6 +53,8 @@
     <link rel="stylesheet" href="{{ '/assets/css/index.css' | relative_url }}?v={{ asset_version }}">
   {% endif %}
 
+  {% include scroll-fade.html %}
+
   {% if page.layout == "post" %}
     <script>
       (function () {

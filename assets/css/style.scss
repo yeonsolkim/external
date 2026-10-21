@@ -126,7 +126,10 @@ table {
   --reading-serif: "New Computer Modern", "Computer Modern",
     "Latin Modern Roman", serif;
   --interface-sans: var(--reading-serif);
-  --hr-style: 1px solid #d3d3d3;
+  /* The rule of the page dividers and the footnotes. Its colour has a variable of its own
+     because scripts/dark_mode_css.py inverts a colour only in a property named for one. */
+  --hr-color: #d3d3d3;
+  --hr-style: 1px solid var(--hr-color);
 }
 
 /* Base */
@@ -334,6 +337,50 @@ main.main-content,
   border-left: 1px solid #c8ccd1;
 }
 
+/* Sideways scrollers: the breadcrumb, code blocks, and tables, display math and
+   commutative diagrams wider than the column. None shows a scrollbar; instead, a
+   side with content scrolled out of view fades out, so the cut reads as "more
+   this way". watchScrollFade (_includes/scroll-fade.html) adds the class and
+   keeps data-clipped in step with the scroll position. scroll-padding keeps a
+   keyboard-focused link clear of the fade. Swiping past either end does not turn
+   into the browser's back/forward gesture. */
+.scroll-fade {
+  --scroll-fade-width: 1.5rem;
+  --scroll-fade-start: 0px;
+  --scroll-fade-end: 0px;
+  overscroll-behavior-x: contain;
+  scroll-padding-inline: var(--scroll-fade-width);
+  scrollbar-width: none;
+}
+
+.scroll-fade::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-fade[data-clipped] {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 var(--scroll-fade-start),
+    #000 calc(100% - var(--scroll-fade-end)),
+    transparent
+  );
+}
+
+.scroll-fade[data-clipped~="start"] {
+  --scroll-fade-start: var(--scroll-fade-width);
+}
+
+.scroll-fade[data-clipped~="end"] {
+  --scroll-fade-end: var(--scroll-fade-width);
+}
+
+/* The mask would also hide a focus ring drawn outside the box, as a table's is;
+   while the scroller has keyboard focus, the ring shows and the content ends hard. */
+.scroll-fade[data-clipped]:focus-visible {
+  mask-image: none;
+}
+
 /* Breadcrumb */
 .breadcrumb-nav {
   box-sizing: border-box;
@@ -346,20 +393,23 @@ main.main-content,
   line-height: 1.35;
 }
 
+/* One line at every width: a trail wider than the column scrolls sideways
+   (.scroll-fade above) instead of wrapping. */
 .breadcrumb-list {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   gap: 0.5rem;
   list-style: none;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .breadcrumb-item {
   display: inline-flex;
+  flex: none;
   align-items: center;
-  min-width: 0;
   gap: 0.5rem;
 }
 
@@ -392,16 +442,11 @@ main.main-content,
   font-size: 1.1em;
 }
 
-/* Shown only at phone widths, in place of the crumbs hidden there. */
-.breadcrumb-ellipsis {
-  display: none;
-}
-
 /* Main content */
 .main-content {
   max-width: var(--site-max-width) !important;
   margin: 0 auto;
-  padding: 1rem 0 2rem;
+  padding: 1rem 0 3rem;
   font-size: 1rem !important;
 }
 
@@ -615,17 +660,6 @@ blockquote mjx-container {
   }
 }
 
-/* Phone widths: keep Home and the last two crumbs, with an ellipsis for the rest. */
-@media screen and (max-width: 30rem) {
-  .breadcrumb-item--collapsible {
-    display: none;
-  }
-
-  .breadcrumb-ellipsis {
-    display: inline-flex;
-  }
-}
-
 /* Let the browser draw its own UI (scrollbars, form controls) dark as well. */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -648,6 +682,9 @@ blockquote mjx-container {
   select,
   textarea {
     color: inherit;
+  }
+  :root {
+    --hr-color: #202020;
   }
   html {
     background-color: #000000 !important;
@@ -722,6 +759,9 @@ blockquote mjx-container {
     border-bottom-color: #3b3b3b !important;
   }
   .site-footer {
-    color: #a8a8a8c2 !important;
+    color: #a8a8a8ed !important;
+  }
+  .site-footer a {
+    color: inherit !important;
   }
 }

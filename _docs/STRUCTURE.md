@@ -25,11 +25,14 @@ as `\begin{proof}` is in LaTeX, and carries a pointer back to it.
 | `\begin{figure}` + `\caption` | tikzcd block | `<figure class="commutative-diagram">` (unchanged) |
 | `\begin{equation}` + `\tag` | `$$…\tag{…}$$` | display math (unchanged) |
 | `\ref{…}` | `Theorem 1.3.3` in prose | `<a class="math-ref-link">` (unchanged, `main.js`) |
-| `\bibliography` | `## References` | `<ol class="reference">` (unchanged) |
-| `\footnote{…}` | `text[^1]` … `[^1]: …` | `<sup id="fnref:1">` in the text; `<div class="footnotes">` at the end of the body, outside every section |
+| `\bibliography` | `## References` | `<ol class="reference">` (unchanged), in its heading's section `#unit-references`, moved after the footnotes |
+| `\footnote{…}` | `text[^1]` … `[^1]: …` | `<sup id="fnref:1">` in the text; `<div class="footnotes">` at the end of the body, outside every section; only the references follow it |
+| a closing paragraph on the sources | front matter `source_note: …` (Markdown) | `<p class="post-source-note">` after every section, before the footnotes and the references; not narrated |
 
 Everything in the "unchanged" rows keeps working exactly as before; the plugin only adds
-wrappers around them.
+wrappers around them. One block changes place: the References section goes after the
+footnotes, as endnotes are printed before the bibliography. One block is added: the front
+matter's `source_note`, the text's last paragraph.
 
 ## 2. Recognising units
 

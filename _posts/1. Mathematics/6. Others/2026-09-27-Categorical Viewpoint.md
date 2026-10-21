@@ -6,9 +6,10 @@ category_path:
   - 1. Mathematics
   - 6. Others
 created_at: 2026-09-27 16:02:08 +0900
-last_modified_at: 2026-10-12 14:59:19 +0900
+last_modified_at: 2026-10-21 16:33:33 +0900
 
 publish: false
+source_note: "The presentation in this section draws in part on Aluffi, *Algebra: Chapter 0* (2009)."
 ---
 **1. Set-functions.** Let $X$ and $Y$ be sets. If $f$ is a function from $X$ to $Y$, we draw 
 
@@ -116,8 +117,3 @@ X
 &
 \end{tikzcd}
 $$
-
-
-## References
-1. Aluffi, P. (2009). *Algebra: Chapter 0.* American Mathematical Society, Providence, RI. [https://doi.org/10.1090/gsm/104](https://doi.org/10.1090/gsm/104)
-{:reference}

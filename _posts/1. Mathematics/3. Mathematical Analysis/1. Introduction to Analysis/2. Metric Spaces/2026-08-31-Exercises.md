@@ -8,9 +8,10 @@ category_path:
   - 1. Introduction to Analysis
   - 2. Metric Spaces
 created_at: 2026-08-31 15:32:11 +0900
-last_modified_at: 2026-10-12 14:59:19 +0900
+last_modified_at: 2026-10-21 18:01:13 +0900
 
 publish: false
+source_note: The presentation in this section draws in part on Rudin, *Principles of Mathematical Analysis*, 3rd ed. (1976).
 ---
 **1.** Let $(M,d)$ be a metric space, and let $A\subseteq M$.
 1. Prove that $A'$ is closed.
@@ -21,7 +22,7 @@ publish: false
 
 1. the set $A$ is open if and only if $A\cap\partial A=\varnothing$;
 2. the set $A$ is closed if and only if $\partial A\subseteq A$;
-3. the set $A$ is dense in $M$ if and only if $\operatorname{ext} A = \varnothing$;
+3. the set $A$ is dense in $M$ if and only if $\operatorname{ext} A = \varnothing$.
 
 *Solution.* (1) Suppose $A$ is open. Since $\operatorname{int} A$ and $\partial A$ is disjoint, $A\subseteq \operatorname{int} A$ implies $A\cap \partial A = \varnothing.$ Conversely, suppose $A\cap \partial A = \varnothing.$ Then $x\in A$ implies $x\notin \partial A,$ so that $x\in \operatorname{int} A$ or $x\in \operatorname{ext} A.$ Since $A$ and $\operatorname{ext} A$ are disjoint, $x\in \operatorname{int} A.$ Hence $A\subseteq \operatorname{int} A,$ so $A$ is open.
 (2) If $\partial A\subseteq A,$ then $\operatorname{int} A \cup \partial A \subseteq A.$ Hence $A'\subseteq \overline A \subseteq A.$ Thus $A$ is closed. Conversely, if $A'\subseteq A$ then $\overline A\subseteq A.$ Hence $\partial A \subseteq \overline A \subseteq A.$
@@ -32,8 +33,3 @@ publish: false
 2. if $B = \bigcup_{i=1}^{\infty} A_i$, then $\bigcup_{i=1}^{\infty}\overline {A_i}\subseteq \overline B$.
 
 **4.** Let $K\subseteq \mathbb R$ consist of $0$ and the numbers $1,1/2,1/3,\ldots.$ Prove that $K$ is compact without using the Heine–Borel theorem.
-
-
-## References
-1. Rudin, W. (1976). *Principles of mathematical analysis* (3rd ed.). McGraw-Hill Education.
-{:reference}

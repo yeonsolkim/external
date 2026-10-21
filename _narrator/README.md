@@ -61,7 +61,8 @@ paragraph that finishes a display equation, or begins lowercase, still belongs t
 statement). A bold numbered heading such as `**3. Multiplication
 rule.**` also opens a section (`numbered-3`, title "3. Multiplication rule"), which runs
 until the next one — no prose split. Prose before the first section is `introduction`. A
-heading named References/Bibliography is kept but `skip`ped. The name in parentheses after the label is
+heading named References/Bibliography is kept but `skip`ped; the front matter's source note
+(`p.post-source-note`, see `_docs/STRUCTURE.md`) is not read at all. The name in parentheses after the label is
 captured: `Theorem 2.2.20 (Heine–Borel theorem)`. A `prose` section is a cache unit; the
 feed and player may fold it into the previous chapter for display.
 

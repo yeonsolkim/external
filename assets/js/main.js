@@ -1197,6 +1197,11 @@
 
       table.parentNode.insertBefore(scrollArea, table);
       scrollArea.appendChild(table);
+
+      // _includes/scroll-fade.html: no scrollbar, and a fade on a side scrolled out of view.
+      if (typeof window.watchScrollFade === 'function') {
+        window.watchScrollFade(scrollArea);
+      }
     });
   }
 

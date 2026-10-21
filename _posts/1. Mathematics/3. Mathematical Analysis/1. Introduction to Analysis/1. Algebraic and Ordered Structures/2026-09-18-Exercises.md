@@ -8,9 +8,10 @@ category_path:
   - 1. Introduction to Analysis
   - 1. Algebraic and Ordered Structures
 created_at: 2026-09-18 12:16:08 +0900
-last_modified_at: 2026-10-11 18:08:14 +0900
+last_modified_at: 2026-10-21 16:33:33 +0900
 
 publish: false
+source_note: The presentation in this section draws in part on Rudin, *Principles of Mathematical Analysis*, 3rd ed. (1976).
 ---
 
 **1.** Prove that for all $x\in \mathbb R$ and $n\in \mathbb Z^{+},$
@@ -93,8 +94,3 @@ a^2+b^2-2\operatorname{Re} (x\overline y)
 $$
 
 we have $(a-b)^2\le c^2.$ Taking square roots yields $\big\vert|x|-|y|\big\vert\le |x-y|.$ <span class="qed">$\square$</span>
-
-
-## References
-1. Rudin, W. (1976). *Principles of mathematical analysis* (3rd ed.). McGraw-Hill Education.
-{:reference}

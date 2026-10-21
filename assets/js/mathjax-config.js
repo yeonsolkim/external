@@ -453,6 +453,17 @@
 
   var displayMathOverflowFrame = 0;
 
+  // watchScrollFade comes from _includes/scroll-fade.html: an overflowing block hides its
+  // scrollbar and fades out on a side with content scrolled out of view, as the breadcrumb does.
+  function setScrollFade(element, isOverflowing) {
+    if (!isOverflowing) {
+      element.classList.remove('scroll-fade');
+      element.removeAttribute('data-clipped');
+    } else if (typeof window.watchScrollFade === 'function') {
+      window.watchScrollFade(element);
+    }
+  }
+
   function updateDisplayMathOverflow() {
     displayMathOverflowFrame = 0;
 
@@ -468,6 +479,13 @@
       } else {
         element.classList.remove('math-overflowing');
       }
+
+      setScrollFade(element, isOverflowing);
+    });
+
+    // A commutative diagram scrolls whenever it is too wide (post.css); it fades the same way.
+    document.querySelectorAll('.post-body .commutative-diagram').forEach(function (diagram) {
+      setScrollFade(diagram, diagram.scrollWidth - diagram.clientWidth > 1);
     });
   }
 

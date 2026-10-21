@@ -261,6 +261,16 @@ class StructuredTree(unittest.TestCase):
         references = [s for s in self.categorical.sections if s.id == "references"][0]
         self.assertEqual(references.skip, "reference list")
 
+    def test_the_source_note_is_not_read_and_moves_no_hash(self):
+        proof = ('<section data-doc="theorem" data-environment-kind="Theorem" data-number="1" '
+                 'id="unit-theorem-1" aria-labelledby="theorem-1">'
+                 '<p><strong id="theorem-1">Theorem 1.</strong> Stated.</p></section><p>Afterwards.</p>')
+        note = '<p class="post-source-note">Drawn from <em>A Book</em>.</p>'
+        without, noted = build(wrap(proof)), build(wrap(proof + note))
+        self.assertNotIn("A Book", glossary_source(noted))
+        self.assertEqual(noted.hash, without.hash)
+        self.assertEqual([s.hash for s in noted.sections], [s.hash for s in without.sections])
+
     def test_exercises_and_their_solutions_are_kept_but_not_narrated(self):
         skel = build(wrap(
             '<section class="doc-section" data-doc="subsection" data-number="1" data-title="Groups" id="unit-sec-1">'

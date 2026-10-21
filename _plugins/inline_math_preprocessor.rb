@@ -5,6 +5,9 @@ module ExternalInlineMathPreprocessor
   MARKDOWN_EXTENSIONS = [".md", ".markdown"].freeze
   REFERENCE_ATTRIBUTE_DEFINITION = "{:reference: .reference}\n\n"
   TRAILING_PUNCTUATION_PATTERN = /\p{P}+/.freeze
+  PLACEHOLDER_PATTERN = /@@codex-inline-math-(\d+)@@/.freeze
+  # An opening tag; a quoted value may hold `>`.
+  TAG_PATTERN = /<[a-zA-Z][\w:-]*(?:"[^"]*"|'[^']*'|[^>"'])*>/.freeze
 
   module_function
 
@@ -110,6 +113,18 @@ module ExternalInlineMathPreprocessor
   def restore(output, placeholders)
     return output if placeholders.nil? || placeholders.empty?
 
+    # A placeholder can sit in an attribute: document_structure.rb copies a statement's name
+    # into data-name. A span there would end the value at its first quote and spill the rest
+    # of the tag onto the page as text, so an attribute gets the TeX alone.
+    output = output.gsub(TAG_PATTERN) do |tag|
+      next tag unless tag.include?("@@codex-inline-math-")
+
+      tag.gsub(PLACEHOLDER_PATTERN) do |placeholder|
+        math = placeholders[Regexp.last_match(1).to_i]
+        math ? escape_attribute("\\(#{math}\\)") : placeholder
+      end
+    end
+
     placeholders.each_with_index do |math, index|
       placeholder = "@@codex-inline-math-#{index}@@"
 
@@ -141,6 +156,10 @@ module ExternalInlineMathPreprocessor
 
     '<span class="' + classes.join(" ") + '">\(' + escape_html(math) + '\)' +
       trailing_punctuation.to_s + '</span>'
+  end
+
+  def escape_attribute(text)
+    escape_html(text).gsub('"', "&quot;").gsub("'", "&#39;")
   end
 
   def escape_html(text)

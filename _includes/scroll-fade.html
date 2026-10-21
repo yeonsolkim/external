@@ -1,0 +1,76 @@
+<script>
+  /*
+   * Sideways scrollers hide their scrollbar and fade out on a side with content scrolled out
+   * of view (.scroll-fade in style.scss). watchScrollFade(element) adds that class and keeps
+   * the element's data-clipped ("start", "end", or both) in step with its scroll position, its
+   * size, and the site font arriving. The breadcrumb and code blocks are watched from the
+   * page's own markup; main.js watches the tables it wraps, and mathjax-config.js display
+   * math and commutative diagrams wider than the column.
+   */
+  (function () {
+    var watched = new Set();
+    var resizeObserver = typeof window.ResizeObserver === 'function'
+      ? new window.ResizeObserver(function (entries) {
+          entries.forEach(function (entry) {
+            update(entry.target);
+          });
+        })
+      : null;
+
+    function update(element) {
+      var overflowX = window.getComputedStyle(element).overflowX;
+      var hidden = element.scrollWidth - element.clientWidth;
+      var clipped = [];
+      var value;
+
+      // A table's wrapper scrolls only at phone widths; wider, it lets its table show.
+      if (overflowX === 'auto' || overflowX === 'scroll') {
+        if (element.scrollLeft > 1) {
+          clipped.push('start');
+        }
+
+        if (element.scrollLeft < hidden - 1) {
+          clipped.push('end');
+        }
+      }
+
+      value = clipped.join(' ');
+
+      if (!value) {
+        element.removeAttribute('data-clipped');
+      } else if (element.getAttribute('data-clipped') !== value) {
+        element.setAttribute('data-clipped', value);
+      }
+    }
+
+    window.watchScrollFade = function (element) {
+      element.classList.add('scroll-fade');
+      update(element);
+
+      if (watched.has(element)) {
+        return;
+      }
+
+      watched.add(element);
+      element.addEventListener('scroll', function () {
+        update(element);
+      }, { passive: true });
+
+      if (resizeObserver) {
+        resizeObserver.observe(element);
+      }
+    };
+
+    // font-display: block lays text out in a fallback face until the site font is in, and the
+    // swap can change how wide a scroller's content is without resizing the scroller.
+    if (document.fonts && typeof document.fonts.addEventListener === 'function') {
+      document.fonts.addEventListener('loadingdone', function () {
+        watched.forEach(update);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.post-body pre > code').forEach(window.watchScrollFade);
+    });
+  }());
+</script>

@@ -28,7 +28,7 @@ transitional prose the author writes between one result and the next is its own
 proof, a paragraph that starts a new sentence in a new block (a paragraph that
 finishes a display equation, or begins lowercase, still belongs to the statement).
 Prose before the first section is "Introduction". A "References" heading is kept
-but skipped.
+but skipped; the front matter's source note (`p.post-source-note`) is not read at all.
 """
 from __future__ import annotations
 
@@ -380,6 +380,8 @@ def _walk(node: Node, out: list, r: Renderer) -> None:
         if tag in ("script", "style", "template", "noscript"):
             continue
         if tag == "p":
+            if child.has_class("post-source-note"):
+                continue    # the front matter's credit to a book is for the page, as references are
             out.append(_paragraph(child, r))
         elif tag in ("h1", "h2", "h3", "h4", "h5", "h6"):
             out.append(Block("heading", r.inline(child), level=int(tag[1]), id=child.get("id") or ""))

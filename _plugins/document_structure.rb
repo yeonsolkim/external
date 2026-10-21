@@ -302,7 +302,7 @@ module ExternalDocumentStructure
          .map { |name, value| %( #{name}="#{value.to_s.gsub('"', "&quot;")}") }.join
   end
 
-  def transform(html, warnings, exercise_page: false)
+  def transform(html, warnings, exercise_page: false, source_note: nil)
     blocks = split_blocks(html)
     root = Unit.new(:root)
     stack = [root]
@@ -329,7 +329,7 @@ module ExternalDocumentStructure
       end
 
       # Footnotes go to the foot of the page, as LaTeX sets them: outside every section.
-      if block[:type] == :element && block[:classes].include?("footnotes")
+      if footnotes?(block)
         close_to.call(->(_unit) { true })
         stack.last << block[:raw]
         next
@@ -503,7 +503,41 @@ module ExternalDocumentStructure
     end
 
     close_to.call(->(_unit) { true })
-    root.render
+    references_after_footnotes(with_source_note(root.render, source_note))
+  end
+
+  def footnotes?(block)
+    block[:type] == :element && block[:classes].include?("footnotes")
+  end
+
+  def references?(block)
+    block[:type] == :element && block[:tag] == "section" &&
+      attribute_of(block[:open_tag], "id") == "unit-references"
+  end
+
+  # The front matter's source note, as HTML: the text's last paragraph. It speaks for the whole
+  # post, so it comes after every section closes, and before the footnotes and references.
+  def with_source_note(html, note)
+    return html if note.to_s.strip.empty?
+
+    blocks = split_blocks(html)
+    foot = blocks.index { |block| footnotes?(block) || references?(block) } || blocks.length
+    blocks.insert(foot, { type: :text, raw: "#{note.strip}\n" })
+    blocks.map { |block| block[:raw] }.join
+  end
+
+  # kramdown's footnotes are endnotes (role="doc-endnotes"), and endnotes come before the
+  # bibliography, as \theendnotes is printed before \bibliography: what the author wrote
+  # first, the sources last. The only block this pass moves; everything else keeps its order.
+  def references_after_footnotes(html)
+    blocks = split_blocks(html)
+    references = blocks.index { |block| references?(block) }
+    footnotes = blocks.index { |block| footnotes?(block) }
+    return html unless references && footnotes && references < footnotes
+
+    # Deleting the section shifts the footnotes back one place, so `footnotes` is just after them.
+    blocks.insert(footnotes, { type: :text, raw: "\n" }, blocks.delete_at(references))
+    blocks.map { |block| block[:raw] }.join
   end
 
   # Numbers are read, not generated; a break in the sequence is worth a warning, not a fix.
@@ -565,15 +599,30 @@ module ExternalDocumentStructure
   # subsection exactly as a mathematics post's is.
   def process(document)
     return unless document.respond_to?(:collection) && document.collection&.label == "posts"
-    return if document.content.to_s.strip.empty?
+
+    # A draft with nothing written yet still credits its source.
+    source_note = source_note_html(document)
+    return if document.content.to_s.strip.empty? && source_note.nil?
 
     warnings = []
     exercise_page = document.data["title"].to_s.match?(EXERCISE_TITLE_RE)
-    document.content = transform(document.content, warnings, exercise_page: exercise_page)
+    document.content = transform(document.content, warnings, exercise_page: exercise_page,
+                                                             source_note: source_note)
     document.data["document_structure"] = true
     warnings.each do |warning|
       Jekyll.logger.warn "Structure:", "#{document.relative_path}: #{warning}"
     end
+  end
+
+  # `source_note:` in the front matter, a sentence of Markdown on what the post draws on —
+  # `The presentation in this section draws in part on …, *Linear Algebra*, 5th ed. (2025).` —
+  # converted with the site's Markdown settings. Its class keeps it out of the narration.
+  def source_note_html(document)
+    note = document.data["source_note"].to_s.strip
+    return nil if note.empty?
+
+    markdown = document.site.find_converter_instance(Jekyll::Converters::Markdown)
+    markdown.convert(note).gsub("<p>", %(<p class="post-source-note">))
   end
 end
 

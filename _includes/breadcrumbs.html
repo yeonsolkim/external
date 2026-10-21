@@ -1,5 +1,5 @@
 <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-  <ol class="breadcrumb-list">
+  <ol class="breadcrumb-list scroll-fade">
     <li class="breadcrumb-item">
       <a href="{{ '/' | relative_url }}"{% unless page.category_path or page.layout == "page" %} aria-current="page"{% endunless %}>Home</a>
     </li>
@@ -7,18 +7,6 @@
     {% assign breadcrumb_path_key = "" %}
     {% if page.category_path %}
       {% for category in page.category_path %}
-        {% comment %}
-          At phone widths style.scss keeps only Home and the last two crumbs;
-          this ellipsis stands in for the collapsible ones between them. It is
-          three middle dots, as TeX builds \cdots: the site font has no U+22EF.
-        {% endcomment %}
-        {% if forloop.first and forloop.length > 2 %}
-          <li class="breadcrumb-item breadcrumb-ellipsis" aria-hidden="true">
-            <span class="breadcrumb-separator">›</span>
-            <span class="breadcrumb-label"> ··· </span>
-          </li>
-        {% endif %}
-
         {% if breadcrumb_path_key == "" %}
           {% assign breadcrumb_path_key = category %}
         {% else %}
@@ -44,7 +32,7 @@
           {% assign visible_category = category | strip_category_order_prefix %}
         {% endif %}
 
-        <li class="breadcrumb-item{% if forloop.rindex > 2 %} breadcrumb-item--collapsible{% endif %}">
+        <li class="breadcrumb-item">
           <span class="breadcrumb-separator" aria-hidden="true">›</span>
           {% if breadcrumb_url != "" %}
             <a href="{{ breadcrumb_url | relative_url }}"{% if forloop.last %} aria-current="page"{% endif %}>
@@ -67,3 +55,11 @@
     {% endif %}
   </ol>
 </nav>
+
+<script>
+  // Watched here rather than on DOMContentLoaded, so the trail's first paint already has its
+  // fade (_includes/scroll-fade.html). It opens at Home, scrolled to the start.
+  if (typeof window.watchScrollFade === 'function') {
+    window.watchScrollFade(document.querySelector('.breadcrumb-list'));
+  }
+</script>

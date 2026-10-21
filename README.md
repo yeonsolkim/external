@@ -257,7 +257,15 @@ structure.
 - For bibliography-style lists under `## References`, use an ordered list and
   put `{:reference}` directly below it. The preprocessor maps that tag to
   `class="reference"`, and ordered-list markers render as `[1]` instead of
-  `(1)`.
+  `(1)`. The section is set after the footnotes
+  (`_plugins/document_structure.rb`), at their size and under the same rule
+  (`post.css`).
+- To credit a source in prose instead, set `source_note:` in the front matter:
+  `source_note: The presentation in this section draws in part on Friedberg,
+  Insel, and Spence, *Linear Algebra*, 5th ed. (2025).` It is Markdown, set as
+  the post's last paragraph, after every section and before the footnotes
+  (`_plugins/document_structure.rb`), and the narration does not read it. Quote
+  the value if it starts with `*` or contains `: `, which YAML reads otherwise.
 - `assets/css/post.css` is paired with `mathjax-config.js`. It styles custom
   ordered-list markers, display math scrolling, reference-link boxes, QED
   markers, and hides the post body while MathJax is loading.
@@ -270,20 +278,32 @@ structure.
   time labels.
 - Dark mode follows the device setting. Black and white swap while every
   colour keeps its hue and saturation (pure red stays red; images are left
-  alone). The `@media (prefers-color-scheme: dark)` block at the end of
+  alone; the few colours adjusted for the black page are in `ADJUSTED` in the
+  script). The `@media (prefers-color-scheme: dark)` block at the end of
   `style.scss`, `post.css`, and `index.css` is generated: after changing a
-  colour in those files, run `python3 scripts/dark_mode_css.py`.
+  colour in those files, run `python3 scripts/dark_mode_css.py`. The script
+  inverts a colour only in a property whose name contains `color`,
+  `background`, `border`, `outline` or `shadow` (or is `fill` or `stroke`),
+  so a custom property that holds a colour needs such a name: `--hr-color`
+  is inverted, while a colour written straight into `--hr-style` would stay
+  light in dark mode. `python3 scripts/dark_mode_css.py --check` changes
+  nothing and fails when a block no longer matches its stylesheet;
+  `_tests/test_dark_mode_css.py` runs it, so Publish stops on a stale block.
 
 ### Other Includes
 
 - `_includes/breadcrumbs.html` renders `Home` followed by every level of the
-  page's `category_path`. At phone widths (`max-width: 30rem` in `style.scss`)
-  only `Home` and the last two crumbs stay visible, and an ellipsis stands in
-  for the ones between them. The hidden crumbs use `display: none`, so screen
-  readers skip them too. Nothing becomes unreachable: the second-to-last crumb
-  is always the nearest index page above the current one, so every level can
-  still be reached one step at a time. A page with `layout: page` has no
-  `category_path`; its title follows `Home` as the current crumb.
+  page's `category_path`. The trail always stays on one line at every width:
+  when it is wider than the column, `.breadcrumb-list` in `style.scss` scrolls
+  sideways instead of wrapping, so every crumb stays reachable. A page with
+  `layout: page` has no `category_path`; its title follows `Home` as the
+  current crumb.
+- `_includes/scroll-fade.html` defines `watchScrollFade` for every sideways
+  scroller: the breadcrumb and code blocks (watched from the page's markup),
+  tables (`main.js`, which wraps them), and display math and commutative
+  diagrams wider than the column (`mathjax-config.js`). Such a scroller shows
+  no scrollbar; a side with content scrolled out of view fades out instead
+  (`.scroll-fade` in `style.scss`).
 - `_includes/comments.html` contains the Giscus comment embed used by
   `_layouts/post.html`.
 - `_includes/head.html` is not currently included by the active layout. Check
