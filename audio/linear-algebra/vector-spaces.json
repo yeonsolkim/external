@@ -1,0 +1,160 @@
+{
+  "url": "/linear-algebra/vector-spaces/",
+  "title": "1.2 Vector Spaces",
+  "lang": "en",
+  "guid": "https://yeonsolkim.com/2026/06/01/1.-Vector-Spaces.html",
+  "description": "Vector spaces over a field, with the standard examples of n-tuples, matrices, functions, and polynomials, and the first consequences of the axioms.",
+  "published_at": "2026-06-01T15:00:00+00:00",
+  "audio": "https://audio.yeonsolkim.com/o/591fd3387c2726cbc1a0e32bf91e48c0cc3e4c2f53f92ccb48c3d4e343c196e7.mp3",
+  "stable": "https://audio.yeonsolkim.com/linear-algebra/vector-spaces.mp3",
+  "chapters_url": "https://audio.yeonsolkim.com/linear-algebra/vector-spaces.chapters.json",
+  "duration": 462.554,
+  "bytes": 7402622,
+  "voice": "cedar",
+  "page_key": "591fd3387c2726cbc1a0e32bf91e48c0cc3e4c2f53f92ccb48c3d4e343c196e7",
+  "skeleton_hash": "57ec28da1c1a0e4eaaa30040fae86ac00c7d845f71d550c4d63b9a70a13a2e28",
+  "generated": "2026-10-22",
+  "podcast": true,
+  "sections": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "kind": "introduction",
+      "level": 2,
+      "start": 0.0,
+      "duration": 30.381,
+      "source": "7cf6f89c1837657aef7c88a07a119b66606b816ab1ed12d7aecbc5a536afc5bb",
+      "audio": "3cba78771115433daee0ed8a171b39760d6eaee3f388de30125d57955af79f81",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "definition-1-2-1",
+      "title": "Definition 1.2.1",
+      "kind": "definition",
+      "level": 2,
+      "start": 31.581,
+      "duration": 32.636,
+      "source": "96f7d3969de9b1bdde360e105001f65c861351b52b4b222f15ff501ac1d38998",
+      "audio": "75f2d8c6aa04f9ab1253f78676d79010bd4599ab6bd9b4e29e876bec315ee525",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "example-1-2-2",
+      "title": "Example 1.2.2",
+      "kind": "example",
+      "level": 2,
+      "start": 65.418,
+      "duration": 49.205,
+      "source": "197150139d3f83e74d6f83b080a4693ced7a4fb95ff1b522e7db091bac56f84e",
+      "audio": "974e0c9f7d729b35d7d980a5299ad9a2b04a2a6255d869d28a9b2a92e864c816",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "example-1-2-3",
+      "title": "Example 1.2.3",
+      "kind": "example",
+      "level": 2,
+      "start": 115.823,
+      "duration": 78.243,
+      "source": "1e39d9ef55f97728d85301b1823de20bb2f5b3e2ec1f6258d6c084a779eedbaf",
+      "audio": "3fcac15f676e1e0660351772f286e4a6de81a720aa13943b8888b3f968c2892b",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "example-1-2-4",
+      "title": "Example 1.2.4",
+      "kind": "example",
+      "level": 2,
+      "start": 195.266,
+      "duration": 41.889,
+      "source": "8e850142fbf45da5d70f8a9509d893ee1cd7c79bc6f009011453f38baf435e1d",
+      "audio": "9aa3c7ee19bbe0697303d366e4f13bae2883cbc9f385bde51752fa0a03990f86",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "example-1-2-5",
+      "title": "Example 1.2.5",
+      "kind": "example",
+      "level": 2,
+      "start": 238.355,
+      "duration": 119.125,
+      "source": "92f83be8c7ec61da8d09297c8cf1ff7d567f37a93371410f458ef4661b6d65a9",
+      "audio": "21774c2824b3768cb1c9cde9efb3feb54cd07105cdf0c66700491763567b1437",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "theorem-1-2-6",
+      "title": "Theorem 1.2.6",
+      "kind": "theorem",
+      "level": 2,
+      "start": 358.679,
+      "duration": 25.13,
+      "source": "cb0cc95da7c35d3d27007c2a04220c9948033010edee29b5e259c4330f239601",
+      "audio": "b100addf7c4f6a6ed65852ab2d11d7250d195771c02925c45a039b3c338d535b",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-1-2-6",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 385.009,
+      "duration": 77.545,
+      "source": "2901573fff2db4faa9920f781121585ea21d0c7d4f781b01dcc89892e711ddd0",
+      "audio": "c97970ce406da3d8d7639825e75707099d28a10f0505cc92cff8ae6f4d9dc7a9",
+      "parent": null,
+      "proves": "theorem-1-2-6"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "start": 0.0,
+      "end": 31.581
+    },
+    {
+      "id": "definition-1-2-1",
+      "title": "Definition 1.2.1",
+      "start": 31.581,
+      "end": 65.418
+    },
+    {
+      "id": "example-1-2-2",
+      "title": "Example 1.2.2",
+      "start": 65.418,
+      "end": 115.823
+    },
+    {
+      "id": "example-1-2-3",
+      "title": "Example 1.2.3",
+      "start": 115.823,
+      "end": 195.266
+    },
+    {
+      "id": "example-1-2-4",
+      "title": "Example 1.2.4",
+      "start": 195.266,
+      "end": 238.355
+    },
+    {
+      "id": "example-1-2-5",
+      "title": "Example 1.2.5",
+      "start": 238.355,
+      "end": 358.679
+    },
+    {
+      "id": "theorem-1-2-6",
+      "title": "Theorem 1.2.6",
+      "start": 358.679,
+      "end": 462.554
+    }
+  ]
+}

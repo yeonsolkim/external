@@ -1,0 +1,389 @@
+{
+  "url": "/introduction-to-analysis/convergent-sequences/",
+  "title": "3.1 Convergent Sequences",
+  "lang": "en",
+  "guid": "https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html",
+  "description": "Convergent sequences in metric spaces: limits and boundedness, monotone sequences, limit laws, coordinatewise convergence in ℝᵏ, and some standard limits.",
+  "published_at": "2026-08-31T15:00:00+00:00",
+  "audio": "https://audio.yeonsolkim.com/o/2848953023186d1333a5f1e375267daa90cd7472fd2d0cf529a13007c3fc1243.mp3",
+  "stable": "https://audio.yeonsolkim.com/introduction-to-analysis/convergent-sequences.mp3",
+  "chapters_url": "https://audio.yeonsolkim.com/introduction-to-analysis/convergent-sequences.chapters.json",
+  "duration": 1160.212,
+  "bytes": 18565306,
+  "voice": "cedar",
+  "page_key": "2848953023186d1333a5f1e375267daa90cd7472fd2d0cf529a13007c3fc1243",
+  "skeleton_hash": "fe041db4e3f74a26087c5f1f78d628bd4b271f8793a64cc7c0263ac448b51542",
+  "generated": "2026-10-18",
+  "podcast": true,
+  "sections": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "kind": "introduction",
+      "level": 2,
+      "start": 0.0,
+      "duration": 14.055,
+      "source": "422670d9fb31bdef704abe991cfafd0e01ef30f3857df5f5537f5ffcf0778f66",
+      "audio": "ac7876b1c1c7d8c35c8e6dcf0dc4490356f8429b7487fa62e6dc0755935c54f8",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "definition-3-1-1",
+      "title": "Definition 3.1.1",
+      "kind": "definition",
+      "level": 2,
+      "start": 15.255,
+      "duration": 35.002,
+      "source": "381808a5d0db65de762b4ef54a543164bf2f46c6ccd2806f77c09029e17a2d82",
+      "audio": "6a699f3802501796a8732e3bb8cce4793ea0e720c7a789e0129f137e9aa3a245",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "prose-after-definition-3-1-1",
+      "title": "As can be seen from the definition, convergence depends…",
+      "kind": "prose",
+      "level": 2,
+      "start": 51.458,
+      "duration": 10.487,
+      "source": "362c496da3da79c8a5715748f48504aa3e9fd26f8d6962cc6d759102d8fc8b6a",
+      "audio": "116a9c5d1f4fe3cad45e9f6620b56ce7d78c77792332b33d912d75ed0b77272f",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "definition-3-1-2",
+      "title": "Definition 3.1.2",
+      "kind": "definition",
+      "level": 2,
+      "start": 63.145,
+      "duration": 8.221,
+      "source": "5420374a95fad91674f7a19163b6b7a994cf9738a2169f7e160f421be18a024e",
+      "audio": "1caa7b9772203b63a0a644b80717d41f67deda7d46719c26eea56bb4b7348651",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "prose-after-definition-3-1-2",
+      "title": "Note that the boundedness of a subset of a metric space is…",
+      "kind": "prose",
+      "level": 2,
+      "start": 72.565,
+      "duration": 17.09,
+      "source": "c5ce252d724b289f60646923757964c483aca3140e9e0e31403d5cf7e3575ea7",
+      "audio": "fd79d3df9499f00df11d3e2330bb57d39ee855d63ad82c1458aeba969484866b",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "theorem-3-1-3",
+      "title": "Theorem 3.1.3",
+      "kind": "theorem",
+      "level": 2,
+      "start": 90.855,
+      "duration": 39.32,
+      "source": "3355e2af282f69daced684ce148bf85aa073b06303306c14c43734c696ea7c53",
+      "audio": "815c7baa0589bc37ac061aec9d0a28d178fd8ee5261ad1185c4fc7e561dfbca0",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-3-1-3",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 131.376,
+      "duration": 130.519,
+      "source": "775dcfe57ccef75b45ed69cfe6a9ca64f346d399ddba728ac1e2bd6c34336cb6",
+      "audio": "5d48a4694386e3f5350b8e02da0f6de297c5ffa8e647b7dd57ecf45a689d0723",
+      "parent": null,
+      "proves": "theorem-3-1-3"
+    },
+    {
+      "id": "definition-3-1-4",
+      "title": "Definition 3.1.4",
+      "kind": "definition",
+      "level": 2,
+      "start": 263.094,
+      "duration": 39.985,
+      "source": "ae478c2cd7b343d2386a5dd1bc79d4118cb2b90260f2d7cc7883c3cfb78a5f24",
+      "audio": "f3b75a5e2bcbb654a3c783862a4282857496bc0a76243995c57177524ee28ae7",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "theorem-3-1-5",
+      "title": "Theorem 3.1.5",
+      "kind": "theorem",
+      "level": 2,
+      "start": 304.279,
+      "duration": 9.773,
+      "source": "eb9b868db84402ebc3aff1fc53fb52a2c190c4a3cdb990c59d74dd478927fab4",
+      "audio": "697adb28ddbc670b2222e1a30add296ddfc66b4f871d96de8408d62cbbd125c4",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-3-1-5",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 315.252,
+      "duration": 44.94,
+      "source": "9be52794d95f449f11200145941050a2d022da14b98bb8cf6e5de8d96f0df5d8",
+      "audio": "7c34b3fd1188db0906c7b1e28f0fcd8c4d7615672f2fc024e1a272a73042a24a",
+      "parent": null,
+      "proves": "theorem-3-1-5"
+    },
+    {
+      "id": "prose-after-proof-theorem-3-1-5",
+      "title": "For … with the usual metric …, taking limits is compatible…",
+      "kind": "prose",
+      "level": 2,
+      "start": 361.392,
+      "duration": 10.285,
+      "source": "ff6e9ee6db9b496e60a103886cb203c5a8e292b40ba0fe06f383cd014aa29ae0",
+      "audio": "b8ed33c4b6f8a11200bab452eda6f150978809be3a30bb600d17cb1b79999332",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "theorem-3-1-6",
+      "title": "Theorem 3.1.6",
+      "kind": "theorem",
+      "level": 2,
+      "start": 372.877,
+      "duration": 40.035,
+      "source": "c3c57f19e8656ee035faaee874577ac8970bb946774bad586034db6a1deb560b",
+      "audio": "60a9200cb1b87db7902e66bb416037d02077593a1d11a60779f4e1c3e85185cb",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-3-1-6",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 414.112,
+      "duration": 171.958,
+      "source": "2799f794970d911087e860207259bcf7470b62c8bf33f7470bad57bea17ecae3",
+      "audio": "3162c95eece3f8b045bfd2ff259cf35b8af5ff9cc50abd71d812ce18dc657306",
+      "parent": null,
+      "proves": "theorem-3-1-6",
+      "span": 296.897
+    },
+    {
+      "id": "lemma-3-1-7",
+      "title": "Lemma 3.1.7",
+      "kind": "lemma",
+      "level": 3,
+      "start": 587.27,
+      "duration": 12.697,
+      "source": "3b45a938f7eee4f009d31c65947e6c24db38ecdef6bdf092db548f70fe2a6823",
+      "audio": "ee6704a2117117fc06f69f53bb68b94b842dbd9764cb27674553784018f85b22",
+      "parent": "proof-theorem-3-1-6",
+      "proves": null
+    },
+    {
+      "id": "proof-lemma-3-1-7",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 601.167,
+      "duration": 38.656,
+      "source": "b98222bc9645574e1c57804e9560cc43af40c2923279c292461b3edb225448f2",
+      "audio": "8c248be60f1de80f73800aaeec84267b4d467559e3ff59d8a233555d31633a10",
+      "parent": "proof-theorem-3-1-6",
+      "proves": "lemma-3-1-7"
+    },
+    {
+      "id": "prose-after-proof-lemma-3-1-7",
+      "title": "Since …, we have ….",
+      "kind": "prose",
+      "level": 3,
+      "start": 641.023,
+      "duration": 69.986,
+      "source": "74d128c9fbe2b1d8d5b0979a79c51bed45aee577d9f1236a0f455b1d40cedd86",
+      "audio": "fd202401335ed39755e7d14c2da21776496bdb8d9b997bfd6be922ddbde4d625",
+      "parent": "proof-theorem-3-1-6",
+      "proves": null
+    },
+    {
+      "id": "prose-after-proof-theorem-3-1-6",
+      "title": "Having established the limit laws in …, we now take…",
+      "kind": "prose",
+      "level": 2,
+      "start": 712.209,
+      "duration": 16.078,
+      "source": "3cd0c1bfc73ac3d4e63fa4a88ba3e355ef87a173cbcde605196e09c95c6ad645",
+      "audio": "8198e00bde6f5fb28bcc7fc72c5bde7be77811bb9d1d8ee86aa6d36d76e8ba55",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "theorem-3-1-8",
+      "title": "Theorem 3.1.8",
+      "kind": "theorem",
+      "level": 2,
+      "start": 729.487,
+      "duration": 20.583,
+      "source": "21370b5ae3c866eb38fa20d4e06a0f53ba9e5d517db3fb40dd28be7de20bf69b",
+      "audio": "9d9ba344be6b2a62a68341a210443e1161a163a938585ed66ce6e5fe1bd7e885",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-3-1-8",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 751.27,
+      "duration": 73.171,
+      "source": "b2dd3769b05a725aaba3fed04ba28afa1f01aaaaf5628d530f7143f417aa224c",
+      "audio": "1b20318b8cec6c3117e58190b3ec3f481451a29581255277fa2907052c0dca60",
+      "parent": null,
+      "proves": "theorem-3-1-8"
+    },
+    {
+      "id": "prose-after-proof-theorem-3-1-8",
+      "title": "We consider several limits that will be used repeatedly.",
+      "kind": "prose",
+      "level": 2,
+      "start": 825.64,
+      "duration": 16.209,
+      "source": "d9979f37cb6a0f0722704cd29286265058f4124eceab5eb00f10e2a68fcb2ec4",
+      "audio": "6f2d0d37b9fc9197b939da4001ff5ab37fb2c51968a772edfbe07dafa3483e26",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "lemma-3-1-9",
+      "title": "Lemma 3.1.9",
+      "kind": "lemma",
+      "level": 2,
+      "start": 843.049,
+      "duration": 13.904,
+      "source": "9f07022e7e94aa71e6de5d917d3a9bf113c3c010e26883961d7ae5014d6868b1",
+      "audio": "f63bdb904f1258cf8fabe61c5dacb56f92e838aa544c7f56527bd678bc0ab759",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-lemma-3-1-9",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 858.153,
+      "duration": 19.889,
+      "source": "d9ca047fca87a2b7efc11184ae4e5f9b6a41a4749a80f6114ae9330ca2157b56",
+      "audio": "597f1e5aec1835703232138043d3db0b08557ea5f18326fafa034931cfc18fdb",
+      "parent": null,
+      "proves": "lemma-3-1-9"
+    },
+    {
+      "id": "theorem-3-1-10",
+      "title": "Theorem 3.1.10",
+      "kind": "theorem",
+      "level": 2,
+      "start": 879.242,
+      "duration": 41.274,
+      "source": "c17c7f78939ca2eb145efca066cbc6c350581b813a25076168e8acec768beb54",
+      "audio": "0342ffd869407f9c2f7d9552341c52d72abef5cfca4ed1c698a1938cea30a986",
+      "parent": null,
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-3-1-10",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 2,
+      "start": 921.716,
+      "duration": 169.489,
+      "source": "591e6a4064f37b4a81f48a00570b51828c66dcb61f894a5b9f1ceee0533146e4",
+      "audio": "27d9f7975d423461fe22343f9ac18d7c25aecc41c3bd72b48af1f38a85ee4788",
+      "parent": null,
+      "proves": "theorem-3-1-10"
+    },
+    {
+      "id": "prose-after-proof-theorem-3-1-10",
+      "title": "Taken together, these assertions describe several basic…",
+      "kind": "prose",
+      "level": 2,
+      "start": 1092.404,
+      "duration": 67.808,
+      "source": "b6627df850b7c141e1bd9deeaed10814129642906eaf14f770b24cc50d43a5d3",
+      "audio": "a83ea531d9366840d489e06613b816a99c7f50f86db5b1ca6380ad04ace981cb",
+      "parent": null,
+      "proves": null
+    }
+  ],
+  "chapters": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "start": 0.0,
+      "end": 15.255
+    },
+    {
+      "id": "definition-3-1-1",
+      "title": "Definition 3.1.1",
+      "start": 15.255,
+      "end": 63.145
+    },
+    {
+      "id": "definition-3-1-2",
+      "title": "Definition 3.1.2",
+      "start": 63.145,
+      "end": 90.855
+    },
+    {
+      "id": "theorem-3-1-3",
+      "title": "Theorem 3.1.3",
+      "start": 90.855,
+      "end": 263.094
+    },
+    {
+      "id": "definition-3-1-4",
+      "title": "Definition 3.1.4",
+      "start": 263.094,
+      "end": 304.279
+    },
+    {
+      "id": "theorem-3-1-5",
+      "title": "Theorem 3.1.5",
+      "start": 304.279,
+      "end": 372.877
+    },
+    {
+      "id": "theorem-3-1-6",
+      "title": "Theorem 3.1.6",
+      "start": 372.877,
+      "end": 587.27
+    },
+    {
+      "id": "lemma-3-1-7",
+      "title": "Lemma 3.1.7",
+      "start": 587.27,
+      "end": 729.487
+    },
+    {
+      "id": "theorem-3-1-8",
+      "title": "Theorem 3.1.8",
+      "start": 729.487,
+      "end": 843.049
+    },
+    {
+      "id": "lemma-3-1-9",
+      "title": "Lemma 3.1.9",
+      "start": 843.049,
+      "end": 879.242
+    },
+    {
+      "id": "theorem-3-1-10",
+      "title": "Theorem 3.1.10",
+      "start": 879.242,
+      "end": 1160.212
+    }
+  ]
+}

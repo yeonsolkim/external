@@ -1,24 +1,24 @@
 {
-  "url": "/2026/07/24/1.-Open-Sets-and-Closed-Sets.html",
+  "url": "/introduction-to-analysis/open-sets-and-closed-sets/",
   "title": "2.1 Open Sets and Closed Sets",
   "lang": "en",
-  "hash": "104f53967966c2671fd3cabe34fdd720f2a421b50904f55873673478ac0f1bd7",
+  "hash": "68202971ff0c3cff9b424f94e509e1b2979246276e11e4a67a6df65264fb2154",
   "skeleton": 4,
   "prompt": "lecture-v4",
   "model": "gpt-5.5",
-  "updated": "2026-10-21",
+  "updated": "2026-10-22",
   "sections": [
     {
       "id": "introduction",
       "title": "Introduction",
       "kind": "introduction",
       "level": 2,
-      "source": "1b72e481723cadc46742f472e36cd4d7b390c9a0a7f3542d9f7657a4a899a5a1",
+      "source": "fe0692bdf410aac74268d9e11ec16a9920dc561ff147b26d2c6ff8169c2eeb8d",
       "skip": null,
       "file": "introduction.md",
       "current": true,
       "edited": false,
-      "words": 218,
+      "words": 219,
       "math": 17
     },
     {
@@ -26,12 +26,12 @@
       "title": "Definition 2.1.1",
       "kind": "definition",
       "level": 2,
-      "source": "02ae565502aea3b8798b53db2a63b54aa8931d7ad39af2ebd301c257c67432b6",
+      "source": "e643df54de2d4f184b1c121a99dda0c0c7e3d2ff72cf09756c8fe76bbd8ddfe0",
       "skip": null,
       "file": "definition-2-1-1.md",
       "current": true,
       "edited": false,
-      "words": 100,
+      "words": 101,
       "math": 11
     },
     {
@@ -39,12 +39,12 @@
       "title": "Example 2.1.2",
       "kind": "example",
       "level": 2,
-      "source": "95887ea09dcde5a17e717322ea8175f82a930aced3f19cb7a6d3cfb83bbad60f",
+      "source": "0a643e6fee044a39aae33f472112924cb807db3ce9233b8358856a118eb3cdda",
       "skip": null,
       "file": "example-2-1-2.md",
       "current": true,
       "edited": false,
-      "words": 164,
+      "words": 166,
       "math": 12
     },
     {

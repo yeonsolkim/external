@@ -5,165 +5,143 @@
 <link>https://yeonsolkim.com/</link>
 <atom:link href="https://yeonsolkim.com/podcast.xml" rel="self" type="application/rss+xml"/>
 <language>en</language>
-<description>A backup external memory containing several data files</description>
+<description>Notes on undergraduate mathematics by Yeonsol Kim, written out in full: definitions, theorems, and proofs in set theory, logic, algebra, analysis, and probability.</description>
 <itunes:author>Yeonsol Kim</itunes:author>
 <itunes:explicit>false</itunes:explicit>
 <itunes:type>episodic</itunes:type>
 <itunes:category text="Science"/>
-<lastBuildDate>Wed, 21 Oct 2026 00:00:00 +0000</lastBuildDate>
+<lastBuildDate>Thu, 22 Oct 2026 00:00:00 +0000</lastBuildDate>
 <item>
-<title>1.4 The Span Operator</title>
-<link>https://yeonsolkim.com/2026/10/14/4.-The-Span-Operator.html</link>
-<guid isPermaLink="true">https://yeonsolkim.com/2026/10/14/4.-The-Span-Operator.html</guid>
+<title>1.5 The Span Operator</title>
+<link>https://yeonsolkim.com/linear-algebra/the-span-operator/</link>
+<guid isPermaLink="false">https://yeonsolkim.com/2026/10/14/4.-The-Span-Operator.html</guid>
 <pubDate>Wed, 14 Oct 2026 15:00:00 +0000</pubDate>
-<description>Span as a closure operator. A function maps each input to the output. Viewing it as an operator emphasizes how it transforms mathematical objects. When an operator maps a collection of objects to itself, we can compose it with itself and apply it repeatedly. This leads us to study how an object changes under one application, what happens under successive applications, and which objects remain unchanged. Taking the span of a set can be viewed as an operator, specifically as a closure operator on the power set of a vector space. We begin by studying a closure operator through its relation to inclusion and its behavior under iteration, and then use the general properties of this transformation to describe the span operator. Read the page at https://yeonsolkim.com/2026/10/14/4.-The-Span-Operator.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/10/14/4.-The-Span-Operator.mp3" length="17340146" type="audio/mpeg"/>
-<itunes:duration>0:18:04</itunes:duration>
+<description>The span as a closure operator: closure operators and Moore collections, subspaces as the closed sets, and the finitary and exchange properties of span. Read the page at https://yeonsolkim.com/linear-algebra/the-span-operator/</description>
+<enclosure url="https://audio.yeonsolkim.com/linear-algebra/the-span-operator.mp3" length="18075337" type="audio/mpeg"/>
+<itunes:duration>0:18:50</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
-<podcast:chapters url="https://audio.yeonsolkim.com/2026/10/14/4.-The-Span-Operator.chapters.json" type="application/json+chapters"/>
+<podcast:chapters url="https://audio.yeonsolkim.com/linear-algebra/the-span-operator.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
 <title>1.1 The Trading Industry</title>
-<link>https://yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.html</link>
-<guid isPermaLink="true">https://yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.html</guid>
+<link>https://yeonsolkim.com/trading-and-exchanges/the-trading-industry/</link>
+<guid isPermaLink="false">https://yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.html</guid>
 <pubDate>Sun, 04 Oct 2026 15:00:00 +0000</pubDate>
-<description>1.1.1 Traders Traders are people who arrange trades for themselves, have others arrange trades on their behalf, or arrange trades for others. Read the page at https://yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.mp3" length="6834848" type="audio/mpeg"/>
+<description>Traders are people who arrange trades for themselves, have others arrange trades on their behalf, or arrange trades for others. Read the page at https://yeonsolkim.com/trading-and-exchanges/the-trading-industry/</description>
+<enclosure url="https://audio.yeonsolkim.com/trading-and-exchanges/the-trading-industry.mp3" length="6834848" type="audio/mpeg"/>
 <itunes:duration>0:07:07</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
-<podcast:chapters url="https://audio.yeonsolkim.com/2026/10/04/1.-The-Trading-Industry.chapters.json" type="application/json+chapters"/>
+<podcast:chapters url="https://audio.yeonsolkim.com/trading-and-exchanges/the-trading-industry.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
 <title>3.4 Limit Superior and Limit Inferior</title>
-<link>https://yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html</link>
-<guid isPermaLink="true">https://yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html</guid>
+<link>https://yeonsolkim.com/introduction-to-analysis/limit-superior-and-limit-inferior/</link>
+<guid isPermaLink="false">https://yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html</guid>
 <pubDate>Sat, 12 Sep 2026 15:00:00 +0000</pubDate>
-<description>We first extend the notion of convergence by allowing the values +\infty and -\infty. We then associate with each tail of a sequence its supremum and infimum. The limiting behavior of these tail bounds leads to the notions of limit superior and limit inferior. Throughout this section, all suprema and infima are understood to be taken in \overline{\mathbb R} Read the page at https://yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.mp3" length="11670903" type="audio/mpeg"/>
+<description>Divergence to ±∞, the limit superior and limit inferior of a real sequence from its tails and its subsequential limits, and how they decide convergence. Read the page at https://yeonsolkim.com/introduction-to-analysis/limit-superior-and-limit-inferior/</description>
+<enclosure url="https://audio.yeonsolkim.com/introduction-to-analysis/limit-superior-and-limit-inferior.mp3" length="11670903" type="audio/mpeg"/>
 <itunes:duration>0:12:09</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
-<podcast:chapters url="https://audio.yeonsolkim.com/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.chapters.json" type="application/json+chapters"/>
+<podcast:chapters url="https://audio.yeonsolkim.com/introduction-to-analysis/limit-superior-and-limit-inferior.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
 <title>3.3 Cauchy Sequences</title>
-<link>https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</link>
-<guid isPermaLink="true">https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</guid>
+<link>https://yeonsolkim.com/introduction-to-analysis/cauchy-sequences/</link>
+<guid isPermaLink="false">https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</guid>
 <pubDate>Wed, 09 Sep 2026 15:00:00 +0000</pubDate>
-<description>Convergence describes the asymptotic behavior of a sequence by relating its terms to a point of the ambient space. This raises a natural question. How much of this asymptotic behavior can be recognized from the terms of the sequence themselves, without first specifying or establishing the existence of such a point? The concept of Cauchyness1 isolates precisely this internal aspect of convergence. Instead of comparing the terms x_n with a separate point x, it compares sufficiently late terms with one another and asks whether they eventually become arbitrarily close. In the term Cauchyness, “Cauchy” refers to the French mathematician Augustin-Louis Cauchy (1789–1857). He was one of the major figures in the development of rigorous mathematical analysis, making fundamental contributions to limits, continuity, infinite series, and differential equations. In mathematical English, his surname is usually pronounced /ˈkoʊʃi/. ↩ Read the page at https://yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.mp3" length="8660747" type="audio/mpeg"/>
+<description>Cauchy sequences and diameters, why convergent sequences are Cauchy, Cauchy sequences in compact spaces, the completeness of ℝᵏ, and complete metric spaces. Read the page at https://yeonsolkim.com/introduction-to-analysis/cauchy-sequences/</description>
+<enclosure url="https://audio.yeonsolkim.com/introduction-to-analysis/cauchy-sequences.mp3" length="8660747" type="audio/mpeg"/>
 <itunes:duration>0:09:01</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
-<podcast:chapters url="https://audio.yeonsolkim.com/2026/09/09/3.-Cauchy-Sequences.chapters.json" type="application/json+chapters"/>
-</item>
-<item>
-<title>2.4 Connected Sets</title>
-<link>https://yeonsolkim.com/2026/09/03/4.-Connected-Sets.html</link>
-<guid isPermaLink="true">https://yeonsolkim.com/2026/09/03/4.-Connected-Sets.html</guid>
-<pubDate>Thu, 03 Sep 2026 15:00:00 +0000</pubDate>
-<description>We now focus on the fact that the Cantor set has gaps at every scale: given any x\in C and any r&gt;0, no matter how small r is, the neighborhood (x-r,x+r) contains some open interval that does not belong to C. Thus, if we zoom in around any point of the Cantor set, the set never starts looking like a solid interval. To express the property of a set forming one global piece, we introduce connectedness. Read the page at https://yeonsolkim.com/2026/09/03/4.-Connected-Sets.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/09/03/4.-Connected-Sets.mp3" length="5582295" type="audio/mpeg"/>
-<itunes:duration>0:05:49</itunes:duration>
-<itunes:episodeType>full</itunes:episodeType>
-<podcast:chapters url="https://audio.yeonsolkim.com/2026/09/03/4.-Connected-Sets.chapters.json" type="application/json+chapters"/>
+<podcast:chapters url="https://audio.yeonsolkim.com/introduction-to-analysis/cauchy-sequences.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
 <title>3.2 Subsequences</title>
-<link>https://yeonsolkim.com/2026/09/03/2.-Subsequences.html</link>
-<guid isPermaLink="true">https://yeonsolkim.com/2026/09/03/2.-Subsequences.html</guid>
+<link>https://yeonsolkim.com/introduction-to-analysis/subsequences/</link>
+<guid isPermaLink="false">https://yeonsolkim.com/2026/09/03/2.-Subsequences.html</guid>
 <pubDate>Thu, 03 Sep 2026 15:00:00 +0000</pubDate>
-<description>A sequence may fail to converge as a whole while some of its terms still exhibit convergent behavior. To capture such behavior, we introduce the notion of a subsequence. Read the page at https://yeonsolkim.com/2026/09/03/2.-Subsequences.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/09/03/2.-Subsequences.mp3" length="4552996" type="audio/mpeg"/>
+<description>Subsequences and subsequential limits, convergent subsequences in compact metric spaces, the Bolzano–Weierstrass theorem, and the set of subsequential limits. Read the page at https://yeonsolkim.com/introduction-to-analysis/subsequences/</description>
+<enclosure url="https://audio.yeonsolkim.com/introduction-to-analysis/subsequences.mp3" length="4552996" type="audio/mpeg"/>
 <itunes:duration>0:04:44</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
-<podcast:chapters url="https://audio.yeonsolkim.com/2026/09/03/2.-Subsequences.chapters.json" type="application/json+chapters"/>
+<podcast:chapters url="https://audio.yeonsolkim.com/introduction-to-analysis/subsequences.chapters.json" type="application/json+chapters"/>
+</item>
+<item>
+<title>2.4 Connected Sets</title>
+<link>https://yeonsolkim.com/introduction-to-analysis/connected-sets/</link>
+<guid isPermaLink="false">https://yeonsolkim.com/2026/09/03/4.-Connected-Sets.html</guid>
+<pubDate>Thu, 03 Sep 2026 15:00:00 +0000</pubDate>
+<description>Separated sets and connected sets in a metric space, a characterization by relatively open sets, and the connected subsets of the real line. Read the page at https://yeonsolkim.com/introduction-to-analysis/connected-sets/</description>
+<enclosure url="https://audio.yeonsolkim.com/introduction-to-analysis/connected-sets.mp3" length="5582295" type="audio/mpeg"/>
+<itunes:duration>0:05:49</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/introduction-to-analysis/connected-sets.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
 <title>3.1 Convergent Sequences</title>
-<link>https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</link>
-<guid isPermaLink="true">https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</guid>
+<link>https://yeonsolkim.com/introduction-to-analysis/convergent-sequences/</link>
+<guid isPermaLink="false">https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</guid>
 <pubDate>Mon, 31 Aug 2026 15:00:00 +0000</pubDate>
-<description>We now use the metric structure to describe the asymptotic behavior of an ordered family of points. To say that a sequence (x_n) of points in M converges to x means that its terms eventually lie as close to x as we wish. Read the page at https://yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.mp3" length="18565306" type="audio/mpeg"/>
+<description>Convergent sequences in metric spaces: limits and boundedness, monotone sequences, limit laws, coordinatewise convergence in ℝᵏ, and some standard limits. Read the page at https://yeonsolkim.com/introduction-to-analysis/convergent-sequences/</description>
+<enclosure url="https://audio.yeonsolkim.com/introduction-to-analysis/convergent-sequences.mp3" length="18565306" type="audio/mpeg"/>
 <itunes:duration>0:19:20</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
-<podcast:chapters url="https://audio.yeonsolkim.com/2026/08/31/1.-Convergent-Sequences.chapters.json" type="application/json+chapters"/>
-</item>
-<item>
-<title>1.5 Linear Dependence and Linear Independence</title>
-<link>https://yeonsolkim.com/2026/08/17/5.-Linear-Dependence-and-Linear-Independence.html</link>
-<guid isPermaLink="true">https://yeonsolkim.com/2026/08/17/5.-Linear-Dependence-and-Linear-Independence.html</guid>
-<pubDate>Mon, 17 Aug 2026 15:00:00 +0000</pubDate>
-<description>Some vectors of a generating set may be unnecessary to form the same span: removing one of them may leave the span unchanged. In this sense, a generating set may contain redundant vectors. Read the page at https://yeonsolkim.com/2026/08/17/5.-Linear-Dependence-and-Linear-Independence.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/08/17/5.-Linear-Dependence-and-Linear-Independence.mp3" length="12153783" type="audio/mpeg"/>
-<itunes:duration>0:12:40</itunes:duration>
-<itunes:episodeType>full</itunes:episodeType>
-<podcast:chapters url="https://audio.yeonsolkim.com/2026/08/17/5.-Linear-Dependence-and-Linear-Independence.chapters.json" type="application/json+chapters"/>
+<podcast:chapters url="https://audio.yeonsolkim.com/introduction-to-analysis/convergent-sequences.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
 <title>2.3 Perfect Sets</title>
-<link>https://yeonsolkim.com/2026/08/05/3.-Perfect-Sets.html</link>
-<guid isPermaLink="true">https://yeonsolkim.com/2026/08/05/3.-Perfect-Sets.html</guid>
+<link>https://yeonsolkim.com/introduction-to-analysis/perfect-sets/</link>
+<guid isPermaLink="false">https://yeonsolkim.com/2026/08/05/3.-Perfect-Sets.html</guid>
 <pubDate>Wed, 05 Aug 2026 15:00:00 +0000</pubDate>
-<description>Theorem 2.2.17 guarantees that an infinite subset of a compact set has at least one limit point. However, this is a somewhere statement, not an everywhere statement: it does not say that every point of the set participates in the accumulation. An infinite compact set may still contain many isolated points. Perfectness imposes a much stronger local picture: a perfect set has accumulation everywhere within the set. Read the page at https://yeonsolkim.com/2026/08/05/3.-Perfect-Sets.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/08/05/3.-Perfect-Sets.mp3" length="5762028" type="audio/mpeg"/>
+<description>Isolated points and perfect sets, why every nonempty perfect subset of ℝᵏ is uncountable, and the Cantor set as a perfect, uncountable set. Read the page at https://yeonsolkim.com/introduction-to-analysis/perfect-sets/</description>
+<enclosure url="https://audio.yeonsolkim.com/introduction-to-analysis/perfect-sets.mp3" length="5762028" type="audio/mpeg"/>
 <itunes:duration>0:06:00</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
-<podcast:chapters url="https://audio.yeonsolkim.com/2026/08/05/3.-Perfect-Sets.chapters.json" type="application/json+chapters"/>
+<podcast:chapters url="https://audio.yeonsolkim.com/introduction-to-analysis/perfect-sets.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
 <title>2.2 Compact Sets</title>
-<link>https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html</link>
-<guid isPermaLink="true">https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html</guid>
+<link>https://yeonsolkim.com/introduction-to-analysis/compact-sets/</link>
+<guid isPermaLink="false">https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html</guid>
 <pubDate>Thu, 30 Jul 2026 15:00:00 +0000</pubDate>
-<description>We now consider how a collection of open sets can cover a set A as a whole. Such a collection may contain infinitely many sets, and this raises a natural question. Can finitely many members of the collection already cover A? Compactness formalizes the sets for which the answer is always yes. Read the page at https://yeonsolkim.com/2026/07/30/2.-Compact-Sets.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.mp3" length="18817296" type="audio/mpeg"/>
+<description>Compactness in metric spaces: open covers, closed subsets, the finite-intersection property, nested k-cells, and the Heine–Borel and Bolzano–Weierstrass theorems. Read the page at https://yeonsolkim.com/introduction-to-analysis/compact-sets/</description>
+<enclosure url="https://audio.yeonsolkim.com/introduction-to-analysis/compact-sets.mp3" length="18817296" type="audio/mpeg"/>
 <itunes:duration>0:19:36</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
-<podcast:chapters url="https://audio.yeonsolkim.com/2026/07/30/2.-Compact-Sets.chapters.json" type="application/json+chapters"/>
-</item>
-<item>
-<title>2.1 Open Sets and Closed Sets</title>
-<link>https://yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.html</link>
-<guid isPermaLink="true">https://yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.html</guid>
-<pubDate>Fri, 24 Jul 2026 15:00:00 +0000</pubDate>
-<description>A great deal of analysis on \mathbb R, \mathbb C, and \mathbb R^k depends not on their full algebraic structure, but only on the notion of distance between points. This suggests isolating the notion of distance from the particular nature of the points themselves. Accordingly, let M be a nonempty set. We temporarily forget what its elements are and retain only a function d:M\times M\to\mathbb R, where d(x,y) is intended to represent the distance between x and y. Not every such function can reasonably be interpreted as a distance. A distance should be nonnegative; distinct points should have positive distance from one another; the distance from x to y should be the same as the distance from y to x; and traveling directly from x to z should be no longer than traveling from x to z through an intermediate point y. These requirements are abstracted into the following axioms. Read the page at https://yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.mp3" length="21999481" type="audio/mpeg"/>
-<itunes:duration>0:22:55</itunes:duration>
-<itunes:episodeType>full</itunes:episodeType>
-<podcast:chapters url="https://audio.yeonsolkim.com/2026/07/24/1.-Open-Sets-and-Closed-Sets.chapters.json" type="application/json+chapters"/>
+<podcast:chapters url="https://audio.yeonsolkim.com/introduction-to-analysis/compact-sets.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
 <title>1.1 Outcomes, Events, and Counting</title>
-<link>https://yeonsolkim.com/2026/07/10/1.-Outcomes,-Events,-and-Counting.html</link>
-<guid isPermaLink="true">https://yeonsolkim.com/2026/07/10/1.-Outcomes,-Events,-and-Counting.html</guid>
+<link>https://yeonsolkim.com/probability-theory/outcomes-events-and-counting/</link>
+<guid isPermaLink="false">https://yeonsolkim.com/2026/07/10/1.-Outcomes,-Events,-and-Counting.html</guid>
 <pubDate>Fri, 10 Jul 2026 15:00:00 +0000</pubDate>
-<description>Definition 1.1.1. An outcome is one particular possible result of an experiment. The sample space, usually denoted by \Omega, is the nonempty set consisting of all possible outcomes. An event is a subset of the sample space. For example, if one die is rolled, the event that an even number appears is Read the page at https://yeonsolkim.com/2026/07/10/1.-Outcomes,-Events,-and-Counting.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/07/10/1.-Outcomes,-Events,-and-Counting.mp3" length="13170963" type="audio/mpeg"/>
+<description>Sample spaces and events, the addition and multiplication rules, permutations and combinations, Pascal’s identity, and the binomial theorem. Read the page at https://yeonsolkim.com/probability-theory/outcomes-events-and-counting/</description>
+<enclosure url="https://audio.yeonsolkim.com/probability-theory/outcomes-events-and-counting.mp3" length="13170963" type="audio/mpeg"/>
 <itunes:duration>0:13:43</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
-<podcast:chapters url="https://audio.yeonsolkim.com/2026/07/10/1.-Outcomes,-Events,-and-Counting.chapters.json" type="application/json+chapters"/>
+<podcast:chapters url="https://audio.yeonsolkim.com/probability-theory/outcomes-events-and-counting.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
-<title>1.2 Subspaces</title>
-<link>https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</link>
-<guid isPermaLink="true">https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</guid>
+<title>1.3 Subspaces</title>
+<link>https://yeonsolkim.com/linear-algebra/subspaces/</link>
+<guid isPermaLink="false">https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</guid>
 <pubDate>Thu, 18 Jun 2026 15:00:00 +0000</pubDate>
-<description>Within a vector space, we often focus on elements that satisfy a particular condition. The important question is whether the condition survives the operations of the larger space: do addition and scalar multiplication keep us among elements satisfying that condition? If they do, and the zero vector also satisfies the condition, the collection forms a vector space on its own. Such a collection is called a subspace. Read the page at https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.mp3" length="20617635" type="audio/mpeg"/>
-<itunes:duration>0:21:28</itunes:duration>
+<description>Subspaces and the subspace test, examples from matrices, polynomials, and continuous functions, sums and direct sums, cosets, and quotient spaces. Read the page at https://yeonsolkim.com/linear-algebra/subspaces/</description>
+<enclosure url="https://audio.yeonsolkim.com/linear-algebra/subspaces.mp3" length="20939464" type="audio/mpeg"/>
+<itunes:duration>0:21:49</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
-<podcast:chapters url="https://audio.yeonsolkim.com/2026/06/18/2.-Subspaces.chapters.json" type="application/json+chapters"/>
+<podcast:chapters url="https://audio.yeonsolkim.com/linear-algebra/subspaces.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
-<title>1.1 Vector Spaces</title>
-<link>https://yeonsolkim.com/2026/06/01/1.-Vector-Spaces.html</link>
-<guid isPermaLink="true">https://yeonsolkim.com/2026/06/01/1.-Vector-Spaces.html</guid>
+<title>1.2 Vector Spaces</title>
+<link>https://yeonsolkim.com/linear-algebra/vector-spaces/</link>
+<guid isPermaLink="false">https://yeonsolkim.com/2026/06/01/1.-Vector-Spaces.html</guid>
 <pubDate>Mon, 01 Jun 2026 15:00:00 +0000</pubDate>
-<description>Tuples, matrices, functions, and polynomials are different kinds of objects, yet each can be added to another of its kind and can be multiplied by a scalar. A vector space captures the rules the operations share: addition forms an abelian group, and scalar multiplication by a field works consistently with addition and field arithmetic. This common structure lets us study the fundamental principles such as linear independence, transformation and dimension without depending on what the vectors themselves look like. Read the page at https://yeonsolkim.com/2026/06/01/1.-Vector-Spaces.html</description>
-<enclosure url="https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.mp3" length="7618707" type="audio/mpeg"/>
-<itunes:duration>0:07:56</itunes:duration>
+<description>Vector spaces over a field, with the standard examples of n-tuples, matrices, functions, and polynomials, and the first consequences of the axioms. Read the page at https://yeonsolkim.com/linear-algebra/vector-spaces/</description>
+<enclosure url="https://audio.yeonsolkim.com/linear-algebra/vector-spaces.mp3" length="7402622" type="audio/mpeg"/>
+<itunes:duration>0:07:43</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
-<podcast:chapters url="https://audio.yeonsolkim.com/2026/06/01/1.-Vector-Spaces.chapters.json" type="application/json+chapters"/>
+<podcast:chapters url="https://audio.yeonsolkim.com/linear-algebra/vector-spaces.chapters.json" type="application/json+chapters"/>
 </item>
 </channel>
 </rss>
