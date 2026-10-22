@@ -245,7 +245,7 @@ pinned to AWS's vector; R2 verified). `--no-store` writes only the site files.
 
 ```
 o/<page key>.mp3, o/<page key>.json      immutable, content-addressed — the web player
-<url path>.mp3 / .json / .chapters.json  stable aliases — the podcast enclosure (guid never moves)
+<url path>.mp3 / .json / .chapters.json  stable aliases — the podcast enclosure
 cache/<section key>.flac + .json         mirror of the section cache
 ```
 
@@ -260,8 +260,17 @@ leaves it unchanged and the post still looks published while its manifest names 
 page no longer has. `--refresh-manifests` compares the two and republishes just the JSON
 (the recordings are reused, nothing is synthesised or re-uploaded).
 
-A whole-site run also prunes `audio/*.json` manifests whose page no longer exists (renamed
-or deleted posts), so the feed cannot keep a ghost episode.
+A whole-site run also prunes `audio/*.json` manifests whose page is no longer a post — a
+deleted post, or one that moved and left a redirect page at its old URL
+(`_plugins/permalinks.rb`) — so the feed cannot keep a ghost episode.
+
+**Moving a page.** Scripts live under `_narration/<url path>/`, so a post whose URL changes
+must have its directory moved with it (`git mv`); the scripts are unchanged, so nothing is
+generated or synthesised again — the next run writes the manifest at the new URL, re-points
+the aliases, and prunes the old manifest. Post URLs are frozen in their front matter on first
+publication, so this happens only when a `permalink:` is changed by hand. The podcast
+episode's guid never moves: `_narration/podcast-guids.json` maps a page's new URL to the
+guid it was first published with, and the feed then marks it `isPermaLink="false"`.
 
 A post's `page_key` is its ordered section keys + `AUDIO_VERSION`. `publish` costs nothing
 when `o/<page key>.json` already exists — one HEAD settles it, and nothing else is probed
@@ -278,7 +287,7 @@ and, when enabled, `podcast.xml` — written into the built `_site/` for the cur
 AND into the source tree, which Jekyll copies on every build and which is committed. So a
 local `jekyll serve` rebuild never loses them, and Pages serves them even when the
 narration step does not run. `--no-source` skips the source-tree copy. (RSS + iTunes + Podcasting 2.0 chapters; episode = page,
-guid = page URL, enclosure = stable alias, newest first).
+guid = the page URL it was first published at, enclosure = stable alias, newest first).
 
 **Structure comes from the page.** `_plugins/document_structure.rb` builds a LaTeX-shaped
 tree at build time (`_docs/STRUCTURE.md`); the skeleton reads it instead of matching bold

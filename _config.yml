@@ -6,7 +6,8 @@ tagline: "Notes on undergraduate mathematics"
 # What search results show for the home page; also the podcast's channel description.
 description: "Notes on undergraduate mathematics by Yeonsol Kim, written out in full: definitions, theorems, and proofs in set theory, logic, algebra, analysis, and probability."
 url: "https://yeonsolkim.com"
-# Pages builds in UTC; pin it so local builds produce the same post URLs (/2026/07/30/…).
+# Pages builds in UTC; pin it so local builds give posts the same dates (and the redirects in
+# _data/redirects.yml the dates of the old URLs they stand for).
 timezone: UTC
 fixed_banner_title: "External"
 comments_enabled: false

@@ -117,11 +117,38 @@ structure.
   differ from the filename. The script derives it from the filename only when
   the key is missing, so renaming a post does not change its title; delete the
   `title` line to regenerate it.
+- `permalink` works the same way, but only Publish writes it
+  (`--freeze-permalinks`): a post's URL is frozen when it first goes out, so
+  renaming, renumbering, or moving the post later keeps its URL. Delete the
+  line to take the URL of the current title; then add the old URL to
+  `_data/redirects.yml` (see Post URLs below).
 - New posts should keep the filename pattern `YYYY-MM-DD-title.md`. Files
   without a date prefix may be renamed by the sync script.
 - The Obsidian templates in `templates/` help create/update post front matter,
   but the Python sync script is the more consistent source of truth when many
   files need repair.
+
+### Post URLs
+
+- A post is served at `/<subject>/<title>/`, both without ordering numbers:
+  `/linear-algebra/vector-spaces/`. The subject is the textbook (the folder above
+  the section), or for a post filed directly under a second-level category, that
+  category; under `Others` the level above stands in and the section is added
+  (`/mathematics/questions/linear-algebra/`). Two posts that would share a URL
+  both add their section's name (`/introduction-to-analysis/exercises-metric-spaces/`).
+  `_plugins/permalinks.rb` derives it for a post without `permalink:`, and
+  `scripts/sync_posts_front_matter.py` freezes the same URL on Publish; the two
+  derivations must agree (`_tests/test_permalinks.rb` and
+  `_tests/test_sync_front_matter.py` check the same cases).
+- `_data/redirects.yml` maps old URLs to the pages that replaced them, among them
+  the date-and-file-name URLs (`/2026/10/08/6.-Bases-and-Dimension.html`) every
+  post had before 2026-10-22. Each old URL gets a small page with an instant meta
+  refresh, a canonical link and `noindex`; Google treats such a refresh as a
+  permanent redirect. They stay out of the sitemap, and a target that is no page
+  of the site is a build warning.
+- The narration is keyed by URL (`_narration/<url path>/`). When a post's URL
+  changes, move its directory too, and keep its podcast guid in
+  `_narration/podcast-guids.json` (`_narrator/README.md`, Moving a page).
 
 ### Home Page Category Tree
 
@@ -400,7 +427,7 @@ prose is read: math (with what is attached to it, as in `$n$th` or `$n$-ary`), c
 Liquid, link targets, numbers, non-Latin words and pronunciations (between slashes, `/mi/`,
 or written in IPA) are skipped. Each word is reported once per post: Preview shows it in a
 notification at once, and Publish stops on it, since the text is read aloud by the
-narration and a file name becomes the URL. Either way a page opens with what is new
+narration and a title becomes the URL. Either way a page opens with what is new
 (`~/Library/Caches/External-Jekyll/spelling.html`): by post, each word with the checker's
 guesses, where it occurs and the line it is in, and a link that opens the post in Obsidian.
 Leave the word as it is and the next run passes; fix it and the post drops out of the record

@@ -2,7 +2,14 @@
   Audio narration of this post. Nothing is rendered; assets/js/narration-player.js reads the
   manifest URL from here and, only when /audio/<this page>.json exists (written after
   `jekyll build` by `python3 -m _narrator publish`), makes the statement labels and the title
-  playable.
+  playable. The manifest is named for the page's URL without its extension or final slash,
+  as _narrator/publish.py names it: /linear-algebra/vector-spaces/ → /audio/linear-algebra/vector-spaces.json.
 {%- endcomment -%}
-{%- assign narration_manifest = page.url | replace: '.html', '.json' | prepend: '/audio' -%}
+{%- assign narration_key = page.url | remove: '.html' -%}
+{%- assign narration_last = narration_key | slice: -1 -%}
+{%- if narration_last == '/' -%}
+  {%- assign narration_length = narration_key | size | minus: 1 -%}
+  {%- assign narration_key = narration_key | slice: 0, narration_length -%}
+{%- endif -%}
+{%- assign narration_manifest = narration_key | append: '.json' | prepend: '/audio' -%}
 <div class="narration" data-manifest="{{ narration_manifest | relative_url }}" data-page="{{ page.url }}" hidden></div>

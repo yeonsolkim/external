@@ -219,11 +219,42 @@ class Publishing(unittest.TestCase):
         self.pub.publish_post(self.skel)
         os.makedirs(os.path.join(self.site, "2026", "01", "02"))
         with open(os.path.join(self.site, "2026", "01", "02", "p.html"), "w") as f:
-            f.write("x")
+            f.write('<article class="post">x</article>')
         self.assertEqual(self.pub.prune_orphans(), [])
         os.remove(os.path.join(self.site, "2026", "01", "02", "p.html"))
         self.assertEqual(self.pub.prune_orphans(), ["/2026/01/02/p.html"])
         self.assertEqual(self.pub.site_manifests(), [])
+
+    def test_a_page_that_moved_leaves_its_manifest_behind(self):
+        # The post moved; its old URL serves a redirect page (_plugins/permalinks.rb), no post.
+        self.scripts()
+        self.fake_page()
+        self.pub.publish_post(self.skel)
+        os.makedirs(os.path.join(self.site, "2026", "01", "02"))
+        with open(os.path.join(self.site, "2026", "01", "02", "p.html"), "w") as f:
+            f.write('<meta http-equiv="refresh" content="0; url=https://x.test/p/">')
+        self.assertEqual(self.pub.orphans(), ["/2026/01/02/p.html"])
+        # A post at a URL ending in a slash is the index.html in that folder.
+        os.makedirs(os.path.join(self.site, "p"))
+        with open(os.path.join(self.site, "p", "index.html"), "w") as f:
+            f.write('<article class="post">x</article>')
+        self.assertTrue(publish.is_post_page(self.site, "/p/"))
+
+    def test_a_moved_episode_keeps_its_guid(self):
+        os.makedirs(self.narration, exist_ok=True)
+        with open(os.path.join(self.narration, publish.GUIDS_FILE), "w") as f:
+            json.dump({self.skel.url: "https://x.test/2025/12/31/old.html"}, f)
+        self.pub = publish.Publisher(self.store, "https://audio.test", self.site, CFG,
+                                     narration_root=self.narration, audio_root=self.audio,
+                                     source_dir=self.source, log=lambda m: None)
+        self.scripts()
+        self.fake_page()
+        site = self.pub.publish_post(self.skel)
+        self.assertEqual(site["guid"], "https://x.test/2025/12/31/old.html")
+        with open(self.pub.write_feed(), encoding="utf-8") as handle:
+            xml = handle.read()
+        self.assertIn('<guid isPermaLink="false">https://x.test/2025/12/31/old.html</guid>', xml)
+        self.assertIn("<link>https://x.test/2026/01/02/p.html</link>", xml)
 
     def test_feed(self):
         self.scripts()
