@@ -127,7 +127,8 @@ if defined?(Jekyll::Generator)
   module Jekyll
     class RedirectPage < PageWithoutAFile
       def initialize(site, from, target)
-        super(site, site.source, File.dirname(from), File.basename(from))
+        dir, name = from.end_with?("/") ? [from, "index.html"] : [File.dirname(from), File.basename(from)]
+        super(site, site.source, dir, name)
         self.content = ExternalPermalinks.redirect_html(target)
         self.data = { "permalink" => from, "sitemap" => false, "redirect" => true }
       end

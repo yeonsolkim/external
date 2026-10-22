@@ -9,6 +9,7 @@ created_at: 2026-08-10 16:00:47 +0900
 last_modified_at: 2026-10-02 11:47:51 +0900
 
 publish: false
+permalink: /grammar/tenses-and-aspects/
 ---
 
 | Expression | Relation |

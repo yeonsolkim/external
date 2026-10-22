@@ -193,9 +193,6 @@ structure.
   reordering textbooks does not change the reference scope.
 - Post dates use `"%B %-d, %Y"` so dates render as `June 2, 2026`, not
   `June 02, 2026`.
-- Below the body, `nav.post-sequence` links the previous and next post in the same
-  section folder, in the order the contents list gives them (by title). It sits
-  outside `.post-body`, so the narration does not read it.
 
 ### Search Metadata
 
@@ -203,15 +200,16 @@ structure.
 changes the `<h1>` or the post body.
 
 - Titles: a post's `<title>` is its title without the number, then its textbook
-  (the folder above its section), then the site name from `title` in
-  `_config.yml`: `Axioms and Examples — Group Theory | External`. A post filed
-  directly under a second-level category takes that category; `Others` names
-  nothing, so the level above it stands in. When two pages would share a title,
-  the section takes the textbook's place (`Exercises — Metric Spaces`). A
+  (the folder above its section): `Axioms and Examples — Group Theory`. A post
+  filed directly under a second-level category takes that category; `Others`
+  names nothing, so the level above it stands in. When two pages would share a
+  title, the section takes the textbook's place (`Exercises — Metric Spaces`). A
   category index is titled by its category and the top-level category above it
   (`Linear Algebra — Mathematics`). The plugin stores the result as `seo_title`
   and teaches the seo tag to prefer it to `title`, which stays the `<h1>`. A
-  title still shared after this is a build warning.
+  title still shared after this is a build warning. No `<title>` carries the
+  site name (`title` in `_config.yml`), which jekyll-seo-tag would append; it is
+  given as `og:site_name`. The home page is titled `Home` (`index.md`).
 - Descriptions: write `description:` in a post's front matter, as plain text
   without TeX (it is what search results show under the title). A post without
   one gets its first whole sentences of prose, its inline math written out as

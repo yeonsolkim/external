@@ -9,6 +9,7 @@ created_at: 2026-08-10 14:55:42 +0900
 last_modified_at: 2026-10-19 14:36:23 +0900
 
 publish: false
+permalink: /dictionary/auxiliary-verbs/
 ---
 
 ### can

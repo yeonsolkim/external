@@ -10,6 +10,7 @@ last_modified_at: 2026-10-09 18:14:12 +0900
 
 line_indent: false
 publish: false
+permalink: /dictionary/vocabularies-i/
 ---
 
 <b>investigate</b>: carry out a systematic inquiry *to discover the facts of an incident*.

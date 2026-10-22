@@ -10,6 +10,7 @@ last_modified_at: 2026-10-22 10:53:40 +0900
 
 publish: false
 source_note: "The presentation in this section draws in part on Aluffi, *Algebra: Chapter 0* (2009)."
+permalink: /mathematics/sets-categorical-viewpoint/
 ---
 **1. Set-functions.** Let $X$ and $Y$ be sets. If $f$ is a function from $X$ to $Y$, we draw 
 

@@ -6,19 +6,18 @@ require_relative "category_labels"
 require_relative "inline_math_preprocessor"
 require_relative "tex_text"
 
-# Search metadata: what jekyll-seo-tag writes into each page's <head>, and the links between
-# neighbouring posts. Nothing here changes the <h1> or the .post-body, which is all the
-# narration reads (_narrator/skeleton.py).
+# Search metadata: what jekyll-seo-tag writes into each page's <head>. Nothing here changes
+# the <h1> or the .post-body, which is all the narration reads (_narrator/skeleton.py).
 #
 # Titles. A post's <title> is its title without the number, then its subject: the textbook
 # it belongs to (the folder above its section), or, for a post filed directly under a
 # second-level category, that category. "Others" names no subject, so the level above it
-# stands in. jekyll-seo-tag appends the site name from `title` in _config.yml:
-# "Axioms and Examples — Group Theory | External". When two pages would still share a title,
+# stands in: "Axioms and Examples — Group Theory". When two pages would still share a title,
 # the section takes the subject's place ("Exercises — Metric Spaces"), and failing that joins
 # it. A generated category index is titled by its category and the top-level category above
 # it: "Linear Algebra — Mathematics". The result is stored as `seo_title`, which the seo tag
-# is taught below to prefer to `title`, so `title` itself (the <h1>) is untouched.
+# is taught below to prefer to `title`, so `title` itself (the <h1>) is untouched. No page's
+# <title> carries the site name, which jekyll-seo-tag would append; og:site_name gives it.
 #
 # Descriptions. A post without a `description:` of its own gets its first sentences of prose,
 # its inline math written out as text by tex_text.rb; a sentence whose math has no faithful
@@ -27,10 +26,6 @@ require_relative "tex_text"
 # what it contains. The text goes to `description`, which the feed reads, and to
 # `seo_description`, which the seo tag is taught to take as it is: it would otherwise run it
 # through Markdown, and `|A| = n` would come out as a table.
-#
-# Neighbours. Each post learns the posts before and after it in its section folder, in the
-# order the contents list gives them (_includes/category_tree.html sorts by title), for the
-# links at the foot of _layouts/post.html.
 module ExternalSearchMetadata
   SEPARATOR = " — "
   GENERIC_LABEL = /\Aothers?\z/i.freeze
@@ -371,21 +366,6 @@ module ExternalSearchMetadata
     truncate("#{lead}: #{children.join(', ')}", CATEGORY_DESCRIPTION_LIMIT)
   end
 
-  # -- neighbours -------------------------------------------------------------------------
-  def link_neighbours(posts)
-    posts.group_by { |post| post_path(post) }.each_value do |members|
-      ordered = members.sort_by { |post| post.data["title"].to_s }
-      ordered.each_with_index do |post, index|
-        post.data["section_previous"] = neighbour(ordered[index - 1]) if index.positive?
-        post.data["section_next"] = neighbour(ordered[index + 1]) if index + 1 < ordered.length
-      end
-    end
-  end
-
-  def neighbour(post)
-    { "title" => post.data["title"], "url" => post.url, "category_path" => post.data["category_path"] }
-  end
-
   # -- the site ---------------------------------------------------------------------------
   def generate(site)
     posts = site.posts.docs
@@ -408,15 +388,17 @@ module ExternalSearchMetadata
     shared.each do |title|
       Jekyll.logger.warn "Search metadata:", "more than one page is titled #{title.inspect}"
     end
-
-    link_neighbours(posts)
   end
 
   # jekyll-seo-tag takes a page's title from `title` and its description from `description`
   # (or the excerpt), each run through Markdown; this makes it take `seo_title` and
-  # `seo_description` first, as plain text. Its own <title> then adds the site name, while
-  # og:title and the JSON-LD headline keep the title alone, as they should.
+  # `seo_description` first, as plain text. Its <title> is that title alone, like og:title
+  # and the JSON-LD headline, without the site name it would append.
   module SeoTagInput
+    def title
+      page_title || super
+    end
+
     def page_title
       @page_title ||= plain_text(page["seo_title"]) || super
     end

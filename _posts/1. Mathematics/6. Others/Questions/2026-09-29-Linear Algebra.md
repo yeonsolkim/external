@@ -10,6 +10,7 @@ created_at: 2026-09-29 17:41:50 +0900
 last_modified_at: 2026-09-29 17:42:38 +0900
 
 publish: false
+permalink: /mathematics/questions/linear-algebra/
 ---
 
 **Question 1.** Let $S$ and $T$ be subsets of a vector space $V$. Under what conditions the equality

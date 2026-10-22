@@ -10,6 +10,7 @@ last_modified_at: 2026-10-08 11:13:06 +0900
 
 line_indent: false
 publish: false
+permalink: /dictionary/pronunciation/
 ---
 
 <b>revenue</b> /ˈrevənu/.

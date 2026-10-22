@@ -1,8 +1,7 @@
 baseurl: ""
-# The site name jekyll-seo-tag adds to every <title> ("Sets — Foundations of Mathematics | External"),
-# and the home page's title after it ("External | Notes on undergraduate mathematics").
+# The site name, given as og:site_name and as the home page's name in its structured data
+# (see `social` below); no page's <title> carries it (_plugins/search_metadata.rb).
 title: External
-tagline: "Notes on undergraduate mathematics"
 # What search results show for the home page; also the podcast's channel description.
 description: "Notes on undergraduate mathematics by Yeonsol Kim, written out in full: definitions, theorems, and proofs in set theory, logic, algebra, analysis, and probability."
 url: "https://yeonsolkim.com"
@@ -16,8 +15,9 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+# No `name` here: jekyll-seo-tag would give it to the home page's structured data in place of
+# `title`, and Google reads the site name from there.
 social:
-  name: Yeonsol Kim
   links:
     - https://github.com/yeonsolkim
 markdown: kramdown

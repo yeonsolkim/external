@@ -10,6 +10,7 @@ last_modified_at: 2026-10-08 10:56:45 +0900
 
 line_indent: false
 publish: false
+permalink: /dictionary/vocabularies-ii/
 ---
 **charm**: the quality of giving delight: *his charm has captivated the media.*
 **friendliness**: the quality of being kind.

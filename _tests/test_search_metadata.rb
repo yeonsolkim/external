@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-# Tests for the search metadata: math written out as text (tex_text.rb), and the titles,
-# descriptions and section neighbours search_metadata.rb gives the pages.
+# Tests for the search metadata: math written out as text (tex_text.rb), and the titles and
+# descriptions search_metadata.rb gives the pages.
 #
 #   ruby _tests/test_search_metadata.rb
 #
@@ -172,14 +172,41 @@ check("any other index lists what is directly under it") do
   S.category_description(algebra.first(2), posts) == "Algebra: Linear Algebra."
 end
 
-puts "neighbours"
-S.link_neighbours(posts)
-check("posts in one section link to each other in title order") do
-  posts[1].data["section_next"]["url"] == "/subspaces/" && posts[0].data["section_previous"]["url"] == "/vector-spaces/" &&
-    !posts[1].data.key?("section_previous") && !posts[0].data.key?("section_next")
+puts "seo tag"
+class SeoFilters
+  def escape_once(text)
+    CGI.escapeHTML(text)
+  end
 end
-check("a post alone in its section has no neighbours") do
-  !posts[2].data.key?("section_previous") && !posts[2].data.key?("section_next")
+
+# A stand-in for Jekyll::SeoTag::Drop, whose <title> appends the site name.
+class SeoDrop
+  attr_reader :page
+
+  def initialize(page)
+    @page = page
+  end
+
+  def filters
+    SeoFilters.new
+  end
+
+  def page_title
+    page["title"]
+  end
+
+  def title
+    "#{page_title} | External"
+  end
+end
+SeoDrop.prepend(S::SeoTagInput)
+check("a post's <title> is its title alone") do
+  SeoDrop.new({ "collection" => "posts", "title" => "1. Axioms and Examples",
+                "seo_title" => "Axioms and Examples — Group Theory" }).title == "Axioms and Examples — Group Theory"
+end
+check("so is every other page's") do
+  SeoDrop.new({ "title" => "Linear Algebra", "seo_title" => "Linear Algebra — Mathematics" }).title ==
+    "Linear Algebra — Mathematics" && SeoDrop.new({ "title" => "Home" }).title == "Home"
 end
 
 puts(($failures.zero? ? "\nall checks passed" : "\n#{$failures} failed"))

@@ -10,6 +10,7 @@ last_modified_at: 2026-10-21 16:33:33 +0900
 
 publish: false
 source_note: The presentation in this section draws in part on Huddleston, Pullum, and Reynolds, *A Student’s Introduction to English Grammar*, 2nd ed. (2021).
+permalink: /grammar/the-structure-of-a-sentence/
 ---
 
 ### 1. Overview

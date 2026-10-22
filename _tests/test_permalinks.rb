@@ -8,6 +8,7 @@
 #
 # Like test_document_structure.rb, it lives outside _plugins/ so a site build never runs it.
 
+require "jekyll"
 require_relative "../_plugins/permalinks"
 
 P = ExternalPermalinks
@@ -68,6 +69,16 @@ check("an instant refresh, a canonical link and noindex") do
     page.include?('<meta name="robots" content="noindex">')
 end
 check("not a post, so the narration leaves it alone") { !page.include?('<article class="post"') }
+
+site = Jekyll::Site.new(Jekyll.configuration("quiet" => true, "source" => File.expand_path("..", __dir__)))
+check("a directory URL writes index.html") do
+  redirect = Jekyll::RedirectPage.new(site, "/group-theory/axioms-and-examples/", "/linear-algebra/axioms-and-examples/")
+  redirect.destination("") == File.join(site.dest, "group-theory/axioms-and-examples/index.html")
+end
+check("an HTML URL keeps its filename") do
+  redirect = Jekyll::RedirectPage.new(site, "/2026/08/31/1.-Axioms-and-Examples.html", "/linear-algebra/axioms-and-examples/")
+  redirect.destination("") == File.join(site.dest, "2026/08/31/1.-Axioms-and-Examples.html")
+end
 
 puts(($failures.zero? ? "\nall checks passed" : "\n#{$failures} failed"))
 exit($failures.zero? ? 0 : 1)
