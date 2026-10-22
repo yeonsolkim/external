@@ -4,6 +4,17 @@
       <a href="{{ '/' | relative_url }}"{% unless page.category_path or page.layout == "page" %} aria-current="page"{% endunless %}>Home</a>
     </li>
 
+    {% comment %}
+      The same trail for search engines, as a schema.org BreadcrumbList. A crumb there
+      needs a page to point at, so it keeps the crumbs that link (Home and the generated
+      category indexes) and ends with the page itself; the top-level category and the
+      section, which have no page, are left out. It is written in the body, after the seo
+      tag's JSON-LD in <head>: _narrator/skeleton.py reads the first one for dateModified.
+    {% endcomment %}
+    {% capture breadcrumb_json_items %}{"@type":"ListItem","position":1,"name":"Home","item":{{ '/' | absolute_url | jsonify }}}{% endcapture %}
+    {% assign breadcrumb_json_position = 1 %}
+    {% assign breadcrumb_json_last_url = '/' | absolute_url %}
+
     {% assign breadcrumb_path_key = "" %}
     {% if page.category_path %}
       {% for category in page.category_path %}
@@ -32,6 +43,12 @@
           {% assign visible_category = category | strip_category_order_prefix %}
         {% endif %}
 
+        {% if breadcrumb_url != "" %}
+          {% assign breadcrumb_json_position = breadcrumb_json_position | plus: 1 %}
+          {% assign breadcrumb_json_last_url = breadcrumb_url | absolute_url %}
+          {% capture breadcrumb_json_items %}{{ breadcrumb_json_items }},{"@type":"ListItem","position":{{ breadcrumb_json_position }},"name":{{ visible_category | jsonify }},"item":{{ breadcrumb_json_last_url | jsonify }}}{% endcapture %}
+        {% endif %}
+
         <li class="breadcrumb-item">
           <span class="breadcrumb-separator" aria-hidden="true">›</span>
           {% if breadcrumb_url != "" %}
@@ -55,6 +72,16 @@
     {% endif %}
   </ol>
 </nav>
+
+{% assign breadcrumb_json_page_url = page.url | absolute_url %}
+{% if breadcrumb_json_page_url != breadcrumb_json_last_url %}
+  {% assign breadcrumb_json_position = breadcrumb_json_position | plus: 1 %}
+  {% assign breadcrumb_json_name = page.title | numbered_label_parts | last %}
+  {% capture breadcrumb_json_items %}{{ breadcrumb_json_items }},{"@type":"ListItem","position":{{ breadcrumb_json_position }},"name":{{ breadcrumb_json_name | jsonify }},"item":{{ breadcrumb_json_page_url | jsonify }}}{% endcapture %}
+{% endif %}
+{% if breadcrumb_json_position > 1 %}
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{{ breadcrumb_json_items }}]}</script>
+{% endif %}
 
 <script>
   // Watched here rather than on DOMContentLoaded, so the trail's first paint already has its

@@ -346,6 +346,7 @@ publish() {
   ruby _tests/test_document_structure.rb >>"$log" 2>&1 || fail "document structure tests failed"
   ruby _tests/test_english_annotations.rb >>"$log" 2>&1 || fail "english annotation tests failed"
   ruby _tests/test_tikzcd_renderer.rb >>"$log" 2>&1 || fail "tikzcd renderer tests failed"
+  ruby _tests/test_search_metadata.rb >>"$log" 2>&1 || fail "search metadata tests failed"
   python3 -m unittest discover -s _tests -p 'test_*.py' >>"$log" 2>&1 || fail "commit summary tests failed"
   python3 -m unittest discover -s _narrator/tests -t . >>"$log" 2>&1 || fail "narration tests failed"
   step_done

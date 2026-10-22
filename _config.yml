@@ -1,4 +1,6 @@
 baseurl: ""
+# The site name jekyll-seo-tag adds to every <title> ("Sets — Foundations of Mathematics | External").
+title: External
 description: "A backup external memory containing several data files"
 url: "https://yeonsolkim.com"
 # Pages builds in UTC; pin it so local builds produce the same post URLs (/2026/07/30/…).
