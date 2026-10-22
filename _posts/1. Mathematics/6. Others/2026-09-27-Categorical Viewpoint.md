@@ -6,7 +6,7 @@ category_path:
   - 1. Mathematics
   - 6. Others
 created_at: 2026-09-27 16:02:08 +0900
-last_modified_at: 2026-10-21 16:33:33 +0900
+last_modified_at: 2026-10-22 10:53:40 +0900
 
 publish: false
 source_note: "The presentation in this section draws in part on Aluffi, *Algebra: Chapter 0* (2009)."
@@ -21,7 +21,7 @@ X \ar[r, "f"] & Y
 $$
 
 
-**2. Composition of functions.** Let $f:X\to Y$ and $g:Y\to Z$ be given. If $g \circ f : X\to Z$ is the composite of $f$ and $g$, we may draw diagrams such as 
+**2. Composition of functions.** Let $f\colon X\to Y$ and $g\colon Y\to Z$ be given. If $g \circ f\colon X\to Z$ is the composite of $f$ and $g$, we may draw diagrams such as 
 
 $$
 \begin{tikzcd}
@@ -38,7 +38,7 @@ $$
 
 and say that the diagrams *commute*.
 Generally, saying that a diagram commutes means that whenever two directed paths share the same source and target, the composition of the functions along both paths yields the same result.
-It is evident from the definition of composition that composition is *associative*. That is, if $f:X\to Y, g:Y\to Z$, and $h: Z\to W$ are functions, then $h\circ(g\circ f) = (h\circ g)\circ f$; the diagram 
+It is evident from the definition of composition that composition is *associative*. That is, if $f\colon X\to Y, g\colon Y\to Z$, and $h\colon Z\to W$ are functions, then $h\circ(g\circ f) = (h\circ g)\circ f$; the diagram 
 
 $$
 \begin{tikzcd}
@@ -50,7 +50,7 @@ X \ar[r, "f"] \ar[rr, bend right, "g\circ f", swap]
 $$
 
 commutes.
-The identity function is very special with respect to compositions. For any function $f:X\to Y$, the diagrams 
+The identity function is very special with respect to compositions. For any function $f\colon X\to Y$, the diagrams 
 
 $$
 \begin{tikzcd}
@@ -72,7 +72,7 @@ commute.
 
 
 
-**3.  Surjectivity and injectivity.** Let $f:X\to Y$ be a function. A function $g:Y\to X$ is called a *left-inverse* of $f$ if $g\circ f = \mathrm{id}_X$; the following diagram commutes:
+**3.  Surjectivity and injectivity.** Let $f\colon X\to Y$ be a function. A function $g\colon Y\to X$ is called a *left-inverse* of $f$ if $g\circ f = \mathrm{id}_X$; the following diagram commutes:
 
 $$
 \begin{tikzcd}
@@ -81,7 +81,7 @@ X \ar[r, "f"] \ar[rr, bend right, "\mathrm{id}_X", swap] & Y \ar[r, "g"] & X
 \mathpunct{.}
 $$
 
-A function $h:Y\to X$ is called a *right-inverse* of $f$ if $f\circ h = \mathrm{id}_Y$; the following diagram commutes:
+A function $h\colon Y\to X$ is called a *right-inverse* of $f$ if $f\circ h = \mathrm{id}_Y$; the following diagram commutes:
 
 $$
 \begin{tikzcd}
@@ -92,7 +92,7 @@ $$
 
 If a function from $Y$ to $X$ is both a left-inverse and right-inverse of $f$, then it is called the *inverse* of $f$.
 
-**Proposition 1.** Let $X\ne \varnothing$, and let $f:X\to Y$ be a function.
+**Proposition 1.** Let $X\ne \varnothing$, and let $f\colon X\to Y$ be a function.
 1. The function $f$ is injective if and only if it has a left-inverse.
 2. The function $f$ is surjective if and only if it has a right-inverse.
 
