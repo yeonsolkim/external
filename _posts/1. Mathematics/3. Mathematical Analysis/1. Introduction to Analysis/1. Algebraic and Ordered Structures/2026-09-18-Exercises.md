@@ -12,6 +12,7 @@ last_modified_at: 2026-10-21 16:33:33 +0900
 
 publish: false
 source_note: The presentation in this section draws in part on Rudin, *Principles of Mathematical Analysis*, 3rd ed. (1976).
+description: "Exercises on the real and complex number systems: rational and irrational numbers, real powers defined by suprema, and inequalities for complex numbers."
 ---
 
 **1.** Prove that for all $x\in \mathbb R$ and $n\in \mathbb Z^{+},$

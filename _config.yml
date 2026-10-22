@@ -1,7 +1,10 @@
 baseurl: ""
-# The site name jekyll-seo-tag adds to every <title> ("Sets — Foundations of Mathematics | External").
+# The site name jekyll-seo-tag adds to every <title> ("Sets — Foundations of Mathematics | External"),
+# and the home page's title after it ("External | Notes on undergraduate mathematics").
 title: External
-description: "A backup external memory containing several data files"
+tagline: "Notes on undergraduate mathematics"
+# What search results show for the home page; also the podcast's channel description.
+description: "Notes on undergraduate mathematics by Yeonsol Kim, written out in full: definitions, theorems, and proofs in set theory, logic, algebra, analysis, and probability."
 url: "https://yeonsolkim.com"
 # Pages builds in UTC; pin it so local builds produce the same post URLs (/2026/07/30/…).
 timezone: UTC

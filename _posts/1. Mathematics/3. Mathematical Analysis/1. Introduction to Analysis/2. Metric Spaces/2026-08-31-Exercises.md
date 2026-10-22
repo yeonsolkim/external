@@ -12,6 +12,7 @@ last_modified_at: 2026-10-21 18:01:13 +0900
 
 publish: false
 source_note: The presentation in this section draws in part on Rudin, *Principles of Mathematical Analysis*, 3rd ed. (1976).
+description: "Exercises on metric spaces: limit points and closures, closures of unions, and a direct proof that the set of 0 and the numbers 1/n is compact."
 ---
 **1.** Let $(M,d)$ be a metric space, and let $A\subseteq M$.
 1. Prove that $A'$ is closed.

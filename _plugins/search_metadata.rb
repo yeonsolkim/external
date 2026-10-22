@@ -298,7 +298,10 @@ module ExternalSearchMetadata
 
   def describe_post(document)
     return unless document.respond_to?(:collection) && document.collection&.label == "posts"
-    return unless document.data["description"].to_s.strip.empty?
+
+    # A description of the post's own is plain text too, taken as written.
+    given = document.data["description"].to_s.strip
+    return document.data["seo_description"] = given unless given.empty?
 
     placeholders = document.data[ExternalInlineMathPreprocessor::DATA_KEY] || []
     description = description_from_html(document.content, placeholders)
