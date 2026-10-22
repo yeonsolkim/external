@@ -4,7 +4,7 @@ Stage 4 — publish: audio -> the bucket, manifests -> the built site, podcast.x
 Bucket layout (all under S3_PREFIX):
 
     o/<page key>.mp3, o/<page key>.json     immutable, content-addressed (the web player)
-    <url path>.mp3, .json, .chapters.json   stable aliases (podcast enclosure; guid never moves)
+    <url path>.mp3, .json, .chapters.json   stable aliases (podcast enclosure)
     cache/<section key>.flac, .json         mirror of the section cache, so a fresh checkout
                                             (CI, a new machine) re-assembles pages for free
 
@@ -21,6 +21,11 @@ step does not run:
 
     audio/<url path>.json     what the page script reads (absolute audio URLs)
     podcast.xml               every published page, newest first
+
+A podcast episode's guid never moves: it is the page's URL when the episode was first
+published. When a page moves, `_narration/podcast-guids.json` maps its new URL to that guid
+(`{"/linear-algebra/vector-spaces/": "https://yeonsolkim.com/2026/06/01/1.-Vector-Spaces.html"}`),
+so podcast apps do not list the episode a second time.
 """
 from __future__ import annotations
 
@@ -37,6 +42,7 @@ from .store import Store
 from .tts import TTSError
 
 IMMUTABLE = "public, max-age=31536000, immutable"
+GUIDS_FILE = "podcast-guids.json"
 ALIAS = "public, max-age=300"
 MIN_WORDS = 40
 
@@ -47,6 +53,27 @@ class PublishError(Exception):
 
 def url_key(skel: Skeleton) -> str:
     return re.sub(r"\.html?$", "", skel.url.strip("/"))
+
+
+def load_guids(narration_root: str) -> dict:
+    """{page URL: guid} for the episodes whose page has moved since they were first published."""
+    path = os.path.join(narration_root, GUIDS_FILE)
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def is_post_page(site_dir: str, url: str) -> bool:
+    """Does the built site serve a post at `url`? A page that moved leaves a redirect page
+    behind (_plugins/permalinks.rb), which is no post."""
+    path = os.path.join(site_dir, *url.strip("/").split("/"))
+    if os.path.isdir(path):
+        path = os.path.join(path, "index.html")
+    if not os.path.isfile(path):
+        return False
+    with open(path, encoding="utf-8", errors="replace") as handle:
+        return '<article class="post"' in handle.read(200_000)
 
 
 class Publisher:
@@ -66,6 +93,7 @@ class Publisher:
         self.model = model
         self.workers = workers
         self.log = log
+        self.guids = load_guids(narration_root)
 
     # -- urls -------------------------------------------------------------------
     def public(self, key: str) -> str:
@@ -75,6 +103,7 @@ class Publisher:
         key = url_key(skel)
         return {
             "url": skel.url, "title": skel.title, "lang": skel.lang,
+            "guid": self.guids.get(skel.url) or self.cfg["site_url"] + skel.url,
             "description": skel.description, "published_at": skel.published_at,
             "audio": self.public("o/%s.mp3" % manifest["page_key"]),
             "stable": self.public(key + ".mp3"),
@@ -309,10 +338,9 @@ class Publisher:
                 os.remove(path)
 
     def orphans(self, site_dir: Optional[str] = None) -> list:
-        """URLs of manifests whose page no longer exists in the built site (renamed or deleted posts)."""
+        """URLs of manifests whose page is no longer a post in the built site (moved or deleted)."""
         site_dir = site_dir or self.site_dir
-        return [m["url"] for m in self.site_manifests()
-                if not os.path.exists(os.path.join(site_dir, *m["url"].strip("/").split("/")))]
+        return [m["url"] for m in self.site_manifests() if not is_post_page(site_dir, m["url"])]
 
     def prune_orphans(self, site_dir: Optional[str] = None, dry_run: bool = False) -> list:
         """Drop the orphans' manifests; the bucket keeps their audio. Returns the URLs."""

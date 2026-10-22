@@ -56,5 +56,67 @@ class CreatedAt(unittest.TestCase):
         self.assertNotIn("sometime", text)
 
 
+# The same cases as _tests/test_permalinks.rb: the sync script and _plugins/permalinks.rb
+# must derive the same URL for every post.
+ANALYSIS = ["1. Mathematics", "3. Mathematical Analysis", "1. Introduction to Analysis"]
+CASES = [
+    ("vector spaces", ["1. Mathematics", "2. Algebra", "1. Linear Algebra", "1. Vector Spaces"],
+     "1. Vector Spaces", "/linear-algebra/vector-spaces/"),
+    ("zf", ["1. Mathematics", "1. Foundations of Mathematics", "3. Axiomatic Set Theory"],
+     "1. Axioms of Zermelo–Fraenkel Theory", "/foundations-of-mathematics/axioms-of-zermelo-fraenkel-theory/"),
+    ("putnam", ["1. Mathematics", "6. Others"], "The 62nd Putnam", "/mathematics/the-62nd-putnam/"),
+    ("questions", ["1. Mathematics", "6. Others", "Questions"], "Linear Algebra",
+     "/mathematics/questions/linear-algebra/"),
+    ("conditional", ["3. English", "1. Grammar"], "Conditional", "/grammar/conditional/"),
+    ("naive", ["1. Mathematics", "Naïve Set Theory"], "1. Sets", "/naive-set-theory/sets/"),
+    ("metric", ANALYSIS + ["2. Metric Spaces"], "Exercises", "/introduction-to-analysis/exercises-metric-spaces/"),
+    ("ordered", ANALYSIS + ["1. Algebraic and Ordered Structures"], "Exercises",
+     "/introduction-to-analysis/exercises-algebraic-and-ordered-structures/"),
+]
+
+
+class Permalinks(unittest.TestCase):
+    def test_the_derived_urls(self):
+        posts = [(key, path, title, "2026-01-01", None) for key, path, title, _ in CASES]
+        derived = sync.derived_permalinks(posts)
+        for key, _, _, url in CASES:
+            self.assertEqual(derived[key], url, key)
+
+    def test_a_frozen_permalink_keeps_its_url(self):
+        posts = [
+            ("old", ANALYSIS + ["2. Metric Spaces"], "Exercises", "2026-01-01", "/introduction-to-analysis/exercises/"),
+            ("new", ANALYSIS + ["3. Sequences"], "Exercises", "2026-01-02", None),
+        ]
+        self.assertEqual(sync.derived_permalinks(posts), {"new": "/introduction-to-analysis/exercises-sequences/"})
+
+    def test_without_a_section_the_date_tells_them_apart(self):
+        posts = [("a", ["3. English", "1. Grammar"], "Notes", "2026-01-01", None),
+                 ("b", ["3. English", "1. Grammar"], "Notes", "2026-01-02", None)]
+        self.assertEqual(sync.derived_permalinks(posts),
+                         {"a": "/grammar/notes-2026-01-01/", "b": "/grammar/notes-2026-01-02/"})
+
+    def test_freezing_writes_the_permalink_once(self):
+        posts_root = sync.POSTS_ROOT
+        with tempfile.TemporaryDirectory() as tmp:
+            sync.POSTS_ROOT = Path(tmp)
+            try:
+                path = Path(tmp) / "2026-06-24-2. Functions.md"
+                path.write_text("x", encoding="utf-8")
+                fresh = sync.desired_front_matter(path, path.stat(), 'title: "2. Functions"', "/a/functions/")
+                kept = sync.desired_front_matter(path, path.stat(), 'title: "2. Renamed"\npermalink: /a/functions/',
+                                                 "/a/renamed/")
+                plain = sync.desired_front_matter(path, path.stat(), 'title: "2. Functions"')
+            finally:
+                sync.POSTS_ROOT = posts_root
+        self.assertIn("\npermalink: /a/functions/\n", fresh)
+        self.assertEqual(kept.count("permalink:"), 1)
+        self.assertIn("permalink: /a/functions/", kept)
+        self.assertNotIn("permalink:", plain)
+
+    def test_a_quoted_title_is_read_as_written(self):
+        self.assertEqual(sync.yaml_scalar(['title: "1. Say \\"hi\\""']), '1. Say "hi"')
+        self.assertEqual(sync.yaml_scalar(["title: 1. Vector Spaces"]), "1. Vector Spaces")
+
+
 if __name__ == "__main__":
     unittest.main()

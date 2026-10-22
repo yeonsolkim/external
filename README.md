@@ -117,11 +117,38 @@ structure.
   differ from the filename. The script derives it from the filename only when
   the key is missing, so renaming a post does not change its title; delete the
   `title` line to regenerate it.
+- `permalink` works the same way, but only Publish writes it
+  (`--freeze-permalinks`): a post's URL is frozen when it first goes out, so
+  renaming, renumbering, or moving the post later keeps its URL. Delete the
+  line to take the URL of the current title; then add the old URL to
+  `_data/redirects.yml` (see Post URLs below).
 - New posts should keep the filename pattern `YYYY-MM-DD-title.md`. Files
   without a date prefix may be renamed by the sync script.
 - The Obsidian templates in `templates/` help create/update post front matter,
   but the Python sync script is the more consistent source of truth when many
   files need repair.
+
+### Post URLs
+
+- A post is served at `/<subject>/<title>/`, both without ordering numbers:
+  `/linear-algebra/vector-spaces/`. The subject is the textbook (the folder above
+  the section), or for a post filed directly under a second-level category, that
+  category; under `Others` the level above stands in and the section is added
+  (`/mathematics/questions/linear-algebra/`). Two posts that would share a URL
+  both add their section's name (`/introduction-to-analysis/exercises-metric-spaces/`).
+  `_plugins/permalinks.rb` derives it for a post without `permalink:`, and
+  `scripts/sync_posts_front_matter.py` freezes the same URL on Publish; the two
+  derivations must agree (`_tests/test_permalinks.rb` and
+  `_tests/test_sync_front_matter.py` check the same cases).
+- `_data/redirects.yml` maps old URLs to the pages that replaced them, among them
+  the date-and-file-name URLs (`/2026/10/08/6.-Bases-and-Dimension.html`) every
+  post had before 2026-10-22. Each old URL gets a small page with an instant meta
+  refresh, a canonical link and `noindex`; Google treats such a refresh as a
+  permanent redirect. They stay out of the sitemap, and a target that is no page
+  of the site is a build warning.
+- The narration is keyed by URL (`_narration/<url path>/`). When a post's URL
+  changes, move its directory too, and keep its podcast guid in
+  `_narration/podcast-guids.json` (`_narrator/README.md`, Moving a page).
 
 ### Home Page Category Tree
 
@@ -166,6 +193,36 @@ structure.
   reordering textbooks does not change the reference scope.
 - Post dates use `"%B %-d, %Y"` so dates render as `June 2, 2026`, not
   `June 02, 2026`.
+- Below the body, `nav.post-sequence` links the previous and next post in the same
+  section folder, in the order the contents list gives them (by title). It sits
+  outside `.post-body`, so the narration does not read it.
+
+### Search Metadata
+
+`_plugins/search_metadata.rb` gives jekyll-seo-tag better input; nothing in it
+changes the `<h1>` or the post body.
+
+- Titles: a post's `<title>` is its title without the number, then its textbook
+  (the folder above its section), then the site name from `title` in
+  `_config.yml`: `Axioms and Examples — Group Theory | External`. A post filed
+  directly under a second-level category takes that category; `Others` names
+  nothing, so the level above it stands in. When two pages would share a title,
+  the section takes the textbook's place (`Exercises — Metric Spaces`). A
+  category index is titled by its category and the top-level category above it
+  (`Linear Algebra — Mathematics`). The plugin stores the result as `seo_title`
+  and teaches the seo tag to prefer it to `title`, which stays the `<h1>`. A
+  title still shared after this is a build warning.
+- Descriptions: write `description:` in a post's front matter, as plain text
+  without TeX (it is what search results show under the title). A post without
+  one gets its first whole sentences of prose, its inline math written out as
+  Unicode text by `_plugins/tex_text.rb` (`$X\times Y$` → `X × Y`); a sentence
+  whose math has no faithful text form, that starts with a formula, or that only
+  sets up notation (`Let …`) is skipped. A category index lists its posts, or
+  its subcategories.
+- `_includes/breadcrumbs.html` also writes the trail as a schema.org
+  `BreadcrumbList`, keeping only the crumbs that have a page. It comes after the
+  seo tag's own JSON-LD in `<head>`, which `_narrator/skeleton.py` reads first for
+  `dateModified`; keep that order.
 
 ### Standalone Pages
 
@@ -370,7 +427,7 @@ prose is read: math (with what is attached to it, as in `$n$th` or `$n$-ary`), c
 Liquid, link targets, numbers, non-Latin words and pronunciations (between slashes, `/mi/`,
 or written in IPA) are skipped. Each word is reported once per post: Preview shows it in a
 notification at once, and Publish stops on it, since the text is read aloud by the
-narration and a file name becomes the URL. Either way a page opens with what is new
+narration and a title becomes the URL. Either way a page opens with what is new
 (`~/Library/Caches/External-Jekyll/spelling.html`): by post, each word with the checker's
 guesses, where it occurs and the line it is in, and a link that opens the post in Obsidian.
 Leave the word as it is and the next run passes; fix it and the post drops out of the record

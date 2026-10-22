@@ -133,9 +133,11 @@ catch_up_message() {
   esac
 }
 
+# Publish passes --freeze-permalinks: a post's URL is written into its front matter when it
+# first goes out, and stays its URL however the post is renamed later (_plugins/permalinks.rb).
 sync_front_matter() {
   step "front matter"
-  python3 scripts/sync_posts_front_matter.py --stabilize >>"$log" 2>&1 ||
+  python3 scripts/sync_posts_front_matter.py --stabilize "$@" >>"$log" 2>&1 ||
     fail "Obsidian is still saving a post. Stop editing and run again."
   step_done
 }
@@ -328,9 +330,9 @@ publish() {
   step_done "rc=$rc"
   (( rc )) && fail "$(catch_up_message $rc)"
 
-  sync_front_matter
+  sync_front_matter --freeze-permalinks
 
-  # A typo goes out with the page and into its narration (a file name's into the URL), so
+  # A typo goes out with the page and into its narration (a title's into the URL), so
   # stop before it does.
   local typo
   typo=$(spelling_report "Publish stopped before committing: fix these, or publish again to keep them.")
@@ -346,6 +348,8 @@ publish() {
   ruby _tests/test_document_structure.rb >>"$log" 2>&1 || fail "document structure tests failed"
   ruby _tests/test_english_annotations.rb >>"$log" 2>&1 || fail "english annotation tests failed"
   ruby _tests/test_tikzcd_renderer.rb >>"$log" 2>&1 || fail "tikzcd renderer tests failed"
+  ruby _tests/test_search_metadata.rb >>"$log" 2>&1 || fail "search metadata tests failed"
+  ruby _tests/test_permalinks.rb >>"$log" 2>&1 || fail "permalink tests failed"
   python3 -m unittest discover -s _tests -p 'test_*.py' >>"$log" 2>&1 || fail "commit summary tests failed"
   python3 -m unittest discover -s _narrator/tests -t . >>"$log" 2>&1 || fail "narration tests failed"
   step_done

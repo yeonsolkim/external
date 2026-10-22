@@ -87,6 +87,28 @@ title: External
     {{ content }}
   </div>
 
+  {%- comment -%}
+    The posts before and after this one in its section folder, in contents order
+    (_plugins/search_metadata.rb). Outside .post-body, so the narration does not read it.
+  {%- endcomment -%}
+  {% if page.section_previous or page.section_next %}
+    <nav class="post-sequence" aria-label="Section">
+      {% if page.section_previous %}
+        {% assign sequence_post = page.section_previous %}
+        <a class="post-sequence-link post-sequence-previous" href="{{ sequence_post.url | relative_url }}" rel="prev">
+          <span class="post-sequence-direction">Previous</span>
+          <span class="post-sequence-title">{{ sequence_post.title | hierarchical_post_title: sequence_post.category_path | escape }}</span>
+        </a>
+      {% endif %}
+      {% if page.section_next %}
+        {% assign sequence_post = page.section_next %}
+        <a class="post-sequence-link post-sequence-next" href="{{ sequence_post.url | relative_url }}" rel="next">
+          <span class="post-sequence-direction">Next</span>
+          <span class="post-sequence-title">{{ sequence_post.title | hierarchical_post_title: sequence_post.category_path | escape }}</span>
+        </a>
+      {% endif %}
+    </nav>
+  {% endif %}
 
   <!-- <hr class="post-body-divider"> -->
 

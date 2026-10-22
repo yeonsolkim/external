@@ -61,11 +61,14 @@ def build(manifests: list, cfg: dict) -> str:
             escape(cover), escape(cfg["title"]), escape(site)))
     for m in items:
         page = site + m["url"]
+        # The URL the episode was first published at (publish.py); once the page moves, the
+        # guid is no longer its link.
+        guid = m.get("guid") or page
         out += [
             "<item>",
             "<title>%s</title>" % escape(m["title"]),
             "<link>%s</link>" % escape(page),
-            '<guid isPermaLink="true">%s</guid>' % escape(page),
+            '<guid isPermaLink="%s">%s</guid>' % ("true" if guid == page else "false", escape(guid)),
             "<pubDate>%s</pubDate>" % _rfc822(m.get("published_at") or ""),
             "<description>%s</description>" % escape(_plain(m.get("description") or m["title"]) + " Read the page at " + page),
             '<enclosure url=%s length="%d" type="audio/mpeg"/>' % (quoteattr(m["stable"]), int(m.get("bytes") or 0)),
