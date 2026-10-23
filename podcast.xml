@@ -10,7 +10,7 @@
 <itunes:explicit>false</itunes:explicit>
 <itunes:type>episodic</itunes:type>
 <itunes:category text="Science"/>
-<lastBuildDate>Thu, 22 Oct 2026 00:00:00 +0000</lastBuildDate>
+<lastBuildDate>Fri, 23 Oct 2026 00:00:00 +0000</lastBuildDate>
 <item>
 <title>1.5 The Span Operator</title>
 <link>https://yeonsolkim.com/linear-algebra/the-span-operator/</link>
@@ -56,17 +56,6 @@
 <podcast:chapters url="https://audio.yeonsolkim.com/introduction-to-analysis/cauchy-sequences.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
-<title>3.2 Subsequences</title>
-<link>https://yeonsolkim.com/introduction-to-analysis/subsequences/</link>
-<guid isPermaLink="false">https://yeonsolkim.com/2026/09/03/2.-Subsequences.html</guid>
-<pubDate>Thu, 03 Sep 2026 15:00:00 +0000</pubDate>
-<description>Subsequences and subsequential limits, convergent subsequences in compact metric spaces, the Bolzano–Weierstrass theorem, and the set of subsequential limits. Read the page at https://yeonsolkim.com/introduction-to-analysis/subsequences/</description>
-<enclosure url="https://audio.yeonsolkim.com/introduction-to-analysis/subsequences.mp3" length="4552996" type="audio/mpeg"/>
-<itunes:duration>0:04:44</itunes:duration>
-<itunes:episodeType>full</itunes:episodeType>
-<podcast:chapters url="https://audio.yeonsolkim.com/introduction-to-analysis/subsequences.chapters.json" type="application/json+chapters"/>
-</item>
-<item>
 <title>2.4 Connected Sets</title>
 <link>https://yeonsolkim.com/introduction-to-analysis/connected-sets/</link>
 <guid isPermaLink="false">https://yeonsolkim.com/2026/09/03/4.-Connected-Sets.html</guid>
@@ -76,6 +65,17 @@
 <itunes:duration>0:05:49</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/introduction-to-analysis/connected-sets.chapters.json" type="application/json+chapters"/>
+</item>
+<item>
+<title>3.2 Subsequences</title>
+<link>https://yeonsolkim.com/introduction-to-analysis/subsequences/</link>
+<guid isPermaLink="false">https://yeonsolkim.com/2026/09/03/2.-Subsequences.html</guid>
+<pubDate>Thu, 03 Sep 2026 15:00:00 +0000</pubDate>
+<description>Subsequences and subsequential limits, convergent subsequences in compact metric spaces, the Bolzano–Weierstrass theorem, and the set of subsequential limits. Read the page at https://yeonsolkim.com/introduction-to-analysis/subsequences/</description>
+<enclosure url="https://audio.yeonsolkim.com/introduction-to-analysis/subsequences.mp3" length="4552996" type="audio/mpeg"/>
+<itunes:duration>0:04:44</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/introduction-to-analysis/subsequences.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
 <title>3.1 Convergent Sequences</title>
@@ -120,6 +120,17 @@
 <itunes:duration>0:13:43</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/probability-theory/outcomes-events-and-counting.chapters.json" type="application/json+chapters"/>
+</item>
+<item>
+<title>1.4 Linear Combinations and Spans</title>
+<link>https://yeonsolkim.com/linear-algebra/linear-combinations-and-spans/</link>
+<guid isPermaLink="true">https://yeonsolkim.com/linear-algebra/linear-combinations-and-spans/</guid>
+<pubDate>Sun, 21 Jun 2026 15:00:00 +0000</pubDate>
+<description>Finite sums of indexed families in a commutative monoid, then linear combinations, the span of a set, generating sets, and representations of a vector. Read the page at https://yeonsolkim.com/linear-algebra/linear-combinations-and-spans/</description>
+<enclosure url="https://audio.yeonsolkim.com/linear-algebra/linear-combinations-and-spans.mp3" length="19511128" type="audio/mpeg"/>
+<itunes:duration>0:20:19</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/linear-algebra/linear-combinations-and-spans.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
 <title>1.3 Subspaces</title>

@@ -1,0 +1,456 @@
+{
+  "url": "/linear-algebra/linear-combinations-and-spans/",
+  "title": "1.4 Linear Combinations and Spans",
+  "lang": "en",
+  "guid": "https://yeonsolkim.com/linear-algebra/linear-combinations-and-spans/",
+  "description": "Finite sums of indexed families in a commutative monoid, then linear combinations, the span of a set, generating sets, and representations of a vector.",
+  "published_at": "2026-06-21T15:00:00+00:00",
+  "audio": "https://audio.yeonsolkim.com/o/7fa4ecf22a061163092aee8fc4a8652f3662910af3b93d84c33a5cf1da105441.mp3",
+  "stable": "https://audio.yeonsolkim.com/linear-algebra/linear-combinations-and-spans.mp3",
+  "chapters_url": "https://audio.yeonsolkim.com/linear-algebra/linear-combinations-and-spans.chapters.json",
+  "duration": 1219.314,
+  "bytes": 19511128,
+  "voice": "cedar",
+  "page_key": "7fa4ecf22a061163092aee8fc4a8652f3662910af3b93d84c33a5cf1da105441",
+  "skeleton_hash": "322015d246f517f38f4fd3183a6bfc840855d47bd6b9480aa02a2074fe968594",
+  "generated": "2026-10-23",
+  "podcast": true,
+  "sections": [
+    {
+      "id": "par-the-finite-sum-of-an-indexed-family",
+      "title": "The finite sum of an indexed family",
+      "kind": "paragraph",
+      "level": 2,
+      "start": 0.0,
+      "duration": 14.532,
+      "source": "4acfd1e047134bea85e7ab57e696ec2397008fbabfef1a7ebba16a8520be18c3",
+      "audio": "cbb1738b2df7e4f6a9ed61d45a060aa7e22fe63341f9d8e2ce010f58f2fac5ce",
+      "parent": null,
+      "proves": null,
+      "span": 827.861
+    },
+    {
+      "id": "definition-1-4-1",
+      "title": "Definition 1.4.1",
+      "kind": "definition",
+      "level": 3,
+      "start": 15.732,
+      "duration": 39.615,
+      "source": "7a91fae3e33ae9f22dc69976bed7b3031606fc8b16b72f188223fd9187a5a384",
+      "audio": "d804c7493fbe93eed40635ad447d3143da7afc52118db394ebc9352b1c883e57",
+      "parent": "par-the-finite-sum-of-an-indexed-family",
+      "proves": null
+    },
+    {
+      "id": "proposition-1-4-2",
+      "title": "Proposition 1.4.2",
+      "kind": "proposition",
+      "level": 3,
+      "start": 56.548,
+      "duration": 21.875,
+      "source": "668a9169ba3da0dfb3de1483a94a965de64b8a98392f4e8f4e04df81c4d0ca5b",
+      "audio": "6c30f8b706c81a13350367cc2af52039ea0bb0402304bbb34538c70b0a23cbf0",
+      "parent": "par-the-finite-sum-of-an-indexed-family",
+      "proves": null
+    },
+    {
+      "id": "proof-proposition-1-4-2",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 79.623,
+      "duration": 87.316,
+      "source": "599543bd10b6502d4972701a3ff56c12dff618943ef36bf12d41d3e70b8584ab",
+      "audio": "443cd3fb6aa8536c94ac156b1623d6d1793abcfd7469da8ce4abbc81cfc074e7",
+      "parent": "par-the-finite-sum-of-an-indexed-family",
+      "proves": "proposition-1-4-2"
+    },
+    {
+      "id": "proposition-1-4-3",
+      "title": "Proposition 1.4.3",
+      "kind": "proposition",
+      "level": 3,
+      "start": 168.138,
+      "duration": 23.254,
+      "source": "6c342803a3a9024882caf666aee8157d10ef11e88a7a88b18bd39dd90f642535",
+      "audio": "f90df7bd61b49599ea54576277f74f42ac938c4fe506aeedba85222f14a060ef",
+      "parent": "par-the-finite-sum-of-an-indexed-family",
+      "proves": null
+    },
+    {
+      "id": "proof-proposition-1-4-3",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 192.593,
+      "duration": 89.121,
+      "source": "ecd930e9aaa0b2c27161ec7503621ad62ebe5b4060f16800d14e9de7e214d4c9",
+      "audio": "45ea6beb43fae8d0c91b264c99a3ad514c94a6b8a3af40d5d78a38da8b9ce80e",
+      "parent": "par-the-finite-sum-of-an-indexed-family",
+      "proves": "proposition-1-4-3"
+    },
+    {
+      "id": "prose-after-proof-proposition-1-4-3",
+      "title": "Proposition 1.4.3 shows that a finite sum can be decomposed…",
+      "kind": "prose",
+      "level": 3,
+      "start": 282.914,
+      "duration": 36.128,
+      "source": "bf0faaa64b994feb530f4066081cb4a3f916a78730939e343415bd4eec61f6d7",
+      "audio": "5f21e2d755b6cc7cd063d329faf4e41c552859b45f15c40ee1a3761c45eb821b",
+      "parent": "par-the-finite-sum-of-an-indexed-family",
+      "proves": null
+    },
+    {
+      "id": "theorem-1-4-4",
+      "title": "Theorem 1.4.4",
+      "kind": "theorem",
+      "level": 3,
+      "start": 320.241,
+      "duration": 20.443,
+      "source": "c3ea1446f4287ce7b21c36beba8b4693970346a6c6196fdd1a05644280b3852a",
+      "audio": "5016c3af3c765110e1ab28e76faa11e9dc6ff506ae094ffaa30f87c43236697e",
+      "parent": "par-the-finite-sum-of-an-indexed-family",
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-1-4-4",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 341.884,
+      "duration": 70.087,
+      "source": "9bbcb9f11b32deaeaf0fd51790113d65fed383f323e380c3a915d50a1bebb3e5",
+      "audio": "6c9562760207b2ae09d7abebb347b549fd6d6df7534023cf60424ca07efa8c30",
+      "parent": "par-the-finite-sum-of-an-indexed-family",
+      "proves": "theorem-1-4-4"
+    },
+    {
+      "id": "prose-after-proof-theorem-1-4-4",
+      "title": "Reindexing replaces the indices of a family through a…",
+      "kind": "prose",
+      "level": 3,
+      "start": 413.171,
+      "duration": 18.338,
+      "source": "5e378780a74cc3beb2c26b06e9842917937fb6a8360d9be175d25a30823d6cf1",
+      "audio": "11bc0765d74522fac1b5b4d9ad7996bef2717f563ae7815195044ec37d548388",
+      "parent": "par-the-finite-sum-of-an-indexed-family",
+      "proves": null
+    },
+    {
+      "id": "corollary-1-4-5",
+      "title": "Corollary 1.4.5",
+      "kind": "corollary",
+      "level": 3,
+      "start": 432.709,
+      "duration": 21.052,
+      "source": "1fe6dfa2d746952ad97ffe7605667c63eeca8d3960c80f816322a8a2cb06554e",
+      "audio": "f3db594b20e404a25a632b1ec9fbbc2ed8a2f58593016f38a396018a19c5c1d6",
+      "parent": "par-the-finite-sum-of-an-indexed-family",
+      "proves": null
+    },
+    {
+      "id": "proof-corollary-1-4-5",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 454.961,
+      "duration": 32.513,
+      "source": "c7b47abe60575282f3329bf81e00518a045ea026af071769aadafb9fb6ba3de4",
+      "audio": "caee7fe4bb0f1e14c812065748c8fae487766389e5ebc31a1c4e4c85a2e74776",
+      "parent": "par-the-finite-sum-of-an-indexed-family",
+      "proves": "corollary-1-4-5"
+    },
+    {
+      "id": "prose-after-proof-corollary-1-4-5",
+      "title": "The following corollary is a concrete example showing that…",
+      "kind": "prose",
+      "level": 3,
+      "start": 488.674,
+      "duration": 8.672,
+      "source": "8fb27b302d0f09213ff125168df7d6bbbef2161c77c2c341c24750b71a6d2f62",
+      "audio": "97645afd362c18aac2c5f0b62a56fb703297570de4b5dc38d6468901317144bf",
+      "parent": "par-the-finite-sum-of-an-indexed-family",
+      "proves": null
+    },
+    {
+      "id": "corollary-1-4-6",
+      "title": "Corollary 1.4.6",
+      "kind": "corollary",
+      "level": 3,
+      "start": 498.546,
+      "duration": 31.013,
+      "source": "911bc95cbfa91745f7bb87cafe619c36134328cdad36ff72121ad014662e2e17",
+      "audio": "ef57ae2ef0dea7b5cc867d873a9cf868b7a9d8210ac3f86d111b39d38e927613",
+      "parent": "par-the-finite-sum-of-an-indexed-family",
+      "proves": null
+    },
+    {
+      "id": "proof-corollary-1-4-6",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 530.759,
+      "duration": 70.377,
+      "source": "1ed9385af956c8266de77312b04400e60b2f80c8d50a38141bc3c0913cbd57ac",
+      "audio": "d6bde3c9e0d4b0f1ef121ee7b6218b5974b055cf8cbc6ac1a803a512c48482cc",
+      "parent": "par-the-finite-sum-of-an-indexed-family",
+      "proves": "corollary-1-4-6"
+    },
+    {
+      "id": "prose-after-proof-corollary-1-4-6",
+      "title": "We now return to vector spaces and examine how finite…",
+      "kind": "prose",
+      "level": 3,
+      "start": 602.337,
+      "duration": 10.728,
+      "source": "e087a280e8537b3e3be5b63a0dc5efaa90139e85814d994b7f7e56c9d8db3e90",
+      "audio": "76ca84ca9d31dea50b9c96b6c125ea04fda284a843783968ec4c280746ec431e",
+      "parent": "par-the-finite-sum-of-an-indexed-family",
+      "proves": null
+    },
+    {
+      "id": "proposition-1-4-7",
+      "title": "Proposition 1.4.7",
+      "kind": "proposition",
+      "level": 3,
+      "start": 614.265,
+      "duration": 45.146,
+      "source": "ebb174eddc4f8a8773922efbcd1d67d972671cab9afbd0b318343ffa45c923b0",
+      "audio": "7c14c93e0f956fad4fae3d854f190a6907c7139ff02e80983755949d40688718",
+      "parent": "par-the-finite-sum-of-an-indexed-family",
+      "proves": null
+    },
+    {
+      "id": "proof-proposition-1-4-7",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 660.611,
+      "duration": 167.25,
+      "source": "c4d882da2005e30aadf828e4cfe02021c69691786daab7975f1c264f40d8c3a2",
+      "audio": "9f7f35a4ebe7d70077596a9612a153911de37b3d3faad6c3615e062a71cf83b8",
+      "parent": "par-the-finite-sum-of-an-indexed-family",
+      "proves": "proposition-1-4-7"
+    },
+    {
+      "id": "par-definitions-of-linear-combinations-and-spans",
+      "title": "Definitions of linear combinations and spans",
+      "kind": "paragraph",
+      "level": 2,
+      "start": 829.06,
+      "duration": 8.655,
+      "source": "db58d665ce9bd0c241c3533008bd9c284b5dd09a23fd2ad484c1132702b33b94",
+      "audio": "5c1d39a3c1b4210b772bb04169de62b53f374e59b6ba0210d1d1c40129e5a18b",
+      "parent": null,
+      "proves": null,
+      "span": 390.254
+    },
+    {
+      "id": "definition-1-4-8",
+      "title": "Definition 1.4.8",
+      "kind": "definition",
+      "level": 3,
+      "start": 838.915,
+      "duration": 41.94,
+      "source": "9589525a2761e9e86d13ca5ffb0391f461e26e11898fabd24727453b3ad28113",
+      "audio": "bd5d68f67d1af04bf6a6279a77ea404fe2dbc7474d762369fe022b765032717a",
+      "parent": "par-definitions-of-linear-combinations-and-spans",
+      "proves": null
+    },
+    {
+      "id": "definition-1-4-9",
+      "title": "Definition 1.4.9",
+      "kind": "definition",
+      "level": 3,
+      "start": 882.055,
+      "duration": 24.04,
+      "source": "3203f4111072ff142e1d3bce4ddcbe49775422cf821d048219032cbba5d221e3",
+      "audio": "11151a677f31dd076669f9843b5742041a11fecbafedf7aa1744937c2e1e28ed",
+      "parent": "par-definitions-of-linear-combinations-and-spans",
+      "proves": null
+    },
+    {
+      "id": "example-1-4-10",
+      "title": "Example 1.4.10",
+      "kind": "example",
+      "level": 3,
+      "start": 907.294,
+      "duration": 22.63,
+      "source": "946b4ee356c6d82c81e5d64f24c7531a09cc95b439eae43d151f171b6b99c364",
+      "audio": "741c49016b89017081dd2fe53023231021b7dd30f970442656332613fd323491",
+      "parent": "par-definitions-of-linear-combinations-and-spans",
+      "proves": null
+    },
+    {
+      "id": "example-1-4-11",
+      "title": "Example 1.4.11",
+      "kind": "example",
+      "level": 3,
+      "start": 931.124,
+      "duration": 124.162,
+      "source": "b61b60c8905a6abd13c808401ef1112aa634e339604cff9fe172cd630727c6c4",
+      "audio": "0d88bde5fa592295c9241db75f9fa2791cd684b6804b9cc78377cff265a7cbc2",
+      "parent": "par-definitions-of-linear-combinations-and-spans",
+      "proves": null
+    },
+    {
+      "id": "example-1-4-12",
+      "title": "Example 1.4.12",
+      "kind": "example",
+      "level": 3,
+      "start": 1056.487,
+      "duration": 18.201,
+      "source": "19f1d111b4d755bb7480c3df601a7d6fa7febfd79c825bd6dc1d5b94de02c43d",
+      "audio": "e4555736adcfc9eebf362fbb91e03b2b1c1ef98aa26c773406cb262b8392dab8",
+      "parent": "par-definitions-of-linear-combinations-and-spans",
+      "proves": null
+    },
+    {
+      "id": "prose-after-example-1-4-12",
+      "title": "By definition, a vector … belongs to … if and only if it…",
+      "kind": "prose",
+      "level": 3,
+      "start": 1075.888,
+      "duration": 25.357,
+      "source": "7c1bd604397fee2a1cd84c0ddc8d507c28b737c58cefab6f9f98dd576d69f43d",
+      "audio": "3e4c4509350844600f30e6e9eb7dbbf2720be481710a03cefad95960d3aa8c53",
+      "parent": "par-definitions-of-linear-combinations-and-spans",
+      "proves": null
+    },
+    {
+      "id": "definition-1-4-13",
+      "title": "Definition 1.4.13",
+      "kind": "definition",
+      "level": 3,
+      "start": 1102.444,
+      "duration": 25.577,
+      "source": "eb1d79c70542e5b24743790efc4ccfdd8036e8eeeb98217902823337f45f41f7",
+      "audio": "c7032ffb4dd7faeb9aec4bf0ee557a2ed129fb1b8c1f94cea9841d6e82586138",
+      "parent": "par-definitions-of-linear-combinations-and-spans",
+      "proves": null
+    },
+    {
+      "id": "proposition-1-4-14",
+      "title": "Proposition 1.4.14",
+      "kind": "proposition",
+      "level": 3,
+      "start": 1129.222,
+      "duration": 14.522,
+      "source": "69e3c2d6b1f409186cf5d237ef883bed709954d9453706222352384416d48b05",
+      "audio": "8538fee203ce4e90c689109dbf7997cf7a3f3289dc3e4ef0d341a3403f94e8b3",
+      "parent": "par-definitions-of-linear-combinations-and-spans",
+      "proves": null
+    },
+    {
+      "id": "proof-proposition-1-4-14",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 1144.944,
+      "duration": 74.37,
+      "source": "aab76818ef9a1cb9af973cb62a9c0aded1d795aa6ddede80108a1fe6938141ee",
+      "audio": "35d7f28db77c79262a24421215abe86cb79c63ac474787f1e9b26eaf2595e309",
+      "parent": "par-definitions-of-linear-combinations-and-spans",
+      "proves": "proposition-1-4-14"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "par-the-finite-sum-of-an-indexed-family",
+      "title": "The finite sum of an indexed family",
+      "start": 0.0,
+      "end": 15.732
+    },
+    {
+      "id": "definition-1-4-1",
+      "title": "Definition 1.4.1",
+      "start": 15.732,
+      "end": 56.548
+    },
+    {
+      "id": "proposition-1-4-2",
+      "title": "Proposition 1.4.2",
+      "start": 56.548,
+      "end": 168.138
+    },
+    {
+      "id": "proposition-1-4-3",
+      "title": "Proposition 1.4.3",
+      "start": 168.138,
+      "end": 320.241
+    },
+    {
+      "id": "theorem-1-4-4",
+      "title": "Theorem 1.4.4",
+      "start": 320.241,
+      "end": 432.709
+    },
+    {
+      "id": "corollary-1-4-5",
+      "title": "Corollary 1.4.5",
+      "start": 432.709,
+      "end": 498.546
+    },
+    {
+      "id": "corollary-1-4-6",
+      "title": "Corollary 1.4.6",
+      "start": 498.546,
+      "end": 614.265
+    },
+    {
+      "id": "proposition-1-4-7",
+      "title": "Proposition 1.4.7",
+      "start": 614.265,
+      "end": 829.06
+    },
+    {
+      "id": "par-definitions-of-linear-combinations-and-spans",
+      "title": "Definitions of linear combinations and spans",
+      "start": 829.06,
+      "end": 838.915
+    },
+    {
+      "id": "definition-1-4-8",
+      "title": "Definition 1.4.8",
+      "start": 838.915,
+      "end": 882.055
+    },
+    {
+      "id": "definition-1-4-9",
+      "title": "Definition 1.4.9",
+      "start": 882.055,
+      "end": 907.294
+    },
+    {
+      "id": "example-1-4-10",
+      "title": "Example 1.4.10",
+      "start": 907.294,
+      "end": 931.124
+    },
+    {
+      "id": "example-1-4-11",
+      "title": "Example 1.4.11",
+      "start": 931.124,
+      "end": 1056.487
+    },
+    {
+      "id": "example-1-4-12",
+      "title": "Example 1.4.12",
+      "start": 1056.487,
+      "end": 1102.444
+    },
+    {
+      "id": "definition-1-4-13",
+      "title": "Definition 1.4.13",
+      "start": 1102.444,
+      "end": 1129.222
+    },
+    {
+      "id": "proposition-1-4-14",
+      "title": "Proposition 1.4.14",
+      "start": 1129.222,
+      "end": 1219.314
+    }
+  ]
+}
