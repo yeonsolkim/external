@@ -17,10 +17,6 @@ module Jekyll
   def self.logger
     @logger ||= Object.new.tap { |o| def o.warn(*); end }
   end
-
-  module Converters
-    class Markdown; end
-  end
 end
 
 require_relative "../_plugins/document_structure"
@@ -369,47 +365,6 @@ check("without footnotes the reference list stays where it is") do
   kept = build(%(<p>Text.</p><h2 id="references">References</h2><ol class="reference"><li>x</li></ol><p>After.</p>))
   text(kept) == "Text. References x After."
 end
-
-puts "source note"
-note = %(<p class="post-source-note">Drawn from <em>A Book</em>.</p>)
-source = <<~HTML
-  <h2 id="a">A</h2>
-  <p>Text<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>.</p>
-  <h2 id="references">References</h2>
-  <ol class="reference"><li>A book.</li></ol>
-  <div class="footnotes" role="doc-endnotes">
-    <ol>
-      <li id="fn:1"><p>A note.</p></li>
-    </ol>
-  </div>
-HTML
-built = D.transform(source, [], source_note: note)
-check("it is the text's last paragraph, before the footnotes and the references") do
-  text(built) == "A Text 1 . Drawn from A Book . A note. References A book."
-end
-check("it sits outside every section") do
-  tree(built) == ["section", "section"] && built.index("</section>") < built.index(note)
-end
-check("with nothing at the foot it ends the body, after the last proof closes") do
-  ended = D.transform(%(<p><strong>Theorem 1.</strong> Stated.</p>) +
-                      %(<p><em>Proof.</em> Done.<span data-environment-end="proof">x</span></p>), [],
-                      source_note: note)
-  ended.rindex("</section>") < ended.index(note) && ended.rstrip.end_with?(note)
-end
-markdown = Object.new.tap { |o| def o.convert(_text) = "<p>Drawn from <em>A Book</em>.</p>\n" }
-site = Struct.new(:markdown) { def find_converter_instance(_kind) = markdown }.new(markdown)
-noted = Struct.new(:data, :content, :collection, :relative_path, :site).new(
-  { "source_note" => "Drawn from *A Book*." }, "<p>Text.</p>", Struct.new(:label).new("posts"), "x.md", site
-)
-D.process(noted)
-check("the front matter's source_note is converted and marked for the narration to skip") do
-  noted.content.rstrip.end_with?(note)
-end
-draft = Struct.new(:data, :content, :collection, :relative_path, :site).new(
-  { "source_note" => "Drawn from *A Book*." }, "\n", Struct.new(:label).new("posts"), "draft.md", site
-)
-D.process(draft)
-check("a draft with nothing written yet still shows its source note") { draft.content.strip == note }
 
 puts "numbering is read, not generated"
 warnings = []

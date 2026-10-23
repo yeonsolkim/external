@@ -1,0 +1,21 @@
+{%- comment -%}
+  A post's colophon, at the head of the site footer: where the post comes from (the front
+  matter's source note) and when it was published and last updated, as days in Korea
+  (_plugins/kst_date.rb). It is outside the text, so neither the narration (it reads
+  .post-body) nor the feed carries it.
+{%- endcomment -%}
+{%- assign published_day = page.date | kst_date: "%Y-%m-%d" -%}
+{%- assign published_on = page.date | kst_date -%}
+{%- if page.last_modified_at -%}
+  {%- assign updated_day = page.last_modified_at | kst_date: "%Y-%m-%d" -%}
+  {%- assign updated_on = page.last_modified_at | kst_date -%}
+{%- endif -%}
+<div class="post-colophon">
+  <!--<hr class="post-body-divider">-->
+  {% if page.source_note %}{{ page.source_note | markdownify }}{% endif %}
+  {% if page.last_modified_at and updated_day > published_day -%}
+    <p>This page was first published on {{ published_on }}, and last updated on {{ updated_on }}.</p>
+  {%- else -%}
+    <p>This page was published on {{ published_on }}.</p>
+  {%- endif %}
+</div>

@@ -12,6 +12,12 @@
   display: none;
 }
 
+/* Hide the post date too: each post's footer gives both dates (_includes/post-colophon.html).
+   Remove this rule to show it again. */
+.post-date-meta {
+  display: none;
+}
+
 /* Shared category and post row styles */
 .category-root,
 .category-heading,

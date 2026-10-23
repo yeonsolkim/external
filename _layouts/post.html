@@ -47,11 +47,11 @@ title: External
       {{ page.title | hierarchical_post_title: page.category_path }}
     </h1>
 
-    {% assign page_date_day = page.date | date: "%Y-%m-%d" %}
-    {% assign page_date_display = page.date | date: "%B %-d, %Y" %}
+    {% assign page_date_day = page.date | kst_date: "%Y-%m-%d" %}
+    {% assign page_date_display = page.date | kst_date %}
     {% if page.last_modified_at %}
-      {% assign page_updated_day = page.last_modified_at | date: "%Y-%m-%d" %}
-      {% assign page_updated_display = page.last_modified_at | date: "%B %-d, %Y" %}
+      {% assign page_updated_day = page.last_modified_at | kst_date: "%Y-%m-%d" %}
+      {% assign page_updated_display = page.last_modified_at | kst_date %}
     {% endif %}
 
     <!--
@@ -87,8 +87,6 @@ title: External
     {{ content }}
   </div>
 
-
-  <!-- <hr class="post-body-divider"> -->
 
   {% if site.comments_enabled %}
     <div id="comment-section">

@@ -317,10 +317,14 @@ changes the `<h1>` or the post body.
   (`post.css`).
 - To credit a source in prose instead, set `source_note:` in the front matter:
   `source_note: The presentation in this section draws in part on Friedberg,
-  Insel, and Spence, *Linear Algebra*, 5th ed. (2025).` It is Markdown, set as
-  the post's last paragraph, after every section and before the footnotes
-  (`_plugins/document_structure.rb`), and the narration does not read it. Quote
-  the value if it starts with `*` or contains `: `, which YAML reads otherwise.
+  Insel, and Spence, *Linear Algebra*, 5th ed. (2025).` It is Markdown, set at
+  the head of the site footer past a rule, above a sentence on when the page was
+  first published and last updated (`_includes/post-colophon.html`). It is not
+  part of the text, so neither the narration nor the feed carries it. Quote the
+  value if it starts with `*` or contains `: `, which YAML reads otherwise.
+- Dates shown to readers (a post's colophon, the category lists) are the day in
+  Korea, as the front matter writes them, though the site builds in UTC:
+  `{{ page.date | kst_date }}` (`_plugins/kst_date.rb`).
 - `assets/css/post.css` is paired with `mathjax-config.js`. It styles custom
   ordered-list markers, display math scrolling, reference-link boxes, QED
   markers, and hides the post body while MathJax is loading.

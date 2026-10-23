@@ -48,11 +48,11 @@
         <a href="{{ post.url | relative_url }}" class="post-link">
           <span class="post-title">{{ visible_title | escape }}</span>
         </a>
-        {% assign post_date_day = post.date | date: "%Y-%m-%d" %}
-        {% assign post_date_display = post.date | date: "%B %-d, %Y" %}
+        {% assign post_date_day = post.date | kst_date: "%Y-%m-%d" %}
+        {% assign post_date_display = post.date | kst_date %}
         {% if post.last_modified_at %}
-          {% assign post_updated_day = post.last_modified_at | date: "%Y-%m-%d" %}
-          {% assign post_updated_display = post.last_modified_at | date: "%B %-d, %Y" %}
+          {% assign post_updated_day = post.last_modified_at | kst_date: "%Y-%m-%d" %}
+          {% assign post_updated_display = post.last_modified_at | kst_date %}
         {% endif %}
         <span
           class="post-date-meta"

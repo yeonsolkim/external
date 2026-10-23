@@ -58,8 +58,18 @@ color: #b0b0b4;
 margin: 1rem 0;
 }
 
-.post-body-divider {
-margin: 2rem 0 -3.5rem !important;
+/* A post's colophon heads the site footer, in its type (_includes/post-colophon.html): a rule
+   like the one under the title, then the front matter's source note and the post's dates,
+   each a blank line below the last, and a blank line above the footer's own line. The rule's
+   top border is the one every divider shares (below). */
+.post-colophon .post-body-divider {
+height: 0;
+margin: 0 0 2rem;
+border: 0;
+}
+
+.post-colophon p {
+margin: 0 0 0.5lh;
 }
 
 #comment-section {
@@ -532,6 +542,14 @@ padding: 0;
 margin-top: 1lh;
 }
 
+/* The last unit leaves no space below it, so the body ends where its text does and what
+   follows (the footnotes, the footer) keeps its own distance, as after a closing paragraph.
+   Hidden markers and the footnotes are not text that follows. A unit last in a section that
+   is not last gives up nothing: the section's own margin still sits below it. */
+.post-body[data-semantic-units="true"] :is(.math-environment, .doc-section):not(:has(~ :not(.footnotes, .post-explicit-entry-break, .post-structural-continuation, .math-environment-end))) {
+margin-bottom: 0;
+}
+
 .post-body .math-environment > p.math-environment__paragraph {
 margin-top: 0 !important;
 margin-bottom: 0 !important;
@@ -721,7 +739,7 @@ vertical-align: baseline;
 }
 
 .post-body .footnotes {
-margin-top: 2lh;
+margin-top: 4rem;
 font-size: 0.9em;
 }
 

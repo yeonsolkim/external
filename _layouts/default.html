@@ -186,22 +186,26 @@
   </main>
 
   <footer class="site-footer">
-    <span>
-      &copy; {% include copyright_years.html %} Yeonsol Kim
-    </span>
+    {% if page.layout == "post" %}{% include post-colophon.html %}{% endif %}
 
-    <span class="footer-license">
-      Content licensed under
-      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">
-        CC BY-NC-SA 4.0
-      </a>
-    </span>
+    <div class="site-footer-bar">
+      <span>
+        &copy; {% include copyright_years.html %} Yeonsol Kim
+      </span>
 
-    <nav class="footer-nav" aria-label="Site">
-      <a href="{{ '/about/' | relative_url }}">About</a>
-      <a href="{{ '/contact/' | relative_url }}">Contact</a>
-      <a href="{{ '/license/' | relative_url }}">License</a>
-    </nav>
+      <span class="footer-license">
+        Content licensed under
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">
+          CC BY-NC-SA 4.0
+        </a>
+      </span>
+
+      <nav class="footer-nav" aria-label="Site">
+        <a href="{{ '/about/' | relative_url }}">About</a>
+        <a href="{{ '/contact/' | relative_url }}">Contact</a>
+        <a href="{{ '/license/' | relative_url }}">License</a>
+      </nav>
+    </div>
   </footer>
 
   {% if page.index_page or page.layout == "post" %}
