@@ -7,14 +7,14 @@
   from its home page, takes no SVG, accepts only the rels icon, shortcut icon and the two
   apple-touch-icons, and recommends more than 48 px. The script below points both links at
   the dark pair while the system is in dark mode, at once and whenever the scheme changes,
-  as GitHub's does. The E is centred, three quarters of the square tall (24 of the SVG's
-  32 px), with its baseline and cap line on whole pixels, and the square's corners are
-  rounded slightly (a radius of 5 of those 32 px). The home-screen icons (apple-touch-icon,
-  which Safari's start page shows too, and the manifest's) draw the same E, centred and 56%
-  of the tile tall, on a white square left square cornered, since iOS and Android cut those
-  to shapes of their own and a maskable icon must fill its tile; 56% keeps the E within that
-  icon's safe zone. apple-mobile-web-app-title names the home-screen icon, which would
-  otherwise take the page's title.
+  as GitHub's does. The E is centred, 56% of the square tall (18 of the SVG's 32 px), with
+  its baseline and cap line on whole pixels, and the square's corners are rounded slightly
+  (a radius of 5 of those 32 px). The home-screen icons (apple-touch-icon, which Safari's
+  start page shows too, and the manifest's) draw the same E in the same proportion, centred
+  and 56% of the tile tall, which keeps it within a maskable icon's safe zone, on a white
+  square left square cornered, since iOS and Android cut those to shapes of their own and a
+  maskable icon must fill its tile. apple-mobile-web-app-title names the home-screen icon,
+  which would otherwise take the page's title.
 {%- endcomment -%}
 <link rel="icon" class="js-site-favicon" type="image/png" sizes="96x96" href="{{ '/assets/favicons/favicon.png' | relative_url }}" data-base-href="{{ '/assets/favicons/favicon' | relative_url }}">
 <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="{{ '/assets/favicons/favicon.svg' | relative_url }}" data-base-href="{{ '/assets/favicons/favicon' | relative_url }}">
