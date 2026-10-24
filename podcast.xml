@@ -89,6 +89,17 @@
 <podcast:chapters url="https://audio.yeonsolkim.com/introduction-to-analysis/convergent-sequences.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
+<title>1.6 Linear Dependence and Linear Independence</title>
+<link>https://yeonsolkim.com/linear-algebra/linear-dependence-and-linear-independence/</link>
+<guid isPermaLink="false">https://yeonsolkim.com/2026/08/17/5.-Linear-Dependence-and-Linear-Independence.html</guid>
+<pubDate>Mon, 17 Aug 2026 15:00:00 +0000</pubDate>
+<description>Linearly dependent and independent sets: equivalent characterizations, subsets and supersets, adding a vector to an independent set, and unique representations. Read the page at https://yeonsolkim.com/linear-algebra/linear-dependence-and-linear-independence/</description>
+<enclosure url="https://audio.yeonsolkim.com/linear-algebra/linear-dependence-and-linear-independence.mp3" length="12141244" type="audio/mpeg"/>
+<itunes:duration>0:12:39</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+<podcast:chapters url="https://audio.yeonsolkim.com/linear-algebra/linear-dependence-and-linear-independence.chapters.json" type="application/json+chapters"/>
+</item>
+<item>
 <title>2.3 Perfect Sets</title>
 <link>https://yeonsolkim.com/introduction-to-analysis/perfect-sets/</link>
 <guid isPermaLink="false">https://yeonsolkim.com/2026/08/05/3.-Perfect-Sets.html</guid>
