@@ -1,0 +1,15 @@
+{%- comment -%}
+  The favicons, in assets/favicons/: a ∃ after New Computer Modern Math's. In the tab icons
+  it is as tall as the capitals of the tab's title (8.5 of their 16 px) and a little heavier
+  than its letters, its straight edges on whole pixels of a 2x screen. favicon.svg is black
+  on transparent and turns white in dark mode; the PNG and the ICO, for browsers without SVG
+  favicons, stay black. The home-screen icons (apple-touch-icon, the manifest's) are on
+  white, since iOS fills a transparent touch icon with black, and apple-mobile-web-app-title
+  names the home-screen icon, which would otherwise take the page's title.
+{%- endcomment -%}
+<link rel="icon" type="image/png" href="{{ '/assets/favicons/favicon-96x96.png' | relative_url }}" sizes="96x96">
+<link rel="icon" type="image/svg+xml" href="{{ '/assets/favicons/favicon.svg' | relative_url }}">
+<link rel="shortcut icon" href="{{ '/assets/favicons/favicon.ico' | relative_url }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicons/apple-touch-icon.png' | relative_url }}">
+<meta name="apple-mobile-web-app-title" content="{{ site.title }}">
+<link rel="manifest" href="{{ '/assets/favicons/site.webmanifest' | relative_url }}">
