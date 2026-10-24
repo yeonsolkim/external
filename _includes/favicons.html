@@ -2,18 +2,21 @@
   The favicons, in assets/favicons/, served as GitHub serves its own: favicon.svg, the bold
   E of New Computer Modern, the site's text face (its outline taken from NewCM10-Bold),
   black on a white square, and favicon-dark.svg, the same inverted, white on black, each
-  with a 32-px PNG for browsers that take a PNG over an SVG. The script below points both
-  links at the dark pair while the system is in dark mode, at once and whenever the scheme
-  changes, as GitHub's does. The E is centred, 24 of the square's 32 px tall, with its
-  baseline and cap line on whole pixels, and the square's corners are rounded slightly, to a
-  radius of 5 px. The home-screen icons (apple-touch-icon, which Safari's start page shows
-  too, and the manifest's) draw the same E, centred and 56% of the tile tall, on a white
-  square left square cornered, since iOS and Android cut those to shapes of their own and a
-  maskable icon must fill its tile; 56% keeps the E within that icon's safe zone.
-  apple-mobile-web-app-title names the home-screen icon, which would otherwise take the
-  page's title.
+  with a 96-px PNG for browsers that take a PNG over an SVG. The PNG is an icon in its own
+  right, not an alternate, and larger than 48 px, since Google Search reads a site's favicon
+  from its home page, takes no SVG, accepts only the rels icon, shortcut icon and the two
+  apple-touch-icons, and recommends more than 48 px. The script below points both links at
+  the dark pair while the system is in dark mode, at once and whenever the scheme changes,
+  as GitHub's does. The E is centred, three quarters of the square tall (24 of the SVG's
+  32 px), with its baseline and cap line on whole pixels, and the square's corners are
+  rounded slightly (a radius of 5 of those 32 px). The home-screen icons (apple-touch-icon,
+  which Safari's start page shows too, and the manifest's) draw the same E, centred and 56%
+  of the tile tall, on a white square left square cornered, since iOS and Android cut those
+  to shapes of their own and a maskable icon must fill its tile; 56% keeps the E within that
+  icon's safe zone. apple-mobile-web-app-title names the home-screen icon, which would
+  otherwise take the page's title.
 {%- endcomment -%}
-<link rel="alternate icon" class="js-site-favicon" type="image/png" href="{{ '/assets/favicons/favicon.png' | relative_url }}" data-base-href="{{ '/assets/favicons/favicon' | relative_url }}">
+<link rel="icon" class="js-site-favicon" type="image/png" sizes="96x96" href="{{ '/assets/favicons/favicon.png' | relative_url }}" data-base-href="{{ '/assets/favicons/favicon' | relative_url }}">
 <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="{{ '/assets/favicons/favicon.svg' | relative_url }}" data-base-href="{{ '/assets/favicons/favicon' | relative_url }}">
 <script>
   (function () {
