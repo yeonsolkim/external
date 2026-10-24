@@ -10,7 +10,7 @@
 <itunes:explicit>false</itunes:explicit>
 <itunes:type>episodic</itunes:type>
 <itunes:category text="Science"/>
-<lastBuildDate>Fri, 23 Oct 2026 00:00:00 +0000</lastBuildDate>
+<lastBuildDate>Sat, 24 Oct 2026 00:00:00 +0000</lastBuildDate>
 <item>
 <title>1.5 The Span Operator</title>
 <link>https://yeonsolkim.com/linear-algebra/the-span-operator/</link>
@@ -138,8 +138,8 @@
 <guid isPermaLink="false">https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</guid>
 <pubDate>Thu, 18 Jun 2026 15:00:00 +0000</pubDate>
 <description>Subspaces and the subspace test, examples from matrices, polynomials, and continuous functions, sums and direct sums, cosets, and quotient spaces. Read the page at https://yeonsolkim.com/linear-algebra/subspaces/</description>
-<enclosure url="https://audio.yeonsolkim.com/linear-algebra/subspaces.mp3" length="20939464" type="audio/mpeg"/>
-<itunes:duration>0:21:49</itunes:duration>
+<enclosure url="https://audio.yeonsolkim.com/linear-algebra/subspaces.mp3" length="21018553" type="audio/mpeg"/>
+<itunes:duration>0:21:53</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
 <podcast:chapters url="https://audio.yeonsolkim.com/linear-algebra/subspaces.chapters.json" type="application/json+chapters"/>
 </item>

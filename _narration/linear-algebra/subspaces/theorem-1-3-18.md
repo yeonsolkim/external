@@ -4,13 +4,13 @@ title: Theorem 1.3.18
 kind: theorem
 document: 1.3 Subspaces
 url: /linear-algebra/subspaces/
-source: 51973a6b2846f3b32f2c087f8303ba0a3bec55fa8ae773401737fbeab3aae9ac
+source: 8f4331f49a1a838755ea90568c7f3e44fc9931b466bd5eb7f4e41709fa999dad
 skeleton: 4
 prompt: lecture-v4
 model: gpt-5.5
-generated: 2026-10-22
-body: 9eee76164520553bf3109f4b9f8e5757a8b2d6ddeab5bd77e3f6b6e2a9ee3c73
-words: 49
+generated: 2026-10-24
+body: 5e4656c5ff1f4f7bfd58c6afb5e8e2d58aa5c108b8bd0cda8573aa145c8fbfc4
+words: 19
 ---
 
-Theorem 1.3.18. The operations in Definition 1.3.17 are well-defined and make V modulo W a vector space over F, called the quotient space of V modulo W. Its zero vector is W, and the additive inverse of the coset v plus W is the coset minus v plus W.
+Theorem 1.3.18. The operations in Definition 1.3.17 are well-defined and make V modulo W a vector space over F.
