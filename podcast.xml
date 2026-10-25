@@ -144,17 +144,6 @@
 <podcast:chapters url="https://audio.yeonsolkim.com/linear-algebra/linear-combinations-and-spans.chapters.json" type="application/json+chapters"/>
 </item>
 <item>
-<title>1.3 Subspaces</title>
-<link>https://yeonsolkim.com/linear-algebra/subspaces/</link>
-<guid isPermaLink="false">https://yeonsolkim.com/2026/06/18/2.-Subspaces.html</guid>
-<pubDate>Thu, 18 Jun 2026 15:00:00 +0000</pubDate>
-<description>Subspaces and the subspace test, examples from matrices, polynomials, and continuous functions, sums and direct sums, cosets, and quotient spaces. Read the page at https://yeonsolkim.com/linear-algebra/subspaces/</description>
-<enclosure url="https://audio.yeonsolkim.com/linear-algebra/subspaces.mp3" length="21018553" type="audio/mpeg"/>
-<itunes:duration>0:21:53</itunes:duration>
-<itunes:episodeType>full</itunes:episodeType>
-<podcast:chapters url="https://audio.yeonsolkim.com/linear-algebra/subspaces.chapters.json" type="application/json+chapters"/>
-</item>
-<item>
 <title>1.2 Vector Spaces</title>
 <link>https://yeonsolkim.com/linear-algebra/vector-spaces/</link>
 <guid isPermaLink="false">https://yeonsolkim.com/2026/06/01/1.-Vector-Spaces.html</guid>
