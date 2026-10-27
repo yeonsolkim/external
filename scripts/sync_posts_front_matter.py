@@ -19,6 +19,10 @@ DATE_PREFIX_RE = re.compile(r"^\d{4}-\d{2}-\d{2}-")
 FRONT_MATTER_RE = re.compile(r"\A---\r?\n(.*?)\r?\n---\r?\n", flags=re.DOTALL)
 TOP_LEVEL_KEY_RE = re.compile(r"^([A-Za-z_][A-Za-z0-9_-]*):(?:\s.*)?$")
 MANAGED_KEYS = {"layout", "title", "date", "category_path", "created_at", "last_modified_at"}
+# Every post's front matter in one order, so Obsidian's properties panel lists the keys alike;
+# keys not named here follow, in the order they were written.
+KEY_ORDER = ["layout", "category_path", "title", "permalink", "date", "created_at", "last_modified_at",
+             "publish", "description"]
 
 # Post URLs, as _plugins/permalinks.rb derives them: /<subject>/<title>/ without ordering
 # numbers. The two must agree URL for URL (_tests/test_sync_front_matter.py and
@@ -75,30 +79,33 @@ def top_level_entry(front_matter: str, key: str) -> list[str]:
     return []
 
 
-def strip_managed_keys(front_matter: str) -> list[str]:
-    lines = front_matter.splitlines()
-    kept: list[str] = []
-    i = 0
+def top_level_entries(front_matter: str) -> list[tuple[str | None, list[str]]]:
+    """Each top-level key with its lines, those of a list or a block value below it included."""
+    entries: list[tuple[str | None, list[str]]] = []
 
-    while i < len(lines):
-        line = lines[i]
+    for line in front_matter.splitlines():
         match = TOP_LEVEL_KEY_RE.match(line)
+        if match:
+            entries.append((match.group(1), [line]))
+        elif entries:
+            entries[-1][1].append(line)
+        elif line.strip():
+            entries.append((None, [line]))
 
-        if match and match.group(1) in MANAGED_KEYS:
-            i += 1
-            while i < len(lines) and (lines[i].startswith(" ") or lines[i].startswith("\t")):
-                i += 1
-            continue
+    # A blank line between two keys goes; one inside a value stays.
+    for _, lines in entries:
+        while lines and not lines[-1].strip():
+            lines.pop()
 
-        kept.append(line)
-        i += 1
+    return entries
 
-    while kept and not kept[0].strip():
-        kept.pop(0)
-    while kept and not kept[-1].strip():
-        kept.pop()
 
-    return kept
+def in_key_order(entries: list[tuple[str | None, list[str]]]) -> list[str]:
+    """The entries' lines in KEY_ORDER; the sort is stable, so other keys keep their order."""
+    rank = {key: i for i, key in enumerate(KEY_ORDER)}
+    rank[None] = -1  # whatever stands above the first key stays there
+    ordered = sorted(entries, key=lambda entry: rank.get(entry[0], len(KEY_ORDER)))
+    return [line for _, lines in ordered for line in lines]
 
 
 def slug(text: str) -> str:
@@ -216,25 +223,28 @@ def desired_front_matter(path: Path, stat: os.stat_result, existing_front_matter
         title = DATE_PREFIX_RE.sub("", path.stem).replace("_", " ")
         title_lines = [f"title: {yaml_quote(title)}"]
 
-    managed = [
-        "layout: post",
-        *title_lines,
-        f"date: {date_prefix} 00:00:00 +0900",
-        *category_yaml(path),
-        f"created_at: {fmt_time(created)}",
-        f"last_modified_at: {fmt_time(stat.st_mtime)}",
+    entries = [
+        ("layout", ["layout: post"]),
+        ("title", title_lines),
+        ("date", [f"date: {date_prefix} 00:00:00 +0900"]),
+        ("category_path", category_yaml(path)),
+        ("created_at", [f"created_at: {fmt_time(created)}"]),
+        ("last_modified_at", [f"last_modified_at: {fmt_time(stat.st_mtime)}"]),
     ]
-
-    extra = strip_managed_keys(existing_front_matter)
-    if not has_top_level_key(existing_front_matter, "publish"):
-        extra.append("publish: false")
     # Like the title, a permalink once written is kept as written: the URL a post was
-    # published at stays its URL when the post is renamed or renumbered.
-    if permalink and not has_top_level_key(existing_front_matter, "permalink"):
-        extra.append(f"permalink: {permalink}")
-    lines = managed + ([""] + extra if extra else [])
+    # published at stays its URL when the post is renamed or renumbered. Deleted, or emptied
+    # in Obsidian, it gives way to the URL of the current title (scripts/move_post_urls.py
+    # then redirects the old one).
+    frozen = (yaml_scalar(top_level_entry(existing_front_matter, "permalink")) or "").strip()
+    replace = bool(permalink) and not frozen
+    entries += [entry for entry in top_level_entries(existing_front_matter)
+                if entry[0] not in MANAGED_KEYS and not (replace and entry[0] == "permalink")]
+    if not has_top_level_key(existing_front_matter, "publish"):
+        entries.append(("publish", ["publish: false"]))
+    if replace:
+        entries.append(("permalink", [f"permalink: {permalink}"]))
 
-    return "---\n" + "\n".join(lines) + "\n---\n"
+    return "---\n" + "\n".join(in_key_order(entries)) + "\n---\n"
 
 
 def sync_post(path: Path, permalink: str | None = None) -> tuple[Path, bool]:

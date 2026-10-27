@@ -1,15 +1,14 @@
 ---
 layout: post
-title: "Auxiliary Verbs"
-date: 2026-04-05 00:00:00 +0900
 category_path:
   - 3. English
   - 2. Dictionary
+title: "Auxiliary Verbs"
+permalink: /dictionary/auxiliary-verbs/
+date: 2026-04-05 00:00:00 +0900
 created_at: 2026-08-10 14:55:42 +0900
 last_modified_at: 2026-10-19 14:36:23 +0900
-
 publish: false
-permalink: /dictionary/auxiliary-verbs/
 ---
 
 ### can

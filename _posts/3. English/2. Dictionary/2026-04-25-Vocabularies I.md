@@ -1,16 +1,15 @@
 ---
 layout: post
-title: "Vocabularies I"
-date: 2026-04-25 00:00:00 +0900
 category_path:
   - 3. English
   - 2. Dictionary
+title: "Vocabularies I"
+permalink: /dictionary/vocabularies-i/
+date: 2026-04-25 00:00:00 +0900
 created_at: 2026-08-10 15:41:50 +0900
 last_modified_at: 2026-10-09 18:14:12 +0900
-
-line_indent: false
 publish: false
-permalink: /dictionary/vocabularies-i/
+line_indent: false
 ---
 
 <b>investigate</b>: carry out a systematic inquiry *to discover the facts of an incident*.

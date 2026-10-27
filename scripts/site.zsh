@@ -6,7 +6,8 @@
 #                                  front matter, check the spelling of the posts, rebuild,
 #                                  restart `jekyll serve` on :4000.
 #                                  Costs nothing and commits nothing.
-#   zsh scripts/site.zsh publish   Catch up with origin, sync the front matter, check the
+#   zsh scripts/site.zsh publish   Catch up with origin, sync the front matter, carry over the
+#                                  post URLs that changed (scripts/move_post_urls.py), check the
 #                                  spelling (a word not reported before stops it), validate (a
 #                                  build into a scratch directory + the tests), commit what
 #                                  changed with a summarised message (scripts/commit_summary.py),
@@ -142,6 +143,30 @@ sync_front_matter() {
   step_done
 }
 
+# A post's URL changes when its `permalink:` is deleted (Publish freezes its title's URL) or
+# edited. With --apply (Publish) its old URL redirects to the new one, its narration moves with
+# it and its podcast episode keeps its guid; without, what Publish would move is only named.
+# Either way the posts retitled since the last Publish that keep their URL are named too.
+# Prints a note for each kind, one per line; returns 1 when the script fails.
+post_urls() {  # post_urls [--apply]
+  step "post URLs"
+  local found
+  found=$(python3 scripts/move_post_urls.py "$@" 2>>"$log") || { step_done "failed"; return 1; }
+  [[ -n "$found" ]] && print -r -- "$found" >>"$log"
+  local moved=$(print -r -- "$found" | /usr/bin/grep -cE '^(Moved|Will move) ')
+  local kept=$(print -r -- "$found" | /usr/bin/grep -c '^New title, same URL')
+  step_done "$moved moved, $kept retitled"
+  if (( moved )); then
+    if [[ "${1:-}" == --apply ]]; then
+      print -r -- "$moved URL(s) moved, the old ones redirect"
+    else
+      print -r -- "$moved URL(s) move on Publish"
+    fi
+  fi
+  (( kept )) && print -r -- "$kept retitled post(s) keep their URL — see site.log"
+  return 0
+}
+
 # -- spelling ----------------------------------------------------------------------------------
 # Words of the posts' file names, titles and text that the macOS dictionary lacks
 # (scripts/check_spelling.py). The record makes it one report per word and post: a word left
@@ -252,6 +277,8 @@ preview() {
   (( rc )) && notes+=("not synced: $(catch_up_message $rc)")
 
   sync_front_matter
+  local urls
+  urls=$(post_urls) || urls=""
 
   # Told at once rather than with the notes at the end: it is reported only this once, and a
   # failure further on would never show the notes.
@@ -294,6 +321,7 @@ preview() {
     fail "build error: $(build_error)"
   fi
   [[ -n "$narration" ]] && notes+=("$narration")
+  [[ -n "$urls" ]] && notes+=("${(@f)urls}")
   notify "Ready at localhost:$port${notes:+ · ${(j: · :)notes}}"
   say "ok"
 }
@@ -331,6 +359,11 @@ publish() {
   (( rc )) && fail "$(catch_up_message $rc)"
 
   sync_front_matter --freeze-permalinks
+
+  # The freeze gave each post whose permalink was deleted its new URL; carry over what hangs on
+  # the old one before the build checks the redirects.
+  local urls
+  urls=$(post_urls --apply) || fail "could not carry over the post URLs that changed — see site.log"
 
   # A typo goes out with the page and into its narration (a title's into the URL), so
   # stop before it does.
@@ -397,7 +430,7 @@ publish() {
 
   local sha=$(git rev-parse HEAD)
   /usr/bin/nohup /bin/zsh "$repo/scripts/site.zsh" follow "$sha" >/dev/null 2>&1 </dev/null &!
-  notify "Pushed${subject:+: $subject} · watching the deploy"
+  notify "Pushed${subject:+: $subject} · watching the deploy${urls:+ · ${(j: · :)${(@f)urls}}}"
   say "pushed ${sha:0:8}; following CI in the background"
 }
 

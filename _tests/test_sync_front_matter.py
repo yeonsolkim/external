@@ -56,6 +56,28 @@ class CreatedAt(unittest.TestCase):
         self.assertNotIn("sometime", text)
 
 
+def keys_of(text):
+    return [match.group(1) for match in map(sync.TOP_LEVEL_KEY_RE.match, text.splitlines()) if match]
+
+
+class KeyOrder(unittest.TestCase):
+    def test_the_keys_come_in_one_order(self):
+        text = front_matter_for("\n".join([
+            'title: "2. Functions"', "line_indent: false", "", "publish: true",
+            "source_note: After Munkres.", 'description: "Functions as sets of pairs."',
+            "permalink: /a/functions/",
+        ]))
+        self.assertEqual(keys_of(text), ["layout", "category_path", "title", "permalink", "date", "created_at",
+                                         "last_modified_at", "publish", "description", "line_indent",
+                                         "source_note"])
+        self.assertNotIn("\n\n", text)
+
+    def test_a_value_of_several_lines_moves_whole(self):
+        text = front_matter_for("source_note: |\n  After Munkres.\n\n  And Halmos.\npublish: true")
+        self.assertEqual(keys_of(text)[-2:], ["publish", "source_note"])
+        self.assertIn("\nsource_note: |\n  After Munkres.\n\n  And Halmos.\n---\n", text)
+
+
 # The same cases as _tests/test_permalinks.rb: the sync script and _plugins/permalinks.rb
 # must derive the same URL for every post.
 ANALYSIS = ["1. Mathematics", "3. Mathematical Analysis", "1. Introduction to Analysis"]
@@ -112,6 +134,23 @@ class Permalinks(unittest.TestCase):
         self.assertEqual(kept.count("permalink:"), 1)
         self.assertIn("permalink: /a/functions/", kept)
         self.assertNotIn("permalink:", plain)
+
+    def test_an_emptied_permalink_takes_the_frozen_url(self):
+        # Obsidian keeps a property whose value was cleared as `permalink:`.
+        posts_root = sync.POSTS_ROOT
+        with tempfile.TemporaryDirectory() as tmp:
+            sync.POSTS_ROOT = Path(tmp)
+            try:
+                path = Path(tmp) / "2026-06-24-2. Functions.md"
+                path.write_text("x", encoding="utf-8")
+                frozen = sync.desired_front_matter(path, path.stat(), 'title: "2. Functions"\npermalink:',
+                                                   "/a/functions/")
+                waiting = sync.desired_front_matter(path, path.stat(), 'title: "2. Functions"\npermalink:')
+            finally:
+                sync.POSTS_ROOT = posts_root
+        self.assertEqual(frozen.count("permalink:"), 1)
+        self.assertIn("\npermalink: /a/functions/\n", frozen)
+        self.assertIn("\npermalink:\n", waiting)
 
     def test_a_quoted_title_is_read_as_written(self):
         self.assertEqual(sync.yaml_scalar(['title: "1. Say \\"hi\\""']), '1. Say "hi"')

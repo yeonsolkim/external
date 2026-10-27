@@ -2,8 +2,9 @@
 #
 # _plugins/permalinks.rb writes a page at every old URL that sends readers and search engines
 # on (an instant meta refresh, which Google treats as a permanent redirect). Post URLs are
-# frozen in their front matter, so renaming or renumbering a post adds nothing here; add a line
-# when you change a `permalink:` by hand. A target that is no page of the site is a build warning.
+# frozen in their front matter, so renaming or renumbering a post adds nothing here; Publish
+# adds a line when a `permalink:` is deleted or edited (scripts/move_post_urls.py). A target
+# that is no page of the site is a build warning.
 
 "/2026/08/16/Newtonian-Mechanics.html": "/classical-mechanics/newtonian-mechanics/"
 "/2026/04/04/Auxiliary-Verbs.html": "/dictionary/auxiliary-verbs/"
@@ -97,3 +98,5 @@
 "/2026/08/31/1.-Outer-Measure.html": "/real-analysis/outer-measure/"
 "/2026/09/17/1.-Axioms-and-Examples.html": "/ring-theory/axioms-and-examples/"
 "/2026/10/04/1.-The-Trading-Industry.html": "/trading-and-exchanges/the-trading-industry/"
+"/linear-algebra/isomorphisms/": "/linear-algebra/composition-identities-and-inverses/"
+"/linear-algebra/dual-spaces/": "/linear-algebra/kernels-and-rank-nullity/"

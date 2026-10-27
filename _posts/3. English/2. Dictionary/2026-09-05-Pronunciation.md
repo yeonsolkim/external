@@ -1,16 +1,15 @@
 ---
 layout: post
-title: "Pronunciation"
-date: 2026-09-05 00:00:00 +0900
 category_path:
   - 3. English
   - 2. Dictionary
+title: "Pronunciation"
+permalink: /dictionary/pronunciation/
+date: 2026-09-05 00:00:00 +0900
 created_at: 2026-09-05 11:24:15 +0900
 last_modified_at: 2026-10-08 11:13:06 +0900
-
-line_indent: false
 publish: false
-permalink: /dictionary/pronunciation/
+line_indent: false
 ---
 
 <b>revenue</b> /ˈrevənu/.

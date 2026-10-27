@@ -267,9 +267,11 @@ deleted post, or one that moved and left a redirect page at its old URL
 must have its directory moved with it (`git mv`); the scripts are unchanged, so nothing is
 generated or synthesised again — the next run writes the manifest at the new URL, re-points
 the aliases, and prunes the old manifest. Post URLs are frozen in their front matter on first
-publication, so this happens only when a `permalink:` is changed by hand. The podcast
-episode's guid never moves: `_narration/podcast-guids.json` maps a page's new URL to the
-guid it was first published with, and the feed then marks it `isPermaLink="false"`.
+publication, so this happens only when a `permalink:` is deleted (the post takes its title's
+URL) or changed by hand, and Publish then moves the directory itself
+(`scripts/move_post_urls.py`). The podcast episode's guid never moves:
+`_narration/podcast-guids.json` maps a page's new URL to the guid it was first published
+with, and the feed then marks it `isPermaLink="false"`; Publish writes that entry too.
 
 A post's `page_key` is its ordered section keys + `AUDIO_VERSION`. `publish` costs nothing
 when `o/<page key>.json` already exists — one HEAD settles it, and nothing else is probed

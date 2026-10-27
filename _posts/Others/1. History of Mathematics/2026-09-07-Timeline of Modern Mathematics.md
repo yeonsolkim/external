@@ -1,15 +1,14 @@
 ---
 layout: post
-title: "Timeline of Modern Mathematics"
-date: 2026-09-07 00:00:00 +0900
 category_path:
   - Others
   - 1. History of Mathematics
+title: "Timeline of Modern Mathematics"
+permalink: /history-of-mathematics/timeline-of-modern-mathematics/
+date: 2026-09-07 00:00:00 +0900
 created_at: 2026-09-07 17:15:27 +0900
 last_modified_at: 2026-10-08 11:28:40 +0900
-
 publish: false
-permalink: /history-of-mathematics/timeline-of-modern-mathematics/
 ---
 |Century|Mathematician|Major areas / contributions|
 |---|---|--|

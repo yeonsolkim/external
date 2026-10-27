@@ -113,6 +113,10 @@ structure.
 - Running the sync script may rewrite those managed keys based on filename,
   folder path, and file timestamps. Put custom front matter in other keys if it
   should be preserved.
+- It also writes every post's keys in one order, so Obsidian's properties panel
+  lists them alike: `layout`, `category_path`, `title`, `permalink`, `date`,
+  `created_at`, `last_modified_at`, `publish`, `description`. Other keys
+  (`source_note`, `line_indent`) follow in the order they were written.
 - `title` is the exception: an existing title is kept as written, so it may
   differ from the filename. The script derives it from the filename only when
   the key is missing, so renaming a post does not change its title; delete the
@@ -120,8 +124,8 @@ structure.
 - `permalink` works the same way, but only Publish writes it
   (`--freeze-permalinks`): a post's URL is frozen when it first goes out, so
   renaming, renumbering, or moving the post later keeps its URL. Delete the
-  line to take the URL of the current title; then add the old URL to
-  `_data/redirects.yml` (see Post URLs below).
+  line, or empty it in Obsidian, to take the URL of the current title; Publish
+  then carries over what hung on the old URL (see Post URLs below).
 - New posts should keep the filename pattern `YYYY-MM-DD-title.md`. Files
   without a date prefix may be renamed by the sync script.
 - The Obsidian templates in `templates/` help create/update post front matter,
@@ -146,9 +150,17 @@ structure.
   refresh, a canonical link and `noindex`; Google treats such a refresh as a
   permanent redirect. They stay out of the sitemap, and a target that is no page
   of the site is a build warning.
-- The narration is keyed by URL (`_narration/<url path>/`). When a post's URL
-  changes, move its directory too, and keep its podcast guid in
-  `_narration/podcast-guids.json` (`_narrator/README.md`, Moving a page).
+- When a post's URL changes (its `permalink:` deleted or edited), Publish runs
+  `scripts/move_post_urls.py --apply` right after the freeze. The old URL goes
+  into `_data/redirects.yml`, and a redirect that led to it now leads to the
+  new URL, so none takes two steps. The post's narration moves from
+  `_narration/<old url path>/` to the new path, and its podcast episode keeps
+  its guid in `_narration/podcast-guids.json` (`_narrator/README.md`, Moving a
+  page). The URL a post had is the one in HEAD; a post that was moved or
+  renamed is found there by its `created_at`.
+- Preview and Publish also name the posts retitled since the last Publish that
+  keep their URL. `python3 scripts/move_post_urls.py` lists what Publish would
+  move and every post whose title gives another URL than it has.
 
 ### Home Page Category Tree
 

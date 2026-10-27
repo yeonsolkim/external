@@ -1,16 +1,15 @@
 ---
 layout: post
-title: "Vocabularies II"
-date: 2026-09-07 00:00:00 +0900
 category_path:
   - 3. English
   - 2. Dictionary
+title: "Vocabularies II"
+permalink: /dictionary/vocabularies-ii/
+date: 2026-09-07 00:00:00 +0900
 created_at: 2026-09-07 12:58:48 +0900
 last_modified_at: 2026-10-08 10:56:45 +0900
-
-line_indent: false
 publish: false
-permalink: /dictionary/vocabularies-ii/
+line_indent: false
 ---
 **charm**: the quality of giving delight: *his charm has captivated the media.*
 **friendliness**: the quality of being kind.

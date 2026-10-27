@@ -1,15 +1,14 @@
 ---
 layout: post
-title: Tenses and Aspects
-date: 2026-05-23 00:00:00 +0900
 category_path:
   - 3. English
   - 1. Grammar
+title: Tenses and Aspects
+permalink: /grammar/tenses-and-aspects/
+date: 2026-05-23 00:00:00 +0900
 created_at: 2026-08-10 16:00:47 +0900
 last_modified_at: 2026-10-02 11:47:51 +0900
-
 publish: false
-permalink: /grammar/tenses-and-aspects/
 ---
 
 | Expression | Relation |

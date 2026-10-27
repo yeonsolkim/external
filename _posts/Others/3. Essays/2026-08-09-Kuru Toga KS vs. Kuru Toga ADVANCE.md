@@ -1,15 +1,14 @@
 ---
 layout: post
-title: "Kuru Toga KS vs. Kuru Toga ADVANCE"
-date: 2026-08-09 00:00:00 +0900
 category_path:
   - Others
   - 3. Essays
+title: "Kuru Toga KS vs. Kuru Toga ADVANCE"
+permalink: /essays/kuru-toga-ks-vs-kuru-toga-advance/
+date: 2026-08-09 00:00:00 +0900
 created_at: 2026-08-09 14:04:09 +0900
 last_modified_at: 2026-09-03 15:05:27 +0900
-
 publish: false
-permalink: /essays/kuru-toga-ks-vs-kuru-toga-advance/
 ---
 
 The comparison can be understood as a trade-off between two different strategies for controlling stroke width. The Kuru Toga ADVANCE uses the W Speed Engine, which rotates the lead approximately once every 20 strokes, whereas the 2023 Kuru Toga KS uses a lower-stroke mechanism with a slower rotation rate of roughly one revolution per 40 strokes. Thus, ADVANCE compensates aggressively for asymmetric lead wear through rapid rotation, while KS prioritizes tip stability and reduced axial play. 
