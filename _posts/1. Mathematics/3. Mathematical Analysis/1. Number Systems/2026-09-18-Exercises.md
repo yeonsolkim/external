@@ -3,12 +3,12 @@ layout: post
 category_path:
   - 1. Mathematics
   - 3. Mathematical Analysis
-  - 1. Algebraic and Ordered Structures
+  - 1. Number Systems
 title: "Exercises"
 permalink: /introduction-to-analysis/exercises-algebraic-and-ordered-structures/
 date: 2026-09-18 00:00:00 +0900
 created_at: 2026-09-18 12:16:08 +0900
-last_modified_at: 2026-10-21 16:33:33 +0900
+last_modified_at: 2026-10-28 11:24:09 +0900
 publish: false
 description: "Exercises on the real and complex number systems: rational and irrational numbers, real powers defined by suprema, and inequalities for complex numbers."
 source_note: The presentation in this section draws in part on Rudin, *Principles of Mathematical Analysis*, 3rd ed. (1976).
@@ -18,7 +18,7 @@ source_note: The presentation in this section draws in part on Rudin, *Principle
 
 $$ nx = n\cdot x.$$
 
-*Proof.* By Definition 1.1.2 and Definition 1.1.5,
+*Proof.* By distributivity and the notation for repeated addition,
 
 $$ \begin{align}
 nx 
@@ -58,12 +58,12 @@ $$
 
 $$ |z_1+z_2+\cdots +z_n| \le |z_1| + |z_2| + \cdots + |z_n|.$$
 
-*Proof.* The case $n=1$ is immediate, since $\vert{}z_1\vert{} \le \vert{}z_1\vert{}.$ The case $n=2$ holds by Theorem 1.3.11.
+*Proof.* The case $n=1$ is immediate, since $\vert{}z_1\vert{} \le \vert{}z_1\vert{}.$ The case $n=2$ holds by Theorem 1.3.10.
 Now we suppose that for some $n\ge 2,$
 
 $$\vert{}z_1+\cdots+z_n\vert{} \le \vert{}z_1\vert{}+\cdots+\vert{}z_n\vert{}.$$
 
-Then, applying Theorem 1.3.11, we obtain
+Then, applying Theorem 1.3.10, we obtain
 
 $$\begin{aligned} \vert{}z_1+\cdots+z_n+z_{n+1}\vert{} &= \vert{}(z_1+\cdots+z_n)+z_{n+1}\vert{}\\ &\le \vert{}z_1+\cdots+z_n\vert{}+\vert{}z_{n+1}\vert{}\\ &\le \vert{}z_1\vert{}+\cdots+\vert{}z_n\vert{}+\vert{}z_{n+1}\vert{}. \end{aligned}$$
 
@@ -77,7 +77,7 @@ for every positive integer $n.$ <span class="qed">$\square$</span>
 
 $$ \big\vert|x|-|y|\big\vert\le |x-y|.$$
 
-*Proof.* Let $|x|=a,|y|=b,$ and $|x-y|=c.$ Since $|x\overline y| = \left( (x\overline y)(\overline x y)\right)^{1/2} = ab,$ $\operatorname{Re} (x\overline y)\le ab,$ by Proposition 1.3.10. Then we have
+*Proof.* Let $|x|=a,|y|=b,$ and $|x-y|=c.$ Since $|x\overline y| = \left( (x\overline y)(\overline x y)\right)^{1/2} = ab,$ $\operatorname{Re} (x\overline y)\le ab,$ by Proposition 1.3.9. Then we have
 
 $$ a^2+b^2-2ab\le a^2+b^2-2\operatorname{Re} (x\overline y).$$
 
