@@ -16,8 +16,9 @@ require_relative "tex_text"
 # the section takes the subject's place ("Exercises — Metric Spaces"), and failing that joins
 # it. A generated category index is titled by its category and the top-level category above
 # it: "Linear Algebra — Mathematics". The result is stored as `seo_title`, which the seo tag
-# is taught below to prefer to `title`, so `title` itself (the <h1>) is untouched. No page's
-# <title> carries the site name, which jekyll-seo-tag would append; og:site_name gives it.
+# is taught below to prefer to `title`, so `title` itself (the <h1>) is untouched. The site
+# name, which jekyll-seo-tag would append, is left out of every <title> but the home page's,
+# which is the name alone (index.md); og:site_name gives it.
 #
 # Descriptions. A post without a `description:` of its own gets its first sentences of prose,
 # its inline math written out as text by tex_text.rb; a sentence whose math has no faithful

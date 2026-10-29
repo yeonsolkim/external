@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: External
 index_page: true
 ---
 

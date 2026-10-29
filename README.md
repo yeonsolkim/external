@@ -219,9 +219,12 @@ changes the `<h1>` or the post body.
   category index is titled by its category and the top-level category above it
   (`Linear Algebra — Mathematics`). The plugin stores the result as `seo_title`
   and teaches the seo tag to prefer it to `title`, which stays the `<h1>`. A
-  title still shared after this is a build warning. No `<title>` carries the
-  site name (`title` in `_config.yml`), which jekyll-seo-tag would append; it is
-  given as `og:site_name`. The home page is titled `Home` (`index.md`).
+  title still shared after this is a build warning. The site name (`title` in
+  `_config.yml`), which jekyll-seo-tag would append, is left out of every
+  `<title>` but the home page's, which is the name alone (`index.md`); it is
+  given as `og:site_name`. Google Search shows a site name above each result,
+  read from the home page's `WebSite` structured data, `<title>`, headings and
+  `og:site_name`; where they disagree it may show the domain instead.
 - Descriptions: write `description:` in a post's front matter, as plain text
   without TeX (it is what search results show under the title). A post without
   one gets its first whole sentences of prose, its inline math written out as

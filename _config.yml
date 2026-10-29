@@ -1,6 +1,7 @@
 baseurl: ""
 # The site name, given as og:site_name and as the home page's name in its structured data
-# (see `social` below); no page's <title> carries it (_plugins/search_metadata.rb).
+# (see `social` below). The home page is titled by it too (index.md), since Google reads the
+# site name from all three; no other page's <title> carries it (_plugins/search_metadata.rb).
 title: External
 # What search results show for the home page; also the podcast's channel description.
 description: "Notes on undergraduate mathematics by Yeonsol Kim, written out in full: definitions, theorems, and proofs in set theory, logic, algebra, analysis, and probability."
