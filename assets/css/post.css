@@ -492,20 +492,18 @@ white-space: normal;
  * spacing ends with a filler as wide as the room left (--fill), as \parfillskip fills the last
  * line of a TeX paragraph; a hyphen comes from the stylesheet, so it is not copied with the
  * text. The spaces start narrower than the post's own (--natural-word-spacing, read before the
- * paragraph is set) by a third of their width, as far as TeX lets Computer Modern's interword
- * space shrink (3.33pt less 1.11pt at 10pt): New Computer Modern's roman space is 0.333em, as
- * Computer Modern's is, so less the post's 0.045em it is 0.288em, and shrinks by 0.096em. A
- * line can then shrink as well as stretch. A statement's label and the space MathJax leaves at
- * a formula's breakpoint keep their width. While the script measures, the lines are set flush
- * left. The lines are worked out for the screen's column; a printed page, of another width,
- * leaves them to the browser.
+ * paragraph is set) by a third of their width (--typeset-word-spacing, worked out by the
+ * script), so that a line can shrink as well as stretch. A statement's label and the space
+ * MathJax leaves at a formula's breakpoint keep their width. While the script measures, the
+ * lines are set flush left. The lines are worked out for the screen's column; a printed page,
+ * of another width, leaves them to the browser.
  */
 @media screen {
   .post-body :is(p, li).typeset-paragraph {
     text-align: justify;
     text-align-last: justify;
     text-wrap-mode: nowrap !important;
-    word-spacing: calc(var(--natural-word-spacing) - 0.096em);
+    word-spacing: var(--typeset-word-spacing);
   }
 
   .post-body .typeset-paragraph :is(.math-label-anchor, .math-proof-marker, mjx-break) {

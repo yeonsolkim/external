@@ -43,7 +43,10 @@
 
   /* A space stretches by half its width, as Computer Modern's interword space does (3.33pt
      plus 1.67pt at 10pt): New Computer Modern's roman space, less the post's 0.045em, is
-     0.288em, and stretches by STRETCH em. How far it shrinks is post.css's. When neither pass
+     0.288em, and stretches by STRETCH em. It shrinks by a third, SHRINK em, as far as TeX
+     lets Computer Modern's shrink (3.33pt less 1.11pt): the paragraph's spaces start that much
+     narrower (--typeset-word-spacing, worked out here in px), and justification widens them
+     again. When neither pass
      keeps every line within the tolerance, where TeX would let a line run into the margin, a
      third pass takes the most even spacing it can find, however loose, and justifies it all
      the same: its badness has no ceiling. A line with no space to stretch cannot be
@@ -51,11 +54,12 @@
      a single space to stretch. A statement's label alone on its line is a last resort, worth
      it only to spare a line spaces some four and a half times their width (a stretch of 7). */
   var STRETCH = 0.144;
+  var SHRINK = 0.096;
   var LABEL_LINE_BADNESS = 100 * Math.pow(7, 3);
 
-  /* Half a pixel of every line is left unused, for what the measurements cannot see (the
-     kerning across a break), so that no line comes out wider than its column. */
-  var SAFETY = 0.5;
+  /* A pixel of every line is left unused, for what the measurements cannot see (the kerning
+     across a break, Safari's whole pixels), so that no line comes out wider than its column. */
+  var SAFETY = 1;
 
   var SPACE = /[ \t\n\r\f]/;
   var SPECIAL = /[\s\u00ad\u200b\u2060]/;
@@ -225,7 +229,7 @@
         runs.push(run);
       }
 
-      run.items.push({ type: 'box', width: width, end: end, inLabel: inLabel });
+      run.items.push({ type: 'box', width: width, left: left, end: end, inLabel: inLabel });
       afterSpace = false;
     }
 
@@ -236,11 +240,33 @@
       }
     }
 
-    // A space at the end of a line is not set, and neither is one that begins the next.
+    /* A space at the end of a line is not set, and neither is one that begins the next. Each
+       item is as wide as the distance from where it starts to where the next one does: the run
+       stands on one line, and Safari's measure of a range by itself leaves out a space's
+       word-spacing and rounds out to whole pixels. A space also has the shrink back that the
+       paragraph's narrower spacing took from it. */
     function endRun() {
+      var next = null;
+      var index;
+      var item;
+
       if (run) {
         while (run.items[run.items.length - 1].type !== 'box') {
           run.items.pop();
+        }
+
+        for (index = run.items.length - 1; index >= 0; index -= 1) {
+          item = run.items[index];
+
+          if (item.left === undefined) {
+            continue;
+          }
+
+          if (next && next.left >= item.left) {
+            item.width = next.left - item.left + (item.type === 'glue' ? item.shrink : 0);
+          }
+
+          next = item;
         }
       }
 
@@ -293,6 +319,7 @@
     function space(node, start, end, info, collapsible) {
       var shrink = shrinkOf(info);
       var last = run && run.items[run.items.length - 1];
+      var rect;
 
       // Collapsed into the space before it, or dropped at the start of a line.
       if (collapsible && afterSpace) {
@@ -300,9 +327,11 @@
       }
 
       // The space after a run-in heading, which has no gap of its own, ends the label.
+      rect = measureText(node, start, start + 1);
       addSpace({
         type: 'glue',
-        width: measureText(node, start, start + 1).width + shrink,
+        width: rect.width + shrink,
+        left: rect.left,
         stretch: info.stretches ? context.stretch : 0,
         shrink: shrink,
         breakable: true,
@@ -318,6 +347,7 @@
       var at = { text: node, offset: index };
       var noBreak;
       var shrink;
+      var rect;
 
       if (character === '\u00ad') {
         // A soft hyphen is TeX's \-.
@@ -337,9 +367,11 @@
         // cannot end at it; the others (a label's U+2004 in Safari) keep their width.
         noBreak = NO_BREAK_SPACE.test(character);
         shrink = character === '\u00a0' ? shrinkOf(info) : 0;
+        rect = measureText(node, index, index + 1);
         addSpace({
           type: 'glue',
-          width: measureText(node, index, index + 1).width + shrink,
+          width: rect.width + shrink,
+          left: rect.left,
           stretch: character === '\u00a0' && info.stretches ? context.stretch : 0,
           shrink: shrink,
           breakable: !noBreak,
@@ -472,6 +504,7 @@
           addBreakable({
             type: 'glue',
             width: child.getBoundingClientRect().width,
+            left: child.getBoundingClientRect().left,
             stretch: context.stretch,
             shrink: 0,
             breakable: false
@@ -909,14 +942,16 @@
 
     // The post's own word spacing, read before post.css narrows it.
     spacings = paragraphs.map(function (paragraph) {
-      var spacing = paragraph.style.getPropertyValue('--natural-word-spacing') ||
-        window.getComputedStyle(paragraph).wordSpacing;
+      var style = window.getComputedStyle(paragraph);
+      var spacing = paragraph.style.getPropertyValue('--natural-word-spacing') || style.wordSpacing;
 
-      return /px$/.test(spacing) ? spacing : '0px';
+      spacing = /px$/.test(spacing) ? parseFloat(spacing) : 0;
+      return [spacing, spacing - SHRINK * parseFloat(style.fontSize)];
     });
 
     paragraphs.forEach(function (paragraph, index) {
-      paragraph.style.setProperty('--natural-word-spacing', spacings[index]);
+      paragraph.style.setProperty('--natural-word-spacing', spacings[index][0] + 'px');
+      paragraph.style.setProperty('--typeset-word-spacing', spacings[index][1] + 'px');
       paragraph.classList.add('typeset-paragraph');
     });
 
