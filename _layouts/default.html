@@ -152,6 +152,16 @@
       onerror="window.postPreparation.noteFailure('mathjax-config')"
     ></script>
     <script
+      src="{{ '/assets/js/hyphenation-en-us.js' | relative_url }}?v={{ asset_version }}"
+      defer
+      onerror="window.postPreparation.noteFailure('hyphenation')"
+    ></script>
+    <script
+      src="{{ '/assets/js/line-breaking.js' | relative_url }}?v={{ asset_version }}"
+      defer
+      onerror="window.postPreparation.noteFailure('line-breaking')"
+    ></script>
+    <script
       src="{{ '/assets/js/main.js' | relative_url }}?v={{ asset_version }}"
       defer
       onerror="window.postPreparation.fail('enhancements')"

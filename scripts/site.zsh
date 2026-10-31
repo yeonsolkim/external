@@ -379,6 +379,7 @@ publish() {
 
   step "validate: tests"
   ruby _tests/test_document_structure.rb >>"$log" 2>&1 || fail "document structure tests failed"
+  ruby _tests/test_post_entry_breaks.rb >>"$log" 2>&1 || fail "entry break tests failed"
   ruby _tests/test_english_annotations.rb >>"$log" 2>&1 || fail "english annotation tests failed"
   ruby _tests/test_tikzcd_renderer.rb >>"$log" 2>&1 || fail "tikzcd renderer tests failed"
   ruby _tests/test_search_metadata.rb >>"$log" 2>&1 || fail "search metadata tests failed"

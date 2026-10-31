@@ -306,6 +306,28 @@ changes the `<h1>` or the post body.
   becomes a nested `<section>` inside that proof. If a matching QED marker is
   missing, the proof-like block is left ungrouped instead of consuming the
   remainder of the post.
+- An inline QED marker is set as amsthm's `\qed` sets it: flush right on the
+  proof's last line, at least `1em` after the last word, and, when the two do
+  not fit, taken to the next line together with that word rather than alone
+  (`assets/css/post.css`). The build drops a space before the span, as `\qed`'s
+  `\unskip` does (`_plugins/post_entry_breaks.rb`), so a space there or none
+  sets the same.
+- Justified text is broken into lines as TeX breaks a paragraph
+  (`assets/js/line-breaking.js`), not a line at a time as the browser does,
+  which leaves wide spaces on a line that a formula or a long word just fails
+  to join. The Knuth–Plass algorithm, with plain TeX's parameters, chooses the
+  breaks of each paragraph and list item together, letting a line's spaces
+  stretch by half their width or shrink by a third, and hyphenating with TeX's
+  American English patterns (`assets/js/hyphenation-en-us.js`, from TeX Live's
+  hyph-utf8). A formula breaks only where MathJax allows it, before a relation
+  or a binary operator, and a statement's label only when it is wider than the
+  column. When no way of breaking keeps every line within TeX's tolerance, the
+  most evenly spaced one is still justified, however loose; a statement's label
+  is set alone on its line only as a last resort, to spare a line spaces some
+  four and a half times their width. The breaks are worked out again when the
+  column changes width; printing, and a browser without
+  `text-wrap-mode`, leave the lines to the browser. The styles that set the
+  chosen lines are in `post.css`.
 - A normal blank line ends a labeled environment when the following block is
   prose. Because Markdown requires blank lines around display math and other
   block structures, one blank line after such a block keeps the following

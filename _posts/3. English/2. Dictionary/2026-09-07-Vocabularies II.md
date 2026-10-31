@@ -7,7 +7,7 @@ title: "Vocabularies II"
 permalink: /dictionary/vocabularies-ii/
 date: 2026-09-07 00:00:00 +0900
 created_at: 2026-09-07 12:58:48 +0900
-last_modified_at: 2026-10-08 10:56:45 +0900
+last_modified_at: 2026-10-30 10:27:41 +0900
 publish: false
 line_indent: false
 ---
@@ -50,3 +50,9 @@ line_indent: false
 
 **in its own right**: deserving recognition or value because of its own qualities, not because of something else.
 **on its own**: happening or existing without help or company: *the door opened on its own.*
+
+**recall**: bring a fact or experience from the past back into one's mind: *he recalled how he felt at the time.*
+**conjure**: call a vivid image to the mind: *"practical science" **conjures up** images of a laboratory filled with people wearing white coats.*
+
+**geology**: the science that deals with the earth's physical structure and substance and its history. 
+**ecology**: the branch of biology that deals with the relations of organisms to one another and to their physical surroundings.

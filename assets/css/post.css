@@ -1,7 +1,8 @@
 .main-content a:hover { text-decoration: none !important; }
 /* --body-text-color is the running text's colour, darkened on phones below. Anything that must
    match the body text takes the variable rather than a copy of its value, so the two cannot
-   drift apart on one device or in dark mode (scripts/dark_mode_css.py inverts the variable). */
+   drift apart on one device or in dark mode (scripts/dark_mode_css.py inverts the variable,
+   and lifts this value to the phones' #e0e0e0 there: 71% white on black reads too faint). */
 .main-content {
 width: 100% !important;
 box-sizing: border-box !important;
@@ -484,6 +485,64 @@ margin-top: 0 !important;
 white-space: normal;
 }
 
+/*
+ * Justified text is broken into lines by line-breaking.js, as TeX breaks a paragraph. Such a
+ * paragraph does not wrap by itself: each line ends at a span whose generated newline is the
+ * break, and text-align-last: justify justifies every line so ended. A line set at its natural
+ * spacing ends with a filler as wide as the room left (--fill), as \parfillskip fills the last
+ * line of a TeX paragraph; a hyphen comes from the stylesheet, so it is not copied with the
+ * text. The spaces start narrower than the post's own (--natural-word-spacing, read before the
+ * paragraph is set) by a third of their width, as far as TeX lets Computer Modern's interword
+ * space shrink (3.33pt less 1.11pt at 10pt): New Computer Modern's roman space is 0.333em, as
+ * Computer Modern's is, so less the post's 0.045em it is 0.288em, and shrinks by 0.096em. A
+ * line can then shrink as well as stretch. A statement's label and the space MathJax leaves at
+ * a formula's breakpoint keep their width. While the script measures, the lines are set flush
+ * left. The lines are worked out for the screen's column; a printed page, of another width,
+ * leaves them to the browser.
+ */
+@media screen {
+  .post-body :is(p, li).typeset-paragraph {
+    text-align: justify;
+    text-align-last: justify;
+    text-wrap-mode: nowrap !important;
+    word-spacing: calc(var(--natural-word-spacing) - 0.096em);
+  }
+
+  .post-body .typeset-paragraph :is(.math-label-anchor, .math-proof-marker, mjx-break) {
+    word-spacing: var(--natural-word-spacing);
+  }
+
+  /* Code and MathJax's breakpoints would wrap by their own white-space. */
+  .post-body .typeset-paragraph :is(code, mjx-break) {
+    text-wrap-mode: nowrap;
+  }
+
+  /* main.js ends a label's line at its gap where the browser breaks there; here the script
+     chooses the breaks. */
+  .post-body .typeset-paragraph .math-label-gap--break {
+    display: inline-block;
+  }
+
+  .post-body.typeset-measuring :is(p, li).typeset-paragraph {
+    text-align: left;
+    text-align-last: left;
+  }
+
+  .post-body .typeset-paragraph .typeset-break::before {
+    content: "\A";
+    white-space: pre;
+  }
+
+  .post-body .typeset-paragraph .typeset-hyphen::before {
+    content: "-";
+  }
+
+  .post-body .typeset-paragraph .typeset-fill {
+    display: inline-block;
+    width: var(--fill);
+  }
+}
+
 /* Each source soft line becomes a real paragraph in the enhanced DOM. */
 .post-body[data-semantic-units="true"] :is(.post-body, .doc-section) > p.semantic-paragraph,
 .post-body[data-semantic-units="true"] > p.semantic-paragraph {
@@ -564,9 +623,48 @@ text-indent: 0;
 text-indent: 1em;
 }
 
+/* The QED symbol is set as amsthm's \qed sets it (\unskip\penalty9999\hbox{}\nobreak\hfill
+   \quad\qedsymbol): flush right on the proof's last line, at least a \quad after the last word,
+   and when the two do not fit, the word goes down to the next line with it rather than the
+   symbol alone. The span's padding keeps the room for the \quad and the symbol (MathJax sets
+   \square and \blacksquare 1.6ex wide), and the word joiner before it allows no break there,
+   after a word or a formula alike. The symbol is placed against the paragraph's right edge,
+   inside the paragraph, so the line of space below the proof stays below the symbol.
+   post_entry_breaks.rb drops a space before the span, as \unskip does. */
+.post-body :is(p, li):has(> .qed) {
+position: relative;
+}
+
 .post-body .qed {
-float: right;
-margin-left: 1rem;
+padding-left: calc(1em + 1.6ex);
+}
+
+.post-body .qed::before {
+content: "\2060";
+}
+
+/* The symbol takes its height from this box on the baseline: placed from the top of the line,
+   it would ride up on a line a formula makes taller. The box needs a width, or its line has no
+   room and the symbol drops to a second line of the box; the margin gives the width back, so
+   the paragraph's line is no longer for it. text-indent would take the room again. */
+.post-body .qed > .math-inline {
+display: inline-block;
+width: 1em;
+margin-left: -1em;
+text-indent: 0;
+}
+
+.post-body .qed > .math-inline::before {
+content: "\2060";
+}
+
+/* top: auto keeps the symbol at its place in the line; the margin is the optical lift every
+   inline formula gets (below). */
+.post-body .qed > .math-inline > mjx-container {
+position: absolute;
+top: auto;
+right: 0;
+margin-top: -0.007em;
 }
 
 .post-body .math-label-anchor {
@@ -861,7 +959,7 @@ figcaption {
 /* Dark mode: generated by scripts/dark_mode_css.py from the colours above; rerun it after editing them. */
 @media (prefers-color-scheme: dark) {
   .main-content {
-    --body-text-color: #ffffffb5;
+    --body-text-color: #e0e0e0;
     color: var(--body-text-color);
   }
   .post-title {

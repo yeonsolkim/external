@@ -1205,10 +1205,22 @@
     });
   }
 
+  // TeX's line breaking for the justified text (line-breaking.js), once the units are built
+  // and the fonts are in; the post is shown only after it.
+  function typesetParagraphs() {
+    var postBody = getPostBody();
+
+    if (!postBody || !window.lineBreaking) {
+      return undefined;
+    }
+
+    return window.lineBreaking.typeset(postBody);
+  }
+
   function initPageEnhancements() {
     initMathReferenceLinks();
     initPostTypographySpacing();
-    return initSemanticPostUnits().then(function () {
+    return initSemanticPostUnits().then(typesetParagraphs).then(function () {
       settleHashScroll();
     });
   }

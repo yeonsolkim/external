@@ -60,7 +60,7 @@ module ExternalPostEntryBreaks
         next
       end
 
-      output << annotate_inline_environment_end(line, inline_math)
+      output << annotate_inline_environment_end(unskip_qed(line), inline_math)
     end
 
     output << blank_lines.join
@@ -84,6 +84,13 @@ module ExternalPostEntryBreaks
     return unless kind
 
     output << "\n#{ENVIRONMENT_END_MARKER.call(kind)}\n"
+  end
+
+  # amsthm's \qed begins with \unskip, and so does a QED span: a space before it would be a
+  # break that sets the symbol alone on the next line (post.css ties it to the word before).
+  # A span that opens its line keeps the indentation before it.
+  def unskip_qed(line)
+    line.gsub(/(?<=\S)[ \t]+(?=<span\b[^>]*\bclass=(['"])[^'"]*\bqed\b)/i, "")
   end
 
   def annotate_inline_environment_end(line, inline_math = [])

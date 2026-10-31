@@ -31,7 +31,11 @@ NAMED = {"black": (0, 0, 0), "white": (255, 255, 255), "red": (255, 0, 0), "blue
 # Inverted colours adjusted for the black page, hue unchanged: pure blue is too dark to read
 # there and is lifted, and the rule grey (--hr-color in style.scss, #d3d3d3 -> #2c2c2c) keeps
 # the fainter #202020 dark mode has always drawn the page dividers in (#2c2c2c at 74% opacity).
-ADJUSTED = {"#0000ff": "#7070ff", "#2c2c2c": "#202020"}
+# The posts' running text (--body-text-color in post.css), 71% black, is #4a4a4a on white; 71%
+# white is #b5b5b5 on black, which reads far fainter (APCA Lc 62 against 90), as light text on
+# black needs more lightness for the same contrast. It takes the phones' #e0e0e0 (Lc 88). A key
+# with an alpha adjusts that colour only, and its value replaces the alpha as well.
+ADJUSTED = {"#0000ff": "#7070ff", "#2c2c2c": "#202020", "#ffffffb5": "#e0e0e0"}
 
 COLOR_LITERAL = re.compile(r"#[0-9a-fA-F]{3,8}\b|rgba?\([^)]*\)|\b(?:" + "|".join(NAMED) + r")\b")
 COLOR_PROPERTY = re.compile(r"color|background|border|outline|shadow|^fill$|^stroke$")
@@ -60,7 +64,7 @@ def dark_color(match: re.Match[str]) -> str:
     else:
         rgb, alpha = NAMED[literal.lower()], ""
     hex_color = "#" + "".join(f"{c:02x}" for c in invert_lightness(rgb))
-    return ADJUSTED.get(hex_color, hex_color) + alpha
+    return ADJUSTED.get(hex_color + alpha.lower()) or ADJUSTED.get(hex_color, hex_color) + alpha
 
 
 def rules(css: str, media: str | None = None):
