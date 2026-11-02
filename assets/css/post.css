@@ -100,7 +100,7 @@ article.post > .post-body > :first-child {
 
 .post-body .english-annotation,
 .post-body .english-annotation strong { 
-  color: #9c9c9c !important;
+  color: #6e6e6ebf !important;
 }
 
 .post-body strong,
@@ -985,7 +985,7 @@ figcaption {
   }
   .post-body .english-annotation,
   .post-body .english-annotation strong {
-    color: #636363 !important;
+    color: #919191bf !important;
   }
   .post-body strong,
   .post-body b {

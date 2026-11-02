@@ -3,16 +3,17 @@
 # "Site - Publish" (~/Library/Services), which only call this file:
 #
 #   zsh scripts/site.zsh preview   Catch up with origin (CI's narration commits), sync the post
-#                                  front matter, check the spelling of the posts, rebuild,
-#                                  restart `jekyll serve` on :4000.
+#                                  front matter, check the spelling of the posts, regenerate the
+#                                  dark-mode CSS (scripts/dark_mode_css.py), rebuild, restart
+#                                  `jekyll serve` on :4000.
 #                                  Costs nothing and commits nothing.
 #   zsh scripts/site.zsh publish   Catch up with origin, sync the front matter, carry over the
 #                                  post URLs that changed (scripts/move_post_urls.py), check the
-#                                  spelling (a word not reported before stops it), validate (a
-#                                  build into a scratch directory + the tests), commit what
-#                                  changed with a summarised message (scripts/commit_summary.py),
-#                                  push, and follow the CI run in the background. The local
-#                                  server is left alone.
+#                                  spelling (a word not reported before stops it), regenerate
+#                                  the dark-mode CSS, validate (a build into a scratch directory
+#                                  + the tests), commit what changed with a summarised message
+#                                  (scripts/commit_summary.py), push, and follow the CI run in
+#                                  the background. The local server is left alone.
 #   zsh scripts/site.zsh follow SHA  (started by publish) Wait for the CI run of SHA, report it,
 #                                  and pull the narration commit CI makes back.
 #
@@ -229,6 +230,18 @@ start_server() {
   return 1
 }
 
+# -- dark mode ---------------------------------------------------------------------------------
+# The dark-mode block at the end of each stylesheet is generated from the colours above it
+# (scripts/dark_mode_css.py), so a colour edited by hand takes its dark twin before the build.
+# Returns 1 when the script fails.
+dark_mode_css() {
+  step "dark mode CSS"
+  local found
+  found=$(python3 scripts/dark_mode_css.py 2>>"$log") || { step_done "failed"; return 1; }
+  print -r -- "$found" >>"$log"
+  step_done "$(print -r -- "$found" | /usr/bin/grep -c '^updated ') stylesheet(s) updated"
+}
+
 # -- build -------------------------------------------------------------------------------------
 build_output="$cache_dir/build.out"
 
@@ -288,6 +301,8 @@ preview() {
     notify "Check the spelling: $typo"
     show "$spelling_page"
   fi
+
+  dark_mode_css || notes+=("dark mode CSS not regenerated — see site.log")
 
   step "stop server"; stop_server; step_done
 
@@ -370,6 +385,8 @@ publish() {
   local typo
   typo=$(spelling_report "Publish stopped before committing: fix these, or publish again to keep them.")
   [[ -n "$typo" ]] && fail "check the spelling: $typo. Fix it, or publish again to keep it." "$spelling_page"
+
+  dark_mode_css || fail "could not regenerate the dark-mode CSS — see site.log"
 
   step "validate: build into $publish_site"
   local built=0

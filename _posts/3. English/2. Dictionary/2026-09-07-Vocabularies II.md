@@ -7,7 +7,7 @@ title: "Vocabularies II"
 permalink: /dictionary/vocabularies-ii/
 date: 2026-09-07 00:00:00 +0900
 created_at: 2026-09-07 12:58:48 +0900
-last_modified_at: 2026-10-30 10:27:41 +0900
+last_modified_at: 2026-11-01 14:59:06 +0900
 publish: false
 line_indent: false
 ---
@@ -56,3 +56,11 @@ line_indent: false
 
 **geology**: the science that deals with the earth's physical structure and substance and its history. 
 **ecology**: the branch of biology that deals with the relations of organisms to one another and to their physical surroundings.
+
+**interpret**: explain the meaning of information or words.
+
+**underpinning** (v.): a set of ideas or motives that form the basis for something: *the theoretical **underpinning for** free-market economics.*
+
+**discipline**<sup>2</sup> (n.): controlled behavior resulting from training.
+
+**threshold** /θreʃ.hold/ (n.): the magnitude or intensity that must be exceeded for a certain phenomenon or result to occur: *everyone has a different pain threshold.*

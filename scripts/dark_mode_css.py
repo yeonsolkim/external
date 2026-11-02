@@ -7,8 +7,9 @@ Pure red stays pure red, dark grey becomes light grey, and images are untouched.
 
 Every rule that sets a colour is repeated inside `@media (prefers-color-scheme: dark)` with
 the inverted colour, in source order, so the cascade resolves the same way in both modes.
-Rerun this after changing a colour in one of the stylesheets. With --check it changes nothing
-and exits 1 if a stored block differs from what it would generate.
+Preview and Publish (scripts/site.zsh) rerun this before they build; run it by hand after
+changing a colour to see the result sooner. With --check it changes nothing and exits 1 if a
+stored block differs from what it would generate.
 """
 from __future__ import annotations
 

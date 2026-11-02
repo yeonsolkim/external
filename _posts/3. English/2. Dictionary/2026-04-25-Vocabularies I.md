@@ -7,7 +7,7 @@ title: "Vocabularies I"
 permalink: /dictionary/vocabularies-i/
 date: 2026-04-25 00:00:00 +0900
 created_at: 2026-08-10 15:41:50 +0900
-last_modified_at: 2026-10-09 18:14:12 +0900
+last_modified_at: 2026-11-01 13:15:14 +0900
 publish: false
 line_indent: false
 ---
@@ -111,7 +111,7 @@ line_indent: false
 <b>revoke</b>: put an end to a permission or license.
 
 <b>practice</b><sup>2</sup>: the *actual* application of an idea.
-<b>discipline</b> /ˈdisəsplin/: the practice of training people to obey rules.
+<b>discipline</b><sup>1</sup> /ˈdisəsplin/: the practice<sup>2</sup> of training people to obey rules.
 <b>enforce</b>: compel<sup>2</sup> observance of a law or rule.
 <b>compel</b><sup>1</sup>: force someone to do something.
 <b>compel</b><sup>2</sup>: bring about something by the use of force.

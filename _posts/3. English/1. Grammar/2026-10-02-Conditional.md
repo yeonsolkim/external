@@ -7,7 +7,7 @@ title: "Conditional"
 permalink: /grammar/conditional/
 date: 2026-10-02 00:00:00 +0900
 created_at: 2026-05-23 17:17:06 +0900
-last_modified_at: 2026-10-21 16:33:33 +0900
+last_modified_at: 2026-11-01 12:44:36 +0900
 publish: false
 source_note: The presentation in this section draws in part on Huddleston, Pullum, and Reynolds, *A Student’s Introduction to English Grammar*, 2nd ed. (2021).
 ---
