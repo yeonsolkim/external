@@ -15,9 +15,23 @@ module ExternalTikzcdRenderer
   # the same way makes 10pt equal MathJax's em at every font size.
   MATHJAX_X_HEIGHT = 0.442
   DISPLAY_MATH_PATTERN = /\$\$(?<body>.*?)\$\$/m
-  # One tikzcd environment and nothing else: the body may not end another one.
-  TIKZCD_ENVIRONMENT_PATTERN = /\A\s*(?<environment>\\begin\s*\{tikzcd\}(?:\[[^\]\r\n]*\])?(?:(?!\\end\s*\{tikzcd\}).)*\\end\s*\{tikzcd\})\s*\z/m
-  TIKZCD_BEGIN_PATTERN = /\\begin\s*\{tikzcd\}/
+  # One diagram environment and nothing else: the body may not end another one.
+  TIKZ_ENVIRONMENT_PATTERN = /\A\s*(?<environment>\\begin\s*\{(?<name>tikzcd|tikzpicture)\}(?:\[[^\]\r\n]*\])?(?:(?!\\end\s*\{\k<name>\}).)*\\end\s*\{\k<name>\})\s*\z/m
+  TIKZ_BEGIN_PATTERN = /\\begin\s*\{(?:tikzcd|tikzpicture)\}/
+  HASSE_PATTERN = /\\begin\s*\{tikzpicture\}\s*\[[^\]]*\bhasse\b/
+  # What every diagram's document adds to TikZ. A post has no preamble of its own, and the
+  # `hasse` style gives a tikzpicture what tikz-cd gives its diagrams: it sits centred on the
+  # math axis, here 0.25em above the baseline, so it lines up with the math around it. The
+  # Obsidian plugin's main.js defines the same; test_tikzcd_renderer.rb keeps them together.
+  TIKZ_PREAMBLE = <<~'LATEX'.strip
+    \usetikzlibrary{positioning}
+    \tikzset{
+      hasse/.style={
+        baseline={([yshift=-.25em]current bounding box.center)},
+        dot/.style={circle, fill, inner sep=0pt, minimum size=3pt},
+      },
+    }
+  LATEX
 
   class RenderError < StandardError; end
 
@@ -33,7 +47,7 @@ module ExternalTikzcdRenderer
     end
 
     def render(content)
-      return content unless content&.include?("tikzcd")
+      return content unless content&.include?("tikz")
 
       lines = content.lines
       output = +""
@@ -49,7 +63,7 @@ module ExternalTikzcdRenderer
           next
         end
 
-        output << render_display_tikzcd(markdown)
+        output << render_display_tikz(markdown)
         markdown.clear
 
         closing_index = find_closing_fence(lines, index + 1, opening[:fence])
@@ -65,7 +79,7 @@ module ExternalTikzcdRenderer
         index = closing_index + 1
       end
 
-      output << render_display_tikzcd(markdown)
+      output << render_display_tikz(markdown)
       output
     end
 
@@ -91,16 +105,16 @@ module ExternalTikzcdRenderer
       end
     end
 
-    def render_display_tikzcd(markdown)
+    def render_display_tikz(markdown)
       markdown.gsub(DISPLAY_MATH_PATTERN) do |display_math|
         body = Regexp.last_match(:body)
         # The indentation of the line the formula opens on, as in a list item.
         indentation = Regexp.last_match.pre_match.rpartition("\n").last[/\A[ \t]*/]
-        environment_match = body.match(TIKZCD_ENVIRONMENT_PATTERN)
+        environment_match = body.match(TIKZ_ENVIRONMENT_PATTERN)
 
         if environment_match
           render_diagram(environment_match[:environment], indentation)
-        elsif body.match?(TIKZCD_BEGIN_PATTERN)
+        elsif body.match?(TIKZ_BEGIN_PATTERN)
           render_diagram(display_formula(body), indentation)
         else
           display_math
@@ -129,7 +143,7 @@ module ExternalTikzcdRenderer
     def render_diagram(environment, indentation = "")
       @diagram_index += 1
       svg, digest = cached_svg(environment)
-      svg = prepare_inline_svg(svg, digest, @diagram_index)
+      svg = prepare_inline_svg(svg, digest, @diagram_index, diagram_title(environment))
 
       <<~HTML.gsub(/^(?=.)/) { indentation }
 
@@ -183,7 +197,7 @@ module ExternalTikzcdRenderer
       end
     rescue Errno::ENOENT => error
       raise RenderError,
-            "#{error.message}. Install a TeX distribution providing latex and dvisvgm to render tikzcd blocks."
+            "#{error.message}. Install a TeX distribution providing latex and dvisvgm to render TikZ diagrams."
     end
 
     def run_command(command, directory, label)
@@ -217,9 +231,9 @@ module ExternalTikzcdRenderer
     #
     # A lone diagram is typeset as its own tikzpicture. A display formula has to
     # stay on one page, which the tikz option (a page per tikzpicture) would
-    # prevent, and may use amsmath's \text.
+    # prevent.
     def latex_document(environment)
-      formula = !environment.match?(TIKZCD_ENVIRONMENT_PATTERN)
+      formula = !environment.match?(TIKZ_ENVIRONMENT_PATTERN)
       <<~LATEX
         \\def\\pgfsysdriver{pgfsys-dvisvgm.def}
         \\documentclass[#{"tikz," unless formula}border=0pt]{standalone}
@@ -231,7 +245,9 @@ module ExternalTikzcdRenderer
         \\DeclareFontShape{OMS}{cmsy}{m}{n}{<->cmsy10}{}
         \\DeclareFontShape{OMS}{cmsy}{b}{n}{<->cmbsy10}{}
         \\DeclareMathSizes{10}{10}{7.07}{5}
-        #{"\\usepackage{amsmath}\n" if formula}\\usepackage{tikz-cd}
+        \\usepackage{amsmath,amssymb}
+        \\usepackage{tikz-cd}
+        #{TIKZ_PREAMBLE}
         \\makeatletter
         \\def\\pgfsys@papersize#1#2{}
         \\let\\tikzcd@typesetpicturebox\\pgfsys@typesetpicturebox
@@ -246,7 +262,13 @@ module ExternalTikzcdRenderer
       LATEX
     end
 
-    def prepare_inline_svg(svg, digest, index)
+    def diagram_title(environment)
+      return "Hasse diagram" if environment.match?(HASSE_PATTERN)
+
+      environment.include?("{tikzcd}") ? "Commutative diagram" : "Diagram"
+    end
+
+    def prepare_inline_svg(svg, digest, index, title)
       svg = svg.sub(/\A\s*<\?xml[^>]*>\s*/m, "")
       svg = svg.sub(/\A\s*<!DOCTYPE.*?>\s*/m, "")
 
@@ -259,7 +281,7 @@ module ExternalTikzcdRenderer
 
         <<~SVG.chomp
           <svg class="commutative-diagram__svg" role="img" aria-labelledby="#{title_id}"#{attributes}>
-          <title id="#{title_id}">Commutative diagram</title>
+          <title id="#{title_id}">#{title}</title>
         SVG
       end.strip
     end
@@ -326,6 +348,6 @@ if defined?(Jekyll)
 
     item.content = ExternalTikzcdRenderer::Processor.new(site, item).render(item.content)
   rescue ExternalTikzcdRenderer::RenderError => error
-    raise Jekyll::Errors::FatalException, "TikZ-cd rendering failed: #{error.message}"
+    raise Jekyll::Errors::FatalException, "TikZ rendering failed: #{error.message}"
   end
 end

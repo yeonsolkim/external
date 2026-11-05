@@ -9,9 +9,22 @@ const { promisify } = require("node:util");
 const execFileAsync = promisify(execFile);
 const CACHE_VERSION = "2";
 const SVG_SCALE = 1.2;
-// One tikzcd environment and nothing else: the body may not end another one.
-const TIKZCD_ENVIRONMENT_PATTERN =
-  /^\s*(\\begin\s*\{tikzcd\}(?:\[[^\]\r\n]*\])?(?:(?!\\end\s*\{tikzcd\})[\s\S])*\\end\s*\{tikzcd\})\s*$/;
+// One diagram environment and nothing else: the body may not end another one.
+const TIKZ_ENVIRONMENT_PATTERN =
+  /^\s*(\\begin\s*\{(tikzcd|tikzpicture)\}(?:\[[^\]\r\n]*\])?(?:(?!\\end\s*\{\2\})[\s\S])*\\end\s*\{\2\})\s*$/;
+const TIKZ_BEGIN_PATTERN = /\\begin\s*\{(?:tikzcd|tikzpicture)\}/;
+const HASSE_PATTERN = /\\begin\s*\{tikzpicture\}\s*\[[^\]]*\bhasse\b/;
+// What every diagram's document adds to TikZ. The site's
+// _plugins/tikzcd_renderer.rb defines the same, and its tests keep them together.
+const TIKZ_PREAMBLE = String.raw`
+\usetikzlibrary{positioning}
+\tikzset{
+  hasse/.style={
+    baseline={([yshift=-.25em]current bounding box.center)},
+    dot/.style={circle, fill, inner sep=0pt, minimum size=3pt},
+  },
+}
+`;
 // Obsidian renders math with MathJax 3's CHTML output, which differs from the
 // site's SVG output in two ways that matter for \whitestar:
 // - it measures the system-font star at full size and sets that width in px,
@@ -74,10 +87,10 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
       .split("\n")
       .slice(section.lineStart, section.lineEnd + 1)
       .join("\n");
-    const sourceHasTikzcd = sectionText?.includes("\\begin{tikzcd}");
+    const sourceHasTikz = sectionText && TIKZ_BEGIN_PATTERN.test(sectionText);
     let environments = [];
 
-    if (sourceHasTikzcd) {
+    if (sourceHasTikz) {
       const displayBlocks = this.findDisplayMathBlocks(sectionText);
       environments = displayBlocks
         .map((block) => block.environment)
@@ -98,8 +111,8 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
     // the same stage. If core MathJax has already produced an error node,
     // recover the original environment from that node and replace it.
     if (
-      this.replaceRenderedTikzcdErrors(el, environments) > 0 ||
-      !sourceHasTikzcd
+      this.replaceRenderedTikzErrors(el, environments) > 0 ||
+      !sourceHasTikz
     ) {
       return;
     }
@@ -108,7 +121,7 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
     if (!view?.MutationObserver) return;
 
     const observer = new view.MutationObserver(() => {
-      if (this.replaceRenderedTikzcdErrors(el, environments) > 0) {
+      if (this.replaceRenderedTikzErrors(el, environments) > 0) {
         observer.disconnect();
       }
     });
@@ -123,21 +136,21 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
     let match;
 
     while ((match = displayMathPattern.exec(markdown)) !== null) {
-      blocks.push({ environment: this.tikzcdSource(match[1]) });
+      blocks.push({ environment: this.tikzSource(match[1]) });
     }
 
     return blocks;
   }
 
-  // What a display math body is typeset from: its tikzcd environment when that
+  // What a display math body is typeset from: its diagram environment when that
   // is all it holds, or else one display formula setting the diagrams among
   // the other math, as in
   //   \begin{tikzcd}...\end{tikzcd} \quad \text{or} \quad \begin{tikzcd}...\end{tikzcd}.
   // Blank lines are dropped from a formula: TeX would end it there.
-  tikzcdSource(body) {
-    const environmentMatch = body.match(TIKZCD_ENVIRONMENT_PATTERN);
+  tikzSource(body) {
+    const environmentMatch = body.match(TIKZ_ENVIRONMENT_PATTERN);
     if (environmentMatch) return environmentMatch[1];
-    if (!/\\begin\s*\{tikzcd\}/.test(body)) return null;
+    if (!TIKZ_BEGIN_PATTERN.test(body)) return null;
 
     return `$\\displaystyle\n${body.trim().replace(/\n\s*\n/g, "\n")}\n$`;
   }
@@ -152,7 +165,7 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
     return [...new Set(elements)];
   }
 
-  replaceRenderedTikzcdErrors(el, sourceEnvironments = []) {
+  replaceRenderedTikzErrors(el, sourceEnvironments = []) {
     const selector =
       "mjx-merror, mjx-container, .math-block, .math, [data-math]";
     const candidates = [];
@@ -163,7 +176,7 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
     const matches = candidates.filter(
       (candidate) =>
         !candidate.closest?.(".tikzcd-preview") &&
-        this.candidateTikzcdSource(candidate) !== null
+        this.candidateTikzSource(candidate) !== null
     );
 
     // Keep only the innermost match so one failed equation is replaced once.
@@ -177,7 +190,7 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
     let replaced = 0;
     innermost.forEach((candidate, index) => {
       const environment =
-        sourceEnvironments[index] || this.candidateTikzcdSource(candidate);
+        sourceEnvironments[index] || this.candidateTikzSource(candidate);
       if (!environment) return;
 
       const target =
@@ -194,13 +207,13 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
 
   // A math element holds its TeX as text until MathJax replaces it, and
   // MathJax shows the TeX of a formula it cannot typeset.
-  candidateTikzcdSource(candidate) {
+  candidateTikzSource(candidate) {
     for (const text of [
       candidate.getAttribute?.("data-math"),
       candidate.textContent,
       candidate.getAttribute?.("aria-label"),
     ]) {
-      const source = text ? this.tikzcdSource(text) : null;
+      const source = text ? this.tikzSource(text) : null;
       if (source) return source;
     }
 
@@ -228,7 +241,7 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
     const viewport = el.createDiv({ cls: "tikzcd-preview__viewport" });
     const status = viewport.createDiv({
       cls: "tikzcd-preview__status",
-      text: "Rendering commutative diagram…",
+      text: "Rendering diagram…",
     });
 
     try {
@@ -236,7 +249,9 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
       const { svg, digest } = await this.cachedSvg(source);
 
       status.remove();
-      viewport.appendChild(this.prepareSvg(svg, digest, el.ownerDocument));
+      viewport.appendChild(
+        this.prepareSvg(svg, digest, this.diagramTitle(source), el.ownerDocument)
+      );
     } catch (error) {
       console.error("TikZ-cd preview failed", error);
 
@@ -347,14 +362,15 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
 
   // A lone diagram is typeset as its own tikzpicture. A display formula has to
   // stay on one page, which the tikz option (a page per tikzpicture) would
-  // prevent, and may use amsmath's \text.
+  // prevent.
   latexDocument(environment) {
-    const formula = !TIKZCD_ENVIRONMENT_PATTERN.test(environment);
+    const formula = !TIKZ_ENVIRONMENT_PATTERN.test(environment);
     return [
       "\\def\\pgfsysdriver{pgfsys-dvisvgm.def}",
       `\\documentclass[${formula ? "" : "tikz,"}border=2pt]{standalone}`,
-      ...(formula ? ["\\usepackage{amsmath}"] : []),
+      "\\usepackage{amsmath,amssymb}",
       "\\usepackage{tikz-cd}",
+      TIKZ_PREAMBLE.trim(),
       "\\begin{document}",
       environment,
       "\\end{document}",
@@ -362,7 +378,13 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
     ].join("\n");
   }
 
-  prepareSvg(source, digest, ownerDocument) {
+  diagramTitle(environment) {
+    if (HASSE_PATTERN.test(environment)) return "Hasse diagram";
+
+    return environment.includes("{tikzcd}") ? "Commutative diagram" : "Diagram";
+  }
+
+  prepareSvg(source, digest, titleText, ownerDocument) {
     const Parser = ownerDocument.defaultView.DOMParser;
     const parsed = new Parser().parseFromString(source, "image/svg+xml");
     if (
@@ -382,7 +404,7 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
     svg.setAttribute("role", "img");
     const title = parsed.createElementNS("http://www.w3.org/2000/svg", "title");
     title.id = `${prefix}title`;
-    title.textContent = "Commutative diagram";
+    title.textContent = titleText;
     svg.prepend(title);
     svg.setAttribute("aria-labelledby", title.id);
 

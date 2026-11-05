@@ -2,13 +2,15 @@
 /* --body-text-color is the running text's colour, darkened on phones below. Anything that must
    match the body text takes the variable rather than a copy of its value, so the two cannot
    drift apart on one device or in dark mode (scripts/dark_mode_css.py inverts the variable,
-   and lifts this value to the phones' #e0e0e0 there: 71% white on black reads too faint). */
+   and lifts this value to the phones' #e0e0e0 there: its inverse, #b5b5b5, reads too faint on
+   black). It has to stay opaque: a translucent colour shows darker wherever a glyph's stroke
+   and fill overlap, and at the joints of the delimiters MathJax builds from pieces. */
 .main-content {
 width: 100% !important;
 box-sizing: border-box !important;
 word-wrap: break-word;
 line-height: 1.3;
---body-text-color: #000000b5;
+--body-text-color: #4a4a4a;
 color: var(--body-text-color);
 }
 
@@ -229,11 +231,13 @@ overflow-y: hidden;
 text-align: center;
 }
 
+/*
+ * The width and height come from the attributes. Safari rounds the x-height up
+ * for an SVG sized with `width: auto`, which makes the diagram up to 7% too big.
+ */
 .post-body .commutative-diagram__svg {
 display: block;
-width: auto;
 max-width: none;
-height: auto;
 margin: 0 auto;
 /*
  * Glyph stroke per em; tikzcd_renderer.rb scales it to each font size.
@@ -251,7 +255,9 @@ stroke: currentColor;
 paint-order: stroke fill;
 }
 
-.post-body .commutative-diagram__svg path[fill="none"] {
+/* The groups at the default width of TikZ and of tikz-cd; a line with a width of its own sits in a group of that width. */
+.post-body .commutative-diagram__svg [stroke-width="0.4"],
+.post-body .commutative-diagram__svg [stroke-width="0.39998"] {
 stroke-width: 0.33px;
 }
 

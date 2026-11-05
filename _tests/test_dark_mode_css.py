@@ -55,9 +55,9 @@ class Check(unittest.TestCase):
 
 
 class Adjusted(unittest.TestCase):
-    def test_a_key_with_an_alpha_adjusts_that_colour_only(self):
-        # The posts' 71% black text is lifted on the black page; other blacks still just invert.
-        block = dark.dark_block(".a { color: #000000b5; }\n.b { color: #000000; }\n.c { color: #00000091; }\n")
+    def test_the_running_text_is_lifted_and_other_colours_just_invert(self):
+        # Its inverse, #b5b5b5, reads too faint on the black page.
+        block = dark.dark_block(".a { color: #4a4a4a; }\n.b { color: #000000; }\n.c { color: #00000091; }\n")
         self.assertIn("color: #e0e0e0;", block)
         self.assertIn("color: #ffffff;", block)
         self.assertIn("color: #ffffff91;", block)

@@ -37,7 +37,7 @@ module ExternalInlineMathPreprocessor
         output << line
       elsif opening_math_block?(line)
         output << line
-        math_block = true unless closing_math_block?(line, 2)
+        math_block = true unless closing_math_block?(line, line.index("$$") + 2)
       else
         output << protect_inline_code_segments(line, placeholders)
       end
@@ -181,8 +181,9 @@ module ExternalInlineMathPreprocessor
     line.match?(/\A {0,3}#{marker}{#{fence.length},}\s*\z/)
   end
 
+  # At any indentation: in a list item, even the block's first line is indented.
   def opening_math_block?(line)
-    line.match?(/\A {0,3}\$\$/)
+    line.match?(/\A[ \t]*\$\$/)
   end
 
   def closing_math_block?(line, start_index = 0)

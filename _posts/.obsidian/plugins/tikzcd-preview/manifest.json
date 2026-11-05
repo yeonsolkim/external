@@ -1,9 +1,9 @@
 {
   "id": "tikzcd-preview",
   "name": "TikZ-cd Preview",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "minAppVersion": "1.0.0",
-  "description": "Render tikzcd diagrams with local TeX and register shared MathJax macros.",
+  "description": "Render tikzcd and tikzpicture diagrams with local TeX and register shared MathJax macros.",
   "author": "Yeonsol Kim",
   "isDesktopOnly": true
 }

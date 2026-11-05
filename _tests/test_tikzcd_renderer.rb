@@ -10,6 +10,7 @@
 
 require "kramdown"
 require "kramdown-parser-gfm"
+require_relative "../_plugins/inline_math_preprocessor"
 require_relative "../_plugins/tikzcd_renderer"
 
 $failures = 0
@@ -28,9 +29,15 @@ rescue StandardError => e
 end
 
 class StubProcessor < ExternalTikzcdRenderer::Processor
+  # What LaTeX would have been given.
+  def environments
+    @environments ||= []
+  end
+
   private
 
   def cached_svg(environment)
+    environments << environment
     svg = %(<svg width="20pt" height="10pt" viewBox="0 0 20 10">\n<path d="M0 5H20"/>\n</svg>)
     [svg, Digest::SHA256.hexdigest(environment)]
   end
@@ -40,9 +47,23 @@ Site = Struct.new(:config, :source)
 Item = Struct.new(:relative_path)
 
 # Jekyll's kramdown settings: GFM input, its default, and the site's math engine.
+def processor
+  StubProcessor.new(Site.new({}, Dir.pwd), Item.new("test.md"))
+end
+
 def html(markdown)
-  rendered = StubProcessor.new(Site.new({}, Dir.pwd), Item.new("test.md")).render(markdown)
-  Kramdown::Document.new(rendered, input: "GFM", hard_wrap: false, math_engine: "mathjax").to_html
+  Kramdown::Document.new(processor.render(markdown), input: "GFM", hard_wrap: false, math_engine: "mathjax").to_html
+end
+
+def title(markdown)
+  html(markdown)[%r{<title[^>]*>(.*?)</title>}, 1]
+end
+
+# The diagrams of a page, as the build gets them: after the inline-math step.
+def environments_after_inline_math(markdown)
+  renderer = processor
+  renderer.render(ExternalInlineMathPreprocessor.protect(markdown).first)
+  renderer.environments
 end
 
 def indent(block, spaces)
@@ -85,10 +106,34 @@ DIAGRAMS_AMONG_MATH = <<~'MD'
   $$
 MD
 
+PICTURE = <<~'MD'
+  $$
+  \begin{tikzpicture}
+  \node (a) at (0,0) {$a$};
+  \end{tikzpicture}
+  $$
+MD
+
+HASSE_DIAGRAM = PICTURE.sub("{tikzpicture}", "{tikzpicture}[hasse]")
+
+PICTURES_AMONG_MATH = <<~'MD'
+  $$
+  \begin{tikzpicture}[hasse]
+  \node (a) at (0,0) {$a$};
+  \end{tikzpicture}
+  \quad \text{and} \quad
+  \begin{tikzpicture}[hasse]
+  \node (b) at (0,0) {$b$};
+  \end{tikzpicture}
+  $$
+MD
+
 puts "list items"
 { "a display formula" => DIAGRAM,
   "a fenced block" => FENCED_DIAGRAM,
-  "a formula with diagrams among other math" => DIAGRAMS_AMONG_MATH }.each do |form, block|
+  "a formula with diagrams among other math" => DIAGRAMS_AMONG_MATH,
+  "a tikzpicture" => PICTURE,
+  "a formula with tikzpictures among other math" => PICTURES_AMONG_MATH }.each do |form, block|
   output = html(list_around(block))
   check("#{form} in an item stays in that item") { figure_in_item?(output, 2) }
   check("#{form} in an item does not restart the list") do
@@ -107,6 +152,44 @@ top = html("Text.\n\n#{DIAGRAM}\nMore text.\n")
 check("a diagram between paragraphs stays a block of its own") do
   top.match?(/^<figure class="commutative-diagram"/) && !top.include?("<pre") &&
     top.scan("<p>").size == 2
+end
+check("a tikzpicture is rendered in a page that has no tikzcd") do
+  html("Text.\n\n#{PICTURE}\nMore text.\n").match?(/^<figure class="commutative-diagram"/)
+end
+check("a tikzpicture's options may run over several lines") do
+  picture = "\\begin{tikzpicture}[\n  scale=.7\n]\n\\end{tikzpicture}"
+  environments_after_inline_math("$$\n#{picture}\n$$\n") == [picture]
+end
+
+puts "titles"
+check("a tikzcd diagram is a commutative diagram") { title(DIAGRAM) == "Commutative diagram" }
+check("a tikzpicture is a diagram") { title(PICTURE) == "Diagram" }
+check("the hasse style makes it a Hasse diagram") { title(HASSE_DIAGRAM) == "Hasse diagram" }
+check("the hasse style may sit among other options") do
+  title(PICTURE.sub("{tikzpicture}", "{tikzpicture}[scale=.7, hasse]")) == "Hasse diagram"
+end
+check("pictures among other math keep the style's title") { title(PICTURES_AMONG_MATH) == "Hasse diagram" }
+
+puts "math in node text"
+[0, 3, 4, 5].each do |spaces|
+  check("it reaches LaTeX from a block indented #{spaces} spaces") do
+    markdown = "1. item\n\n#{indent(PICTURE, spaces)}\nAfter $b$.\n"
+    environments_after_inline_math(markdown).first&.include?("{$a$}")
+  end
+end
+
+puts "documents"
+check("a lone tikzpicture is typeset as its own picture") do
+  processor.send(:latex_document, "\\begin{tikzpicture}\n\\end{tikzpicture}").include?("[tikz,border=0pt]")
+end
+check("two pictures in a formula stay on one page") do
+  renderer = processor
+  renderer.render(PICTURES_AMONG_MATH)
+  !renderer.send(:latex_document, renderer.environments.first).include?("[tikz,")
+end
+check("the Obsidian plugin adds to TikZ what the site's documents add") do
+  File.read(File.expand_path("../_posts/.obsidian/plugins/tikzcd-preview/main.js", __dir__))
+      .include?("String.raw`\n#{ExternalTikzcdRenderer::TIKZ_PREAMBLE}\n`")
 end
 
 puts(($failures.zero? ? "\nall checks passed" : "\n#{$failures} failed"))

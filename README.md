@@ -1,6 +1,6 @@
 ## Development Notes
 
-### Commutative Diagrams
+### Diagrams
 
 Posts can use a `tikzcd` environment inside display-math delimiters. Do not add
 a document class, package imports, or a `document` environment to the post:
@@ -35,6 +35,56 @@ $$
 The concise ```` ```tikzcd ```` fenced form remains supported for existing
 posts.
 
+A `tikzpicture` environment works wherever a `tikzcd` one does: alone, among
+other math, and in a list item. Math in node text is written with `$...$`, as
+usual in TikZ. For a Hasse diagram, add the `hasse` style:
+
+````markdown
+$$
+\begin{tikzpicture}[hasse]
+  \node (xy) at (0,2) {$\{x,y\}$};
+  \node (x) at (-1,1) {$\{x\}$};
+  \node (y) at (1,1) {$\{y\}$};
+  \node (e) at (0,0) {$\varnothing$};
+  \draw (e) -- (x) -- (xy) -- (y) -- (e);
+\end{tikzpicture}
+$$
+````
+
+The style centres the picture on the math axis, as `tikz-cd` centres its
+diagrams, so that pictures set side by side line up with each other and with
+the math between them. It titles the SVG "Hasse diagram", where a plain
+`tikzpicture` gets "Diagram", for screen readers and the narration. It also
+defines `dot`, for a diagram of points with their labels beside them:
+
+````markdown
+$$
+\begin{tikzpicture}[hasse]
+  \node[dot, label=right:$a$] (a) at (0,1) {};
+  \node[dot, label=right:$b$] (b) at (0,0) {};
+  \draw (b) -- (a);
+\end{tikzpicture}
+\quad \text{and} \quad
+\begin{tikzpicture}[hasse]
+  \node[dot, label=left:$c$] (c) at (0,0) {};
+  \node[dot, label=right:$d$] (d) at (1,0) {};
+  \draw (c) -- (d);
+\end{tikzpicture}
+$$
+````
+
+A post has no preamble of its own, so every diagram's document loads `amsmath`,
+`amssymb`, and TikZ's `positioning` library. `TIKZ_PREAMBLE` in
+`_plugins/tikzcd_renderer.rb` holds what is added to TikZ, and the Obsidian
+plugin's `main.js` keeps a copy, which `_tests/test_tikzcd_renderer.rb` checks
+against it. A change to it has to raise `CACHE_VERSION` in both files, since
+the caches are keyed by the diagram's source alone.
+
+Lines take the weight of `tikz-cd`'s arrows unless the picture gives them a
+width of its own, as `\draw[thick]` does. On the site, a colour reaches lines
+and dots, while node text keeps the colour of the page: its glyphs are stroked
+in `currentColor`, for the weight described below.
+
 `_plugins/tikzcd_renderer.rb` wraps each block in a standalone LaTeX document,
 compiles it with `latex`, converts the DVI output to inline SVG with `dvisvgm`,
 and caches the resulting SVG under `.jekyll-cache/tikzcd`. The generated SVG
@@ -57,9 +107,9 @@ Diagram glyphs are matched to the MathJax math around them:
 For Obsidian preview, enable the tracked `TikZ-cd Preview` plugin and install a
 TeX distribution that provides `latex`, `dvisvgm`, and `tikz-cd`. The plugin
 runs before the normal Markdown post-processors, diverts display math holding
-`tikzcd` environments to the same TeX-to-SVG pipeline used by the site, and
-leaves all other display math for MathJax. Its SVG output is scaled to match the
-surrounding MathJax typography.
+`tikzcd` or `tikzpicture` environments to the same TeX-to-SVG pipeline used by
+the site, and leaves all other display math for MathJax. Its SVG output is
+scaled to match the surrounding MathJax typography.
 
 This site contains many Markdown posts with inline LaTeX math written as
 `$...$`. Plain GitHub Pages/Jekyll rendering can confuse characters inside

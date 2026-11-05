@@ -451,6 +451,11 @@
       window.matchMedia('(pointer: coarse)').matches;
   }
 
+  function prefersDarkColors() {
+    return typeof window.matchMedia === 'function' &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
   var displayMathOverflowFrame = 0;
 
   // watchScrollFade comes from _includes/scroll-fade.html: an overflowing block hides its
@@ -513,7 +518,10 @@
   var iPhoneDevice = isIPhoneDevice();
   var scrollDisplayMath = shouldScrollDisplayMath();
   var touchMathWeight = shouldUseTouchMathWeight();
-  var mathBlacker = iPhoneDevice ? 0 : (touchMathWeight ? 2 : 9);
+  // On a desktop, math on white takes the heavier stroke: 11 is the weight 9 gave it while the
+  // body text was translucent, a weight dark mode, always opaque, never had.
+  var desktopMathBlacker = prefersDarkColors() ? 9 : 11;
+  var mathBlacker = iPhoneDevice ? 0 : (touchMathWeight ? 2 : desktopMathBlacker);
 
   // post.css strokes commutative-diagram glyphs to the same weight.
   document.documentElement.style.setProperty('--math-blacker', String(mathBlacker));

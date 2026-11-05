@@ -52,6 +52,21 @@ check("math in the text becomes a span, keeping the punctuation after it") do
     %(<p>Let <span class="math-inline math-inline-punctuated">\\(x\\).</span></p>)
 end
 
+puts "display math"
+[0, 3, 4, 5].each do |spaces|
+  pad = " " * spaces
+  check("a block indented #{spaces} spaces keeps the dollars inside it") do
+    output, placeholders = M.protect("#{pad}$$\n#{pad}\\text{$a$}\n#{pad}$$\n\nAfter $b$.\n")
+    output.include?("\\text{$a$}") && placeholders == ["b"]
+  end
+  check("a block closed on its first line, indented #{spaces} spaces, opens nothing") do
+    M.protect("#{pad}$$ x $$\n\nAfter $b$.\n").last == ["b"]
+  end
+end
+check("so does a block indented by a tab") do
+  M.protect("\t$$\n\t\\text{$a$}\n\t$$\n").last.empty?
+end
+
 puts "attributes"
 named = build(%(<p><strong>Theorem 1.1.9 (Archimedean property of @@codex-inline-math-0@@).</strong> ) +
               %(For all @@codex-inline-math-1@@ there is n.</p>), ["\\mathbb R", "x\\in \\mathbb R"])

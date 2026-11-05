@@ -380,7 +380,7 @@ Push its result with `[skip narration]` in the message so CI does not redo it.
 
 ### Known limits (stages 1–4)
 
-- Diagrams carry only their title (`Commutative diagram`); the TikZ source is not in the
+- Diagrams carry only their title (`Commutative diagram`, `Hasse diagram`, or `Diagram`); the TikZ source is not in the
   HTML. If diagrams should be described, the renderer plugin can stamp the source into a
   `data-` attribute and the skeleton will pick it up.
 - Custom MathJax macros (`\lowparen`) are not expanded; the script stage will pass the
