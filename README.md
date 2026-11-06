@@ -165,17 +165,26 @@ structure.
   should be preserved.
 - It also writes every post's keys in one order, so Obsidian's properties panel
   lists them alike: `layout`, `category_path`, `title`, `permalink`, `date`,
-  `created_at`, `last_modified_at`, `publish`, `description`. Other keys
-  (`source_note`, `line_indent`) follow in the order they were written.
+  `created_at`, `last_modified_at`, `narration`, `published`, `description`.
+  Other keys (`source_note`, `line_indent`) follow in the order they were written.
+- `narration` and `published` are checkboxes in Obsidian's properties panel,
+  unticked in a new post, and the sync script adds them unticked to a post
+  without them. `narration` asks for audio (`_narrator/README.md`). `published`
+  is Jekyll's own key: an unticked post stays off the site, with no page and no
+  place in the lists, the sitemap, or the feed, while Preview builds it anyway,
+  so it can be read as it will look. Unticking a post that is online takes it
+  down on the next Publish; its URL is left to return 404, with no redirect.
 - `title` is the exception: an existing title is kept as written, so it may
   differ from the filename. The script derives it from the filename only when
   the key is missing, so renaming a post does not change its title; delete the
   `title` line to regenerate it.
 - `permalink` works the same way, but only Publish writes it
-  (`--freeze-permalinks`): a post's URL is frozen when it first goes out, so
-  renaming, renumbering, or moving the post later keeps its URL. Delete the
-  line, or empty it in Obsidian, to take the URL of the current title; Publish
-  then carries over what hung on the old URL (see Post URLs below).
+  (`--freeze-permalinks`): a post's URL is frozen when it first goes out, that
+  is, on the first Publish with `published` ticked, so renaming, renumbering, or
+  moving the post later keeps its URL, and a draft's title can change freely
+  until then. Delete the line, or empty it in Obsidian, to take the URL of the
+  current title; Publish then carries over what hung on the old URL (see Post
+  URLs below).
 - New posts should keep the filename pattern `YYYY-MM-DD-title.md`. Files
   without a date prefix may be renamed by the sync script.
 - The Obsidian templates in `templates/` help create/update post front matter,
@@ -207,7 +216,8 @@ structure.
   `_narration/<old url path>/` to the new path, and its podcast episode keeps
   its guid in `_narration/podcast-guids.json` (`_narrator/README.md`, Moving a
   page). The URL a post had is the one in HEAD; a post that was moved or
-  renamed is found there by its `created_at`.
+  renamed is found there by its `created_at`. A post with `published: false`,
+  in HEAD or now, is off the site, so nothing is carried over for it.
 - Preview and Publish also name the posts retitled since the last Publish that
   keep their URL. `python3 scripts/move_post_urls.py` lists what Publish would
   move and every post whose title gives another URL than it has.
@@ -500,7 +510,8 @@ from a terminal (`zsh scripts/site.zsh preview`).
 
 - **Site - Preview** (`preview`): catch up with `origin/main` (CI's narration commits),
   sync the post front matter, check the spelling of the posts, regenerate the dark-mode
-  CSS, rebuild, and restart `jekyll serve` on :4000. It reports build warnings and what CI would narrate. It never
+  CSS, rebuild, and restart `jekyll serve` on :4000, with the posts that are not
+  `published` yet among the others. It reports build warnings and what CI would change in the audio. It never
   commits and never spends anything.
 - **Site - Publish** (`publish`): catch up, sync the front matter, check the spelling,
   regenerate the dark-mode CSS, validate (a build into `~/Library/Caches/External-Jekyll/publish-site` and every test),

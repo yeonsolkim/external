@@ -12,6 +12,7 @@ A post's URL changes when its `permalink:` is deleted or emptied, so that Publis
 URL of its current title (scripts/sync_posts_front_matter.py), or when it is edited by hand.
 The URL it had is the one it has in HEAD, which is what the last Publish put online; the post
 is found there at its path, or, when it was moved or renamed, by its `created_at` or its URL.
+A post with `published: false`, in HEAD or now, is off the site, so it has no URL to carry over.
 For each post whose URL changed, --apply
 
 - sends the old URL on to the new one in `_data/redirects.yml`. A redirect to the old URL
@@ -56,6 +57,7 @@ class Post:
     date: str                   # the file name's YYYY-MM-DD
     permalink: str              # "" when there is none
     created_at: str
+    online: bool = True         # as Jekyll has it: only `published: false` keeps a post off the site
 
 
 def read_post(path: str, text: str) -> Post:
@@ -68,7 +70,8 @@ def read_post(path: str, text: str) -> Post:
     return Post(path, list(Path(path).parent.relative_to("_posts").parts), title,
                 name[:10] if DATE_PREFIX_RE.match(name) else "",
                 (yaml_scalar(top_level_entry(front_matter, "permalink")) or "").strip(),
-                yaml_scalar(top_level_entry(front_matter, "created_at")) or "")
+                yaml_scalar(top_level_entry(front_matter, "created_at")) or "",
+                yaml_scalar(top_level_entry(front_matter, "published")) != "false")
 
 
 def is_post(path: str) -> bool:
@@ -77,7 +80,7 @@ def is_post(path: str) -> bool:
 
 
 def committed_posts(root: Path = ROOT) -> list[Post]:
-    """The posts as HEAD has them: what the last Publish put online."""
+    """The posts as HEAD has them: those online are what the last Publish put there."""
     listing = subprocess.run(["git", "ls-tree", "-r", "-z", "--name-only", "HEAD", "--", "_posts"],
                              cwd=root, capture_output=True)
     if listing.returncode:
@@ -147,7 +150,8 @@ def url_changes(before: list[Post], after: list[Post]) -> list[tuple[Post, str, 
     old_urls, new_urls = served_urls(before), served_urls(after)
     found = counterparts(before, after, old_urls, new_urls)
     return [(post, old_urls[found[post.path].path], new_urls[post.path]) for post in after
-            if post.path in found and old_urls[found[post.path].path] != new_urls[post.path]]
+            if post.online and post.path in found and found[post.path].online
+            and old_urls[found[post.path].path] != new_urls[post.path]]
 
 
 def title_mismatches(before: list[Post], after: list[Post]) -> list[tuple[Post, str, str, bool]]:
@@ -157,7 +161,7 @@ def title_mismatches(before: list[Post], after: list[Post]) -> list[tuple[Post, 
     found, then = counterparts(before, after, old_urls, urls), title_urls(before)
     return [(post, urls[post.path], wanted[post.path],
              post.path not in found or then[found[post.path].path] != wanted[post.path])
-            for post in after if urls[post.path] != wanted[post.path]]
+            for post in after if post.online and urls[post.path] != wanted[post.path]]
 
 
 def unquote(text: str) -> str:

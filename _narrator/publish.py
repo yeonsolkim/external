@@ -177,7 +177,7 @@ class Publisher:
     def plan(self, skel: Skeleton, refresh: bool = False) -> dict:
         """What publishing this post would take. Never spends."""
         if not skel.narrate:
-            return {"state": "skip", "why": "publish: true not set in the front matter"}
+            return {"state": "skip", "why": "narration: true not set in the front matter"}
         if skel.words < MIN_WORDS:
             return {"state": "skip", "why": "%d words" % skel.words}
         try:
@@ -224,7 +224,11 @@ class Publisher:
         p = self.plan(skel, refresh=refresh)
         log = log or self.log
         if p["state"] == "skip":
-            log("%-50s skipped (%s)" % (skel.url, p["why"]))
+            # Said in a dry run too: "would remove" is what starts the real run (pages.yml).
+            gone = ""
+            if self.has_site_manifest(skel.url):
+                gone = "; %s its manifest" % ("would remove" if dry_run else "removed")
+            log("%-50s skipped (%s)%s" % (skel.url, p["why"], gone))
             if not dry_run:
                 self.remove_site_manifest(skel.url)
             return None
@@ -328,6 +332,10 @@ class Publisher:
             with open(path, "w", encoding="utf-8") as handle:
                 handle.write(text)
         return path
+
+    def has_site_manifest(self, url: str) -> bool:
+        rel = os.path.join("audio", *(url_key_from(url) + ".json").split("/"))
+        return any(os.path.exists(os.path.join(root, rel)) for root in self._roots())
 
     def remove_site_manifest(self, url: str) -> None:
         """A post that is no longer published loses its manifest (the bucket keeps the audio)."""

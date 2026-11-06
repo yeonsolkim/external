@@ -8,7 +8,8 @@ permalink: /grammar/tenses-and-aspects/
 date: 2026-05-23 00:00:00 +0900
 created_at: 2026-08-10 16:00:47 +0900
 last_modified_at: 2026-10-02 11:47:51 +0900
-publish: false
+narration: false
+published: true
 ---
 
 | Expression | Relation |

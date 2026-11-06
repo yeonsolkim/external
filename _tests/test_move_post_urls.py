@@ -18,11 +18,11 @@ SITE = "https://yeonsolkim.com"
 STAMP = "2026-09-26 18:37:18 +0900"
 
 
-def post(section, name, permalink="", created_at="2026-10-22 10:08:33 +0900", title=None):
+def post(section, name, permalink="", created_at="2026-10-22 10:08:33 +0900", title=None, online=True):
     """A Linear Algebra post; its title is the file name's, without the date."""
     folders = LA + [section]
     return move.Post("/".join(["_posts", *folders, name + ".md"]), folders, title or name[11:], name[:10],
-                     permalink, created_at)
+                     permalink, created_at, online)
 
 
 def moves(before, after):
@@ -51,6 +51,22 @@ class Changes(unittest.TestCase):
 
     def test_a_new_post_moves_nothing(self):
         self.assertEqual(moves([], [post("1. Vector Spaces", "2026-06-02-2. Vector Spaces")]), [])
+
+    def test_a_draft_retitled_moves_nothing(self):
+        before = [post("1. Vector Spaces", "2026-06-02-2. Vector Spaces", online=False)]
+        after = [post("1. Vector Spaces", "2026-06-02-2. Vector Spaces", title="2. Spaces", online=False)]
+        self.assertEqual(moves(before, after), [])
+
+    def test_a_post_going_out_moves_nothing(self):
+        # Its URL under its draft title was never online.
+        before = [post("1. Vector Spaces", "2026-06-02-2. Vector Spaces", online=False)]
+        after = [post("1. Vector Spaces", "2026-06-02-2. Vector Spaces", "/linear-algebra/spaces/", title="2. Spaces")]
+        self.assertEqual(moves(before, after), [])
+
+    def test_a_post_taken_off_the_site_moves_nothing(self):
+        before = [post("1. Vector Spaces", "2026-06-02-2. Vector Spaces", "/linear-algebra/vector-spaces/")]
+        after = [post("1. Vector Spaces", "2026-06-02-2. Vector Spaces", "/linear-algebra/spaces/", online=False)]
+        self.assertEqual(moves(before, after), [])
 
     def test_posts_stamped_alike_are_told_apart_by_their_date(self):
         # A fresh checkout gave both one created_at; both are moved and lose their permalink.
@@ -82,6 +98,11 @@ class Mismatches(unittest.TestCase):
         kept = post("2. Linear Maps", "2026-10-21-1. Linear Maps", "/linear-algebra/linear-maps/",
                     title="1. Linear Maps and Hom-spaces")
         self.assertEqual([found[3] for found in move.title_mismatches([kept], [kept])], [False])
+
+    def test_a_post_off_the_site_is_not_named(self):
+        kept = post("2. Linear Maps", "2026-10-21-1. Linear Maps", "/linear-algebra/linear-maps/",
+                    title="1. Linear Maps and Hom-spaces", online=False)
+        self.assertEqual(move.title_mismatches([kept], [kept]), [])
 
     def test_two_posts_of_one_title_carrying_their_sections_are_fine(self):
         posts = [post("2. Metric Spaces", "2026-08-01-Exercises", "/linear-algebra/exercises-metric-spaces/"),
@@ -165,6 +186,18 @@ class Narration(unittest.TestCase):
 
     def test_a_post_without_narration_has_nothing_to_move(self):
         self.assertIsNone(move.move_narration("/a/", "/b/"))
+
+
+class Online(unittest.TestCase):
+    def online(self, front_matter):
+        return move.read_post("_posts/1. Mathematics/2026-10-22-Sets.md", f"---\n{front_matter}\n---\nx\n").online
+
+    def test_only_published_false_keeps_a_post_off_the_site(self):
+        self.assertFalse(self.online("published: false"))
+        self.assertTrue(self.online("published: true"))
+
+    def test_a_commit_older_than_the_key_was_online(self):
+        self.assertTrue(self.online("title: Sets"))
 
 
 class Committed(unittest.TestCase):

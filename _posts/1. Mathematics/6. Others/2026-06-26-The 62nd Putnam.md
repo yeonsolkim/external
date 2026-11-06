@@ -8,7 +8,8 @@ permalink: /mathematics/the-62nd-putnam/
 date: 2026-06-26 00:00:00 +0900
 created_at: 2026-06-26 12:26:40 +0900
 last_modified_at: 2026-09-30 16:56:57 +0900
-publish: false
+narration: false
+published: true
 ---
 
 **A1.** Consider a set $S$ and a binary operation $\ast,$ that is, for each $a,b\in S, a\ast b\in S.$ Assume $(a\ast b)\ast a = b$ for all $a,b\in S.$ Prove that $a\ast (b\ast a)=b$ for all $a,b\in S.$

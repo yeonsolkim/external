@@ -1,6 +1,6 @@
 #!/bin/zsh
 # A deliberate local narration run (CI normally does this — _narrator/README.md): after
-# `jekyll build`, publish every post marked `publish: true`, stage the outputs (_narration/,
+# `jekyll build`, publish every post marked `narration: true`, stage the outputs (_narration/,
 # audio/, podcast.xml) and notify — so the local site carries the audio before the push.
 # Runs in the foreground; everything goes to the log.
 #
@@ -10,7 +10,7 @@ set -uo pipefail
 repo="${1:-$HOME/External}"
 log="${2:-$HOME/Library/Logs/External-Jekyll/narration.log}"
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"       # ffmpeg lives in Homebrew
-pattern='synthesise|assemble|no scripts yet|scripts out of date'
+pattern='synthesise|assemble|no scripts yet|scripts out of date|would remove'
 
 notify() { /usr/bin/osascript -e "display notification \"$1\" with title \"Narration\"" >/dev/null 2>&1 || true; }
 

@@ -9,7 +9,8 @@ permalink: /introduction-to-analysis/exercises-algebraic-and-ordered-structures/
 date: 2026-09-18 00:00:00 +0900
 created_at: 2026-09-18 12:16:08 +0900
 last_modified_at: 2026-10-28 11:24:09 +0900
-publish: false
+narration: false
+published: true
 description: "Exercises on the real and complex number systems: rational and irrational numbers, real powers defined by suprema, and inequalities for complex numbers."
 source_note: The presentation in this section draws in part on Rudin, *Principles of Mathematical Analysis*, 3rd ed. (1976).
 ---

@@ -22,7 +22,10 @@ MANAGED_KEYS = {"layout", "title", "date", "category_path", "created_at", "last_
 # Every post's front matter in one order, so Obsidian's properties panel lists the keys alike;
 # keys not named here follow, in the order they were written.
 KEY_ORDER = ["layout", "category_path", "title", "permalink", "date", "created_at", "last_modified_at",
-             "publish", "description"]
+             "narration", "published", "description"]
+# Checkboxes in Obsidian's properties panel, unticked in a post that has not got them.
+# `narration` asks for audio; `published` is Jekyll's own key, unticked keeps the post off the site.
+CHECKBOX_KEYS = ["narration", "published"]
 
 # Post URLs, as _plugins/permalinks.rb derives them: /<subject>/<title>/ without ordering
 # numbers. The two must agree URL for URL (_tests/test_sync_front_matter.py and
@@ -234,13 +237,15 @@ def desired_front_matter(path: Path, stat: os.stat_result, existing_front_matter
     # Like the title, a permalink once written is kept as written: the URL a post was
     # published at stays its URL when the post is renamed or renumbered. Deleted, or emptied
     # in Obsidian, it gives way to the URL of the current title (scripts/move_post_urls.py
-    # then redirects the old one).
+    # then redirects the old one). A post not published yet has no URL to keep: the title it
+    # has when it goes out decides.
     frozen = (yaml_scalar(top_level_entry(existing_front_matter, "permalink")) or "").strip()
-    replace = bool(permalink) and not frozen
+    published = yaml_scalar(top_level_entry(existing_front_matter, "published")) == "true"
+    replace = bool(permalink) and not frozen and published
     entries += [entry for entry in top_level_entries(existing_front_matter)
                 if entry[0] not in MANAGED_KEYS and not (replace and entry[0] == "permalink")]
-    if not has_top_level_key(existing_front_matter, "publish"):
-        entries.append(("publish", ["publish: false"]))
+    entries += [(key, [f"{key}: false"]) for key in CHECKBOX_KEYS
+                if not has_top_level_key(existing_front_matter, key)]
     if replace:
         entries.append(("permalink", [f"permalink: {permalink}"]))
 
@@ -349,8 +354,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--freeze-permalinks",
         action="store_true",
-        help="write each post's URL into its front matter as `permalink:` where there is none "
-        "(site.zsh publish), so renaming or renumbering it later keeps the URL",
+        help="write each published post's URL into its front matter as `permalink:` where there "
+        "is none (site.zsh publish), so renaming or renumbering it later keeps the URL",
     )
     return parser.parse_args()
 

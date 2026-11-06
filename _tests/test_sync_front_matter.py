@@ -63,19 +63,28 @@ def keys_of(text):
 class KeyOrder(unittest.TestCase):
     def test_the_keys_come_in_one_order(self):
         text = front_matter_for("\n".join([
-            'title: "2. Functions"', "line_indent: false", "", "publish: true",
+            'title: "2. Functions"', "line_indent: false", "", "published: true", "narration: true",
             "source_note: After Munkres.", 'description: "Functions as sets of pairs."',
             "permalink: /a/functions/",
         ]))
         self.assertEqual(keys_of(text), ["layout", "category_path", "title", "permalink", "date", "created_at",
-                                         "last_modified_at", "publish", "description", "line_indent",
-                                         "source_note"])
+                                         "last_modified_at", "narration", "published", "description",
+                                         "line_indent", "source_note"])
         self.assertNotIn("\n\n", text)
 
     def test_a_value_of_several_lines_moves_whole(self):
-        text = front_matter_for("source_note: |\n  After Munkres.\n\n  And Halmos.\npublish: true")
-        self.assertEqual(keys_of(text)[-2:], ["publish", "source_note"])
+        text = front_matter_for("source_note: |\n  After Munkres.\n\n  And Halmos.\nnarration: true\npublished: true")
+        self.assertEqual(keys_of(text)[-3:], ["narration", "published", "source_note"])
         self.assertIn("\nsource_note: |\n  After Munkres.\n\n  And Halmos.\n---\n", text)
+
+
+class Checkboxes(unittest.TestCase):
+    def test_a_post_without_them_gets_them_unticked(self):
+        self.assertIn("\nnarration: false\npublished: false\n", front_matter_for('title: "x"'))
+
+    def test_a_ticked_box_stays_ticked(self):
+        text = front_matter_for('title: "x"\nnarration: true\npublished: true')
+        self.assertIn("\nnarration: true\npublished: true\n", text)
 
 
 # The same cases as _tests/test_permalinks.rb: the sync script and _plugins/permalinks.rb
@@ -124,16 +133,32 @@ class Permalinks(unittest.TestCase):
             try:
                 path = Path(tmp) / "2026-06-24-2. Functions.md"
                 path.write_text("x", encoding="utf-8")
-                fresh = sync.desired_front_matter(path, path.stat(), 'title: "2. Functions"', "/a/functions/")
-                kept = sync.desired_front_matter(path, path.stat(), 'title: "2. Renamed"\npermalink: /a/functions/',
+                fresh = sync.desired_front_matter(path, path.stat(), 'title: "2. Functions"\npublished: true',
+                                                  "/a/functions/")
+                kept = sync.desired_front_matter(path, path.stat(),
+                                                 'title: "2. Renamed"\npublished: true\npermalink: /a/functions/',
                                                  "/a/renamed/")
-                plain = sync.desired_front_matter(path, path.stat(), 'title: "2. Functions"')
+                plain = sync.desired_front_matter(path, path.stat(), 'title: "2. Functions"\npublished: true')
             finally:
                 sync.POSTS_ROOT = posts_root
         self.assertIn("\npermalink: /a/functions/\n", fresh)
         self.assertEqual(kept.count("permalink:"), 1)
         self.assertIn("permalink: /a/functions/", kept)
         self.assertNotIn("permalink:", plain)
+
+    def test_a_post_not_published_keeps_no_url_yet(self):
+        # Unticked, or without the box yet: the sync is about to write it unticked.
+        posts_root = sync.POSTS_ROOT
+        with tempfile.TemporaryDirectory() as tmp:
+            sync.POSTS_ROOT = Path(tmp)
+            try:
+                path = Path(tmp) / "2026-06-24-2. Functions.md"
+                path.write_text("x", encoding="utf-8")
+                for existing in ('title: "2. Functions"\npublished: false', 'title: "2. Functions"'):
+                    text = sync.desired_front_matter(path, path.stat(), existing, "/a/functions/")
+                    self.assertNotIn("permalink:", text)
+            finally:
+                sync.POSTS_ROOT = posts_root
 
     def test_an_emptied_permalink_takes_the_frozen_url(self):
         # Obsidian keeps a property whose value was cleared as `permalink:`.
@@ -143,9 +168,11 @@ class Permalinks(unittest.TestCase):
             try:
                 path = Path(tmp) / "2026-06-24-2. Functions.md"
                 path.write_text("x", encoding="utf-8")
-                frozen = sync.desired_front_matter(path, path.stat(), 'title: "2. Functions"\npermalink:',
+                frozen = sync.desired_front_matter(path, path.stat(),
+                                                   'title: "2. Functions"\npublished: true\npermalink:',
                                                    "/a/functions/")
-                waiting = sync.desired_front_matter(path, path.stat(), 'title: "2. Functions"\npermalink:')
+                waiting = sync.desired_front_matter(path, path.stat(),
+                                                    'title: "2. Functions"\npublished: true\npermalink:')
             finally:
                 sync.POSTS_ROOT = posts_root
         self.assertEqual(frozen.count("permalink:"), 1)

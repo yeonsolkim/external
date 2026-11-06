@@ -8,7 +8,8 @@ permalink: /history-of-mathematics/timeline-of-modern-mathematics/
 date: 2026-09-07 00:00:00 +0900
 created_at: 2026-09-07 17:15:27 +0900
 last_modified_at: 2026-10-08 11:28:40 +0900
-publish: false
+narration: false
+published: true
 ---
 |Century|Mathematician|Major areas / contributions|
 |---|---|--|

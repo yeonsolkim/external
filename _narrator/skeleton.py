@@ -115,7 +115,7 @@ class Skeleton:
     version: int = SKELETON_VERSION
     description: str = ""
     published_at: str = ""
-    narrate: bool = False          # front matter `publish: true` (the layout emits <meta name="narrate">)
+    narrate: bool = False          # front matter `narration: true` (the layout emits <meta name="narrate">)
 
     def to_dict(self) -> dict:
         data = asdict(self)

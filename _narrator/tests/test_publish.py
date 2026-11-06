@@ -105,7 +105,7 @@ class Publishing(unittest.TestCase):
         unmarked = build(HTML.replace('<meta name="narrate" content="true">', ''), "p.html")
         self.assertFalse(unmarked.narrate)
         self.assertEqual(self.pub.plan(unmarked)["state"], "skip")
-        self.assertIn("publish: true", self.pub.plan(unmarked)["why"])
+        self.assertIn("narration: true", self.pub.plan(unmarked)["why"])
 
     def test_short_post_is_skipped(self):
         short = build(HTML.replace("Intro words here. " * 12, "Hi.").replace("more words. " * 10, "ok."), "p.html")
@@ -212,6 +212,22 @@ class Publishing(unittest.TestCase):
         self.pub.publish_post(unmarked)
         self.assertFalse(os.path.exists(os.path.join(self.source, "audio", "2026", "01", "02", "p.json")))
         self.assertFalse(os.path.exists(os.path.join(self.site, "audio", "2026", "01", "02", "p.json")))
+
+    def test_a_dry_run_says_it_would_remove_a_manifest(self):
+        # "would remove" is what starts the real run in CI (pages.yml) and what Preview reports.
+        self.scripts()
+        self.fake_page()
+        self.pub.publish_post(self.skel)
+        unmarked = build(HTML.replace('<meta name="narrate" content="true">', ''), "p.html")
+        said = []
+        self.pub.publish_post(unmarked, dry_run=True, log=said.append)
+        self.assertIn("would remove", said[-1])
+        self.assertTrue(self.pub.has_site_manifest(unmarked.url))
+        self.pub.publish_post(unmarked, log=said.append)
+        self.assertIn("removed its manifest", said[-1])
+        self.assertFalse(self.pub.has_site_manifest(unmarked.url))
+        self.pub.publish_post(unmarked, dry_run=True, log=said.append)
+        self.assertNotIn("would remove", said[-1])
 
     def test_orphan_manifest_is_pruned(self):
         self.scripts()

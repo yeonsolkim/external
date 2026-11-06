@@ -9,7 +9,8 @@ permalink: /introduction-to-analysis/exercises-metric-spaces/
 date: 2026-08-31 00:00:00 +0900
 created_at: 2026-08-31 15:32:11 +0900
 last_modified_at: 2026-10-21 18:01:13 +0900
-publish: false
+narration: false
+published: true
 description: "Exercises on metric spaces: limit points and closures, closures of unions, and a direct proof that the set of 0 and the numbers 1/n is compact."
 source_note: The presentation in this section draws in part on Rudin, *Principles of Mathematical Analysis*, 3rd ed. (1976).
 ---

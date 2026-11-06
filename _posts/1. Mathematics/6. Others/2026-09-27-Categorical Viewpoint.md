@@ -8,7 +8,8 @@ permalink: /mathematics/sets-categorical-viewpoint/
 date: 2026-09-27 00:00:00 +0900
 created_at: 2026-09-27 16:02:08 +0900
 last_modified_at: 2026-10-22 10:53:40 +0900
-publish: false
+narration: false
+published: true
 source_note: "The presentation in this section draws in part on Aluffi, *Algebra: Chapter 0* (2009)."
 ---
 **1. Set-functions.** Let $X$ and $Y$ be sets. If $f$ is a function from $X$ to $Y$, we draw 

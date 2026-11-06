@@ -8,7 +8,8 @@ permalink: /grammar/clause-like-interpretation/
 date: 2026-05-05 00:00:00 +0900
 created_at: 2026-06-02 13:43:14 +0900
 last_modified_at: 2026-11-01 13:00:52 +0900
-publish: false
+narration: false
+published: true
 ---
 
 ### 1. NPs

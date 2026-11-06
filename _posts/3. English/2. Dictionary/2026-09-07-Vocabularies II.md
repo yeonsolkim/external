@@ -8,7 +8,8 @@ permalink: /dictionary/vocabularies-ii/
 date: 2026-09-07 00:00:00 +0900
 created_at: 2026-09-07 12:58:48 +0900
 last_modified_at: 2026-11-01 14:59:06 +0900
-publish: false
+narration: false
+published: true
 line_indent: false
 ---
 **charm**: the quality of giving delight: *his charm has captivated the media.*

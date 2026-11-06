@@ -8,7 +8,8 @@ permalink: /dictionary/subordinates/
 date: 2026-04-21 00:00:00 +0900
 created_at: 2026-06-13 13:23:10 +0900
 last_modified_at: 2026-11-01 12:39:23 +0900
-publish: false
+narration: false
+published: true
 ---
 
 1. purpose: *I will go <u>get dressed</u>.*

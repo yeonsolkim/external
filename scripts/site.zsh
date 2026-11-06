@@ -5,7 +5,8 @@
 #   zsh scripts/site.zsh preview   Catch up with origin (CI's narration commits), sync the post
 #                                  front matter, check the spelling of the posts, regenerate the
 #                                  dark-mode CSS (scripts/dark_mode_css.py), rebuild, restart
-#                                  `jekyll serve` on :4000.
+#                                  `jekyll serve` on :4000, with the posts that are not
+#                                  `published` yet among the others.
 #                                  Costs nothing and commits nothing.
 #   zsh scripts/site.zsh publish   Catch up with origin, sync the front matter, carry over the
 #                                  post URLs that changed (scripts/move_post_urls.py), check the
@@ -220,7 +221,7 @@ stop_server() {
 }
 
 start_server() {
-  /usr/bin/nohup bundle exec jekyll serve --skip-initial-build --host 0.0.0.0 --port "$port" \
+  /usr/bin/nohup bundle exec jekyll serve --skip-initial-build --unpublished --host 0.0.0.0 --port "$port" \
     >>"$server_log" 2>&1 </dev/null &!
   local attempt
   for attempt in {1..100}; do
@@ -245,10 +246,8 @@ dark_mode_css() {
 # -- build -------------------------------------------------------------------------------------
 build_output="$cache_dir/build.out"
 
-build() {  # build [DESTINATION] — output kept in $build_output, warnings counted
-  local args=()
-  [[ -n "${1:-}" ]] && args=(--destination "$1")
-  bundle exec jekyll build "${args[@]}" >"$build_output" 2>&1
+build() {  # build [JEKYLL OPTION]... — output kept in $build_output, warnings counted
+  bundle exec jekyll build "$@" >"$build_output" 2>&1
   local rc=$?
   strip_ansi <"$build_output" >>"$log"
   return $rc
@@ -270,11 +269,11 @@ narration_report() {
   plan=$(print -r -- "$plan" | /usr/bin/grep -E "$narration_work" || true)
   [[ -z "$plan" ]] && return 0
   print -r -- "$plan" >>"$log"
-  # "[2.-Compact-Sets] /2026/07/30/2.-Compact-Sets.html  scripts out of date …" → "Compact Sets"
-  names=("${(@f)$(print -r -- "$plan" | /usr/bin/sed -nE 's#.*/([^/ ]+)\.html.*#\1#p' |
-                   /usr/bin/sed -E 's/^[0-9.]+-//; s/-/ /g')}")
+  # "[] /linear-algebra/vector-spaces/  scripts out of date …" → "vector spaces"
+  names=("${(@f)$(print -r -- "$plan" | /usr/bin/sed -nE 's#^(\[[^]]*\] )?/([^ ]*/)?([^/ ]+)/? .*#\3#p' |
+                   /usr/bin/sed -E 's/\.html$//; s/^[0-9.]+-//; s/-/ /g')}")
   (( ${#names} > 1 )) && more=" and $(( ${#names} - 1 )) more"
-  print -r -- "CI will narrate on publish: ${names[1]}$more"
+  print -r -- "CI will update the audio on publish: ${names[1]}$more"
 }
 
 # ==============================================================================================
@@ -308,7 +307,7 @@ preview() {
 
   step "jekyll build"
   local built=0
-  build || built=$?
+  build --unpublished || built=$?
   step_done "rc=$built"
   local warnings=$(build_warnings)
   (( warnings > 0 )) && notes+=("${warnings} build warning(s)")
@@ -390,7 +389,7 @@ publish() {
 
   step "validate: build into $publish_site"
   local built=0
-  build "$publish_site" || built=$?
+  build --destination "$publish_site" || built=$?
   step_done "rc=$built, $(build_warnings) warning(s)"
   (( built )) && fail "build error: $(build_error)"
 

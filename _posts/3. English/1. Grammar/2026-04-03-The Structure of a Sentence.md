@@ -8,7 +8,8 @@ permalink: /grammar/the-structure-of-a-sentence/
 date: 2026-04-03 00:00:00 +0900
 created_at: 2026-08-09 14:39:13 +0900
 last_modified_at: 2026-10-21 16:33:33 +0900
-publish: false
+narration: false
+published: true
 source_note: The presentation in this section draws in part on Huddleston, Pullum, and Reynolds, *A Student’s Introduction to English Grammar*, 2nd ed. (2021).
 ---
 
