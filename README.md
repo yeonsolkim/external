@@ -294,10 +294,32 @@ changes the `<h1>` or the post body.
   seo tag's own JSON-LD in `<head>`, which `_narrator/skeleton.py` reads first for
   `dateModified`; keep that order.
 
+### Markdown Sources
+
+`_plugins/markdown_sources.rb` serves each built post's Markdown beside its page:
+`/linear-algebra/lattices/` has `/linear-algebra/lattices.md`, which the page's
+`<head>` names with `<link rel="alternate" type="text/markdown">`.
+
+- The text after the front matter is the post's file, byte for byte, so math stays
+  TeX and diagrams stay TikZ. It is read from disk, not from `post.content`, which
+  other plugins rewrite.
+- The front matter opens with `canonical_url` and `author`, then keeps `title`,
+  `description`, `date`, `last_modified_at` and `source_note` as the post writes
+  them. Nothing else goes out, so a new key stays private until it is added to
+  `KEPT_KEYS`. `source_note` has to stay: it credits the books a post draws on.
+- A source is a static file: as a page, a `.md` would come out of kramdown as HTML.
+- GitHub Pages cannot send `noindex` or canonical headers for these files, so
+  `pages/robots.txt` keeps Googlebot off `*.md`, and other crawlers may read them.
+  The sitemap lists only the HTML pages. A source moves with its post, and
+  `_data/redirects.yml` covers the page only.
+
 ### Standalone Pages
 
 - `pages/` holds the pages the footer links to (About, Contact, License); each
-  sets its URL with `permalink`. They use `_layouts/page.html`, which repeats
+  sets its URL with `permalink`. `robots.txt` lives here too rather than at the
+  root, where Site - Publish would stop on a new top-level path; having one
+  replaces the file jekyll-sitemap would write, so it keeps the `Sitemap:` line.
+  The pages use `_layouts/page.html`, which repeats
   the post title, rule, and body markup so `post.css` sets them like posts,
   without the post scripts. Without `main.js` an ordered list gets no labels,
   so these pages use bulleted lists only. Their `<article>` is `class="page"`,
