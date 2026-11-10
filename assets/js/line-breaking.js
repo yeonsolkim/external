@@ -43,10 +43,10 @@
 
   /* A space stretches by half its width, as Computer Modern's interword space does (3.33pt
      plus 1.67pt at 10pt): New Computer Modern's roman space, less the post's 0.045em, is
-     0.288em, and stretches by STRETCH em. It shrinks by a third, SHRINK em, as far as TeX
-     lets Computer Modern's shrink (3.33pt less 1.11pt): the paragraph's spaces start that much
-     narrower (--typeset-word-spacing, worked out here in px), and justification widens them
-     again. When neither pass
+     0.288em, and stretches by STRETCH em. It shrinks by SHRINK em, to 0.222em, the narrowest
+     TeX sets Computer Modern's (3.33pt less 1.11pt at 10pt): the paragraph's spaces start that
+     much narrower (--typeset-word-spacing, worked out here in px), and justification widens
+     them again. When neither pass
      keeps every line within the tolerance, where TeX would let a line run into the margin, a
      third pass takes the most even spacing it can find, however loose, and justifies it all
      the same: its badness has no ceiling. A line with no space to stretch cannot be
@@ -54,7 +54,7 @@
      a single space to stretch. A statement's label alone on its line is a last resort, worth
      it only to spare a line spaces some four and a half times their width (a stretch of 7). */
   var STRETCH = 0.144;
-  var SHRINK = 0.096;
+  var SHRINK = 0.066;
   var LABEL_LINE_BADNESS = 100 * Math.pow(7, 3);
 
   /* A pixel of every line is left unused, for what the measurements cannot see (the kerning

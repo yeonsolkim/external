@@ -399,7 +399,8 @@ changes the `<h1>` or the post body.
   which leaves wide spaces on a line that a formula or a long word just fails
   to join. The Knuth–Plass algorithm, with plain TeX's parameters, chooses the
   breaks of each paragraph and list item together, letting a line's spaces
-  stretch by half their width or shrink by a third, and hyphenating with TeX's
+  stretch by half their width or shrink to 0.222em, the narrowest TeX sets
+  Computer Modern's interword space, and hyphenating with TeX's
   American English patterns (`assets/js/hyphenation-en-us.js`, from TeX Live's
   hyph-utf8). A formula breaks only where MathJax allows it, before a relation
   or a binary operator, and a statement's label only when it is wider than the
@@ -469,8 +470,12 @@ changes the `<h1>` or the post body.
 
 ### Other Includes
 
-- `_includes/breadcrumbs.html` renders `Home` followed by every level of the
-  page's `category_path`. The trail always stays on one line at every width:
+- `_includes/breadcrumbs.html` renders `Home` followed by the levels of the
+  page's `category_path` that have a generated index page, as links, and a
+  textbook's final section folder, unlinked. The top-level category has no index
+  page (the home page lists it) and gets no crumb, so a post at `Mathematics /
+  Linear Algebra / Preliminaries` shows `Home › Linear Algebra › 1 Preliminaries`.
+  The trail always stays on one line at every width:
   when it is wider than the column, `.breadcrumb-list` in `style.scss` scrolls
   sideways instead of wrapping, so every crumb stays reachable. A page with
   `layout: page` has no `category_path`; its title follows `Home` as the

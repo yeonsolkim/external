@@ -7,9 +7,9 @@
     {% comment %}
       The same trail for search engines, as a schema.org BreadcrumbList. A crumb there
       needs a page to point at, so it keeps the crumbs that link (Home and the generated
-      category indexes) and ends with the page itself; the top-level category and the
-      section, which have no page, are left out. It is written in the body, after the seo
-      tag's JSON-LD in <head>: _narrator/skeleton.py reads the first one for dateModified.
+      category indexes) and ends with the page itself; the section, which has no page, is
+      left out. It is written in the body, after the seo tag's JSON-LD in <head>:
+      _narrator/skeleton.py reads the first one for dateModified.
     {% endcomment %}
     {% capture breadcrumb_json_items %}{"@type":"ListItem","position":1,"name":"Home","item":{{ '/' | absolute_url | jsonify }}}{% endcapture %}
     {% assign breadcrumb_json_position = 1 %}
@@ -33,11 +33,13 @@
         {% endfor %}
 
         {% comment %}
-          Only a final section folder keeps its ordering prefix. Sections have
-          no generated index page; the top-level category has none either but
-          is never a section, so it is stripped explicitly.
+          A level without a generated index page gets no crumb, except a textbook's
+          final section folder: the top-level category (the home page lists it) is
+          left out, while the section stays, unlinked, as the only crumb that keeps
+          its ordering prefix.
         {% endcomment %}
-        {% if breadcrumb_url == "" and forloop.index > 1 %}
+        {% if breadcrumb_url == "" %}
+          {% if forloop.first %}{% continue %}{% endif %}
           {% assign visible_category = category | numbered_label_text %}
         {% else %}
           {% assign visible_category = category | strip_category_order_prefix %}
