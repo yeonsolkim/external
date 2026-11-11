@@ -526,6 +526,69 @@
   // post.css strokes commutative-diagram glyphs to the same weight.
   document.documentElement.style.setProperty('--math-blacker', String(mathBlacker));
 
+  // amsmath's \text takes the font of the sentence around its formula, so in the italic body
+  // of a theorem its words are italic too (amsldoc, "The \text command"); so are \mbox's and
+  // \textrm's, which change the family but keep the shape, while \textup and \textnormal stand
+  // up. MathJax draws \text upright in glyphs of its own, out of reach of the statement's CSS
+  // font-style, so wherever the text around a formula is italic, the text those commands set
+  // takes TeX's text italic: -tex-mathit, the cmti of \mathit, not the math italic MathJax gives
+  // \textit. The command is read from MathJax's data-latex, which the mtext carries itself or,
+  // for the words on either side of a $…$ inside \text, the row holding them carries.
+  var SHAPE_KEEPING_TEXT = /^\\(?:text|mbox|hbox|textrm|intertext|shortintertext)(?![A-Za-z])/;
+
+  function enclosingLatex(node) {
+    for (; node; node = node.parent) {
+      var latex = node.attributes && node.attributes.getExplicit('data-latex');
+
+      if (latex) {
+        return latex;
+      }
+    }
+
+    return '';
+  }
+
+  // An equation's tag stays upright, as amsmath sets it in \normalfont; MathJax writes the tag
+  // with \text too, in the first cell of the mlabeledtr.
+  function inEquationTag(node) {
+    for (; node.parent; node = node.parent) {
+      if (node.parent.isKind('mlabeledtr') && node.parent.childNodes[0] === node) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  function surroundingTextIsItalic(math) {
+    var node = math && math.start && math.start.node;
+    var element = node && (node.nodeType === 1 ? node : node.parentElement);
+    var fontStyle = element ? window.getComputedStyle(element).fontStyle : '';
+
+    return fontStyle === 'italic' || fontStyle.indexOf('oblique') === 0;
+  }
+
+  function italicizeTextInItalicSentences(math) {
+    var texts = [];
+
+    if (!math.root) {
+      return;
+    }
+
+    math.root.walkTree(function (node) {
+      if (node.isKind('mtext') && !node.attributes.getExplicit('mathvariant') &&
+          SHAPE_KEEPING_TEXT.test(enclosingLatex(node)) && !inEquationTag(node)) {
+        texts.push(node);
+      }
+    });
+
+    if (texts.length > 0 && surroundingTextIsItalic(math)) {
+      texts.forEach(function (node) {
+        node.attributes.set('mathvariant', '-tex-mathit');
+      });
+    }
+  }
+
   window.MathJax = {
     loader: {
       load: ['[tex]/mathtools', '[tex]/unicode', '[tex]/html']
@@ -551,7 +614,21 @@
       }
     },
     options: {
-      enableMenu: false
+      enableMenu: false,
+      renderActions: {
+        // After enrich (30), which works out the speech, and before typeset (150): a mathvariant
+        // set any earlier is read out too, "italic and".
+        italicText: [
+          120,
+          function (doc) {
+            for (var math of doc.math) {
+              italicizeTextInItalicSentences(math);
+            }
+          },
+          italicizeTextInItalicSentences,
+          false
+        ]
+      }
     },
     startup: {
       pageReady() {

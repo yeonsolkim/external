@@ -360,6 +360,13 @@ changes the `<h1>` or the post body.
 - Statement names written immediately after a numbered label, such as
   `**Theorem 1.1.1.** (Example name).`, are kept upright even when theorem
   text is italicized.
+- Words in a formula take the shape of the sentence around it, as amsmath's
+  `\text` does: in italic theorem text, `\text{...}`, `\mbox{...}`, and
+  `\textrm{...}` come out italic, while `\textup{...}`, `\textnormal{...}`,
+  operator names, and equation tags stay upright. MathJax would draw them
+  upright, so `assets/js/mathjax-config.js` gives them TeX's text italic
+  (`-tex-mathit`) after the speech is worked out; a screen reader still hears
+  "and", not "italic and".
 - Post prose is converted into semantic units after MathJax finishes. A source
   soft newline starts a new `<p>` with a `1em` first-line indent; the first
   paragraph after the post title or a Markdown heading is not indented. The
