@@ -7,7 +7,7 @@ title: "Greek Alphabet"
 permalink: /english/greek-alphabet/
 date: 2026-09-09 00:00:00 +0900
 created_at: 2026-09-09 11:27:05 +0900
-last_modified_at: 2026-11-12 21:17:35 +0900
+last_modified_at: 2026-09-10 10:48:40 +0900
 narration: false
 published: true
 ---

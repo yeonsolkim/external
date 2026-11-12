@@ -7,7 +7,7 @@ title: "The 62nd Putnam"
 permalink: /mathematics/the-62nd-putnam/
 date: 2026-06-26 00:00:00 +0900
 created_at: 2026-06-26 12:26:40 +0900
-last_modified_at: 2026-11-12 21:17:35 +0900
+last_modified_at: 2026-09-30 16:56:57 +0900
 narration: false
 published: true
 ---

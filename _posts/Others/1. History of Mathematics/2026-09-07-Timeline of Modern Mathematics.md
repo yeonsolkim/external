@@ -7,7 +7,7 @@ title: "Timeline of Modern Mathematics"
 permalink: /history-of-mathematics/timeline-of-modern-mathematics/
 date: 2026-09-07 00:00:00 +0900
 created_at: 2026-09-07 17:15:27 +0900
-last_modified_at: 2026-11-12 21:17:35 +0900
+last_modified_at: 2026-10-08 11:28:40 +0900
 narration: false
 published: true
 ---
