@@ -7,7 +7,7 @@ title: "Auxiliary Verbs"
 permalink: /dictionary/auxiliary-verbs/
 date: 2026-04-05 00:00:00 +0900
 created_at: 2026-08-10 14:55:42 +0900
-last_modified_at: 2026-10-19 14:36:23 +0900
+last_modified_at: 2026-11-12 21:17:35 +0900
 narration: false
 published: true
 ---

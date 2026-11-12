@@ -7,7 +7,7 @@ title: "Manifolds"
 permalink: /mathematics/manifolds/
 date: 2026-08-26 00:00:00 +0900
 created_at: 2026-08-26 11:38:11 +0900
-last_modified_at: 2026-10-22 10:53:40 +0900
+last_modified_at: 2026-11-12 21:17:35 +0900
 narration: false
 published: true
 ---

@@ -7,7 +7,7 @@ title: "Vocabularies I"
 permalink: /dictionary/vocabularies-i/
 date: 2026-04-25 00:00:00 +0900
 created_at: 2026-08-10 15:41:50 +0900
-last_modified_at: 2026-11-01 13:15:14 +0900
+last_modified_at: 2026-11-12 21:17:35 +0900
 narration: false
 published: true
 line_indent: false

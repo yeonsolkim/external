@@ -7,7 +7,7 @@ title: "Pronunciation"
 permalink: /dictionary/pronunciation/
 date: 2026-09-05 00:00:00 +0900
 created_at: 2026-09-05 11:24:15 +0900
-last_modified_at: 2026-10-08 11:13:06 +0900
+last_modified_at: 2026-11-12 21:17:35 +0900
 narration: false
 published: true
 line_indent: false

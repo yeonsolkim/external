@@ -8,7 +8,7 @@ title: "Exercises"
 permalink: /introduction-to-analysis/exercises-algebraic-and-ordered-structures/
 date: 2026-09-18 00:00:00 +0900
 created_at: 2026-09-18 12:16:08 +0900
-last_modified_at: 2026-10-28 11:24:09 +0900
+last_modified_at: 2026-11-12 21:17:35 +0900
 narration: false
 published: true
 description: "Exercises on the real and complex number systems: rational and irrational numbers, real powers defined by suprema, and inequalities for complex numbers."
