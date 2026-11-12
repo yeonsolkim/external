@@ -7,7 +7,7 @@ title: "Time Interval"
 permalink: /essays/time-interval/
 date: 2026-05-21 00:00:00 +0900
 created_at: 2026-08-06 13:53:49 +0900
-last_modified_at: 2026-11-12 21:17:35 +0900
+last_modified_at: 2026-08-24 16:19:04 +0900
 narration: false
 published: true
 ---

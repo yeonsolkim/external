@@ -7,7 +7,7 @@ title: "Complementation in VPs"
 permalink: /grammar/complementation-in-vps/
 date: 2026-05-29 00:00:00 +0900
 created_at: 2026-05-29 12:50:20 +0900
-last_modified_at: 2026-11-12 21:17:35 +0900
+last_modified_at: 2026-11-01 12:53:06 +0900
 narration: false
 published: true
 ---
