@@ -7,7 +7,7 @@ title: "Vocabularies II"
 permalink: /dictionary/vocabularies-ii/
 date: 2026-09-07 00:00:00 +0900
 created_at: 2026-09-07 12:58:48 +0900
-last_modified_at: 2026-11-01 14:59:06 +0900
+last_modified_at: 2026-11-13 16:02:49 +0900
 narration: false
 published: true
 line_indent: false
@@ -65,3 +65,11 @@ line_indent: false
 **discipline**<sup>2</sup> (n.): controlled behavior resulting from training.
 
 **threshold** /θreʃ.hold/ (n.): the magnitude or intensity that must be exceeded for a certain phenomenon or result to occur: *everyone has a different pain threshold.*
+
+**diverge**: (of an opinion, theory, approach, etc.) differ markedly: *the article **diverged from** my experience.*
+
+**buried** (adj.): placed or hidden underground: *there are many issues buried in the question.*
+
+**evaporate**: turn from liquid into vapor: *unless great efforts are made to maintain the tone of the original human insights, the differences start to evaporate.*
+
+
