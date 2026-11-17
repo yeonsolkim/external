@@ -104,6 +104,54 @@ class Verbatim(unittest.TestCase):
                         realtime.VERBATIM_RATIO)
 
 
+class Labels(unittest.TestCase):
+    # Published 2026-11-17 as "Definition one point three. Let P be a poset. …"
+    PARAGRAPH = ("Definition 1.3.1. Let P be a poset. For x and y in P, we say that y covers x, written x is "
+                 "covered by y, if x is less than y and there is no z in P such that x is less than z, which "
+                 "is less than y. In this case, x is called the immediate predecessor of y, and y is called "
+                 "the immediate successor of x.")
+
+    def test_labels_are_found_as_the_engine_is_given_them(self):
+        text = ("1.1.1 Traders.\n\nBy Theorem two point one point eighteen and Lemma 2.2.1, at most one "
+                "point of S lies in 2.18 units.")
+        self.assertEqual(realtime.labels(text), ["1.1.1", "Theorem two point one point eighteen", "Lemma 2.2.1"])
+
+    def test_a_dropped_label_number_agrees_but_is_not_read(self):
+        said = self.PARAGRAPH.replace("1.3.1", "1.3")
+        self.assertGreater(realtime.similarity(self.PARAGRAPH, said), realtime.VERBATIM_RATIO)
+        self.assertEqual(realtime.unread_labels(self.PARAGRAPH, said), ["Definition 1.3.1"])
+        self.assertEqual(realtime.unread_labels(self.PARAGRAPH, self.PARAGRAPH.replace("Definition 1.3.1. ", "")),
+                         ["Definition 1.3.1"])
+
+    def test_a_label_counts_however_the_transcript_writes_it(self):
+        for said in ("Definition 1.3.1. Let P be a poset.", "Definition one point three point one. Let P be a poset.",
+                     "definition 1 point 3 point 1, let P be a poset"):
+            self.assertEqual(realtime.unread_labels("Definition 1.3.1. Let P be a poset.", said), [])
+        spelled = "By Theorem two point one point eighteen, traders trade."
+        self.assertEqual(realtime.unread_labels(spelled, "By Theorem 2.1.18, traders trade."), [])
+        # "eighteen" read digit by digit is the misreading the spelling is there to prevent.
+        self.assertEqual(realtime.unread_labels(spelled, "By Theorem two point one point one eight, traders trade."),
+                         ["Theorem two point one point eighteen"])
+
+    def test_a_take_that_drops_a_label_is_read_again(self):
+        takes = [self.PARAGRAPH.replace("1.3.1", "1.3"), self.PARAGRAPH]
+        calls = []
+
+        def once(text, *_):
+            calls.append(text)
+            return bytes([len(calls), 0]), takes[len(calls) - 1], {}
+
+        with mock.patch.object(realtime, "_once", once):
+            self.assertEqual(realtime.synth(self.PARAGRAPH, "cedar", "gpt-realtime-2.1-mini"), bytes([2, 0]))
+        self.assertEqual(len(calls), 2)
+
+    def test_a_label_never_read_is_refused(self):
+        said = self.PARAGRAPH.replace("1.3.1", "1.3")
+        with mock.patch.object(realtime, "_once", lambda text, *_: (b"\x00\x01", said, {})):
+            with self.assertRaisesRegex(tts.TTSError, "Definition 1.3.1 not read as written after 3 attempts"):
+                realtime.synth(self.PARAGRAPH, "cedar", "gpt-realtime-2.1-mini")
+
+
 LIMITED = {"type": "error", "error": {"message": (
     "Rate limit reached for gpt-realtime-2.1-mini (for limit gpt-4o-mini-realtime) in organization "
     "org-x on tokens per min (TPM): Limit 40000, Used 40000, Requested 1. Please try again in 1ms.")}}

@@ -198,7 +198,12 @@ A run of single letters is one word, up to punctuation, so a symbol the script s
 S") passes however the transcript writes it ("CL of S"); without that, one "CL" fails a short
 paragraph. The articles "the" and "an" are ignored as well: the model adds one where a script
 leaves it out ("to the span of S" for "to span of S"), which failed the proof of Theorem 1.3.18
-three times at 0.97; "a" counts, since it also names a scalar. (`gpt-4o-mini-tts` had no
+three times at 0.97; "a" counts, since it also names a scalar. Every result label must also be
+in the transcript as written — "Definition 1.3.1", "1 point 3 point 1" or "one point three
+point one" — or the paragraph is read again (`unread_labels`): a label is a word or two of a
+paragraph, too little for the agreement to notice. Definition 1.3.1 of *1.3 Lattices* went out
+on 2026-11-17 read as "Definition one point three", a reading that agrees at 0.995; leaving the
+label out altogether still agrees at 0.978. (`gpt-4o-mini-tts` had no
 such check, and in testing it sometimes dropped a paragraph's last sentence.) One WebSocket
 per paragraph, so no call sees another's conversation. `READER` and the reasoning effort are
 part of the cache key too. `--model gpt-4o-mini-tts` still works until the shutdown.
@@ -235,7 +240,10 @@ to R2 so a lost disk does not mean paying for synthesis again.
 (24 kHz, 16-bit, mono). Each piece has the engine's own leading/trailing silence trimmed
 to 0.1 s, then pieces are joined with 0.6 s of silence between paragraphs (0.3 s inside a
 split paragraph) and 1.2 s between sections. Offsets therefore come from sample counts and
-are exact. The page is loudness-normalised in two passes (`loudnorm`, −16 LUFS, −1.5 dBTP,
+are exact. The trim keeps silence the engine made and adds none, and the Realtime engine makes
+none before its first word (speech within 15 ms of the first sample in every section measured
+on 2026-11-17), so a section's offset is its first spoken sample; the web player starts half a
+second earlier (stage 4). The page is loudness-normalised in two passes (`loudnorm`, −16 LUFS, −1.5 dBTP,
 linear gain so timing is untouched) and encoded once. For gpt-4o-mini-tts, result labels are
 spelled out before synthesis — "Theorem 2.2.3" → "Theorem 2 point 2 point 3", and a section
 number that opens a line, "1.1.1 Traders." → "1 point 1 point 1 Traders." — so it can never
@@ -338,7 +346,11 @@ in `_layouts/post.html` leaves a hidden element carrying the manifest URL;
 the control surface (`assets/css/narration.css`):
 
 - **click or tap a statement's label** ("Theorem 3.1.1.") → that statement (and its proof)
-  is read, then playback stops by itself;
+  is read, then playback stops by itself. Playback begins half a second before the section,
+  inside the silence before it (`LEAD_IN`, never into the section before): its audio starts at
+  the first spoken sample, and the first moments after a seek are not reliably heard while the
+  decoder and the audio output start up (Bluetooth earphones wake) — which made "Definition"
+  "finition";
 - **click the post title** → the whole post from the start;
 - **while playing, one click or tap anywhere** stops (Esc too). Drags and text selections
   are not clicks.
@@ -418,6 +430,10 @@ Push its result with `[skip narration]` in the message so CI does not redo it.
   the publish stage should skip anything under a word threshold rather than narrate a cue.
 - The mp3 encoder's ~25 ms priming delay is declared in the LAME header (`-write_xing 1`), so
   gapless-aware players land chapters exactly; others are a frame late, which is inaudible.
+- A chapter starts at its section's first spoken sample (stage 3), so a podcast app that jumps
+  to a chapter, like the page's very first section, has no lead-in before the first word; only
+  the web player starts early. Giving the audio one means assembling every page again — without
+  synthesis, but `page_key` changes only with `AUDIO_VERSION`, which is in every section key too.
 - Podcast apps that index the directory want square artwork (1400–3000 px); set
   `narration.cover` to add `<itunes:image>`. Not needed for following by URL.
 - The stable alias carries `Cache-Control: max-age=300`; a re-narrated page reaches podcast

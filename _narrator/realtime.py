@@ -4,9 +4,11 @@
 
 A Realtime model is a conversational speech-to-speech model, not a reader: handed a
 paragraph, it may paraphrase it or answer it. So every call compares the model's own
-transcript of what it said with the text, word by word (`similarity`), synthesises again
-when they differ, and refuses — rather than return audio that is not the script — after
-ATTEMPTS tries. One WebSocket per call, so no call sees another's conversation.
+transcript of what it said with the text, word by word (`similarity`), and checks that every
+result label in the text is in the transcript as written (`unread_labels`) — a label is a word
+or two of a paragraph, too little for the agreement to notice. It synthesises again when either
+fails, and refuses — rather than return audio that is not the script — after ATTEMPTS tries.
+One WebSocket per call, so no call sees another's conversation.
 
 The organisation's limit on these models is 40,000 tokens per minute. Two posts at four
 sections each — eight calls at once — ran into it (2026-10-06); one post's four calls never
@@ -40,7 +42,7 @@ ATTEMPTS = 3
 MAX_SESSIONS = 4           # calls at once, across every post being published
 RATE_LIMIT_WAIT = 5.0      # seconds before the first retry after a rate limit; doubles, up to a minute
 RATE_LIMIT_RETRIES = 8
-CHECKS: list = []          # one record per call: chars, ratio, attempts, transcript, usage
+CHECKS: list = []          # one record per call: chars, ratio, attempts, unread labels, transcript, usage
 
 _sessions = threading.BoundedSemaphore(MAX_SESSIONS)
 
@@ -101,6 +103,39 @@ def _words(text: str) -> list:
             else:
                 joined.append(word)
     return joined
+
+
+# A result label as the engine is given it (voice.spoken_text): "Definition 1.3.1" as written,
+# or in words when a number after a point has two digits or more ("Theorem two point one point
+# eighteen"); and a section number that opens a line ("1.1.1 Traders.").
+_NUMBER = "(?:%s)" % "|".join(sorted(set(_ONES + _TENS[2:] + ["hundred", "thousand"]), key=len, reverse=True))
+_SPELLED = r"%s(?: %s)*" % (_NUMBER, _NUMBER)
+_LABEL = re.compile(r"\b[A-Z][a-z]+ (?:\d+(?:\.\d+)+|%s(?: point %s)+)\b" % (_SPELLED, _SPELLED))
+_HEADING = re.compile(r"(?m)^[ \t]*(\d+(?:\.\d+)+)\b")
+
+
+def labels(text: str) -> list:
+    """The result labels in `text`, in reading order, as written there."""
+    found = [(m.start(), m.group(0)) for m in _LABEL.finditer(text)]
+    found += [(m.start(1), m.group(1)) for m in _HEADING.finditer(text)]
+    return [label for _, label in sorted(found)]
+
+
+def unread_labels(script: str, said: str) -> list:
+    """The result labels of `script` that the transcript does not contain word for word.
+
+    The agreement cannot catch these: a label is a word or two of a paragraph, so "Definition
+    1.3.1" read as "Definition 1.3" — published that way on 2026-11-17 — still agrees at 0.995,
+    and leaving the label out altogether at 0.978. Labels compare as `_words` makes them, so
+    "1.3.1", "1 point 3 point 1" and "one point three point one" are the same label, while
+    "eighteen" read digit by digit, "one eight", is not."""
+    heard = _words(said)
+    return [label for label in labels(script) if not _contains(heard, _words(label))]
+
+
+def _contains(words: list, run: list) -> bool:
+    n = len(run)
+    return any(words[i:i + n] == run for i in range(len(words) - n + 1))
 
 
 def _once(text: str, voice: str, model: str, instructions: str, timeout: float) -> tuple:
@@ -182,16 +217,21 @@ def synth(text: str, voice: str, model: str, instructions: str = "", timeout: fl
             continue
         attempt += 1
         ratio = similarity(text, said)
-        if best is None or ratio > best[1]:
-            best = (pcm, ratio, said, usage)
-        if ratio >= VERBATIM_RATIO:
+        unread = unread_labels(text, said)
+        # A take that reads every label beats one that does not, however well the rest agrees.
+        if best is None or (not unread, ratio) > (not best[4], best[1]):
+            best = (pcm, ratio, said, usage, unread)
+        if ratio >= VERBATIM_RATIO and not unread:
             break
-    pcm, ratio, said, usage = best
+    pcm, ratio, said, usage, unread = best
     CHECKS.append({"chars": len(text), "ratio": round(ratio, 4), "attempts": attempt,
-                   "transcript": said, "usage": usage})
+                   "unread_labels": unread, "transcript": said, "usage": usage})
     if ratio < VERBATIM_RATIO:
         raise tts.TTSError("%s: not read verbatim after %d attempts (agreement %.2f): %r" % (
             model, attempt, ratio, said[:300]))
+    if unread:
+        raise tts.TTSError("%s: %s not read as written after %d attempts: %r" % (
+            model, ", ".join(unread), attempt, said[:300]))
     with tts._lock:
         tts.USAGE["chars"] += len(text)
         tts.USAGE["calls"] += 1

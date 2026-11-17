@@ -157,9 +157,29 @@
     audio.setAttribute('aria-hidden', 'true');
     document.body.appendChild(audio);
 
-    var range = null;            /* {start, end} of what is being played */
+    var range = null;            /* {start, end} of what is being read; `from`, where playback began */
     var current = -1;
     var userScrolledAt = 0;
+
+    /* A section's audio begins with its first spoken sample — the speech engine leaves no
+       silence before a word — and the first moments after a seek are not reliably heard
+       while the decoder and the audio output start up (Bluetooth earphones wake), which
+       turned "Definition" into "finition". So a section plays from up to LEAD_IN seconds
+       earlier, inside the silence between sections (SECTION_GAP, 1.2 s, in
+       _narrator/voice.py), and never from inside the section before. */
+    var LEAD_IN = 0.5;
+
+    function leadIn(start) {
+      var before = 0;               /* where the audio before `start` ends */
+      sections.forEach(function (s) {
+        var end = s.start + s.duration;
+        if (end <= start && end > before) before = end;
+      });
+      return Math.max(before, start - LEAD_IN);
+    }
+
+    /* The lead-in belongs to the section it leads into, not to the one before it. */
+    function reading(t) { return range ? Math.max(t, range.start) : t; }
 
     /* How far a click on this unit plays: its own audio, everything nested inside it (the
        manifest gives a parent the span of its children), and the proof that follows a
@@ -207,17 +227,17 @@
     function setReading(on) {
       document.documentElement.classList.toggle('nrp-reading', on);
       if (!on) { current = -1; blocks.forEach(function (b) { b.classList.remove('nrp-dim'); }); }
-      else focusSection(sectionAt(audio.currentTime || (range ? range.start : 0)));
+      else focusSection(sectionAt(reading(audio.currentTime || 0)));
     }
 
     function play(start, end) {
-      range = { start: start, end: end };
+      range = { start: start, end: end, from: leadIn(start) };
       /* Setting currentTime before the first load sets where playback begins. */
-      audio.currentTime = start;
+      audio.currentTime = range.from;
       var p = audio.play();
       if (p && p.catch) p.catch(function () { range = null; setReading(false); });
       audio.addEventListener('loadedmetadata', function () {
-        if (range && Math.abs(audio.currentTime - range.start) > 1) audio.currentTime = range.start;
+        if (range && Math.abs(audio.currentTime - range.from) > 1) audio.currentTime = range.from;
       }, { once: true });
       focusSection(sectionAt(start));
     }
@@ -238,7 +258,7 @@
       if (!range) return;
       var t = audio.currentTime || 0;
       if (t >= range.end - 0.05) { stop(); return; }
-      focusSection(sectionAt(t));
+      focusSection(sectionAt(reading(t)));
       if ('mediaSession' in navigator && audio.duration && navigator.mediaSession.setPositionState) {
         try { navigator.mediaSession.setPositionState({ duration: audio.duration, playbackRate: audio.playbackRate, position: t }); } catch (e) {}
       }
@@ -296,7 +316,7 @@
         navigator.mediaSession.setActionHandler('play', function () { if (range) audio.play(); else play(0, m.duration); });
         navigator.mediaSession.setActionHandler('pause', function () { audio.pause(); });
         navigator.mediaSession.setActionHandler('stop', stop);
-        navigator.mediaSession.setActionHandler('seekbackward', function (d) { audio.currentTime = Math.max(range ? range.start : 0, audio.currentTime - (d.seekOffset || 15)); });
+        navigator.mediaSession.setActionHandler('seekbackward', function (d) { audio.currentTime = Math.max(range ? range.from : 0, audio.currentTime - (d.seekOffset || 15)); });
         navigator.mediaSession.setActionHandler('seekforward', function (d) { audio.currentTime = Math.min(range ? range.end : m.duration, audio.currentTime + (d.seekOffset || 15)); });
         navigator.mediaSession.setActionHandler('seekto', function (d) { if (d.seekTime != null) audio.currentTime = d.seekTime; });
       } catch (e) {}
