@@ -12,14 +12,17 @@ require "json"
 # label "Others" names no subject, so the level above it stands in, and the section is
 # added. Renumbering a post or moving it within its textbook leaves the URL alone.
 #
-# The URL is frozen on first publication: scripts/sync_posts_front_matter.py, run with
-# --freeze-permalinks by `site.zsh publish`, writes it into the front matter as
-# `permalink:`, like `title`, and never changes a permalink already there. A post with a
-# permalink keeps it here too; one without (a draft never published) gets the derived URL.
-# The derivation below and `derived_permalinks` in the sync script must agree, URL for URL.
+# The URL is frozen on publication: scripts/sync_posts_front_matter.py, run with
+# --freeze-permalinks by `site.zsh publish`, writes it into the front matter as `permalink:`,
+# and writes it again when the post's title or textbook no longer gives it (a retitled post
+# moves; scripts/move_post_urls.py redirects its old URL). A post with a permalink is served
+# at it here, so Preview shows a retitled post at its old URL until Publish moves it; one
+# without (a draft never published) gets the derived URL. The derivation below and
+# `derived_permalinks` in the sync script must agree, URL for URL.
 #
-# When two posts would share a URL, both take their section's name after the title
-# (/introduction-to-analysis/exercises-metric-spaces/); a URL already frozen keeps it.
+# When two posts would share a URL by their titles, both take their section's name after the
+# title (/introduction-to-analysis/exercises-metric-spaces/); a URL already frozen keeps it, so
+# a post of a title an older post has takes its section's name, whatever URL the older one has.
 #
 # _data/redirects.yml maps each old URL to the page that replaced it. Each old URL gets a
 # small page that sends readers and search engines on: an instant meta refresh, which
@@ -73,20 +76,25 @@ module ExternalPermalinks
   def derive(posts)
     taken = posts.filter_map { |*, frozen| frozen.to_s.strip.empty? ? nil : frozen.strip }
     open = posts.select { |*, frozen| frozen.to_s.strip.empty? }
+    # Every post's own URL counts, a frozen one's too: a post whose title another post of its
+    # textbook has takes its section's name, whichever of the two went out first.
+    counts = posts.map { |_, category_path, title, date, _| url(*parts(category_path, title, date).first(2)) }.tally
     plans = open.to_h { |key, category_path, title, date, _| [key, parts(category_path, title, date)] }
 
     first = plans.transform_values { |folders, name, _| url(folders, name) }
-    counts = first.values.tally
+    dated = []
     urls = first.to_h do |key, candidate|
       folders, name, section = plans[key]
       shared = counts[candidate] > 1 || taken.include?(candidate)
-      [key, shared && section && !section.empty? ? url(folders, "#{name}-#{section}") : candidate]
+      sectioned = section && !section.empty?
+      dated << key if shared && !sectioned
+      [key, shared && sectioned ? url(folders, "#{name}-#{section}") : candidate]
     end
 
     # Still shared (no section to tell the posts apart): the date says which is which.
     counts = urls.values.tally
     urls.to_h do |key, candidate|
-      next [key, candidate] unless counts[candidate] > 1 || taken.include?(candidate)
+      next [key, candidate] unless dated.include?(key) || counts[candidate] > 1 || taken.include?(candidate)
 
       date = open.find { |entry| entry[0] == key }[3]
       [key, candidate.sub(%r{/\z}, "-#{date}/")]

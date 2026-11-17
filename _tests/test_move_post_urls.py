@@ -18,9 +18,10 @@ SITE = "https://yeonsolkim.com"
 STAMP = "2026-09-26 18:37:18 +0900"
 
 
-def post(section, name, permalink="", created_at="2026-10-22 10:08:33 +0900", title=None, online=True):
-    """A Linear Algebra post; its title is the file name's, without the date."""
-    folders = LA + [section]
+def post(section, name, permalink="", created_at="2026-10-22 10:08:33 +0900", title=None, online=True,
+         textbook=LA):
+    """A Linear Algebra post, or one of `textbook`; its title is the file name's, without the date."""
+    folders = textbook + [section]
     return move.Post("/".join(["_posts", *folders, name + ".md"]), folders, title or name[11:], name[:10],
                      permalink, created_at, online)
 
@@ -38,16 +39,32 @@ class Changes(unittest.TestCase):
         self.assertEqual(moves(before, after),
                          [("/linear-algebra/isomorphisms/", "/linear-algebra/composition-identities-and-inverses/")])
 
-    def test_a_moved_post_that_keeps_its_permalink_moves_nothing(self):
-        before = [post("2. Linear Maps and Isomorphisms", "2026-10-21-1. Linear Maps and Hom spaces",
-                       "/linear-algebra/linear-maps/")]
-        after = [post("2. Linear Maps", "2026-10-21-1. Linear Maps and Hom-spaces", "/linear-algebra/linear-maps/")]
+    def test_a_post_renumbered_and_moved_within_its_textbook_moves_nothing(self):
+        before = [post("2. Linear Maps and Isomorphisms", "2026-10-21-1. Linear Maps", "/linear-algebra/linear-maps/")]
+        after = [post("3. Linear Maps", "2026-10-21-2. Linear Maps", "/linear-algebra/linear-maps/")]
         self.assertEqual(moves(before, after), [])
 
-    def test_an_edited_permalink_moves(self):
+    def test_a_retitled_post_takes_its_title_url(self):
+        # As on 2026-11-11: "2. Rank Functions" became "2. The Dimension Function", its file renamed
+        # and its permalink kept.
+        before = [post("3. Dimension", "2026-11-04-2. Rank Functions", "/linear-algebra/the-rank-function/")]
+        after = [post("3. Dimension", "2026-11-04-2. The Dimension Function", "/linear-algebra/the-rank-function/")]
+        self.assertEqual(moves(before, after),
+                         [("/linear-algebra/the-rank-function/", "/linear-algebra/the-dimension-function/")])
+
+    def test_a_post_filed_under_another_textbook_takes_its_url(self):
+        before = [post("2. Metric Spaces", "2026-07-31-2. Compact Sets", "/introduction-to-analysis/compact-sets/",
+                       textbook=["1. Mathematics", "3. Mathematical Analysis", "1. Introduction to Analysis"])]
+        after = [post("2. Metric Spaces", "2026-07-31-2. Compact Sets", "/introduction-to-analysis/compact-sets/",
+                      textbook=["1. Mathematics", "4. Mathematical Analysis"])]
+        self.assertEqual(moves(before, after),
+                         [("/introduction-to-analysis/compact-sets/", "/mathematical-analysis/compact-sets/")])
+
+    def test_a_permalink_edited_by_hand_gives_way_to_the_title(self):
+        # Publish writes the title's URL back over it, so the post stays where it was.
         before = [post("1. Vector Spaces", "2026-06-02-2. Vector Spaces", "/linear-algebra/vector-spaces/")]
         after = [post("1. Vector Spaces", "2026-06-02-2. Vector Spaces", "/linear-algebra/spaces/")]
-        self.assertEqual(moves(before, after), [("/linear-algebra/vector-spaces/", "/linear-algebra/spaces/")])
+        self.assertEqual(moves(before, after), [])
 
     def test_a_new_post_moves_nothing(self):
         self.assertEqual(moves([], [post("1. Vector Spaces", "2026-06-02-2. Vector Spaces")]), [])
@@ -86,28 +103,32 @@ class Changes(unittest.TestCase):
         self.assertEqual(moves(before, after), [])
 
 
-class Mismatches(unittest.TestCase):
-    def test_a_post_retitled_since_the_last_publish_is_news(self):
-        before = [post("2. Linear Maps", "2026-10-21-1. Linear Maps", "/linear-algebra/linear-maps/")]
-        after = [post("2. Linear Maps", "2026-10-21-1. Linear Maps", "/linear-algebra/linear-maps/",
-                      title="1. Linear Maps and Hom-spaces")]
-        self.assertEqual([found[1:] for found in move.title_mismatches(before, after)],
-                         [("/linear-algebra/linear-maps/", "/linear-algebra/linear-maps-and-hom-spaces/", True)])
+class Namesakes(unittest.TestCase):
+    """Posts of one title, told apart by their sections' names."""
 
-    def test_an_older_mismatch_is_named_but_is_no_news(self):
-        kept = post("2. Linear Maps", "2026-10-21-1. Linear Maps", "/linear-algebra/linear-maps/",
-                    title="1. Linear Maps and Hom-spaces")
-        self.assertEqual([found[3] for found in move.title_mismatches([kept], [kept])], [False])
-
-    def test_a_post_off_the_site_is_not_named(self):
-        kept = post("2. Linear Maps", "2026-10-21-1. Linear Maps", "/linear-algebra/linear-maps/",
-                    title="1. Linear Maps and Hom-spaces", online=False)
-        self.assertEqual(move.title_mismatches([kept], [kept]), [])
-
-    def test_two_posts_of_one_title_carrying_their_sections_are_fine(self):
+    def test_two_posts_carrying_their_sections_stay(self):
         posts = [post("2. Metric Spaces", "2026-08-01-Exercises", "/linear-algebra/exercises-metric-spaces/"),
                  post("3. Sequences", "2026-09-01-Exercises", "/linear-algebra/exercises-sequences/")]
-        self.assertEqual(move.title_mismatches(posts, posts), [])
+        self.assertEqual(moves(posts, posts), [])
+
+    def test_a_renamed_section_renames_the_url_that_carries_it(self):
+        metric = post("2. Metric Spaces", "2026-08-31-Exercises", "/linear-algebra/exercises-metric-spaces/",
+                      "2026-08-31 10:00:00 +0900")
+        before = [post("1. Algebraic and Ordered Structures", "2026-09-18-Exercises",
+                       "/linear-algebra/exercises-algebraic-and-ordered-structures/", "2026-09-18 10:00:00 +0900"),
+                  metric]
+        after = [post("1. Number Systems", "2026-09-18-Exercises",
+                      "/linear-algebra/exercises-algebraic-and-ordered-structures/", "2026-09-18 10:00:00 +0900"),
+                 metric]
+        self.assertEqual(moves(before, after), [("/linear-algebra/exercises-algebraic-and-ordered-structures/",
+                                                 "/linear-algebra/exercises-number-systems/")])
+
+    def test_a_new_namesake_takes_its_section_and_leaves_the_older_post_alone(self):
+        before = [post("2. Metric Spaces", "2026-08-31-Exercises", "/linear-algebra/exercises/")]
+        after = before + [post("3. Sequences", "2026-09-13-Exercises", created_at="2026-09-13 10:00:00 +0900")]
+        self.assertEqual(moves(before, after), [])
+        self.assertEqual(sorted(move.frozen_urls(after).values()),
+                         ["/linear-algebra/exercises-sequences/", "/linear-algebra/exercises/"])
 
 
 class Redirects(unittest.TestCase):

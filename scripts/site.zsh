@@ -137,7 +137,8 @@ catch_up_message() {
 }
 
 # Publish passes --freeze-permalinks: a post's URL is written into its front matter when it
-# first goes out, and stays its URL however the post is renamed later (_plugins/permalinks.rb).
+# first goes out, and again when its title or textbook no longer gives it; renumbering a post
+# or moving it within its textbook keeps it (_plugins/permalinks.rb).
 sync_front_matter() {
   step "front matter"
   python3 scripts/sync_posts_front_matter.py --stabilize "$@" >>"$log" 2>&1 ||
@@ -145,27 +146,25 @@ sync_front_matter() {
   step_done
 }
 
-# A post's URL changes when its `permalink:` is deleted (Publish freezes its title's URL) or
-# edited. With --apply (Publish) its old URL redirects to the new one, its narration moves with
-# it and its podcast episode keeps its guid; without, what Publish would move is only named.
-# Either way the posts retitled since the last Publish that keep their URL are named too.
-# Prints a note for each kind, one per line; returns 1 when the script fails.
+# A post's URL changes when its title or textbook no longer gives the one in its `permalink:`,
+# or that is deleted: Publish freezes the URL of its title. With --apply (Publish) its old URL
+# redirects to the new one, its narration moves with it and its podcast episode keeps its
+# guid; without, what Publish would move is only named.
+# Prints a note when a URL moves; returns 1 when the script fails.
 post_urls() {  # post_urls [--apply]
   step "post URLs"
   local found
   found=$(python3 scripts/move_post_urls.py "$@" 2>>"$log") || { step_done "failed"; return 1; }
   [[ -n "$found" ]] && print -r -- "$found" >>"$log"
   local moved=$(print -r -- "$found" | /usr/bin/grep -cE '^(Moved|Will move) ')
-  local kept=$(print -r -- "$found" | /usr/bin/grep -c '^New title, same URL')
-  step_done "$moved moved, $kept retitled"
+  step_done "$moved moved"
   if (( moved )); then
     if [[ "${1:-}" == --apply ]]; then
       print -r -- "$moved URL(s) moved, the old ones redirect"
     else
-      print -r -- "$moved URL(s) move on Publish"
+      print -r -- "$moved URL(s) move on Publish — see site.log"
     fi
   fi
-  (( kept )) && print -r -- "$kept retitled post(s) keep their URL — see site.log"
   return 0
 }
 
@@ -374,8 +373,9 @@ publish() {
 
   sync_front_matter --freeze-permalinks
 
-  # The freeze gave each post whose permalink was deleted its new URL; carry over what hangs on
-  # the old one before the build checks the redirects.
+  # The freeze gave each post whose title no longer gave its URL (or whose permalink was
+  # deleted) the URL of its title; carry over what hangs on the old one before the build checks
+  # the redirects.
   local urls
   urls=$(post_urls --apply) || fail "could not carry over the post URLs that changed — see site.log"
 

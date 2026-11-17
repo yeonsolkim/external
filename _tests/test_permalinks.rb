@@ -60,6 +60,17 @@ check("without a section the date tells two posts apart") do
             ["b", ["3. English", "1. Grammar"], "Notes", "2026-01-02", nil]]) ==
     { "a" => "/grammar/notes-2026-01-01/", "b" => "/grammar/notes-2026-01-02/" }
 end
+check("a namesake of a post carrying its section takes its own") do
+  P.derive([["old", ANALYSIS + ["2. Metric Spaces"], "Exercises", "2026-01-01",
+             "/introduction-to-analysis/exercises-metric-spaces/"],
+            ["new", ANALYSIS + ["3. Sequences"], "Exercises", "2026-01-02", nil]]) ==
+    { "new" => "/introduction-to-analysis/exercises-sequences/" }
+end
+check("without a section a namesake of a frozen post takes its date") do
+  P.derive([["a", ["3. English", "1. Grammar"], "Notes", "2026-01-01", "/grammar/notes-2026-01-01/"],
+            ["b", ["3. English", "1. Grammar"], "Notes", "2026-01-02", nil]]) ==
+    { "b" => "/grammar/notes-2026-01-02/" }
+end
 
 puts "redirect pages"
 page = P.redirect_html("https://example.test/linear-algebra/vector-spaces/")

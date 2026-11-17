@@ -291,10 +291,10 @@ deleted post, or one that moved and left a redirect page at its old URL
 **Moving a page.** Scripts live under `_narration/<url path>/`, so a post whose URL changes
 must have its directory moved with it (`git mv`); the scripts are unchanged, so nothing is
 generated or synthesised again — the next run writes the manifest at the new URL, re-points
-the aliases, and prunes the old manifest. Post URLs are frozen in their front matter on first
-publication, so this happens only when a `permalink:` is deleted (the post takes its title's
-URL) or changed by hand, and Publish then moves the directory itself
-(`scripts/move_post_urls.py`). The podcast episode's guid never moves:
+the aliases, and prunes the old manifest. Post URLs are frozen in their front matter, so this
+happens only when a post's title, or the textbook it is filed under, no longer gives its URL
+(or its `permalink:` is deleted): Publish then freezes the title's URL and moves the directory
+itself (`scripts/move_post_urls.py`). The podcast episode's guid never moves:
 `_narration/podcast-guids.json` maps a page's new URL to the guid it was first published
 with, and the feed then marks it `isPermaLink="false"`; Publish writes that entry too.
 

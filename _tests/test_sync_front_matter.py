@@ -3,6 +3,8 @@ Tests for scripts/sync_posts_front_matter.py.
 
     python3 -m unittest discover -s _tests -p 'test_*.py'
 """
+import contextlib
+import io
 import os
 import sys
 import tempfile
@@ -126,7 +128,20 @@ class Permalinks(unittest.TestCase):
         self.assertEqual(sync.derived_permalinks(posts),
                          {"a": "/grammar/notes-2026-01-01/", "b": "/grammar/notes-2026-01-02/"})
 
-    def test_freezing_writes_the_permalink_once(self):
+    def test_a_namesake_of_a_post_carrying_its_section_takes_its_own(self):
+        posts = [
+            ("old", ANALYSIS + ["2. Metric Spaces"], "Exercises", "2026-01-01",
+             "/introduction-to-analysis/exercises-metric-spaces/"),
+            ("new", ANALYSIS + ["3. Sequences"], "Exercises", "2026-01-02", None),
+        ]
+        self.assertEqual(sync.derived_permalinks(posts), {"new": "/introduction-to-analysis/exercises-sequences/"})
+
+    def test_without_a_section_a_namesake_of_a_frozen_post_takes_its_date(self):
+        posts = [("a", ["3. English", "1. Grammar"], "Notes", "2026-01-01", "/grammar/notes-2026-01-01/"),
+                 ("b", ["3. English", "1. Grammar"], "Notes", "2026-01-02", None)]
+        self.assertEqual(sync.derived_permalinks(posts), {"b": "/grammar/notes-2026-01-02/"})
+
+    def test_freezing_writes_the_permalink_it_is_given(self):
         posts_root = sync.POSTS_ROOT
         with tempfile.TemporaryDirectory() as tmp:
             sync.POSTS_ROOT = Path(tmp)
@@ -135,15 +150,18 @@ class Permalinks(unittest.TestCase):
                 path.write_text("x", encoding="utf-8")
                 fresh = sync.desired_front_matter(path, path.stat(), 'title: "2. Functions"\npublished: true',
                                                   "/a/functions/")
+                moved = sync.desired_front_matter(path, path.stat(),
+                                                  'title: "2. Renamed"\npublished: true\npermalink: /a/functions/',
+                                                  "/a/renamed/")
                 kept = sync.desired_front_matter(path, path.stat(),
-                                                 'title: "2. Renamed"\npublished: true\npermalink: /a/functions/',
-                                                 "/a/renamed/")
+                                                 'title: "2. Functions"\npublished: true\npermalink: /a/functions/')
                 plain = sync.desired_front_matter(path, path.stat(), 'title: "2. Functions"\npublished: true')
             finally:
                 sync.POSTS_ROOT = posts_root
         self.assertIn("\npermalink: /a/functions/\n", fresh)
-        self.assertEqual(kept.count("permalink:"), 1)
-        self.assertIn("permalink: /a/functions/", kept)
+        self.assertEqual(moved.count("permalink:"), 1)
+        self.assertIn("\npermalink: /a/renamed/\n", moved)
+        self.assertIn("\npermalink: /a/functions/\n", kept)
         self.assertNotIn("permalink:", plain)
 
     def test_a_post_not_published_keeps_no_url_yet(self):
@@ -182,6 +200,80 @@ class Permalinks(unittest.TestCase):
     def test_a_quoted_title_is_read_as_written(self):
         self.assertEqual(sync.yaml_scalar(['title: "1. Say \\"hi\\""']), '1. Say "hi"')
         self.assertEqual(sync.yaml_scalar(["title: 1. Vector Spaces"]), "1. Vector Spaces")
+
+
+LINEAR = ["1. Mathematics", "3. Linear Algebra"]
+
+
+class DuePermalinks(unittest.TestCase):
+    """What Publish writes as `permalink:`: the URL follows the title, not the numbering."""
+
+    def test_a_permalink_the_title_still_gives_stays(self):
+        # Renumbered, and moved to another section of its textbook.
+        posts = [("rank", LINEAR + ["4. Dimension"], "3. The Rank Function", "2026-11-04",
+                  "/linear-algebra/the-rank-function/")]
+        self.assertEqual(sync.due_permalinks(posts), {})
+
+    def test_a_retitled_post_takes_its_title_url(self):
+        posts = [("rank", LINEAR + ["3. Dimension"], "2. The Dimension Function", "2026-11-04",
+                  "/linear-algebra/the-rank-function/")]
+        self.assertEqual(sync.due_permalinks(posts), {"rank": "/linear-algebra/the-dimension-function/"})
+
+    def test_a_post_filed_under_another_textbook_takes_its_url(self):
+        posts = [("compact", ["1. Mathematics", "4. Mathematical Analysis", "2. Metric Spaces"], "2. Compact Sets",
+                  "2026-07-31", "/introduction-to-analysis/compact-sets/")]
+        self.assertEqual(sync.due_permalinks(posts), {"compact": "/mathematical-analysis/compact-sets/"})
+
+    def test_a_post_without_one_takes_its_title_url(self):
+        posts = [("rank", LINEAR + ["3. Dimension"], "3. Rank", "2026-11-20", None)]
+        self.assertEqual(sync.due_permalinks(posts), {"rank": "/linear-algebra/rank/"})
+
+    def test_a_permalink_edited_by_hand_gives_way_to_the_title(self):
+        posts = [("spaces", LINEAR + ["2. Vector Spaces"], "1. Vector Spaces", "2026-06-02", "/linear-algebra/spaces/")]
+        self.assertEqual(sync.due_permalinks(posts), {"spaces": "/linear-algebra/vector-spaces/"})
+
+    def test_a_url_told_apart_by_its_section_or_date_stays_without_its_namesake(self):
+        posts = [("metric", ANALYSIS + ["2. Metric Spaces"], "Exercises", "2026-08-31",
+                  "/introduction-to-analysis/exercises-metric-spaces/"),
+                 ("notes", ["3. English", "1. Grammar"], "Notes", "2026-01-01", "/grammar/notes-2026-01-01/")]
+        self.assertEqual(sync.due_permalinks(posts), {})
+
+    def test_a_renamed_section_renames_the_url_that_carries_it(self):
+        posts = [("ordered", ANALYSIS + ["1. Number Systems"], "Exercises", "2026-09-18",
+                  "/introduction-to-analysis/exercises-algebraic-and-ordered-structures/"),
+                 ("metric", ANALYSIS + ["2. Metric Spaces"], "Exercises", "2026-08-31",
+                  "/introduction-to-analysis/exercises-metric-spaces/")]
+        self.assertEqual(sync.due_permalinks(posts), {"ordered": "/introduction-to-analysis/exercises-number-systems/"})
+
+    def test_a_textbook_renamed_moves_namesakes_together(self):
+        analysis = ["1. Mathematics", "4. Mathematical Analysis"]
+        posts = [("ordered", analysis + ["1. Number Systems"], "Exercises", "2026-09-18",
+                  "/introduction-to-analysis/exercises-algebraic-and-ordered-structures/"),
+                 ("metric", analysis + ["2. Metric Spaces"], "Exercises", "2026-08-31",
+                  "/introduction-to-analysis/exercises-metric-spaces/")]
+        self.assertEqual(sync.due_permalinks(posts),
+                         {"ordered": "/mathematical-analysis/exercises-number-systems/",
+                          "metric": "/mathematical-analysis/exercises-metric-spaces/"})
+
+    def test_a_retitled_post_freezes_once_and_then_stays(self):
+        # What the stabilizing sync relies on: a second pass changes nothing.
+        saved = sync.ROOT, sync.POSTS_ROOT
+        with tempfile.TemporaryDirectory() as tmp:
+            sync.ROOT, sync.POSTS_ROOT = Path(tmp), Path(tmp)
+            try:
+                path = Path(tmp) / "1. Mathematics" / "3. Linear Algebra" / "3. Dimension" / \
+                    "2026-11-04-2. The Dimension Function.md"
+                path.parent.mkdir(parents=True)
+                path.write_text('---\ntitle: 2. The Dimension Function\npermalink: /linear-algebra/the-rank-function/\n'
+                                'published: true\n---\nx\n', encoding="utf-8")
+                with contextlib.redirect_stdout(io.StringIO()):
+                    first, second = sync.sync_all_posts(True), sync.sync_all_posts(True)
+                text = path.read_text(encoding="utf-8")
+            finally:
+                sync.ROOT, sync.POSTS_ROOT = saved
+        self.assertTrue(first)
+        self.assertFalse(second)
+        self.assertIn("\npermalink: /linear-algebra/the-dimension-function/\n", text)
 
 
 if __name__ == "__main__":

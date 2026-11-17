@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-Carry over what hangs on a post's URL when the URL changes, and name the posts whose title no
-longer gives the URL they keep.
+Carry over what hangs on a post's URL when the URL changes.
 
-    python3 scripts/move_post_urls.py           what Publish would move, and the posts whose
-                                                title would give another URL
+    python3 scripts/move_post_urls.py           what Publish would move
     python3 scripts/move_post_urls.py --apply   move it (scripts/site.zsh publish, right after
                                                 the front matter is frozen)
 
-A post's URL changes when its `permalink:` is deleted or emptied, so that Publish freezes the
-URL of its current title (scripts/sync_posts_front_matter.py), or when it is edited by hand.
+A post's URL follows its title: when the title, or the textbook the post is filed under, no
+longer gives the URL in its `permalink:` (or that is deleted), Publish freezes the URL of its
+current title (scripts/sync_posts_front_matter.py, due_permalinks). A permalink the title
+still gives stays, so renumbering a post or moving it within its textbook moves nothing.
 The URL it had is the one it has in HEAD, which is what the last Publish put online; the post
 is found there at its path, or, when it was moved or renamed, by its `created_at` or its URL.
 A post with `published: false`, in HEAD or now, is off the site, so it has no URL to carry over.
@@ -37,7 +37,7 @@ import subprocess
 import sys
 
 from sync_posts_front_matter import (DATE_PREFIX_RE, FRONT_MATTER_RE, POSTS_ROOT, ROOT, derived_permalinks,
-                                     post_paths, top_level_entry, yaml_quote, yaml_scalar)
+                                     due_permalinks, post_paths, top_level_entry, yaml_quote, yaml_scalar)
 
 sys.path.insert(0, str(ROOT))
 from _narrator import siteconfig  # noqa: E402
@@ -113,10 +113,11 @@ def served_urls(posts: list[Post]) -> dict[str, str]:
     return {post.path: post.permalink or derived[post.path] for post in posts}
 
 
-def title_urls(posts: list[Post]) -> dict[str, str]:
-    """{path: the URL its title gives}: the one it would take were no URL frozen, so that two
-    posts of one title both carry their section's name, as the scheme has it."""
-    return derived_permalinks([entry[:4] + (None,) for entry in entries(posts)])
+def frozen_urls(posts: list[Post]) -> dict[str, str]:
+    """{path: URL} as Publish freezes them: the permalink while the title and place still give
+    it, or else the URL of the title (scripts/sync_posts_front_matter.py, due_permalinks)."""
+    due = due_permalinks(entries(posts))
+    return {post.path: due.get(post.path) or post.permalink for post in posts}
 
 
 def counterparts(before: list[Post], after: list[Post], old_urls: dict, new_urls: dict) -> dict[str, Post]:
@@ -146,22 +147,13 @@ def counterparts(before: list[Post], after: list[Post], old_urls: dict, new_urls
 
 
 def url_changes(before: list[Post], after: list[Post]) -> list[tuple[Post, str, str]]:
-    """(post, the URL it had, the URL it has) for each post whose URL changed since HEAD."""
-    old_urls, new_urls = served_urls(before), served_urls(after)
+    """(post, the URL it had, the URL Publish gives it) for each post whose URL changes since
+    HEAD: before the freeze, what it will move; after it, what it moved."""
+    old_urls, new_urls = served_urls(before), frozen_urls(after)
     found = counterparts(before, after, old_urls, new_urls)
     return [(post, old_urls[found[post.path].path], new_urls[post.path]) for post in after
             if post.online and post.path in found and found[post.path].online
             and old_urls[found[post.path].path] != new_urls[post.path]]
-
-
-def title_mismatches(before: list[Post], after: list[Post]) -> list[tuple[Post, str, str, bool]]:
-    """(post, its URL, the URL its title gives, whether that changed since HEAD) for each post
-    that keeps a URL its title no longer gives."""
-    old_urls, urls, wanted = served_urls(before), served_urls(after), title_urls(after)
-    found, then = counterparts(before, after, old_urls, urls), title_urls(before)
-    return [(post, urls[post.path], wanted[post.path],
-             post.path not in found or then[found[post.path].path] != wanted[post.path])
-            for post in after if post.online and urls[post.path] != wanted[post.path]]
 
 
 def unquote(text: str) -> str:
@@ -259,9 +251,6 @@ def main() -> int:
         print(f"{'Moved' if args.apply else 'Will move'} {old} to {new} ({post.title})")
         for line in done.get(new, []):
             print(f"  {line}")
-    for post, url, wanted, retitled in title_mismatches(before, after):
-        print(f"{'New title, same URL' if retitled else 'Title and URL differ'}: {url} "
-              f"(the title {post.title!r} gives {wanted}; delete its permalink: to move it)")
     return 0
 
 

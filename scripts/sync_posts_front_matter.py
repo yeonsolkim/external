@@ -140,27 +140,55 @@ def permalink_url(folders: list[str], name: str) -> str:
 
 def derived_permalinks(posts: list[tuple]) -> dict:
     """posts: (key, category_path, title, date, frozen permalink or None). Returns {key: URL}
-    for the posts without a permalink; two that would share one take their sections' names."""
+    for the posts without a permalink. Posts whose titles would give one URL, frozen ones among
+    them, take their sections' names, or else their dates; a URL frozen already is never given."""
     taken = {frozen.strip() for *_, frozen in posts if frozen and frozen.strip()}
     open_posts = [post for post in posts if not (post[4] and post[4].strip())]
+    # Every post's own URL counts, a frozen one's too: a post whose title another post of its
+    # textbook has takes its section's name, whichever of the two went out first.
+    counts = Counter(permalink_url(*permalink_parts(category_path, title, date)[:2])
+                     for _, category_path, title, date, _ in posts)
     plans = {key: permalink_parts(category_path, title, date)
              for key, category_path, title, date, _ in open_posts}
 
     first = {key: permalink_url(folders, name) for key, (folders, name, _) in plans.items()}
-    counts = Counter(first.values())
-    urls = {}
+    urls, dated = {}, set()
     for key, candidate in first.items():
         folders, name, section = plans[key]
         shared = counts[candidate] > 1 or candidate in taken
+        if shared and not section:
+            dated.add(key)
         urls[key] = permalink_url(folders, f"{name}-{section}") if shared and section else candidate
 
     # Still shared (no section to tell the posts apart): the date says which is which.
     counts = Counter(urls.values())
     dates = {key: date for key, _, _, date, _ in open_posts}
     for key, candidate in list(urls.items()):
-        if counts[candidate] > 1 or candidate in taken:
+        if key in dated or counts[candidate] > 1 or candidate in taken:
             urls[key] = candidate[:-1] + f"-{dates[key]}/"
     return urls
+
+
+def title_urls(category_path: list[str], title: str, date: str) -> set[str]:
+    """Every URL a post's title and place can give it: its own, or that one with its
+    section's name, its date or both, which derived_permalinks adds to tell posts apart."""
+    folders, name, section = permalink_parts(category_path, title, date)
+    names = [name, f"{name}-{section}"] if section else [name]
+    return {permalink_url(folders, base + suffix) for base in names for suffix in ("", f"-{date}")}
+
+
+def due_permalinks(posts: list[tuple]) -> dict:
+    """posts: as derived_permalinks takes them. Returns {key: URL} for the posts Publish writes
+    a permalink into: those without one, and those whose title and place no longer give the
+    one they have (retitled, or filed under another textbook), which take the URL of their
+    title like a new post. A permalink the title still gives stays, so renumbering a post,
+    moving it within its textbook or a second post of its title does not move it."""
+    def kept(category_path, title, date, frozen):
+        frozen = (frozen or "").strip()
+        return frozen if frozen in title_urls(category_path, title, date) else None
+
+    return derived_permalinks([(key, category_path, title, date, kept(category_path, title, date, frozen))
+                               for key, category_path, title, date, frozen in posts])
 
 
 def yaml_scalar(lines: list[str]) -> str | None:
@@ -234,14 +262,14 @@ def desired_front_matter(path: Path, stat: os.stat_result, existing_front_matter
         ("created_at", [f"created_at: {fmt_time(created)}"]),
         ("last_modified_at", [f"last_modified_at: {fmt_time(stat.st_mtime)}"]),
     ]
-    # Like the title, a permalink once written is kept as written: the URL a post was
-    # published at stays its URL when the post is renamed or renumbered. Deleted, or emptied
-    # in Obsidian, it gives way to the URL of the current title (scripts/move_post_urls.py
-    # then redirects the old one). A post not published yet has no URL to keep: the title it
-    # has when it goes out decides.
+    # The permalink is the URL a post is served at. Publish writes the URL of the title into a
+    # published post without one, and over one its title and place no longer give (a post
+    # retitled, or filed under another textbook: due_permalinks), and scripts/move_post_urls.py
+    # then redirects the old URL; renumbering a post or moving it within its textbook keeps it.
+    # A post not published yet has no URL to keep: the title it has when it goes out decides.
     frozen = (yaml_scalar(top_level_entry(existing_front_matter, "permalink")) or "").strip()
     published = yaml_scalar(top_level_entry(existing_front_matter, "published")) == "true"
-    replace = bool(permalink) and not frozen and published
+    replace = bool(permalink) and permalink != frozen and published
     entries += [entry for entry in top_level_entries(existing_front_matter)
                 if entry[0] not in MANAGED_KEYS and not (replace and entry[0] == "permalink")]
     entries += [(key, [f"{key}: false"]) for key in CHECKBOX_KEYS
@@ -299,7 +327,7 @@ def post_paths(posts_root: Path) -> list[Path]:
 def sync_all_posts(freeze_permalinks: bool = False) -> bool:
     changed = False
     paths = post_paths(POSTS_ROOT)
-    permalinks = derived_permalinks([post_permalink_entry(path) for path in paths]) if freeze_permalinks else {}
+    permalinks = due_permalinks([post_permalink_entry(path) for path in paths]) if freeze_permalinks else {}
 
     for path in paths:
         _, did_change = sync_post(path, permalinks.get(path))
@@ -355,7 +383,8 @@ def parse_args() -> argparse.Namespace:
         "--freeze-permalinks",
         action="store_true",
         help="write each published post's URL into its front matter as `permalink:` where there "
-        "is none (site.zsh publish), so renaming or renumbering it later keeps the URL",
+        "is none, or where its title and place no longer give the one there (site.zsh publish); "
+        "renumbering a post or moving it within its textbook keeps its URL",
     )
     return parser.parse_args()
 

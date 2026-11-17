@@ -178,13 +178,15 @@ structure.
   differ from the filename. The script derives it from the filename only when
   the key is missing, so renaming a post does not change its title; delete the
   `title` line to regenerate it.
-- `permalink` works the same way, but only Publish writes it
-  (`--freeze-permalinks`): a post's URL is frozen when it first goes out, that
-  is, on the first Publish with `published` ticked, so renaming, renumbering, or
-  moving the post later keeps its URL, and a draft's title can change freely
-  until then. Delete the line, or empty it in Obsidian, to take the URL of the
-  current title; Publish then carries over what hung on the old URL (see Post
-  URLs below).
+- `permalink` is written only by Publish (`--freeze-permalinks`): a post's URL
+  is frozen when it first goes out, that is, on the first Publish with
+  `published` ticked, so a draft's title can change freely until then. From
+  then on the URL follows the title: when the title, or the textbook the post
+  is filed under, no longer gives the URL in `permalink`, Publish writes the
+  URL of the current title over it and carries over what hung on the old one
+  (see Post URLs below). Renumbering a post, renaming its file, or moving it
+  within its textbook keeps its URL. A permalink edited by hand gives way to
+  the title's URL on the next Publish.
 - New posts should keep the filename pattern `YYYY-MM-DD-title.md`. Files
   without a date prefix may be renamed by the sync script.
 - The Obsidian templates in `templates/` help create/update post front matter,
@@ -198,7 +200,9 @@ structure.
   the section), or for a post filed directly under a second-level category, that
   category; under `Others` the level above stands in and the section is added
   (`/mathematics/questions/linear-algebra/`). Two posts that would share a URL
-  both add their section's name (`/introduction-to-analysis/exercises-metric-spaces/`).
+  both add their section's name (`/introduction-to-analysis/exercises-metric-spaces/`);
+  a post whose title an older post of its textbook has adds its own, and the
+  older post keeps its URL.
   `_plugins/permalinks.rb` derives it for a post without `permalink:`, and
   `scripts/sync_posts_front_matter.py` freezes the same URL on Publish; the two
   derivations must agree (`_tests/test_permalinks.rb` and
@@ -209,7 +213,8 @@ structure.
   refresh, a canonical link and `noindex`; Google treats such a refresh as a
   permanent redirect. They stay out of the sitemap, and a target that is no page
   of the site is a build warning.
-- When a post's URL changes (its `permalink:` deleted or edited), Publish runs
+- When a post's URL changes (its title or textbook no longer gives it, or its
+  `permalink:` is deleted), Publish runs
   `scripts/move_post_urls.py --apply` right after the freeze. The old URL goes
   into `_data/redirects.yml`, and a redirect that led to it now leads to the
   new URL, so none takes two steps. The post's narration moves from
@@ -218,9 +223,9 @@ structure.
   page). The URL a post had is the one in HEAD; a post that was moved or
   renamed is found there by its `created_at`. A post with `published: false`,
   in HEAD or now, is off the site, so nothing is carried over for it.
-- Preview and Publish also name the posts retitled since the last Publish that
-  keep their URL. `python3 scripts/move_post_urls.py` lists what Publish would
-  move and every post whose title gives another URL than it has.
+- Preview says how many URLs the next Publish will move (the list is in
+  `site.log`) and serves a retitled post at its old URL until then.
+  `python3 scripts/move_post_urls.py` lists what Publish would move.
 
 ### Home Page Category Tree
 
