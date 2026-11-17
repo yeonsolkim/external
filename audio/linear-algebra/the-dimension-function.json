@@ -1,0 +1,445 @@
+{
+  "url": "/linear-algebra/the-dimension-function/",
+  "title": "3.2 The Dimension Function",
+  "lang": "en",
+  "guid": "https://yeonsolkim.com/linear-algebra/the-dimension-function/",
+  "description": "We first demonstrate that the power set 𝒫(V) of a vector space V and the collection Sub(V) of all subspaces of V are lattices.",
+  "published_at": "2026-11-03T15:00:00+00:00",
+  "audio": "https://audio.yeonsolkim.com/o/c8c8d475d0226ff1b41e3f4b4d45d4f3276e330b215a529079cb1b6a6a9a422a.mp3",
+  "stable": "https://audio.yeonsolkim.com/linear-algebra/the-dimension-function.mp3",
+  "chapters_url": "https://audio.yeonsolkim.com/linear-algebra/the-dimension-function.chapters.json",
+  "duration": 1049.176,
+  "bytes": 16789021,
+  "voice": "cedar",
+  "page_key": "c8c8d475d0226ff1b41e3f4b4d45d4f3276e330b215a529079cb1b6a6a9a422a",
+  "skeleton_hash": "44aaaffee23fffcb644589868e76f5e70f719a0f05c8fadb7c197887c6f7a7c2",
+  "generated": "2026-11-17",
+  "podcast": true,
+  "sections": [
+    {
+      "id": "par-the-subset-lattice-and-subspace-lattice",
+      "title": "The subset lattice and subspace lattice",
+      "kind": "paragraph",
+      "level": 2,
+      "start": 0.0,
+      "duration": 20.792,
+      "source": "6fc204da8f9bfc5c8f9aa6c48d7dca80b68b43ace796a596bceabde55808e257",
+      "audio": "877ff6718c1f14d7abb8b9e8d78163e989d70cc45c397b19ccbe98ed0c6b5409",
+      "parent": null,
+      "proves": null,
+      "span": 323.077
+    },
+    {
+      "id": "proposition-3-2-1",
+      "title": "Proposition 3.2.1",
+      "kind": "proposition",
+      "level": 3,
+      "start": 21.992,
+      "duration": 23.295,
+      "source": "3eaf72f960568a07ebe45c967dd3164e790584878c7f08d7a65a72ae337faac9",
+      "audio": "87b415234b6001c0639636d3c96abc34799e08d075a219393a7199655bc28a63",
+      "parent": "par-the-subset-lattice-and-subspace-lattice",
+      "proves": null
+    },
+    {
+      "id": "proof-proposition-3-2-1",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 46.488,
+      "duration": 55.218,
+      "source": "3ee6de985159f8ce5c593c9d2131387f1a709c456e086816ebd26098057b09f8",
+      "audio": "a6dab53daba91b621fa04a94e4b735311c3384fb880d4f371b6813ab52ee04f6",
+      "parent": "par-the-subset-lattice-and-subspace-lattice",
+      "proves": "proposition-3-2-1"
+    },
+    {
+      "id": "proposition-3-2-2",
+      "title": "Proposition 3.2.2",
+      "kind": "proposition",
+      "level": 3,
+      "start": 102.905,
+      "duration": 25.125,
+      "source": "1acf0a916c49bb76955498fe1fe148adab94cfc02e0e1f5cf632dc3aee69a228",
+      "audio": "8d9516fbba1a405eb6b53c7a5c30bcaec0ed05ed2a0d301216db32f77ad9f42a",
+      "parent": "par-the-subset-lattice-and-subspace-lattice",
+      "proves": null
+    },
+    {
+      "id": "proof-proposition-3-2-2",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 129.23,
+      "duration": 50.074,
+      "source": "95086b12a97587132905e00c32882b1ae3ca4481825d0f0d1f593016fc3485f9",
+      "audio": "b84952a57b97cf0b258a17d6b31ca75ab4e9f2de62ba250ced19c281df95ff81",
+      "parent": "par-the-subset-lattice-and-subspace-lattice",
+      "proves": "proposition-3-2-2"
+    },
+    {
+      "id": "prose-after-proof-proposition-3-2-2",
+      "title": "We now compare the two structures.",
+      "kind": "prose",
+      "level": 3,
+      "start": 180.504,
+      "duration": 14.489,
+      "source": "51ffadce6aad76c96a471a658141b77d772fd006e571fe5a9d85e4a8ca4a5170",
+      "audio": "8d886862f3d4c0ec7bb1dbc828a65b67e2a211d2f7b3371fac75262aac7131bb",
+      "parent": "par-the-subset-lattice-and-subspace-lattice",
+      "proves": null
+    },
+    {
+      "id": "theorem-3-2-3",
+      "title": "Theorem 3.2.3",
+      "kind": "theorem",
+      "level": 3,
+      "start": 196.193,
+      "duration": 13.338,
+      "source": "2a9a375df1318f7aeec9d860bf3a3ab9116939641dfe88d05bd32ff8ca7f1311",
+      "audio": "797d7e0131e1d6e6fa3dea80c67bbb617ad86e89ed9eed134a543e9733419d5c",
+      "parent": "par-the-subset-lattice-and-subspace-lattice",
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-3-2-3",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 210.731,
+      "duration": 112.346,
+      "source": "0a6b10a4014af00d4edb828e3f9b1d04526162e82aefafe137a0e148889caf24",
+      "audio": "75711b5eb8e61330f74bd47eda0c2ad37b7c71876ed97665a1f82f1cf9120db0",
+      "parent": "par-the-subset-lattice-and-subspace-lattice",
+      "proves": "theorem-3-2-3"
+    },
+    {
+      "id": "par-galois-connections-between-the-two-lattices",
+      "title": "Galois connections between the two lattices",
+      "kind": "paragraph",
+      "level": 2,
+      "start": 324.277,
+      "duration": 31.334,
+      "source": "985520530df1c2175353382db1c179fc4700d9aaed639524e848e69ee258b960",
+      "audio": "63c93bc755da8ff7a3eb847ffad72d02a6928a6b15a866c56590aef99ce1f9d5",
+      "parent": null,
+      "proves": null,
+      "span": 394.737
+    },
+    {
+      "id": "definition-3-2-4",
+      "title": "Definition 3.2.4",
+      "kind": "definition",
+      "level": 3,
+      "start": 356.811,
+      "duration": 37.793,
+      "source": "577dada72037913311fb9774bc5743558eaec992d540e00748fed313b159c936",
+      "audio": "15c67c280bb0413d8701167eb5a207eed1e916e1d111463faeb33d91ec39a28e",
+      "parent": "par-galois-connections-between-the-two-lattices",
+      "proves": null
+    },
+    {
+      "id": "theorem-3-2-5",
+      "title": "Theorem 3.2.5",
+      "kind": "theorem",
+      "level": 3,
+      "start": 395.804,
+      "duration": 21.797,
+      "source": "e0d1324da2b8f3192e62de5c2c86efe69763b946270a671cef5db0b288766501",
+      "audio": "4332390cb16a927fd656289b4b67ae9a84528442e0b10fcc7e41981080ac7294",
+      "parent": "par-galois-connections-between-the-two-lattices",
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-3-2-5",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 418.801,
+      "duration": 136.726,
+      "source": "e6b1fc18fefc45f0c002a9b5468d1aa43a3edf4eb5df9bbfcf196784b8323e2e",
+      "audio": "1d64468a5783731fb8e2be884b425ea2547d22ef037af0e85df34e090fcc24ea",
+      "parent": "par-galois-connections-between-the-two-lattices",
+      "proves": "theorem-3-2-5"
+    },
+    {
+      "id": "prose-after-proof-theorem-3-2-5",
+      "title": "We now apply these general results to the subset and…",
+      "kind": "prose",
+      "level": 3,
+      "start": 556.727,
+      "duration": 5.928,
+      "source": "544b64898812e1e77ca57e735097c3a47f5342218e098f06b4adb2f9b4417e86",
+      "audio": "ab11f034e074b88f5ce7f66b0c05b1359f7a50b3508a769e2a7fa051c31d2675",
+      "parent": "par-galois-connections-between-the-two-lattices",
+      "proves": null
+    },
+    {
+      "id": "definition-3-2-6",
+      "title": "Definition 3.2.6",
+      "kind": "definition",
+      "level": 3,
+      "start": 563.855,
+      "duration": 12.609,
+      "source": "d1ddc6effee17fad6e453be3178661254f71362420cfe327786d4762a9a81bad",
+      "audio": "8a713d032df19c18bcbb2af3882e3566b8c074352e6c21e4f3715846229ec8e2",
+      "parent": "par-galois-connections-between-the-two-lattices",
+      "proves": null
+    },
+    {
+      "id": "theorem-3-2-7",
+      "title": "Theorem 3.2.7",
+      "kind": "theorem",
+      "level": 3,
+      "start": 577.664,
+      "duration": 23.47,
+      "source": "397f9523b342cdbeaa840d5a4ed39be0b3bb4acc17b67267e82314c29e74cd8c",
+      "audio": "ab2a1ed743efc4859264c2d89ac37d0e659e192fc28e1e97d6e65de05b7e6d67",
+      "parent": "par-galois-connections-between-the-two-lattices",
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-3-2-7",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 602.334,
+      "duration": 62.624,
+      "source": "f3d84e0a0d221a1108eb6b486f875851eb56057505ffb63654090c52cd43d1cc",
+      "audio": "5dc7a727b072a860798c6685dc4e337797908cdf572a9657da649f30e1cfcb3a",
+      "parent": "par-galois-connections-between-the-two-lattices",
+      "proves": "theorem-3-2-7"
+    },
+    {
+      "id": "prose-after-proof-theorem-3-2-7",
+      "title": "The adjunction … gives a structural interpretation of the…",
+      "kind": "prose",
+      "level": 3,
+      "start": 666.158,
+      "duration": 19.797,
+      "source": "bcae02c05a196328d8764cc1d4c0a145c8808486ce7e1a30063e02709754ccc3",
+      "audio": "c61569c57c38626f670dbddc901a869b075abcd3fc18450389061ca9b0f42ee6",
+      "parent": "par-galois-connections-between-the-two-lattices",
+      "proves": null
+    },
+    {
+      "id": "remark-3-2-8",
+      "title": "Remark 3.2.8",
+      "kind": "remark",
+      "level": 3,
+      "start": 687.155,
+      "duration": 31.859,
+      "source": "9c27033d70ed3fdc6922cd29aa842ddfe9d5b1c7359551bf07bef716b83f4bbe",
+      "audio": "e941edff030a72f01c597c8a0de2c8c4c2e250ccae75c4fd0375655ea1600e1b",
+      "parent": "par-galois-connections-between-the-two-lattices",
+      "proves": null
+    },
+    {
+      "id": "par-dimension-as-a-rank-function",
+      "title": "Dimension as a rank function",
+      "kind": "paragraph",
+      "level": 2,
+      "start": 720.214,
+      "duration": 38.114,
+      "source": "a420fdea4f037be80aeb0397ba8aa4bce643c8ccbe56e76738e1e26ccb7b5bd2",
+      "audio": "5c0f7edb1e6b73be402a323d325f861f4de2545acc02dfdfd82ae0f2a4282209",
+      "parent": null,
+      "proves": null,
+      "span": 328.961
+    },
+    {
+      "id": "theorem-3-2-9",
+      "title": "Theorem 3.2.9",
+      "kind": "theorem",
+      "level": 3,
+      "start": 759.528,
+      "duration": 16.845,
+      "source": "044019fc3bf2ee1b2e7e46bb6ea982044752de70697d2510f2fbf02f8975e9c2",
+      "audio": "b777696e355aae0d99b95ce6072b67abac3aef649704e6ca64e8533b18bddf3f",
+      "parent": "par-dimension-as-a-rank-function",
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-3-2-9",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 777.574,
+      "duration": 68.177,
+      "source": "3eaab63b01fba4fbb217d97d3b44b89eae4f93e59cc98745dc5cf2fca02c1557",
+      "audio": "793e88a291b387099a75a4dc33c846980460d9842c6a99de11af985b9d56ba3a",
+      "parent": "par-dimension-as-a-rank-function",
+      "proves": "theorem-3-2-9"
+    },
+    {
+      "id": "corollary-3-2-10",
+      "title": "Corollary 3.2.10 (Grassmann’s formula)",
+      "kind": "corollary",
+      "level": 3,
+      "start": 846.951,
+      "duration": 16.063,
+      "source": "472a36dbfbcb75df490331922b1a1dc9f4e8a3c59d65b62cb5bca8c42c5e27ea",
+      "audio": "b0219e2fb567a1863db98d3a65e9663b8964110c35459cebdfa8a9904118950a",
+      "parent": "par-dimension-as-a-rank-function",
+      "proves": null
+    },
+    {
+      "id": "proof-corollary-3-2-10",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 864.214,
+      "duration": 34.04,
+      "source": "6c075c799ccc271824350b7844080ce76f942b3781a25cf69d1aac5c3096d702",
+      "audio": "fbf3df7a9a2c12951ac65a8803f45dd0b339d98bd5acb037106b46b53a81df55",
+      "parent": "par-dimension-as-a-rank-function",
+      "proves": "corollary-3-2-10"
+    },
+    {
+      "id": "definition-3-2-11",
+      "title": "Definition 3.2.11",
+      "kind": "definition",
+      "level": 3,
+      "start": 899.453,
+      "duration": 15.869,
+      "source": "7c4a3767405fa56556d8c09ead5b59c266830bef0213261ad614cdd5aa0c73dc",
+      "audio": "c86ea085b8528b1f1a2a8dc3adb41e13f2be86455faff92df65b928a18cf9158",
+      "parent": "par-dimension-as-a-rank-function",
+      "proves": null
+    },
+    {
+      "id": "proposition-3-2-12",
+      "title": "Proposition 3.2.12",
+      "kind": "proposition",
+      "level": 3,
+      "start": 916.522,
+      "duration": 14.458,
+      "source": "e88d6b419f3539ccf8d5fd10195f156a56c5a0bce8a6756ea1d54b7f9a357499",
+      "audio": "9d83ee3b58f9a31ad21e0b19776a9916853234707a802ba808713f2c34be8606",
+      "parent": "par-dimension-as-a-rank-function",
+      "proves": null
+    },
+    {
+      "id": "proof-proposition-3-2-12",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 932.18,
+      "duration": 80.502,
+      "source": "01b10d4fbaae504de96c7481acc2f95dc4e6bf5daef0a32b7f9c6307e3d8e7dd",
+      "audio": "0f6a6f5812ba69750c20dcc04d519d711ed398cd0da092d1260119c499a4bb67",
+      "parent": "par-dimension-as-a-rank-function",
+      "proves": "proposition-3-2-12"
+    },
+    {
+      "id": "remark-3-2-13",
+      "title": "Remark 3.2.13",
+      "kind": "remark",
+      "level": 3,
+      "start": 1013.882,
+      "duration": 35.293,
+      "source": "fe920853b8b0f7f0fdaf30fd8b3562aab3744117428804fd41c95fe2452793f3",
+      "audio": "7a5ba12026ca7baaf03fbcd00d4c05649b1e1e369b09fb837c3d8fa0bf3079e9",
+      "parent": "par-dimension-as-a-rank-function",
+      "proves": null
+    }
+  ],
+  "chapters": [
+    {
+      "id": "par-the-subset-lattice-and-subspace-lattice",
+      "title": "The subset lattice and subspace lattice",
+      "start": 0.0,
+      "end": 21.992
+    },
+    {
+      "id": "proposition-3-2-1",
+      "title": "Proposition 3.2.1",
+      "start": 21.992,
+      "end": 102.905
+    },
+    {
+      "id": "proposition-3-2-2",
+      "title": "Proposition 3.2.2",
+      "start": 102.905,
+      "end": 196.193
+    },
+    {
+      "id": "theorem-3-2-3",
+      "title": "Theorem 3.2.3",
+      "start": 196.193,
+      "end": 324.277
+    },
+    {
+      "id": "par-galois-connections-between-the-two-lattices",
+      "title": "Galois connections between the two lattices",
+      "start": 324.277,
+      "end": 356.811
+    },
+    {
+      "id": "definition-3-2-4",
+      "title": "Definition 3.2.4",
+      "start": 356.811,
+      "end": 395.804
+    },
+    {
+      "id": "theorem-3-2-5",
+      "title": "Theorem 3.2.5",
+      "start": 395.804,
+      "end": 563.855
+    },
+    {
+      "id": "definition-3-2-6",
+      "title": "Definition 3.2.6",
+      "start": 563.855,
+      "end": 577.664
+    },
+    {
+      "id": "theorem-3-2-7",
+      "title": "Theorem 3.2.7",
+      "start": 577.664,
+      "end": 687.155
+    },
+    {
+      "id": "remark-3-2-8",
+      "title": "Remark 3.2.8",
+      "start": 687.155,
+      "end": 720.214
+    },
+    {
+      "id": "par-dimension-as-a-rank-function",
+      "title": "Dimension as a rank function",
+      "start": 720.214,
+      "end": 759.528
+    },
+    {
+      "id": "theorem-3-2-9",
+      "title": "Theorem 3.2.9",
+      "start": 759.528,
+      "end": 846.951
+    },
+    {
+      "id": "corollary-3-2-10",
+      "title": "Corollary 3.2.10 (Grassmann’s formula)",
+      "start": 846.951,
+      "end": 899.453
+    },
+    {
+      "id": "definition-3-2-11",
+      "title": "Definition 3.2.11",
+      "start": 899.453,
+      "end": 916.522
+    },
+    {
+      "id": "proposition-3-2-12",
+      "title": "Proposition 3.2.12",
+      "start": 916.522,
+      "end": 1013.882
+    },
+    {
+      "id": "remark-3-2-13",
+      "title": "Remark 3.2.13",
+      "start": 1013.882,
+      "end": 1049.176
+    }
+  ]
+}

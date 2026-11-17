@@ -1,0 +1,614 @@
+{
+  "url": "/linear-algebra/lattices/",
+  "title": "1.3 Lattices",
+  "lang": "en",
+  "guid": "https://yeonsolkim.com/linear-algebra/lattices/",
+  "description": "An order relation tells us when one element lies below another, but it does not specify how many steps separate them.",
+  "published_at": "2026-11-03T15:00:00+00:00",
+  "audio": "https://audio.yeonsolkim.com/o/3754a09455988b6eff0da5216c25b69576d85cd58d14f16d2d312db6b3c67f4a.mp3",
+  "stable": "https://audio.yeonsolkim.com/linear-algebra/lattices.mp3",
+  "chapters_url": "https://audio.yeonsolkim.com/linear-algebra/lattices.chapters.json",
+  "duration": 1450.458,
+  "bytes": 23210127,
+  "voice": "cedar",
+  "page_key": "3754a09455988b6eff0da5216c25b69576d85cd58d14f16d2d312db6b3c67f4a",
+  "skeleton_hash": "05c2544c127bb7167f3b6d3844ea8d0afd36cfd647744efc02110f1d4b432d83",
+  "generated": "2026-11-17",
+  "podcast": true,
+  "sections": [
+    {
+      "id": "par-the-length-of-a-poset",
+      "title": "The length of a poset",
+      "kind": "paragraph",
+      "level": 2,
+      "start": 0.0,
+      "duration": 21.224,
+      "source": "fc1706f4e78c5b7be8df48fa86148cd36fadb8ad9e52fbc563fe07c3a014525b",
+      "audio": "2da4d78eb97997e3d2dad1805d5997bae6c29a6d7772ad8f4a0201afb23ccbcb",
+      "parent": null,
+      "proves": null,
+      "span": 163.864
+    },
+    {
+      "id": "definition-1-3-1",
+      "title": "Definition 1.3.1",
+      "kind": "definition",
+      "level": 3,
+      "start": 22.424,
+      "duration": 28.427,
+      "source": "548ecbdd6c775979e7c40461f69e164d984c27c3d2571e642122a9d254241d06",
+      "audio": "660e6aa5584613cdb82bb622d24264c45c225e52833a7ffc515e3a25634b14fa",
+      "parent": "par-the-length-of-a-poset",
+      "proves": null
+    },
+    {
+      "id": "definition-1-3-2",
+      "title": "Definition 1.3.2",
+      "kind": "definition",
+      "level": 3,
+      "start": 52.051,
+      "duration": 19.7,
+      "source": "c104cae1a2372ef3d9fcdffb83b272c8b3614bcc205842be39f58c391713a1d0",
+      "audio": "b1eaf6af74f584eff77815e5166eacabcfc3b8dd9a25244eba732d8cba789b79",
+      "parent": "par-the-length-of-a-poset",
+      "proves": null
+    },
+    {
+      "id": "proposition-1-3-3",
+      "title": "Proposition 1.3.3",
+      "kind": "proposition",
+      "level": 3,
+      "start": 72.951,
+      "duration": 9.145,
+      "source": "1b12b020dea4f77f4468f34b795ad991332023bbab716e1650b59cb9ed04e155",
+      "audio": "9510692ba0d9b6ea0420d3658b429655d577312162373ef9211f2e536562266c",
+      "parent": "par-the-length-of-a-poset",
+      "proves": null
+    },
+    {
+      "id": "proof-proposition-1-3-3",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 83.295,
+      "duration": 42.03,
+      "source": "4d69ee8f2a01174f168d983f3b2e3cfc62649831114dc2429fe9a58746600eef",
+      "audio": "a73ae639f60ffbd302390328da03e757f4c53a80437e0a90ec3372bf451938c9",
+      "parent": "par-the-length-of-a-poset",
+      "proves": "proposition-1-3-3"
+    },
+    {
+      "id": "definition-1-3-4",
+      "title": "Definition 1.3.4",
+      "kind": "definition",
+      "level": 3,
+      "start": 126.526,
+      "duration": 13.53,
+      "source": "ddfee8404feb42374155ee8484710d15d2d812eac3b993bb07f90b2bfe4d85ee",
+      "audio": "b5cc2859b3f52d987ba6501f7cf01a6006ffd925261440ba2463b25699613e89",
+      "parent": "par-the-length-of-a-poset",
+      "proves": null
+    },
+    {
+      "id": "definition-1-3-5",
+      "title": "Definition 1.3.5",
+      "kind": "definition",
+      "level": 3,
+      "start": 141.255,
+      "duration": 22.609,
+      "source": "66aae32e13f4ccacc05fba92b6b0e34aa73f1fda6827dbf6450bb107e19c88f1",
+      "audio": "2ef3ec951fd11a1a4a3cd1325b8b8ab3f27ef2ca8b65f68f51e762e05716b2d2",
+      "parent": "par-the-length-of-a-poset",
+      "proves": null
+    },
+    {
+      "id": "par-semilattices-and-lattices",
+      "title": "Semilattices and lattices",
+      "kind": "paragraph",
+      "level": 2,
+      "start": 165.064,
+      "duration": 29.85,
+      "source": "3dbef03e9806b3e97101d92bdc3732340c7dcb89bdef629087f24c793043484b",
+      "audio": "1a77337a670ad1778498ba67c427d3ab394130d9a359c6e91cbe143661c3972b",
+      "parent": null,
+      "proves": null,
+      "span": 417.407
+    },
+    {
+      "id": "definition-1-3-6",
+      "title": "Definition 1.3.6",
+      "kind": "definition",
+      "level": 3,
+      "start": 196.115,
+      "duration": 12.378,
+      "source": "4aaabd63168fa1e3deb6d7a2fa4de92d44895f7cf9fa341d3fd2fe98daad19d4",
+      "audio": "c19e95bd3ffd2a02a18748a1067f57d02a64d8b7f4ff7c62a8affd51e84313ad",
+      "parent": "par-semilattices-and-lattices",
+      "proves": null
+    },
+    {
+      "id": "proposition-1-3-7",
+      "title": "Proposition 1.3.7",
+      "kind": "proposition",
+      "level": 3,
+      "start": 209.693,
+      "duration": 30.389,
+      "source": "384c50372cdada371895506896cbfbaf7d90d3e0f46403134de2d30e5ef83bca",
+      "audio": "14ae8aeef3b97938aa32624f75a1e5c3ef68037eb6d572fb4be592384aff4802",
+      "parent": "par-semilattices-and-lattices",
+      "proves": null
+    },
+    {
+      "id": "proof-proposition-1-3-7",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 241.282,
+      "duration": 76.398,
+      "source": "2ee24103564e6f403017c2cf5b5f89b88616d6146f93f201bfc7926e56bb8f32",
+      "audio": "1955cfb5528d2920545f57778932caf2fa6b95edd5b14250eb2f8314aeb6f41b",
+      "parent": "par-semilattices-and-lattices",
+      "proves": "proposition-1-3-7"
+    },
+    {
+      "id": "definition-1-3-8",
+      "title": "Definition 1.3.8",
+      "kind": "definition",
+      "level": 3,
+      "start": 318.879,
+      "duration": 28.725,
+      "source": "f7e3393a4e54d23b68478d380189018bcaa4b6ff9206f19a710c171310319614",
+      "audio": "4383b31661a4bb62a82b3684f526afe1301daa95b6e528096b03db73fb07a23f",
+      "parent": "par-semilattices-and-lattices",
+      "proves": null
+    },
+    {
+      "id": "definition-1-3-9",
+      "title": "Definition 1.3.9",
+      "kind": "definition",
+      "level": 3,
+      "start": 348.804,
+      "duration": 27.165,
+      "source": "447706cf6e74a16e67ed2401448ecb472cb17cf1252e1d03c1aad2d6a36c6996",
+      "audio": "fec3c10bcd73b644563f99bce84f2328d6832663274ecb60ea3b6bb07272a084",
+      "parent": "par-semilattices-and-lattices",
+      "proves": null
+    },
+    {
+      "id": "prose-after-definition-1-3-9",
+      "title": "In a lattice …, the join and meet operations each determine…",
+      "kind": "prose",
+      "level": 3,
+      "start": 377.169,
+      "duration": 23.558,
+      "source": "e2dae516ece0524cb4d4b3e16a9cc06607b24439e96adf7616c319eca0cc9530",
+      "audio": "aaf6094099e6d6d85ebc45fd5603032ddf7523b6bf77d04ce36613ca8273b40a",
+      "parent": "par-semilattices-and-lattices",
+      "proves": null
+    },
+    {
+      "id": "example-1-3-10",
+      "title": "Example 1.3.10",
+      "kind": "example",
+      "level": 3,
+      "start": 401.927,
+      "duration": 27.57,
+      "source": "b23e6d1dff05320af750c71f3bbdf87b490691a241dbde83ec86b23694b95b4e",
+      "audio": "cd7dc4e03d3d3dd809562542aa6497d84bfc02dae4ab3b78886101b0a6c3855f",
+      "parent": "par-semilattices-and-lattices",
+      "proves": null
+    },
+    {
+      "id": "prose-after-example-1-3-10",
+      "title": "A function … is an order isomorphism if and only if it is a…",
+      "kind": "prose",
+      "level": 3,
+      "start": 430.696,
+      "duration": 23.283,
+      "source": "e82013f4569dfd24922c3d8a64f025417188775e843453f04d38b6e1448d3690",
+      "audio": "2661b89c2dba4fbe50b0b9f52626221f7be058051db24bd0cb9297ad8c827cb7",
+      "parent": "par-semilattices-and-lattices",
+      "proves": null
+    },
+    {
+      "id": "theorem-1-3-11",
+      "title": "Theorem 1.3.11",
+      "kind": "theorem",
+      "level": 3,
+      "start": 455.179,
+      "duration": 19.755,
+      "source": "e86b03e39a4e5e7fb8546904092a0b4546f33dfde4cdc337be150f4ebb222b47",
+      "audio": "3c11279d8132551cebb218052c4d52bfa63bebc98591c26ed60cf2d5547faafc",
+      "parent": "par-semilattices-and-lattices",
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-1-3-11",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 476.134,
+      "duration": 30.53,
+      "source": "c39a264b5ec6e9eb06671a50d29328fda94349a519200fea5eb5f99d2e689cdd",
+      "audio": "51c1ffe03b8edc1de5a36f996a3a461d26f599c43ef6e2e9f56b107fd7871570",
+      "parent": "par-semilattices-and-lattices",
+      "proves": "theorem-1-3-11"
+    },
+    {
+      "id": "prose-after-proof-theorem-1-3-11",
+      "title": "The distributive laws need not hold in an arbitrary lattice.",
+      "kind": "prose",
+      "level": 3,
+      "start": 507.864,
+      "duration": 10.6,
+      "source": "a511dc1eddceb9b03f0e7aaf5aea51974a53f19020de24f75c50221c4514f1b5",
+      "audio": "081c96489b6585e26acbd4610c4bd100ae9f28fbd046bc7fe9e905da2bbf6c0d",
+      "parent": "par-semilattices-and-lattices",
+      "proves": null
+    },
+    {
+      "id": "corollary-1-3-12",
+      "title": "Corollary 1.3.12",
+      "kind": "corollary",
+      "level": 3,
+      "start": 519.664,
+      "duration": 20.5,
+      "source": "d17dc14a4b7cfb802e5a2fc1d8980b1b91b835f12b423d6ad2e75b369946ee75",
+      "audio": "39717fe5674c47782d2ca24ea44c68c37e4af5097a135a3d502ae085c452a742",
+      "parent": "par-semilattices-and-lattices",
+      "proves": null
+    },
+    {
+      "id": "proof-corollary-1-3-12",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 541.364,
+      "duration": 41.107,
+      "source": "2185c580ea6508c793e5afa694de06fe7b5d881cd93135dd82dae7998f6f6fdc",
+      "audio": "1c45ffb4817a2d852ead7fde603a503f012952afda28800bf828eea71f314867",
+      "parent": "par-semilattices-and-lattices",
+      "proves": "corollary-1-3-12"
+    },
+    {
+      "id": "par-modular-lattices",
+      "title": "Modular lattices",
+      "kind": "paragraph",
+      "level": 2,
+      "start": 583.671,
+      "duration": 57.927,
+      "source": "0d7426ca45d5eafc0822e3c422e17dffe2aa305bd4bfb2c6eac6543f54db8258",
+      "audio": "3e1ef32343e2e7e422e17b3221456dbce3fa9f6bf3d4ff6a144d8f16bc379d2c",
+      "parent": null,
+      "proves": null,
+      "span": 207.678
+    },
+    {
+      "id": "definition-1-3-13",
+      "title": "Definition 1.3.13",
+      "kind": "definition",
+      "level": 3,
+      "start": 642.798,
+      "duration": 15.844,
+      "source": "d022cadb39a1ac55f43848a8f7f7fb0f45d7892cb9c9b0cc8e014836723cd4ff",
+      "audio": "0f90ac535f6a593ad95aa714a22a97825c4361af41ce1feb53cbe6a0de7132be",
+      "parent": "par-modular-lattices",
+      "proves": null
+    },
+    {
+      "id": "theorem-1-3-14",
+      "title": "Theorem 1.3.14",
+      "kind": "theorem",
+      "level": 3,
+      "start": 659.842,
+      "duration": 14.667,
+      "source": "1d5b943c3d287d0c0e1e23a5c57f6110ee73402867691238f8f65ff04b0e9d8c",
+      "audio": "4874904979d9db4bba1a75180e0efcf311fe00b1dbde188b172a0eb8dfa20445",
+      "parent": "par-modular-lattices",
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-1-3-14",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 675.708,
+      "duration": 72.222,
+      "source": "90494e5dbffe50be8e789bf1179e5e6a72decd17b4d814b1f21f15c983764fd1",
+      "audio": "8d5990a19ee1fda26868c51859c8adfe883a2d405bec64914006cc4549fb98d9",
+      "parent": "par-modular-lattices",
+      "proves": "theorem-1-3-14"
+    },
+    {
+      "id": "prose-after-proof-theorem-1-3-14",
+      "title": "The interval isomorphism in Theorem 1.3.14 preserves…",
+      "kind": "prose",
+      "level": 3,
+      "start": 749.13,
+      "duration": 18.942,
+      "source": "7169b2b0ae85a77af4f6f51568518b2abf25a1f5f0de9f33bb8450ab712c8dba",
+      "audio": "56ef8c008df4aad2df07fec0f1693933395d4ba9f5e286f431014181654ed985",
+      "parent": "par-modular-lattices",
+      "proves": null
+    },
+    {
+      "id": "definition-1-3-15",
+      "title": "Definition 1.3.15",
+      "kind": "definition",
+      "level": 3,
+      "start": 769.273,
+      "duration": 22.076,
+      "source": "061b8dc803bbd8f23dc4794332fa8c12decdd5f0eafb8bf3170e0a3541ed8301",
+      "audio": "354b7b81fabb01d656ea26755645d9b6060c98ee02993a096c7c1a028208716f",
+      "parent": "par-modular-lattices",
+      "proves": null
+    },
+    {
+      "id": "par-rank-functions-and-graded-lattices",
+      "title": "Rank functions and graded lattices",
+      "kind": "paragraph",
+      "level": 2,
+      "start": 792.549,
+      "duration": 32.506,
+      "source": "186aaf13f3d591895d38a3bcee9432d6cb9c5cce64c1bd08012262f4e8da2544",
+      "audio": "3ee0bb4758908025af8f9f62cf33af2070b7a4d445515c18d735ad73eabf9554",
+      "parent": null,
+      "proves": null,
+      "span": 657.909
+    },
+    {
+      "id": "definition-1-3-16",
+      "title": "Definition 1.3.16",
+      "kind": "definition",
+      "level": 3,
+      "start": 826.255,
+      "duration": 24.327,
+      "source": "4bb2e681704af4d8117616e275d3556f416f00ba232b1fa2fffa166e581ded7e",
+      "audio": "34c3f001b155a3caa50af71f35c0046f1f24c576e6f581efa91cc0c66ae5f258",
+      "parent": "par-rank-functions-and-graded-lattices",
+      "proves": null
+    },
+    {
+      "id": "proposition-1-3-17",
+      "title": "Proposition 1.3.17",
+      "kind": "proposition",
+      "level": 3,
+      "start": 851.782,
+      "duration": 23.907,
+      "source": "7feea80af758a563f55ef0371137afe5acd122c959284fe78cff583da68a55aa",
+      "audio": "94ab9c685b947d35eca18504c4ad194f6a96f6b49fdf908c175a867e130e9b9d",
+      "parent": "par-rank-functions-and-graded-lattices",
+      "proves": null
+    },
+    {
+      "id": "proof-proposition-1-3-17",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 876.89,
+      "duration": 108.33,
+      "source": "6bc04e47cbaca2f90ae9e3550e8ee413bc9b3a966a0c0493f64fb7afc2bba630",
+      "audio": "b9255d468bcfb677736bc99c266d509242606441982c3a2f605e645c77a2b91c",
+      "parent": "par-rank-functions-and-graded-lattices",
+      "proves": "proposition-1-3-17"
+    },
+    {
+      "id": "prose-after-proof-proposition-1-3-17",
+      "title": "In a graded lattice, rank differences measure the lengths…",
+      "kind": "prose",
+      "level": 3,
+      "start": 986.419,
+      "duration": 15.175,
+      "source": "5eca3f1183cfd2b621a750a039da17775c76475393947f0eec15d8888352fad7",
+      "audio": "73fbda755bfeadad93d3633113c7c4566cccdb012de40171e4181d175eb22211",
+      "parent": "par-rank-functions-and-graded-lattices",
+      "proves": null
+    },
+    {
+      "id": "definition-1-3-18",
+      "title": "Definition 1.3.18",
+      "kind": "definition",
+      "level": 3,
+      "start": 1002.794,
+      "duration": 38.403,
+      "source": "1c643bc18d00bcad0ee3823e23b0dc2abb2608e7625d23b05534941dae5cf605",
+      "audio": "778dc6df44beb7db262736b2c55bc64e5dd201826fdddcec0ed9f80bafe1f764",
+      "parent": "par-rank-functions-and-graded-lattices",
+      "proves": null
+    },
+    {
+      "id": "theorem-1-3-19",
+      "title": "Theorem 1.3.19",
+      "kind": "theorem",
+      "level": 3,
+      "start": 1042.397,
+      "duration": 9.796,
+      "source": "588ece37977ffaa4ce54a7de5fb0ea95916dece66d2877234aab2a6f8903df9d",
+      "audio": "2eced2217b33d8c9c81d91877b8ee37f15c0f8ec6439dddb4d352f96af5d91e0",
+      "parent": "par-rank-functions-and-graded-lattices",
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-1-3-19",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 1053.393,
+      "duration": 257.479,
+      "source": "46406eb420591a4db57959335abaeb5c0b74011152c02beb726e84b81d9e16fe",
+      "audio": "8cc45e426d1231e857cc465562bf6ebd68844756f1cf4a1503f4d0ca57e4636b",
+      "parent": "par-rank-functions-and-graded-lattices",
+      "proves": "theorem-1-3-19"
+    },
+    {
+      "id": "theorem-1-3-20",
+      "title": "Theorem 1.3.20",
+      "kind": "theorem",
+      "level": 3,
+      "start": 1312.072,
+      "duration": 8.634,
+      "source": "11960d950d79c043067a0b7eb3a34e21f822bcb96d95e8955d939a93ed5c5d59",
+      "audio": "7c8cffcbd05b30ac4c2f88fe96e8dd76b731be6ea3318cee4ac47ffca0429acf",
+      "parent": "par-rank-functions-and-graded-lattices",
+      "proves": null
+    },
+    {
+      "id": "proof-theorem-1-3-20",
+      "title": "Proof",
+      "kind": "proof",
+      "level": 3,
+      "start": 1321.906,
+      "duration": 128.552,
+      "source": "c2e5cb700c385c5b2fd5a90cedb2e75bfc60c415805af5c9535c52a40620d112",
+      "audio": "cdd74dd4300cc1183e67c42bc565b059c434453cb7d8ad55205adfad8f338573",
+      "parent": "par-rank-functions-and-graded-lattices",
+      "proves": "theorem-1-3-20"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "par-the-length-of-a-poset",
+      "title": "The length of a poset",
+      "start": 0.0,
+      "end": 22.424
+    },
+    {
+      "id": "definition-1-3-1",
+      "title": "Definition 1.3.1",
+      "start": 22.424,
+      "end": 52.051
+    },
+    {
+      "id": "definition-1-3-2",
+      "title": "Definition 1.3.2",
+      "start": 52.051,
+      "end": 72.951
+    },
+    {
+      "id": "proposition-1-3-3",
+      "title": "Proposition 1.3.3",
+      "start": 72.951,
+      "end": 126.526
+    },
+    {
+      "id": "definition-1-3-4",
+      "title": "Definition 1.3.4",
+      "start": 126.526,
+      "end": 141.255
+    },
+    {
+      "id": "definition-1-3-5",
+      "title": "Definition 1.3.5",
+      "start": 141.255,
+      "end": 165.064
+    },
+    {
+      "id": "par-semilattices-and-lattices",
+      "title": "Semilattices and lattices",
+      "start": 165.064,
+      "end": 196.115
+    },
+    {
+      "id": "definition-1-3-6",
+      "title": "Definition 1.3.6",
+      "start": 196.115,
+      "end": 209.693
+    },
+    {
+      "id": "proposition-1-3-7",
+      "title": "Proposition 1.3.7",
+      "start": 209.693,
+      "end": 318.879
+    },
+    {
+      "id": "definition-1-3-8",
+      "title": "Definition 1.3.8",
+      "start": 318.879,
+      "end": 348.804
+    },
+    {
+      "id": "definition-1-3-9",
+      "title": "Definition 1.3.9",
+      "start": 348.804,
+      "end": 401.927
+    },
+    {
+      "id": "example-1-3-10",
+      "title": "Example 1.3.10",
+      "start": 401.927,
+      "end": 455.179
+    },
+    {
+      "id": "theorem-1-3-11",
+      "title": "Theorem 1.3.11",
+      "start": 455.179,
+      "end": 519.664
+    },
+    {
+      "id": "corollary-1-3-12",
+      "title": "Corollary 1.3.12",
+      "start": 519.664,
+      "end": 583.671
+    },
+    {
+      "id": "par-modular-lattices",
+      "title": "Modular lattices",
+      "start": 583.671,
+      "end": 642.798
+    },
+    {
+      "id": "definition-1-3-13",
+      "title": "Definition 1.3.13",
+      "start": 642.798,
+      "end": 659.842
+    },
+    {
+      "id": "theorem-1-3-14",
+      "title": "Theorem 1.3.14",
+      "start": 659.842,
+      "end": 769.273
+    },
+    {
+      "id": "definition-1-3-15",
+      "title": "Definition 1.3.15",
+      "start": 769.273,
+      "end": 792.549
+    },
+    {
+      "id": "par-rank-functions-and-graded-lattices",
+      "title": "Rank functions and graded lattices",
+      "start": 792.549,
+      "end": 826.255
+    },
+    {
+      "id": "definition-1-3-16",
+      "title": "Definition 1.3.16",
+      "start": 826.255,
+      "end": 851.782
+    },
+    {
+      "id": "proposition-1-3-17",
+      "title": "Proposition 1.3.17",
+      "start": 851.782,
+      "end": 1002.794
+    },
+    {
+      "id": "definition-1-3-18",
+      "title": "Definition 1.3.18",
+      "start": 1002.794,
+      "end": 1042.397
+    },
+    {
+      "id": "theorem-1-3-19",
+      "title": "Theorem 1.3.19",
+      "start": 1042.397,
+      "end": 1312.072
+    },
+    {
+      "id": "theorem-1-3-20",
+      "title": "Theorem 1.3.20",
+      "start": 1312.072,
+      "end": 1450.458
+    }
+  ]
+}
