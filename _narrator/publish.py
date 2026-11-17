@@ -172,7 +172,7 @@ class Publisher:
         with open(path, encoding="utf-8") as handle:
             published = json.load(handle)
         have = [entry["id"] for entry in published["sections"] if not entry.get("container")]
-        return have != [section.id for section, _ in scripts]
+        return have != [script.section.id for script in scripts]
 
     def plan(self, skel: Skeleton, refresh: bool = False) -> dict:
         """What publishing this post would take. Never spends."""
@@ -194,7 +194,7 @@ class Publisher:
             return {"state": "scripts", "why": why}
         # The engine is part of every section key, so a page another engine recorded
         # (gpt-4o-mini-tts) is not found below and is recorded again with this one.
-        keys = [stage3.section_key(body, self.voice, self.model) for _, body in scripts]
+        keys = [stage3.section_key(s.body, self.voice, self.model, take=s.take) for s in scripts]
         page = stage3.page_key(keys)
         # One HEAD decides the common case. A page the bucket already holds needs nothing
         # else — probing its sections (one HEAD each) is what made a no-op CI run take minutes.
@@ -210,11 +210,11 @@ class Publisher:
                 return {"state": "assembled", "model": self.model, "page_key": page, "scripts": scripts,
                         "keys": keys, "local": local, "remote": False, "to_fetch": 0, "to_synth": 0,
                         "minutes": 0.0}
-        missing = [(s, b, k) for (s, b), k in zip(scripts, keys) if stage3.cached_section(self.cache_dir, k) is None]
+        missing = [(s, k) for s, k in zip(scripts, keys) if stage3.cached_section(self.cache_dir, k) is None]
         to_synth = missing
         if self.store and missing:
-            to_synth = [(s, b, k) for s, b, k in missing if not self.store.head("cache/%s.json" % k)]
-        chars = sum(len(b) for _, b, _ in to_synth)
+            to_synth = [(s, k) for s, k in missing if not self.store.head("cache/%s.json" % k)]
+        chars = sum(len(s.body) for s, _ in to_synth)
         return {"state": "assemble" if not to_synth else "synthesise", "model": self.model, "page_key": page,
                 "scripts": scripts, "keys": keys, "local": None, "remote": False,
                 "to_fetch": len(missing) - len(to_synth), "to_synth": len(to_synth), "minutes": chars / 900.0}

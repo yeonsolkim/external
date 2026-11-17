@@ -13,16 +13,18 @@ from _narrator.tests.test_script import skel
 class ScriptsFor(unittest.TestCase):
     """Which scripts a page may be built from — the gate `publish` uses before speaking."""
 
-    def write(self, root, prompt, edit=False):
+    def write(self, root, prompt, edit=False, take=None):
         s = skel()
         directory = stage2.post_dir(root, s)
         for section in s.sections:
             if section.skip:
                 continue
             body = "A clean script."
-            stage2.write_md(os.path.join(directory, section.id + ".md"), {
-                "section": section.id, "source": section.hash, "prompt": prompt,
-                "body": stage2._sha(body)}, body + (" Edited by hand." if edit else ""))
+            meta = {"section": section.id, "source": section.hash, "prompt": prompt, "body": stage2._sha(body)}
+            if take and section.id == "theorem-1":
+                meta["take"] = take
+            stage2.write_md(os.path.join(directory, section.id + ".md"), meta,
+                            body + (" Edited by hand." if edit else ""))
         return s
 
     def test_scripts_from_the_current_prompt_are_used(self):
@@ -39,6 +41,17 @@ class ScriptsFor(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             self.assertEqual(len(voice.scripts_for(self.write(tmp, "lecture-v0", edit=True), tmp)), 2)
 
+    def test_a_take_is_read_from_the_front_matter(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            scripts = voice.scripts_for(self.write(tmp, PROMPT_VERSION, take="2"), tmp)
+            self.assertEqual([(s.section.id, s.take) for s in scripts], [("introduction", 1), ("theorem-1", 2)])
+        with tempfile.TemporaryDirectory() as tmp:                 # a take is no edit: a prompt bump still applies
+            with self.assertRaisesRegex(voice.VoiceError, "scripts out of date: introduction, theorem-1"):
+                voice.scripts_for(self.write(tmp, "lecture-v0", take="2"), tmp)
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaisesRegex(voice.VoiceError, "theorem-1: take must be a whole number"):
+                voice.scripts_for(self.write(tmp, PROMPT_VERSION, take="two"), tmp)
+
 
 class Text(unittest.TestCase):
     def test_realtime_key_covers_its_direction(self):
@@ -52,6 +65,13 @@ class Text(unittest.TestCase):
             self.assertNotEqual(key, voice.section_key("Hello there.", "cedar", model))
         finally:
             voice.realtime.READER = reader
+
+    def test_a_take_is_a_new_recording_of_the_same_text(self):
+        model = voice.DEFAULT_TTS_MODEL
+        first = voice.section_key("Hello there.", "cedar", model)
+        self.assertEqual(voice.section_key("Hello there.", "cedar", model, take=1), first)   # every key stands
+        second = voice.section_key("Hello there.", "cedar", model, take=2)
+        self.assertNotIn(second, (first, voice.section_key("Hello there.", "cedar", model, take=3)))
 
     def test_realtime_gets_labels_as_written(self):
         body = "1.1.1 Traders.\n\nBy Theorem 2.1.18, traders trade."

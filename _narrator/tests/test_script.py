@@ -104,6 +104,15 @@ class Planning(unittest.TestCase):
         p = stage2.plan(self.skel, self.out, only={"theorem-1"})
         self.assertEqual(self.ids(p.generate), ["theorem-1"])
 
+    def test_a_regenerated_script_keeps_its_take(self):
+        # voice.Script: `--force` may write the very same text again, and take 1 of it was rejected.
+        thm = self.skel.sections[1]
+        self.seed(thm, take="2")
+        with mock.patch.object(stage2.llm, "chat", lambda *args, **kw: "Script."):
+            stage2.run(self.skel, self.out, force=True, only={thm.id}, workers=1, log=lambda m: None)
+        meta, body = stage2.read_md(os.path.join(self.out, thm.id + ".md"))
+        self.assertEqual((body, meta.get("take")), ("Script.\n", "2"))
+
     def test_accept_makes_an_edited_script_current(self):
         thm = self.skel.sections[1]
         stage2.write_md(os.path.join(self.out, thm.id + ".md"),

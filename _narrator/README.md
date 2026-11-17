@@ -208,6 +208,17 @@ such check, and in testing it sometimes dropped a paragraph's last sentence.) On
 per paragraph, so no call sees another's conversation. `READER` and the reasoning effort are
 part of the cache key too. `--model gpt-4o-mini-tts` still works until the shutdown.
 
+**Recording a section again.** A recording is keyed by what went into it, so a reading the
+checks let through is reused for as long as its script stands. To record it again without
+touching the text, put `take: 2` (then 3, …) in the script's front matter. The take is part of
+that section's key (take 1 adds nothing, so no other key moves), the script does not count as
+edited, and `script` keeps the take when it writes the text again. The next `publish` records
+that section alone, and the page gets a new key: new immutable URLs, the aliases and chapters
+re-pointed. Deleting the recording from the bucket instead does not work: the new audio would
+go up under the old keys, where the immutable mp3 stays cached in browsers and at the CDN, and
+`publish`, seeing the page key it already published, would not re-point the aliases. Definition
+1.3.1 of *1.3 Lattices* is take 2 for that reason.
+
 **Rate limit.** The organisation may spend 40,000 tokens a minute on these models. Two posts
 at four sections each — eight calls at once — ran into it (a CI run failed on 2026-10-06);
 one post's four calls never have. So at most four calls run at once (`MAX_SESSIONS`), however

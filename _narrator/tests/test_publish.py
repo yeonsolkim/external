@@ -6,7 +6,7 @@ import unittest
 from unittest import mock
 
 from _narrator import feed, publish, siteconfig, tts, voice
-from _narrator.script import write_md
+from _narrator.script import read_md, write_md
 from _narrator.skeleton import build
 
 HTML = ('<html lang="en"><head><link rel="canonical" href="https://x.test/2026/01/02/p.html">'
@@ -147,6 +147,27 @@ class Publishing(unittest.TestCase):
         p = self.pub.plan(self.skel)
         self.assertEqual((p["state"], p["model"]), ("published", voice.DEFAULT_TTS_MODEL))
         self.assertEqual(len(heads), 1)
+
+    def test_a_retake_records_one_section_again_under_a_new_page_key(self):
+        """`take: 2` (voice.Script): that section is recorded again, the others are reused, and the
+        page gets a new key — new immutable URLs, re-pointed aliases — not new audio under the old."""
+        self.scripts()
+        published = self.fake_page()
+        self.store.objects["o/%s.json" % published["page_key"]] = b"{}"
+        self.assertEqual(self.pub.plan(self.skel)["state"], "published")
+        path = os.path.join(self.narration, "2026", "01", "02", "p", "theorem-1.md")
+        meta, body = read_md(path)
+        meta["take"] = "2"
+        write_md(path, meta, body)
+        p = self.pub.plan(self.skel)
+        self.assertEqual((p["state"], p["to_synth"], p["to_fetch"]), ("synthesise", 1, 0))
+        self.assertNotEqual(p["page_key"], published["page_key"])
+        intro, theorem = [voice.section_key("Script for %s." % s.id, "cedar", voice.DEFAULT_TTS_MODEL)
+                          for s in self.skel.sections]
+        self.assertEqual(p["keys"][0], intro)
+        self.assertEqual(p["keys"][1], voice.section_key("Script for theorem-1.", "cedar",
+                                                         voice.DEFAULT_TTS_MODEL, take=2))
+        self.assertNotEqual(p["keys"][1], theorem)
 
     def test_a_failed_reading_keeps_the_sections_already_recorded(self):
         self.scripts()

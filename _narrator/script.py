@@ -256,6 +256,11 @@ def run(skel: Skeleton, out_dir: str, model: str = DEFAULT_MODEL, force: bool = 
                 "body": _sha(script), "words": len(script.split()),
             }
             path = os.path.join(out_dir, section.id + ".md")
+            # A take asked for stays asked for (voice.Script): `--force` may write the same text
+            # again, and take 1 of it is the reading that was rejected.
+            take = read_md(path)[0].get("take")
+            if take:
+                meta["take"] = take
             if any(s is section for s, _ in p.stale):
                 write_md(os.path.join(out_dir, section.id + ".new.md"), meta, script)
                 old_meta, old_body = read_md(path)

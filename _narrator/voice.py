@@ -27,12 +27,12 @@ import subprocess
 import tempfile
 import threading
 from concurrent.futures import ThreadPoolExecutor
-from typing import Optional
+from typing import NamedTuple, Optional
 
 from . import realtime, tts
 from .prompts import PROMPT_VERSION
 from .script import _sha, post_dir, read_md
-from .skeleton import Skeleton
+from .skeleton import Section, Skeleton
 
 AUDIO_VERSION = 1
 # gpt-4o-mini-tts is shut down on 2027-01-06 (`--model gpt-4o-mini-tts` works until then). What
@@ -154,13 +154,17 @@ def chunks(body: str) -> list:
     return out
 
 
-def section_key(body: str, voice: str, model: str, instructions: Optional[str] = None) -> str:
-    """Identity of a section's recording: everything that shapes the sound, the engine included."""
+def section_key(body: str, voice: str, model: str, instructions: Optional[str] = None,
+                take: int = 1) -> str:
+    """Identity of a section's recording: everything that shapes the sound, the engine included,
+    and the take (`Script`). Take 1 adds nothing, so a key never asked for another take stands."""
     if instructions is None:
         instructions = instructions_for(model)
     fields = [str(AUDIO_VERSION), model, voice, instructions]
     if is_realtime(model):
         fields.append(realtime.signature())
+    if take > 1:
+        fields.append("take %d" % take)
     material = "|".join(fields + [canonical(body)])
     return hashlib.sha256(material.encode("utf-8")).hexdigest()
 
@@ -288,8 +292,9 @@ def _lock_for(key: str) -> threading.Lock:
         return _key_locks.setdefault(key, threading.Lock())
 
 
-def ensure_section(cache_dir: str, section_id: str, body: str, voice: str, model: str, log=print) -> dict:
-    key = section_key(body, voice, model)
+def ensure_section(cache_dir: str, section_id: str, body: str, voice: str, model: str, log=print,
+                   take: int = 1) -> dict:
+    key = section_key(body, voice, model, take=take)
     meta = cached_section(cache_dir, key)
     if meta:
         return meta
@@ -301,6 +306,8 @@ def ensure_section(cache_dir: str, section_id: str, body: str, voice: str, model
         encode_flac(pcm, os.path.join(cache_dir, key + ".flac"))
         meta = {"key": key, "section": section_id, "voice": voice, "model": model,
                 "duration": round(seconds(pcm), 3), "chars": sum(p["chars"] for p in parts), "parts": parts}
+        if take > 1:
+            meta["take"] = take
         tmp = os.path.join(cache_dir, key + ".json.tmp")
         with open(tmp, "w", encoding="utf-8") as handle:
             json.dump(meta, handle, indent=2)
@@ -310,8 +317,22 @@ def ensure_section(cache_dir: str, section_id: str, body: str, voice: str, model
 
 
 # ----------------------------------------------------------------------------- pages
+class Script(NamedTuple):
+    """A section's lecture script as a page is built from it.
+
+    `take` above 1 asks for a new recording of the same text — for a reading the checks let
+    through, as Definition 1.3.1 of 1.3 Lattices went out on 2026-11-17, "one point three" for
+    1.3.1. Set `take: 2` in the script's front matter: it is part of the audio key, so only that
+    section is recorded again and the page gets a new key, hence new immutable URLs. Deleting a
+    recording from the bucket instead would put the new audio under the old keys, where caches
+    keep serving the old file and `publish` sees nothing to re-point."""
+    section: Section
+    body: str
+    take: int = 1
+
+
 def scripts_for(skel: Skeleton, narration_root: str) -> list:
-    """[(section, body)] in reading order; refuses to build a page with holes.
+    """[Script] in reading order; refuses to build a page with holes.
 
     A script is out of date when the page moved under it, or when it was generated with an
     older prompt — the rule `script` applies, so that a prompt bump reaches CI through
@@ -330,7 +351,10 @@ def scripts_for(skel: Skeleton, narration_root: str) -> list:
             stale.append(section.id)
         elif meta.get("prompt") != PROMPT_VERSION and not edited:
             stale.append(section.id)
-        out.append((section, body))
+        take = meta.get("take") or "1"
+        if not take.isdigit() or int(take) < 1:
+            raise VoiceError("%s: take must be a whole number from 1, not %r" % (section.id, take))
+        out.append(Script(section, body, int(take)))
     if missing:
         raise VoiceError("no script for: %s — run `script` first" % ", ".join(missing))
     if stale:
@@ -344,16 +368,17 @@ def ensure_sections(scripts: list, cache_dir: str, voice: str, model: str, worke
 
     `fetch(key) -> bool` may pull a section from a remote mirror before synthesis is paid for.
     """
-    keys = [(section, body, section_key(body, voice, model)) for section, body in scripts]
+    jobs = [(script, section_key(script.body, voice, model, take=script.take)) for script in scripts]
 
-    def work(item: tuple) -> dict:
-        section, body, key = item
+    def work(job: tuple) -> dict:
+        script, key = job
         if cached_section(cache_dir, key) is None and fetch is not None and fetch(key):
-            log("  fetched     %-40s from the mirror" % section.id)
-        return ensure_section(cache_dir, section.id, body, voice, model, log=log)
+            log("  fetched     %-40s from the mirror" % script.section.id)
+        return ensure_section(cache_dir, script.section.id, script.body, voice, model, log=log,
+                              take=script.take)
 
     with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
-        return list(pool.map(work, keys))
+        return list(pool.map(work, jobs))
 
 
 def assemble_page(skel: Skeleton, scripts: list, metas: list, cache_dir: str, out_mp3: str,
@@ -362,7 +387,7 @@ def assemble_page(skel: Skeleton, scripts: list, metas: list, cache_dir: str, ou
     """Sections (from the cache) -> mastered mp3 + manifest. No network."""
     page = b""
     entries = []
-    for (section, _body), meta in zip(scripts, metas):
+    for (section, *_), meta in zip(scripts, metas):
         pcm = decode_flac(os.path.join(cache_dir, meta["key"] + ".flac"))
         if page:
             page += silence(SECTION_GAP)
@@ -379,9 +404,9 @@ def assemble_page(skel: Skeleton, scripts: list, metas: list, cache_dir: str, ou
     # A unit that is read as several sections — a subsection holding a statement, say — also
     # gets an entry, spanning its children. The audio is one timeline, so a parent's range is
     # exactly its children's: every level is playable without synthesising anything twice.
-    narrated = {s.id for s, _ in scripts}
+    narrated = {script.section.id for script in scripts}
     spans = {}
-    for (section, _body), entry in zip(scripts, entries):
+    for (section, *_), entry in zip(scripts, entries):
         parent = section.parent
         while parent:
             span = spans.setdefault(parent, [entry["start"], 0.0])
@@ -460,8 +485,8 @@ def run(skel: Skeleton, narration_root: str = "_narration", audio_root: str = "_
     """Local-only: scripts -> cache -> mp3 under _audio/. The publish stage adds the mirror."""
     scripts = scripts_for(skel, narration_root)
     cache_dir = os.path.join(audio_root, "cache")
-    todo = [(s, b) for s, b in scripts if not cached_section(cache_dir, section_key(b, voice, model))]
-    chars = sum(len(b) for _, b in todo)
+    todo = [s for s in scripts if not cached_section(cache_dir, section_key(s.body, voice, model, take=s.take))]
+    chars = sum(len(s.body) for s in todo)
     log("%s: %d sections, %d to synthesise (%d chars ≈ %.0f min of speech) with %s/%s" % (
         skel.title, len(scripts), len(todo), chars, chars / 900.0, model, voice))
     if dry_run:
