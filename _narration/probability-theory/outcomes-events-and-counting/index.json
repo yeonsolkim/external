@@ -1,12 +1,12 @@
 {
-  "url": "/2026/07/10/1.-Outcomes,-Events,-and-Counting.html",
+  "url": "/probability-theory/outcomes-events-and-counting/",
   "title": "1.1 Outcomes, Events, and Counting",
   "lang": "en",
   "hash": "5857c76d24dff4d0f80fce8ebbd4ed39c3d2b4d93bad71fd3509c6fb4d64af48",
   "skeleton": 4,
-  "prompt": "lecture-v4",
+  "prompt": "lecture-v5",
   "model": "gpt-5.5",
-  "updated": "2026-10-13",
+  "updated": "2026-11-15",
   "sections": [
     {
       "id": "definition-1-1-1",

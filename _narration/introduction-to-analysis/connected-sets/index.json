@@ -1,12 +1,12 @@
 {
-  "url": "/2026/09/03/4.-Connected-Sets.html",
+  "url": "/introduction-to-analysis/connected-sets/",
   "title": "2.4 Connected Sets",
   "lang": "en",
   "hash": "b8cd8eb39df398d5c173d13c68f913e9eeca752a01dd284eb0e40b9ad08aecad",
   "skeleton": 4,
-  "prompt": "lecture-v4",
+  "prompt": "lecture-v5",
   "model": "gpt-5.5",
-  "updated": "2026-10-13",
+  "updated": "2026-11-15",
   "sections": [
     {
       "id": "introduction",
@@ -124,19 +124,6 @@
       "edited": false,
       "words": 393,
       "math": 43
-    },
-    {
-      "id": "references",
-      "title": "References",
-      "kind": "section",
-      "level": 2,
-      "source": "e601fa03dec22e980b98b103392a8c94c3870774f2306b0a412be5e94f3fd455",
-      "skip": "reference list",
-      "file": null,
-      "current": false,
-      "edited": false,
-      "words": 13,
-      "math": 0
     }
   ]
 }

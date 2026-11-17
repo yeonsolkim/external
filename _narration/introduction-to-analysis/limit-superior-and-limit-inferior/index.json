@@ -1,12 +1,12 @@
 {
-  "url": "/2026/09/12/4.-Limit-Superior-and-Limit-Inferior.html",
+  "url": "/introduction-to-analysis/limit-superior-and-limit-inferior/",
   "title": "3.4 Limit Superior and Limit Inferior",
   "lang": "en",
   "hash": "a92286c763c29785d1b71c7de5a890887f4f4c4eb6787a2fc2b82af968076121",
   "skeleton": 4,
-  "prompt": "lecture-v4",
+  "prompt": "lecture-v5",
   "model": "gpt-5.5",
-  "updated": "2026-10-21",
+  "updated": "2026-11-15",
   "sections": [
     {
       "id": "introduction",

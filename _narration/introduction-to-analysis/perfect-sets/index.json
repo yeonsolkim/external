@@ -1,12 +1,12 @@
 {
-  "url": "/2026/08/05/3.-Perfect-Sets.html",
+  "url": "/introduction-to-analysis/perfect-sets/",
   "title": "2.3 Perfect Sets",
   "lang": "en",
-  "hash": "2e3cf43becd8922ab02601543090fe6de55adee667afa45fd75f5b6640eb9da1",
+  "hash": "2cacb44ec9ccb276fbef3200ceaa1ed98b00f0be058b634549f4dedde5f4ba4d",
   "skeleton": 4,
-  "prompt": "lecture-v4",
+  "prompt": "lecture-v5",
   "model": "gpt-5.5",
-  "updated": "2026-10-08",
+  "updated": "2026-11-15",
   "sections": [
     {
       "id": "introduction",
@@ -39,10 +39,10 @@
       "title": "Remark 2.3.2",
       "kind": "remark",
       "level": 2,
-      "source": "54857cbbf48b5162826fd0f6b43297b7912b93aa4651fb42bce3efe08e69f3eb",
+      "source": "d840644888290d8447db02b6d571413960eccad5857466dc4d903a41a4054045",
       "skip": null,
       "file": "remark-2-3-2.md",
-      "current": true,
+      "current": false,
       "edited": false,
       "words": 160,
       "math": 14
@@ -124,19 +124,6 @@
       "edited": false,
       "words": 235,
       "math": 21
-    },
-    {
-      "id": "references",
-      "title": "References",
-      "kind": "section",
-      "level": 2,
-      "source": "e601fa03dec22e980b98b103392a8c94c3870774f2306b0a412be5e94f3fd455",
-      "skip": "reference list",
-      "file": null,
-      "current": false,
-      "edited": false,
-      "words": 13,
-      "math": 0
     }
   ]
 }

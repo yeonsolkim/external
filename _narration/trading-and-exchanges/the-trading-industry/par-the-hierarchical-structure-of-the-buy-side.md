@@ -6,11 +6,12 @@ document: 1.1 The Trading Industry
 url: /2026/10/04/1.-The-Trading-Industry.html
 source: 229d69dfaa37a5811af966ea791ddc07791ab1b4e852ffb18d65bbca2c57814e
 skeleton: 4
-prompt: lecture-v4
+prompt: lecture-v5
 model: gpt-5.5
 generated: 2026-10-06
 body: 0a99305cc343b009e47b8361b565dcc4643d96270cdb0ee3053e46c9b2c24635
 words: 169
+phrased: 2026-11-15
 ---
 
 The hierarchical structure of the buy side. To understand why a trader trades, we need to look beyond the order itself to the investment objective behind it. In many cases, this means considering not only the trader but also the people and institutions connected to that trader. For example, an investment sponsor provides the objectives and capital, an investment manager decides which assets to hold and in what amounts, and a trader turns those decisions into actual market orders: investment sponsor to investment managers to traders to market.

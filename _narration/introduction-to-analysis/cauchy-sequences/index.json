@@ -1,12 +1,12 @@
 {
-  "url": "/2026/09/09/3.-Cauchy-Sequences.html",
+  "url": "/introduction-to-analysis/cauchy-sequences/",
   "title": "3.3 Cauchy Sequences",
   "lang": "en",
   "hash": "d97e25d2823059cdef37908ad1640e51bcd6adba403952ae81d977101861eba5",
   "skeleton": 4,
-  "prompt": "lecture-v4",
+  "prompt": "lecture-v5",
   "model": "gpt-5.5",
-  "updated": "2026-10-21",
+  "updated": "2026-11-15",
   "sections": [
     {
       "id": "introduction",

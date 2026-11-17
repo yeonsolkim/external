@@ -48,11 +48,22 @@ INSTRUCTIONS = (
     "sentence, and a slight pause before and after each mathematical expression. Read "
     "letters that name variables as letters. Never rush a formula."
 )
-# Kept short on purpose: a Realtime model takes pace and tone direction literally — asked for
-# a measured pace and pauses around expressions, it read "1 point 1 point 3" at a crawl.
+# The last sentence asks for slower formulas, and it works only through pauses. Whatever it is
+# told, a Realtime model speaks at about 5.6 syllables a second, formulas and prose alike
+# (measured 2026-11-15 on the published recordings and on seven sampled directions); asked to
+# slow formulas, it pauses longer, mostly at the commas the script phrases them with (prompts.py,
+# principle 3). Five sections regenerated with both came out 7% slower in formula sentences and
+# 9% in prose, and two takes of one script differ by up to 9%, so expect a calmer reading
+# overall rather than a separate tempo for formulas. Asked for a measured pace overall while
+# labels were still spelled out, it read "1 point 1 point 3" at a crawl; a formula-only sentence
+# that did not name result numbers split "Theorem … 2.2.3". This one names them.
 REALTIME_INSTRUCTIONS = (
     "You are a university lecturer recording a formal lecture for an audience that cannot see "
-    "the board. Speak in a calm, natural voice. Read letters that name variables as letters."
+    "the board. Speak in a calm, natural voice. Read letters that name variables as letters. "
+    "Read every formula slowly and deliberately, at about three quarters of the speed of the "
+    "prose around it, as a lecturer does while writing it on the board, with a short pause "
+    "between its parts; the prose, and result numbers such as 2.2.3 or two point one point "
+    "eighteen, stay at your normal pace."
 )
 
 

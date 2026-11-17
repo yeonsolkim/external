@@ -7,7 +7,7 @@ title: "Pronunciation"
 permalink: /dictionary/pronunciation/
 date: 2026-09-05 00:00:00 +0900
 created_at: 2026-09-05 11:24:15 +0900
-last_modified_at: 2026-10-08 11:13:06 +0900
+last_modified_at: 2026-11-15 11:13:24 +0900
 narration: false
 published: true
 line_indent: false
@@ -37,8 +37,8 @@ line_indent: false
 
 **arbitrarily** /ɑrbeˈtrerəli/.
 **infinite** /ˈinfənət/.
-**infinitely** /ˈinfənət.li/.
-**finitely** /ˈfainait.li/.
+**infinitely** /ˈinfənətli/.
+**finitely** /ˈfainaitli/.
 **exponent** /iksˈpoʊnənt/.
 
 **interior** /inˈtiriər/.
@@ -46,6 +46,13 @@ line_indent: false
 **neither** /niːðər/.
 **either** /iːðər/.
 
-<b>genuine</b> /ˈdʒenjuin/.
+**genuine** /ˈdʒenjuin/.
 
 **pronunciation** /prənansiˈeiʃən/.
+
+**analyze** /ˈænəlaɪz/.
+**analysis** /əˈnæləsɪs/.
+
+**matrix** /meɪtrɪks/.
+
+**vocabulary** /voˈkæbjəleri/.

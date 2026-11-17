@@ -1,0 +1,54 @@
+%% The site's MathJax macros (assets/js/mathjax-config.js) as LaTeX, for external-book.cls.
+%% build_book.py names any macro defined there and not here.
+
+% A white star as a binary operator. The site sets U+2606 at 55%, raised .07em, with a
+% 45-unit stroke, in a face of its own, White Star (assets/fonts/white-star), which
+% scripts/white_star.py draws after the Songti SC star Safari used to fill in. The book
+% draws the same star: the outline's centre line, stroked as thick as outline and stroke
+% together, in a .55em box, its ink as high above the math axis as the site's. The lines
+% between the marks are scripts/white_star.py's, which writes them with the font; a test
+% runs its --check. An invisible U+2606 lies under the star, so that it copies and
+% searches as the site's character.
+\RequirePackage{pdfrender}
+\newfontface\ext@whitestartext{NewCMMath-Book.otf}
+\newcommand\ext@whitestar@draw{%
+  \pgfpicture
+    % >>> drawn by scripts/white_star.py
+    \pgfsetlinewidth{.0436em}\pgfsetmiterjoin\pgfsetmiterlimit{4}%
+    \pgfpathmoveto{\pgfpoint{.2877em}{.4720em}}%
+    \pgfpathlineto{\pgfpoint{.2336em}{.3147em}}%
+    \pgfpathlineto{\pgfpoint{.0653em}{.3126em}}%
+    \pgfpathlineto{\pgfpoint{.2002em}{.2132em}}%
+    \pgfpathlineto{\pgfpoint{.1502em}{.0545em}}%
+    \pgfpathlineto{\pgfpoint{.2877em}{.1505em}}%
+    \pgfpathlineto{\pgfpoint{.4252em}{.0545em}}%
+    \pgfpathlineto{\pgfpoint{.3752em}{.2132em}}%
+    \pgfpathlineto{\pgfpoint{.5102em}{.3126em}}%
+    \pgfpathlineto{\pgfpoint{.3418em}{.3147em}}%
+    \pgfpathclose
+    \pgfusepath{stroke}%
+    % ink .5754em by .5391em; the box .5646em wide, .0146em deeper: a lift of .0073em
+    \pgfresetboundingbox
+    \pgfpathrectanglecorners{\pgfpoint{.0054em}{-.0146em}}{\pgfpoint{.5700em}{.5391em}}%
+    \pgfusepath{use as bounding box}%
+    % <<< drawn by scripts/white_star.py
+  \endpgfpicture}
+\newcommand\ext@whitestar[1]{\vcenter{\hbox{\fontsize{#1}{#1}\selectfont
+  \rlap{\smash{\ext@whitestartext\textpdfrender{TextRenderingMode=Invisible}{\char"2606}}}%
+  \ext@whitestar@draw}}}
+\newcommand\whitestar{\mathbin{\mathchoice
+  {\ext@whitestar\tf@size}{\ext@whitestar\tf@size}%
+  {\ext@whitestar\sf@size}{\ext@whitestar\ssf@size}}}
+
+% A lowered, fixed-size pair of parentheses around a large operator with lower limits.
+\newcommand\lowparen[1]{%
+  \mathinner{\mathopen{\lower.3em\hbox{$\bigg($}}#1\mathclose{\lower.3em\hbox{$\bigg)$}}}}
+
+%% amssymb's names that unicode-math spells otherwise.
+\providecommand\square{\mdlgwhtsquare}
+\providecommand\blacksquare{\mdlgblksquare}
+\providecommand\Box{\mdlgwhtsquare}
+
+%% MathJax's own spellings.
+\providecommand\lt{<}
+\providecommand\gt{>}

@@ -1,12 +1,12 @@
 {
-  "url": "/2026/10/04/1.-The-Trading-Industry.html",
+  "url": "/trading-and-exchanges/the-trading-industry/",
   "title": "1.1 The Trading Industry",
   "lang": "en",
   "hash": "1ea385b199b5c83e70db98f10ca7ecb9d59fe1d3f987830efb3d780d3b48fad5",
   "skeleton": 4,
-  "prompt": "lecture-v4",
+  "prompt": "lecture-v5",
   "model": "gpt-5.5",
-  "updated": "2026-10-21",
+  "updated": "2026-11-15",
   "sections": [
     {
       "id": "111-traders",

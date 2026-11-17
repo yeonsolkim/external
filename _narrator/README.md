@@ -84,6 +84,7 @@ would regenerate — bump `SKELETON_VERSION` and update the golden on purpose on
 python3 -m _narrator script  <post.html|URL> --dry-run          # the plan, spends nothing
 python3 -m _narrator script  <post.html|URL>                    # writes _narration/<url>/*.md
 python3 -m _narrator script  <post.html|URL> --only theorem-2-2-3 --force
+python3 -m _narrator phrase  _site --dry-run                    # commas of a newer prompt, no rewording
 python3 -m _narrator lecture <post.html|URL> --out-file lecture.md   # everything in reading order
 python3 -m unittest _narrator.tests.test_script                 # bookkeeping, no network
 ```
@@ -126,7 +127,7 @@ CI never forces; to have it write a post's scripts afresh — glossary included,
 gone — delete the post's `_narration/<url>/` directory, and `publish` generates them before
 it records.
 
-**The prompt** (`prompts.py`, `lecture-v2`) writes a formal lecture: first person plural,
+**The prompt** (`prompts.py`, `lecture-v5`) writes a formal lecture: first person plural,
 present tense, the author's order and wording, every equation in words, and nothing added
 except what a lecturer needs to speak structure — "Theorem 2.2.20, the Heine–Borel
 theorem.", "Proof.", "This completes the proof." for `[END PROOF]`, a lead-in for a display
@@ -135,7 +136,12 @@ sentence that contains it), list items by number, each its own sentence, with a 
 gives an item said first ("First, extensive: S is contained in c l of S.") and a condition that
 covers every item moved into the sentence that opens the list. "We" is only for what the
 lecturer adds: the author's "you" stays "you". An arrow chain between stages written in words
-is a flow — "from A, through the broker, to B" — never "arrow" or "maps to". The notation
+is a flow — "from A, through the broker, to B" — never "arrow" or "maps to". A formula is
+spoken in phrases: besides the commas that settle its grouping, the script puts one wherever a
+lecturer pauses at the board — before the main relation of a long formula, around the range of
+a sum or union, before each step of a chain, after a lead-in, before a quantifier that governs
+the whole formula ("we have, A is contained in the union, from k equals one to n, of V sub i
+k") — because the speech engine slows a formula only by pausing there (stage 3). The notation
 glossary is passed to every section so readings stay consistent; each entry is
 `symbol — spoken name (note)` — the name is what is said, the note says when a role word ("the
 cover U") is needed, and styled letters are named by role, never "bold x". Notation the text
@@ -145,6 +151,18 @@ and fixed notation keeps its phrase while its note gives the reading for the sen
 introduces it ("denoted by A bar", not "the closure of A, denoted by the closure of A"). Bump
 `PROMPT_VERSION` when a change should regenerate the unedited scripts; leave it for changes
 that only matter going forward.
+
+**Phrasing existing scripts.** `python3 -m _narrator phrase _site` (`--dry-run` first) brings
+scripts written under an older prompt up to the phrasing rule without regenerating them: the
+model may only insert commas (`PHRASE_SYSTEM`, which shares the rule with the lecture prompt as
+`PHRASING`), and `commas_only` checks the result character by character — every word, every
+other mark, the commas already there and the paragraph breaks stay where they were. A script
+that passes is stamped with the current `PROMPT_VERSION` and its new body hash (`phrased:`
+records the day), so `script` and `publish` treat it as current; one the model changes beyond
+commas twice is left alone and regenerates as before. Only scripts current with the page are
+touched. Hand-edited ones are skipped unless `--include-edited`, which adds the commas and
+keeps them protected. This is how `lecture-v5` reached the scripts written under
+`lecture-v4` (2026-11-15), so their reviewed wording stayed.
 
 ## Stage 3 — voice
 
@@ -157,9 +175,16 @@ python3 -m unittest _narrator.tests.test_voice                   # no network, n
 
 Needs `ffmpeg` on PATH (`brew install ffmpeg`) and the OpenAI key. Engine
 `gpt-realtime-2.1-mini` (`--model`), default voice `cedar` (`--voice`); the engine gets
-`REALTIME_INSTRUCTIONS` — a formal lecturer in a calm, natural voice, and nothing about pace
-(asked for a measured pace, the model crawled through "1 point 1 point 3") — which is part of
-the cache key. Cost ≈ $0.024 per minute of audio; *Compact Sets* is 21 min.
+`REALTIME_INSTRUCTIONS` — a formal lecturer in a calm, natural voice, who reads every formula at
+about three quarters of the speed of the prose and result numbers at normal pace — which is
+part of the cache key. Whatever it is told, the model speaks at about 5.6 syllables a second,
+formulas and prose alike (measured 2026-11-15 on the published recordings and on seven sampled
+directions); asked to slow formulas, it pauses longer, mostly where the script phrases them
+(stage 2). Five sections regenerated with both came out 7% slower in formula sentences and 9%
+in prose, and two takes of one script differ by up to 9% — a calmer reading overall rather than
+a separate tempo for formulas. Asked for a measured pace overall while labels were still spelled
+out, it crawled through "1 point 1 point 3"; a formula-only sentence that did not name result
+numbers split "Theorem … 2.2.3". Cost ≈ $0.024 per minute of audio; *Compact Sets* is 21 min.
 
 **The Realtime engine** (`realtime.py`, over the stdlib WebSocket client in `wsclient.py`)
 replaces `gpt-4o-mini-tts`, which OpenAI shuts down on 2027-01-06. A Realtime model is a

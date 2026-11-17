@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import re
 
-PROMPT_VERSION = "lecture-v4"
+PROMPT_VERSION = "lecture-v5"
 
 GLOSSARY_SYSTEM = """You are preparing the NOTATION GLOSSARY for a lecture that reads a mathematical text aloud, so that every symbol is spoken the same way throughout.
 
@@ -24,6 +24,16 @@ Do NOT list plain letters, ordinary subscripts (x_i is just "x i"), or standard 
 
 Output one entry per line: `<TeX or symbol> — <spoken name> (<note>)`. The spoken name is the shortest thing a lecturer says in running speech — a bare letter when the letter is enough. The note tells the lecturer WHAT it is and WHEN the role word is needed — or, for notation the text introduces, how to say it as written in the sentence that introduces it; it is never spoken as part of the name. For example: `\\mathcal U — U (a cover; say "the cover U" only where the open set U could be meant)`, `\\mathbf x — x (a point of R k; say "the point x" only against the coordinates x i)`, `B_r(x) — the ball of radius r about x`. No preamble, no grouping, no commentary."""
 
+# Principle 3 of the lecture prompt, shared with PHRASE_SYSTEM: the pauses a spoken formula needs,
+# marked with commas, because the speech engine slows a formula only where it may pause.
+PHRASING = """3. A FORMULA IS SPOKEN IN PHRASES. At the board a lecturer does not run a formula together: they pause where its structure divides, and the listener uses each pause to hold what came before it. The speech engine slows down for a formula only where the script lets it pause, so besides the commas that principle 2 needs, a comma marks each such pause:
+- before the main relation (equals, is contained in, is at most, implies) when the side before it takes more than a few words to say: "V i intersect N, equals U i";
+- around the range of a sum, union, intersection or product: "the union, from k equals one to n, of V sub i k";
+- before each further step of a chain: "n C r equals n P r over r factorial, which equals n factorial, over the product of r factorial and the factorial of n minus r";
+- after a lead-in that opens a long formula ("we have", "it follows that", "that is"): "we have, A is contained in the union, from k equals one to n, of V sub i k". A word that only opens a clause (since, if, then, so, and) is not a lead-in and takes no comma after it: "since one plus n times delta n, is at most x";
+- before a condition or quantifier that governs the whole formula: "V i intersect N, equals U i, for each i in I".
+A phrasing comma falls only where a group ends, never inside a group that principle 2 makes audible, so it never changes which formula is heard. A short formula stays whole: "x belongs to A", "a plus b", "A is compact in M"."""
+
 LECTURE_SYSTEM = """You write the script of a formal mathematics lecture. The lecturer will read your script aloud, word for word, to an audience that cannot see the page. You are given ONE section of a document at a time; the sections are read in order and joined, so present this section only — no summary of what came before or after, no introduction to the document, no closing remarks.
 
 REGISTER. A formal lecture: complete sentences, first person plural ("we"), present tense, calm and precise. It should sound like a well-prepared lecturer presenting the author's text — not a paraphrase, not a conversation, not a summary. "We" is the voice of what you add; the author's own sentences keep the author's person — an author's "you" stays "you" and is never turned into "we".
@@ -33,10 +43,10 @@ FIDELITY. The text is the author's. Keep the author's order, wording, variable n
 - a minimal lead-in to a display equation the prose does not lead into ("we have", "that is", "namely");
 - [END PROOF] is spoken as "This completes the proof." and [END SUBPROOF] as "This proves the claim.";
 - a proof is read straight after the statement it proves, so open it with "Proof." and never restate the statement; a numbered part of the document opens with its number and heading as the author wrote them, e.g. "3. Surjectivity and injectivity.";
-- when a display equation carries a label (\\tag{$\\ast$}, \\tag{3}), name it once — "We refer to this inclusion as star." / "We call this equation 3." — and speak later references (\\ast), (\\ast\\ast), (3) as "star", "double star", "equation 3". A display equation is often the middle of a sentence that continues below it — finish that sentence first, then name the label, never in the middle. Example — source: "since A is compact in M, we have [MATH; display] A \\subseteq \\bigcup_{k=1}^{n} V_{i_k} \\tag{$\\ast$} [/MATH] for some finitely many indices i_1, \\dots, i_n \\in I." → script: "since A is compact in M, we have A contained in the union from k equals one to n of V sub i k, for some finitely many indices i one through i n in I. We refer to this inclusion as star.";
+- when a display equation carries a label (\\tag{$\\ast$}, \\tag{3}), name it once — "We refer to this inclusion as star." / "We call this equation 3." — and speak later references (\\ast), (\\ast\\ast), (3) as "star", "double star", "equation 3". A display equation is often the middle of a sentence that continues below it — finish that sentence first, then name the label, never in the middle. Example — source: "since A is compact in M, we have [MATH; display] A \\subseteq \\bigcup_{k=1}^{n} V_{i_k} \\tag{$\\ast$} [/MATH] for some finitely many indices i_1, \\dots, i_n \\in I." → script: "since A is compact in M, we have, A contained in the union, from k equals one to n, of V sub i k, for some finitely many indices i one through i n in I. We refer to this inclusion as star.";
 - a numbered list is spoken with its numbers ("First, ... Second, ... Third, ..." or "Property one: ..."), because the text refers back to the items by number. Each item is its own sentence. A name the author gives an item in parentheses — "(extensive)", "(triangle inequality)" — is spoken first, as its heading: "First, extensive: S is contained in c l of S."; left after the formula, it is heard as part of the formula or as the start of the next item. A condition that governs every item ("For all S and T contained in X,") goes into the sentence that introduces the list, so that it is heard to cover them all.
 
-SPOKEN MATHEMATICS. Every equation is read in full, in words, as a careful lecturer says it at the board. Two principles decide every reading. The conventions after them are how this lecture applies the principles; anything they do not cover is decided by the principles, not by the look of the symbols.
+SPOKEN MATHEMATICS. Every equation is read in full, in words, as a careful lecturer says it at the board. Three principles decide every reading. The conventions after them are how this lecture applies the principles; anything they do not cover is decided by the principles, not by the look of the symbols.
 
 1. THE LISTENER CANNOT SEE THE PAGE. Say what the notation means, never what it looks like. No typographical mark is ever spoken — not parentheses, brackets, braces, bars, dots, commas, or slashes, and never a command name: "open parenthesis", "dot dot dot", "ellipsis", "backslash", "caret" never occur. An ellipsis is spoken as the pattern it continues: n(n-1)\\cdots 2\\cdot 1 is "n times the quantity n minus one, and so on, down to two times one"; a_1+a_2+\\cdots+a_n is "a one plus a two, and so on, up to a n"; x_1,\\dots,x_k is "x one through x k". Styling is inaudible.
 
@@ -50,6 +60,9 @@ SPOKEN MATHEMATICS. Every equation is read in full, in words, as a careful lectu
 - f(x+y) is "f of the quantity x plus y", but f(x)+y is "f of x, plus y";
 - |d(x,z)-d(y,z)| is "the absolute value of the quantity d of x and z minus d of y and z", but |a|-b is "the absolute value of a, minus b".
 Fence only where a misreading is possible, and keep the lecture natural: a plus b stays "a plus b"; \\|x-y\\| stays "the norm of x minus y", since a vector cannot be subtracted from a norm; "the quantity" around a single symbol is noise.
+
+""" + PHRASING + """ The conventions below give the words of a reading; this principle gives its pauses.
+
 The NOTATION GLOSSARY fixes what a symbol IS CALLED so that readings stay consistent across the lecture. Each entry is `symbol — spoken name (note)`: speak the NAME; the note tells you when to add a role word, or how to say a notation as written where the text introduces it ("denoted by A bar", never "denoted by the closure of A": the listener must hear the notation, not the term twice). Add it where the sentence would otherwise be ambiguous, and never where the sentence already carries the role: "the collection U equals the family of balls" — not "the collection the cover U equals"; "let V be U together with the complement of F" — not "let the cover V equal the cover U union"; "for every x and y in I" — not "for every the point x and the point y in I".
 Conventions: x^2 "x squared"; x^n "x to the n"; x_i "x i" — say "sub" only for nested or ambiguous subscripts (V_{i_k} "V sub i k"); \\frac{a}{b} "a over b"; \\sqrt{d} "the square root of d"; \\sum_{i=1}^{n} "the sum from i equals 1 to n of"; \\bigcup_{i \\in I} U_i "the union over i in I of U i"; \\bigcap "the intersection"; \\subseteq "is contained in"; \\in "belongs to" or "in"; \\lbrace U_i \\rbrace_{i \\in I} "the family U i, for i in I"; \\varnothing "the empty set"; \\|x\\| "the norm of x"; |x| "the absolute value of x"; d(x,y) "d of x and y" (the comma is never spoken); B_r(x) "the open ball of radius r about x"; [a,b] "the closed interval from a to b"; \\le "is less than or equal to", in a chain "which is at most"; \\ne "is not equal to"; \\dots and \\cdots "and so on, up to" or "and so on, down to", following the pattern (principle 1); \\mathbb R^k "R k".
 TUPLES AND BOUNDS. (x_1,\\dots,x_k) is "x one through x k" (add "the point" or "the k-tuple" only when needed); 1 \\le i \\le k is "for i from one to k"; I \\supseteq I_1 \\supseteq I_2 \\supseteq \\cdots is "I contains I one, which contains I two, and so on"; 2^{-n}\\delta is "two to the minus n, times delta".
@@ -62,6 +75,20 @@ PAGE ARTIFACTS. [FIGURE: ...] and [DIAGRAM: ...] become one sentence ("The page 
 NUMBERS AND LABELS. Keep result labels as digits with dots exactly as the author writes them ("Theorem 2.1.18") — the speech engine reads them as "two point one point eighteen". Write every other number the way it is spoken.
 
 OUTPUT. Only the script: plain paragraphs separated by blank lines, roughly one per paragraph of the source. A paragraph never ends inside a sentence: when a sentence runs through a display equation ("… is defined by [display] for all n."), or a colon introduces what follows, the whole sentence stays in one paragraph. No headings, no markdown, no brackets, no notes, no stage directions. Write in the language of the source."""
+
+# The phrasing rule applied to a script that already exists (`python3 -m _narrator phrase`): the
+# model may only insert commas, which script.commas_only checks character by character, so a
+# reviewed script keeps every word it had.
+PHRASE_SYSTEM = """You edit the script of a formal mathematics lecture that a speech engine reads aloud, word for word, to an audience that cannot see the page. The script is final except for one thing: where its spoken formulas pause. The lecture follows this principle:
+
+""" + PHRASING + """
+
+Principle 2, which it refers to, gives every spoken formula exactly one reading: the script already marks where a group ends, with "the quantity", "all over", or a comma, and those marks stay as they are.
+
+Insert commas, and only commas, where the principle asks for them. Do not add, remove, change or reorder any word or any other character; keep every comma that is already there and every paragraph break. Prose that holds no formula stays exactly as it is. Output only the edited script."""
+
+PHRASE_RETRY = ("\n\nYour previous edit of this script changed more than commas. This time insert commas "
+                "and change nothing else: every other character stays exactly where it is.")
 
 KIND_NOTES = {
     "introduction": "the opening paragraphs, before the first numbered statement",

@@ -6,11 +6,12 @@ document: 2.1 Open Sets and Closed Sets
 url: /2026/07/24/1.-Open-Sets-and-Closed-Sets.html
 source: 79ba589292fc635154cca8559222cc1a7a7183963a6db698e8d1b2bafe14af1e
 skeleton: 4
-prompt: lecture-v4
+prompt: lecture-v5
 model: gpt-5.5
 generated: 2026-10-13
-body: b7a8df6112aedacba13dbe5e24d9eb7136f386c5ec0eeb011076d77911d1e402
+body: c15b63d2953106070e11078ee9c9e275ad88c9734e621e97b44dae06f4426ba1
 words: 30
+phrased: 2026-11-15
 ---
 
-Theorem 2.1.14. Let M be a metric space, and let A be contained in M. The set A is open if and only if the complement of A is closed.
+Theorem 2.1.14. Let M be a metric space, and let A be contained in M. The set A is open, if and only if the complement of A, is closed.

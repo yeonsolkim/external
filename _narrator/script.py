@@ -34,8 +34,8 @@ from concurrent.futures import ThreadPoolExecutor
 from typing import Optional
 
 from . import lint, llm
-from .prompts import (PROMPT_VERSION, GLOSSARY_SYSTEM, LECTURE_SYSTEM, glossary_user,
-                      section_user, macros_from_mathjax_config)
+from .prompts import (PROMPT_VERSION, GLOSSARY_SYSTEM, LECTURE_SYSTEM, PHRASE_RETRY, PHRASE_SYSTEM,
+                      glossary_user, section_user, macros_from_mathjax_config)
 from .skeleton import SKELETON_VERSION, Skeleton, Section, glossary_source
 
 DEFAULT_MODEL = "gpt-5.5"
@@ -302,6 +302,93 @@ def accept(skel: Skeleton, out_dir: str, ids: set, log=print) -> int:
         log("  %-40s no such section" % name)
     write_index(skel, out_dir, meta.get("model", "") if done else "")
     return done
+
+
+# ----------------------------------------------------------------------------- phrasing
+def commas_only(old: str, new: str) -> bool:
+    """True when `new` is `old` with commas inserted and nothing else changed: every other
+    character, the commas already there and the paragraph breaks included, stays in place."""
+    a = "\n".join(line.rstrip() for line in old.strip().split("\n"))
+    b = "\n".join(line.rstrip() for line in new.strip().split("\n"))
+    stray = re.compile(r",\s*[,.;:!?]")
+    if len(stray.findall(b)) > len(stray.findall(a)):
+        return False
+    i = 0
+    for char in b:
+        if i < len(a) and a[i] == char:
+            i += 1
+        elif char != ",":
+            return False
+    return i == len(a)
+
+
+def phrase(skel: Skeleton, out_dir: str, model: str = DEFAULT_MODEL, include_edited: bool = False,
+           dry_run: bool = False, workers: int = 4, reasoning: str = "medium", log=print) -> dict:
+    """Bring scripts written under an older prompt up to the phrasing rule (prompts.PHRASING)
+    without rewording them: the model may only insert commas, and `commas_only` checks that.
+
+    A script that passes is stamped with the current PROMPT_VERSION and its new body hash, so
+    `script` and `publish` treat it as generated now and do not regenerate it; `phrased` records
+    the day. One the model changes beyond commas, twice, is left as it was, and is regenerated
+    as before. Only scripts current with the page are touched: one whose section changed is due
+    for regeneration anyway. A hand-edited script is skipped unless `include_edited`; it then
+    gets the commas but keeps its old body hash, so it stays yours.
+    """
+    counts = {"phrased": 0, "no comma needed": 0, "refused": 0, "current": 0,
+              "edited by hand": 0, "page changed": 0}
+    todo = []
+    for section in skel.sections:
+        if section.skip:
+            continue
+        path = os.path.join(out_dir, section.id + ".md")
+        meta, body = read_md(path)
+        if not body:
+            continue
+        edited = meta.get("body") not in ("", None) and meta.get("body") != _sha(body)
+        if meta.get("source") != section.hash:
+            counts["page changed"] += 1
+        elif edited and (not include_edited or meta.get("phrased")):
+            counts["edited by hand"] += 1
+        elif not edited and meta.get("prompt") == PROMPT_VERSION:
+            counts["current"] += 1
+        else:
+            todo.append((section, path, meta, body, edited))
+    rest = ", ".join("%d %s" % (n, k) for k, n in counts.items() if n)
+    log("%s: %d script(s) to phrase%s" % (skel.title, len(todo), "; " + rest if rest else ""))
+    if dry_run:
+        counts["to phrase"] = len(todo)
+    if dry_run or not todo:
+        return counts
+
+    def work(item: tuple) -> tuple:
+        body = item[3].strip()
+        new = llm.chat(PHRASE_SYSTEM, body, model=model, max_tokens=8000, reasoning=reasoning)
+        if not commas_only(body, new):
+            new = llm.chat(PHRASE_SYSTEM + PHRASE_RETRY, body, model=model, max_tokens=8000, reasoning=reasoning)
+        return item, new, commas_only(body, new)
+
+    with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
+        for (section, path, meta, body, edited), new, ok in pool.map(work, todo):
+            if not ok:
+                counts["refused"] += 1
+                log("  refused   %-40s changed more than commas twice; left as it was" % section.id)
+                continue
+            added = new.count(",") - body.count(",")
+            meta["phrased"] = _today()
+            if not edited:
+                meta["prompt"] = PROMPT_VERSION
+                meta["body"] = _sha(new)
+            write_md(path, meta, new)
+            counts["phrased" if added else "no comma needed"] += 1
+            log("  phrased   %-40s +%d comma(s)%s" % (section.id, added, ", edited by hand" if edited else ""))
+
+    index_path = os.path.join(out_dir, "index.json")
+    index_model = ""
+    if os.path.exists(index_path):
+        with open(index_path, encoding="utf-8") as handle:
+            index_model = json.load(handle).get("model", "")
+    write_index(skel, out_dir, index_model)
+    return counts
 
 
 def write_index(skel: Skeleton, out_dir: str, model: str) -> None:

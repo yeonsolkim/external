@@ -1,12 +1,12 @@
 {
-  "url": "/2026/09/03/2.-Subsequences.html",
+  "url": "/introduction-to-analysis/subsequences/",
   "title": "3.2 Subsequences",
   "lang": "en",
   "hash": "98f3b8d705ce71420c11071030ffc82f3a27ba370177a346a083e856ee625481",
   "skeleton": 4,
-  "prompt": "lecture-v4",
+  "prompt": "lecture-v5",
   "model": "gpt-5.5",
-  "updated": "2026-10-08",
+  "updated": "2026-11-15",
   "sections": [
     {
       "id": "introduction",
@@ -150,19 +150,6 @@
       "edited": false,
       "words": 222,
       "math": 26
-    },
-    {
-      "id": "references",
-      "title": "References",
-      "kind": "section",
-      "level": 2,
-      "source": "e601fa03dec22e980b98b103392a8c94c3870774f2306b0a412be5e94f3fd455",
-      "skip": "reference list",
-      "file": null,
-      "current": false,
-      "edited": false,
-      "words": 13,
-      "math": 0
     }
   ]
 }

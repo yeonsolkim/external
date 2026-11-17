@@ -6,11 +6,12 @@ document: 2.1 Open Sets and Closed Sets
 url: /2026/07/24/1.-Open-Sets-and-Closed-Sets.html
 source: e95531fb81384e44d501220e613909bbf5e7e160b5019308d8541282636bcb9c
 skeleton: 4
-prompt: lecture-v4
+prompt: lecture-v5
 model: gpt-5.5
 generated: 2026-10-07
-body: 4f10996cd8e5d6fd264bf9c1af3acfbec72b4af14a54dd6235847f57d0c93ac7
+body: dadbacc26f8258c3ebbe7998cc66491085ed6483b5c9b754e260a3008db9de8d
 words: 48
+phrased: 2026-11-15
 ---
 
-Theorem 2.1.18. Let M be a metric space, and regard N, a subset of M, as a metric space with the restricted metric. Then a subset A of N is open in N if and only if A equals U intersect N for some U open in M.
+Theorem 2.1.18. Let M be a metric space, and regard N, a subset of M, as a metric space with the restricted metric. Then a subset A of N is open in N, if and only if A equals U intersect N, for some U open in M.

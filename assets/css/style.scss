@@ -109,14 +109,16 @@ table {
   unicode-range: U+21A9;
 }
 
-/* A one-glyph subset used by MathJax's \whitestar macro. */
+/* ☆ (U+2606) for MathJax's \whitestar (mathjax-config.js): a one-glyph face drawn for the
+   site by scripts/white_star.py, as the book draws the star (scripts/book/site-macros.tex).
+   Without it the star came from the reader's own fonts: Songti SC in Safari on a Mac,
+   other shapes elsewhere. */
 @font-face {
   font-family: "White Star";
   font-style: normal;
-  font-weight: bold;
+  font-weight: normal;
   font-display: block;
-  src: url("../fonts/noto-sans-symbols-2/white-star.woff2")
-    format("woff2");
+  src: url("../fonts/white-star/white-star.woff") format("woff");
   unicode-range: U+2606;
 }
 

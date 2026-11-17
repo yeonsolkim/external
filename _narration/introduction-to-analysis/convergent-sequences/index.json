@@ -1,12 +1,12 @@
 {
-  "url": "/2026/08/31/1.-Convergent-Sequences.html",
+  "url": "/introduction-to-analysis/convergent-sequences/",
   "title": "3.1 Convergent Sequences",
   "lang": "en",
-  "hash": "fe041db4e3f74a26087c5f1f78d628bd4b271f8793a64cc7c0263ac448b51542",
+  "hash": "7fc8ab215480d43f2a98e29663dad710823a42d5b405013b93faeecae289973c",
   "skeleton": 4,
-  "prompt": "lecture-v4",
+  "prompt": "lecture-v5",
   "model": "gpt-5.5",
-  "updated": "2026-10-18",
+  "updated": "2026-11-15",
   "sections": [
     {
       "id": "introduction",
@@ -130,10 +130,10 @@
       "title": "Proof",
       "kind": "proof",
       "level": 2,
-      "source": "9be52794d95f449f11200145941050a2d022da14b98bb8cf6e5de8d96f0df5d8",
+      "source": "a2e03bbbcf63c6bbe4ef3cd14bf22daf80a9542abaa6ac2b4a35e3bdc6ede84b",
       "skip": null,
       "file": "proof-theorem-3-1-5.md",
-      "current": true,
+      "current": false,
       "edited": false,
       "words": 102,
       "math": 11
@@ -332,19 +332,6 @@
       "edited": false,
       "words": 259,
       "math": 18
-    },
-    {
-      "id": "references",
-      "title": "References",
-      "kind": "section",
-      "level": 2,
-      "source": "e601fa03dec22e980b98b103392a8c94c3870774f2306b0a412be5e94f3fd455",
-      "skip": "reference list",
-      "file": null,
-      "current": false,
-      "edited": false,
-      "words": 13,
-      "math": 0
     }
   ]
 }

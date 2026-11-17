@@ -7,7 +7,7 @@ title: "Vocabularies II"
 permalink: /dictionary/vocabularies-ii/
 date: 2026-09-07 00:00:00 +0900
 created_at: 2026-09-07 12:58:48 +0900
-last_modified_at: 2026-11-13 16:02:49 +0900
+last_modified_at: 2026-11-16 13:30:21 +0900
 narration: false
 published: true
 line_indent: false
@@ -15,15 +15,17 @@ line_indent: false
 **charm**: the quality of giving delight: *his charm has captivated the media.*
 **friendliness**: the quality of being kind.
 
-**antagonistic**: showing active opposition to someone or something: *he was **antagonistic to** the government's reforms.*
+**antagonistic**/ænˌtæɡənˈɪstɪk/: showing active opposition to someone or something: *he was **antagonistic to** the government's reforms.*
 **hostility**: antagonistic behavior and unfriendliness: *their **hostility to** all outsiders.*
 
 <b>ease</b>: make something less severe.
 <b>relieve</b>: cause pain or distress to become less severe.
-**allay**: calm a troubling emotion of fear, anxiety, or suspicion: *the company released more data to allay concerns about the drug's safety.*
+**allay** /əˈleɪ/: calm a troubling emotion of fear, anxiety, or suspicion: *the company released more data to allay concerns about the drug's safety.*
 
 **disarm** (v.): take weapons away from a person or force.
-**disarmingly**: in a manner that unexpectedly lowers someone's psychological defenses: *he was disarmingly honest about his mistakes\| the plan was disarmingly simple, making my worries feel pointless.*
+**disarmingly**: in a manner that unexpectedly lowers someone's psychological defenses: *he was disarmingly honest about his mistakes \| the plan was disarmingly simple, making my worries feel pointless.*
+
+**pointless**: having little or no sense: *it's pointless to plan too far ahead.*
 
 **square**: the product of a number multiplied by itself.
 **quadratic**: involving the second of a quantity.
@@ -32,7 +34,7 @@ line_indent: false
 
 **dedicated**: (of a thing) exclusively allocated to or intended for a particular purpose: *a dedicated study week.*
 
-**redundant**: not or no longer needed or useful: *it is considered redundant to use a conjunction after a semicolon.*
+**redundant** /rɪˈdʌndənt/: not or no longer needed or useful: *it is considered redundant to use a conjunction after a semicolon.*
 
 **symmetry**: *Mathematics* a law or operation in which a physical property or process has an equivalence in two or more directions. 
 
@@ -44,9 +46,9 @@ line_indent: false
 **demonstration**<sup>2</sup>: practical explanation of how something works.
 
 **liable**: likely to do or to be something: *the political situation was becoming liable to change rapidly*.
-**volatile**: liable to change rapidly and unpredictably, especially for the worse: *liquid markets are less volatile than illiquid ones.*
+**volatile** /ˈvɑlət̬əl/: liable to change rapidly and unpredictably, especially for the worse: *liquid markets are less volatile than illiquid ones.*
 
-**repository**: *Computing* a central location in which data is stored and managed. 
+**repository** /rɪˈpɑzɪtɔri/: *Computing* a central location in which data is stored and managed. 
 **fetch** (v.): *Computing* go for and retrieve data, instructions, or other information from a specified location or source: *fetch updates from a remote repository*.
 
 **in its own right**: deserving recognition or value because of its own qualities, not because of something else.
@@ -60,16 +62,18 @@ line_indent: false
 
 **interpret**: explain the meaning of information or words.
 
-**underpinning** (v.): a set of ideas or motives that form the basis for something: *the theoretical **underpinning for** free-market economics.*
+**underpinning** (n.): a set of ideas or motives that form the basis for something: *the theoretical **underpinning for** free-market economics.*
 
 **discipline**<sup>2</sup> (n.): controlled behavior resulting from training.
 
-**threshold** /θreʃ.hold/ (n.): the magnitude or intensity that must be exceeded for a certain phenomenon or result to occur: *everyone has a different pain threshold.*
+**threshold** /θreʃhold/ (n.): the magnitude or intensity that must be exceeded for a certain phenomenon or result to occur: *everyone has a different pain threshold.*
 
-**diverge**: (of an opinion, theory, approach, etc.) differ markedly: *the article **diverged from** my experience.*
+**diverge** /dɪˈvɝdʒ/: (of an opinion, theory, approach, etc.) differ markedly: *the article **diverged from** my experience.*
 
-**buried** (adj.): placed or hidden underground: *there are many issues buried in the question.*
+**buried** /ˈberid/ (adj.): placed or hidden underground: *there are many issues buried in the question.*
 
-**evaporate**: turn from liquid into vapor: *unless great efforts are made to maintain the tone of the original human insights, the differences start to evaporate.*
+**evaporate** /ɪˈvæpəreɪt/: turn from liquid into vapor: *unless great efforts are made to maintain the tone of the original human insights, the differences start to evaporate.*
+
+**unrepresentative**: not representative of a group: *the extreme values were not **representative of** the dataset.*
 
 

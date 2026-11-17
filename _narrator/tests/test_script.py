@@ -2,6 +2,7 @@
 import os
 import tempfile
 import unittest
+from unittest import mock
 
 from _narrator import script as stage2
 from _narrator.prompts import PROMPT_VERSION
@@ -127,6 +128,84 @@ class Planning(unittest.TestCase):
         c = stage2.glossary_key(skel(HTML.replace("\\(y\\)", "\\(z\\)")))
         self.assertEqual(a, b)
         self.assertNotEqual(a, c)
+
+
+class Phrasing(unittest.TestCase):
+    """The comma pass: commas in, nothing else, and the bookkeeping that keeps CI from regenerating."""
+    OLD = "Since A is contained in N, star implies A is contained in the union from k equals one to n of U k."
+    NEW = "Since A is contained in N, star implies, A is contained in the union, from k equals one to n, of U k."
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.out = self.tmp.name
+        self.skel = skel()
+        self.intro, self.thm = self.skel.sections[:2]
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def seed(self, section, body, generated=None, **over):
+        meta = {"section": section.id, "source": section.hash, "prompt": "lecture-v4",
+                "body": stage2._sha(generated if generated is not None else body)}
+        meta.update(over)
+        stage2.write_md(os.path.join(self.out, section.id + ".md"), meta, body)
+
+    def run_pass(self, reply, **kw):
+        calls = []
+
+        def chat(system, user, **_):
+            calls.append(user)
+            return reply(user) if callable(reply) else reply
+        with mock.patch.object(stage2.llm, "chat", chat):
+            counts = stage2.phrase(self.skel, self.out, log=lambda m: None, **kw)
+        return counts, calls
+
+    def test_commas_only(self):
+        self.assertTrue(stage2.commas_only(self.OLD, self.NEW))
+        self.assertTrue(stage2.commas_only("A.\n\nB, c.", "\nA.\n\nB, c.  \n"))   # blank ends, trailing spaces
+        self.assertFalse(stage2.commas_only(self.OLD, self.NEW.replace("star implies", "star gives")))
+        self.assertFalse(stage2.commas_only("A, b.", "A b."))                     # a comma removed
+        self.assertFalse(stage2.commas_only("A.\n\nB.", "A. B."))                 # a paragraph joined
+        self.assertFalse(stage2.commas_only("A b.", "A b,."))                     # a stray comma
+        self.assertFalse(stage2.commas_only("A b.", "A, b; c."))
+
+    def test_phrases_an_untouched_script_and_makes_it_current(self):
+        self.seed(self.thm, self.OLD)
+        counts, calls = self.run_pass(self.NEW)
+        self.assertEqual(counts["phrased"], 1)
+        meta, body = stage2.read_md(os.path.join(self.out, self.thm.id + ".md"))
+        self.assertEqual(body, self.NEW + "\n")
+        self.assertEqual(meta["prompt"], PROMPT_VERSION)
+        self.assertEqual(meta["body"], stage2._sha(self.NEW))                # not "edited by hand"
+        self.assertIn("phrased", meta)
+        self.assertIn(self.thm.id, [s.id for s in stage2.plan(self.skel, self.out).current])
+        self.assertTrue(os.path.exists(os.path.join(self.out, "index.json")))
+
+    def test_rewording_is_refused_after_a_retry(self):
+        self.seed(self.thm, self.OLD)
+        counts, calls = self.run_pass(self.NEW.replace("implies", "shows"))
+        self.assertEqual((counts["refused"], len(calls)), (1, 2))
+        meta, body = stage2.read_md(os.path.join(self.out, self.thm.id + ".md"))
+        self.assertEqual((body, meta["prompt"]), (self.OLD + "\n", "lecture-v4"))  # left for regeneration
+
+    def test_skips_what_it_must_not_touch(self):
+        self.seed(self.intro, self.OLD, source="0" * 64)                   # the page changed
+        self.seed(self.thm, "My own words, about U k.", generated="Script.")
+        counts, calls = self.run_pass(self.NEW)
+        self.assertEqual(calls, [])
+        self.assertEqual((counts["page changed"], counts["edited by hand"]), (1, 1))
+        self.seed(self.thm, self.OLD, prompt=PROMPT_VERSION)                # already current
+        counts, calls = self.run_pass(self.NEW)
+        self.assertEqual((calls, counts["current"]), ([], 1))
+
+    def test_edited_scripts_on_request_stay_yours(self):
+        self.seed(self.thm, self.OLD, generated="Script.")
+        counts, _ = self.run_pass(self.NEW, include_edited=True)
+        meta, body = stage2.read_md(os.path.join(self.out, self.thm.id + ".md"))
+        self.assertEqual(body, self.NEW + "\n")
+        self.assertEqual((meta["prompt"], meta["body"]), ("lecture-v4", stage2._sha("Script.")))
+        counts, calls = self.run_pass(self.NEW, include_edited=True)        # phrased once is enough
+        self.assertEqual(calls, [])
 
 
 if __name__ == "__main__":

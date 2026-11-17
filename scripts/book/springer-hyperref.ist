@@ -1,0 +1,11 @@
+% Based on Springer Nature's SNmono v6.00 svind.ist (2025-11-11).
+% The original remains unchanged in vendor/springer/svind.ist.
+% Only delim_n differs: hyperref's \hyperpage splits page lists at comma-space;
+% comma followed by \, instead produces an invalid combined page destination.
+headings_flag 1
+heading_prefix "{\\bf "
+heading_suffix "}\\nopagebreak%\n \\indexspace\\nopagebreak%"
+delim_0 "\\idxquad "
+delim_1 "\\idxquad "
+delim_2 "\\idxquad "
+delim_n ", "

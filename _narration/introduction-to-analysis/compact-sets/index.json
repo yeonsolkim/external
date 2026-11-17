@@ -1,12 +1,12 @@
 {
-  "url": "/2026/07/30/2.-Compact-Sets.html",
+  "url": "/introduction-to-analysis/compact-sets/",
   "title": "2.2 Compact Sets",
   "lang": "en",
   "hash": "5de36c67738dc7a3e143b94cbaca9c85a3e014d5297d72c9d4dfd3aca2932b1b",
   "skeleton": 4,
-  "prompt": "lecture-v4",
+  "prompt": "lecture-v5",
   "model": "gpt-5.5",
-  "updated": "2026-10-21",
+  "updated": "2026-11-15",
   "sections": [
     {
       "id": "introduction",

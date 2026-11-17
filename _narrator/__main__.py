@@ -2,6 +2,7 @@
     python3 -m _narrator skeleton <post.html | URL>  [--json out.json] [--text out.txt]
     python3 -m _narrator skeleton _site               [--json out-dir]
     python3 -m _narrator script   <post.html | URL>  [--dry-run] [--force] [--only id,id] [--model M]
+    python3 -m _narrator phrase   <post.html | URL | _site> [--dry-run] [--include-edited]   # commas only
     python3 -m _narrator lecture  <post.html | URL>  [--out file]     # assembled script, for review
     python3 -m _narrator lint     [_narration]       # scripts that speak typography, keep TeX, or say a term for its notation
     python3 -m _narrator voice    <post.html | URL>  [--voice V] [--dry-run]   # scripts -> _audio/<url>.mp3 + .json
@@ -102,6 +103,31 @@ def cmd_script(args: argparse.Namespace) -> int:
     stage2.run(skel, out_dir, model=args.model, force=args.force, only=only,
                dry_run=args.dry_run, workers=args.workers, reasoning=args.reasoning)
     return 0
+
+
+def cmd_phrase(args: argparse.Namespace) -> int:
+    from . import llm, script as stage2
+    load_dotenv()
+    sources = find_posts(args.source) if os.path.isdir(args.source) else [args.source]
+    total: dict = {}
+    for source in sources:
+        try:
+            skel = build(read_source(source), source)
+        except SkeletonError as error:
+            print("skip %s: %s" % (source, error), file=sys.stderr)
+            continue
+        out_dir = stage2.post_dir(args.out, skel)
+        if not os.path.isdir(out_dir):
+            continue
+        counts = stage2.phrase(skel, out_dir, model=args.model, include_edited=args.include_edited,
+                               dry_run=args.dry_run, workers=args.workers, reasoning=args.reasoning)
+        for key, n in counts.items():
+            total[key] = total.get(key, 0) + n
+    if len(sources) > 1:
+        print("total: " + (", ".join("%d %s" % (n, k) for k, n in total.items() if n) or "no scripts"))
+    if llm.USAGE["calls"]:
+        print("tokens: %d in, %d out, %d calls" % (llm.USAGE["prompt"], llm.USAGE["completion"], llm.USAGE["calls"]))
+    return 1 if total.get("refused") else 0
 
 
 def cmd_lint(args: argparse.Namespace) -> int:
@@ -252,6 +278,18 @@ def main(argv: list) -> int:
     p.add_argument("--workers", type=int, default=4, help="parallel sections (default 4)")
     p.set_defaults(func=cmd_script)
 
+    p = sub.add_parser("phrase", help="add the phrasing commas of the current prompt to existing scripts, "
+                                      "changing no word (calls the LLM)")
+    p.add_argument("source", help="a built post (.html), a URL, or the _site directory (every post)")
+    p.add_argument("--out", default="_narration", help="root of the script tree (default _narration)")
+    p.add_argument("--model", default=None, help="chat model (default: %s)" % "gpt-5.5")
+    p.add_argument("--reasoning", default="medium", help="reasoning_effort (default medium)")
+    p.add_argument("--include-edited", dest="include_edited", action="store_true",
+                   help="also phrase hand-edited scripts (they keep their protection)")
+    p.add_argument("--dry-run", action="store_true", help="count what would be phrased, spend nothing")
+    p.add_argument("--workers", type=int, default=4, help="parallel sections (default 4)")
+    p.set_defaults(func=cmd_phrase)
+
     p = sub.add_parser("lecture", help="assemble the existing scripts of a post in reading order")
     p.add_argument("source", help="a built post (.html) or a URL")
     p.add_argument("--out", default="_narration", help="root of the script tree (default _narration)")
@@ -307,7 +345,7 @@ def main(argv: list) -> int:
     p.set_defaults(func=cmd_publish)
 
     args = parser.parse_args(argv)
-    if getattr(args, "model", None) is None and args.command == "script":
+    if getattr(args, "model", None) is None and args.command in ("script", "phrase"):
         from .script import DEFAULT_MODEL
         args.model = DEFAULT_MODEL
     try:

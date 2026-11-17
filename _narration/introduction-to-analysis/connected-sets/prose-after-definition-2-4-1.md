@@ -6,11 +6,12 @@ document: 2.4 Connected Sets
 url: /2026/09/03/4.-Connected-Sets.html
 source: 746cb759d1763c6ba5458497514c6d56648261b30983225d594b2c9c75169162
 skeleton: 4
-prompt: lecture-v4
+prompt: lecture-v5
 model: gpt-5.5
 generated: 2026-10-07
 body: 746cb759d1763c6ba5458497514c6d56648261b30983225d594b2c9c75169162
 words: 15
+phrased: 2026-11-15
 ---
 
 Note that separated sets are of course disjoint, but disjoint sets need not be separated.

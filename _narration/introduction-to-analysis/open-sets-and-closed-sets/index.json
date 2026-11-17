@@ -4,9 +4,9 @@
   "lang": "en",
   "hash": "68202971ff0c3cff9b424f94e509e1b2979246276e11e4a67a6df65264fb2154",
   "skeleton": 4,
-  "prompt": "lecture-v4",
+  "prompt": "lecture-v5",
   "model": "gpt-5.5",
-  "updated": "2026-10-25",
+  "updated": "2026-11-15",
   "sections": [
     {
       "id": "introduction",

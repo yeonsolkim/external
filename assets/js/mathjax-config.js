@@ -405,6 +405,17 @@
     });
   }
 
+  // MathJax measures \whitestar's <text> as it sets it, so its face has to be in by then;
+  // otherwise the star would be spaced by whatever face the browser had in its place. A
+  // face that fails to load leaves the reader's own star, as before.
+  function loadWhiteStar() {
+    if (!document.fonts || typeof document.fonts.load !== 'function') {
+      return Promise.resolve();
+    }
+
+    return document.fonts.load('1em "White Star"', '☆').catch(function () {});
+  }
+
   function normalizeInlineMathWhenReady() {
     if (document.readyState === 'loading') {
       return new Promise(function (resolve) {
@@ -599,14 +610,17 @@
       displayMath: [['$$', '$$'], ['\\[', '\\]']],
       processEscapes: true,
       macros: {
-        // The system-font star is roughly 0.9em wide, so scale it down toward
-        // \circ's 0.3em and lift it onto the math axis. Its outline is much
-        // thinner than \circ's ring, so stroke it (in the glyph's 1000-per-em
-        // units) to bring the weight up to match. Unlike the math font's own
-        // glyphs, which are paths, this one is real SVG <text> and inherits
-        // font-style/weight from the surrounding prose, so an italic statement
-        // body would slant it; pin both to normal.
-        whitestar: '\\mathbin{\\raise0.07em{\\style{font-size:55%;stroke-width:45px;font-style:normal;font-weight:normal}{\\unicode[serif]{x2606}}}}',
+        // The star is the site's own White Star face (style.scss), drawn by
+        // scripts/white_star.py after the Songti SC star Safari used to fill in
+        // for the reader's serif face, so that every reader sees one star; the
+        // book draws the same (scripts/book/site-macros.tex). It is 1em wide, so
+        // scale it down toward \circ's 0.3em and lift it onto the math axis. Its
+        // outline is much thinner than \circ's ring, so stroke it (in the glyph's
+        // 1000-per-em units) to bring the weight up to match. Unlike the math
+        // font's own glyphs, which are paths, this one is real SVG <text> and
+        // inherits font-style/weight from the surrounding prose, so an italic
+        // statement body would slant it; pin both to normal.
+        whitestar: '\\mathbin{\\raise0.07em{\\style{font-size:55%;stroke-width:45px;font-style:normal;font-weight:normal}{\\unicode[White Star]{x2606}}}}',
         lowparen: [
           '\\mathinner{\\mathopen{\\lower .3em {\\bigg(}}#1\\mathclose{\\lower .3em {\\bigg)}}}',
           1
@@ -632,7 +646,7 @@
     },
     startup: {
       pageReady() {
-        return normalizeInlineMathWhenReady().then(function () {
+        return Promise.all([normalizeInlineMathWhenReady(), loadWhiteStar()]).then(function () {
           return MathJax.startup.defaultPageReady();
         }).then(function () {
           updateDisplayMathOverflow();

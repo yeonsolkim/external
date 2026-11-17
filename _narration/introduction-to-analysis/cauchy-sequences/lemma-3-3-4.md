@@ -6,11 +6,12 @@ document: 3.3 Cauchy Sequences
 url: /2026/09/09/3.-Cauchy-Sequences.html
 source: a97cf4ed319b34007613dd4403382c7bc9425c648049b5cfac76b1a5083ae37a
 skeleton: 4
-prompt: lecture-v4
+prompt: lecture-v5
 model: gpt-5.5
 generated: 2026-10-21
-body: d96c2600e9bad427776038391d684ee8c08c3de86e91188644719d63bfd24a55
+body: 8df6326da0accbb56b8bf9251385a1ca4a05d17c622b0c5dbe9d93fa27785090
 words: 99
+phrased: 2026-11-15
 ---
 
-Lemma 3.3.4. Let M be a metric space. Then the following hold: First, let A be a nonempty subset of M. Then, diameter of the closure of A equals diameter of A. Second, let the sequence K n be a sequence of nonempty compact sets in M such that K sub n plus one is contained in K n, for n equals one, two, three, and so on. If the limit as n tends to infinity of diameter of K n equals zero, then the intersection from n equals one to infinity of K n consists of one point.
+Lemma 3.3.4. Let M be a metric space. Then the following hold: First, let A be a nonempty subset of M. Then, diameter of the closure of A, equals diameter of A. Second, let the sequence K n be a sequence of nonempty compact sets in M such that K sub n plus one, is contained in K n, for n equals one, two, three, and so on. If the limit as n tends to infinity of diameter of K n, equals zero, then the intersection, from n equals one to infinity, of K n, consists of one point.
