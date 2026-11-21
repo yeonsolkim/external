@@ -1,3 +1,7 @@
+[![Build and deploy](https://img.shields.io/github/actions/workflow/status/yeonsolkim/external/pages.yml?branch=main&label=build%20%26%20deploy)](https://github.com/yeonsolkim/external/actions/workflows/pages.yml)
+[![Notes license: CC BY-NC-SA 4.0](https://img.shields.io/badge/notes%20license-CC%20BY--NC--SA%204.0-blue)](pages/license.md)
+[![Code license: MIT](https://img.shields.io/badge/code%20license-MIT-blue)](LICENSE)
+
 ## Development Notes
 
 ### Diagrams
