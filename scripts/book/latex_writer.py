@@ -20,7 +20,8 @@ mirrored here, since it is part of how a post reads:
 MathJax sets `align` and its kin without numbers (the site gives it no `tags`), so they
 come out starred. Diagrams stay TikZ: the book's site build turns the renderer off
 (`tikzcd: enabled: false`), so `$$ \\begin{tikzcd} ... $$` arrives as the display math it
-was written as.
+was written as. With a caption under it (`**Figure 1.1.1.** ...`) it is a figure, a float,
+numbered as its label reads.
 
 Stdlib only, Python 3.9+ (scripts/ run on macOS's /usr/bin/python3).
 """
@@ -33,7 +34,7 @@ from _narrator.htmltree import Node
 
 # main.js's referencePattern: a statement number, with or without its kind before it.
 REFERENCE_KINDS = ("Definition", "Theorem", "Lemma", "Corollary", "Proposition", "Remark",
-                   "Example", "Principle", "Exercise")
+                   "Example", "Principle", "Exercise", "Figure")
 REFERENCE_RE = re.compile(r"\b(?:(%s)\s+)?(\d+(?:\.\d+)+)\b" % "|".join(REFERENCE_KINDS))
 LABEL_RE = re.compile(r"^(%s)\s+(\d+(?:\.\d+)+)$" % "|".join(REFERENCE_KINDS))
 
@@ -56,6 +57,8 @@ DISPLAY_ENVIRONMENT_RE = re.compile(
     r"\\end\{\1\*?\}\s*(.*?)\s*$",
     re.S,
 )
+# One diagram and nothing else, which stands outside math; with other math it is a formula.
+DIAGRAM_RE = re.compile(r"^\\begin\{(tikzcd|tikzpicture)\}(?:(?!\\end\{\1\}).)*\\end\{\1\}$", re.S)
 # The QED written as an equation tag: `\tag*{\(\square\)}`, `\tag*{$\blacksquare$}`.
 TAG_QED_RE = re.compile(
     r"\\tag\*\{\s*(?:\\\(|\$)\s*\\(?:square|blacksquare)\s*(?:\\\)|\$)\s*\}")
@@ -154,19 +157,27 @@ def is_statement_label(node: Node) -> bool:
     return node.tag in ("strong", "b") and node.has_class("math-label-anchor")
 
 
+def is_figure_label(node: Node) -> bool:
+    return node.tag in ("strong", "b") and node.has_class("figure-label")
+
+
 def reference_targets(posts: List[Tuple[str, Node]]) -> Dict[str, Optional[str]]:
     """{`Theorem 2.1.6` or `2.1.6`: LaTeX label}, over the whole book as
     reference_label_targets.rb builds it over a textbook. A bare number counts only when a
-    single statement has it; one that several share maps to None."""
+    single statement has it; one that several share maps to None. Figures are numbered on
+    their own, so a bare number is never a figure's."""
     labelled: Dict[str, Optional[str]] = {}
     numbers: Dict[str, Optional[str]] = {}
     for key, body in posts:
-        for label in body.find_all(is_statement_label):
+        for label in body.find_all(lambda n: is_statement_label(n) or is_figure_label(n)):
             match = LABEL_RE.match(label_text(label))
             if not match or not label.get("id"):
                 continue
             target = "%s:%s" % (key, label.get("id"))
-            for table, name in ((labelled, "%s %s" % match.groups()), (numbers, match.group(2))):
+            names = [(labelled, "%s %s" % match.groups())]
+            if not is_figure_label(label):
+                names.append((numbers, match.group(2)))
+            for table, name in names:
                 table[name] = None if name in table and table[name] != target else target
     for number, target in numbers.items():
         labelled.setdefault(number, target)
@@ -255,7 +266,8 @@ class PostWriter:
             elif node.tag == "section":
                 parts.append(("unit", self.unit(node), ""))
             elif node.tag == "figure":
-                parts.append(("display", self.figure(node), ""))
+                kind = "unit" if "captioned-figure" in classes else "display"
+                parts.append((kind, self.figure(node), ""))
             elif node.tag == "pre":
                 parts.append(("display", self.preformatted(node), ""))
             elif node.tag == "blockquote":
@@ -482,12 +494,25 @@ class PostWriter:
         return body
 
     def figure(self, node: Node) -> str:
-        if node.has_class("commutative-diagram"):
+        formula = next((piece for child in node.children if child.is_text
+                        for kind, piece in self.split_display(child.text) if kind == "display"), None)
+        if node.has_class("captioned-figure") and formula is not None:
+            return self.captioned_figure(node, formula.strip())
+        if node.find(lambda n: n.has_class("commutative-diagram")) is not None:
             self.warn("a diagram arrived as SVG: build the site with the book's config, "
                       "which keeps it TikZ")
         else:
             self.warn("a <figure> the book cannot set")
         return "\\[\\text{[figure]}\\]"
+
+    def captioned_figure(self, node: Node, formula: str) -> str:
+        caption = node.first("figcaption")
+        label = caption.find(is_figure_label)
+        if not DIAGRAM_RE.match(formula):
+            formula = "$\\displaystyle\n%s\n$" % re.sub(r"\n\s*\n", "\n", formula)
+        return "\\begin{figure}[!htbp]\\unitlabel{%s:%s}\n\\centering\n%s\n\\figurecaption{%s}{%s}\n\\end{figure}" % (
+            self.key, label.get("id"), formula, escape_text(node.get("data-number") or ""),
+            self.inline(without(caption, label).children).strip())
 
     def preformatted(self, node: Node) -> str:
         code = node.find(lambda n: n.tag == "code")

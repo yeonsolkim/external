@@ -3,7 +3,7 @@
 module ExternalReferenceLabelTargets
   LABEL_PATTERN = %r{
     (?:\*\*|<(?:strong|b)\b[^>]*>)\s*
-    (Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle|Exercise)\s+
+    (Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle|Exercise|Figure)\s+
     (\d+(?:\.\d+)+)\.?
     (?=\s|\*|\)|</(?:strong|b)>)
   }x.freeze
@@ -27,7 +27,8 @@ module ExternalReferenceLabelTargets
         label = "#{kind} #{number}"
 
         add_target(scope_targets, label, href)
-        add_target(scope_number_targets, number, href)
+        # Figures are numbered on their own: a bare number is always a statement's.
+        add_target(scope_number_targets, number, href) unless kind == "Figure"
       end
     end
 

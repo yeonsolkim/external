@@ -37,6 +37,11 @@ module ExternalDocumentStructure
   # environment, not a heading; a headword without a period (`**can**`) stays emphasis.
   RUN_IN_RE = /\A(?=.*\p{Alpha})(?!.*\b[A-Z]?\d+(?:\.\d+)*\.\z)(\S.*?)\.\z/.freeze
   RUN_IN_DEPTH = 9 # below every numbered level: any section or heading closes it
+  # `**Figure 1.1.1.** A caption`, right under a diagram, is what \caption is in LaTeX's figure
+  # environment. Figures are numbered apart from the statements (AMS Style Guide, 7.1).
+  FIGURE_RE = /\AFigure\s+(\d+(?:\.\d+)*)\.?\z/.freeze
+  # A diagram left as TeX, as the book's build leaves it: the display formula a text ends with.
+  TIKZ_FORMULA_RE = /\\\[(?:(?!\\\]).)*?\\begin\s*\{(?:tikzcd|tikzpicture)\}(?:(?!\\\]).)*\\\]\s*\z/m.freeze
 
   VOID_TAGS = %w[area base br col embed hr img input link meta param source track wbr].freeze
   LABEL_TAGS = %w[strong b em i].freeze
@@ -185,6 +190,56 @@ module ExternalDocumentStructure
     nil
   end
 
+  # -- figures ---------------------------------------------------------------------
+  # A diagram and the caption right under it are one figure: \begin{figure} … \caption{…}.
+  def with_captions(blocks, warnings)
+    blocks.each_with_object([]) do |block, out|
+      number = figure_number(block)
+      diagram = number && take_diagram(out)
+      warnings << "Figure #{number} has no diagram above its caption" if number && diagram.nil?
+      out << (diagram ? captioned_figure(diagram, block, number) : block)
+    end
+  end
+
+  def figure_number(block)
+    label = label_of(block)
+    label[:text][FIGURE_RE, 1] if label && %w[strong b].include?(label[:tag])
+  end
+
+  # Takes the diagram the blocks end with: the renderer's figure, or the formula it was.
+  def take_diagram(blocks)
+    index = blocks.rindex { |block| !blank?(block) && block[:type] != :comment }
+    return nil unless index
+
+    block = blocks[index]
+    if block[:type] == :element && block[:classes].include?("commutative-diagram")
+      blocks.slice!(index..)
+      return block[:raw].sub(/\A<figure\b/, "<div").sub(%r{</figure>\s*\z}, "</div>")
+    end
+
+    formula = block[:raw].match(TIKZ_FORMULA_RE) if block[:type] == :text
+    return nil unless formula
+
+    blocks.slice!(index..)
+    blocks << block.merge(raw: formula.pre_match)
+    formula[0].strip
+  end
+
+  def captioned_figure(diagram, block, number)
+    id = entry_id("Figure", number, nil)
+    label = label_of(block)
+    tag = label[:tag]
+    text = label[:rest].strip # a caption may be its label alone
+    caption = "<#{tag}#{attrs_to_s('id' => id, 'class' => 'figure-label')}>#{label[:html]}</#{tag}>"
+    caption += %( <span class="figure-text">#{text}</span>) unless text.empty?
+    open_tag = "<figure#{attrs_to_s('class' => 'captioned-figure', 'data-number' => number, 'id' => "unit-#{id}")}>"
+    block_for("figure", open_tag, "#{open_tag}\n#{diagram}\n<figcaption>#{caption}</figcaption>\n</figure>")
+  end
+
+  def captioned_figure?(block)
+    block[:type] == :element && block[:classes].include?("captioned-figure")
+  end
+
   # `**Theorem 2.2.20** (Heine–Borel theorem).` — the older form, the name after the label.
   def statement_name(rest)
     text_of(rest.to_s)[/\A\s*\(([^()]*(?:\([^()]*\)[^()]*)*)\)/, 1]
@@ -303,7 +358,7 @@ module ExternalDocumentStructure
   end
 
   def transform(html, warnings, exercise_page: false)
-    blocks = split_blocks(html)
+    blocks = with_captions(split_blocks(html), warnings)
     root = Unit.new(:root)
     stack = [root]
     environment_counter = 0
@@ -375,9 +430,11 @@ module ExternalDocumentStructure
         }, 0))
       elsif semantic_boundary?(block)
         close_units.call
-      elsif block[:type] == :element && block[:tag] == "p" && !bridge && !continuation_marker?(block)
+      elsif captioned_figure?(block) ||
+            (block[:type] == :element && block[:tag] == "p" && !bridge && !continuation_marker?(block))
         # A plain paragraph ends a statement, unless a figure, list or display equation
-        # bridged to it — the rule assets/js/main.js has always used.
+        # bridged to it — the rule assets/js/main.js has always used. So does a figure with a
+        # caption, which is a float: no part of the statement before it.
         close_to.call(->(unit) { unit.role == :environment && !marker_terminated?(unit.attrs[:kind]) })
       end
 
@@ -465,6 +522,10 @@ module ExternalDocumentStructure
         block = with_label_attrs(block, descriptor[:label], "id" => id, "class" => "math-proof-marker")
       end
 
+      if captioned_figure?(block)
+        check_sequence(seen_numbers, :figure, attribute_of(block[:open_tag], "data-number"), warnings)
+      end
+
       # Two blank lines after a figure, list or display equation start a new paragraph of the
       # same unit, which is indented (post.css); one blank line continues the sentence.
       if structural && descriptor.nil? && block[:type] == :element && block[:tag] == "p" &&
@@ -497,6 +558,8 @@ module ExternalDocumentStructure
                  true
                elsif block[:type] != :element || continuation_marker?(block)
                  bridge
+               elsif captioned_figure?(block)
+                 false
                else
                  block[:tag] != "p"
                end

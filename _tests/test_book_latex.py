@@ -44,6 +44,10 @@ def statement(kind, number, inner, italic=False):
 
 
 QED = '<span data-environment-end="proof" class="qed"><span class="math-inline">\\(\\square\\)</span></span>'
+FIGURE = (
+    '<figure class="captioned-figure" data-number="1.1.1" id="unit-figure-1-1-1">\n%s\n'
+    '<figcaption><strong id="figure-1-1-1" class="figure-label">Figure 1.1.1.</strong> '
+    'A basis at <span class="math-inline">\\(x\\)</span></figcaption>\n</figure>')
 
 
 class StatementTests(unittest.TestCase):
@@ -230,6 +234,46 @@ class ReferenceTests(unittest.TestCase):
         targets = reference_targets(labels)
         self.assertIsNone(targets["1.1.1"])
         self.assertEqual(targets["Lemma 1.1.1"], "b:lemma-1-1-1")
+
+    def test_a_figure_is_referred_to_by_its_kind_only(self):
+        targets = reference_targets([("post", body_of(
+            statement("Definition", "1.1.1", "A.</p>") + FIGURE % "\\[\\begin{tikzcd}A\\end{tikzcd}\\]"))])
+        latex, warnings = convert("<p>See Figure 1.1.1 and 1.1.1.</p>", targets)
+        self.assertEqual(
+            latex,
+            "See Figure~\\hyperref[post:figure-1-1-1]{1.1.1} and \\hyperref[post:definition-1-1-1]{1.1.1}.")
+        self.assertEqual(warnings, [])
+
+
+class FigureTests(unittest.TestCase):
+    def test_a_captioned_diagram_is_a_float_numbered_as_its_label_reads(self):
+        latex, warnings = convert(
+            "<p>Before.</p>\n"
+            + FIGURE % ("\\[\\begin{tikzpicture}\n  \\node (a) {$x$\\\\[1pt] b};\n"
+                        "  \\draw[-&gt;] (a) -- (1,0);\n\\end{tikzpicture}\\]")
+            + "\n<p>After.</p>")
+        self.assertEqual(
+            latex,
+            "Before.\n\n\\begin{figure}[!htbp]\\unitlabel{post:figure-1-1-1}\n\\centering\n"
+            "\\begin{tikzpicture}\n  \\node (a) {$x$\\\\[1pt] b};\n  \\draw[->] (a) -- (1,0);\n"
+            "\\end{tikzpicture}\n\\figurecaption{1.1.1}{A basis at $x$}\n\\end{figure}\n\nAfter.")
+        self.assertEqual(warnings, [])
+
+    def test_diagrams_among_other_math_stay_one_formula(self):
+        formula = "\\begin{tikzcd}A\\end{tikzcd}\n\\quad\n\\begin{tikzcd}B\\end{tikzcd}"
+        latex, _ = convert(FIGURE % ("\\[%s\\]" % formula))
+        self.assertIn("\\centering\n$\\displaystyle\n%s\n$\n\\figurecaption{1.1.1}" % formula, latex)
+
+    def test_a_diagram_that_arrives_as_svg_is_reported(self):
+        _, warnings = convert(FIGURE % '<div class="commutative-diagram"><svg></svg></div>')
+        self.assertEqual(len(warnings), 1)
+        self.assertIn("a diagram arrived as SVG", warnings[0])
+
+    def test_every_design_sets_the_caption(self):
+        for name in build_book.BOOK_STYLES.values():
+            with self.subTest(name=name):
+                source = (ROOT / "scripts" / "book" / (name + ".cls")).read_text(encoding="utf-8")
+                self.assertIn("\\newcommand\\figurecaption[2]", source)
 
 
 class BuildTests(unittest.TestCase):

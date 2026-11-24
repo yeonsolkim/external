@@ -22,7 +22,8 @@ as `\begin{proof}` is in LaTeX, and carries a pointer back to it.
 | `\begin{theorem}[N]` … | `**Theorem 1.1.6 (N).** …` | same, `data-name="N"`; in the label, `<span class="math-statement-name">(N)</span>` |
 | `\begin{proof}` … `\qed` | `*Proof.* … $\square$` | `<section class="math-environment math-environment--proof" data-proves="…">` |
 | `\begin{enumerate}` | `1. …` | `<ol>` (unchanged) |
-| `\begin{figure}` + `\caption` | tikzcd block | `<figure class="commutative-diagram">` (unchanged) |
+| a diagram in display math | tikzcd block | `<figure class="commutative-diagram">` (unchanged) |
+| `\begin{figure}` + `\caption{T}` | the block, then `**Figure 1.1.1.** T` | `<figure class="captioned-figure" data-number="1.1.1">`: the diagram, now a `<div class="commutative-diagram">`, and a `<figcaption>` |
 | `\begin{equation}` + `\tag` | `$$…\tag{…}$$` | display math (unchanged) |
 | `\ref{…}` | `Theorem 1.3.3` in prose | `<a class="math-ref-link">` (unchanged, `main.js`) |
 | `\bibliography` | `## References` | `<ol class="reference">` (unchanged), in its heading's section `#unit-references`, moved after the footnotes |
@@ -74,6 +75,13 @@ The older form, the name after the label (`**Theorem 2.2.20** (Heine–Borel the
 still read for `data-name`, and `main.js` marks its name on the page; write new names in the
 label. A label with a name is an environment, never a run-in heading.
 
+A **caption** is the paragraph right under a diagram, with one blank line between them, that
+opens with a bold `**Figure 1.1.1.**`. The two become one figure; what follows the label goes
+into a `<span class="figure-text">`, and nothing need follow it (`**Figure 1.1.1**`). Under
+anything else such a paragraph stays a paragraph, with a build warning. Figures are numbered on
+their own, as AMS numbers them, so a bare `1.1.1` in prose is always a statement's: a figure is
+cited as `Figure 1.1.1`, and every numbered figure should be.
+
 **Numbers are read, never generated.** You write `Theorem 1.3.3.`; the plugin takes that
 string verbatim for the id and the narration. It only *checks* — a number that does not
 continue its neighbours produces a build warning, never a renumbering. Cross-references in
@@ -94,6 +102,9 @@ prose therefore always match what is printed.
   markers `post-structural-continuation` (two blank lines) and `post-explicit-entry-break`
   (three or more), emitted by `_plugins/post_entry_breaks.rb`.
 - A **proof** ends at its QED marker, else like an environment.
+- A **captioned figure** is a float: it ends an environment as a plain paragraph does, and the
+  paragraph after it is a new one. A proof that runs to its QED keeps it. A diagram without a
+  caption is display math, and bridges as it does.
 
 ## 4. Identifiers — stable, and never renamed silently
 
@@ -104,6 +115,7 @@ prose therefore always match what is printed.
 | numbered section | `sec-3`, `sec-3-1` | the label |
 | heading section | the heading's kramdown id (`references`) | the `<h2>` |
 | run-in heading | `par-` + the title's slug (`par-span-as-the-smallest-containing-subspace`), `-2`, `-3`… on a repeat | the label |
+| captioned figure | `figure-1-1-1` | the label (`<strong class="figure-label">`); `unit-figure-1-1-1` on the `<figure>` |
 | section wrapper | `unit-<id of its label/heading>` | the `<section>` |
 
 The label keeps the id it has today, so every existing permalink, cross-reference and

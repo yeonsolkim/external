@@ -2,7 +2,8 @@
 # frozen_string_literal: true
 
 # Tests for where the tikzcd renderer puts a diagram in the Markdown around it, checked on
-# kramdown's HTML. LaTeX is not run: a stand-in SVG takes the place of the compiled one.
+# kramdown's HTML, and for how it draws the characters in one. LaTeX is not run: a stand-in SVG
+# takes the place of the compiled one.
 #
 #   ruby _tests/test_tikzcd_renderer.rb
 #
@@ -179,17 +180,79 @@ puts "math in node text"
 end
 
 puts "documents"
-check("a lone tikzpicture is typeset as its own picture") do
-  processor.send(:latex_document, "\\begin{tikzpicture}\n\\end{tikzpicture}").include?("[tikz,border=0pt]")
+check("a lone tikzpicture is typeset as its own picture, with the whole of a frame's line") do
+  processor.send(:latex_document, "\\begin{tikzpicture}\n\\end{tikzpicture}").include?("[tikz,border=0.2pt]")
 end
 check("two pictures in a formula stay on one page") do
   renderer = processor
   renderer.render(PICTURES_AMONG_MATH)
   !renderer.send(:latex_document, renderer.environments.first).include?("[tikz,")
 end
+check("the text of a tikzpicture, and of nothing else, has the size of the page's") do
+  text = "\\renewcommand\\rmdefault{posttext}"
+  renderer = processor
+  renderer.render(PICTURES_AMONG_MATH)
+  processor.send(:latex_document, "\\begin{tikzpicture}\n\\end{tikzpicture}").include?(text) &&
+    !processor.send(:latex_document, "\\begin{tikzcd}\n\\end{tikzcd}").include?(text) &&
+    !renderer.send(:latex_document, renderer.environments.first).include?(text)
+end
 check("the Obsidian plugin adds to TikZ what the site's documents add") do
   File.read(File.expand_path("../_posts/.obsidian/plugins/tikzcd-preview/main.js", __dir__))
       .include?("String.raw`\n#{ExternalTikzcdRenderer::TIKZ_PREAMBLE}\n`")
+end
+
+puts "characters"
+DVISVGM_FONTS = <<~CSS
+  text.f0 {font-family:newcmsy10;font-size:10px}
+  text.f1 {font-family:newcmr10;font-size:10px}
+  text.f2 {font-family:cmtt10;font-size:5px}
+CSS
+
+# What dvisvgm writes: the glyphs, then each place one is drawn.
+def drawn(*uses)
+  glyphs = uses.map(&:last).uniq.map { |glyph| "<path id='#{glyph}' d='M1 1H2Z'/>\n" }
+  places = uses.map { |x, y, glyph| "<use x='#{x}' y='#{y}' xlink:href='##{glyph}'/>\n" }
+  processor.send(:draw_characters, "<defs>\n#{glyphs.join}</defs>\n<g>\n#{places.join}</g>\n", DVISVGM_FONTS)
+end
+
+symbol = drawn([3, 4, "g0-66"])
+check("a symbol keeps its place and takes New Computer Modern's outline at its font's size") do
+  symbol.include?("<use x='3' y='4' xlink:href='#g0-66'/>") && symbol.include?("d='M5.77-3.88V-3.9C6.66-4.33")
+end
+check("it takes MathJax's stroke at that size") do
+  symbol.include?(%(style="stroke-width:calc(var(--tikzcd-glyph-stroke, 0px) * 10)"))
+end
+check("a glyph without such an outline stays Computer Modern's, with a stroke that makes up its weight") do
+  drawn([3, 4, "g2-66"]).include?(
+    %(<path id='g2-66' style="stroke-width:calc(var(--tikzcd-cm-glyph-stroke, 0px) * 5)" d='M1 1H2Z'/>)
+  )
+end
+words = drawn([0, 5, "g1-65"], [7.5, 5, "g1-38"], [20, 5, "g1-66"], [0, 17, "g1-12"])
+check("text is text again, its characters where TeX put them, its words apart, a line to an element") do
+  attributes = %(font-size="10" font-style="normal" font-weight="normal" fill="currentColor")
+  words.include?(%(<text x="0 7.5 20 20" y="5" #{attributes}>A&amp; B</text>\n<text x="0" y="17" #{attributes}>ﬁ</text>\n))
+end
+check("the glyphs of the text are gone") { !words.include?("g1-") }
+check("text with an accent, which no <text> can place, stays drawn") do
+  accented = drawn([0, 5, "g1-19"], [0, 5, "g1-101"])
+  accented.include?("<use x='0' y='5' xlink:href='#g1-19'/>") && !accented.include?("<text")
+end
+check("text and math side by side keep to themselves") do
+  mixed = drawn([0, 5, "g1-65"], [10, 5, "g0-66"], [20, 5, "g1-66"])
+  mixed.scan("<text").size == 2 && mixed.scan("<use").size == 1
+end
+
+puts "glyph data"
+data = ExternalTikzcdRenderer.glyphs
+check("every outline is a path the renderer can scale") do
+  data["glyphs"].values.flat_map(&:values).all? { |outline| outline.match?(/\A(?:[MLHVCSZ](?:-?\d+(?:\.\d+)?(?: |(?=-|[A-Z]|\z)))*)+\z/) }
+end
+check("the metrics are whole TFM files") do
+  data["tfm"].values.all? { |tfm| (bytes = tfm.unpack1("m")).unpack1("n") * 4 == bytes.bytesize }
+end
+check("the calligraphic capitals and the fonts of a picture's text are there") do
+  (65..90).all? { |code| data["glyphs"]["newcmsy10"].key?(code.to_s) } &&
+    ExternalTikzcdRenderer::TEXT_STYLES.keys.all? { |font| data["tfm"].key?(font) && data["widths"].key?(font) }
 end
 
 puts(($failures.zero? ? "\nall checks passed" : "\n#{$failures} failed"))

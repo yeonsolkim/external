@@ -7,7 +7,7 @@ title: "Vocabularies II"
 permalink: /dictionary/vocabularies-ii/
 date: 2026-09-07 00:00:00 +0900
 created_at: 2026-09-07 12:58:48 +0900
-last_modified_at: 2026-11-16 13:30:21 +0900
+last_modified_at: 2026-11-23 20:57:34 +0900
 narration: false
 published: true
 line_indent: false

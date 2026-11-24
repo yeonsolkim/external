@@ -1,6 +1,12 @@
-[![Build and deploy](https://img.shields.io/github/actions/workflow/status/yeonsolkim/external/pages.yml?branch=main&label=build%20%26%20deploy)](https://github.com/yeonsolkim/external/actions/workflows/pages.yml)
-[![Notes license: CC BY-NC-SA 4.0](https://img.shields.io/badge/notes%20license-CC%20BY--NC--SA%204.0-blue)](pages/license.md)
-[![Code license: MIT](https://img.shields.io/badge/code%20license-MIT-blue)](LICENSE)
+# External
+
+[![Build & Deploy](https://img.shields.io/github/actions/workflow/status/yeonsolkim/external/pages.yml?branch=main&label=Build%20%26%20Deploy&labelColor=2f3e4a)](https://github.com/yeonsolkim/external/actions/workflows/pages.yml)
+[![Notes License: CC BY-NC-SA 4.0](https://img.shields.io/badge/Notes%20License-CC%20BY--NC--SA%204.0-5b5bd6?labelColor=2f3e4a)](https://yeonsolkim.com/license/)
+[![Code License: MIT](https://img.shields.io/badge/Code%20License-MIT-567482?labelColor=2f3e4a)](LICENSE)
+
+Undergraduate mathematics as I understand it: notes with my own interpretations
+and views, published at [yeonsolkim.com](https://yeonsolkim.com/), a Jekyll site
+typeset like a LaTeX PDF.
 
 ## Development Notes
 
@@ -77,6 +83,30 @@ $$
 $$
 ````
 
+A caption makes a diagram a figure. It is the paragraph right under the diagram,
+opening with a bold label:
+
+````markdown
+The relationships are summarized in Figure 1.1.1.
+
+$$
+\begin{tikzpicture}
+  \node[draw, rounded corners] (a) {$A$};
+  \node[draw, rounded corners, right=5em of a] (b) {$B$};
+  \draw[->] (a) -- (b);
+\end{tikzpicture}
+$$
+
+**Figure 1.1.1.** A caption
+````
+
+The page sets the caption under the diagram in the text's own type, and a diagram
+wider than the column scrolls sideways; the book makes the figure a float, with the
+caption its class sets. As in AMS style, figures are numbered apart from the
+statements, each is cited in the text as `Figure 1.1.1`, which links to it, and a
+caption that is not a full sentence ends without a period. A caption may be its
+label alone, `**Figure 1.1.1**`. `_docs/STRUCTURE.md` has the details.
+
 A post has no preamble of its own, so every diagram's document loads `amsmath`,
 `amssymb`, and TikZ's `positioning` library. `TIKZ_PREAMBLE` in
 `_plugins/tikzcd_renderer.rb` holds what is added to TikZ, and the Obsidian
@@ -86,8 +116,8 @@ the caches are keyed by the diagram's source alone.
 
 Lines take the weight of `tikz-cd`'s arrows unless the picture gives them a
 width of its own, as `\draw[thick]` does. On the site, a colour reaches lines
-and dots, while node text keeps the colour of the page: its glyphs are stroked
-in `currentColor`, for the weight described below.
+and dots, while node text keeps the colour of the page: its characters are drawn
+in `currentColor`, as described below.
 
 `_plugins/tikzcd_renderer.rb` wraps each block in a standalone LaTeX document,
 compiles it with `latex`, converts the DVI output to inline SVG with `dvisvgm`,
@@ -95,18 +125,29 @@ and caches the resulting SVG under `.jekyll-cache/tikzcd`. The generated SVG
 IDs are namespaced before insertion so multiple diagrams can safely appear in
 one post.
 
-Diagram glyphs are matched to the MathJax math around them:
+A diagram's math is matched to the MathJax math around it:
 
 - The LaTeX document uses the 10pt Computer Modern designs at every size and
   MathJax's script sizes (7.07pt and 5pt), where TeX would switch to the
   heavier optical sizes (`cmmi7`, `cmmi5`, ...) for labels.
 - The SVG width and height are given in `ex` the way MathJax sizes its own SVG
   output, so 10pt is one MathJax em at every font size.
-- Each glyph path carries a stroke proportional to its font size. Its weight,
-  `--tikzcd-glyph-stroke` in `assets/css/post.css`, adds the difference between
-  Computer Modern and the New Computer Modern Book outlines MathJax draws to
-  MathJax's own glyph stroke, which `assets/js/mathjax-config.js` publishes as
-  `--math-blacker`.
+- Every glyph stays where TeX put it but is drawn with the outline MathJax
+  draws, New Computer Modern Book's. `_plugins/tikzcd_glyphs.json` holds the
+  outlines and, for the symbols whose widths are not Computer Modern's (the
+  calligraphic capitals, `\circ`, ...), the metrics LaTeX sets them in.
+  `scripts/diagram_glyphs.py` writes the file from the fonts in TeX Live; CI
+  needs none of them. A glyph that is not in it stays Computer Modern's.
+- Each glyph path carries a stroke proportional to its font size, MathJax's own:
+  `--tikzcd-glyph-stroke` in `assets/css/post.css` is the `--math-blacker` that
+  `assets/js/mathjax-config.js` publishes. A glyph of Computer Modern takes
+  `--tikzcd-cm-glyph-stroke`, which makes up for its thinner outline.
+
+The text of a `tikzpicture`, what its nodes hold outside `$...$`, is matched to
+the page's text instead. It is text in the SVG too, set by the browser in the
+page's font, each character where TeX put it. TeX sets it 1.0255 times as large
+as the math, which is how much larger the page's text is than MathJax's math, so
+`\normalsize` in a picture is the size of the text around it.
 
 For Obsidian preview, enable the tracked `TikZ-cd Preview` plugin and install a
 TeX distribution that provides `latex`, `dvisvgm`, and `tikz-cd`. The plugin

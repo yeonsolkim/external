@@ -74,6 +74,13 @@
 %% -- Diagrams: tikz-cd and TikZ; the `hasse` style comes from the site (tikz-preamble.tex).
 \RequirePackage{tikz-cd}
 
+%% -- Figures: amsart's caption, numbered as its label reads.
+\RequirePackage{caption}
+\DeclareCaptionLabelFormat{ams}{\textsc{#1}~#2}
+\DeclareCaptionLabelSeparator{ams}{.\enspace}
+\captionsetup{labelformat=ams, labelsep=ams}
+\newcommand\figurecaption[2]{\renewcommand\thefigure{#1}\caption{#2}}
+
 %% -- Headings.
 \RequirePackage{titlesec}
 \titleformat{\chapter}[display]

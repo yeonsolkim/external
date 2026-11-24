@@ -87,6 +87,8 @@
 \setlist[enumerate,3]{label=(\roman*)}
 \setlist[enumerate,4]{label=(\Alph*)}
 \RequirePackage{tikz-cd}
+% A figure is numbered as its label reads; SNmono sets the caption.
+\newcommand\figurecaption[2]{\renewcommand\thefigure{#1}\caption{#2}}
 \RequirePackage[bottom,splitrule]{footmisc}
 % Keep ordinary notes together with a strong preference, but retain a safe split
 % for notes too large for a page. splitrule identifies a continued footnote.

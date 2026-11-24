@@ -37,9 +37,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .jekyll-cache/tikzcd
-          key: tikzcd-v6-${{ runner.os }}-${{ hashFiles('_plugins/tikzcd_renderer.rb', '_posts/**/*.md', '*.md') }}
+          key: tikzcd-v7-${{ runner.os }}-${{ hashFiles('_plugins/tikzcd_renderer.rb', '_plugins/tikzcd_glyphs.json', '_posts/**/*.md', '*.md') }}
           restore-keys: |
-            tikzcd-v6-${{ runner.os }}-
+            tikzcd-v7-${{ runner.os }}-
 
       - name: Try Jekyll build with cached TikZ diagrams
         id: cached-build

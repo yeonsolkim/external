@@ -4,7 +4,7 @@
   'use strict';
 
   var labelPattern = /^(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle|Exercise)\s+(\d+(?:\.\d+)+)\.?/;
-  var referencePattern = /\b(?:(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle|Exercise)\s+)?(\d+(?:\.\d+)+)\b/g;
+  var referencePattern = /\b(?:(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle|Exercise|Figure)\s+)?(\d+(?:\.\d+)+)\b/g;
   var entryLabelPattern = /^(Definition|Theorem|Lemma|Corollary|Proposition|Remark|Example|Principle|Notation|Axiom|Exercise)\s+\d+(?:\.\d+)*\.?/;
   var numberedBoldLabelPattern = /^\d+(?:\.\d+)*\.(?:\s+\S[\s\S]*)?$/;
   var proofMarkerPattern = /^(Proof|Subproof|Solution)(?:\s+\d+)?\.?$/i;
@@ -981,7 +981,7 @@
       return true;
     }
 
-    return Boolean(node.parentElement.closest('a, strong, b, code, pre, script, style, textarea, noscript, mjx-container'));
+    return Boolean(node.parentElement.closest('a, strong, b, code, pre, script, style, textarea, noscript, svg, mjx-container'));
   }
 
   function replaceReferencesInTextNode(node, targets) {

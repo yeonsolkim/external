@@ -240,12 +240,14 @@ display: block;
 max-width: none;
 margin: 0 auto;
 /*
- * Glyph stroke per em; tikzcd_renderer.rb scales it to each font size.
- * MathJax draws New Computer Modern Book, which is TeX's Computer Modern
- * grown by about 0.0033em on each side of every outline, and strokes it
- * with var(--math-blacker) thousandths of an em (mathjax-config.js).
+ * Glyph stroke per em; tikzcd_renderer.rb scales it to each font size. The
+ * glyphs are MathJax's, New Computer Modern Book, and take the stroke MathJax
+ * gives them, var(--math-blacker) thousandths of an em (mathjax-config.js).
+ * The few that are still Computer Modern's are thinner, by about 0.0033em on
+ * each side of every outline.
  */
---tikzcd-glyph-stroke: calc((6.5 + var(--math-blacker, 9)) * 0.001px);
+--tikzcd-glyph-stroke: calc(var(--math-blacker, 9) * 0.001px);
+--tikzcd-cm-glyph-stroke: calc((6.5 + var(--math-blacker, 9)) * 0.001px);
 }
 
 /* dvisvgm turns TeX glyphs into paths, so CSS font-weight cannot affect them. */
@@ -279,6 +281,40 @@ stroke-width: 0.33px;
   .post-body .commutative-diagram__svg [stroke="#fff"] {
   stroke: #000;
   }
+}
+
+/*
+ * A figure with a caption (\begin{figure}), with a line of space around it, as \intextsep
+ * leaves around a float. The caption is under the diagram, in the text's own type and size, with
+ * an \enspace between its label and its text (the margin makes up the word space). One line is
+ * centred; more are a paragraph, set in from both sides where there is room, as amsart's
+ * \captionindent sets it. A diagram wider than the column scrolls, as every diagram does.
+ */
+.post-body .captioned-figure {
+margin: 1lh 0;
+}
+
+.post-body .captioned-figure .commutative-diagram {
+margin: 0;
+}
+
+.post-body .captioned-figure figcaption {
+width: fit-content;
+max-width: min(100%, max(24em, 80%));
+margin: 0.75lh auto 0;
+font-size: inherit;
+font-weight: normal;
+text-align: justify;
+}
+
+.post-body .captioned-figure .figure-label {
+font-weight: normal;
+color: var(--body-text-color);
+scroll-margin-top: 1.25rem;
+}
+
+.post-body .captioned-figure .figure-text {
+margin-left: 0.21em;
 }
 
 .hr,
@@ -1022,6 +1058,9 @@ figcaption {
   .post-body .commutative-diagram__svg use {
     fill: currentColor;
     stroke: currentColor;
+  }
+  .post-body .captioned-figure .figure-label {
+    color: var(--body-text-color);
   }
   .hr,
   .post-header-divider,

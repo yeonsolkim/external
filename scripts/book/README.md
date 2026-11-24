@@ -65,6 +65,7 @@ PDF target. A standalone post titled `Exercises` is also excluded.
    | ordered lists by depth; `{:marker-prefix="L"}` | (1), (a), (i), (A); (L1) |
    | `$$\begin{align}…$$` | `align*`: MathJax numbers nothing here |
    | `Theorem 2.1.6` in prose | a link to it, by `main.js`'s rule (a bare number only when one statement has it) |
+   | a diagram with a caption (`captioned-figure`) | `\begin{figure}[!htbp]` with `\figurecaption{1.1.1}{...}`: the number typed, the caption as the class sets it |
    | a footnote | `\footnote` |
    | `*term*` in a definition | `\emph` and an entry in the index |
    | `source_note` | retained by the site, omitted from the PDF |

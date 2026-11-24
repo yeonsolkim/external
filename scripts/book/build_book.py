@@ -248,6 +248,7 @@ def make_resolver(posts: List[Post], site_url: str):
 def anchors_of(body: Node) -> Set[str]:
     return {node.get("id") for node in body.find_all(
         lambda n: n.get("id") and (n.has_class("math-label-anchor") or n.has_class("doc-heading")
+                                   or n.has_class("figure-label")
                                    or n.tag in ("h2", "h3", "h4", "h5", "h6")))}
 
 

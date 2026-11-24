@@ -317,6 +317,62 @@ check("a numbered section's prose is body prose too, so it is not marked either"
   !numbered_prose.include?("data-paragraph-continuation")
 end
 
+puts "figures"
+DIAGRAM = %(<figure class="commutative-diagram" data-tikzcd-hash="0">\n<svg><title>Diagram</title></svg>\n</figure>)
+CAPTION = %(<p><strong>Figure 1.1.1.</strong> A basis at <span class="math-inline">\\(x\\)</span></p>)
+captioned = build("<p>See Figure 1.1.1.</p>\n\n#{DIAGRAM}\n\n#{CAPTION}\n\n<p>The next paragraph.</p>")
+check("a diagram and the caption right under it are one figure") do
+  captioned.include?(%(<figure class="captioned-figure" data-number="1.1.1" id="unit-figure-1-1-1">\n) +
+                     %(<div class="commutative-diagram" data-tikzcd-hash="0">\n<svg><title>Diagram</title></svg>\n</div>\n) +
+                     %(<figcaption><strong id="figure-1-1-1" class="figure-label">Figure 1.1.1.</strong> ) +
+                     %(<span class="figure-text">A basis at <span class="math-inline">\\(x\\)</span></span></figcaption>\n</figure>)) &&
+    captioned.include?("<p>See Figure 1.1.1.</p>") && captioned.include?("<p>The next paragraph.</p>")
+end
+check("a caption may be its label alone") do
+  build("#{DIAGRAM}<p><strong>Figure 1.1.1</strong></p>")
+    .include?(%(<figcaption><strong id="figure-1-1-1" class="figure-label">Figure 1.1.1</strong></figcaption>))
+end
+check("a diagram without a caption stays as it was") do
+  build("<p>a</p>\n#{DIAGRAM}\n<p>b</p>") == "<p>a</p>\n#{DIAGRAM}\n<p>b</p>"
+end
+floated = build("<p><strong>Theorem 1.</strong> T.</p>#{DIAGRAM}#{CAPTION}<p>Prose.</p>")
+check("it is no part of the statement before it and does not bridge to the next paragraph") do
+  tree(floated) == ["theorem 1"] && floated.index("</section>") < floated.index("captioned-figure")
+end
+in_proof = build("<p><em>Proof.</em> See Figure 1.1.1.</p>#{DIAGRAM}#{CAPTION}<p>Done. #{QED}</p>")
+check("a proof it interrupts goes on to its QED") do
+  tree(in_proof) == ["proof"] && in_proof.index("captioned-figure") < in_proof.index("</section>")
+end
+tex = build(<<~'HTML')
+  <p>Text</p>
+
+  \[a\]
+
+  \[\begin{tikzpicture}
+    \node (a) {$x$\\[1pt] b};
+    \draw[-&gt;] (a) -- (1,0);
+  \end{tikzpicture}\]
+
+  <p><strong>Figure 2.1.</strong> C</p>
+HTML
+check("a diagram left as TeX (the book's build) is captioned too, and only the diagram") do
+  tex.include?("\\[a\\]") && tex.index("\\[a\\]") < tex.index("<figure") &&
+    tex[/<figure.*<figcaption>/m].include?("\\[\\begin{tikzpicture}\n") && tex.scan("\\]").length == 2
+end
+warnings = []
+alone = D.transform("<p>a</p>#{CAPTION}", warnings)
+check("a caption with no diagram above it is left alone and reported") do
+  alone == "<p>a</p>#{CAPTION}" && warnings == ["Figure 1.1.1 has no diagram above its caption"]
+end
+warnings = []
+D.transform("<p><strong>Definition 1.1.1.</strong> a</p>#{DIAGRAM}#{CAPTION}<p><strong>Theorem 1.1.2.</strong> b</p>", warnings)
+check("figures have a counter of their own") { warnings.empty? }
+D.transform("#{DIAGRAM}#{CAPTION}#{DIAGRAM}#{CAPTION}", warnings)
+check("a figure number that repeats is reported") { warnings == ["1.1.1 follows 1.1.1"] }
+check("no text is added, removed or reordered") do
+  text(captioned) == text("<p>See Figure 1.1.1.</p>\n\n#{DIAGRAM}\n\n#{CAPTION}\n\n<p>The next paragraph.</p>")
+end
+
 puts "what must not change"
 source = <<~HTML
   <p><strong>1. Part.</strong> Body with <span class="math-inline">\\(x\\)</span>.</p>
