@@ -284,25 +284,35 @@ stroke-width: 0.33px;
 }
 
 /*
- * A figure with a caption (\begin{figure}), with a line of space around it, as \intextsep
- * leaves around a float. The caption is under the diagram, in the text's own type and size, with
- * an \enspace between its label and its text (the margin makes up the word space). One line is
- * centred; more are a paragraph, set in from both sides where there is room, as amsart's
- * \captionindent sets it. A diagram wider than the column scrolls, as every diagram does.
+ * A figure with a caption (\begin{figure}), with a line and a half of space around it, set off
+ * from the text a little more than a float's \intextsep would. The caption is under the
+ * diagram, in the text's own type but smaller, at the size of the footnotes (9pt over 10pt),
+ * with an \enspace between its label and its text (the margin makes up the word space); the
+ * label is set apart by nothing else, never bold. One line is centred; more are a paragraph,
+ * set in from both sides where there is room, as amsart's \captionindent sets it. A diagram
+ * wider than the column, as on a phone, is scaled down to fit it rather than scrolled, as an
+ * uncaptioned diagram is.
  */
 .post-body .captioned-figure {
-margin: 1lh 0;
+margin: 1.5lh 0;
 }
 
 .post-body .captioned-figure .commutative-diagram {
 margin: 0;
+overflow: visible;
+}
+
+/* The attributes still give the size; only a narrower column shrinks it, keeping its shape. */
+.post-body .captioned-figure .commutative-diagram__svg {
+max-width: 100%;
+height: auto;
 }
 
 .post-body .captioned-figure figcaption {
 width: fit-content;
 max-width: min(100%, max(24em, 80%));
 margin: 0.75lh auto 0;
-font-size: inherit;
+font-size: 0.9em;
 font-weight: normal;
 text-align: justify;
 }
