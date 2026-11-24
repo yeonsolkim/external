@@ -545,7 +545,8 @@ white-space: normal;
  * text. The spaces start narrower than the post's own (--natural-word-spacing, read before the
  * paragraph is set) by as much as a line may shrink them (--typeset-word-spacing, worked out
  * by the script), so that a line can shrink as well as stretch. A statement's label and the space
- * MathJax leaves at a formula's breakpoint keep their width. While the script measures, the
+ * MathJax leaves at a formula's breakpoint keep their width; a run-in heading, which is text of
+ * its paragraph, spaces as the text does. While the script measures, the
  * lines are set flush left. The lines are worked out for the screen's column; a printed page,
  * of another width, leaves them to the browser.
  */
@@ -557,8 +558,14 @@ white-space: normal;
     word-spacing: var(--typeset-word-spacing);
   }
 
-  .post-body .typeset-paragraph :is(.math-label-anchor, .math-proof-marker, mjx-break) {
+  .post-body .typeset-paragraph :is(.math-label-anchor:not(.doc-heading), .math-proof-marker, mjx-break) {
     word-spacing: var(--natural-word-spacing);
+  }
+
+  /* The gap after a numbered run-in heading is glue to the script: where the line breaks before
+     it, it is dropped, as TeX drops glue at a break, rather than indenting the next line. */
+  .post-body .typeset-paragraph .typeset-break + .math-label-gap {
+    display: none;
   }
 
   /* Code and MathJax's breakpoints would wrap by their own white-space. */
@@ -740,8 +747,9 @@ display: block;
 /* A label keeps its natural spacing on a justified line, as amsthm's head does in its box
    (\sbox\@labels): only the text after it is stretched. text-justify: none takes the label's
    spaces out of justification in Chrome 145+ and Firefox; in Safari, which lacks it, main.js
-   sets them as fixed-width spaces instead. */
-.post-body .math-label-anchor,
+   sets them as fixed-width spaces instead. A run-in heading is not boxed: LaTeX sets its title
+   as text of the paragraph, so its spaces are justified with the line's. */
+.post-body .math-label-anchor:not(.doc-heading),
 .post-body .math-proof-marker {
 text-justify: none;
 }

@@ -474,7 +474,14 @@ changes the `<h1>` or the post body.
   column. When no way of breaking keeps every line within TeX's tolerance, the
   most evenly spaced one is still justified, however loose; a statement's label
   is set alone on its line only as a last resort, to spare a line spaces some
-  four and a half times their width. The breaks are worked out again when the
+  four and a half times their width. A run-in heading (`**T.**`, `**3. T.**`)
+  is no label: as LaTeX sets the title of a run-in `\paragraph` or
+  `\subsection`, and the book its run-in heads, it is text of the paragraph.
+  Its spaces stretch and shrink with the line's, its words hyphenate, and a
+  line may end inside it or right after it, where a numbered heading's gap is
+  dropped as TeX drops glue at a break. A heading too wide to share its line
+  with the next word is then never left with the rest of the line empty after
+  it. The breaks are worked out again when the
   column changes width; printing, and a browser without
   `text-wrap-mode`, leave the lines to the browser. The styles that set the
   chosen lines are in `post.css`.

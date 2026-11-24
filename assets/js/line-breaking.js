@@ -68,7 +68,13 @@
   var LETTERS = /\p{L}+/gu;
   var REPLACED = /^(img|svg|video|audio|canvas|iframe|object|embed|input|button|select|textarea)$/i;
   var BLOCKS = 'p, li, ul, ol, dl, blockquote, div, section, table, pre, figure, h1, h2, h3, h4, h5, h6';
-  var LABELS = '.math-label-anchor, .math-proof-marker';
+  /* A statement's label and a proof's marker, which amsthm sets in a box. A run-in heading is
+     not one: LaTeX sets the title of a run-in \paragraph or \subsection as text of the
+     paragraph, and so does the book, so its spaces stretch and shrink with the line's, and a
+     line may end at any of them, or after the heading, as anywhere else. Boxed, a heading too
+     wide to share its line with the next word was set alone on it, leaving the rest of the
+     line empty. */
+  var LABELS = '.math-label-anchor:not(.doc-heading), .math-proof-marker';
   var UNHYPHENATED = 'code, kbd, samp, ' + LABELS;
   var INSERTED = '.typeset-break, .typeset-hyphen, .typeset-fill';
 
@@ -326,7 +332,7 @@
         return;
       }
 
-      // The space after a run-in heading, which has no gap of its own, ends the label.
+      // A space right after a label that has no gap of its own ends the label.
       rect = measureText(node, start, start + 1);
       addSpace({
         type: 'glue',
@@ -515,6 +521,7 @@
 
     function element(node) {
       var info;
+      var rect;
 
       if (node.tagName === 'BR') {
         endRun();
@@ -533,6 +540,22 @@
         endRun();
       } else if (node.tagName === 'MJX-CONTAINER') {
         formula(node);
+      } else if (node.classList.contains('math-label-gap') && node.previousElementSibling &&
+          node.previousElementSibling.matches('.doc-heading')) {
+        // The space after a numbered run-in heading is glue, as LaTeX's is: a line may end
+        // there, and the gap, which then begins the next line, is dropped (post.css), as TeX
+        // drops glue at a break.
+        rect = node.getBoundingClientRect();
+        addBreakable({
+          type: 'glue',
+          width: rect.width,
+          left: rect.left,
+          stretch: 0,
+          shrink: 0,
+          breakable: true,
+          lineEnd: { before: node },
+          breakAt: { before: node }
+        });
       } else if (node.classList.contains('math-label-gap')) {
         // amsthm never breaks after a statement's label; a line too narrow for the label
         // and what follows it may, setting the label alone on its line.

@@ -442,14 +442,15 @@
 
   // A label's spaces keep their width on a justified line (post.css). Safari lacks
   // text-justify, so there they become U+2004 THREE-PER-EM SPACE, which New Computer Modern
-  // sets at the width of its word space and justification never stretches. The TeX of inline
-  // math is left for MathJax, which has not read it yet.
+  // sets at the width of its word space and justification never stretches. A run-in heading's
+  // spaces are the text's, justified with it. The TeX of inline math is left for MathJax, which
+  // has not read it yet.
   function fixLabelSpaces(postBody) {
     if (window.CSS && CSS.supports && CSS.supports('text-justify', 'none')) {
       return;
     }
 
-    postBody.querySelectorAll('.math-label-anchor, .math-proof-marker').forEach(function (label) {
+    postBody.querySelectorAll('.math-label-anchor:not(.doc-heading), .math-proof-marker').forEach(function (label) {
       var walker = document.createTreeWalker(label, NodeFilter.SHOW_TEXT);
       var nodes = [];
       var node;
