@@ -101,7 +101,7 @@ $$
 ````
 
 The page sets the caption under the diagram in the text's own type, a size smaller
-and not bold, and scales a diagram wider than the column (on a phone) down to fit it
+and with its label in bold, and scales a diagram wider than the column (on a phone) down to fit it
 rather than scrolling it sideways; the book makes the figure a float, with the
 caption its class sets. As in AMS style, figures are numbered apart from the
 statements, each is cited in the text as `Figure 1.1.1`, which links to it, and a

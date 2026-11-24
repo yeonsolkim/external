@@ -286,9 +286,9 @@ stroke-width: 0.33px;
 /*
  * A figure with a caption (\begin{figure}), with a line and a half of space around it, set off
  * from the text a little more than a float's \intextsep would. The caption is under the
- * diagram, in the text's own type but smaller, at the size of the footnotes (9pt over 10pt),
- * with an \enspace between its label and its text (the margin makes up the word space); the
- * label is set apart by nothing else, never bold. One line is centred; more are a paragraph,
+ * diagram, in the text's own type but smaller, 0.85 of its size, a little under the footnotes,
+ * with its label in bold, as the text's other labels are, and an \enspace between the label and
+ * the text (the margin makes up the word space). One line is centred; more are a paragraph,
  * set in from both sides where there is room, as amsart's \captionindent sets it. A diagram
  * wider than the column, as on a phone, is scaled down to fit it rather than scrolled, as an
  * uncaptioned diagram is.
@@ -312,14 +312,13 @@ height: auto;
 width: fit-content;
 max-width: min(100%, max(24em, 80%));
 margin: 0.75lh auto 0;
-font-size: 0.9em;
+font-size: 0.85em;
 font-weight: normal;
 text-align: justify;
 }
 
 .post-body .captioned-figure .figure-label {
-font-weight: normal;
-color: var(--body-text-color);
+font-weight: bold;
 scroll-margin-top: 1.25rem;
 }
 
@@ -1068,9 +1067,6 @@ figcaption {
   .post-body .commutative-diagram__svg use {
     fill: currentColor;
     stroke: currentColor;
-  }
-  .post-body .captioned-figure .figure-label {
-    color: var(--body-text-color);
   }
   .hr,
   .post-header-divider,
