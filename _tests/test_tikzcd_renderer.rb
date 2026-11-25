@@ -56,8 +56,8 @@ def html(markdown)
   Kramdown::Document.new(processor.render(markdown), input: "GFM", hard_wrap: false, math_engine: "mathjax").to_html
 end
 
-def title(markdown)
-  html(markdown)[%r{<title[^>]*>(.*?)</title>}, 1]
+def name(markdown)
+  html(markdown)[/<svg [^>]*aria-label="([^"]*)"/, 1]
 end
 
 # The diagrams of a page, as the build gets them: after the inline-math step.
@@ -162,14 +162,22 @@ check("a tikzpicture's options may run over several lines") do
   environments_after_inline_math("$$\n#{picture}\n$$\n") == [picture]
 end
 
-puts "titles"
-check("a tikzcd diagram is a commutative diagram") { title(DIAGRAM) == "Commutative diagram" }
-check("a tikzpicture is a diagram") { title(PICTURE) == "Diagram" }
-check("the hasse style makes it a Hasse diagram") { title(HASSE_DIAGRAM) == "Hasse diagram" }
+puts "names"
+check("a tikzcd diagram is a commutative diagram") { name(DIAGRAM) == "Commutative diagram" }
+check("a tikzpicture is a diagram") { name(PICTURE) == "Diagram" }
+check("the hasse style makes it a Hasse diagram") { name(HASSE_DIAGRAM) == "Hasse diagram" }
 check("the hasse style may sit among other options") do
-  title(PICTURE.sub("{tikzpicture}", "{tikzpicture}[scale=.7, hasse]")) == "Hasse diagram"
+  name(PICTURE.sub("{tikzpicture}", "{tikzpicture}[scale=.7, hasse]")) == "Hasse diagram"
 end
-check("pictures among other math keep the style's title") { title(PICTURES_AMONG_MATH) == "Hasse diagram" }
+check("pictures among other math keep the style's name") { name(PICTURES_AMONG_MATH) == "Hasse diagram" }
+check("no diagram has a title, which a browser would show in a tooltip") do
+  [DIAGRAM, FENCED_DIAGRAM, DIAGRAMS_AMONG_MATH, PICTURE, HASSE_DIAGRAM, PICTURES_AMONG_MATH]
+    .none? { |markdown| html(markdown).match?(/<title|\btitle=/) }
+end
+check("the Obsidian plugin gives a diagram nothing Obsidian or Chromium shows in a tooltip") do
+  plugin = File.read(File.expand_path("../_posts/.obsidian/plugins/tikzcd-preview/main.js", __dir__), encoding: "UTF-8")
+  !plugin.match?(/createElementNS\([^)]*"title"|setAttribute\(\s*"(?:aria-label|title)"/)
+end
 
 puts "math in node text"
 [0, 3, 4, 5].each do |spaces|

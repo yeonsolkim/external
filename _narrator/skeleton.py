@@ -293,8 +293,8 @@ class Renderer:
         svg = node if node.tag == "svg" else node.first("svg")
         if svg:
             title = svg.first("title")
-            label = normalize(title.text_content()) if title else ""
-            self.warnings.append("diagram narrated as its title only")
+            label = normalize(svg.get("aria-label") or (title.text_content() if title else ""))
+            self.warnings.append("diagram narrated as its name only")
             return "[DIAGRAM: %s]" % label if label else "[DIAGRAM]"
         self.warnings.append("figure without a caption")
         return "[FIGURE]"

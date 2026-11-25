@@ -184,7 +184,7 @@ module ExternalTikzcdRenderer
     def render_diagram(environment, indentation = "")
       @diagram_index += 1
       svg, digest = cached_svg(environment)
-      svg = prepare_inline_svg(svg, digest, @diagram_index, diagram_title(environment))
+      svg = prepare_inline_svg(svg, digest, @diagram_index, diagram_name(environment))
 
       <<~HTML.gsub(/^(?=.)/) { indentation }
 
@@ -387,27 +387,24 @@ module ExternalTikzcdRenderer
       LATEX
     end
 
-    def diagram_title(environment)
+    def diagram_name(environment)
       return "Hasse diagram" if environment.match?(HASSE_PATTERN)
 
       environment.include?("{tikzcd}") ? "Commutative diagram" : "Diagram"
     end
 
-    def prepare_inline_svg(svg, digest, index, title)
+    # The name, for screen readers and the narration, is an aria-label: a browser shows the
+    # text of a <title> in a tooltip over the diagram.
+    def prepare_inline_svg(svg, digest, index, name)
       svg = svg.sub(/\A\s*<\?xml[^>]*>\s*/m, "")
       svg = svg.sub(/\A\s*<!DOCTYPE.*?>\s*/m, "")
 
-      id_prefix = "tikzcd-#{digest[0, 10]}-#{index}-"
-      svg = namespace_svg_ids(svg, id_prefix)
-      title_id = "#{id_prefix}title"
+      svg = namespace_svg_ids(svg, "tikzcd-#{digest[0, 10]}-#{index}-")
 
       svg.sub(/<svg\b([^>]*)>/m) do
         attributes = normalize_svg_dimensions(Regexp.last_match(1))
 
-        <<~SVG.chomp
-          <svg class="commutative-diagram__svg" role="img" aria-labelledby="#{title_id}"#{attributes}>
-          <title id="#{title_id}">#{title}</title>
-        SVG
+        %(<svg class="commutative-diagram__svg" role="img" aria-label="#{name}"#{attributes}>)
       end.strip
     end
 

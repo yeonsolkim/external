@@ -318,12 +318,12 @@ check("a numbered section's prose is body prose too, so it is not marked either"
 end
 
 puts "figures"
-DIAGRAM = %(<figure class="commutative-diagram" data-tikzcd-hash="0">\n<svg><title>Diagram</title></svg>\n</figure>)
+DIAGRAM = %(<figure class="commutative-diagram" data-tikzcd-hash="0">\n<svg aria-label="Diagram"></svg>\n</figure>)
 CAPTION = %(<p><strong>Figure 1.1.1.</strong> A basis at <span class="math-inline">\\(x\\)</span></p>)
 captioned = build("<p>See Figure 1.1.1.</p>\n\n#{DIAGRAM}\n\n#{CAPTION}\n\n<p>The next paragraph.</p>")
 check("a diagram and the caption right under it are one figure") do
   captioned.include?(%(<figure class="captioned-figure" data-number="1.1.1" id="unit-figure-1-1-1">\n) +
-                     %(<div class="commutative-diagram" data-tikzcd-hash="0">\n<svg><title>Diagram</title></svg>\n</div>\n) +
+                     %(<div class="commutative-diagram" data-tikzcd-hash="0">\n<svg aria-label="Diagram"></svg>\n</div>\n) +
                      %(<figcaption><strong id="figure-1-1-1" class="figure-label">Figure 1.1.1.</strong> ) +
                      %(<span class="figure-text">A basis at <span class="math-inline">\\(x\\)</span></span></figcaption>\n</figure>)) &&
     captioned.include?("<p>See Figure 1.1.1.</p>") && captioned.include?("<p>The next paragraph.</p>")

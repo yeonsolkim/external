@@ -250,7 +250,7 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
 
       status.remove();
       viewport.appendChild(
-        this.prepareSvg(svg, digest, this.diagramTitle(source), el.ownerDocument)
+        this.prepareSvg(svg, digest, this.diagramName(source), el.ownerDocument)
       );
     } catch (error) {
       console.error("TikZ-cd preview failed", error);
@@ -378,13 +378,13 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
     ].join("\n");
   }
 
-  diagramTitle(environment) {
+  diagramName(environment) {
     if (HASSE_PATTERN.test(environment)) return "Hasse diagram";
 
     return environment.includes("{tikzcd}") ? "Commutative diagram" : "Diagram";
   }
 
-  prepareSvg(source, digest, titleText, ownerDocument) {
+  prepareSvg(source, digest, name, ownerDocument) {
     const Parser = ownerDocument.defaultView.DOMParser;
     const parsed = new Parser().parseFromString(source, "image/svg+xml");
     if (
@@ -402,11 +402,13 @@ module.exports = class TikzcdPreviewPlugin extends Plugin {
 
     svg.classList.add("tikzcd-preview__svg");
     svg.setAttribute("role", "img");
-    const title = parsed.createElementNS("http://www.w3.org/2000/svg", "title");
-    title.id = `${prefix}title`;
-    title.textContent = titleText;
-    svg.prepend(title);
-    svg.setAttribute("aria-labelledby", title.id);
+    // The name is for screen readers only. Neither a <title>, which Chromium
+    // shows in a tooltip, nor an aria-label, which Obsidian does, can hold it.
+    const desc = parsed.createElementNS("http://www.w3.org/2000/svg", "desc");
+    desc.id = `${prefix}name`;
+    desc.textContent = name;
+    svg.prepend(desc);
+    svg.setAttribute("aria-labelledby", desc.id);
 
     return ownerDocument.importNode(svg, true);
   }

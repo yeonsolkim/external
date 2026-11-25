@@ -139,6 +139,14 @@ class Synthetic(unittest.TestCase):
         self.assertEqual(skel.sections[0].text, "[FIGURE: A cat]")
         self.assertEqual(skel.warnings, ["code block omitted", "figure narrated as its caption only", "footnotes omitted", "table omitted"])
 
+    def test_a_diagram_is_its_name(self):
+        svg = '<figure class="commutative-diagram"><svg role="img"%s><text>A</text></svg></figure>'
+        named = build(wrap(svg % ' aria-label="Hasse diagram"')).sections[0]
+        titled = build(wrap((svg % "").replace("<text>", "<title>Hasse diagram</title><text>"))).sections[0]
+        self.assertEqual(named.text, "[DIAGRAM: Hasse diagram]")
+        self.assertEqual(named.hash, titled.hash)   # pages built before the name was an aria-label
+        self.assertEqual(build(wrap(svg % "")).sections[0].text, "[DIAGRAM]")
+
     def test_nbsp_and_nfc_are_normalised(self):
         a = build(wrap("<p>café au lait</p>")).sections[0]
         b = build(wrap("<p>café au   lait</p>")).sections[0]

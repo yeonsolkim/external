@@ -63,7 +63,7 @@ $$
 
 The style centres the picture on the math axis, as `tikz-cd` centres its
 diagrams, so that pictures set side by side line up with each other and with
-the math between them. It titles the SVG "Hasse diagram", where a plain
+the math between them. It names the SVG "Hasse diagram", where a plain
 `tikzpicture` gets "Diagram", for screen readers and the narration. It also
 defines `dot`, for a diagram of points with their labels beside them:
 
@@ -125,6 +125,10 @@ compiles it with `latex`, converts the DVI output to inline SVG with `dvisvgm`,
 and caches the resulting SVG under `.jekyll-cache/tikzcd`. The generated SVG
 IDs are namespaced before insertion so multiple diagrams can safely appear in
 one post.
+
+A diagram's name shows no tooltip under the pointer. On the site it is the SVG's
+`aria-label`; a `<title>` element would show one. Obsidian shows one for an
+`aria-label` too, so its plugin refers to a `<desc>` with `aria-labelledby`.
 
 A diagram's math is matched to the MathJax math around it:
 
